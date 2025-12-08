@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Frontend build (если будут отдельные)
+apps/frontend/dist/
+
+# Backend build
+apps/backend/dist/
+
+# Env files (ОБЯЗАТЕЛЬНО)
+.env
+.env.*
+apps/frontend/.env
+apps/backend/.env
+
+# Uploads (чтобы не утащить реальные документы)
+uploads/
+apps/backend/uploads/
+
+# Coverage
+coverage/
+apps/backend/coverage/
+
+# Prisma / SQLite (если будем локально хранить)
+prisma/dev.db
+prisma/dev.db-journal
+*.sqlite
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
