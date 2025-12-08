@@ -113,7 +113,7 @@
 
 <script setup lang="js">
 import { ref, computed } from 'vue'
-import DriverWidgetPopup from '@/components/widgets/DriverWidgetPopup.vue'
+import DriverWidgetPopup from '@/widgets/DriverWidgetPopup.vue'
 
 const options = [
   { id: 1, years: 3, price: 65, recommended: true },

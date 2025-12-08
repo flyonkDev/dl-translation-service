@@ -116,10 +116,10 @@
 
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, watch, ref } from 'vue'
-import BaseInput from '@/components/inputs/BaseInput.vue'
-import BaseSelect from '@/components/inputs/BaseSelect.vue'
-import SignaturePad from '@/components/inputs/SignaturePad.vue'
-import BaseFile from '@/components/inputs/BaseFile.vue'
+import BaseInput from '@/shared/ui/inputs/BaseInput.vue'
+import BaseSelect from '@/shared/ui/inputs/BaseSelect.vue'
+import SignaturePad from '@/shared/ui/inputs/SignaturePad.vue'
+import BaseFile from '@/shared/ui/inputs/BaseFile.vue'
 import { useForm, useField } from 'vee-validate'
 import { z } from 'zod'
 import { toTypedSchema } from '@vee-validate/zod'

@@ -1,18 +1,18 @@
 <template>
   <div class="layout">
-    <CHeader />
+    <AppHeader />
 
     <main class="layout-main">
       <slot />
     </main>
 
-    <CFooter />
+    <AppFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import CHeader from "@/components/CHeader.vue";
-import CFooter from "@/components/CFooter.vue";
+import AppHeader from "@/widgets/AppHeader.vue";
+import AppFooter from "@/widgets/AppFooter.vue";
 </script>
 
 <style scoped>
