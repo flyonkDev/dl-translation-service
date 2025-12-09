@@ -112,8 +112,9 @@
 </template>
 
 <script setup lang="js">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import DriverWidgetPopup from '@/widgets/DriverWidgetPopup.vue'
+// import { apiGet } from '@/shared/api/apiClient.ts'
 
 const options = [
   { id: 1, years: 3, price: 65, recommended: true },
@@ -194,6 +195,10 @@ function onStep2Submit(payload) {
   console.log('Step 2 data:', payload) // TODO: persist in store or pass to next step
   // тут позже откроем Step 3 в этом же попапе
 }
+
+// onMounted(() => {
+//   apiGet('/https://jsonplaceholder.typicode.com/users').then(r => console.log('Users Health check:', r))
+// })
 </script>
 
 <style scoped lang="scss">
