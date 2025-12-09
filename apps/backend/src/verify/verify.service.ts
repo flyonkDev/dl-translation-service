@@ -1,15 +1,13 @@
 // apps/backend/src/verify/verify.service.ts
-import { Injectable, Logger } from '@nestjs/common'
-import type { Express } from 'express'
-import * as TesseractNS from 'tesseract.js'
+import { Injectable, Logger } from '@nestjs/common';
+import type { Express } from 'express';
+import * as TesseractNS from 'tesseract.js';
+import {
+  type VerifyLicenseResponseDto,
+  type VerifyLicenseBodyDto,
+  type VerifyCheck,
+} from './verify.dto';
 
-type Check = { passed: boolean; info?: string }
-type Result = {
-  status: 'passed' | 'review' | 'failed'
-  checks: Record<string, Check>
-  extracted?: { text?: string; fields?: Record<string, string> }
-  hints?: string[]
-}
 
 /** Единоразово находим корректную функцию recognize для любой сборки tesseract.js */
 function resolveTesseractRecognize(): (path: string, lang: string) => Promise<any> {
@@ -49,8 +47,11 @@ export class VerifyService {
     'endorsements',
   ]
 
-  async verifyLicense(file: Express.Multer.File, _body: Record<string, unknown>): Promise<Result> {
-    const checks: Record<string, Check> = {}
+  async verifyLicense(
+  file: Express.Multer.File,
+  _body: VerifyLicenseBodyDto,
+): Promise<VerifyLicenseResponseDto> {
+  const checks: Record<string, VerifyCheck> = {};
 
     try {
       // --- L0: базовые проверки
@@ -90,7 +91,7 @@ export class VerifyService {
       checks['has_id'] = { passed: hasIdLike }
 
       // --- итоговый вердикт
-      let status: Result['status'] = 'failed'
+      let status: VerifyLicenseResponseDto['status'] = 'failed'
       if (checks['ocr_text'].passed && hasKeyword && (hasDate || hasIdLike)) status = 'passed'
       else if (checks['ocr_text'].passed && (hasKeyword || hasDate || hasIdLike)) status = 'review'
 
