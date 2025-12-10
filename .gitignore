@@ -50,3 +50,8 @@ prisma/dev.db-journal
 *.njsproj
 *.sln
 *.sw?
+
+# Nuxt build
+.nuxt/
+.apps/landing/.nuxt/
+.apps/landing/.output/
