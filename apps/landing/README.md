@@ -1,75 +1,20 @@
-# Nuxt Minimal Starter
+```md
+# DL Translate – Landing (Nuxt 3)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 3 app that serves as the marketing / SEO landing for the Driver License Translation service.
 
-## Setup
+## Tech
 
-Make sure to install dependencies:
+- Nuxt 3 (SSR)
+- TypeScript
+- SCSS (single global file `assets/styles/main.scss`)
+- Iconify for icons
+- Simple layout: header + footer + one longform page (`pages/index.vue`)
+
+## Dev
 
 ```bash
-# npm
+cd apps/landing
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# http://localhost:3000
