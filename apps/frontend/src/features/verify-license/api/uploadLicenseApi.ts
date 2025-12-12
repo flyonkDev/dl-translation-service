@@ -1,4 +1,4 @@
-// features/upload-license/api/uploadLicenseApi.ts
+// features/verify-license/api/uploadLicenseApi.ts
 import { apiPost, type ApiError } from '@/shared/api/apiClient';
 import type {
 	VerifyLicenseResponse,

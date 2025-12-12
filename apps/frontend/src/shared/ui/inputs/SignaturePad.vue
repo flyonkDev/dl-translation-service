@@ -61,6 +61,9 @@ watch(() => props.modelValue, (v) => { if (!v) pad?.clear() })
 </template>
 
 <style scoped lang="scss">
+.sig-wrap {
+  width: 100%;
+}
 .sig-toolbar { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-weight:700; color:#0b1a33; }
 .spacer { flex:1; }
 .sig-btn { border:0; background:#f3f4f8; border-radius:8px; padding:6px 8px; cursor:pointer; }

@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '@/pages/HomePage.vue';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
+import DriverLicenseApplicationPage from '@/pages/DriverLicenseApplicationPage.vue';
 
-
-const routes = [
-	{ path: '/', component: HomePage },
+const routes: RouteRecordRaw[] = [
+	{ path: '/', redirect: '/apply' },
+	{ path: '/apply', name: 'apply', component: DriverLicenseApplicationPage },
+	// позже: { path: '/success', name: 'success', component: SuccessPage }
 ];
 
 const router = createRouter({

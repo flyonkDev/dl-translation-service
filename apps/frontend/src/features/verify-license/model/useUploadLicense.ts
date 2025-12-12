@@ -1,8 +1,10 @@
-// features/upload-license/model/useUploadLicense.ts
+// features/verify-license/model/useUploadLicense.ts
 import { ref, computed, type ComputedRef } from 'vue';
 import type { Ref } from 'vue';
+
 import type { ApiError } from '@/shared/api/apiClient';
 import { uploadLicense } from '../api/uploadLicenseApi';
+
 import type {
 	VerifyLicenseResponse,
 	VerifyLicensePayload,
@@ -15,10 +17,11 @@ export interface UseUploadLicenseState {
 	result: Ref<VerifyLicenseResponse | null>;
 	error: Ref<ApiError<VerifyLicenseError> | null>;
 	statusLabel: ComputedRef<string>;
-	upload: (payload?: VerifyLicensePayload) => Promise<void>;
+
+	upload: (payload?: VerifyLicensePayload) => Promise<VerifyLicenseResponse>;
+
 	reset: () => void;
 }
-
 
 export function useUploadLicense(): UseUploadLicenseState {
 	const file = ref<File | null>(null);
@@ -39,8 +42,13 @@ export function useUploadLicense(): UseUploadLicenseState {
 		error.value = null;
 	};
 
-	const upload = async (payload?: VerifyLicensePayload) => {
-		if (!file.value) return;
+	const upload = async (
+		payload?: VerifyLicensePayload
+	): Promise<VerifyLicenseResponse> => {
+		if (!file.value) {
+			const err = new Error('License file is not set');
+			throw err;
+		}
 
 		isLoading.value = true;
 		error.value = null;
@@ -49,8 +57,10 @@ export function useUploadLicense(): UseUploadLicenseState {
 		try {
 			const response = await uploadLicense(file.value, payload);
 			result.value = response;
+			return response;
 		} catch (err) {
 			error.value = err as ApiError<VerifyLicenseError>;
+			throw err;
 		} finally {
 			isLoading.value = false;
 		}
