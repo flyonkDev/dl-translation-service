@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-// ничего импортировать не нужно – Nuxt сам найдёт компоненты
 </script>
 
 <style scoped>

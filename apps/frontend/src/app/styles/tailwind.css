@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@source "../../../index.html";
+@source "../../../src/**/*.{vue,js,ts}";
+@source "../../../../packages/ui-kit/**/*.{vue,js,ts,scss}";
+
+@theme {
+  --color-mint: rgb(var(--c-mint) / 1);
+  --color-sea: rgb(var(--c-sea) / 1);
+  --color-orange: rgb(var(--c-orange) / 1);
+
+  --color-orange-300: rgb(var(--c-orange-300) / 1);
+
+  --color-slate-900: rgb(var(--c-slate-900) / 1);
+  --color-slate-700: rgb(var(--c-slate-700) / 1);
+  --color-slate-500: rgb(var(--c-slate-500) / 1);
+  --color-slate-200: rgb(var(--c-slate-200) / 1);
+}

@@ -1,6 +1,40 @@
+import tailwindcss from '@tailwindcss/vite';
+import { resolve } from 'pathe';
+
+const repoRoot = resolve(process.cwd(), '../..');
+const uiKitPath = resolve(repoRoot, 'packages/ui-kit');
+
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  css: ['~/assets/styles/main.scss'],
-  components: true,
-})
+	compatibilityDate: '2025-07-15',
+	devtools: { enabled: true },
+	components: true,
+
+	css: [
+		'@ui-kit/css-vars.scss',
+		'~/assets/styles/tailwind.css',
+		'~/assets/styles/theme.scss',
+		'~/assets/styles/main.scss',
+	],
+
+	vite: {
+		plugins: [tailwindcss()],
+
+		resolve: {
+			alias: {
+				'@ui-kit': uiKitPath,
+			},
+		},
+
+		server: {
+			fs: { allow: [repoRoot] },
+		},
+
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@use "@ui-kit/variables.scss" as *;`,
+				},
+			},
+		},
+	},
+});

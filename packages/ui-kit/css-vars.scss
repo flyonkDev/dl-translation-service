@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "./variables" as *;
+
+:root {
+  --font-sans: #{$font-sans};
+
+  --c-mint: #{color.red($mint)} #{color.green($mint)} #{color.blue($mint)};
+  --c-mint-300: #{color.red($mint-300)} #{color.green($mint-300)} #{color.blue($mint-300)};
+
+  --c-sea: #{color.red($sea)} #{color.green($sea)} #{color.blue($sea)};
+  --c-sea-300: #{color.red($sea-300)} #{color.green($sea-300)} #{color.blue($sea-300)};
+
+  --c-orange: #{color.red($orange)} #{color.green($orange)} #{color.blue($orange)};
+  --c-orange-300: #{color.red($orange-300)} #{color.green($orange-300)} #{color.blue($orange-300)};
+  --c-orange-200: #{color.red($orange-200)} #{color.green($orange-200)} #{color.blue($orange-200)};
+
+  --c-slate-900: #{color.red($slate-900)} #{color.green($slate-900)} #{color.blue($slate-900)};
+  --c-slate-700: #{color.red($slate-700)} #{color.green($slate-700)} #{color.blue($slate-700)};
+  --c-slate-500: #{color.red($slate-500)} #{color.green($slate-500)} #{color.blue($slate-500)};
+  --c-slate-200: #{color.red($slate-200)} #{color.green($slate-200)} #{color.blue($slate-200)};
+  --c-white: #{color.red($white)} #{color.green($white)} #{color.blue($white)};
+
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+  --shadow-soft: #{$shadow-soft};
+}

@@ -12,7 +12,7 @@
         <a href="#pricing" class="nav-link">Pricing</a>
       </nav>
 
-      <a href="/app" class="cta">
+      <a href="/app"class="cta inline-flex items-center justify-center rounded-full bg-orange px-5 py-3 text-sm font-extrabold text-slate-900 shadow-soft transition hover:opacity-95">
         Start application
       </a>
     </div>
@@ -82,17 +82,6 @@
 
 .nav-link:hover {
   color: #111827;
-}
-
-.cta {
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: #facc15;
-  color: #0f172a;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;
 }
 
 @media (max-width: 720px) {

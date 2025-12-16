@@ -1,44 +1,76 @@
 <template>
-  <div class="page">
+  <div class="min-h-screen">
     <!-- Hero + plans -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Driver license translation PDF</p>
-          <h1 class="hero-title">
-            Get your multilingual driver license translation in minutes
-          </h1>
-          <p class="hero-subtitle">
-            Upload your license once – we generate a clean translation PDF in several languages,
-            ready to show rental agencies and authorities <strong>together with your national license</strong>.
+    <section class="bg-mint/40 px-4 py-10 md:py-14">
+      <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-start">
+        <div class="lg:pr-3">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
+            Driver license translation PDF
           </p>
 
-          <ul class="hero-list">
-            <li>Automatic text extraction and formatting</li>
-            <li>Supports multiple languages (English, Spanish, German, French and more)</li>
-            <li>Delivered as a printable &amp; digital PDF</li>
-            <li>Translation document only — not a replacement for your license</li>
+          <h1 class="mb-4 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
+            Get your multilingual driver license translation in minutes
+          </h1>
+
+          <p class="mb-4 max-w-xl text-sm leading-relaxed text-slate-700">
+            Upload your license once – we generate a clean translation PDF in several languages,
+            ready to show rental agencies and authorities
+            <strong class="font-semibold text-slate-900">together with your national license</strong>.
+          </p>
+
+          <ul class="mb-5 space-y-2 text-sm text-slate-900">
+            <li class="flex gap-2">
+              <span class="text-sea">✓</span>
+              <span>Automatic text extraction and formatting</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">✓</span>
+              <span>Supports multiple languages (English, Spanish, German, French and more)</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">✓</span>
+              <span>Delivered as a printable &amp; digital PDF</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">✓</span>
+              <span>Translation document only — not a replacement for your license</span>
+            </li>
           </ul>
 
-          <a href="/app" class="hero-cta">
+          <a
+            href="/app"
+            class="inline-flex items-center justify-center rounded-full bg-orange px-5 py-3 text-sm font-extrabold text-slate-900 shadow-soft transition hover:opacity-95"
+          >
             Start application
           </a>
-          <p class="hero-caption">
-            From <strong>${{ plans[2].price }}</strong> per document. No subscriptions.
+
+          <p class="mt-2 text-xs text-slate-500">
+            From <strong class="font-semibold text-slate-900">${{ plans[2].price }}</strong> per document. No subscriptions.
           </p>
         </div>
 
-        <div class="hero-widget" id="pricing">
-          <img class="hero-image" src="/widget2.jpg" alt="Driver license translation PDF preview" />
+        <!-- Widget -->
+        <div id="pricing" class="rounded-2xl bg-white p-5 shadow-soft">
+          <img
+            class="hero-image mb-3 w-full object-contain"
+            src="/widget2.jpg"
+            alt="Driver license translation PDF preview"
+          />
 
-          <h2 class="widget-title">Choose your translation package</h2>
+          <h2 class="mb-3 text-sm font-extrabold text-slate-900">
+            Choose your translation package
+          </h2>
 
-          <ul class="plan-list" role="radiogroup" aria-label="Translation plan">
+          <ul class="space-y-2" role="radiogroup" aria-label="Translation plan">
             <li
               v-for="plan in plans"
               :key="plan.id"
-              class="plan-item"
-              :class="{ 'is-selected': selectedPlanId === plan.id }"
+              class="plan-item rounded-xl border bg-white transition"
+              :class="[
+                selectedPlanId === plan.id
+                  ? 'is-selected border-sea ring-4 ring-sea/15'
+                  : 'border-slate-200 hover:border-slate-500/40'
+              ]"
               @click="selectedPlanId = plan.id"
             >
               <input
@@ -49,22 +81,30 @@
                 :value="plan.id"
                 v-model="selectedPlanId"
               />
-              <label :for="`plan-${plan.id}`" class="plan-row">
-                <div class="plan-left">
-                  <span class="plan-radio-visual" aria-hidden="true"></span>
-                  <span class="plan-title">
-                    <span v-if="plan.recommended" class="badge">Most popular</span>
+
+              <label :for="`plan-${plan.id}`" class="flex cursor-pointer items-center justify-between gap-3 px-4 py-3">
+                <div class="flex items-center gap-3">
+                  <span class="plan-radio-visual border-2 border-sea" aria-hidden="true"></span>
+
+                  <span class="text-sm font-semibold text-slate-900">
+                    <span
+                      v-if="plan.recommended"
+                      class="mr-2 inline-flex items-center rounded-full bg-sea px-2 py-0.5 text-[11px] font-extrabold text-white"
+                    >
+                      Most popular
+                    </span>
                     {{ plan.label }}
                   </span>
                 </div>
-                <div class="plan-right">
-                  <span class="plan-price">${{ plan.price }}</span>
+
+                <div class="text-lg font-extrabold text-slate-900">
+                  ${{ plan.price }}
                 </div>
               </label>
             </li>
           </ul>
 
-          <p class="plan-note">
+          <p class="mt-3 text-xs leading-relaxed text-slate-500">
             One-time payment per document.
             You’ll be able to download your translation PDF immediately after payment.
           </p>
@@ -72,51 +112,92 @@
       </div>
     </section>
 
-    <!-- Who is this for -->
-    <section class="section section-muted">
-      <div class="section-inner use-cases">
+    <section class="bg-white px-4 py-12 md:py-14">
+      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
         <div>
-          <h2 class="section-title">Who is this for?</h2>
-          <ul class="bullet-list">
-            <li>Travellers renting cars in non-English speaking countries</li>
-            <li>Digital nomads who frequently cross borders</li>
-            <li>People with licenses in non-Latin alphabets (Cyrillic, Arabic, etc.)</li>
+          <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
+            Who is this for?
+          </h2>
+
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Travellers renting cars in non-English speaking countries</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Digital nomads who frequently cross borders</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>People with licenses in non-Latin alphabets (Cyrillic, Arabic, etc.)</span>
+            </li>
           </ul>
         </div>
+
         <div>
-          <h2 class="section-title">What you receive</h2>
-          <ul class="bullet-list">
-            <li>PDF with your key license details translated into several languages</li>
-            <li>Clear layout that’s easy to show on your phone or print</li>
-            <li>Disclaimer explaining it’s a translation, not an official document</li>
+          <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
+            What you receive
+          </h2>
+
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>PDF with your key license details translated into several languages</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Clear layout that’s easy to show on your phone or print</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Disclaimer explaining it’s a translation, not an official document</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- How it works -->
-    <section id="how-it-works" class="section section-muted-light">
-      <div class="section-inner">
-        <h2 class="section-title">How it works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Upload your license</h3>
-            <p class="step-text">
+    <section id="how-it-works" class="bg-mint/15 px-4 py-12 md:py-14">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
+          How it works
+        </h2>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <div class="rounded-2xl bg-white p-5 shadow-soft">
+            <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
+              1
+            </div>
+            <h3 class="mb-2 text-base font-extrabold text-slate-900">
+              Upload your license
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700">
               Take a clear photo or scan of your driver’s license and upload it to our secure form.
             </p>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3 class="step-title">We parse &amp; translate</h3>
-            <p class="step-text">
+
+          <div class="rounded-2xl bg-white p-5 shadow-soft">
+            <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
+              2
+            </div>
+            <h3 class="mb-2 text-base font-extrabold text-slate-900">
+              We parse &amp; translate
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700">
               Our system extracts key fields and places them into a multilingual template in several languages.
             </p>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Download your PDF</h3>
-            <p class="step-text">
+
+          <div class="rounded-2xl bg-white p-5 shadow-soft">
+            <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
+              3
+            </div>
+            <h3 class="mb-2 text-base font-extrabold text-slate-900">
+              Download your PDF
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700">
               Get a ready-to-print PDF with your details and translation blocks, to use together with your original license.
             </p>
           </div>
@@ -125,20 +206,28 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="section-inner">
-        <h2 class="section-title">Frequently asked questions</h2>
+    <section id="faq" class="bg-white px-4 py-12 md:py-14">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
+          Frequently asked questions
+        </h2>
 
-        <ul class="faq-list">
-          <li v-for="(item, index) in faqs" :key="item.id" class="faq-item">
+        <ul class="border-t-2 border-sea">
+          <li v-for="(item, index) in faqs" :key="item.id" class="border-b border-slate-200">
             <button
-              class="faq-question"
+              class="flex w-full items-center justify-between gap-4 py-3 text-left text-sm font-semibold text-slate-900"
               :aria-expanded="openIndex === index"
               :aria-controls="`faq-panel-${item.id}`"
               @click="toggle(index)"
             >
               <span>{{ item.question }}</span>
-              <span class="faq-chevron" :class="{ open: openIndex === index }">⌄</span>
+              <span
+                class="select-none text-base transition-transform"
+                :class="{ 'rotate-180': openIndex === index }"
+                aria-hidden="true"
+              >
+                ⌄
+              </span>
             </button>
 
             <transition name="faq">
@@ -146,10 +235,12 @@
                 v-show="openIndex === index"
                 :id="`faq-panel-${item.id}`"
                 role="region"
-                class="faq-answer-wrap"
+                class="overflow-hidden"
               >
-                <div class="faq-answer">
-                  <p v-for="(p, i) in item.answer" :key="i">{{ p }}</p>
+                <div class="pb-4 text-sm leading-relaxed text-slate-700">
+                  <p v-for="(p, i) in item.answer" :key="i" class="mb-2 last:mb-0">
+                    {{ p }}
+                  </p>
                 </div>
               </div>
             </transition>
@@ -159,15 +250,21 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="section section-cta">
-      <div class="section-inner cta-inner">
+    <section class="bg-mint/40 px-4 py-10 md:py-12">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 class="section-title">Ready to translate your license?</h2>
-          <p class="cta-text">
+          <h2 class="mb-2 text-2xl font-extrabold text-slate-900">
+            Ready to translate your license?
+          </h2>
+          <p class="max-w-xl text-sm leading-relaxed text-slate-700">
             Start your application now – it usually takes just a few minutes to upload your license and receive the translation PDF.
           </p>
         </div>
-        <a href="/app" class="hero-cta">
+
+        <a
+          href="/app"
+          class="inline-flex items-center justify-center rounded-full bg-orange px-5 py-3 text-sm font-extrabold text-slate-900 shadow-soft transition hover:opacity-95"
+        >
           Start application
         </a>
       </div>
@@ -266,169 +363,18 @@ function toggle(index: number) {
 }
 </script>
 
-<style scoped>
-.page {
-  min-height: 100vh;
-}
-
-/* Hero */
-
-.hero {
-  background: #def7d4;
-  padding: 40px 16px 60px;
-}
-
-.hero-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 32px;
-  align-items: flex-start;
-}
-
-.hero-copy {
-  padding-right: 12px;
-}
-
-.eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  color: #15803d;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  margin-bottom: 8px;
-}
-
-.hero-title {
-  font-size: 40px;
-  line-height: 1.1;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 14px;
-}
-
-.hero-subtitle {
-  font-size: 15px;
-  color: #4b5563;
-  margin-bottom: 14px;
-}
-
-.hero-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 18px;
-  color: #111827;
-  font-size: 14px;
-}
-
-.hero-list li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 6px;
-}
-
-.hero-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #16a34a;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: #facc15;
-  color: #0f172a;
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-}
-
-.hero-caption {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #6b7280;
-}
-
-/* Widget / pricing */
-
-.hero-widget {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
-  padding: 18px 18px 20px;
-}
-
-.hero-image {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.widget-title {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  color: #0f172a;
-}
-
-.plan-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.plan-item {
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  cursor: pointer;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
-}
-
-.plan-item:hover {
-  border-color: #9ca3af;
-}
-
-.plan-item.is-selected {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
+<style scoped lang="scss">
+/* --- Plan radio visual (оставляем тут, потому что псевдоэлементы удобнее в CSS) --- */
 .plan-radio {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-.plan-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 14px 14px 16px;
-  gap: 12px;
-}
-
-.plan-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .plan-radio-visual {
   width: 20px;
   height: 20px;
-  border-radius: 999px;
-  border: 2px solid #2563eb;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,8 +385,8 @@ function toggle(index: number) {
   content: '';
   width: 12px;
   height: 12px;
-  border-radius: 999px;
-  background: #2563eb;
+  border-radius: 9999px;
+  background: rgb(var(--c-sea));
   transform: scale(0);
   transition: transform 0.12s ease-in-out;
 }
@@ -449,179 +395,7 @@ function toggle(index: number) {
   transform: scale(1);
 }
 
-.plan-title {
-  font-size: 14px;
-  color: #0f172a;
-}
-
-.badge {
-  display: inline-block;
-  margin-right: 8px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #22c55e;
-  color: #022c22;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.plan-right {
-  font-size: 18px;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.plan-note {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #6b7280;
-}
-
-/* Sections */
-
-.section {
-  padding: 40px 16px 56px;
-  background: #ffffff;
-}
-
-.section-muted {
-  background: #f9fafb;
-}
-
-.section-muted-light {
-  background: #f3f4f6;
-}
-
-.section-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 18px;
-  color: #0f172a;
-}
-
-/* Who is this for */
-
-.use-cases {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-}
-
-.bullet-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  color: #4b5563;
-}
-
-.bullet-list li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 6px;
-}
-
-.bullet-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* Steps */
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.step {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px 16px 18px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-}
-
-.step-number {
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #dcfce7;
-  color: #15803d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.step-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #0f172a;
-}
-
-.step-text {
-  font-size: 14px;
-  color: #4b5563;
-}
-
-/* FAQ */
-
-.faq-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 2px solid #2563eb;
-}
-
-.faq-item {
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.faq-question {
-  width: 100%;
-  text-align: left;
-  padding: 12px 4px;
-  background: transparent;
-  border: 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.faq-chevron {
-  font-size: 16px;
-  transition: transform 0.15s ease;
-}
-
-.faq-chevron.open {
-  transform: rotate(180deg);
-}
-
-.faq-answer-wrap {
-  overflow: hidden;
-}
-
-.faq-answer {
-  padding: 6px 4px 12px;
-  font-size: 13px;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
+/* --- FAQ transition (как было, только оставляем минимально) --- */
 .faq-enter-active,
 .faq-leave-active {
   transition: all 0.15s ease;
@@ -633,52 +407,14 @@ function toggle(index: number) {
   opacity: 0;
 }
 
-/* Final CTA */
-
-.section-cta {
-  background: #def7d4;
+/* --- Responsive: просил брейкпоинт через $bp-tablet --- */
+.hero-image {
+  height: 160px;
 }
 
-.cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.cta-text {
-  font-size: 14px;
-  color: #4b5563;
-  max-width: 520px;
-}
-
-/* Responsive */
-
-@media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .use-cases {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 720px) {
-  .hero {
-    padding: 28px 14px 40px;
-  }
-  .hero-title {
-    font-size: 30px;
-  }
-  .section {
-    padding: 32px 14px 40px;
-  }
-  .steps {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .cta-inner {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: $bp-tablet) {
+  .hero-image {
+    height: 140px;
   }
 }
 </style>

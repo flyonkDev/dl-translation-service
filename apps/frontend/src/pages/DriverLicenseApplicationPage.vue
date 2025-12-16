@@ -340,10 +340,16 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
 
   try {
     verify.file.value = licenseFile.value;
-    verification = await verify.upload(licenseFile.value, {
+    await verify.upload({
       licenseCountry: vals.licenseCountry || '',
       licenseNumber: licenseNumber.value || '',
     });
+
+    const verification = verify.result.value;
+    if (!verification) {
+      verificationError.value = 'Empty verification response';
+      return;
+    }
   } catch (e) {
     // network/server error
     verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
@@ -409,9 +415,9 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
 .apply-shell {
   max-width: 1120px;
   margin: 0 auto;
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+  background: $white;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-soft;
   padding: 20px 20px 24px;
 }
 
@@ -431,28 +437,30 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  color: #6b7280;
+
+  @include text-sm;
+  color: $slate-500;
 
   .index {
     width: 24px;
     height: 24px;
     border-radius: 999px;
-    border: 1px solid #d1d5db;
+    border: 1px solid $slate-200;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 11px;
     font-weight: 700;
+    color: $slate-700;
   }
 
   &.is-active {
-    color: #111827;
+    color: $slate-900;
 
     .index {
       border-color: #2563eb;
       background: #2563eb;
-      color: #ffffff;
+      color: $white;
     }
   }
 
@@ -462,13 +470,14 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     .index {
       border-color: #16a34a;
       background: #bbf7d0;
+      color: #16a34a;
     }
   }
 }
 
 .apply-progress__bar {
   height: 4px;
-  background: #e5e7eb;
+  background: $slate-200;
   border-radius: 999px;
   overflow: hidden;
 }
@@ -488,7 +497,7 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
 
 .divider {
   height: 1px;
-  background: #e5e7eb;
+  background: $slate-200;
   margin: 18px 0 10px;
 }
 
@@ -505,52 +514,52 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
 }
 
 .summary-card {
-  border-radius: 16px;
+  border-radius: $radius-xl;
   padding: 14px 14px 16px;
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  border: 1px solid $slate-200;
 }
 
 .summary-card--secondary {
-  background: #ffffff;
+  background: $white;
 }
 
 .summary-title {
   margin: 0 0 6px;
-  font-size: 15px;
-  font-weight: 700;
+  @include title-sm;
 }
 
 .summary-small-title {
   margin: 0 0 6px;
   font-size: 14px;
+  line-height: 18px;
   font-weight: 700;
 }
 
 .summary-text {
   margin: 0 0 10px;
-  font-size: 13px;
-  color: #4b5563;
+  @include text-sm;
+  color: $slate-700;
 }
 
 .summary-price {
   font-size: 22px;
   font-weight: 800;
-  color: #0b1a33;
+  color: $slate-900;
   margin: 0 0 4px;
 }
 
 .summary-note {
   margin: 0;
-  font-size: 12px;
-  color: #6b7280;
+  @include text-xs;
+  color: $slate-500;
 }
 
 .summary-list {
   margin: 0;
   padding-left: 18px;
-  font-size: 13px;
-  color: #4b5563;
+  @include text-sm;
+  color: $slate-700;
 }
 
 .verification-result {
@@ -558,14 +567,15 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   padding: 10px 12px;
   border-radius: 12px;
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  font-size: 13px;
+  border: 1px solid $slate-200;
+  @include text-sm;
 }
 
-@media (max-width: 900px) {
+@media (max-width: calc(#{$bp-desktop} - 1px)) {
   .apply-shell {
     padding: 16px 12px 20px;
   }
+
   .apply-main {
     grid-template-columns: minmax(0, 1fr);
   }
