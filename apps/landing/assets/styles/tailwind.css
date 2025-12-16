@@ -15,6 +15,9 @@
   --color-sea: rgb(var(--c-sea) / 1);
   --color-sea-300: rgb(var(--c-sea-300) / 1);
 
+  --color-activeBlue: rgb(var(--c-active-blue) / 1);
+  --color-activeBlue-300: rgb(var(--c-active-blue-300) / 1);
+
   --color-orange: rgb(var(--c-orange) / 1);
   --color-orange-300: rgb(var(--c-orange-300) / 1);
   --color-orange-200: rgb(var(--c-orange-200) / 1);

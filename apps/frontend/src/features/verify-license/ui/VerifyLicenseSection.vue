@@ -1,18 +1,22 @@
 <template>
-  <section>
-    <h2 class="section-title">Verify your driver’s license</h2>
-    <p class="section-subtitle">
+  <section class="verify">
+    <h2 class="section-title mb-1 text-base font-bold text-slate-900">
+      Verify your driver’s license
+    </h2>
+
+    <p class="section-subtitle mb-2 text-[13px] leading-relaxed text-slate-500">
       We run an automatic check on your uploaded license. We generate a translation PDF
       based on your real license data.
     </p>
 
-    <p class="small-muted">
+    <p class="small-muted mb-3 text-xs leading-relaxed text-slate-500">
       By providing your signature you confirm that you understand this is a translation document
       and not a replacement of your license.
     </p>
 
-    <div class="grid grid--2 grid--rows">
+    <div class="verify__grid grid grid--2 grid--rows mb-3 gap-4">
       <BaseFile
+        class="verify__headshot"
         label="Headshot (passport-style photo)"
         required
         accept="image/*"
@@ -21,19 +25,22 @@
         :error="headshotError"
       />
 
-      <div class="stack">
+      <div class="stack flex flex-col">
         <BaseInput
           id="licenseNumber"
+          class="verify__license-number"
           label="Driver’s license number (optional)"
           :model-value="licenseNumber"
           @update:model-value="emit('update:licenseNumber', $event)"
         />
-        <p class="hint small">
+
+        <p class="hint small mt-1.5 text-xs text-slate-500/80">
           If OCR can’t recognize the number, you can enter it manually.
         </p>
       </div>
 
       <BaseFile
+        class="verify__license-file"
         label="Driver’s license scan"
         required
         accept="image/*,.pdf"
@@ -44,7 +51,7 @@
       />
     </div>
 
-    <div class="signature">
+    <div class="signature verify__signature mt-1 flex flex-col items-start">
       <SignaturePad
         :model-value="signatureDataUrl"
         @update:model-value="emit('update:signatureDataUrl', $event)"
@@ -59,17 +66,22 @@
       </SignaturePad>
     </div>
 
-    <div v-if="verificationResult" class="verification-result">
-      <p>
+    <div
+      v-if="verificationResult"
+      class="verification-result verify__result mt-3 rounded-xl border border-slate-200 bg-white p-3 text-[13px] text-slate-900"
+    >
+      <p class="m-0">
         Status:
-        <strong>{{ verificationResult.status }}</strong>
+        <strong class="font-extrabold">{{ verificationResult.status }}</strong>
       </p>
-      <p v-if="statusLabel">
+
+      <p v-if="statusLabel" class="mt-1">
         {{ statusLabel }}
       </p>
-      <div v-if="verificationResult.hints?.length">
-        <p>Hints:</p>
-        <ul>
+
+      <div v-if="verificationResult.hints?.length" class="mt-2">
+        <p class="m-0 font-semibold">Hints:</p>
+        <ul class="mt-1 list-disc pl-5 text-slate-700">
           <li v-for="hint in verificationResult.hints" :key="hint">
             {{ hint }}
           </li>
@@ -77,21 +89,23 @@
       </div>
     </div>
 
-    <p v-if="verificationError" class="app-error">
+    <p v-if="verificationError" class="app-error mt-1.5 text-xs text-[#c0392b]">
       {{ verificationError }}
     </p>
 
-    <label class="terms">
+    <label class="terms mt-2 flex items-center gap-2 text-xs text-slate-900">
       <input
+        class="terms__checkbox accent-activeBlue"
         type="checkbox"
         :checked="termsAccepted"
         @change="emit('update:termsAccepted', ($event.target as HTMLInputElement).checked)"
       />
-      <span>
+      <span class="terms__text">
         I understand that this is a translation PDF and not an official license.
       </span>
     </label>
-    <p v-if="showErrors && !termsAccepted" class="app-error">
+
+    <p v-if="showErrors && !termsAccepted" class="app-error mt-1.5 text-xs text-[#c0392b]">
       You must accept the terms
     </p>
   </section>
@@ -147,82 +161,15 @@ const statusLabel = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.section-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 10px 0 4px;
-}
-
-.section-subtitle {
-  font-size: 13px;
-  color: #6b7280;
-  margin: 0 0 8px;
-}
-
-.small-muted {
-  font-size: 12px;
-  color: #6b7280;
-  margin: 0 0 10px;
-}
-
-.grid {
+.verify__grid {
   display: grid;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.grid--2 {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-}
-
-.grid--rows {
   column-gap: 18px;
   row-gap: 16px;
 }
 
-.stack {
-  display: flex;
-  flex-direction: column;
-}
-
-.hint.small {
-  margin-top: 6px;
-  font-size: 12px;
-  color: #8b929d;
-}
-
-.signature {
-  margin-top: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.app-error {
-  margin: 6px 0 0;
-  font-size: 12px;
-  color: #c0392b;
-}
-
-.terms {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  font-size: 12px;
-}
-
-.verification-result {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  font-size: 13px;
-}
-
-@media (max-width: 720px) {
-  .grid--2 {
+@media (max-width: $bp-tablet) {
+  .verify__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }

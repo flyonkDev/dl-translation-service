@@ -5,6 +5,9 @@ $mint: #CBF3F0;
 $sea: #2EC4B6;
 $orange: #FF9F1C;
 
+$activeBlue: #2563eb;
+$activeBlue-300: color.scale($activeBlue, $lightness: 18%);
+
 $slate-900: #111827;
 $slate-700: #374151;
 $slate-500: #6B7280;

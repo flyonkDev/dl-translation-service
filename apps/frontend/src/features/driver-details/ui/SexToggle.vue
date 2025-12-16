@@ -1,10 +1,14 @@
 <template>
-  <div class="sex">
-    <div class="sex__control" role="radiogroup" aria-label="Sex">
+  <div class="inline-flex flex-col items-start gap-1.5">
+    <div
+      class="inline-flex h-[42px] items-stretch rounded-xl border border-slate-200 bg-white shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+      role="radiogroup"
+      aria-label="Sex"
+    >
       <button
         type="button"
-        class="sex__btn"
-        :class="{ 'is-active': modelValue === 'male' }"
+        class="sex-btn"
+        :class="modelValue === 'male' ? 'bg-activeBlue text-white' : 'bg-transparent text-slate-700'"
         role="radio"
         :aria-checked="modelValue === 'male'"
         :disabled="disabled"
@@ -15,8 +19,8 @@
 
       <button
         type="button"
-        class="sex__btn"
-        :class="{ 'is-active': modelValue === 'female' }"
+        class="sex-btn"
+        :class="modelValue === 'female' ? 'bg-activeBlue text-white' : 'bg-transparent text-slate-700'"
         role="radio"
         :aria-checked="modelValue === 'female'"
         :disabled="disabled"
@@ -26,7 +30,9 @@
       </button>
     </div>
 
-    <p v-if="error" class="sex__error">{{ error }}</p>
+    <p v-if="error" class="m-0 text-xs text-[#c0392b]">
+      {{ error }}
+    </p>
   </div>
 </template>
 
@@ -55,54 +61,28 @@ function select(v: Sex) {
 </script>
 
 <style scoped lang="scss">
-.sex {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-}
-
-.sex__control {
-  height: 42px;
-  display: inline-flex;
-  align-items: stretch;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
-}
-
-.sex__btn {
+.sex-btn {
   border: 0;
-  background: transparent;
-  padding: 8px 18px;
-  border-radius: 10px;
   cursor: pointer;
+
+  padding: 8px 18px;
+  min-width: 110px;
+  border-radius: 10px;
+
   font-size: 13px;
   font-weight: 700;
-  color: #374151;
   line-height: 1;
-  min-width: 110px;
+
   transition: background 0.15s ease, color 0.15s ease, transform 0.06s ease;
 }
 
-.sex__btn:hover {
+.sex-btn:hover {
   transform: translateY(-1px);
 }
 
-.sex__btn.is-active {
-  background: #2563eb;
-  color: #ffffff;
-}
-
-.sex__btn:disabled {
+.sex-btn:disabled {
   cursor: not-allowed;
   opacity: 0.55;
-}
-
-.sex__error {
-  margin: 0;
-  font-size: 12px;
-  color: #c0392b;
+  transform: none;
 }
 </style>

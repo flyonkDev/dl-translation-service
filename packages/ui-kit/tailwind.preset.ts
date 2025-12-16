@@ -18,6 +18,11 @@ export default {
           200: 'rgb(var(--c-orange-200) / <alpha-value>)',
         },
 
+        activeBlue: {
+          DEFAULT: 'rgb(var(--c-active-blue) / <alpha-value>)',
+          300: 'rgb(var(--c-active-blue-300) / <alpha-value>)',
+        },
+
         slate: {
           900: 'rgb(var(--c-slate-900) / <alpha-value>)',
           700: 'rgb(var(--c-slate-700) / <alpha-value>)',

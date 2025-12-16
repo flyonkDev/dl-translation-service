@@ -1,13 +1,16 @@
 <template>
-  <section>
-    <h1 class="page-title">Driver details</h1>
-    <p class="page-subtitle">
+  <section class="driver-details-form">
+    <h1 class="text-lg mb-4 font-extrabold text-slate-900">
+      Driver details
+    </h1>
+
+    <p class="mb-4 text-sm leading-relaxed text-slate-500">
       Please enter the exact data shown on your driver’s license.
       All required fields must be filled so we can generate a correct translation
       and run basic verification on your document.
     </p>
 
-    <div class="grid grid--2">
+    <div class="form-grid form-grid--2 mb-3 gap-4">
       <BaseInput
         id="email"
         label="Email"
@@ -28,7 +31,7 @@
       />
     </div>
 
-    <div class="grid grid--2">
+    <div class="form-grid form-grid--2 mb-3 gap-4">
       <BaseInput
         id="firstName"
         label="First name"
@@ -49,7 +52,7 @@
       />
     </div>
 
-    <div class="grid grid--1">
+    <div class="mb-3 grid grid-cols-1 gap-4">
       <BaseSelect
         id="licenseCountry"
         label="Where was your license issued?"
@@ -62,9 +65,12 @@
       />
     </div>
 
-    <div class="fieldset">
-      <div class="legend">Date of birth</div>
-      <div class="grid grid--3">
+    <div class="mb-3">
+      <div class="mb-1 text-[13px] font-bold text-slate-900">
+        Date of birth
+      </div>
+
+      <div class="form-grid form-grid--3 gap-3">
         <BaseSelect
           id="dobDay"
           label="Day"
@@ -98,8 +104,11 @@
       </div>
     </div>
 
-    <div class="fieldset">
-      <div class="legend">Sex</div>
+    <div class="mt-2">
+      <div class="mb-1 text-[13px] font-bold text-slate-900">
+        Sex
+      </div>
+
       <SexToggle
         :model-value="sex"
         @update:model-value="emit('update:sex', $event)"
@@ -168,51 +177,22 @@ const emit = defineEmits<{
 </script>
 
 <style scoped lang="scss">
-.page-title {
-  font-size: 20px;
-  font-weight: 800;
-  margin: 0 0 4px;
-}
-
-.page-subtitle {
-  margin: 0 0 16px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.grid {
+.form-grid {
   display: grid;
-  gap: 16px;
-  margin-bottom: 14px;
-}
-
-.grid--1 {
   grid-template-columns: minmax(0, 1fr);
 }
 
-.grid--2 {
+.form-grid--2 {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
-.grid--3 {
+.form-grid--3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
 }
 
-.fieldset {
-  margin: 10px 0 12px;
-}
-
-.legend {
-  font-weight: 700;
-  font-size: 13px;
-  margin-bottom: 6px;
-  color: #0b1a33;
-}
-
-@media (max-width: 720px) {
-  .grid--2,
-  .grid--3 {
+@media (max-width: $bp-tablet) {
+  .form-grid--2,
+  .form-grid--3 {
     grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -6,13 +6,26 @@
 
 @theme {
   --color-mint: rgb(var(--c-mint) / 1);
-  --color-sea: rgb(var(--c-sea) / 1);
-  --color-orange: rgb(var(--c-orange) / 1);
+  --color-mint-300: rgb(var(--c-mint-300) / 1);
 
+  --color-sea: rgb(var(--c-sea) / 1);
+  --color-sea-300: rgb(var(--c-sea-300) / 1);
+
+  --color-activeBlue: rgb(var(--c-active-blue) / 1);
+  --color-activeBlue-300: rgb(var(--c-active-blue-300) / 1);
+
+  --color-orange: rgb(var(--c-orange) / 1);
   --color-orange-300: rgb(var(--c-orange-300) / 1);
+  --color-orange-200: rgb(var(--c-orange-200) / 1);
 
   --color-slate-900: rgb(var(--c-slate-900) / 1);
   --color-slate-700: rgb(var(--c-slate-700) / 1);
   --color-slate-500: rgb(var(--c-slate-500) / 1);
   --color-slate-200: rgb(var(--c-slate-200) / 1);
+
+  --color-white: rgb(var(--c-white) / 1);
+
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --shadow-soft: var(--shadow-soft);
 }
