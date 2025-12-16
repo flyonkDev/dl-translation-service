@@ -1,6 +1,5 @@
 <template>
   <header>
-    <div class="upper-header">15 minute urgent processing now available all nationalities eligible</div>
     <div class="bottom-header">
       <h4>TUTLOGO</h4>
       <ul class="header-links">
@@ -18,11 +17,6 @@
 </script>
 
 <style scoped lang="scss">
-.upper-header {
-  background: rgb(9, 168, 114);
-  padding: 5px;
-  text-align: center;
-}
 
 .bottom-header {
   display: flex;
