@@ -11,9 +11,9 @@
           <a href="#pricing" class="nav-link">Pricing</a>
         </nav>
 
-        <a href="/app" class="nav-cta">
-          Start application
-        </a>
+        <BaseButton type="submit" variant="primary">
+          <span class="font-bold">Start application</span>
+        </BaseButton>
       </div>
     </header>
 
@@ -26,7 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import AppFooter from '~/components/SiteFooter.vue'
+import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
+import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 </script>
 
 <style scoped>

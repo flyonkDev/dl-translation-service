@@ -4,7 +4,10 @@
 @source "../../pages/**/*.{vue,js,ts}";
 @source "../../components/**/*.{vue,js,ts}";
 @source "../../layouts/**/*.{vue,js,ts}";
-@source "../../../packages/ui-kit/**/*.{vue,js,ts,scss}";
+
+/* ui-kit */
+@source "../../../../packages/ui-kit/components/**/*.{vue,js,ts}";
+@source "../../../../packages/ui-kit/**/*.{vue,js,ts,scss}";
 
 @source "../../**/*.{vue,js,ts}";
 

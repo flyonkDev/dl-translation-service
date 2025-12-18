@@ -1,6 +1,6 @@
 <template>
   <section class="driver-details-form">
-    <h1 class="text-lg mb-4 font-extrabold text-slate-900">
+    <h1 class="text-4xl mb-4 font-extrabold text-slate-900">
       Driver details
     </h1>
 
@@ -119,8 +119,8 @@
 </template>
 
 <script setup lang="ts">
-import BaseInput from '@/shared/ui/inputs/BaseInput.vue';
-import BaseSelect from '@/shared/ui/inputs/BaseSelect.vue';
+import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
+import BaseSelect from '@ui-kit/components/inputs/BaseSelect.vue';
 import SexToggle from './SexToggle.vue';
 import type { Sex } from '@/entities/driver-application';
 

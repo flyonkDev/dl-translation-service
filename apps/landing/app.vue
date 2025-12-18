@@ -1,15 +1,17 @@
 <!-- apps/landing/app.vue -->
 <template>
   <div class="app-shell">
-    <SiteHeader />
+    <AppHeader :show-start-button="true" start-as="a" start-href="/apply" />
     <main class="app-main">
       <NuxtPage />
     </main>
-    <SiteFooter />
+    <AppFooter />
   </div>
 </template>
 
 <script setup lang="ts">
+import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
+import AppHeader from "@ui-kit/components/layout/AppHeader.vue";
 </script>
 
 <style scoped>

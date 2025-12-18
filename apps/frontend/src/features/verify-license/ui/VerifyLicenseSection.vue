@@ -113,8 +113,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import BaseFile from '@/shared/ui/inputs/BaseFile.vue';
-import BaseInput from '@/shared/ui/inputs/BaseInput.vue';
+import BaseFile from '@ui-kit/components/inputs/BaseFile.vue';
+import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
 import SignaturePad from '@/shared/ui/inputs/SignaturePad.vue';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 

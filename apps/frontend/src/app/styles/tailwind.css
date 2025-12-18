@@ -2,7 +2,7 @@
 
 @source "../../../index.html";
 @source "../../../src/**/*.{vue,js,ts}";
-@source "../../../../packages/ui-kit/**/*.{vue,js,ts,scss}";
+@source "../../../../../packages/ui-kit/components/**/*.{vue,js,ts}";
 
 @theme {
   --color-mint: rgb(var(--c-mint) / 1);
@@ -24,8 +24,4 @@
   --color-slate-200: rgb(var(--c-slate-200) / 1);
 
   --color-white: rgb(var(--c-white) / 1);
-
-  --radius-xl: var(--radius-xl);
-  --radius-2xl: var(--radius-2xl);
-  --shadow-soft: var(--shadow-soft);
 }

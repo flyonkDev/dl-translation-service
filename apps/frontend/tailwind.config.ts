@@ -1,6 +1,11 @@
-const preset = require('../../packages/ui-kit/tailwind-preset.cjs');
+// import type { Config } from 'tailwindcss';
+// import preset from '../../packages/ui-kit/tailwind.preset';
 
-module.exports = {
-	presets: [preset],
-	content: ['./index.html', './src/**/*.{vue,ts,js}'],
-};
+// export default {
+// 	presets: [preset],
+// 	content: [
+// 		'./index.html',
+// 		'./src/**/*.{vue,ts,js}',
+// 		'../../packages/ui-kit/components/**/*.{vue,ts,js}',
+// 	],
+// } satisfies Config;

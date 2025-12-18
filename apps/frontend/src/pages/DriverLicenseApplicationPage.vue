@@ -133,7 +133,7 @@ import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import { toTypedSchema } from '@vee-validate/zod';
 
-import BaseButton from '@/shared/ui/buttons/BaseButton.vue';
+import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
 import DriverDetailsForm, {
   type DriverDetailsFormErrors,
@@ -407,7 +407,6 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
 
 <style scoped lang="scss">
 .apply-page {
-  min-height: 100vh;
   background: #f3f4f6;
   padding: 24px 16px 40px;
 }

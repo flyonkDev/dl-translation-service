@@ -10,6 +10,7 @@ export default defineNuxtConfig({
 	components: true,
 
 	css: [
+		'flag-icons/css/flag-icons.min.css',
 		'@ui-kit/css-vars.scss',
 		'~/assets/styles/tailwind.css',
 		'~/assets/styles/theme.scss',
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
 		},
 
 		server: {
-			fs: { allow: [repoRoot] },
+			fs: { allow: [repoRoot, '../..', '../../..', '../../../..', '../../../../..'] },
 		},
 
 		css: {

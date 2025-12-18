@@ -37,12 +37,9 @@
             </li>
           </ul>
 
-          <a
-            href="/app"
-            class="inline-flex items-center justify-center rounded-full bg-orange px-5 py-3 text-sm font-extrabold text-slate-900 shadow-soft transition hover:opacity-95"
-          >
-            Start application
-          </a>
+          <BaseButton type="submit" variant="primary">
+            <span class="font-bold">Start application</span>
+          </BaseButton>
 
           <p class="mt-2 text-xs text-slate-500">
             From <strong class="font-semibold text-slate-900">${{ plans[2].price }}</strong> per document. No subscriptions.
@@ -261,12 +258,9 @@
           </p>
         </div>
 
-        <a
-          href="/app"
-          class="inline-flex items-center justify-center rounded-full bg-orange px-5 py-3 text-sm font-extrabold text-slate-900 shadow-soft transition hover:opacity-95"
-        >
-          Start application
-        </a>
+        <BaseButton type="submit" variant="primary">
+          <span class="font-bold">Start application</span>
+        </BaseButton>
       </div>
     </section>
   </div>
@@ -275,6 +269,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useHead } from '#imports'
+import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
 interface Plan {
   id: number
