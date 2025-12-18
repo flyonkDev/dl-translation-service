@@ -1,7 +1,7 @@
 <!-- apps/landing/app.vue -->
 <template>
   <div class="app-shell">
-    <AppHeader :show-start-button="true" start-as="a" start-href="/apply" />
+    <AppHeader :show-start-button="false" start-as="a" start-href="/apply" />
     <main class="app-main">
       <NuxtPage />
     </main>

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <!-- Hero + plans -->
+    <!-- Hero + widget -->
     <section class="bg-mint/40 px-4 py-10 md:py-14">
       <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-start">
         <div class="lg:pr-3">
@@ -37,75 +37,25 @@
             </li>
           </ul>
 
-          <BaseButton type="submit" variant="primary">
-            <span class="font-bold">Start application</span>
-          </BaseButton>
+          <a
+            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4 hover:decoration-sea"
+          >
+            See pricing
+            <span aria-hidden="true">→</span>
+          </a>
 
-          <p class="mt-2 text-xs text-slate-500">
-            From <strong class="font-semibold text-slate-900">${{ plans[2].price }}</strong> per document. No subscriptions.
+          <p class="mt-3 text-xs text-slate-500">
+            From <strong class="font-semibold text-slate-900">${{ fromPrice }}</strong> per document. No subscriptions.
           </p>
         </div>
 
-        <!-- Widget -->
-        <div id="pricing" class="rounded-2xl bg-white p-5 shadow-soft">
-          <img
-            class="hero-image mb-3 w-full object-contain"
-            src="/widget2.jpg"
-            alt="Driver license translation PDF preview"
-          />
-
-          <h2 class="mb-3 text-sm font-extrabold text-slate-900">
-            Choose your translation package
-          </h2>
-
-          <ul class="space-y-2" role="radiogroup" aria-label="Translation plan">
-            <li
-              v-for="plan in plans"
-              :key="plan.id"
-              class="plan-item rounded-xl border bg-white transition"
-              :class="[
-                selectedPlanId === plan.id
-                  ? 'is-selected border-sea ring-4 ring-sea/15'
-                  : 'border-slate-200 hover:border-slate-500/40'
-              ]"
-              @click="selectedPlanId = plan.id"
-            >
-              <input
-                class="plan-radio"
-                type="radio"
-                :id="`plan-${plan.id}`"
-                name="plan"
-                :value="plan.id"
-                v-model="selectedPlanId"
-              />
-
-              <label :for="`plan-${plan.id}`" class="flex cursor-pointer items-center justify-between gap-3 px-4 py-3">
-                <div class="flex items-center gap-3">
-                  <span class="plan-radio-visual border-2 border-sea" aria-hidden="true"></span>
-
-                  <span class="text-sm font-semibold text-slate-900">
-                    <span
-                      v-if="plan.recommended"
-                      class="mr-2 inline-flex items-center rounded-full bg-sea px-2 py-0.5 text-[11px] font-extrabold text-white"
-                    >
-                      Most popular
-                    </span>
-                    {{ plan.label }}
-                  </span>
-                </div>
-
-                <div class="text-lg font-extrabold text-slate-900">
-                  ${{ plan.price }}
-                </div>
-              </label>
-            </li>
-          </ul>
-
-          <p class="mt-3 text-xs leading-relaxed text-slate-500">
-            One-time payment per document.
-            You’ll be able to download your translation PDF immediately after payment.
-          </p>
-        </div>
+        <StartApplicationWidget
+          id="pricing"
+          v-model:issueCountry="issueCountry"
+          v-model:planYears="planYears"
+          :app-url="appUrl"
+          cta-label="Get PDF in 2 minutes"
+        />
       </div>
     </section>
 
@@ -218,6 +168,7 @@
               @click="toggle(index)"
             >
               <span>{{ item.question }}</span>
+
               <span
                 class="select-none text-base transition-transform"
                 :class="{ 'rotate-180': openIndex === index }"
@@ -254,12 +205,12 @@
             Ready to translate your license?
           </h2>
           <p class="max-w-xl text-sm leading-relaxed text-slate-700">
-            Start your application now – it usually takes just a few minutes to upload your license and receive the translation PDF.
+            Choose your plan and start in minutes.
           </p>
         </div>
 
-        <BaseButton type="submit" variant="primary">
-          <span class="font-bold">Start application</span>
+        <BaseButton type="button" variant="primary" @click="scrollToPricing">
+          <span class="font-bold">Choose plan</span>
         </BaseButton>
       </div>
     </section>
@@ -269,20 +220,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useHead } from '#imports'
-import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+import { useRuntimeConfig } from '#imports'
 
-interface Plan {
-  id: number
-  label: string
-  price: number
-  recommended?: boolean
-}
+import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
+import StartApplicationWidget from '~/components/widgets/StartApplicationWidget.vue'
+import { LANDING_FAQS } from '~/content/faqs'
+import { useStartApplication } from '~/composables/useStartApplication'
 
-interface FaqItem {
-  id: number
-  question: string
-  answer: string[]
-}
+const config = useRuntimeConfig()
+const appUrl = computed(() => String(config.public.appUrl || '').trim())
+
+const { issueCountry, planYears, fromPrice, scrollToPricing } = useStartApplication(appUrl)
 
 useHead({
   title: 'Driver License Translation PDF — DL Translate',
@@ -295,61 +243,7 @@ useHead({
   ],
 })
 
-const plans = ref<Plan[]>([
-  { id: 1, label: 'Translation to 10 languages', price: 39, recommended: true },
-  { id: 2, label: 'Translation to 3 languages', price: 25 },
-  { id: 3, label: 'Translation to 1 language', price: 15 },
-])
-
-const selectedPlanId = ref<number>(plans.value[0]?.id ?? 1)
-
-const selectedPlan = computed<Plan | undefined>(() =>
-  plans.value.find((p) => p.id === selectedPlanId.value),
-)
-
-// FAQ content adapted to “translation” concept
-const faqs = ref<FaqItem[]>([
-  {
-    id: 1,
-    question: 'Is this an official driver’s license?',
-    answer: [
-      'No. We do not issue or replace any official driver’s licenses.',
-      'We provide a translated PDF that explains your national driver’s license in several languages. It must always be used together with your original license.',
-    ],
-  },
-  {
-    id: 2,
-    question: 'In which situations is a translation PDF helpful?',
-    answer: [
-      'When renting a car abroad in a non-English speaking country.',
-      'When communicating with local authorities who may not read your original license language.',
-    ],
-  },
-  {
-    id: 3,
-    question: 'What do I need to apply?',
-    answer: [
-      'A valid national driver’s license and a clear photo/scan of it.',
-      'Optionally, a passport-style photo if you want it to be shown on the PDF.',
-    ],
-  },
-  {
-    id: 4,
-    question: 'How fast will I receive my document?',
-    answer: [
-      'For the MVP we focus on digital delivery: you receive a download link and a copy by email shortly after payment.',
-      'Later we may add printed booklet and card options.',
-    ],
-  },
-  {
-    id: 5,
-    question: 'Is my data stored securely?',
-    answer: [
-      'We only use your data to generate the translation PDF.',
-      'In production we will add clear privacy policy, data retention rules and the option to delete your document.',
-    ],
-  },
-])
+const faqs = LANDING_FAQS
 
 const openIndex = ref<number>(0)
 
@@ -359,38 +253,6 @@ function toggle(index: number) {
 </script>
 
 <style scoped lang="scss">
-/* --- Plan radio visual (оставляем тут, потому что псевдоэлементы удобнее в CSS) --- */
-.plan-radio {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.plan-radio-visual {
-  width: 20px;
-  height: 20px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.plan-radio-visual::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  border-radius: 9999px;
-  background: rgb(var(--c-sea));
-  transform: scale(0);
-  transition: transform 0.12s ease-in-out;
-}
-
-.plan-item.is-selected .plan-radio-visual::after {
-  transform: scale(1);
-}
-
-/* --- FAQ transition (как было, только оставляем минимально) --- */
 .faq-enter-active,
 .faq-leave-active {
   transition: all 0.15s ease;
@@ -400,16 +262,5 @@ function toggle(index: number) {
 .faq-leave-to {
   max-height: 0;
   opacity: 0;
-}
-
-/* --- Responsive: просил брейкпоинт через $bp-tablet --- */
-.hero-image {
-  height: 160px;
-}
-
-@media (max-width: $bp-tablet) {
-  .hero-image {
-    height: 140px;
-  }
 }
 </style>

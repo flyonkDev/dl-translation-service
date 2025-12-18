@@ -9,6 +9,12 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	components: true,
 
+	runtimeConfig: {
+		public: {
+			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
+		},
+	},
+
 	css: [
 		'flag-icons/css/flag-icons.min.css',
 		'@ui-kit/css-vars.scss',

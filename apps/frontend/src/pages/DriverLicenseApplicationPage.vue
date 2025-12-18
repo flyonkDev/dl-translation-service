@@ -132,6 +132,7 @@ import { computed, ref } from 'vue';
 import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import { toTypedSchema } from '@vee-validate/zod';
+import { useRoute } from 'vue-router'
 
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
@@ -146,6 +147,8 @@ import type { PlanYears, Sex } from '@/entities/driver-application';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
 
+
+const route = useRoute()
 const store = useDriverApplicationStore();
 const verify = useUploadLicense();
 
@@ -155,7 +158,18 @@ const currentStep = ref<StepId>(1);
 const selectedYears = computed<PlanYears>({
   get: () => store.selectedYears,
   set: (v) => store.setSelectedYears(v),
-});
+})
+
+function toPlanYears(v: unknown): PlanYears | null {
+  const n = Number(Array.isArray(v) ? v[0] : v)
+  return n === 1 || n === 2 || n === 3 ? (n as PlanYears) : null
+}
+
+const planFromQuery = toPlanYears(route.query.planYears)
+if (planFromQuery) {
+  store.setSelectedYears(planFromQuery)
+}
+
 
 const storedVerification = computed(() => store.verify?.verification ?? null);
 
