@@ -15,6 +15,15 @@ export default defineNuxtConfig({
 		},
 	},
 
+	nitro: {
+		devProxy: {
+			'/api': {
+				target: 'http://localhost:3001/api',
+				changeOrigin: true,
+			},
+		},
+	},
+
 	css: [
 		'flag-icons/css/flag-icons.min.css',
 		'@ui-kit/css-vars.scss',

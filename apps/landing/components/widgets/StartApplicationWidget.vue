@@ -12,6 +12,25 @@
       </p>
     </div>
 
+    <!-- Error banner (temporary / useful for MVP) -->
+    <div
+      v-if="countriesHasError || plansHasError"
+      class="mb-4 rounded-xl bg-red-50 px-4 py-3 text-xs text-red-700"
+    >
+      <div class="font-bold">Failed to load data.</div>
+      <div class="mt-1 opacity-80">
+        Countries error: {{ countriesHasError ? 'yes' : 'no' }},
+        Plans error: {{ plansHasError ? 'yes' : 'no' }}.
+      </div>
+      <button
+        type="button"
+        class="mt-2 underline"
+        @click="retry"
+      >
+        Retry
+      </button>
+    </div>
+
     <!-- Country -->
     <div class="mb-4">
       <label class="mb-2 block text-xs font-bold text-slate-900">
@@ -20,16 +39,17 @@
 
       <div class="relative">
         <select
-          class="h-11 w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 pr-10 text-[13px] text-slate-900 outline-none transition focus:border-activeBlue focus:ring-4 focus:ring-activeBlue/10"
+          class="h-11 w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 pr-10 text-[13px] text-slate-900 outline-none transition focus:border-activeBlue focus:ring-4 focus:ring-activeBlue/10 disabled:opacity-60"
           :value="issueCountry"
+          :disabled="isLoading"
           @change="onCountryChange($event)"
         >
           <option disabled value="">
-            Select a country
+            {{ isLoading ? 'Loading...' : 'Select a country' }}
           </option>
 
-          <option v-for="c in countries" :key="c.code" :value="c.code">
-            {{ c.flag }} {{ c.name }}
+          <option v-for="c in uiCountries" :key="c.code" :value="c.code">
+            {{ c.code }} {{ c.name }}
           </option>
         </select>
 
@@ -48,17 +68,22 @@
         Choose duration
       </div>
 
-      <div class="grid grid-cols-1 gap-2.5 md:grid-cols-3" role="tablist" aria-label="Plan duration">
+      <div
+        class="grid grid-cols-1 gap-2.5 md:grid-cols-3"
+        role="tablist"
+        aria-label="Plan duration"
+      >
         <button
-          v-for="p in plans"
+          v-for="p in uiPlans"
           :key="p.years"
           type="button"
-          class="min-h-20 rounded-xl border bg-white p-3 text-left transition hover:-translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-activeBlue/10"
+          class="min-h-20 rounded-xl border bg-white p-3 text-left transition hover:-translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-activeBlue/10 disabled:opacity-60 disabled:hover:translate-y-0"
           :class="planYears === p.years
             ? 'border-activeBlue ring-4 ring-activeBlue/10'
             : 'border-slate-200 hover:border-slate-500/40'"
           role="tab"
           :aria-selected="planYears === p.years"
+          :disabled="isLoading"
           @click="emit('update:planYears', p.years)"
         >
           <div class="mb-2 flex items-center justify-between gap-2">
@@ -80,7 +105,7 @@
             </span>
 
             <span class="text-lg font-extrabold text-slate-900">
-              ${{ p.price }}
+              {{ formatUsd(p.priceCents) }}
             </span>
           </div>
         </button>
@@ -130,14 +155,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
-
-export type PlanYears = 1 | 2 | 3
-
-type Country = {
-  code: string
-  name: string
-  flag: string
-}
+import { useCountries } from '~/composables/useCountries'
+import { usePricing } from '~/composables/usePricing'
+import type { PlanYears } from '~/types/reference'
 
 const props = defineProps<{
   issueCountry: string
@@ -151,27 +171,42 @@ const emit = defineEmits<{
   (e: 'update:planYears', v: PlanYears): void
 }>()
 
-const countries: Country[] = [
-  { code: 'VN', name: 'Vietnam', flag: '🇻🇳' },
-  { code: 'GE', name: 'Georgia', flag: '🇬🇪' },
-  { code: 'ZA', name: 'South Africa', flag: '🇿🇦' },
-  { code: 'AR', name: 'Argentina', flag: '🇦🇷' },
-]
+const {
+  data: countries,
+  pending: countriesPending,
+  error: countriesError,
+  refresh: refreshCountries,
+} = useCountries()
 
-const plans: Array<{
-  years: PlanYears
-  title: string
-  sub: string
-  price: number
-  badge?: string
-}> = [
-  { years: 3, title: '3 years', sub: 'Best value', price: 39, badge: 'Recommended' },
-  { years: 2, title: '2 years', sub: 'Extended access', price: 29 },
-  { years: 1, title: '1 year', sub: 'Basic', price: 19 },
-]
+const {
+  data: plans,
+  pending: plansPending,
+  error: plansError,
+  refresh: refreshPlans,
+} = usePricing()
 
-const canStart = computed(() => Boolean(props.issueCountry))
+const isLoading = computed(() => countriesPending.value || plansPending.value)
 
+const countriesHasError = computed(() => Boolean(countriesError.value))
+const plansHasError = computed(() => Boolean(plansError.value))
+
+
+// Use API data directly
+const uiCountries = computed(() => countries.value)
+const uiPlans = computed(() => plans.value)
+
+
+function retry() {
+  refreshCountries()
+  refreshPlans()
+}
+
+function formatUsd(cents: number) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+    .format(cents / 100)
+}
+
+const canStart = computed(() => Boolean(props.issueCountry) && !isLoading.value)
 const ctaText = computed(() => props.ctaLabel?.trim() || 'Get PDF in 2 minutes')
 
 function normalizeBaseUrl(v: string) {
