@@ -56,7 +56,10 @@
               :verification-error="verificationError"
             />
 
-            <PlanYearsSelector v-model="selectedYears" />
+            <PlanYearsSelector
+              v-model="selectedYears"
+              :options="planOptions"
+            />
 
             <div class="section-footer">
               <BaseButton type="submit" variant="primary" :loading="isVerifying">
@@ -103,13 +106,17 @@
               license. Ready to print or show on your phone.
             </p>
 
-            <p class="summary-price">$39</p>
+            <p class="summary-price">
+              {{ selectedPlan ? formatUsd(selectedPlan.priceCents, selectedPlan.currency) : '—' }}
+            </p>
+
             <p class="summary-note">
               One-time payment per document. Immediate digital delivery after verification and payment.
             </p>
 
             <p class="summary-note" style="margin-top: 10px;">
-              Selected plan: <strong>{{ selectedYears }}</strong> year(s)
+              Selected plan:
+              <strong>{{ selectedYears }}</strong> year(s)
             </p>
           </div>
 
@@ -128,7 +135,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import { toTypedSchema } from '@vee-validate/zod';
@@ -138,6 +145,7 @@ import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
 import DriverDetailsForm, {
   type DriverDetailsFormErrors,
+  type SelectOption,
 } from '@/features/driver-details/ui/DriverDetailsForm.vue';
 import PlanYearsSelector from '@/features/plan-years/ui/PlanYearsSelector.vue';
 import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSection.vue';
@@ -147,6 +155,7 @@ import type { PlanYears, Sex } from '@/entities/driver-application';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
 
+import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
 
 const route = useRoute()
 const store = useDriverApplicationStore();
@@ -170,6 +179,53 @@ if (planFromQuery) {
   store.setSelectedYears(planFromQuery)
 }
 
+const countries = ref<CountryDTO[]>([])
+const pricing = ref<PricingPlanDTO[]>([])
+const refLoading = ref(true)
+const refError = ref<string | null>(null)
+
+onMounted(async () => {
+  refLoading.value = true
+  refError.value = null
+
+  try {
+    const [c, p] = await Promise.all([fetchCountries(), fetchPricing()])
+    countries.value = c.items
+    pricing.value = p.items
+  } catch (e) {
+    refError.value = 'Failed to load reference data'
+  } finally {
+    refLoading.value = false
+  }
+})
+
+const countryOptions = computed<SelectOption[]>(() => {
+  return countries.value
+    .slice()
+    .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
+    .map((c) => ({
+      value: c.code,          
+      label: `${c.code} ${c.name}`,
+    }))
+})
+
+const planOptions = computed(() => {
+  return pricing.value
+    .slice()
+    .sort((a, b) => b.years - a.years)
+})
+
+const selectedPlan = computed(() => {
+  return pricing.value.find((p) => p.years === selectedYears.value) ?? null
+})
+
+function formatUsd(cents: number, currency: 'USD') {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 0,
+  }).format(cents / 100)
+}
 
 const storedVerification = computed(() => store.verify?.verification ?? null);
 
@@ -192,13 +248,6 @@ const currentYear = new Date().getFullYear();
 const yearOptions = Array.from({ length: 100 }, (_, i) => currentYear - i).map(
   (y) => ({ value: String(y), label: String(y) }),
 );
-
-const countryOptions = [
-  { value: 'Russia', label: 'Russia' },
-  { value: 'Vietnam', label: 'Vietnam' },
-  { value: 'Georgia', label: 'Georgia' },
-  { value: 'United States', label: 'United States' },
-];
 
 // --- validation schema
 
@@ -302,7 +351,6 @@ function extractApiErrorMessage(err: unknown): string {
 
   if (typeof err === 'object') {
     const e = err as any;
-    // Try common shapes: { message }, { data: { message } }, { data: { error } }
     return (
       e?.message ||
       e?.data?.message ||
@@ -350,8 +398,6 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     return;
   }
 
-  let verification: VerifyLicenseResponse;
-
   try {
     verify.file.value = licenseFile.value;
     await verify.upload({
@@ -364,16 +410,38 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
       verificationError.value = 'Empty verification response';
       return;
     }
-  } catch (e) {
-    // network/server error
-    verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
-    return;
-  }
 
-  // API-level failed (not exception)
-  if (verification.status === 'failed') {
-    verificationError.value =
-      'Verification failed. Please re-upload clearer images or check hints.';
+    // API-level failed (not exception)
+    if (verification.status === 'failed') {
+      verificationError.value =
+        'Verification failed. Please re-upload clearer images or check hints.';
+
+      store.setVerifyIdentity({
+        headshotFile: headshotFile.value,
+        licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
+        licenseCountry: vals.licenseCountry,
+        licenseFile: licenseFile.value,
+        signatureDataUrl: signatureDataUrl.value,
+        termsAccepted: termsAccepted.value,
+        verification,
+      });
+
+      return;
+    }
+
+    const dobISO = `${vals.dobYear}-${String(vals.dobMonth).padStart(2, '0')}-${String(vals.dobDay).padStart(2, '0')}`;
+
+    store.setDriverDetails({
+      firstName: vals.firstName,
+      lastName: vals.lastName,
+      email: vals.email,
+      phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
+      dobDay: vals.dobDay,
+      dobMonth: vals.dobMonth,
+      dobYear: vals.dobYear,
+      dobISO,
+      sex: vals.sex,
+    });
 
     store.setVerifyIdentity({
       headshotFile: headshotFile.value,
@@ -385,38 +453,13 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
       verification,
     });
 
-    return;
-  }
-
-  const dobISO = `${vals.dobYear}-${String(vals.dobMonth).padStart(2, '0')}-${String(vals.dobDay).padStart(2, '0')}`;
-
-  store.setDriverDetails({
-    firstName: vals.firstName,
-    lastName: vals.lastName,
-    email: vals.email,
-    phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
-    dobDay: vals.dobDay,
-    dobMonth: vals.dobMonth,
-    dobYear: vals.dobYear,
-    dobISO,
-    sex: vals.sex,
-  });
-
-  store.setVerifyIdentity({
-    headshotFile: headshotFile.value,
-    licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
-    licenseCountry: vals.licenseCountry,
-    licenseFile: licenseFile.value,
-    signatureDataUrl: signatureDataUrl.value,
-    termsAccepted: termsAccepted.value,
-    verification,
-  });
-
-  if (verification.status === 'passed' || verification.status === 'review') {
-    currentStep.value = 2;
+    if (verification.status === 'passed' || verification.status === 'review') {
+      currentStep.value = 2;
+    }
+  } catch (e) {
+    verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
   }
 });
-
 </script>
 
 <style scoped lang="scss">
@@ -434,7 +477,6 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   padding: 20px 20px 24px;
 }
 
-/* progress bar */
 .apply-progress {
   margin-bottom: 16px;
 }
@@ -501,7 +543,6 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   width: 50%;
 }
 
-/* layout */
 .apply-main {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
@@ -519,7 +560,6 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   margin-top: 18px;
 }
 
-/* sidebar */
 .apply-summary {
   display: flex;
   flex-direction: column;

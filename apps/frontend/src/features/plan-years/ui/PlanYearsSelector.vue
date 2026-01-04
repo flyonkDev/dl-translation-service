@@ -39,26 +39,17 @@
 </template>
 
 <script setup lang="ts">
-export type PlanYears = 1 | 2 | 3
+import type { PlanYears } from '@/entities/driver-application'
+import type { PricingPlanDTO } from '@/shared/api/reference'
 
 defineProps<{
   modelValue: PlanYears
+  options: PricingPlanDTO[]
 }>()
 
 const emit = defineEmits<{
   (e: 'update:modelValue', v: PlanYears): void
 }>()
-
-const options: Array<{
-  years: PlanYears
-  title: string
-  sub: string
-  badge?: string
-}> = [
-  { years: 3, title: '3 years', sub: 'Best value', badge: 'Recommended' },
-  { years: 2, title: '2 years', sub: 'Extended access' },
-  { years: 1, title: '1 year', sub: 'Basic' },
-]
 
 function update(v: PlanYears) {
   emit('update:modelValue', v)
