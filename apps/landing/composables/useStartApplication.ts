@@ -8,7 +8,7 @@ function normalizeBaseUrl(v: string) {
 }
 
 export function useStartApplication(appUrl: MaybeRef<string>) {
-	const issueCountry = ref<string>('VN');
+	const issueCountry = ref<string>('');
 	const planYears = ref<PlanYears>(3);
 
 	const startAppHref = computed(() => {
