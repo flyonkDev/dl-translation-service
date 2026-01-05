@@ -53,15 +53,16 @@
     </div>
 
     <div class="mb-3 grid grid-cols-1 gap-4">
-      <BaseSelect
+      <BaseCountrySelect
         id="licenseCountry"
         label="Where was your license issued?"
         required
         placeholder="Select country"
         :model-value="licenseCountry"
         @update:model-value="emit('update:licenseCountry', $event)"
-        :options="countryOptions"
+        :options="uiCountryOptions"
         :error="errors.licenseCountry"
+        searchable
       />
     </div>
 
@@ -119,8 +120,10 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
 import BaseSelect from '@ui-kit/components/inputs/BaseSelect.vue';
+import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue';
 import SexToggle from './SexToggle.vue';
 import type { Sex } from '@/entities/driver-application';
 
@@ -138,7 +141,7 @@ export type DriverDetailsFormErrors = {
   sex: string;
 };
 
-defineProps<{
+const props = defineProps<{
   firstName: string;
   lastName: string;
   email: string;
@@ -174,6 +177,14 @@ const emit = defineEmits<{
 
   (e: 'update:sex', v: Sex): void;
 }>();
+
+const uiCountryOptions = computed<CountrySelectOption[]>(() => {
+  return props.countryOptions.map((o) => ({
+    value: o.value,
+    label: o.label,
+    flagCode: o.value,
+  }));
+});
 </script>
 
 <style scoped lang="scss">

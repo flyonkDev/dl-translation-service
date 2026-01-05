@@ -205,7 +205,7 @@ const countryOptions = computed<SelectOption[]>(() => {
     .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
     .map((c) => ({
       value: c.code,          
-      label: `${c.code} ${c.name}`,
+      label: `${c.name}`,
     }))
 })
 

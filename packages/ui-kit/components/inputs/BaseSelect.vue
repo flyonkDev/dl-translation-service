@@ -12,7 +12,7 @@
     <select
       :id="id"
       class="app-select w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-slate-900 outline-none transition focus:border-activeBlue focus:ring-4 focus:ring-activeBlue/15"
-      :value="modelValue"
+      :value="normalizedModelValue"
       @change="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
       :aria-invalid="!!error || undefined"
       :aria-describedby="error ? `${id}-error` : undefined"
@@ -33,10 +33,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue';
+
+const props = defineProps<{
   id?: string;
   label?: string;
-  modelValue?: string;
+  modelValue?: string | number;
   options: { value: string | number; label: string }[];
   placeholder?: string;
   error?: string;
@@ -46,4 +48,10 @@ defineProps<{
 defineEmits<{
   (e: 'update:modelValue', v: string): void;
 }>();
+
+const normalizedModelValue = computed(() => {
+  // normalize for stable selection when options contain numbers
+  if (props.modelValue === undefined || props.modelValue === null) return '';
+  return String(props.modelValue);
+});
 </script>

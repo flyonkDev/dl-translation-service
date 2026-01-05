@@ -33,33 +33,17 @@
 
     <!-- Country -->
     <div class="mb-4">
-      <label class="mb-2 block text-xs font-bold text-slate-900">
-        Where was your license issued?
-      </label>
-
-      <div class="relative">
-        <select
-          class="h-11 w-full appearance-none rounded-xl border border-slate-200 bg-white px-3 pr-10 text-[13px] text-slate-900 outline-none transition focus:border-activeBlue focus:ring-4 focus:ring-activeBlue/10 disabled:opacity-60"
-          :value="issueCountry"
-          :disabled="isLoading"
-          @change="onCountryChange($event)"
-        >
-          <option disabled value="">
-            {{ isLoading ? 'Loading...' : 'Select a country' }}
-          </option>
-
-          <option v-for="c in uiCountries" :key="c.code" :value="c.code">
-            {{ c.code }} {{ c.name }}
-          </option>
-        </select>
-
-        <span
-          class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-slate-500"
-          aria-hidden="true"
-        >
-          ⌄
-        </span>
-      </div>
+      <BaseCountrySelect
+        id="issueCountry"
+        label="Where was your license issued?"
+        required
+        :placeholder="isLoading ? 'Loading...' : 'Select a country'"
+        :model-value="issueCountry"
+        :disabled="isLoading"
+        :options="uiCountryOptions"
+        searchable
+        @update:model-value="emit('update:issueCountry', $event)"
+      />
     </div>
 
     <!-- Plan years -->
@@ -155,6 +139,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
+import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue'
 import { useCountries } from '~/composables/useCountries'
 import { usePricing } from '~/composables/usePricing'
 import type { PlanYears } from '~/types/reference'
@@ -190,11 +175,15 @@ const isLoading = computed(() => countriesPending.value || plansPending.value)
 const countriesHasError = computed(() => Boolean(countriesError.value))
 const plansHasError = computed(() => Boolean(plansError.value))
 
-
-// Use API data directly
-const uiCountries = computed(() => countries.value)
 const uiPlans = computed(() => plans.value)
 
+const uiCountryOptions = computed<CountrySelectOption[]>(() => {
+  return countries.value.map((c) => ({
+    value: c.code,
+    label: c.name,
+    flagCode: c.code,
+  }))
+})
 
 function retry() {
   refreshCountries()
@@ -221,11 +210,6 @@ const appHref = computed(() => {
   })
   return `${base}/apply?${qs.toString()}`
 })
-
-function onCountryChange(e: Event) {
-  const el = e.target as HTMLSelectElement
-  emit('update:issueCountry', el.value)
-}
 
 function onStartClick() {
   if (!canStart.value) return
