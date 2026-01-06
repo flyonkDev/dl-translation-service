@@ -62,8 +62,13 @@
             />
 
             <div class="section-footer">
-              <BaseButton type="submit" variant="primary" :loading="isVerifying">
-                {{ isVerifying ? 'Verifying...' : 'Continue to payment' }}
+              <BaseButton
+                type="submit"
+                variant="primary"
+                :loading="isVerifying"
+                :disabled="isVerifying || verificationResult?.status === 'failed'"
+              >
+                Continue to payment
               </BaseButton>
             </div>
           </form>
@@ -138,6 +143,7 @@
 import { computed, onMounted, ref, watch } from 'vue';
 import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
+import { toast } from 'vue-sonner';
 import { toTypedSchema } from '@vee-validate/zod';
 import { useRoute } from 'vue-router'
 
@@ -373,6 +379,7 @@ async function runLocalPrecheck(file: File) {
 
 
 const lastVerifiedKey = ref<string>('')
+const lastToastKey = ref<string>('')
 
 watch(
   [licenseFile, licenseCountryField],
@@ -410,14 +417,28 @@ watch(
         licenseNumber: licenseNumber.value || '',
       })
 
+
+      const toastKey = `${key}:${res.status}`
+      if (toastKey !== lastToastKey.value) {
+        lastToastKey.value = toastKey
+
+        if (res.status === 'passed') toast.success('Driver License looks good ✅')
+        else if (res.status === 'review') toast.warning('We can proceed, but we may need manual review ⚠️')
+        else toast.error('Verification failed — please re-upload a clearer image ❌')
+      }
+
       if (res.status === 'failed') {
-        verificationError.value =
-          'Verification failed. Please re-upload clearer images or check hints.'
+        verificationError.value = 'Verification failed. Please re-upload clearer images or check hints.'
       } else {
         verificationError.value = null
       }
     } catch (e) {
       verificationError.value = extractApiErrorMessage(verify.error.value ?? e)
+      const toastKey = `${key}:error`
+      if (toastKey !== lastToastKey.value) {
+        lastToastKey.value = toastKey
+        toast.error('Could not verify right now. Please try again.')
+      }
     }
   },
   { immediate: true }

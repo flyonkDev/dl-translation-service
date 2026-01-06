@@ -3,6 +3,9 @@ import vue from '@vitejs/plugin-vue';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
 import Prerender from 'vite-plugin-prerender';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 export default defineConfig({
 	plugins: [
@@ -17,7 +20,9 @@ export default defineConfig({
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
 			'@ui-kit': path.resolve(__dirname, '../../packages/ui-kit'),
+			'@iconify/vue': require.resolve('@iconify/vue'),
 		},
+		dedupe: ['vue'],
 	},
 	server: {
 		fs: { allow: [path.resolve(__dirname, '../..')] },

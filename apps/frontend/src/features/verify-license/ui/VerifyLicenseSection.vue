@@ -66,33 +66,6 @@
       </SignaturePad>
     </div>
 
-    <div
-      v-if="verificationResult"
-      class="verification-result verify__result mt-3 rounded-xl border border-slate-200 bg-white p-3 text-[13px] text-slate-900"
-    >
-      <p class="m-0">
-        Status:
-        <strong class="font-extrabold">{{ verificationResult.status }}</strong>
-      </p>
-
-      <p v-if="statusLabel" class="mt-1">
-        {{ statusLabel }}
-      </p>
-
-      <div v-if="verificationResult.hints?.length" class="mt-2">
-        <p class="m-0 font-semibold">Hints:</p>
-        <ul class="mt-1 list-disc pl-5 text-slate-700">
-          <li v-for="hint in verificationResult.hints" :key="hint">
-            {{ hint }}
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <p v-if="verificationError" class="app-error mt-1.5 text-xs text-[#c0392b]">
-      {{ verificationError }}
-    </p>
-
     <label class="terms mt-2 flex items-center gap-2 text-xs text-slate-900">
       <input
         class="terms__checkbox accent-activeBlue"
@@ -143,9 +116,19 @@ const headshotError = computed(() =>
   props.showErrors && !props.headshotFile ? 'Headshot is required' : '',
 );
 
-const licenseError = computed(() =>
-  props.showErrors && !props.licenseFile ? 'Driver’s license file is required' : '',
-);
+const licenseError = computed(() => {
+  if (props.showErrors && !props.licenseFile) return 'Driver’s license file is required'
+
+  if (props.verificationResult?.status === 'failed') {
+    return 'Verification failed — please upload a clearer photo/scan'
+  }
+
+  if (props.verificationError) {
+    return 'Could not verify — please try again'
+  }
+
+  return ''
+});
 
 const signatureError = computed(() =>
   props.showErrors && !props.signatureDataUrl ? 'Signature is required' : '',
