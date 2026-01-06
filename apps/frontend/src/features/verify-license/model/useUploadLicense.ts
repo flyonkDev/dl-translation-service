@@ -19,7 +19,6 @@ export interface UseUploadLicenseState {
 	statusLabel: ComputedRef<string>;
 
 	upload: (payload?: VerifyLicensePayload) => Promise<VerifyLicenseResponse>;
-
 	reset: () => void;
 }
 
@@ -28,6 +27,10 @@ export function useUploadLicense(): UseUploadLicenseState {
 	const isLoading = ref(false);
 	const result = ref<VerifyLicenseResponse | null>(null);
 	const error = ref<ApiError<VerifyLicenseError> | null>(null);
+
+	// Race-safety
+	let seq = 0;
+	let active = 0;
 
 	const statusLabel = computed(() => {
 		const status = result.value?.status;
@@ -38,17 +41,20 @@ export function useUploadLicense(): UseUploadLicenseState {
 	});
 
 	const reset = () => {
+		// invalidate in-flight requests
+		active = ++seq;
 		result.value = null;
 		error.value = null;
+		isLoading.value = false;
 	};
 
 	const upload = async (
 		payload?: VerifyLicensePayload
 	): Promise<VerifyLicenseResponse> => {
-		if (!file.value) {
-			const err = new Error('License file is not set');
-			throw err;
-		}
+		if (!file.value) throw new Error('License file is not set');
+
+		const requestId = ++seq;
+		active = requestId;
 
 		isLoading.value = true;
 		error.value = null;
@@ -56,23 +62,23 @@ export function useUploadLicense(): UseUploadLicenseState {
 
 		try {
 			const response = await uploadLicense(file.value, payload);
+
+			// ignore stale response
+			if (active !== requestId) return response;
+
 			result.value = response;
 			return response;
 		} catch (err) {
-			error.value = err as ApiError<VerifyLicenseError>;
+			if (active === requestId) {
+				error.value = err as ApiError<VerifyLicenseError>;
+			}
 			throw err;
 		} finally {
-			isLoading.value = false;
+			if (active === requestId) {
+				isLoading.value = false;
+			}
 		}
 	};
 
-	return {
-		file,
-		isLoading,
-		result,
-		error,
-		statusLabel,
-		upload,
-		reset,
-	};
+	return { file, isLoading, result, error, statusLabel, upload, reset };
 }

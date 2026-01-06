@@ -135,7 +135,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import { toTypedSchema } from '@vee-validate/zod';
@@ -152,7 +152,6 @@ import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSect
 
 import { useDriverApplicationStore } from '@/entities/driver-application';
 import type { PlanYears, Sex } from '@/entities/driver-application';
-import type { VerifyLicenseResponse } from '@/shared/types/verify';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
 
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
@@ -255,10 +254,7 @@ const schema = z.object({
   lastName: z.string().min(2, 'Enter your last name'),
   email: z.string().email('Invalid email'),
 
-  phone: z
-    .string()
-    .trim()
-    .refine((v) => v === '' || v.length >= 4, 'Enter your phone number'),
+  phone: z.string().trim().refine((v) => v === '' || v.length >= 4, 'Enter your phone number'),
 
   dobDay: z.string().min(1, 'Required'),
   dobMonth: z.string().min(1, 'Required'),
@@ -268,7 +264,9 @@ const schema = z.object({
     .refine((y) => currentYear - Number(y) >= 18, 'You must be 18+'),
 
   licenseCountry: z.string().min(1, 'Required'),
-  sex: z.enum(['male', 'female'], { message: 'Select your sex' }),
+  sex: z
+  .enum(['male', 'female', ''], { message: 'Select your sex' })
+  .refine((v) => v !== '', { message: 'Select your sex' }),
 });
 
 const { handleSubmit, submitCount } = useForm({
@@ -318,15 +316,15 @@ const { value: sex, errorMessage: sexError, meta: sexMeta } =
   useField<Sex | ''>('sex');
 
 const driverErrors = computed<DriverDetailsFormErrors>(() => ({
-  firstName: showError(firstNameMeta) ? firstNameError.value : '',
-  lastName: showError(lastNameMeta) ? lastNameError.value : '',
-  email: showError(emailMeta) ? emailError.value : '',
-  phone: showError(phoneMeta) ? phoneError.value : '',
-  licenseCountry: showError(licenseCountryMeta) ? licenseCountryError.value : '',
-  dobDay: showError(dobDayMeta) ? dobDayError.value : '',
-  dobMonth: showError(dobMonthMeta) ? dobMonthError.value : '',
-  dobYear: showError(dobYearMeta) ? dobYearError.value : '',
-  sex: showError(sexMeta) ? sexError.value : '',
+  firstName: showError(firstNameMeta) ? (firstNameError.value ?? '') : '',
+  lastName: showError(lastNameMeta) ? (lastNameError.value ?? '') : '',
+  email: showError(emailMeta) ? (emailError.value ?? '') : '',
+  phone: showError(phoneMeta) ? (phoneError.value ?? '') : '',
+  licenseCountry: showError(licenseCountryMeta) ? (licenseCountryError.value ?? '') : '',
+  dobDay: showError(dobDayMeta) ? (dobDayError.value ?? '') : '',
+  dobMonth: showError(dobMonthMeta) ? (dobMonthError.value ?? '') : '',
+  dobYear: showError(dobYearMeta) ? (dobYearError.value ?? '') : '',
+  sex: showError(sexMeta) ? (sexError.value ?? '') : '',
 }));
 
 // --- verification / files (UI state)
@@ -373,11 +371,65 @@ async function runLocalPrecheck(file: File) {
   return { ok: true };
 }
 
-// submit step 1: validate form + files + call verify composable
+
+const lastVerifiedKey = ref<string>('')
+
+watch(
+  [licenseFile, licenseCountryField],
+  async ([file, country]) => {
+    verificationError.value = null
+
+    if (!file) {
+      lastVerifiedKey.value = ''
+      verify.reset()
+      return
+    }
+
+    if (!country) {
+      lastVerifiedKey.value = ''
+      verify.reset()
+      return
+    }
+
+    const pre = await runLocalPrecheck(file)
+    if (!pre.ok) {
+      lastVerifiedKey.value = ''
+      verify.reset()
+      verificationError.value = `License: ${pre.reason}`
+      return
+    }
+
+    const key = `${file.name}:${file.size}:${file.lastModified}:${country}`
+    if (key === lastVerifiedKey.value) return
+    lastVerifiedKey.value = key
+
+    try {
+      verify.file.value = file
+      const res = await verify.upload({
+        licenseCountry: country,
+        licenseNumber: licenseNumber.value || '',
+      })
+
+      if (res.status === 'failed') {
+        verificationError.value =
+          'Verification failed. Please re-upload clearer images or check hints.'
+      } else {
+        verificationError.value = null
+      }
+    } catch (e) {
+      verificationError.value = extractApiErrorMessage(verify.error.value ?? e)
+    }
+  },
+  { immediate: true }
+)
+
+
+
+
+
 const onSubmitStep1 = handleSubmit(async (vals) => {
   showFilesErrors.value = true;
   verificationError.value = null;
-  verify.reset();
 
   if (!headshotFile.value || !licenseFile.value || !signatureDataUrl.value || !termsAccepted.value) {
     return;
@@ -397,74 +449,66 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     return;
   }
 
-  try {
-    verify.file.value = licenseFile.value;
-    await verify.upload({
-      licenseCountry: vals.licenseCountry || '',
-      licenseNumber: licenseNumber.value || '',
-    });
-
-    const verification = verify.result.value;
-    if (!verification) {
-      verificationError.value = 'Empty verification response';
-      return;
-    }
-
-    // API-level failed (not exception)
-    if (verification.status === 'failed') {
-      verificationError.value =
-        'Verification failed. Please re-upload clearer images or check hints.';
-
-      store.setVerifyIdentity({
-        headshotFile: headshotFile.value,
-        licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
-        licenseCountry: vals.licenseCountry,
-        licenseFile: licenseFile.value,
-        signatureDataUrl: signatureDataUrl.value,
-        termsAccepted: termsAccepted.value,
-        verification,
+  if (!verificationResult.value && licenseFile.value) {
+    try {
+      verify.file.value = licenseFile.value;
+      await verify.upload({
+        licenseCountry: vals.licenseCountry || '',
+        licenseNumber: licenseNumber.value || '',
       });
-
+    } catch (e) {
+      verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
       return;
     }
+  }
 
-    const dobISO = `${vals.dobYear}-${String(vals.dobMonth).padStart(2, '0')}-${String(vals.dobDay).padStart(2, '0')}`;
+  const verification = verify.result.value;
+  if (!verification) {
+    verificationError.value = 'Verification is missing. Please upload your license again.';
+    return;
+  }
 
-    store.setDriverDetails({
-      firstName: vals.firstName,
-      lastName: vals.lastName,
-      email: vals.email,
-      phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
-      dobDay: vals.dobDay,
-      dobMonth: vals.dobMonth,
-      dobYear: vals.dobYear,
-      dobISO,
-      sex: vals.sex,
-    });
+  store.setVerifyIdentity({
+    headshotFile: headshotFile.value,
+    licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
+    licenseCountry: vals.licenseCountry,
+    licenseFile: licenseFile.value,
+    signatureDataUrl: signatureDataUrl.value,
+    termsAccepted: termsAccepted.value,
+    verification,
+  });
 
-    store.setVerifyIdentity({
-      headshotFile: headshotFile.value,
-      licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
-      licenseCountry: vals.licenseCountry,
-      licenseFile: licenseFile.value,
-      signatureDataUrl: signatureDataUrl.value,
-      termsAccepted: termsAccepted.value,
-      verification,
-    });
+  if (verification.status === 'failed') {
+    verificationError.value = 'Verification failed. Please re-upload clearer images or check hints.';
+    return;
+  }
 
-    if (verification.status === 'passed' || verification.status === 'review') {
-      currentStep.value = 2;
-    }
-  } catch (e) {
-    verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
+  const dobISO = `${vals.dobYear}-${String(vals.dobMonth).padStart(2, '0')}-${String(vals.dobDay).padStart(2, '0')}`;
+
+  store.setDriverDetails({
+    firstName: vals.firstName,
+    lastName: vals.lastName,
+    email: vals.email,
+    phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
+    dobDay: vals.dobDay,
+    dobMonth: vals.dobMonth,
+    dobYear: vals.dobYear,
+    dobISO,
+    sex: vals.sex,
+  });
+
+  if (verification.status === 'passed' || verification.status === 'review') {
+    currentStep.value = 2;
   }
 });
+
 </script>
 
 <style scoped lang="scss">
 .apply-page {
   background: #f3f4f6;
   padding: 24px 16px 40px;
+  min-height: calc(100vh - 350px);
 }
 
 .apply-shell {
