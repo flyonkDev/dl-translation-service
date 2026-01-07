@@ -14,6 +14,8 @@ export interface VerifyExtractedFields {
  * Answer from/verify/license
  */
 export interface VerifyLicenseResponse {
+	verificationId: string;
+	expiresAt: string; // ISO string from backend
 	status: VerifyStatus;
 	checks: Record<string, VerifyCheck>;
 	extracted?: VerifyExtractedFields;

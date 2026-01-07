@@ -51,6 +51,10 @@
       />
     </div>
 
+    <p v-if="statusLabel" class="mt-2 text-xs text-slate-700">
+      {{ statusLabel }}
+    </p>
+
     <div class="signature verify__signature mt-1 flex flex-col items-start">
       <SignaturePad
         :model-value="signatureDataUrl"

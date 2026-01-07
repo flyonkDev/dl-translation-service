@@ -13,7 +13,7 @@
         class="btn-file relative inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-bold text-slate-900 hover:bg-slate-200/30"
       >
         <input
-          class="native absolute inset-0 cursor-pointer opacity-0"
+          class="native absolute inset-0 cursor-pointer opacity-0 whitespace-nowrap"
           type="file"
           :accept="accept"
           @change="onChange"

@@ -27,7 +27,7 @@ export function useUploadLicense(): UseUploadLicenseState {
 	const isLoading = ref(false);
 	const result = ref<VerifyLicenseResponse | null>(null);
 	const error = ref<ApiError<VerifyLicenseError> | null>(null);
-
+	
 	// Race-safety
 	let seq = 0;
 	let active = 0;
