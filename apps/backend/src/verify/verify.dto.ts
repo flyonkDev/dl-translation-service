@@ -1,5 +1,3 @@
-// apps/backend/src/verify/verify.dto.ts
-
 export type VerifyStatus = 'passed' | 'review' | 'failed';
 
 export interface VerifyCheck {
@@ -13,6 +11,8 @@ export interface VerifyExtractedFields {
 }
 
 export interface VerifyLicenseResponseDto {
+  verificationId: string;
+  expiresAt: string; // ISO string
   status: VerifyStatus;
   checks: Record<string, VerifyCheck>;
   extracted?: VerifyExtractedFields;

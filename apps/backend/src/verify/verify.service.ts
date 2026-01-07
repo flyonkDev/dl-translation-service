@@ -1,6 +1,7 @@
 // apps/backend/src/verify/verify.service.ts
 import { Injectable, Logger } from '@nestjs/common'
 import type { Express } from 'express'
+import { VerificationStore } from './verify.store';
 import * as TesseractNS from 'tesseract.js'
 import { getKeywordsForCountry } from './verify.keywords'
 import {
@@ -71,13 +72,32 @@ function hasCategories(text: string) {
 export class VerifyService {
   private readonly logger = new Logger(VerifyService.name)
 
+  constructor(private readonly store: VerificationStore) {}
   
+
 
   async verifyLicense(
     file: Express.Multer.File,
     body: VerifyLicenseBodyDto,
   ): Promise<VerifyLicenseResponseDto> {
     const checks: Record<string, VerifyCheck> = {}
+
+    const finalize = (payload: Omit<VerifyLicenseResponseDto, 'verificationId' | 'expiresAt'>) => {
+      const snap = this.store.createAndSave({
+        ...payload,
+        fileMeta: {
+          originalName: file.originalname,
+          mimetype: file.mimetype,
+          size: file.size,
+        },
+      });
+
+      return {
+        ...payload,
+        verificationId: snap.verificationId,
+        expiresAt: new Date(snap.expiresAtMs).toISOString(),
+      };
+    };
 
     try {
       
@@ -87,7 +107,7 @@ export class VerifyService {
       checks['size'] = { passed: size <= 15 * 1024 * 1024, info: String(size) }
 
       if (!checks['mime'].passed || !checks['size'].passed) {
-        return { status: 'failed', checks, hints: ['Upload a clear JPG/PNG/WebP up to 15MB'] }
+        return finalize({ status: 'failed', checks, hints: ['Upload a clear JPG/PNG/WebP up to 15MB'] });
       }
 
       const country = (body?.licenseCountry ?? '').toUpperCase().trim()
@@ -140,11 +160,11 @@ export class VerifyService {
       }
 
       if (!checks['ocr_text'].passed) {
-        return {
+        return finalize({
           status: 'failed',
           checks,
           hints: ['Use higher resolution and good lighting', 'Place the card flat, no glare'],
-        }
+        })
       }
 
       const { hits: keywordHits, hitList } = countKeywordHits(text, keywords)
@@ -239,15 +259,15 @@ export class VerifyService {
         `[verify] status=${status} score=${score} lang=${usedLang} hits=${keywordHits} date=${hasDate} id=${hasIdLike} fields=${fieldNums} cat=${categories}`,
       )
 
-      return {
+      return finalize({
         status,
         checks,
         extracted: { text: text.slice(0, 5000), fields },
         hints,
-      }
+      });
     } catch (e: any) {
       this.logger.error('verifyLicense fatal', e)
-      return { status: 'failed', checks, hints: ['Server error while processing file'] }
+      return finalize({ status: 'failed', checks, hints: ['Server error while processing file'] })
     }
   }
 }
