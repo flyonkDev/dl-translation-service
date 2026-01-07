@@ -38,10 +38,10 @@ export class VerifyController {
       }),
       limits: { fileSize: 15 * 1024 * 1024 },
       fileFilter: (_req, file, cb) => {
-        const ok = /image\/(jpe?g|png|webp)/i.test(file.mimetype);
+        const ok = /image\/(jpe?g|png|webp)/i.test(file.mimetype) || file.mimetype === 'application/pdf';
         if (!ok) {
           return cb(
-            new BadRequestException('Only image files are allowed'),
+            new BadRequestException('Only JPG/PNG/WebP images or PDF are allowed'),
             false,
           );
         }

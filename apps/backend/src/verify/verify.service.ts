@@ -103,11 +103,39 @@ export class VerifyService {
       
       const mimetype = file?.mimetype ?? ''
       const size = file?.size ?? 0
-      checks['mime'] = { passed: /image\/(jpe?g|png|webp)/i.test(mimetype), info: mimetype }
+
+      const isImage = /image\/(jpe?g|png|webp)/i.test(mimetype);
+      const isPdf = mimetype === 'application/pdf';
+
+      checks['mime'] = { passed: isImage || isPdf, info: mimetype };
       checks['size'] = { passed: size <= 15 * 1024 * 1024, info: String(size) }
 
       if (!checks['mime'].passed || !checks['size'].passed) {
-        return finalize({ status: 'failed', checks, hints: ['Upload a clear JPG/PNG/WebP up to 15MB'] });
+        const hints: string[] = [];
+
+        if (!checks['size'].passed) {
+          hints.push('File is too large. Upload up to 15MB.');
+        }
+
+        if (!checks['mime'].passed) {
+          hints.push('Only JPG/PNG/WebP images or PDF are allowed.');
+        } else if (isPdf) {
+          hints.push('PDF support is coming soon. For now, upload an image (JPG/PNG/WebP).');
+        }
+
+        return finalize({ status: 'failed', checks, hints });
+      }
+      
+      if (isPdf) {
+        //temporary
+        return finalize({
+          status: 'failed',
+          checks,
+          hints: [
+            'PDF support is coming soon.',
+            'For now, upload an image (JPG/PNG/WebP).',
+          ],
+        });
       }
 
       const country = (body?.licenseCountry ?? '').toUpperCase().trim()
