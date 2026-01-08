@@ -1,8 +1,7 @@
 // entities/driver-application/model/types.ts
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
+export type { Sex, PlanYears } from '@/shared/types/domain';
 
-export type PlanYears = 1 | 2 | 3;
-export type Sex = 'male' | 'female';
 
 export type DriverDetails = {
 	firstName: string;

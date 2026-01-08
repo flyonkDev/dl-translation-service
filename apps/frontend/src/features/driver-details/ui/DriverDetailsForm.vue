@@ -125,7 +125,8 @@ import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
 import BaseSelect from '@ui-kit/components/inputs/BaseSelect.vue';
 import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue';
 import SexToggle from './SexToggle.vue';
-import type { Sex } from '@/entities/driver-application';
+export type { Sex } from '@/shared/types/domain';
+
 
 export type SelectOption = { value: string; label: string };
 

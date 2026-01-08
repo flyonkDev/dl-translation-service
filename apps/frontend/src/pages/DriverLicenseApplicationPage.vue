@@ -65,8 +65,8 @@
               <BaseButton
                 type="submit"
                 variant="primary"
-                :loading="isVerifying"
-                :disabled="isVerifying || verificationResult?.status === 'failed'"
+                :loading="isVerifying || isSubmittingApplication"
+                :disabled="isVerifying || isSubmittingApplication || verificationResult?.status === 'failed'"
               >
                 Continue to payment
               </BaseButton>
@@ -156,6 +156,9 @@ import DriverDetailsForm, {
 import PlanYearsSelector from '@/features/plan-years/ui/PlanYearsSelector.vue';
 import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSection.vue';
 
+import { createApplication } from '@/features/driver-application/api/createApplicationApi';
+import type { CreateApplicationPayload } from '@/shared/types/applications';
+
 import { useDriverApplicationStore } from '@/entities/driver-application';
 import type { PlanYears, Sex } from '@/entities/driver-application';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
@@ -168,6 +171,8 @@ const verify = useUploadLicense();
 
 type StepId = 1 | 2;
 const currentStep = ref<StepId>(1);
+const isSubmittingApplication = ref(false);
+const applicationId = ref<string | null>(null);
 
 const selectedYears = computed<PlanYears>({
   get: () => store.selectedYears,
@@ -519,8 +524,55 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   });
 
   if (verification.status === 'passed' || verification.status === 'review') {
-    currentStep.value = 2;
-  }
+    const verificationId = verification.verificationId as string | undefined;
+    console.log('verif id', verificationId);
+    if (!verificationId) {
+      toast.error('Verification id is missing. Please re-upload the license.');
+      return;
+    }
+
+    const payload: CreateApplicationPayload = {
+      email: vals.email,
+      phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
+
+      firstName: vals.firstName,
+      lastName: vals.lastName,
+
+      issueCountry: vals.licenseCountry,
+
+      dobDay: Number(vals.dobDay),
+      dobMonth: Number(vals.dobMonth),
+      dobYear: Number(vals.dobYear),
+
+      sex: vals.sex,
+
+      planYears: selectedYears.value,
+
+      licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
+
+      signatureDataUrl: signatureDataUrl.value,
+
+      verificationId,
+    };
+
+    try {
+      console.log('try 1')
+      isSubmittingApplication.value = true;
+
+      const res = await createApplication(headshotFile.value!, payload);
+      console.log('res', res)
+      applicationId.value = res.applicationId;
+      toast.success('Application created ✅');
+
+      currentStep.value = 2;
+    } catch (e) {
+      toast.error('Could not submit application. Please try again.');
+      return;
+    } finally {
+      isSubmittingApplication.value = false;
+    }
+}
+
 });
 
 </script>
