@@ -6,11 +6,16 @@ import {
   UseInterceptors,
   Body,
   ValidationPipe,
+  Get,
+  Param,
+  Query,
+  Res,
+  StreamableFile,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
-import type { Express } from 'express';
+import type { Express, Response } from 'express';
 import { ApplicationsService } from './applications.service';
 import { CreateApplicationDto } from './dto/create-application.dto';
 
@@ -42,18 +47,29 @@ export class ApplicationsController {
   )
   create(
     @UploadedFile() headshot: Express.Multer.File,
-    @Body(
-      new ValidationPipe({
-        whitelist: true,
-        transform: true,
-        // forbidNonWhitelisted: true, // later if needed
-      }),
-    )
+    @Body(new ValidationPipe({ whitelist: true, transform: true }))
     dto: CreateApplicationDto,
   ) {
-    if (!headshot) {
-      throw new BadRequestException('headshot file is required');
-    }
+    if (!headshot) throw new BadRequestException('headshot file is required');
     return this.service.create(dto, headshot);
+  }
+
+  @Get(':applicationId/pdf')
+  async pdf(
+    @Param('applicationId') applicationId: string,
+    @Query('disposition') disposition: 'inline' | 'attachment' = 'inline',
+    @Res({ passthrough: true }) res: Response,
+    @Query('debug') debug?: string,
+  ) {
+    const buf = await this.service.getPdf(applicationId, { debug: debug === '1' });
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader(
+      'Content-Disposition',
+      `${disposition}; filename="application-${applicationId}.pdf"`,
+    );
+
+    return new StreamableFile(buf);
   }
 }
