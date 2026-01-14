@@ -76,6 +76,21 @@ export async function apiDelete<TResponse, TError = unknown>(
 	}
 }
 
+export async function apiGetBlob<TError = unknown>(
+	url: string,
+	config?: ApiRequestConfig
+): Promise<Blob> {
+	try {
+		const response: AxiosResponse<Blob> = await httpClient.get(url, {
+			...config,
+			responseType: 'blob',
+		});
+		return response.data;
+	} catch (error) {
+		throw toApiError<TError>(error);
+	}
+}
+
 /**
  * Convenience type for catching API errors in features.
  */

@@ -15,6 +15,7 @@
             <span>Payment</span>
           </div>
         </div>
+
         <div class="apply-progress__bar">
           <div
             class="apply-progress__bar-fill"
@@ -56,10 +57,7 @@
               :verification-error="verificationError"
             />
 
-            <PlanYearsSelector
-              v-model="selectedYears"
-              :options="planOptions"
-            />
+            <PlanYearsSelector v-model="selectedYears" :options="planOptions" />
 
             <div class="section-footer">
               <BaseButton
@@ -72,35 +70,6 @@
               </BaseButton>
             </div>
           </form>
-
-          <section v-else>
-            <h1 class="page-title">Payment</h1>
-            <p class="page-subtitle">
-              Here we will integrate Stripe or another payment provider.
-              For now this is a placeholder step.
-            </p>
-
-            <div class="verification-result">
-              <p v-if="storedVerification?.status === 'passed'">
-                Your document has passed the automatic verification ✅
-              </p>
-              <p v-else-if="storedVerification?.status === 'review'">
-                We’ll review this manually ⚠️
-              </p>
-              <p v-else>
-                Verification is missing. Please go back and verify your document.
-              </p>
-            </div>
-
-            <div class="section-footer">
-              <BaseButton variant="secondary" @click="currentStep = 1">
-                Back to details
-              </BaseButton>
-              <BaseButton variant="primary" :disabled="!canProceedPayment">
-                Complete application
-              </BaseButton>
-            </div>
-          </section>
         </section>
 
         <aside class="apply-summary">
@@ -145,7 +114,7 @@ import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import { toast } from 'vue-sonner';
 import { toTypedSchema } from '@vee-validate/zod';
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router';
 
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
@@ -165,84 +134,78 @@ import { useUploadLicense } from '@/features/verify-license/model/useUploadLicen
 
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
 
-const route = useRoute()
+type StepId = 1 | 2;
+const currentStep = ref<StepId>(1);
+
+const route = useRoute();
+const router = useRouter();
+
 const store = useDriverApplicationStore();
 const verify = useUploadLicense();
 
-type StepId = 1 | 2;
-const currentStep = ref<StepId>(1);
 const isSubmittingApplication = ref(false);
-const applicationId = ref<string | null>(null);
 
+// --- plan years from store + query
 const selectedYears = computed<PlanYears>({
   get: () => store.selectedYears,
   set: (v) => store.setSelectedYears(v),
-})
+});
 
 function toPlanYears(v: unknown): PlanYears | null {
-  const n = Number(Array.isArray(v) ? v[0] : v)
-  return n === 1 || n === 2 || n === 3 ? (n as PlanYears) : null
+  const n = Number(Array.isArray(v) ? v[0] : v);
+  return n === 1 || n === 2 || n === 3 ? (n as PlanYears) : null;
 }
 
-const planFromQuery = toPlanYears(route.query.planYears)
+const planFromQuery = toPlanYears(route.query.planYears);
 if (planFromQuery) {
-  store.setSelectedYears(planFromQuery)
+  store.setSelectedYears(planFromQuery);
 }
 
-const countries = ref<CountryDTO[]>([])
-const pricing = ref<PricingPlanDTO[]>([])
-const refLoading = ref(true)
-const refError = ref<string | null>(null)
+// --- reference data
+const countries = ref<CountryDTO[]>([]);
+const pricing = ref<PricingPlanDTO[]>([]);
+const refLoading = ref(true);
+const refError = ref<string | null>(null);
 
 onMounted(async () => {
-  refLoading.value = true
-  refError.value = null
+  refLoading.value = true;
+  refError.value = null;
 
   try {
-    const [c, p] = await Promise.all([fetchCountries(), fetchPricing()])
-    countries.value = c.items
-    pricing.value = p.items
+    const [c, p] = await Promise.all([fetchCountries(), fetchPricing()]);
+    countries.value = c.items;
+    pricing.value = p.items;
   } catch (e) {
-    refError.value = 'Failed to load reference data'
+    refError.value = 'Failed to load reference data';
   } finally {
-    refLoading.value = false
+    refLoading.value = false;
   }
-})
+});
 
 const countryOptions = computed<SelectOption[]>(() => {
-  return countries.value
-    .slice()
-    .map((c) => ({
-      value: c.code,          
-      label: `${c.name}`,
-    }))
-})
+  return countries.value.slice().map((c) => ({
+    value: c.code,
+    label: `${c.name}`,
+  }));
+});
 
 const planOptions = computed(() => {
-  return pricing.value
-    .slice()
-    .sort((a, b) => b.years - a.years)
-})
+  return pricing.value.slice().sort((a, b) => b.years - a.years);
+});
 
 const selectedPlan = computed(() => {
-  return pricing.value.find((p) => p.years === selectedYears.value) ?? null
-})
+  return pricing.value.find((p) => p.years === selectedYears.value) ?? null;
+});
 
 function formatUsd(cents: number, currency: 'USD') {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
     maximumFractionDigits: 0,
-  }).format(cents / 100)
+  }).format(cents / 100);
 }
 
-const storedVerification = computed(() => store.verify?.verification ?? null);
-
-const canProceedPayment = computed(() => {
-  const st = storedVerification.value?.status;
-  return st === 'passed' || st === 'review';
-});
-
+// --- select options
 const dayOptions = Array.from({ length: 31 }, (_, i) => ({
   value: String(i + 1),
   label: String(i + 1),
@@ -259,7 +222,6 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => currentYear - i).map(
 );
 
 // --- validation schema
-
 const schema = z.object({
   firstName: z.string().min(2, 'Enter your first name'),
   lastName: z.string().min(2, 'Enter your last name'),
@@ -276,8 +238,8 @@ const schema = z.object({
 
   licenseCountry: z.string().min(1, 'Required'),
   sex: z
-  .enum(['male', 'female', ''], { message: 'Select your sex' })
-  .refine((v) => v !== '', { message: 'Select your sex' }),
+    .enum(['male', 'female', ''], { message: 'Select your sex' })
+    .refine((v) => v !== '', { message: 'Select your sex' }),
 });
 
 const { handleSubmit, submitCount } = useForm({
@@ -300,31 +262,19 @@ function showError(meta: { touched: boolean }) {
 }
 
 // fields
+const { value: firstName, errorMessage: firstNameError, meta: firstNameMeta } = useField<string>('firstName');
+const { value: lastName, errorMessage: lastNameError, meta: lastNameMeta } = useField<string>('lastName');
+const { value: email, errorMessage: emailError, meta: emailMeta } = useField<string>('email');
+const { value: phone, errorMessage: phoneError, meta: phoneMeta } = useField<string>('phone');
 
-const { value: firstName, errorMessage: firstNameError, meta: firstNameMeta } =
-  useField<string>('firstName');
-const { value: lastName, errorMessage: lastNameError, meta: lastNameMeta } =
-  useField<string>('lastName');
-const { value: email, errorMessage: emailError, meta: emailMeta } =
-  useField<string>('email');
-const { value: phone, errorMessage: phoneError, meta: phoneMeta } =
-  useField<string>('phone');
+const { value: dobDay, errorMessage: dobDayError, meta: dobDayMeta } = useField<string>('dobDay');
+const { value: dobMonth, errorMessage: dobMonthError, meta: dobMonthMeta } = useField<string>('dobMonth');
+const { value: dobYear, errorMessage: dobYearError, meta: dobYearMeta } = useField<string>('dobYear');
 
-const { value: dobDay, errorMessage: dobDayError, meta: dobDayMeta } =
-  useField<string>('dobDay');
-const { value: dobMonth, errorMessage: dobMonthError, meta: dobMonthMeta } =
-  useField<string>('dobMonth');
-const { value: dobYear, errorMessage: dobYearError, meta: dobYearMeta } =
-  useField<string>('dobYear');
+const { value: licenseCountryField, errorMessage: licenseCountryError, meta: licenseCountryMeta } =
+  useField<string>('licenseCountry');
 
-const {
-  value: licenseCountryField,
-  errorMessage: licenseCountryError,
-  meta: licenseCountryMeta,
-} = useField<string>('licenseCountry');
-
-const { value: sex, errorMessage: sexError, meta: sexMeta } =
-  useField<Sex | ''>('sex');
+const { value: sex, errorMessage: sexError, meta: sexMeta } = useField<Sex | ''>('sex');
 
 const driverErrors = computed<DriverDetailsFormErrors>(() => ({
   firstName: showError(firstNameMeta) ? (firstNameError.value ?? '') : '',
@@ -347,10 +297,9 @@ const termsAccepted = ref<boolean>(store.verify?.termsAccepted ?? false);
 
 const showFilesErrors = ref(false);
 
-// --- verification result state (from composable + friendly UI error)
+// --- verification result state
 const isVerifying = computed(() => verify.isLoading.value);
 const verificationResult = computed(() => verify.result.value);
-
 const verificationError = ref<string | null>(null);
 
 function extractApiErrorMessage(err: unknown): string {
@@ -359,12 +308,7 @@ function extractApiErrorMessage(err: unknown): string {
 
   if (typeof err === 'object') {
     const e = err as any;
-    return (
-      e?.message ||
-      e?.data?.message ||
-      e?.data?.error ||
-      'Server error during verification'
-    );
+    return e?.message || e?.data?.message || e?.data?.error || 'Server error during verification';
   }
 
   return 'Server error during verification';
@@ -378,81 +322,67 @@ async function runLocalPrecheck(file: File) {
 
   if (!okType) return { ok: false, reason: 'Unsupported file type' };
   if (!okSize) return { ok: false, reason: 'File too large' };
-
   return { ok: true };
 }
 
-
-const lastVerifiedKey = ref<string>('')
-const lastToastKey = ref<string>('')
+const lastVerifiedKey = ref<string>('');
+const lastToastKey = ref<string>('');
 
 watch(
   [licenseFile, licenseCountryField],
   async ([file, country]) => {
-    verificationError.value = null
+    verificationError.value = null;
 
-    if (!file) {
-      lastVerifiedKey.value = ''
-      verify.reset()
-      return
+    if (!file || !country) {
+      lastVerifiedKey.value = '';
+      verify.reset();
+      return;
     }
 
-    if (!country) {
-      lastVerifiedKey.value = ''
-      verify.reset()
-      return
-    }
-
-    const pre = await runLocalPrecheck(file)
+    const pre = await runLocalPrecheck(file);
     if (!pre.ok) {
-      lastVerifiedKey.value = ''
-      verify.reset()
-      verificationError.value = `License: ${pre.reason}`
-      return
+      lastVerifiedKey.value = '';
+      verify.reset();
+      verificationError.value = `License: ${pre.reason}`;
+      return;
     }
 
-    const key = `${file.name}:${file.size}:${file.lastModified}:${country}`
-    if (key === lastVerifiedKey.value) return
-    lastVerifiedKey.value = key
+    const key = `${file.name}:${file.size}:${file.lastModified}:${country}`;
+    if (key === lastVerifiedKey.value) return;
+    lastVerifiedKey.value = key;
 
     try {
-      verify.file.value = file
+      verify.file.value = file;
       const res = await verify.upload({
         licenseCountry: country,
         licenseNumber: licenseNumber.value || '',
-      })
+      });
 
-
-      const toastKey = `${key}:${res.status}`
+      const toastKey = `${key}:${res.status}`;
       if (toastKey !== lastToastKey.value) {
-        lastToastKey.value = toastKey
+        lastToastKey.value = toastKey;
 
-        if (res.status === 'passed') toast.success('Driver License looks good ✅')
-        else if (res.status === 'review') toast.warning('We can proceed, but we may need manual review ⚠️')
-        else toast.error('Verification failed — please re-upload a clearer image ❌')
+        if (res.status === 'passed') toast.success('Driver License looks good ✅');
+        else if (res.status === 'review') toast.warning('We can proceed, but we may need manual review ⚠️');
+        else toast.error('Verification failed — please re-upload a clearer image ❌');
       }
 
-      if (res.status === 'failed') {
-        verificationError.value = 'Verification failed. Please re-upload clearer images or check hints.'
-      } else {
-        verificationError.value = null
-      }
+      verificationError.value = res.status === 'failed'
+        ? 'Verification failed. Please re-upload clearer images or check hints.'
+        : null;
     } catch (e) {
-      verificationError.value = extractApiErrorMessage(verify.error.value ?? e)
-      const toastKey = `${key}:error`
+      verificationError.value = extractApiErrorMessage(verify.error.value ?? e);
+      const toastKey = `${key}:error`;
       if (toastKey !== lastToastKey.value) {
-        lastToastKey.value = toastKey
-        toast.error('Could not verify right now. Please try again.')
+        lastToastKey.value = toastKey;
+        toast.error('Could not verify right now. Please try again.');
       }
     }
   },
-  { immediate: true }
-)
+  { immediate: true },
+);
 
-
-
-
-
+// --- submit
 const onSubmitStep1 = handleSubmit(async (vals) => {
   showFilesErrors.value = true;
   verificationError.value = null;
@@ -466,14 +396,8 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     runLocalPrecheck(licenseFile.value),
   ]);
 
-  if (!ph.ok) {
-    window.alert(`Headshot: ${ph.reason}`);
-    return;
-  }
-  if (!pl.ok) {
-    window.alert(`License: ${pl.reason}`);
-    return;
-  }
+  if (!ph.ok) return void window.alert(`Headshot: ${ph.reason}`);
+  if (!pl.ok) return void window.alert(`License: ${pl.reason}`);
 
   if (!verificationResult.value && licenseFile.value) {
     try {
@@ -523,58 +447,55 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     sex: vals.sex,
   });
 
-  if (verification.status === 'passed' || verification.status === 'review') {
-    const verificationId = verification.verificationId as string | undefined;
-    console.log('verif id', verificationId);
-    if (!verificationId) {
-      toast.error('Verification id is missing. Please re-upload the license.');
-      return;
-    }
+  const verificationId = verification.verificationId as string | undefined;
+  if (!verificationId) {
+    toast.error('Verification id is missing. Please re-upload the license.');
+    return;
+  }
 
-    const payload: CreateApplicationPayload = {
-      email: vals.email,
-      phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
+  const payload: CreateApplicationPayload = {
+    email: vals.email,
+    phone: vals.phone?.trim() ? vals.phone.trim() : undefined,
 
-      firstName: vals.firstName,
-      lastName: vals.lastName,
+    firstName: vals.firstName,
+    lastName: vals.lastName,
 
-      issueCountry: vals.licenseCountry,
+    issueCountry: vals.licenseCountry,
 
-      dobDay: Number(vals.dobDay),
-      dobMonth: Number(vals.dobMonth),
-      dobYear: Number(vals.dobYear),
+    dobDay: Number(vals.dobDay),
+    dobMonth: Number(vals.dobMonth),
+    dobYear: Number(vals.dobYear),
 
-      sex: vals.sex,
+    sex: vals.sex,
 
-      planYears: selectedYears.value,
+    planYears: selectedYears.value,
 
-      licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
+    licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
 
-      signatureDataUrl: signatureDataUrl.value,
+    signatureDataUrl: signatureDataUrl.value,
+    verificationId,
+  };
 
-      verificationId,
-    };
+  try {
+    isSubmittingApplication.value = true;
 
-    try {
-      console.log('try 1')
-      isSubmittingApplication.value = true;
+    const res = await createApplication(headshotFile.value!, payload);
 
-      const res = await createApplication(headshotFile.value!, payload);
-      console.log('res', res)
-      applicationId.value = res.applicationId;
-      toast.success('Application created ✅');
+    store.setApplicationId(res.applicationId);
+    sessionStorage.setItem('driverApp.applicationId', res.applicationId);
 
-      currentStep.value = 2;
-    } catch (e) {
-      toast.error('Could not submit application. Please try again.');
-      return;
-    } finally {
-      isSubmittingApplication.value = false;
-    }
-}
+    toast.success('Application created ✅');
 
+    await router.push({
+      name: 'payment',
+      params: { applicationId: res.applicationId },
+    });
+  } catch (e) {
+    toast.error('Could not submit application. Please try again.');
+  } finally {
+    isSubmittingApplication.value = false;
+  }
 });
-
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,3 @@
-// entities/driver-application/model/store.ts
-
 import { defineStore } from 'pinia';
 import type { DriverDetails, VerifyIdentity, PlanYears } from './types';
 
@@ -8,6 +6,8 @@ export const useDriverApplicationStore = defineStore('driverApplication', {
 		selectedYears: 1 as PlanYears,
 		driver: null as DriverDetails | null,
 		verify: null as VerifyIdentity | null,
+
+		applicationId: null as string | null,
 	}),
 	actions: {
 		setSelectedYears(years: PlanYears) {
@@ -19,10 +19,16 @@ export const useDriverApplicationStore = defineStore('driverApplication', {
 		setVerifyIdentity(payload: VerifyIdentity) {
 			this.verify = payload;
 		},
+
+		setApplicationId(id: string | null) {
+			this.applicationId = id;
+		},
+
 		reset() {
 			this.selectedYears = 1;
 			this.driver = null;
 			this.verify = null;
+			this.applicationId = null;
 		},
 	},
 });
