@@ -14,6 +14,14 @@
       and not a replacement of your license.
     </p>
 
+    <LicenseCategoriesSelector
+      label="License category"
+      required
+      :model-value="licenseCategories"
+      @update:model-value="emit('update:licenseCategories', $event)"
+      :error="licenseCategoriesError"
+    />
+
     <div class="verify__grid grid grid--2 grid--rows mb-3 gap-4">
       <BaseFile
         class="verify__headshot"
@@ -95,12 +103,17 @@ import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
 import SignaturePad from '@/shared/ui/inputs/SignaturePad.vue';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 
+import LicenseCategoriesSelector from '@/features/license-categories/ui/LicenseCategoriesSelector.vue';
+import type { LicenseCategory } from '@/shared/types/applications';
+
 const props = defineProps<{
   headshotFile: File | null;
   licenseNumber: string;
   licenseFile: File | null;
   signatureDataUrl: string;
   termsAccepted: boolean;
+  licenseCategories: LicenseCategory[];
+  licenseCategoriesError?: string;
 
   showErrors: boolean;
 
@@ -114,6 +127,7 @@ const emit = defineEmits<{
   (e: 'update:licenseFile', v: File | null): void;
   (e: 'update:signatureDataUrl', v: string): void;
   (e: 'update:termsAccepted', v: boolean): void;
+  (e: 'update:licenseCategories', v: LicenseCategory[]): void;
 }>();
 
 const headshotError = computed(() =>
@@ -137,6 +151,11 @@ const licenseError = computed(() => {
 const signatureError = computed(() =>
   props.showErrors && !props.signatureDataUrl ? 'Signature is required' : '',
 );
+
+const licenseCategoriesError = computed(() => {
+  if (!props.showErrors) return '';
+  return props.licenseCategoriesError ?? '';
+});
 
 const statusLabel = computed(() => {
   const status = props.verificationResult?.status;

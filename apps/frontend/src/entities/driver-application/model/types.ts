@@ -1,7 +1,7 @@
-// entities/driver-application/model/types.ts
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 export type { Sex, PlanYears } from '@/shared/types/domain';
-
+import type { Sex } from '@/shared/types/domain';
+import type { LicenseCategory } from '@/shared/types/applications';
 
 export type DriverDetails = {
 	firstName: string;
@@ -21,6 +21,7 @@ export type VerifyIdentity = {
 	licenseCountry: string;
 	destinationCountry?: string;
 	licenseFile: File | null;
+	licenseCategories: LicenseCategory[];
 	signatureDataUrl: string;
 	termsAccepted: boolean;
 	verification?: VerifyLicenseResponse | null;

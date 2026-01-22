@@ -1,3 +1,6 @@
+import type { Sex } from './domain';
+
+export type LicenseCategory = 'A' | 'B' | 'C' | 'D' | 'E';
 
 export interface CreateApplicationPayload {
 	email: string;
@@ -17,6 +20,8 @@ export interface CreateApplicationPayload {
 	planYears: 1 | 2 | 3;
 
 	licenseNumber?: string;
+
+	licenseCategories: LicenseCategory[];
 
 	signatureDataUrl: string;
 

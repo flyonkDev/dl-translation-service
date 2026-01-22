@@ -52,6 +52,8 @@
               v-model:licenseFile="licenseFile"
               v-model:signatureDataUrl="signatureDataUrl"
               v-model:termsAccepted="termsAccepted"
+              v-model:licenseCategories="licenseCategories"
+              :license-categories-error="showError(licenseCategoriesMeta) ? (licenseCategoriesError ?? '') : ''"
               :show-errors="showFilesErrors"
               :verification-result="verificationResult"
               :verification-error="verificationError"
@@ -117,22 +119,19 @@ import { toTypedSchema } from '@vee-validate/zod';
 import { useRoute, useRouter } from 'vue-router';
 
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
-
 import DriverDetailsForm, {
   type DriverDetailsFormErrors,
   type SelectOption,
 } from '@/features/driver-details/ui/DriverDetailsForm.vue';
 import PlanYearsSelector from '@/features/plan-years/ui/PlanYearsSelector.vue';
 import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSection.vue';
-
 import { createApplication } from '@/features/driver-application/api/createApplicationApi';
-import type { CreateApplicationPayload } from '@/shared/types/applications';
-
 import { useDriverApplicationStore } from '@/entities/driver-application';
-import type { PlanYears, Sex } from '@/entities/driver-application';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
-
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
+import type { CreateApplicationPayload } from '@/shared/types/applications';
+import type { PlanYears, Sex } from '@/entities/driver-application';
+import type { LicenseCategory } from '@/shared/types/applications';
 
 type StepId = 1 | 2;
 const currentStep = ref<StepId>(1);
@@ -237,6 +236,7 @@ const schema = z.object({
     .refine((y) => currentYear - Number(y) >= 18, 'You must be 18+'),
 
   licenseCountry: z.string().min(1, 'Required'),
+  licenseCategories: z.array(z.enum(['A','B','C','D','E'])).min(1, 'Select at least one category'),
   sex: z
     .enum(['male', 'female', ''], { message: 'Select your sex' })
     .refine((v) => v !== '', { message: 'Select your sex' }),
@@ -253,6 +253,7 @@ const { handleSubmit, submitCount } = useForm({
     dobMonth: store.driver?.dobMonth ?? '',
     dobYear: store.driver?.dobYear ?? '',
     licenseCountry: store.verify?.licenseCountry ?? '',
+    licenseCategories: store.verify?.licenseCategories ?? [],
     sex: (store.driver?.sex ?? '') as Sex | '',
   },
 });
@@ -270,7 +271,11 @@ const { value: phone, errorMessage: phoneError, meta: phoneMeta } = useField<str
 const { value: dobDay, errorMessage: dobDayError, meta: dobDayMeta } = useField<string>('dobDay');
 const { value: dobMonth, errorMessage: dobMonthError, meta: dobMonthMeta } = useField<string>('dobMonth');
 const { value: dobYear, errorMessage: dobYearError, meta: dobYearMeta } = useField<string>('dobYear');
-
+const {
+  value: licenseCategories,
+  errorMessage: licenseCategoriesError,
+  meta: licenseCategoriesMeta,
+} = useField<LicenseCategory[]>('licenseCategories');
 const { value: licenseCountryField, errorMessage: licenseCountryError, meta: licenseCountryMeta } =
   useField<string>('licenseCountry');
 
@@ -425,6 +430,7 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     licenseFile: licenseFile.value,
     signatureDataUrl: signatureDataUrl.value,
     termsAccepted: termsAccepted.value,
+    licenseCategories: licenseCategories.value,
     verification,
   });
 
@@ -471,7 +477,7 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
     planYears: selectedYears.value,
 
     licenseNumber: licenseNumber.value.trim() ? licenseNumber.value.trim() : undefined,
-
+    licenseCategories: licenseCategories.value,
     signatureDataUrl: signatureDataUrl.value,
     verificationId,
   };

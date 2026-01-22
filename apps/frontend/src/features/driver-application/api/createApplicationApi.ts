@@ -1,4 +1,3 @@
-// src/features/driver-application/api/createApplicationApi.ts
 import { apiPost, type ApiError } from '@/shared/api/apiClient';
 import type {
 	CreateApplicationPayload,
@@ -8,7 +7,7 @@ import type {
 
 export async function createApplication(
 	headshot: File,
-	payload: CreateApplicationPayload
+	payload: CreateApplicationPayload,
 ): Promise<CreateApplicationResponse> {
 	const formData = new FormData();
 
@@ -27,15 +26,20 @@ export async function createApplication(
 	formData.append('planYears', String(payload.planYears));
 
 	if (payload.licenseNumber) formData.append('licenseNumber', payload.licenseNumber);
+
+	for (const c of payload.licenseCategories) {
+		formData.append('licenseCategories', c);
+	}
+
 	formData.append('signatureDataUrl', payload.signatureDataUrl);
 	formData.append('verificationId', payload.verificationId);
 
-  for (const [k, v] of formData.entries()) console.log(k, v);
+	for (const [k, v] of formData.entries()) console.log(k, v);
 
 	try {
 		return await apiPost<CreateApplicationResponse, FormData, CreateApplicationError>(
 			'/applications',
-			formData
+			formData,
 		);
 	} catch (error) {
 		throw error as ApiError<CreateApplicationError>;
