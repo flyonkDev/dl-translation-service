@@ -10,6 +10,17 @@ type PdfOpts = {
   debug?: boolean;
 };
 
+const LICENSE_CATEGORIES = ['A', 'B', 'C', 'D', 'E'] as const;
+type LicenseCategory = typeof LICENSE_CATEGORIES[number];
+
+const CATEGORY_STAMP_CENTER: Record<LicenseCategory, { x: number; y: number }> = {
+  A: { x: 60.45, y: 296.31 },
+  B: { x: 60.45, y: 254.61 },
+  C: { x: 60.45, y: 212.91 },
+  D: { x: 60.15, y: 171.81 },
+  E: { x: 60.45, y: 130.41 },
+};
+
 @Injectable()
 export class ApplicationsPdfService {
   private readonly logger = new Logger(ApplicationsPdfService.name);
@@ -52,7 +63,9 @@ export class ApplicationsPdfService {
         return await pdfDoc.embedFont(fontBytes, { subset: true });
       }
     } catch (e) {
-      this.logger.warn(`Failed to load PDF font from PDF_FONT_PATH. Fallback to Helvetica. ${(e as Error).message}`);
+      this.logger.warn(
+        `Failed to load PDF font from PDF_FONT_PATH. Fallback to Helvetica. ${(e as Error).message}`,
+      );
     }
 
     // Fallback (без unicode)
@@ -60,12 +73,9 @@ export class ApplicationsPdfService {
   }
 
   private fillCover(page: any, s: ApplicationSnapshot, font: any, opts: PdfOpts) {
-    // Координаты подобраны под мой sample IDP (cover).
-    // !TODO: Потом, когда будет свой template — просто поправить Layout-константы.
     const validUntil = this.formatValidUntil(s.planYears);
-    const permitNo = s.applicationId.slice(0, 6).toUpperCase(); // !TODO: MVP: придумать нормальную логику номера
+    const permitNo = s.applicationId.slice(0, 6).toUpperCase();
 
-    // Подчищаем область и печатаем заново (на sample PDF уже есть дата/номер)
     this.coverRect(page, 110, 273, 95, 18); // around date
     page.drawText(validUntil, { x: 113.4, y: 275.9, size: 12, font });
 
@@ -79,13 +89,6 @@ export class ApplicationsPdfService {
   }
 
   private async fillBack(pdfDoc: PDFDocument, page: any, s: ApplicationSnapshot, font: any, opts: PdfOpts) {
-    // BACK page coords extracted from sample:
-    // Text lines:
-    // lastName at x=45.35 y=387.05
-    // firstName at x=45.35 y=374.29
-    // country at x=45.35 y=361.53
-    // dob at x=45.35 y=348.78
-    // and repeated country at x=45.35 y=336.02
     const x = 45.35;
 
     const lastNameY = 387.05;
@@ -94,10 +97,9 @@ export class ApplicationsPdfService {
     const dobY = 348.78;
     const countryY2 = 336.02;
 
-    const countryText = s.issueCountry; // MVP: пока код. Позже подтянем название страны из reference.
+    const countryText = s.issueCountry;
     const dobText = this.formatDob(s.dobDay, s.dobMonth, s.dobYear);
 
-    // перекрываем sample-текст
     this.coverRect(page, x - 2, lastNameY - 2, 190, 16);
     this.coverRect(page, x - 2, firstNameY - 2, 190, 16);
     this.coverRect(page, x - 2, countryY1 - 2, 190, 16);
@@ -110,15 +112,17 @@ export class ApplicationsPdfService {
     page.drawText(dobText, { x, y: dobY, size: 13, font });
     page.drawText(countryText.toUpperCase(), { x, y: countryY2, size: 13, font });
 
-    // Photo box (sample image I2): x=133.23 y=180.28 w=97.8 h=126.71
+    // Photo
     const photoBox = { x: 133.23, y: 180.28, w: 97.8, h: 126.71 };
     const headshotImg = await this.embedImageFromFile(pdfDoc, s.headshotMeta.path, s.headshotMeta.mimetype);
     this.drawImageContain(page, headshotImg, photoBox);
 
-    // Signature placeholder (sample image I4): x=127.56 y=147.4 w=119.06 h=34.02
+    // Signature
     const signBox = { x: 127.56, y: 147.4, w: 119.06, h: 34.02 };
     const signatureImg = await this.embedImageFromDataUrl(pdfDoc, s.signatureDataUrl);
     this.drawImageContain(page, signatureImg, signBox);
+
+    this.fillLicenseCategories(page, s, opts);
 
     if (opts.debug) {
       this.debugRect(page, photoBox, 'back.photo');
@@ -128,6 +132,49 @@ export class ApplicationsPdfService {
       this.debugMark(page, x, firstNameY, 'back.firstName');
       this.debugMark(page, x, dobY, 'back.dob');
     }
+  }
+
+  private fillLicenseCategories(page: any, s: ApplicationSnapshot, opts: PdfOpts) {
+    const selected = new Set(
+      (s.licenseCategories ?? [])
+        .map((v) => String(v).trim().toUpperCase())
+        .filter(Boolean),
+    );
+
+    for (const cat of LICENSE_CATEGORIES) {
+      const c = CATEGORY_STAMP_CENTER[cat];
+
+      if (opts.debug) {
+        this.debugMark(page, c.x, c.y, `cat.${cat}`);
+      }
+
+      if (!selected.has(cat)) continue;
+
+      // demo stamp: black circle + white check
+      this.drawDemoStamp(page, c.x, c.y, { radius: 19.5 });
+    }
+  }
+
+  private drawDemoStamp(page: any, cx: number, cy: number, opts: { radius: number }) {
+    const r = opts.radius;
+
+    // base filled circle
+    page.drawCircle({
+      x: cx,
+      y: cy,
+      size: r,
+      color: rgb(0, 0, 0),
+    });
+
+    // check mark (white) — scalable
+    const thickness = Math.max(2.2, r * 0.14);
+
+    const a = { x: cx - r * 0.45, y: cy + r * 0.05 };
+    const b = { x: cx - r * 0.12, y: cy - r * 0.28 };
+    const c = { x: cx + r * 0.55, y: cy + r * 0.38 };
+
+    page.drawLine({ start: a, end: b, thickness, color: rgb(1, 1, 1) });
+    page.drawLine({ start: b, end: c, thickness, color: rgb(1, 1, 1) });
   }
 
   private coverRect(page: any, x: number, y: number, w: number, h: number) {
@@ -193,13 +240,12 @@ export class ApplicationsPdfService {
       return pdfDoc.embedPng(png);
     }
 
-    // на всякий случай пробуем конвертнуть всё неизвестное в png
     const png = await sharp(bytes).png().toBuffer();
     return pdfDoc.embedPng(png);
   }
 
   private formatDob(day: number, month: number, year: number) {
-    const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][month - 1] ?? 'Jan';
+    const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][month - 1] ?? 'Jan';
     const dd = String(day).padStart(2, '0');
     return `${dd}-${m}-${year}`;
   }
