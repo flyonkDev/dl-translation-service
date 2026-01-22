@@ -1,4 +1,4 @@
-import { Type } from 'class-transformer';
+import { Type, Transform  } from 'class-transformer';
 import {
   IsEmail,
   IsIn,
@@ -9,7 +9,14 @@ import {
   Max,
   MinLength,
   Matches,
+  IsArray,
+  ArrayMinSize,
+  ArrayMaxSize,
+  ArrayUnique,
 } from 'class-validator';
+
+const LICENSE_CATEGORIES = ['A', 'B', 'C', 'D', 'E'] as const;
+export type LicenseCategory = typeof LICENSE_CATEGORIES[number];
 
 export class CreateApplicationDto {
   @IsEmail()
@@ -61,6 +68,20 @@ export class CreateApplicationDto {
   @IsOptional()
   @IsString()
   licenseNumber?: string;
+
+  @Transform(({ value }) => {
+    if (value == null) return [];
+    const arr = Array.isArray(value) ? value : String(value).split(',');
+    return arr
+      .map((v) => String(v).trim().toUpperCase())
+      .filter(Boolean);
+  })
+  @IsArray()
+  @ArrayMinSize(1)
+  @ArrayMaxSize(LICENSE_CATEGORIES.length)
+  @ArrayUnique()
+  @IsIn(LICENSE_CATEGORIES, { each: true })
+  licenseCategories!: LicenseCategory[];
 
   @IsString()
   @MinLength(20)

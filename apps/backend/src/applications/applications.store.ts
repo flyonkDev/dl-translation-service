@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
+import type { LicenseCategory } from './dto/create-application.dto';
+
 
 export type ApplicationSnapshot = {
   applicationId: string;
@@ -17,6 +19,7 @@ export type ApplicationSnapshot = {
   sex: 'male' | 'female';
   planYears: 1 | 2 | 3;
   licenseNumber?: string;
+  licenseCategories: LicenseCategory[];
   signatureDataUrl: string;
 
   verificationId: string;
