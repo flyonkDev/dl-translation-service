@@ -25,7 +25,7 @@ export class ApplicationsPdfService {
 
     // pages
     const cover = pdfDoc.getPage(0);
-    const back = pdfDoc.getPage(pdfDoc.getPageCount() - 1);
+    const back = pdfDoc.getPage(1); // new template: back page is 2/15
 
     this.fillCover(cover, snapshot, font, opts);
     await this.fillBack(pdfDoc, back, snapshot, font, opts);
