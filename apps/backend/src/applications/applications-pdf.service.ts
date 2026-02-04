@@ -4,7 +4,7 @@ import fontkit from '@pdf-lib/fontkit';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
-import type { ApplicationSnapshot } from './applications.store';
+import type { ApplicationSnapshot } from './types/index';
 
 type PdfOpts = {
   debug?: boolean;
@@ -60,7 +60,7 @@ export class ApplicationsPdfService {
     try {
       if (fontPath) {
         const fontBytes = await readFile(fontPath);
-        return await pdfDoc.embedFont(fontBytes, { subset: true });
+        return await pdfDoc.embedFont(fontBytes, { subset: false });
       }
     } catch (e) {
       this.logger.warn(
