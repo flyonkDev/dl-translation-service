@@ -30,9 +30,15 @@
           </span>
         </div>
 
-        <div class="text-xs text-slate-500">
-          {{ opt.sub }}
-        </div>
+        <div class="flex items-end justify-between gap-3">
+            <span class="text-xs text-slate-500">
+              {{ opt.sub }}
+            </span>
+
+            <span class="text-lg font-extrabold text-slate-900">
+              {{ formatUsd(opt.priceCents) }}
+            </span>
+          </div>
       </button>
     </div>
   </div>
@@ -53,5 +59,10 @@ const emit = defineEmits<{
 
 function update(v: PlanYears) {
   emit('update:modelValue', v)
+}
+
+function formatUsd(cents: number) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+    .format(cents / 100)
 }
 </script>
