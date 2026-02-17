@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts, degrees } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -122,7 +122,7 @@ export class ApplicationsPdfService {
     const signatureImg = await this.embedImageFromDataUrl(pdfDoc, s.signatureDataUrl);
     this.drawImageContain(page, signatureImg, signBox);
 
-    this.fillLicenseCategories(page, s, opts);
+    await this.fillLicenseCategories(pdfDoc, page, s, opts);
 
     if (opts.debug) {
       this.debugRect(page, photoBox, 'back.photo');
@@ -134,12 +134,21 @@ export class ApplicationsPdfService {
     }
   }
 
-  private fillLicenseCategories(page: any, s: ApplicationSnapshot, opts: PdfOpts) {
+  private async fillLicenseCategories(pdfDoc: PDFDocument, page: any, s: ApplicationSnapshot, opts: PdfOpts) {
     const selected = new Set(
       (s.licenseCategories ?? [])
         .map((v) => String(v).trim().toUpperCase())
         .filter(Boolean),
     );
+
+    const stampImg = await this.loadStampImage(pdfDoc);
+
+    const r = 19.5;
+
+    const size = r * 2 * 1.03;
+
+    const dx = 0.1;
+    const dy = 0.2;
 
     for (const cat of LICENSE_CATEGORIES) {
       const c = CATEGORY_STAMP_CENTER[cat];
@@ -150,31 +159,19 @@ export class ApplicationsPdfService {
 
       if (!selected.has(cat)) continue;
 
-      // demo stamp: black circle + white check
-      this.drawDemoStamp(page, c.x, c.y, { radius: 19.5 });
+      const angle = 0;
+      const x = c.x - size / 2 + dx;
+      const y = c.y - size / 2 + dy;
+
+      page.drawImage(stampImg, {
+        x,
+        y,
+        width: size,
+        height: size,
+        rotate: degrees(angle),
+        opacity: 1,
+      });
     }
-  }
-
-  private drawDemoStamp(page: any, cx: number, cy: number, opts: { radius: number }) {
-    const r = opts.radius;
-
-    // base filled circle
-    page.drawCircle({
-      x: cx,
-      y: cy,
-      size: r,
-      color: rgb(0, 0, 0),
-    });
-
-    // check mark (white) — scalable
-    const thickness = Math.max(2.2, r * 0.14);
-
-    const a = { x: cx - r * 0.45, y: cy + r * 0.05 };
-    const b = { x: cx - r * 0.12, y: cy - r * 0.28 };
-    const c = { x: cx + r * 0.55, y: cy + r * 0.38 };
-
-    page.drawLine({ start: a, end: b, thickness, color: rgb(1, 1, 1) });
-    page.drawLine({ start: b, end: c, thickness, color: rgb(1, 1, 1) });
   }
 
   private coverRect(page: any, x: number, y: number, w: number, h: number) {
@@ -260,5 +257,23 @@ export class ApplicationsPdfService {
     const yyyy = d.getFullYear();
 
     return `${dd} ${month} ${yyyy}`;
+  }
+
+  private getStampPath() {
+    const fromEnv = process.env.PDF_STAMP_PATH?.trim();
+    if (fromEnv) return path.resolve(process.cwd(), fromEnv);
+    return path.resolve(process.cwd(), 'assets/stamps/stamp1.png');
+  }
+
+  private async loadStampImage(pdfDoc: PDFDocument) {
+    const stampPath = this.getStampPath();
+    const bytes = await readFile(stampPath);
+
+    const png = await sharp(bytes)
+      .resize(320, 320, { fit: 'inside' })
+      .png()
+      .toBuffer();
+
+    return pdfDoc.embedPng(png);
   }
 }
