@@ -12,6 +12,7 @@ export type CountriesResponse = {
 export type PlanYears = 1 | 2 | 3;
 
 export type PricingPlanDTO = {
+	id: string;
 	years: PlanYears;
 	title: string;
 	sub: string;

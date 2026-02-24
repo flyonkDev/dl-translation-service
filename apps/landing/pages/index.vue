@@ -452,7 +452,7 @@ const appUrl = computed(() => String(config.public.appUrl || '').trim())
 const { issueCountry, planYears, fromPrice, scrollToPricing } = useStartApplication(appUrl)
 
 useHead({
-  title: 'Driver License Translation PDF — DL Translate',
+  title: 'IDP Companion',
   meta: [
     {
       name: 'description',
