@@ -6,9 +6,9 @@
       </h2>
 
       <p class="mt-1 text-xs leading-relaxed text-slate-500">
-        You’ll get a multilingual translation PDF for your driver’s license —
-        <span class="font-semibold text-slate-700">not an official IDP</span>.
-        Designed to show together with your original license.
+        You’ll receive an International Driving Permit companion document —
+        <span class="font-semibold text-slate-700">not a government-issued IDP</span>.
+        Generated from your real driver license and designed for international travel.
       </p>
     </div>
 
