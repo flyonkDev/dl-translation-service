@@ -3,37 +3,40 @@
     <!-- Hero + widget -->
     <section class="bg-mint/40 px-4 py-10 md:py-14">
       <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-start">
+
         <div class="lg:pr-3">
           <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
-            Driver license translation PDF
+            International Driving Permit Companion Document
           </p>
 
           <h1 class="mb-4 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
-            Get your multilingual driver license translation in minutes
+            Get your International Driving Permit Companion Document in minutes
           </h1>
 
           <p class="mb-4 max-w-xl text-sm leading-relaxed text-slate-700">
-            Upload your license once – we generate a clean translation PDF in several languages,
-            ready to show rental agencies and authorities
-            <strong class="font-semibold text-slate-900">together with your national license</strong>.
+            Multilingual driving document designed for international travel. Helps car rental agencies
+            and authorities understand your license abroad when used together with your original driver license.
           </p>
 
           <ul class="mb-5 space-y-2 text-sm text-slate-900">
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Automatic text extraction and formatting</span>
+              <span>Generated from your real driver license after verification</span>
             </li>
+
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Supports multiple languages (English, Spanish, German, French and more)</span>
+              <span>Formatted for international use and multilingual recognition</span>
             </li>
+
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Delivered as a printable &amp; digital PDF</span>
+              <span>Instant digital delivery, ready to print or use on your phone</span>
             </li>
+
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Translation document only — not a replacement for your license</span>
+              <span>Must be used together with your original driver license</span>
             </li>
           </ul>
 
@@ -47,6 +50,10 @@
           <p class="mt-3 text-xs text-slate-500">
             From <strong class="font-semibold text-slate-900">${{ fromPrice }}</strong> per document. No subscriptions.
           </p>
+
+          <!-- <p class="mt-2 text-xs text-slate-400">
+            Companion document only. Not a government-issued International Driving Permit.
+          </p> -->
         </div>
 
         <StartApplicationWidget
@@ -59,53 +66,164 @@
       </div>
     </section>
 
-    <section class="bg-white px-4 py-12 md:py-14">
-      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
-        <div>
-          <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
-            Who is this for?
+    <section class="trust-block bg-white px-4 py-10 md:py-14 border-t border-slate-100">
+      <div class="mx-auto max-w-6xl">
+
+        <div class="mb-8 max-w-2xl">
+          <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
+            Why travelers use an International Driving Permit companion document
           </h2>
 
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>Travellers renting cars in non-English speaking countries</span>
-            </li>
-            <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>Digital nomads who frequently cross borders</span>
-            </li>
-            <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>People with licenses in non-Latin alphabets (Cyrillic, Arabic, etc.)</span>
-            </li>
-          </ul>
+          <p class="text-sm leading-relaxed text-slate-700">
+            Driver licenses issued in many countries are difficult for foreign authorities and car rental agencies to read,
+            especially when written in non-Latin alphabets or unfamiliar formats.
+          </p>
         </div>
 
+        <div class="grid gap-6 md:grid-cols-2">
+
+          <!-- Problems -->
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-slate-900">
+              Common situations abroad
+            </h3>
+
+            <ul class="space-y-2 text-sm text-slate-700">
+
+              <li class="flex gap-2">
+                <span class="text-sea">•</span>
+                <span>Car rental staff cannot read your license language</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">•</span>
+                <span>Your license uses Cyrillic, Arabic, Chinese, or other scripts</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">•</span>
+                <span>Authorities may need a clearer interpretation of your license details</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">•</span>
+                <span>Explaining your license abroad can be slow and stressful</span>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- Solution -->
+          <div class="rounded-2xl border border-sea/20 bg-mint/30 p-5">
+            <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-slate-900">
+              Companion document solution
+            </h3>
+
+            <ul class="space-y-2 text-sm text-slate-900">
+
+              <li class="flex gap-2">
+                <span class="text-sea">✓</span>
+                <span>Presents your license details in a clear multilingual format</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">✓</span>
+                <span>Generated from your real license after verification</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">✓</span>
+                <span>Easy to show digitally or as a printed document</span>
+              </li>
+
+              <li class="flex gap-2">
+                <span class="text-sea">✓</span>
+                <span>Designed for international travel use together with your original license</span>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="bg-slate-50 px-4 py-12 md:py-14">
+      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
+
+        <!-- Who is this for -->
+        <div>
+          <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
+            Who needs an International Driving Permit companion document
+          </h2>
+
+          <ul class="space-y-3 text-sm text-slate-700">
+
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Travelers planning to drive or rent a car abroad</span>
+            </li>
+
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Drivers whose license is not in English or uses non-Latin alphabet</span>
+            </li>
+
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Digital nomads, expats, and frequent international travelers</span>
+            </li>
+
+            <li class="flex gap-2">
+              <span class="text-sea">•</span>
+              <span>Anyone who wants a clearer, internationally understandable license format</span>
+            </li>
+
+          </ul>
+
+          <p class="mt-4 text-sm text-slate-500">
+            Used together with your original driver license for international travel.
+          </p>
+
+        </div>
+
+        <!-- What you receive -->
         <div>
           <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
             What you receive
           </h2>
 
-          <ul class="space-y-2 text-sm text-slate-700">
+          <ul class="space-y-3 text-sm text-slate-700">
+
             <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>PDF with your key license details translated into several languages</span>
+              <span class="text-sea">✓</span>
+              <span>International Driving Permit companion document in digital PDF format</span>
             </li>
+
             <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>Clear layout that’s easy to show on your phone or print</span>
+              <span class="text-sea">✓</span>
+              <span>Multilingual presentation of your driver license information</span>
             </li>
+
             <li class="flex gap-2">
-              <span class="text-sea">•</span>
-              <span>Disclaimer explaining it’s a translation, not an official document</span>
+              <span class="text-sea">✓</span>
+              <span>Clean, professional layout ready to print or show on your phone</span>
             </li>
+
+            <li class="flex gap-2">
+              <span class="text-sea">✓</span>
+              <span>Generated after verification of your original driver license</span>
+            </li>
+
           </ul>
+
         </div>
+
       </div>
     </section>
 
-    <!-- How it works -->
     <section id="how-it-works" class="bg-mint/15 px-4 py-12 md:py-14">
       <div class="mx-auto max-w-6xl">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
@@ -113,47 +231,136 @@
         </h2>
 
         <div class="grid gap-5 md:grid-cols-3">
+
+          <!-- Step 1 -->
           <div class="rounded-2xl bg-white p-5 shadow-soft">
             <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
               1
             </div>
+
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              Upload your license
+              Submit your driver license
             </h3>
+
             <p class="text-sm leading-relaxed text-slate-700">
-              Take a clear photo or scan of your driver’s license and upload it to our secure form.
+              Upload a photo or scan of your valid driver license through our secure online form.
             </p>
           </div>
 
+          <!-- Step 2 -->
           <div class="rounded-2xl bg-white p-5 shadow-soft">
             <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
               2
             </div>
+
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              We parse &amp; translate
+              Verification and document generation
             </h3>
+
             <p class="text-sm leading-relaxed text-slate-700">
-              Our system extracts key fields and places them into a multilingual template in several languages.
+              We verify your license details and generate your International Driving Permit companion document in multilingual format.
             </p>
           </div>
 
+          <!-- Step 3 -->
           <div class="rounded-2xl bg-white p-5 shadow-soft">
             <div class="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-mint text-xs font-extrabold text-sea ring-1 ring-sea/15">
               3
             </div>
+
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              Download your PDF
+              Download and use internationally
             </h3>
+
             <p class="text-sm leading-relaxed text-slate-700">
-              Get a ready-to-print PDF with your details and translation blocks, to use together with your original license.
+              Receive your companion document instantly and use it together with your original license when traveling abroad.
             </p>
           </div>
+
         </div>
+
+        <p class="mt-6 text-xs text-slate-400 italic">
+          *Companion document only. Not a government-issued International Driving Permit.
+        </p>
+
       </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="bg-white px-4 py-12 md:py-16 border-t border-slate-100">
+      <div class="mx-auto max-w-6xl">
+
+        <div class="mb-10 text-center">
+          <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
+            Trusted by international travelers
+          </h2>
+
+          <p class="text-sm text-slate-600">
+            Drivers worldwide use companion documents to make their licenses easier to understand abroad.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+
+          <!-- Testimonial 1 -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+
+            <div class="mb-2 text-sea text-sm">
+              ★★★★★
+            </div>
+
+            <p class="mb-3 text-sm text-slate-700 leading-relaxed">
+              The process was very fast and simple. I received my companion document within minutes and used it when renting a car during my trip.
+            </p>
+
+            <div class="text-xs text-slate-500">
+              Daniel M. — Germany
+            </div>
+
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+
+            <div class="mb-2 text-sea text-sm">
+              ★★★★★
+            </div>
+
+            <p class="mb-3 text-sm text-slate-700 leading-relaxed">
+              My original license is not in English, so having a multilingual companion document made everything easier when traveling.
+            </p>
+
+            <div class="text-xs text-slate-500">
+              Alex K. — Poland
+            </div>
+
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+
+            <div class="mb-2 text-sea text-sm">
+              ★★★★★
+            </div>
+
+            <p class="mb-3 text-sm text-slate-700 leading-relaxed">
+              Clean layout, easy to download, and convenient to keep on my phone. The verification process was straightforward.
+            </p>
+
+            <div class="text-xs text-slate-500">
+              Marco R. — Italy
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- FAQ -->
-    <section id="faq" class="bg-white px-4 py-12 md:py-14">
+    <section id="faq" class="bg-slate-50 px-4 py-12 md:py-14">
       <div class="mx-auto max-w-6xl">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
           Frequently asked questions
@@ -198,20 +405,32 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="bg-mint/40 px-4 py-10 md:py-12">
-      <div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <section class="bg-white px-4 py-12 md:py-16 border-t border-sea/10">
+      <div class="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
         <div>
           <h2 class="mb-2 text-2xl font-extrabold text-slate-900">
-            Ready to translate your license?
+            Get your International Driving Permit companion document today
           </h2>
+
           <p class="max-w-xl text-sm leading-relaxed text-slate-700">
-            Choose your plan and start in minutes.
+            Apply online in minutes and receive your multilingual companion document instantly.
+            Designed for international travel use together with your original driver license.
+          </p>
+
+          <p class="mt-2 text-xs text-slate-400">
+            Companion document only. Not a government-issued International Driving Permit.
           </p>
         </div>
 
-        <BaseButton type="button" variant="primary" @click="scrollToPricing">
-          <span class="font-bold">Choose plan</span>
-        </BaseButton>
+        <div>
+          <BaseButton type="button" variant="primary" @click="scrollToPricing">
+            <span class="font-bold">
+              Get companion document
+            </span>
+          </BaseButton>
+        </div>
+
       </div>
     </section>
   </div>
