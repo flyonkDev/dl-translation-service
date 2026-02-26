@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen">
     <!-- Hero + widget -->
-    <section class="bg-mint/40 px-4 py-10 md:py-14">
-      <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-start">
+    <section class="section bg-mint/40">
+      <div class="container grid gap-8 lg:grid-cols-2 lg:items-start">
 
         <div class="lg:pr-3">
           <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
@@ -41,7 +41,7 @@
           </ul>
 
           <a
-            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4 hover:decoration-sea"
+            class="link inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4"
           >
             See pricing
             <span aria-hidden="true">→</span>
@@ -66,8 +66,8 @@
       </div>
     </section>
 
-    <section class="trust-block bg-white px-4 py-10 md:py-14 border-t border-slate-100">
-      <div class="mx-auto max-w-6xl">
+    <section class="section trust-block bg-white border-t border-slate-100">
+      <div class="container">
 
         <div class="mb-8 max-w-2xl">
           <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
@@ -150,8 +150,8 @@
       </div>
     </section>
 
-    <section class="bg-slate-50 px-4 py-12 md:py-14">
-      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
+    <section class="section bg-slate-50">
+      <div class="container grid gap-10 md:grid-cols-2">
 
         <!-- Who is this for -->
         <div>
@@ -224,8 +224,8 @@
       </div>
     </section>
 
-    <section id="how-it-works" class="bg-mint/15 px-4 py-12 md:py-14">
-      <div class="mx-auto max-w-6xl">
+    <section id="how-it-works" class="section bg-mint/15">
+      <div class="container">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
           How it works
         </h2>
@@ -287,8 +287,8 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="bg-white px-4 py-12 md:py-16 border-t border-slate-100">
-      <div class="mx-auto max-w-6xl">
+    <section class="section bg-white border-t border-slate-100">
+      <div class="container">
 
         <div class="mb-10 text-center">
           <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
@@ -360,8 +360,8 @@
 
 
     <!-- FAQ -->
-    <section id="faq" class="bg-slate-50 px-4 py-12 md:py-14">
-      <div class="mx-auto max-w-6xl">
+    <section id="faq" class="section bg-slate-50">
+      <div class="container">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
           Frequently asked questions
         </h2>
@@ -369,20 +369,19 @@
         <ul class="border-t-2 border-sea">
           <li v-for="(item, index) in faqs" :key="item.id" class="border-b border-slate-200">
             <button
-              class="flex w-full items-center justify-between gap-4 py-3 text-left text-sm font-semibold text-slate-900"
+              class="flex w-full items-center justify-between gap-4 py-3 text-left text-sm font-semibold text-slate-900 cursor-pointer"
               :aria-expanded="openIndex === index"
               :aria-controls="`faq-panel-${item.id}`"
               @click="toggle(index)"
             >
               <span>{{ item.question }}</span>
 
-              <span
-                class="select-none text-base transition-transform"
+              <Icon
+                icon="heroicons:chevron-down-20-solid"
+                class="transition-transform duration-200"
                 :class="{ 'rotate-180': openIndex === index }"
-                aria-hidden="true"
-              >
-                ⌄
-              </span>
+                width="18"
+              />
             </button>
 
             <transition name="faq">
@@ -405,8 +404,8 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="bg-white px-4 py-12 md:py-16 border-t border-sea/10">
-      <div class="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <section class="section bg-white border-t border-sea/10">
+      <div class="container flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
         <div>
           <h2 class="mb-2 text-2xl font-extrabold text-slate-900">
@@ -426,7 +425,7 @@
         <div>
           <BaseButton type="button" variant="primary" @click="scrollToPricing">
             <span class="font-bold">
-              Get companion document
+              Get Document
             </span>
           </BaseButton>
         </div>
@@ -440,7 +439,7 @@
 import { ref, computed } from 'vue'
 import { useHead } from '#imports'
 import { useRuntimeConfig } from '#imports'
-
+import { Icon } from '@iconify/vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import StartApplicationWidget from '~/components/widgets/StartApplicationWidget.vue'
 import { LANDING_FAQS } from '~/content/faqs'

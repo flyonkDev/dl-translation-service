@@ -27,6 +27,7 @@ export default defineNuxtConfig({
 	css: [
 		'flag-icons/css/flag-icons.min.css',
 		'@ui-kit/css-vars.scss',
+		'@ui-kit/layout.scss',
 		'~/assets/styles/tailwind.css',
 		'~/assets/styles/theme.scss',
 		'~/assets/styles/main.scss',

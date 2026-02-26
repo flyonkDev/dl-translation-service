@@ -1,0 +1,49 @@
+@use './variables' as *;
+
+.container {
+	width: 100%;
+	max-width: 1280px;
+	margin-inline: auto;
+	padding-inline: 16px;
+
+	@include up($bp-tablet) {
+		padding-inline: 24px;
+	}
+
+	@include up($bp-desktop) {
+		padding-inline: 32px;
+	}
+}
+
+.section {
+  padding-block: $space-section-y-mobile;
+
+  @include up($bp-tablet) {
+    padding-block: $space-section-y-desktop;
+  }
+}
+
+.link {
+  color: rgb(var(--c-slate-900));
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: rgb(var(--c-sea));
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}

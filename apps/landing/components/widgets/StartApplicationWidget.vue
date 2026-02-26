@@ -1,7 +1,7 @@
 <template>
   <div class="rounded-2xl bg-white p-5 shadow-soft">
     <div class="mb-3">
-      <h2 class="text-sm font-extrabold text-slate-900">
+      <h2 class="text-lg font-extrabold text-slate-900">
         Start your application
       </h2>
 
@@ -61,7 +61,7 @@
           v-for="p in uiPlans"
           :key="p.years"
           type="button"
-          class="min-h-20 rounded-xl border bg-white p-3 text-left transition hover:-translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-activeBlue/10 disabled:opacity-60 disabled:hover:translate-y-0"
+          class="min-h-20 rounded-xl border bg-white p-3 text-left transition hover:-translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-activeBlue/10 disabled:opacity-60 disabled:hover:translate-y-0 cursor-pointer"
           :class="planYears === p.years
             ? 'border-activeBlue ring-4 ring-activeBlue/10'
             : 'border-slate-200 hover:border-slate-500/40'"
