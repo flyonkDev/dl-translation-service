@@ -28,6 +28,13 @@ export default {
           700: 'rgb(var(--c-slate-700) / <alpha-value>)',
           500: 'rgb(var(--c-slate-500) / <alpha-value>)',
           200: 'rgb(var(--c-slate-200) / <alpha-value>)',
+          100: 'rgb(var(--c-slate-100) / <alpha-value>)',
+          50: 'rgb(var(--c-slate-50) / <alpha-value>)',
+        },
+
+        success: {
+          DEFAULT: 'rgb(var(--c-success) / <alpha-value>)',
+          light: 'rgb(var(--c-success-light) / <alpha-value>)',
         },
 
         white: 'rgb(var(--c-white) / <alpha-value>)',

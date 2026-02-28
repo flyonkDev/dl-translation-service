@@ -1,33 +1,11 @@
 <template>
-	<div class="apply-page">
-		<div class="apply-shell">
-			<header class="apply-progress">
-				<div class="apply-progress__steps">
-					<div
-						class="apply-progress__step"
-						:class="{ 'is-active': currentStep === 1, 'is-done': currentStep > 1 }"
-					>
-						<span class="index">01</span>
-						<span>Information & documents</span>
-					</div>
-					<div class="apply-progress__step" :class="{ 'is-active': currentStep === 2 }">
-						<span class="index">02</span>
-						<span>Payment</span>
-					</div>
-				</div>
+	<DriverApplicationLayout>
+		<template #header>
+			<StepProgressHeader :current-step="currentStep" />
+		</template>
 
-				<div class="apply-progress__bar">
-					<div
-						class="apply-progress__bar-fill"
-						:style="{ width: currentStep === 1 ? '50%' : '100%' }"
-					/>
-				</div>
-			</header>
-
-			<main class="apply-main">
-				<section class="apply-form">
-					<form v-if="currentStep === 1" @submit.prevent="onSubmitStep1">
-						<DriverDetailsForm
+		<form v-if="currentStep === 1" @submit.prevent="onSubmitStep1">
+			<DriverDetailsForm
 							v-model:firstName="firstName"
 							v-model:lastName="lastName"
 							v-model:email="email"
@@ -72,43 +50,16 @@
 							</BaseButton>
 						</div>
 					</form>
-				</section>
 
-				<aside class="apply-summary">
-					<div class="summary-card">
-						<h3 class="summary-title">Your translation PDF</h3>
-						<p class="summary-text">
-							Multilingual driver’s license translation PDF based on your real license.
-							Ready to print or show on your phone.
-						</p>
 
-						<p class="summary-price">
-							{{ selectedPlan ? formatUsd(selectedPlan.priceCents, selectedPlan.currency) : '—' }}
-						</p>
+		<template #sidebar>
+			<SummarySidebar
+				:price-display="selectedPlan ? formatUsd(selectedPlan.priceCents, selectedPlan.currency) : '—'"
+				:selected-years="selectedYears"
+			/>
 
-						<p class="summary-note">
-							One-time payment per document. Immediate digital delivery after verification
-							and payment.
-						</p>
-
-						<p class="summary-note" style="margin-top: 10px;">
-							Selected plan:
-							<strong>{{ selectedYears }}</strong> year(s)
-						</p>
-					</div>
-
-					<div class="summary-card summary-card--secondary">
-						<h4 class="summary-small-title">Why travelers use it</h4>
-						<ul class="summary-list">
-							<li>Helps car rental agencies understand your license abroad</li>
-							<li>Clear translations into multiple languages</li>
-							<li>Printable PDF + digital copy</li>
-						</ul>
-					</div>
-				</aside>
-			</main>
-		</div>
-	</div>
+		</template>
+	</DriverApplicationLayout>
 </template>
 
 <script setup lang="ts">
@@ -120,6 +71,9 @@
 	import { useRoute, useRouter } from 'vue-router';
 
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+	import DriverApplicationLayout from '@/widgets/driver-application/ui/DriverApplicationLayout.vue';
+	import StepProgressHeader from '@/widgets/driver-application/ui/StepProgressHeader.vue';
+	import SummarySidebar from '@/widgets/driver-application/ui/SummarySidebar.vue';
 	import DriverDetailsForm, {
 	  type DriverDetailsFormErrors,
 	  type SelectOption,
@@ -506,93 +460,6 @@
 </script>
 
 <style scoped lang="scss">
-	.apply-page {
-	  background: #f3f4f6;
-	  padding: 24px 16px 40px;
-	  min-height: calc(100vh - 350px);
-	}
-
-	.apply-shell {
-	  max-width: 1280px;
-	  margin: 0 auto;
-	  background: $white;
-	  border-radius: $radius-2xl;
-	  box-shadow: $shadow-soft;
-	  padding: 20px 20px 24px;
-	}
-
-	.apply-progress {
-	  margin-bottom: 16px;
-	}
-
-	.apply-progress__steps {
-	  display: flex;
-	  gap: 16px;
-	  margin-bottom: 8px;
-	}
-
-	.apply-progress__step {
-	  width: 50%;
-	  display: flex;
-	  align-items: center;
-	  gap: 8px;
-
-	  @include text-sm;
-	  color: $slate-500;
-
-	  .index {
-	    width: 24px;
-	    height: 24px;
-	    border-radius: 999px;
-	    border: 1px solid $slate-200;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
-	    font-size: 11px;
-	    font-weight: 700;
-	    color: $slate-700;
-	  }
-
-	  &.is-active {
-	    color: $slate-900;
-
-	    .index {
-	      border-color: #2563eb;
-	      background: #2563eb;
-	      color: $white;
-	    }
-	  }
-
-	  &.is-done {
-	    color: #16a34a;
-
-	    .index {
-	      border-color: #16a34a;
-	      background: #bbf7d0;
-	      color: #16a34a;
-	    }
-	  }
-	}
-
-	.apply-progress__bar {
-	  height: 4px;
-	  background: $slate-200;
-	  border-radius: 999px;
-	  overflow: hidden;
-	}
-
-	.apply-progress__bar-fill {
-	  height: 100%;
-	  background: #2563eb;
-	  width: 50%;
-	}
-
-	.apply-main {
-	  display: grid;
-	  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
-	  gap: 24px;
-	}
-
 	.divider {
 	  height: 1px;
 	  background: $slate-200;
@@ -602,79 +469,5 @@
 	.section-footer {
 	  display: flex;
 	  margin-top: 18px;
-	}
-
-	.apply-summary {
-	  display: flex;
-	  flex-direction: column;
-	  gap: 16px;
-	}
-
-	.summary-card {
-	  border-radius: $radius-xl;
-	  padding: 14px 14px 16px;
-	  background: #f9fafb;
-	  border: 1px solid $slate-200;
-	}
-
-	.summary-card--secondary {
-	  background: $white;
-	}
-
-	.summary-title {
-	  margin: 0 0 6px;
-	  @include title-sm;
-	}
-
-	.summary-small-title {
-	  margin: 0 0 6px;
-	  font-size: 14px;
-	  line-height: 18px;
-	  font-weight: 700;
-	}
-
-	.summary-text {
-	  margin: 0 0 10px;
-	  @include text-sm;
-	  color: $slate-700;
-	}
-
-	.summary-price {
-	  font-size: 22px;
-	  font-weight: 800;
-	  color: $slate-900;
-	  margin: 0 0 4px;
-	}
-
-	.summary-note {
-	  margin: 0;
-	  @include text-xs;
-	  color: $slate-500;
-	}
-
-	.summary-list {
-	  margin: 0;
-	  padding-left: 18px;
-	  @include text-sm;
-	  color: $slate-700;
-	}
-
-	.verification-result {
-	  margin-top: 12px;
-	  padding: 10px 12px;
-	  border-radius: 12px;
-	  background: #f9fafb;
-	  border: 1px solid $slate-200;
-	  @include text-sm;
-	}
-
-	@media (max-width: calc(#{$bp-desktop} - 1px)) {
-	  .apply-shell {
-	    padding: 16px 12px 20px;
-	  }
-
-	  .apply-main {
-	    grid-template-columns: minmax(0, 1fr);
-	  }
 	}
 </style>

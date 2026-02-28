@@ -21,7 +21,12 @@
   --c-slate-700: #{color.red($slate-700)} #{color.green($slate-700)} #{color.blue($slate-700)};
   --c-slate-500: #{color.red($slate-500)} #{color.green($slate-500)} #{color.blue($slate-500)};
   --c-slate-200: #{color.red($slate-200)} #{color.green($slate-200)} #{color.blue($slate-200)};
+  --c-slate-100: #{color.red($slate-100)} #{color.green($slate-100)} #{color.blue($slate-100)};
+  --c-slate-50: #{color.red($slate-50)} #{color.green($slate-50)} #{color.blue($slate-50)};
   --c-white: #{color.red($white)} #{color.green($white)} #{color.blue($white)};
+
+  --c-success: #{color.red($success)} #{color.green($success)} #{color.blue($success)};
+  --c-success-light: #{color.red($success-light)} #{color.green($success-light)} #{color.blue($success-light)};
 
   --radius-xl: #{$radius-xl};
   --radius-2xl: #{$radius-2xl};

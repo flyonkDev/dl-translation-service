@@ -1,59 +1,101 @@
 <template>
-  <div class="summary flex flex-col gap-4">
-    <div
-      class="summary-card rounded-xl border border-slate-200 bg-slate-200/30 p-4"
-    >
-      <h3 class="summary-title mb-1.5 text-sm font-bold text-slate-900">
-        {{ title }}
-      </h3>
+  <div class="summary">
+    <div class="summary-card">
+      <h3 class="summary-title">Your translation PDF</h3>
 
-      <p class="summary-text mb-2.5 text-sm text-slate-700">
-        {{ description }}
+      <p class="summary-text">
+        Multilingual driver's license translation PDF based on your real license.
+        Ready to print or show on your phone.
       </p>
 
-      <p class="summary-price mb-1 text-2xl font-extrabold text-slate-900">
-        {{ currencySymbol }}{{ price }}
+      <p class="summary-price">{{ priceDisplay }}</p>
+
+      <p class="summary-note">
+        One-time payment per document. Immediate digital delivery after verification
+        and payment.
       </p>
 
-      <p class="summary-note text-xs text-slate-500">
-        {{ note }}
-      </p>
-
-      <p v-if="selectedYears" class="summary-note summary-note--top mt-2.5 text-xs text-slate-500">
-        Selected plan: <strong class="font-semibold text-slate-900">{{ selectedYears }}</strong> year(s)
+      <p v-if="selectedYears != null" class="summary-note summary-note--top">
+        Selected plan: <strong>{{ selectedYears }}</strong> year(s)
       </p>
     </div>
 
-    <div
-      class="summary-card summary-card--secondary rounded-xl border border-slate-200 bg-white p-4"
-    >
-      <h4 class="summary-small-title mb-1.5 text-sm font-bold text-slate-900">
-        {{ benefitsTitle }}
-      </h4>
+    <div class="summary-card summary-card--secondary">
+      <h4 class="summary-small-title">Why travelers use it</h4>
 
-      <ul class="summary-list list-disc pl-5 text-sm text-slate-700">
-        <li v-for="b in benefits" :key="b">{{ b }}</li>
+      <ul class="summary-list">
+        <li>Helps car rental agencies understand your license abroad</li>
+        <li>Clear translations into multiple languages</li>
+        <li>Printable PDF + digital copy</li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    title: string;
-    description: string;
-    price: number;
-    currencySymbol?: string;
-    note: string;
-    selectedYears?: number;
-
-    benefitsTitle?: string;
-    benefits: string[];
-  }>(),
-  {
-    currencySymbol: '$',
-    benefitsTitle: 'Why travelers use it',
-  },
-);
+defineProps<{
+  priceDisplay: string;
+  selectedYears?: number;
+}>();
 </script>
+
+<style scoped lang="scss">
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-card {
+  border-radius: $radius-xl;
+  padding: 14px 14px 16px;
+  background: $slate-50;
+  border: 1px solid $slate-200;
+}
+
+.summary-card--secondary {
+  background: $white;
+}
+
+.summary-title {
+  margin: 0 0 6px;
+  @include title-sm;
+}
+
+.summary-small-title {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.summary-text {
+  margin: 0 0 10px;
+  @include text-sm;
+  color: $slate-700;
+}
+
+.summary-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: $slate-900;
+  margin: 0 0 4px;
+}
+
+.summary-note {
+  margin: 0;
+  @include text-xs;
+  color: $slate-500;
+}
+
+.summary-note--top {
+  margin-top: 10px;
+}
+
+.summary-list {
+  margin: 0;
+  padding-left: 18px;
+  @include text-sm;
+  color: $slate-700;
+}
+</style>
