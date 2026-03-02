@@ -118,6 +118,9 @@
 
       <section class="legal-section mb-8">
         <h2 class="legal-section__heading text-lg font-bold text-slate-900 mb-3">6. Contact</h2>
+        <p class="legal-section__p text-sm leading-relaxed text-slate-700 mb-2">
+          IDP Companion is operated by SKYFOM (Pty) Ltd, 301 Long Street, Cape Town, South Africa.
+        </p>
         <p class="legal-section__p text-sm leading-relaxed text-slate-700">
           For refund requests or questions about this policy, contact us at
           <a :href="`mailto:${supportEmail}`" class="legal-section__link text-sea underline hover:text-sea-300">{{ supportEmail }}</a>.
