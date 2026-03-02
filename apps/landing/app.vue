@@ -5,7 +5,16 @@
     <main class="app-main">
       <NuxtPage />
     </main>
-    <AppFooter />
+    <AppFooter
+      :links="{
+        pricing: '/#pricing',
+        howItWorks: '/#how-it-works',
+        faq: '/#faq',
+        refund: '/refund-policy',
+        terms: '/terms-of-service',
+        privacy: '/privacy-policy',
+      }"
+    />
   </div>
 </template>
 

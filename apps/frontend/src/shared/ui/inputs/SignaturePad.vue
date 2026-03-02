@@ -64,12 +64,65 @@ watch(() => props.modelValue, (v) => { if (!v) pad?.clear() })
 .sig-wrap {
   width: 100%;
 }
-.sig-toolbar { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-weight:700; color:#0b1a33; }
-.spacer { flex:1; }
-.sig-btn { border:0; background:#f3f4f8; border-radius:8px; padding:6px 8px; cursor:pointer; }
-.sig-box { position:relative; border:1px solid #e7e7ea; border-radius:10px; overflow:hidden; background:#fff; }
-.sig-canvas { display:block; width:100%; height:auto; }
-.baseline { position:absolute; left:12px; right:12px; top:60%; height:1px; border-bottom:2px dotted #d6d8de; pointer-events:none; }
-.sig-plus { position:absolute; right:8px; top:8px; border:0; background:transparent; color:#b3b9c6; font-size:18px; }
-.sig-error { margin:6px 0 0; font-size:12px; color:#c0392b; }
+
+.sig-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #0b1a33;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.sig-btn {
+  border: 0;
+  background: #f3f4f8;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.sig-box {
+  position: relative;
+  border: 1px solid #e7e7ea;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.sig-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.baseline {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 60%;
+  height: 1px;
+  border-bottom: 2px dotted #d6d8de;
+  pointer-events: none;
+}
+
+.sig-plus {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: 0;
+  background: transparent;
+  color: #b3b9c6;
+  font-size: 18px;
+}
+
+.sig-error {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #c0392b;
+}
 </style>
