@@ -63,9 +63,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useForm, useField } from 'vee-validate';
-import { z } from 'zod';
 import { toast } from 'vue-sonner';
 import { toTypedSchema } from '@vee-validate/zod';
 import { useRoute, useRouter } from 'vue-router';
@@ -81,8 +80,10 @@ import DriverDetailsForm, {
 import PlanYearsSelector from '@/features/plan-years/ui/PlanYearsSelector.vue';
 import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSection.vue';
 import { createApplication } from '@/features/driver-application/api/createApplicationApi';
+import { applicationFormSchema } from '@/features/driver-application/model/applicationSchema';
 import { useDriverApplicationStore } from '@/entities/driver-application';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
+import { useVerificationFlow } from '@/features/verify-license/model/useVerificationFlow';
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
 import { extractApiErrorMessage, formatUsd, runFilePrecheck } from '@/shared/lib';
 import type { CreateApplicationPayload } from '@/shared/types/applications';
@@ -169,29 +170,8 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => currentYear - i).map(
 );
 
 // --- validation schema
-const schema = z.object({
-  firstName: z.string().min(2, 'Enter your first name'),
-  lastName: z.string().min(2, 'Enter your last name'),
-  email: z.string().email('Invalid email'),
-
-  phone: z.string().trim().refine((v) => v === '' || v.length >= 4, 'Enter your phone number'),
-
-  dobDay: z.string().min(1, 'Required'),
-  dobMonth: z.string().min(1, 'Required'),
-  dobYear: z
-    .string()
-    .min(1, 'Required')
-    .refine((y) => currentYear - Number(y) >= 18, 'You must be 18+'),
-
-  licenseCountry: z.string().min(1, 'Required'),
-  licenseCategories: z.array(z.enum(['A','B','C','D','E'])).min(1, 'Select at least one category'),
-  sex: z
-    .enum(['male', 'female', ''], { message: 'Select your sex' })
-    .refine((v) => v !== '', { message: 'Select your sex' }),
-});
-
 const { handleSubmit, submitCount } = useForm({
-  validationSchema: toTypedSchema(schema),
+  validationSchema: toTypedSchema(applicationFormSchema),
   initialValues: {
     firstName: store.driver?.firstName ?? '',
     lastName: store.driver?.lastName ?? '',
@@ -250,67 +230,13 @@ const termsAccepted = ref<boolean>(store.verify?.termsAccepted ?? false);
 
 const showFilesErrors = ref(false);
 
-// --- verification result state
-const isVerifying = computed(() => verify.isLoading.value);
-const verificationResult = computed(() => verify.result.value);
-const verificationError = ref<string | null>(null);
-
-const lastVerifiedKey = ref<string>('');
-const lastToastKey = ref<string>('');
-
-watch(
-  [licenseFile, licenseCountryField],
-  async ([file, country]) => {
-    verificationError.value = null;
-
-    if (!file || !country) {
-      lastVerifiedKey.value = '';
-      verify.reset();
-      return;
-    }
-
-    const pre = await runFilePrecheck(file);
-    if (!pre.ok) {
-      lastVerifiedKey.value = '';
-      verify.reset();
-      verificationError.value = `License: ${pre.reason}`;
-      return;
-    }
-
-    const key = `${file.name}:${file.size}:${file.lastModified}:${country}`;
-    if (key === lastVerifiedKey.value) return;
-    lastVerifiedKey.value = key;
-
-    try {
-      verify.file.value = file;
-      const res = await verify.upload({
-        licenseCountry: country,
-        licenseNumber: licenseNumber.value || '',
-      });
-
-      const toastKey = `${key}:${res.status}`;
-      if (toastKey !== lastToastKey.value) {
-        lastToastKey.value = toastKey;
-
-        if (res.status === 'passed') toast.success('Driver License looks good ✅');
-        else if (res.status === 'review') toast.warning('We can proceed, but we may need manual review ⚠️');
-        else toast.error('Verification failed — please re-upload a clearer image ❌');
-      }
-
-      verificationError.value = res.status === 'failed'
-        ? 'Verification failed. Please re-upload clearer images or check hints.'
-        : null;
-    } catch (e) {
-      verificationError.value = extractApiErrorMessage(verify.error.value ?? e, 'Server error during verification');
-      const toastKey = `${key}:error`;
-      if (toastKey !== lastToastKey.value) {
-        lastToastKey.value = toastKey;
-        toast.error('Could not verify right now. Please try again.');
-      }
-    }
-  },
-  { immediate: true },
-);
+// --- verification flow
+const { verificationError, isVerifying, verificationResult } = useVerificationFlow({
+  licenseFile,
+  licenseCountry: licenseCountryField,
+  licenseNumber,
+  verify,
+});
 
 // --- submit
 const onSubmitStep1 = handleSubmit(async (vals) => {
