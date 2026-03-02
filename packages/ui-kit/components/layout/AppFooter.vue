@@ -35,11 +35,11 @@
 				<div class="col">
 					<h5 class="col-title text-sm font-bold mb-2">Product</h5>
 					<ul class="list">
-						<li class="list-link text-sm mb-1.5"><a :href="links.pricing">Pricing</a></li>
+						<li class="list-link text-sm mb-1.5"><a :href="links.pricing" class="link-underline">Pricing</a></li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.howItWorks">How it works</a>
+							<a :href="links.howItWorks" class="link-underline">How it works</a>
 						</li>
-						<li class="list-link text-sm mb-1.5"><a :href="links.faq">FAQ</a></li>
+						<li class="list-link text-sm mb-1.5"><a :href="links.faq" class="link-underline">FAQ</a></li>
 					</ul>
 				</div>
 
@@ -47,13 +47,13 @@
 					<h5 class="col-title text-sm font-bold mb-2">Company</h5>
 					<ul class="list">
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.privacy">Privacy Policy</a>
+							<a :href="links.privacy" class="link-underline">Privacy Policy</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.terms">Terms &amp; Conditions</a>
+							<a :href="links.terms" class="link-underline">Terms &amp; Conditions</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.refund">Refund Policy</a>
+							<a :href="links.refund" class="link-underline">Refund Policy</a>
 						</li>
 					</ul>
 				</div>
@@ -62,10 +62,10 @@
 					<h5 class="col-title text-sm font-bold mb-2">Support</h5>
 					<ul class="list">
 						<li class="list-link text-sm mb-1.5">
-							<a :href="`mailto:${supportEmail}`">{{ supportEmail }}</a>
+							<a :href="`mailto:${supportEmail}`" class="link-underline">{{ supportEmail }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.contact">Contact form</a>
+							<a :href="links.contact" class="link-underline">Contact form</a>
 						</li>
 					</ul>
 				</div>
@@ -110,7 +110,7 @@
 	    }>;
 	  }>(),
 	  {
-	    brandName: 'DL Translate',
+	    brandName: 'IDP Companion',
 	    supportEmail: 'petr.shchepetin@gmail.com',
 	    year: new Date().getFullYear(),
 	    links: () => ({}),

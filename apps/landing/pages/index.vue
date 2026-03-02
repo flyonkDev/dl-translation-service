@@ -41,10 +41,12 @@
           </ul>
 
           <a
-            class="link inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4"
+            href="#pricing"
+            class="link group inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4"
+            @click.prevent="scrollToPricing"
           >
             See pricing
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true" class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </a>
 
           <p class="mt-3 text-xs text-slate-500">

@@ -4,14 +4,14 @@
 			class="header-inner container flex items-center justify-between gap-4 px-4 py-2.5"
 		>
 			<a :href="homeHref" class="logo inline-flex items-center gap-2">
-				<span class="logo-mark text-sm font-extrabold">DL</span>
-				<span class="logo-text text-sm font-bold">DL Translate</span>
+				<span class="logo-mark text-xs font-extrabold">IDP</span>
+				<span class="logo-text text-sm font-bold">IDP Companion</span>
 			</a>
 
 			<nav class="nav flex items-center gap-4">
-				<a :href="howHref" class="nav-link text-sm">How it works</a>
-				<a :href="faqHref" class="nav-link text-sm">FAQ</a>
-				<a :href="pricingHref" class="nav-link text-sm">Pricing</a>
+				<a :href="howHref" class="nav-link link-underline text-sm">How it works</a>
+				<a :href="faqHref" class="nav-link link-underline text-sm">FAQ</a>
+				<a :href="pricingHref" class="nav-link link-underline text-sm">Pricing</a>
 			</nav>
 
 			<BaseButton
@@ -80,14 +80,15 @@
 	}
 
 	.logo-mark {
-	  width: 26px;
-	  height: 26px;
+	  width: 28px;
+	  height: 28px;
 	  border-radius: 8px;
-	  background: #22c55e;
+	  background: rgb(var(--c-sea));
 	  display: inline-flex;
 	  align-items: center;
 	  justify-content: center;
-	  color: #022c22;
+	  color: white;
+	  letter-spacing: -0.02em;
 	}
 
 	.logo-text {

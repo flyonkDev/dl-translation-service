@@ -47,3 +47,26 @@
 .link:hover::after {
   transform: scaleX(1);
 }
+
+/* Underline-on-hover for nav/footer links — same effect as .link */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: rgb(var(--c-sea));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
