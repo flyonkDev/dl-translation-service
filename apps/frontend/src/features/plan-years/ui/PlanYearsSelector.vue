@@ -47,6 +47,7 @@
 <script setup lang="ts">
 import type { PlanYears } from '@/entities/driver-application'
 import type { PricingPlanDTO } from '@/shared/api/reference'
+import { formatUsd } from '@/shared/lib'
 
 defineProps<{
   modelValue: PlanYears
@@ -59,10 +60,5 @@ const emit = defineEmits<{
 
 function update(v: PlanYears) {
   emit('update:modelValue', v)
-}
-
-function formatUsd(cents: number) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
-    .format(cents / 100)
 }
 </script>
