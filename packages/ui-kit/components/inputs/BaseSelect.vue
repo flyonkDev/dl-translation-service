@@ -29,6 +29,7 @@
     <p v-if="error" class="app-error mt-1.5 text-xs text-[#c0392b]" :id="`${id}-error`">
       {{ error }}
     </p>
+    <div v-else class="app-error-placeholder" aria-hidden="true"></div>
   </div>
 </template>
 

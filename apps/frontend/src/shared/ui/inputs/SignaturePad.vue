@@ -57,6 +57,7 @@ watch(() => props.modelValue, (v) => { if (!v) pad?.clear() })
       <button type="button" class="sig-plus" tabindex="-1">+</button>
     </div>
     <p v-if="error" class="sig-error">{{ error }}</p>
+    <div v-else class="app-error-placeholder" aria-hidden="true"></div>
   </div>
 </template>
 

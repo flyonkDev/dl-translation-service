@@ -4,7 +4,7 @@
 			<StepProgressHeader :current-step="currentStep" />
 		</template>
 
-		<form v-if="currentStep === 1" @submit.prevent="onSubmitStep1">
+		<form ref="formRef" v-if="currentStep === 1" @submit.prevent="onSubmitStep1">
 			<DriverDetailsForm
 							v-model:firstName="firstName"
 							v-model:lastName="lastName"
@@ -44,7 +44,7 @@
 								type="submit"
 								variant="primary"
 								:loading="isVerifying || isSubmittingApplication"
-								:disabled="isVerifying || isSubmittingApplication || verificationResult?.status === 'failed'"
+								:disabled="!formComplete || isVerifying || isSubmittingApplication || verificationResult?.status === 'failed'"
 							>
 								Continue to payment
 							</BaseButton>
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, nextTick, onMounted, ref } from 'vue';
 import { useForm, useField } from 'vee-validate';
 import { toast } from 'vue-sonner';
 import { toTypedSchema } from '@vee-validate/zod';
@@ -229,6 +229,38 @@ const signatureDataUrl = ref<string>(store.verify?.signatureDataUrl ?? '');
 const termsAccepted = ref<boolean>(store.verify?.termsAccepted ?? false);
 
 const showFilesErrors = ref(false);
+const formRef = ref<HTMLFormElement | null>(null);
+
+// --- form complete: all required fields filled (not necessarily valid)
+const formComplete = computed(() => {
+  const driverFilled =
+    firstName.value.trim().length >= 2 &&
+    lastName.value.trim().length >= 2 &&
+    email.value.trim().length > 0 &&
+    dobDay.value !== '' &&
+    dobMonth.value !== '' &&
+    dobYear.value !== '' &&
+    licenseCountryField.value !== '' &&
+    (licenseCategories.value?.length ?? 0) >= 1 &&
+    sex.value !== '';
+  const filesFilled =
+    !!headshotFile.value &&
+    !!licenseFile.value &&
+    !!signatureDataUrl.value &&
+    termsAccepted.value;
+  return driverFilled && filesFilled;
+});
+
+function scrollToFirstError() {
+  nextTick(() => {
+    const form = formRef.value;
+    if (!form) return;
+    const first =
+      form.querySelector<HTMLElement>('[aria-invalid="true"]') ??
+      form.querySelector<HTMLElement>('.app-error');
+    first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
 
 // --- verification flow
 const { verificationError, isVerifying, verificationResult } = useVerificationFlow({
@@ -239,9 +271,10 @@ const { verificationError, isVerifying, verificationResult } = useVerificationFl
 });
 
 // --- submit
-const onSubmitStep1 = handleSubmit(async (vals) => {
-  showFilesErrors.value = true;
-  verificationError.value = null;
+const onSubmitStep1 = handleSubmit(
+  async (vals) => {
+    showFilesErrors.value = true;
+    verificationError.value = null;
 
   if (!headshotFile.value || !licenseFile.value || !signatureDataUrl.value || !termsAccepted.value) {
     return;
@@ -352,7 +385,12 @@ const onSubmitStep1 = handleSubmit(async (vals) => {
   } finally {
     isSubmittingApplication.value = false;
   }
-});
+  },
+  () => {
+    showFilesErrors.value = true;
+    scrollToFirstError();
+  },
+);
 </script>
 
 <style scoped lang="scss">

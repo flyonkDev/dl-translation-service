@@ -48,7 +48,6 @@
   transform: scaleX(1);
 }
 
-/* Underline-on-hover for nav/footer links — same effect as .link */
 .link-underline {
   position: relative;
   text-decoration: none;
@@ -69,4 +68,10 @@
   &:hover::after {
     transform: scaleX(1);
   }
+}
+
+/* Reserved space under form fields to avoid layout shift when error appears */
+.app-error-placeholder {
+  min-height: 1.25rem;
+  margin-top: 6px;
 }

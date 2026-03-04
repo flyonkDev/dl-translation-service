@@ -93,6 +93,7 @@
     <p v-if="showErrors && !termsAccepted" class="app-error mt-1.5 text-xs text-[#c0392b]">
       You must accept the terms
     </p>
+    <div v-else class="app-error-placeholder" aria-hidden="true"></div>
   </section>
 </template>
 
