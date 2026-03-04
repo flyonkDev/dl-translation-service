@@ -1,6 +1,7 @@
 import { computed, ref, watch, type Ref } from 'vue';
 import { toast } from 'vue-sonner';
 
+import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import { extractApiErrorMessage, runFilePrecheck } from '@/shared/lib';
 
 import type { UseUploadLicenseState } from './useUploadLicense';
@@ -56,16 +57,13 @@ export function useVerificationFlow(options: UseVerificationFlowOptions) {
         if (toastKey !== lastToastKey.value) {
           lastToastKey.value = toastKey;
 
-          if (res.status === 'passed') toast.success('Driver License looks good ✅');
-          else if (res.status === 'review')
-            toast.warning('We can proceed, but we may need manual review ⚠️');
-          else toast.error('Verification failed — please re-upload a clearer image ❌');
+          if (res.status === 'passed') toast.success(applicationFormMessages.toast.licensePassed);
+          else if (res.status === 'review') toast.warning(applicationFormMessages.toast.licenseReview);
+          else toast.error(applicationFormMessages.toast.licenseFailed);
         }
 
         verificationError.value =
-          res.status === 'failed'
-            ? 'Verification failed. Please re-upload clearer images or check hints.'
-            : null;
+          res.status === 'failed' ? applicationFormMessages.verify.verificationFailed : null;
       } catch (e) {
         verificationError.value = extractApiErrorMessage(
           verify.error.value ?? e,
@@ -74,7 +72,7 @@ export function useVerificationFlow(options: UseVerificationFlowOptions) {
         const toastKey = `${key}:error`;
         if (toastKey !== lastToastKey.value) {
           lastToastKey.value = toastKey;
-          toast.error('Could not verify right now. Please try again.');
+          toast.error(applicationFormMessages.toast.verifyError);
         }
       }
     },

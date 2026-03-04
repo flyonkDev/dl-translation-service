@@ -84,6 +84,7 @@ import { applicationFormSchema } from '@/features/driver-application/model/appli
 import { useDriverApplicationStore } from '@/entities/driver-application';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
 import { useVerificationFlow } from '@/features/verify-license/model/useVerificationFlow';
+import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
 import { extractApiErrorMessage, formatUsd, runFilePrecheck } from '@/shared/lib';
 import type { CreateApplicationPayload } from '@/shared/types/applications';
@@ -255,10 +256,17 @@ function scrollToFirstError() {
   nextTick(() => {
     const form = formRef.value;
     if (!form) return;
-    const first =
-      form.querySelector<HTMLElement>('[aria-invalid="true"]') ??
-      form.querySelector<HTMLElement>('.app-error');
-    first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const firstInvalid = form.querySelector<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>(
+      'input[aria-invalid="true"], select[aria-invalid="true"], [aria-invalid="true"]',
+    );
+    const firstErrorEl = form.querySelector<HTMLElement>('.app-error');
+    const scrollTarget = firstInvalid ?? firstErrorEl;
+    scrollTarget?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    nextTick(() => {
+      if (firstInvalid && typeof firstInvalid.focus === 'function') {
+        firstInvalid.focus({ preventScroll: true });
+      }
+    });
   });
 }
 
@@ -277,6 +285,8 @@ const onSubmitStep1 = handleSubmit(
     verificationError.value = null;
 
   if (!headshotFile.value || !licenseFile.value || !signatureDataUrl.value || !termsAccepted.value) {
+    toast.error(applicationFormMessages.toast.incompleteFields);
+    scrollToFirstError();
     return;
   }
 
@@ -303,7 +313,8 @@ const onSubmitStep1 = handleSubmit(
 
   const verification = verify.result.value;
   if (!verification) {
-    verificationError.value = 'Verification is missing. Please upload your license again.';
+    verificationError.value = applicationFormMessages.toast.verificationMissing;
+    toast.error(applicationFormMessages.toast.verificationMissing);
     return;
   }
 
@@ -319,7 +330,8 @@ const onSubmitStep1 = handleSubmit(
   });
 
   if (verification.status === 'failed') {
-    verificationError.value = 'Verification failed. Please re-upload clearer images or check hints.';
+    verificationError.value = applicationFormMessages.toast.verificationFailedSubmit;
+    toast.error(applicationFormMessages.toast.verificationFailedSubmit);
     return;
   }
 
@@ -339,7 +351,7 @@ const onSubmitStep1 = handleSubmit(
 
   const verificationId = verification.verificationId as string | undefined;
   if (!verificationId) {
-    toast.error('Verification id is missing. Please re-upload the license.');
+    toast.error(applicationFormMessages.toast.verificationIdMissing);
     return;
   }
 
@@ -374,14 +386,14 @@ const onSubmitStep1 = handleSubmit(
     store.setApplicationId(res.applicationId);
     sessionStorage.setItem('driverApp.applicationId', res.applicationId);
 
-    toast.success('Application created ✅');
+    toast.success(applicationFormMessages.toast.applicationCreated);
 
     await router.push({
       name: 'payment',
       params: { applicationId: res.applicationId },
     });
   } catch (e) {
-    toast.error('Could not submit application. Please try again.');
+    toast.error(applicationFormMessages.toast.applicationSubmitError);
   } finally {
     isSubmittingApplication.value = false;
   }

@@ -1,5 +1,5 @@
 // features/verify-license/model/useUploadLicense.ts
-import { ref, computed, type ComputedRef } from 'vue';
+import { ref } from 'vue';
 import type { Ref } from 'vue';
 
 import type { ApiError } from '@/shared/api/apiClient';
@@ -16,7 +16,6 @@ export interface UseUploadLicenseState {
 	isLoading: Ref<boolean>;
 	result: Ref<VerifyLicenseResponse | null>;
 	error: Ref<ApiError<VerifyLicenseError> | null>;
-	statusLabel: ComputedRef<string>;
 
 	upload: (payload?: VerifyLicensePayload) => Promise<VerifyLicenseResponse>;
 	reset: () => void;
@@ -27,18 +26,10 @@ export function useUploadLicense(): UseUploadLicenseState {
 	const isLoading = ref(false);
 	const result = ref<VerifyLicenseResponse | null>(null);
 	const error = ref<ApiError<VerifyLicenseError> | null>(null);
-	
+
 	// Race-safety
 	let seq = 0;
 	let active = 0;
-
-	const statusLabel = computed(() => {
-		const status = result.value?.status;
-		if (!status) return '';
-		if (status === 'passed') return 'Looks like a valid driver license ✅';
-		if (status === 'review') return 'We need to review this manually ⚠️';
-		return 'Failed to recognize license ❌';
-	});
 
 	const reset = () => {
 		// invalidate in-flight requests
@@ -80,5 +71,5 @@ export function useUploadLicense(): UseUploadLicenseState {
 		}
 	};
 
-	return { file, isLoading, result, error, statusLabel, upload, reset };
+	return { file, isLoading, result, error, upload, reset };
 }

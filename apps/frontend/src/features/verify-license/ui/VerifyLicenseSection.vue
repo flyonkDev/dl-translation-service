@@ -59,10 +59,6 @@
       />
     </div>
 
-    <p v-if="statusLabel" class="mt-2 text-xs text-slate-700">
-      {{ statusLabel }}
-    </p>
-
     <div class="signature verify__signature mt-1 flex flex-col items-start">
       <SignaturePad
         :model-value="signatureDataUrl"
@@ -91,7 +87,7 @@
     </label>
 
     <p v-if="showErrors && !termsAccepted" class="app-error mt-1.5 text-xs text-[#c0392b]">
-      You must accept the terms
+      {{ messages.termsRequired }}
     </p>
     <div v-else class="app-error-placeholder" aria-hidden="true"></div>
   </section>
@@ -101,11 +97,14 @@
 import { computed } from 'vue';
 import BaseFile from '@ui-kit/components/inputs/BaseFile.vue';
 import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
+import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import SignaturePad from '@/shared/ui/inputs/SignaturePad.vue';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 
 import LicenseCategoriesSelector from '@/features/license-categories/ui/LicenseCategoriesSelector.vue';
 import type { LicenseCategory } from '@/shared/types/applications';
+
+const messages = applicationFormMessages.verify;
 
 const props = defineProps<{
   headshotFile: File | null;
@@ -132,38 +131,24 @@ const emit = defineEmits<{
 }>();
 
 const headshotError = computed(() =>
-  props.showErrors && !props.headshotFile ? 'Headshot is required' : '',
+  props.showErrors && !props.headshotFile ? messages.headshotRequired : '',
 );
 
 const licenseError = computed(() => {
-  if (props.showErrors && !props.licenseFile) return 'Driver’s license file is required'
+  if (props.showErrors && !props.licenseFile) return messages.licenseFileRequired;
 
-  if (props.verificationResult?.status === 'failed') {
-    return 'Verification failed — please upload a clearer photo/scan'
-  }
-
-  if (props.verificationError) {
-    return 'Could not verify — please try again'
-  }
-
-  return ''
+  if (props.verificationResult?.status === 'failed') return messages.verificationFailed;
+  if (props.verificationError) return messages.couldNotVerify;
+  return '';
 });
 
 const signatureError = computed(() =>
-  props.showErrors && !props.signatureDataUrl ? 'Signature is required' : '',
+  props.showErrors && !props.signatureDataUrl ? messages.signatureRequired : '',
 );
 
 const licenseCategoriesError = computed(() => {
   if (!props.showErrors) return '';
   return props.licenseCategoriesError ?? '';
-});
-
-const statusLabel = computed(() => {
-  const status = props.verificationResult?.status;
-  if (!status) return '';
-  if (status === 'passed') return 'Looks like a valid driver license ✅';
-  if (status === 'review') return 'We need to review this manually ⚠️';
-  return 'Failed to recognize license ❌';
 });
 </script>
 
