@@ -86,7 +86,12 @@ import { useUploadLicense } from '@/features/verify-license/model/useUploadLicen
 import { useVerificationFlow } from '@/features/verify-license/model/useVerificationFlow';
 import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
-import { extractApiErrorMessage, formatUsd, runFilePrecheck } from '@/shared/lib';
+import {
+	extractApiErrorMessage,
+	formatUsd,
+	runFilePrecheck,
+	runHeadshotPrecheck,
+} from '@/shared/lib';
 import type { CreateApplicationPayload } from '@/shared/types/applications';
 import type { PlanYears, Sex } from '@/entities/driver-application';
 import type { LicenseCategory } from '@/shared/types/applications';
@@ -291,12 +296,20 @@ const onSubmitStep1 = handleSubmit(
   }
 
   const [ph, pl] = await Promise.all([
-    runFilePrecheck(headshotFile.value),
+    runHeadshotPrecheck(headshotFile.value),
     runFilePrecheck(licenseFile.value),
   ]);
 
-  if (!ph.ok) return void window.alert(`Headshot: ${ph.reason}`);
-  if (!pl.ok) return void window.alert(`License: ${pl.reason}`);
+  if (!ph.ok) {
+    toast.error(applicationFormMessages.toast.headshotInvalid);
+    scrollToFirstError();
+    return;
+  }
+  if (!pl.ok) {
+    toast.error(applicationFormMessages.toast.licenseInvalid);
+    scrollToFirstError();
+    return;
+  }
 
   if (!verificationResult.value && licenseFile.value) {
     try {

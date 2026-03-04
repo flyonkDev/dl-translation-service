@@ -34,8 +34,6 @@ export async function createApplication(
 	formData.append('signatureDataUrl', payload.signatureDataUrl);
 	formData.append('verificationId', payload.verificationId);
 
-	for (const [k, v] of formData.entries()) console.log(k, v);
-
 	try {
 		return await apiPost<CreateApplicationResponse, FormData, CreateApplicationError>(
 			'/applications',

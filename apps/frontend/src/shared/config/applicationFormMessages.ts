@@ -1,8 +1,3 @@
-/**
- * Single source of user-facing messages for the driver application form.
- * Used by driver-application schema, verify-license UI, and page-level toasts.
- * FSD: shared layer — no dependencies on features or pages.
- */
 export const applicationFormMessages = {
   // --- Driver details (Zod schema)
   driver: {
@@ -41,5 +36,8 @@ export const applicationFormMessages = {
     licenseReview: 'We can proceed, but we may need manual review ⚠️',
     licenseFailed: 'Verification failed — please re-upload a clearer image ❌',
     verifyError: 'Could not verify right now. Please try again.',
+    // File precheck (align with backend limits)
+    headshotInvalid: 'Headshot must be JPG, PNG or WebP, max 10 MB.',
+    licenseInvalid: 'License must be JPG, PNG, WebP or PDF, max 15 MB.',
   },
 } as const;
