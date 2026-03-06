@@ -2,6 +2,7 @@
 import { Injectable, Logger } from '@nestjs/common'
 import type { Express } from 'express'
 import { VerificationStore } from './verify.store';
+import { VerifyStorageService } from './verify-storage.service';
 import * as TesseractNS from 'tesseract.js'
 import { getKeywordsForCountry } from './verify.keywords'
 import {
@@ -72,7 +73,10 @@ function hasCategories(text: string) {
 export class VerifyService {
   private readonly logger = new Logger(VerifyService.name)
 
-  constructor(private readonly store: VerificationStore) {}
+  constructor(
+    private readonly store: VerificationStore,
+    private readonly verifyStorage: VerifyStorageService,
+  ) {}
   
 
 
@@ -82,7 +86,12 @@ export class VerifyService {
   ): Promise<VerifyLicenseResponseDto> {
     const checks: Record<string, VerifyCheck> = {}
 
-    const finalize = (payload: Omit<VerifyLicenseResponseDto, 'verificationId' | 'expiresAt'>) => {
+    /** В payload можно передать licenseImagePath — он попадёт в snapshot для последующего face match. */
+    const finalize = (
+      payload: Omit<VerifyLicenseResponseDto, 'verificationId' | 'expiresAt'> & {
+        licenseImagePath?: string;
+      },
+    ) => {
       const snap = this.store.createAndSave({
         ...payload,
         fileMeta: {
@@ -287,11 +296,19 @@ export class VerifyService {
         `[verify] status=${status} score=${score} lang=${usedLang} hits=${keywordHits} date=${hasDate} id=${hasIdLike} fields=${fieldNums} cat=${categories}`,
       )
 
+      // Только при passed/review сохраняем файл прав на диск (для этапа 2 — face match).
+      // При failed файл не сохраняем — пользователь будет загружать заново.
+      let licenseImagePath: string | undefined;
+      if (status === 'passed' || status === 'review') {
+        licenseImagePath = await this.verifyStorage.save(file);
+      }
+
       return finalize({
         status,
         checks,
         extracted: { text: text.slice(0, 5000), fields },
         hints,
+        licenseImagePath,
       });
     } catch (e: any) {
       this.logger.error('verifyLicense fatal', e)
