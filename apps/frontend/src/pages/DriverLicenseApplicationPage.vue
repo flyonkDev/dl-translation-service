@@ -93,7 +93,7 @@ import {
 	runHeadshotPrecheck,
 } from '@/shared/lib';
 import type { CreateApplicationPayload, CreateApplicationError } from '@/shared/types/applications';
-import { HEADSHOT_MISMATCH_CODE } from '@/shared/types/applications';
+import { HEADSHOT_MISMATCH_CODE, HEADSHOT_NO_FACE_CODE } from '@/shared/types/applications';
 import type { PlanYears, Sex } from '@/entities/driver-application';
 import type { LicenseCategory } from '@/shared/types/applications';
 import type { ApiError } from '@/shared/api/apiClient';
@@ -409,15 +409,29 @@ const onSubmitStep1 = handleSubmit(
     });
   } catch (e) {
     const err = e as ApiError<CreateApplicationError>;
-    const msg = err.data?.message;
+    const data = err.data as { code?: string; message?: unknown } | undefined;
+    // Бэк может отдать code в корне тела (Nest) или внутри message
     const code =
-      typeof msg === 'object' && msg !== null && 'code' in msg
-        ? (msg as { code?: string }).code
-        : undefined;
+      data?.code ??
+      (typeof data?.message === 'object' &&
+      data?.message !== null &&
+      'code' in (data.message as object)
+        ? (data.message as { code?: string }).code
+        : undefined);
+
+    const toastDuration = 7000; // 7 сек для ошибок по фото, чтобы юзер успел прочитать
     if (code === HEADSHOT_MISMATCH_CODE) {
-      toast.error(applicationFormMessages.toast.headshotMismatch);
+      toast.error(applicationFormMessages.toast.headshotMismatch, {
+        duration: toastDuration,
+      });
+    } else if (code === HEADSHOT_NO_FACE_CODE) {
+      toast.error(applicationFormMessages.toast.headshotNoFace, {
+        duration: toastDuration,
+      });
     } else {
-      toast.error(applicationFormMessages.toast.applicationSubmitError);
+      toast.error(applicationFormMessages.toast.applicationSubmitError, {
+        duration: toastDuration,
+      });
     }
   } finally {
     isSubmittingApplication.value = false;

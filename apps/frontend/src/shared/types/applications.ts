@@ -41,3 +41,5 @@ export interface CreateApplicationError {
 
 /** Код ошибки с бэка, когда лицо на headshot не совпадает с лицом на правах. */
 export const HEADSHOT_MISMATCH_CODE = 'HEADSHOT_MISMATCH';
+/** Код ошибки, когда в фото прав или headshot не найдено лицо. */
+export const HEADSHOT_NO_FACE_CODE = 'HEADSHOT_NO_FACE';

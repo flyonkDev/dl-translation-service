@@ -60,9 +60,7 @@ export class VerifyStorageService implements OnModuleInit {
 
     await fs.promises.rename(file.path, destPath);
 
-    const absolutePath = path.resolve(destPath);
-    this.logger.debug(`license image saved path=${absolutePath}`);
-    return absolutePath;
+    return path.resolve(destPath);
   }
 
   /**
@@ -80,10 +78,7 @@ export class VerifyStorageService implements OnModuleInit {
     }
 
     try {
-      if (fs.existsSync(resolved)) {
-        fs.unlinkSync(resolved);
-        this.logger.debug(`license image deleted path=${resolved}`);
-      }
+      if (fs.existsSync(resolved)) fs.unlinkSync(resolved);
     } catch (err) {
       this.logger.warn(`deleteByPath failed path=${resolved} err=${err}`);
     }

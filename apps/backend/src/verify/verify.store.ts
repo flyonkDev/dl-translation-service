@@ -86,8 +86,5 @@ export class VerificationStore {
       }
     }
 
-    if (removed > 0) {
-      this.logger.debug(`cleanup removed=${removed}, left=${this.map.size}`);
-    }
   }
 }

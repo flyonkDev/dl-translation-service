@@ -53,8 +53,17 @@ export class FaceVerificationService {
     licenseImagePath: string,
     headshotPath: string,
   ): Promise<FaceCompareResult> {
-    const sourceBytes = fs.readFileSync(path.resolve(licenseImagePath));
-    const targetBytes = fs.readFileSync(path.resolve(headshotPath));
+    let sourceBytes: Buffer;
+    let targetBytes: Buffer;
+    try {
+      sourceBytes = fs.readFileSync(path.resolve(licenseImagePath));
+      targetBytes = fs.readFileSync(path.resolve(headshotPath));
+    } catch (err) {
+      this.logger.warn(
+        `Failed to read images: ${err instanceof Error ? err.message : err}`,
+      );
+      throw err;
+    }
 
     const command = new CompareFacesCommand({
       SourceImage: { Bytes: sourceBytes },
@@ -68,26 +77,20 @@ export class FaceVerificationService {
     } catch (err) {
       if (err instanceof InvalidParameterException) {
         this.logger.warn(`CompareFaces InvalidParameter: ${err.message}`);
-        throw new BadRequestException(
-          'Could not detect a face in the license photo or in your headshot. Please use clear, front-facing photos.',
-        );
+        throw new BadRequestException({
+          code: 'HEADSHOT_NO_FACE',
+          message:
+            'Could not detect a face in the license photo or in your headshot. Please use clear, front-facing photos.',
+        });
       }
+      this.logger.warn(`CompareFaces failed: ${err instanceof Error ? err.message : err}`);
       throw err;
     }
 
     const matches = response.FaceMatches ?? [];
     const best = matches[0];
     const similarity = best?.Similarity;
-
     const samePerson = matches.length > 0;
-    if (!samePerson) {
-      this.logger.debug(
-        `face compare: no match above threshold=${this.similarityThreshold}`,
-      );
-    } else {
-      this.logger.debug(`face compare: match similarity=${similarity}`);
-    }
-
     return { samePerson, similarity };
   }
 }

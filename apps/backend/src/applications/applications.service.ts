@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import type { Express } from 'express';
 
 import { PrismaService } from '../../prisma/prisma.service';
@@ -10,11 +10,12 @@ import type { ApplicationSnapshot } from './types/index';
 import { CreateApplicationDto } from './dto/create-application.dto';
 import type { LicenseCategory } from './dto/create-application.dto';
 
-/** Код ошибки для фронта: лицо на headshot не совпадает с лицом на правах. */
 export const HEADSHOT_MISMATCH_CODE = 'HEADSHOT_MISMATCH';
 
 @Injectable()
 export class ApplicationsService {
+  private readonly logger = new Logger(ApplicationsService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly verificationStore: VerificationStore,
@@ -38,16 +39,22 @@ export class ApplicationsService {
       );
     }
 
-    const faceResult = await this.faceVerification.compare(
-      licenseImagePath,
-      headshot.path,
-    );
-    if (!faceResult.samePerson) {
-      throw new BadRequestException({
-        code: HEADSHOT_MISMATCH_CODE,
-        message:
-          "Photo does not match the person on the driver's license. Please use a clear photo of your face.",
-      });
+    try {
+      const faceResult = await this.faceVerification.compare(
+        licenseImagePath,
+        headshot.path,
+      );
+      if (!faceResult.samePerson) {
+        throw new BadRequestException({
+          code: HEADSHOT_MISMATCH_CODE,
+          message:
+            "Photo does not match the person on the driver's license. Please use a clear photo of your face.",
+        });
+      }
+    } catch (e) {
+      if (e instanceof BadRequestException) throw e;
+      this.logger.error('create application: face verification or later failed', e);
+      throw e;
     }
 
     const created = await this.prisma.application.create({
