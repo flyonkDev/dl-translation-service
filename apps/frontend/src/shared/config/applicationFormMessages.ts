@@ -39,5 +39,8 @@ export const applicationFormMessages = {
     // File precheck (align with backend limits)
     headshotInvalid: 'Headshot must be JPG, PNG or WebP, max 10 MB.',
     licenseInvalid: 'License must be JPG, PNG, WebP or PDF, max 15 MB.',
+    // Face match (backend returns code HEADSHOT_MISMATCH)
+    headshotMismatch:
+      "Photo doesn't match the person on the driver's license. Please use a clear photo of your face.",
   },
 } as const;

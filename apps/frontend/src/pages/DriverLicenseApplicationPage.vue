@@ -92,9 +92,11 @@ import {
 	runFilePrecheck,
 	runHeadshotPrecheck,
 } from '@/shared/lib';
-import type { CreateApplicationPayload } from '@/shared/types/applications';
+import type { CreateApplicationPayload, CreateApplicationError } from '@/shared/types/applications';
+import { HEADSHOT_MISMATCH_CODE } from '@/shared/types/applications';
 import type { PlanYears, Sex } from '@/entities/driver-application';
 import type { LicenseCategory } from '@/shared/types/applications';
+import type { ApiError } from '@/shared/api/apiClient';
 
 type StepId = 1 | 2;
 const currentStep = ref<StepId>(1);
@@ -406,7 +408,17 @@ const onSubmitStep1 = handleSubmit(
       params: { applicationId: res.applicationId },
     });
   } catch (e) {
-    toast.error(applicationFormMessages.toast.applicationSubmitError);
+    const err = e as ApiError<CreateApplicationError>;
+    const msg = err.data?.message;
+    const code =
+      typeof msg === 'object' && msg !== null && 'code' in msg
+        ? (msg as { code?: string }).code
+        : undefined;
+    if (code === HEADSHOT_MISMATCH_CODE) {
+      toast.error(applicationFormMessages.toast.headshotMismatch);
+    } else {
+      toast.error(applicationFormMessages.toast.applicationSubmitError);
+    }
   } finally {
     isSubmittingApplication.value = false;
   }

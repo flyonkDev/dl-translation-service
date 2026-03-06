@@ -34,7 +34,10 @@ export interface CreateApplicationResponse {
 }
 
 export interface CreateApplicationError {
-	message?: string;
+	message?: string | { code?: string; message?: string };
 	statusCode?: number;
 	error?: string;
 }
+
+/** Код ошибки с бэка, когда лицо на headshot не совпадает с лицом на правах. */
+export const HEADSHOT_MISMATCH_CODE = 'HEADSHOT_MISMATCH';
