@@ -8,15 +8,24 @@ const messages = {
     common: {
       continueToPayment: 'Continue to payment',
     },
+    header: {
+      language: 'Language',
+    },
   },
   ru: {
     common: {
       continueToPayment: 'Перейти к оплате',
     },
+    header: {
+      language: 'Язык',
+    },
   },
   es: {
     common: {
       continueToPayment: 'Continuar al pago',
+    },
+    header: {
+      language: 'Idioma',
     },
   },
 } as const;

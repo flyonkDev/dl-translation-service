@@ -5,3 +5,4 @@ export {
 	runHeadshotPrecheck,
 	type PrecheckResult,
 } from './filePrecheck';
+export { useAppLocale, LOCALE_CHOICES } from './useAppLocale';
