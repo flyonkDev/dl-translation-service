@@ -3,11 +3,33 @@ import { resolve } from 'pathe';
 
 const repoRoot = resolve(process.cwd(), '../..');
 const uiKitPath = resolve(repoRoot, 'packages/ui-kit');
+const i18nPkgPath = resolve(repoRoot, 'packages/i18n');
 
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: true },
 	components: true,
+
+	modules: ['@nuxtjs/i18n'],
+
+	i18n: {
+		defaultLocale: 'en',
+		strategy: 'prefix_except_default',
+		locales: [
+			{ code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+			{ code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru.json' },
+			{ code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
+		],
+		lazy: true,
+		langDir: 'locales',
+		detectBrowserLanguage: {
+			useCookie: true,
+			cookieKey: 'i18n_redirected',
+			redirectOn: 'root',
+			alwaysRedirect: false,
+			fallbackLocale: 'en',
+		},
+	},
 
 	runtimeConfig: {
 		public: {
@@ -40,6 +62,7 @@ export default defineNuxtConfig({
 		resolve: {
 			alias: {
 				'@ui-kit': uiKitPath,
+				'@i18n': i18nPkgPath,
 			},
 		},
 

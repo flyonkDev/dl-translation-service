@@ -138,6 +138,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from '#imports'
+import { LOCALE_QUERY_PARAM } from '@i18n'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue'
 import { useCountries } from '~/composables/useCountries'
@@ -169,6 +171,8 @@ const {
   error: plansError,
   refresh: refreshPlans,
 } = usePricing()
+
+const { locale } = useI18n()
 
 const isLoading = computed(() => countriesPending.value || plansPending.value)
 
@@ -207,6 +211,7 @@ const appHref = computed(() => {
   const qs = new URLSearchParams({
     issueCountry: props.issueCountry,
     planYears: String(props.planYears),
+    [LOCALE_QUERY_PARAM]: locale.value,
   })
   return `${base}/apply?${qs.toString()}`
 })

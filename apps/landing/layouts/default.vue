@@ -11,6 +11,27 @@
 					<a href="#pricing" class="nav-link">Pricing</a>
 				</nav>
 
+				<div
+					class="locale-switcher flex shrink-0 items-center gap-0.5 rounded-lg border border-slate-200 bg-white/80 p-0.5"
+					role="group"
+					aria-label="Language"
+				>
+					<NuxtLink
+						v-for="loc in landingLocales"
+						:key="loc.code"
+						:to="switchLocalePath(loc.code)"
+						class="locale-switcher__link inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-600 no-underline transition hover:bg-slate-100"
+						:class="{ 'bg-emerald-100 text-slate-900 ring-1 ring-emerald-200': locale === loc.code }"
+						:title="loc.label"
+					>
+						<span
+							class="fi h-4 w-5 rounded-sm bg-cover bg-center shadow-sm"
+							:class="`fi-${loc.flag}`"
+							aria-hidden="true"
+						/>
+					</NuxtLink>
+				</div>
+
 				<BaseButton type="submit" variant="primary">
 					<span class="font-bold">Start application</span>
 				</BaseButton>
@@ -26,8 +47,18 @@
 </template>
 
 <script setup lang="ts">
+	import { useI18n } from '#imports';
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+
+	const { locale } = useI18n();
+	const switchLocalePath = useSwitchLocalePath();
+
+	const landingLocales = [
+		{ code: 'en' as const, flag: 'us', label: 'English' },
+		{ code: 'ru' as const, flag: 'ru', label: 'Русский' },
+		{ code: 'es' as const, flag: 'es', label: 'Español' },
+	] as const;
 </script>
 
 <style scoped>

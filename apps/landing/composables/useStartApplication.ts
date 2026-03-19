@@ -1,4 +1,6 @@
 import { computed, ref, unref, type Ref } from 'vue';
+import { useI18n } from '#imports';
+import { LOCALE_QUERY_PARAM } from '@i18n';
 import type { PlanYears } from '~/components/widgets/StartApplicationWidget.vue';
 
 type MaybeRef<T> = T | Ref<T>;
@@ -8,6 +10,7 @@ function normalizeBaseUrl(v: string) {
 }
 
 export function useStartApplication(appUrl: MaybeRef<string>) {
+	const { locale } = useI18n();
 	const issueCountry = ref<string>('');
 	const planYears = ref<PlanYears>(3);
 
@@ -16,6 +19,7 @@ export function useStartApplication(appUrl: MaybeRef<string>) {
 		const qs = new URLSearchParams({
 			issueCountry: issueCountry.value,
 			planYears: String(planYears.value),
+			[LOCALE_QUERY_PARAM]: locale.value,
 		});
 		return `${base}/apply?${qs.toString()}`;
 	});

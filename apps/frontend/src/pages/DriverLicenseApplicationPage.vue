@@ -127,6 +127,14 @@ if (planFromQuery) {
   store.setSelectedYears(planFromQuery);
 }
 
+function readIssueCountryFromQuery(raw: unknown): string {
+  const v = Array.isArray(raw) ? raw[0] : raw;
+  if (typeof v === 'string' && v.trim()) return v.trim();
+  return '';
+}
+
+const issueCountryFromQuery = readIssueCountryFromQuery(route.query.issueCountry);
+
 // --- reference data
 const countries = ref<CountryDTO[]>([]);
 const pricing = ref<PricingPlanDTO[]>([]);
@@ -190,7 +198,7 @@ const { handleSubmit, submitCount } = useForm({
     dobDay: store.driver?.dobDay ?? '',
     dobMonth: store.driver?.dobMonth ?? '',
     dobYear: store.driver?.dobYear ?? '',
-    licenseCountry: store.verify?.licenseCountry ?? '',
+    licenseCountry: store.verify?.licenseCountry ?? issueCountryFromQuery,
     licenseCategories: store.verify?.licenseCategories ?? [],
     sex: (store.driver?.sex ?? '') as Sex | '',
   },
