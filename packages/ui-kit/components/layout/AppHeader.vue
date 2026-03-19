@@ -18,32 +18,13 @@
 
 			<div class="header-actions flex shrink-0 items-center gap-2 sm:gap-3">
 				<slot name="localeSwitcher">
-					<div
+					<LocaleSwitcher
 						v-if="showLocaleSwitcher && localeOptions.length"
-						class="locale-switcher flex items-center gap-1 rounded-lg border border-slate-200/80 bg-white/60 p-0.5"
-						role="group"
+						:locale="locale"
+						:options="localeOptions"
 						:aria-label="localeSwitcherAriaLabel"
-					>
-						<button
-							v-for="opt in localeOptions"
-							:key="opt.code"
-							type="button"
-							class="locale-switcher__btn inline-flex h-8 w-8 items-center justify-center rounded-md transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-activeBlue/30"
-							:class="{
-								'bg-mint ring-1 ring-sea/20': locale === opt.code,
-							}"
-							:title="opt.label"
-							:aria-label="opt.label"
-							:aria-pressed="locale === opt.code"
-							@click="$emit('selectLocale', opt.code)"
-						>
-							<span
-								class="fi h-4 w-5 rounded-sm bg-cover bg-center shadow-sm"
-								:class="`fi-${opt.flagCode}`"
-								aria-hidden="true"
-							/>
-						</button>
-					</div>
+						@select-locale="$emit('selectLocale', $event)"
+					/>
 				</slot>
 
 				<BaseButton
@@ -62,6 +43,7 @@
 
 <script setup lang="ts">
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+	import LocaleSwitcher from './LocaleSwitcher.vue';
 
 	type StartAs = 'a' | 'button';
 
