@@ -46,7 +46,7 @@
 								:loading="isVerifying || isSubmittingApplication"
 								:disabled="!formComplete || isVerifying || isSubmittingApplication || verificationResult?.status === 'failed'"
 							>
-								Continue to payment
+								{{ t('common.continueToPayment') }}
 							</BaseButton>
 						</div>
 					</form>
@@ -68,6 +68,7 @@ import { useForm, useField } from 'vee-validate';
 import { toast } from 'vue-sonner';
 import { toTypedSchema } from '@vee-validate/zod';
 import { useRoute, useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 import DriverApplicationLayout from '@/widgets/driver-application/ui/DriverApplicationLayout.vue';
@@ -103,6 +104,7 @@ const currentStep = ref<StepId>(1);
 
 const route = useRoute();
 const router = useRouter();
+const { t } = useI18n();
 
 const store = useDriverApplicationStore();
 const verify = useUploadLicense();
@@ -410,7 +412,6 @@ const onSubmitStep1 = handleSubmit(
   } catch (e) {
     const err = e as ApiError<CreateApplicationError>;
     const data = err.data as { code?: string; message?: unknown } | undefined;
-    // Бэк может отдать code в корне тела (Nest) или внутри message
     const code =
       data?.code ??
       (typeof data?.message === 'object' &&
@@ -419,7 +420,7 @@ const onSubmitStep1 = handleSubmit(
         ? (data.message as { code?: string }).code
         : undefined);
 
-    const toastDuration = 7000; // 7 сек для ошибок по фото, чтобы юзер успел прочитать
+    const toastDuration = 7000;
     if (code === HEADSHOT_MISMATCH_CODE) {
       toast.error(applicationFormMessages.toast.headshotMismatch, {
         duration: toastDuration,

@@ -20,6 +20,7 @@ export default defineConfig({
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
 			'@ui-kit': path.resolve(__dirname, '../../packages/ui-kit'),
+			'@i18n': path.resolve(__dirname, '../../packages/i18n'),
 			'@iconify/vue': require.resolve('@iconify/vue'),
 		},
 		dedupe: ['vue'],

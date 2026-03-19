@@ -2,6 +2,7 @@
 	"extends": "@vue/tsconfig/tsconfig.dom.json",
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"baseUrl": ".",
 
 		/* Linting */
 		"strict": true,
@@ -12,7 +13,9 @@
 		"noUncheckedSideEffectImports": true,
 		"paths": {
 			"@/*": ["src/*"],
-			"@ui-kit/*": ["../../packages/ui-kit/*"]
+			"@ui-kit/*": ["../../packages/ui-kit/*"],
+			"@i18n": ["../../packages/i18n/index.ts"],
+			"@i18n/*": ["../../packages/i18n/*"]
 		}
 	},
 	"include": [
@@ -20,6 +23,7 @@
 		"src/**/*.tsx",
 		"src/**/*.vue",
 		"../../packages/ui-kit/**/*.ts",
-		"../../packages/ui-kit/**/*.vue"
+		"../../packages/ui-kit/**/*.vue",
+		"../../packages/i18n/**/*.ts"
 	]
 }

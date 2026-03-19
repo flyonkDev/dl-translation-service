@@ -43,7 +43,6 @@ function pickOcrLang(country: string) {
   return 'eng'
 }
 
-/** keyword hits: считаем сколько “сильных” фраз нашли */
 function countKeywordHits(text: string, keywords: string[]) {
   let hits = 0
   const hitList: string[] = []
@@ -56,15 +55,12 @@ function countKeywordHits(text: string, keywords: string[]) {
   return { hits, hitList }
 }
 
-/** Поля 1.,2.,3.,4a/4b/4c — очень характерно для DL/ID карточек */
 function hasFieldNumbers(text: string) {
-  // 1. 2. 3. или 4a 4b 4c
   const has123 = /\b1\.\s|\b2\.\s|\b3\.\s/.test(text)
   const has4abc = /\b4a\b|\b4b\b|\b4c\b/.test(text)
   return has123 || has4abc
 }
 
-/** Категории прав: B, B1, C, CE, M, A... */
 function hasCategories(text: string) {
   return /\b(a1|a|b1|b|c1|c|d1|d|be|ce|de|m)\b/i.test(text)
 }
@@ -86,7 +82,6 @@ export class VerifyService {
   ): Promise<VerifyLicenseResponseDto> {
     const checks: Record<string, VerifyCheck> = {}
 
-    /** В payload можно передать licenseImagePath — он попадёт в snapshot для последующего face match. */
     const finalize = (
       payload: Omit<VerifyLicenseResponseDto, 'verificationId' | 'expiresAt'> & {
         licenseImagePath?: string;
@@ -296,8 +291,6 @@ export class VerifyService {
         `[verify] status=${status} score=${score} lang=${usedLang} hits=${keywordHits} date=${hasDate} id=${hasIdLike} fields=${fieldNums} cat=${categories}`,
       )
 
-      // Только при passed/review сохраняем файл прав на диск (для этапа 2 — face match).
-      // При failed файл не сохраняем — пользователь будет загружать заново.
       let licenseImagePath: string | undefined;
       if (status === 'passed' || status === 'review') {
         licenseImagePath = await this.verifyStorage.save(file);
