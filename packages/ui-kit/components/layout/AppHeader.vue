@@ -5,11 +5,11 @@
 		>
 			<a :href="homeHref" class="logo inline-flex min-w-0 shrink-0 items-center gap-2">
 				<span class="logo-mark text-xs font-extrabold">IDP</span>
-				<span class="logo-text max-w-[9rem] truncate text-sm font-bold sm:max-w-none">{{ brandName }}</span>
+				<span class="logo-text max-w-36 truncate text-sm font-bold sm:max-w-none">{{ brandName }}</span>
 			</a>
 
 			<nav
-				class="nav flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+				class="nav hidden sm:flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
 				<a :href="howHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navHowLabel }}</a>
 				<a :href="faqHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
@@ -26,6 +26,15 @@
 						@select-locale="$emit('selectLocale', $event)"
 					/>
 				</slot>
+
+				<MobileNavMenu
+					:nav-how-label="navHowLabel"
+					:nav-faq-label="navFaqLabel"
+					:nav-pricing-label="navPricingLabel"
+					:how-href="howHref"
+					:faq-href="faqHref"
+					:pricing-href="pricingHref"
+				/>
 
 				<BaseButton
 					v-if="showStartButton"
@@ -44,6 +53,7 @@
 <script setup lang="ts">
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 	import LocaleSwitcher from './LocaleSwitcher.vue';
+	import MobileNavMenu from './MobileNavMenu.vue';
 
 	type StartAs = 'a' | 'button';
 

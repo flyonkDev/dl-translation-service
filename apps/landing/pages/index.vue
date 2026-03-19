@@ -9,7 +9,7 @@
             {{ t('home.heroKicker') }}
           </p>
 
-          <h1 class="mb-4 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
+          <h1 class="mb-4 text-[1.8rem] font-extrabold leading-tight text-slate-900 md:text-5xl">
             {{ t('home.heroTitle') }}
           </h1>
 
