@@ -1,21 +1,18 @@
 <template>
   <section class="verify">
     <h2 class="section-title mb-1 text-base font-bold text-slate-900">
-      Verify your driver’s license
+      {{ t('verify.title') }}
     </h2>
 
     <p class="section-subtitle mb-2 text-[13px] leading-relaxed text-slate-500">
-      We run an automatic check on your uploaded license. We generate a translation PDF
-      based on your real license data.
+      {{ t('verify.lead') }}
     </p>
 
     <p class="small-muted mb-3 text-xs leading-relaxed text-slate-500">
-      By providing your signature you confirm that you understand this is a translation document
-      and not a replacement of your license.
+      {{ t('verify.signatureNote') }}
     </p>
 
     <LicenseCategoriesSelector
-      label="License category"
       required
       :model-value="licenseCategories"
       @update:model-value="emit('update:licenseCategories', $event)"
@@ -25,7 +22,7 @@
     <div class="verify__grid grid grid--2 grid--rows mb-3 gap-4">
       <BaseFile
         class="verify__headshot"
-        label="Headshot (passport-style photo)"
+        :label="t('verify.headshotLabel')"
         required
         accept="image/*"
         :model-value="headshotFile"
@@ -37,24 +34,24 @@
         <BaseInput
           id="licenseNumber"
           class="verify__license-number"
-          label="Driver’s license number (optional)"
+          :label="t('verify.licenseNumberLabel')"
           :model-value="licenseNumber"
           @update:model-value="emit('update:licenseNumber', $event)"
         />
 
         <p class="hint small mt-1.5 text-xs text-slate-500/80">
-          If OCR can’t recognize the number, you can enter it manually.
+          {{ t('verify.licenseNumberHint') }}
         </p>
       </div>
 
       <BaseFile
         class="verify__license-file"
-        label="Driver’s license scan"
+        :label="t('verify.licenseFileLabel')"
         required
         accept="image/*,.pdf"
         :model-value="licenseFile"
         @update:model-value="emit('update:licenseFile', $event)"
-        hint="Front/back or a combined image/PDF."
+        :hint="t('verify.licenseFileHint')"
         :error="licenseError"
       />
     </div>
@@ -68,7 +65,7 @@
       >
         <template #label>
           <span>
-            Signature <span aria-hidden="true">*</span>
+            {{ t('verify.signatureLabel') }} <span aria-hidden="true">*</span>
           </span>
         </template>
       </SignaturePad>
@@ -82,7 +79,7 @@
         @change="emit('update:termsAccepted', ($event.target as HTMLInputElement).checked)"
       />
       <span class="terms__text">
-        I understand that this is a translation PDF and not an official license.
+        {{ t('verify.terms') }}
       </span>
     </label>
 
@@ -95,16 +92,25 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import BaseFile from '@ui-kit/components/inputs/BaseFile.vue';
 import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
-import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import SignaturePad from '@/shared/ui/inputs/SignaturePad.vue';
 import type { VerifyLicenseResponse } from '@/shared/types/verify';
 
 import LicenseCategoriesSelector from '@/features/license-categories/ui/LicenseCategoriesSelector.vue';
 import type { LicenseCategory } from '@/shared/types/applications';
 
-const messages = applicationFormMessages.verify;
+const { t } = useI18n();
+
+const messages = computed(() => ({
+	headshotRequired: t('verify.validation.headshotRequired'),
+	licenseFileRequired: t('verify.validation.licenseFileRequired'),
+	signatureRequired: t('verify.validation.signatureRequired'),
+	termsRequired: t('verify.validation.termsRequired'),
+	verificationFailed: t('verify.validation.verificationFailed'),
+	couldNotVerify: t('verify.validation.couldNotVerify'),
+}));
 
 const props = defineProps<{
   headshotFile: File | null;
@@ -131,19 +137,19 @@ const emit = defineEmits<{
 }>();
 
 const headshotError = computed(() =>
-  props.showErrors && !props.headshotFile ? messages.headshotRequired : '',
+  props.showErrors && !props.headshotFile ? messages.value.headshotRequired : '',
 );
 
 const licenseError = computed(() => {
-  if (props.showErrors && !props.licenseFile) return messages.licenseFileRequired;
+  if (props.showErrors && !props.licenseFile) return messages.value.licenseFileRequired;
 
-  if (props.verificationResult?.status === 'failed') return messages.verificationFailed;
-  if (props.verificationError) return messages.couldNotVerify;
+  if (props.verificationResult?.status === 'failed') return messages.value.verificationFailed;
+  if (props.verificationError) return messages.value.couldNotVerify;
   return '';
 });
 
 const signatureError = computed(() =>
-  props.showErrors && !props.signatureDataUrl ? messages.signatureRequired : '',
+  props.showErrors && !props.signatureDataUrl ? messages.value.signatureRequired : '',
 );
 
 const licenseCategoriesError = computed(() => {

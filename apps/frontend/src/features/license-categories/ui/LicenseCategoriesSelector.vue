@@ -7,7 +7,7 @@
       </div>
 
       <div v-if="selectedText" class="selected">
-        Selected: <strong>{{ selectedText }}</strong>
+        {{ t('licenseCategory.selected', { list: selectedText }) }}
       </div>
     </div>
 
@@ -34,7 +34,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import type { LicenseCategory } from '@/shared/types/applications';
+
+const { t } = useI18n();
 
 const categories: LicenseCategory[] = ['A', 'B', 'C', 'D', 'E'];
 
@@ -49,7 +52,7 @@ const emit = defineEmits<{
   (e: 'update:modelValue', v: LicenseCategory[]): void;
 }>();
 
-const label = computed(() => props.label ?? 'License category');
+const label = computed(() => props.label ?? t('verify.licenseCategory'));
 
 function isSelected(c: LicenseCategory) {
   return props.modelValue?.includes(c) ?? false;

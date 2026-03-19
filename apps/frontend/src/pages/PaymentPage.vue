@@ -5,11 +5,11 @@
 				<div class="apply-progress__steps">
 					<div class="apply-progress__step is-done">
 						<span class="index">01</span>
-						<span>Information & documents</span>
+						<span>{{ t('steps.information') }}</span>
 					</div>
 					<div class="apply-progress__step is-active">
 						<span class="index">02</span>
-						<span>Payment</span>
+						<span>{{ t('steps.payment') }}</span>
 					</div>
 				</div>
 
@@ -20,33 +20,32 @@
 
 			<main class="apply-main">
 				<section class="apply-form">
-					<h1 class="page-title">Payment</h1>
+					<h1 class="page-title">{{ t('payment.title') }}</h1>
 					<p class="page-subtitle">
-						Stripe integration will be here. For now, this is a placeholder.
+						{{ t('payment.subtitle') }}
 					</p>
 
 					<div class="verification-result">
 						<p v-if="storedVerification?.status === 'passed'">
-							Your document has passed the automatic verification ✅
+							{{ t('payment.verifiedPassed') }}
 						</p>
 						<p v-else-if="storedVerification?.status === 'review'">
-							We’ll review this manually ⚠️
+							{{ t('payment.verifiedReview') }}
 						</p>
 						<p v-else>
-							Verification info is missing (refresh). You still can download PDF in dev
-							mode.
+							{{ t('payment.verifiedMissing') }}
 						</p>
 					</div>
 
 					<div class="section-footer">
-						<BaseButton variant="secondary" @click="goBack"> Back to details </BaseButton>
+						<BaseButton variant="secondary" @click="goBack">{{ t('payment.backToDetails') }}</BaseButton>
 
 						<BaseButton
 							variant="secondary"
 							:disabled="!applicationId || isDownloading"
 							@click="onPreview"
 						>
-							Preview in browser
+							{{ t('payment.previewBrowser') }}
 						</BaseButton>
 
 						<BaseButton
@@ -55,11 +54,11 @@
 							:disabled="!applicationId || isDownloading"
 							@click="onDownload"
 						>
-							Download PDF
+							{{ t('payment.downloadPdf') }}
 						</BaseButton>
 					</div>
 
-					<p v-if="applicationId" class="hint">Application ID: {{ applicationId }}</p>
+					<p v-if="applicationId" class="hint">{{ t('payment.applicationIdHint', { id: applicationId }) }}</p>
 				</section>
 			</main>
 		</div>
@@ -69,6 +68,7 @@
 <script setup lang="ts">
 	import { computed, onMounted, ref } from 'vue';
 	import { useRoute, useRouter } from 'vue-router';
+	import { useI18n } from 'vue-i18n';
 	import { toast } from 'vue-sonner';
 
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
@@ -78,6 +78,7 @@
 
 	const route = useRoute();
 	const router = useRouter();
+	const { t } = useI18n();
 	const store = useDriverApplicationStore();
 
 	const isDownloading = ref(false);
@@ -107,7 +108,7 @@
 	    return;
 	  }
 
-	  toast.error('Application not found. Please submit again.');
+	  toast.error(t('payment.applicationNotFound'));
 	  await router.replace({ name: 'apply' });
 	});
 
@@ -147,9 +148,9 @@
 	    a.remove();
 	    URL.revokeObjectURL(objectUrl);
 
-	    toast.success('PDF downloaded ✅');
+	    toast.success(t('payment.pdfDownloaded'));
 	  } catch (e) {
-	    toast.error('Could not download PDF. Please try again.');
+	    toast.error(t('payment.pdfDownloadFailed'));
 	  } finally {
 	    isDownloading.value = false;
 	  }

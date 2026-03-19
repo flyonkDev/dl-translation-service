@@ -1,10 +1,10 @@
 <template>
   <div class="mt-4">
     <div class="mb-2 text-xs font-bold text-slate-900">
-      Choose duration
+      {{ t('plan.chooseDuration') }}
     </div>
 
-    <div class="grid grid-cols-1 gap-2.5 md:grid-cols-3" role="tablist" aria-label="Plan duration">
+    <div class="grid grid-cols-1 gap-2.5 md:grid-cols-3" role="tablist" :aria-label="t('plan.durationAria')">
       <button
         v-for="opt in options"
         :key="opt.years"
@@ -45,7 +45,10 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import type { PlanYears } from '@/entities/driver-application'
+
+const { t } = useI18n();
 import type { PricingPlanDTO } from '@/shared/api/reference'
 import { formatUsd } from '@/shared/lib'
 

@@ -1,42 +1,44 @@
 <template>
   <div class="summary">
     <div class="summary-card">
-      <h3 class="summary-title">Your translation PDF</h3>
+      <h3 class="summary-title">{{ t('summary.title') }}</h3>
 
       <p class="summary-text">
-        Multilingual driver's license translation PDF based on your real license.
-        Ready to print or show on your phone.
+        {{ t('summary.lead') }}
       </p>
 
       <p class="summary-price">{{ priceDisplay }}</p>
 
       <p class="summary-note">
-        One-time payment per document. Immediate digital delivery after verification
-        and payment.
+        {{ t('summary.note') }}
       </p>
 
       <p v-if="selectedYears != null" class="summary-note summary-note--top">
-        Selected plan: <strong>{{ selectedYears }}</strong> year(s)
+        {{ t('summary.selectedPlan', { years: selectedYears }) }}
       </p>
     </div>
 
     <div class="summary-card summary-card--secondary">
-      <h4 class="summary-small-title">Why travelers use it</h4>
+      <h4 class="summary-small-title">{{ t('summary.whyTitle') }}</h4>
 
       <ul class="summary-list">
-        <li>Helps car rental agencies understand your license abroad</li>
-        <li>Clear translations into multiple languages</li>
-        <li>Printable PDF + digital copy</li>
+        <li>{{ t('summary.why1') }}</li>
+        <li>{{ t('summary.why2') }}</li>
+        <li>{{ t('summary.why3') }}</li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
 defineProps<{
   priceDisplay: string;
   selectedYears?: number;
 }>();
+
+const { t } = useI18n();
 </script>
 
 <style scoped lang="scss">
@@ -78,18 +80,18 @@ defineProps<{
 .summary-price {
   font-size: 22px;
   font-weight: 800;
+  margin: 0 0 8px;
   color: $slate-900;
-  margin: 0 0 4px;
 }
 
 .summary-note {
   margin: 0;
   @include text-xs;
   color: $slate-500;
-}
 
-.summary-note--top {
-  margin-top: 10px;
+  &--top {
+    margin-top: 8px;
+  }
 }
 
 .summary-list {
@@ -97,5 +99,9 @@ defineProps<{
   padding-left: 18px;
   @include text-sm;
   color: $slate-700;
+
+  li + li {
+    margin-top: 4px;
+  }
 }
 </style>

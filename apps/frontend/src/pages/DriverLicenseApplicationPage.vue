@@ -1,7 +1,11 @@
 <template>
 	<DriverApplicationLayout>
 		<template #header>
-			<StepProgressHeader :current-step="currentStep" />
+			<StepProgressHeader
+				:current-step="currentStep"
+				:step1-label="t('steps.information')"
+				:step2-label="t('steps.payment')"
+			/>
 		</template>
 
 		<form ref="formRef" v-if="currentStep === 1" @submit.prevent="onSubmitStep1">
@@ -81,11 +85,10 @@ import DriverDetailsForm, {
 import PlanYearsSelector from '@/features/plan-years/ui/PlanYearsSelector.vue';
 import VerifyLicenseSection from '@/features/verify-license/ui/VerifyLicenseSection.vue';
 import { createApplication } from '@/features/driver-application/api/createApplicationApi';
-import { applicationFormSchema } from '@/features/driver-application/model/applicationSchema';
+import { buildApplicationFormSchema } from '@/features/driver-application/model/applicationSchema';
 import { useDriverApplicationStore } from '@/entities/driver-application';
 import { useUploadLicense } from '@/features/verify-license/model/useUploadLicense';
 import { useVerificationFlow } from '@/features/verify-license/model/useVerificationFlow';
-import { applicationFormMessages } from '@/shared/config/applicationFormMessages';
 import { fetchCountries, fetchPricing, type PricingPlanDTO, type CountryDTO } from '@/shared/api/reference';
 import {
 	extractApiErrorMessage,
@@ -105,6 +108,8 @@ const currentStep = ref<StepId>(1);
 const route = useRoute();
 const router = useRouter();
 const { t } = useI18n();
+
+const validationSchema = computed(() => toTypedSchema(buildApplicationFormSchema(t)));
 
 const store = useDriverApplicationStore();
 const verify = useUploadLicense();
@@ -150,7 +155,7 @@ onMounted(async () => {
     countries.value = c.items;
     pricing.value = p.items;
   } catch (e) {
-    refError.value = 'Failed to load reference data';
+    refError.value = t('errors.refLoadFailed');
   } finally {
     refLoading.value = false;
   }
@@ -177,10 +182,12 @@ const dayOptions = Array.from({ length: 31 }, (_, i) => ({
   label: String(i + 1),
 }));
 
-const monthOptions = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December',
-].map((m, i) => ({ value: String(i + 1), label: m }));
+const monthOptions = computed(() =>
+	Array.from({ length: 12 }, (_, i) => ({
+		value: String(i + 1),
+		label: t(`date.month${i + 1}`),
+	})),
+);
 
 const currentYear = new Date().getFullYear();
 const yearOptions = Array.from({ length: 100 }, (_, i) => currentYear - i).map(
@@ -189,7 +196,7 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => currentYear - i).map(
 
 // --- validation schema
 const { handleSubmit, submitCount } = useForm({
-  validationSchema: toTypedSchema(applicationFormSchema),
+  validationSchema,
   initialValues: {
     firstName: store.driver?.firstName ?? '',
     lastName: store.driver?.lastName ?? '',
@@ -302,7 +309,7 @@ const onSubmitStep1 = handleSubmit(
     verificationError.value = null;
 
   if (!headshotFile.value || !licenseFile.value || !signatureDataUrl.value || !termsAccepted.value) {
-    toast.error(applicationFormMessages.toast.incompleteFields);
+    toast.error(t('toast.incompleteFields'));
     scrollToFirstError();
     return;
   }
@@ -313,12 +320,12 @@ const onSubmitStep1 = handleSubmit(
   ]);
 
   if (!ph.ok) {
-    toast.error(applicationFormMessages.toast.headshotInvalid);
+    toast.error(t('toast.headshotInvalid'));
     scrollToFirstError();
     return;
   }
   if (!pl.ok) {
-    toast.error(applicationFormMessages.toast.licenseInvalid);
+    toast.error(t('toast.licenseInvalid'));
     scrollToFirstError();
     return;
   }
@@ -331,15 +338,18 @@ const onSubmitStep1 = handleSubmit(
         licenseNumber: licenseNumber.value || '',
       });
     } catch (e) {
-      verificationError.value = extractApiErrorMessage(verify.error.value ?? e, 'Server error during verification');
+      verificationError.value = extractApiErrorMessage(
+        verify.error.value ?? e,
+        t('errors.serverVerification'),
+      );
       return;
     }
   }
 
   const verification = verify.result.value;
   if (!verification) {
-    verificationError.value = applicationFormMessages.toast.verificationMissing;
-    toast.error(applicationFormMessages.toast.verificationMissing);
+    verificationError.value = t('toast.verificationMissing');
+    toast.error(t('toast.verificationMissing'));
     return;
   }
 
@@ -355,8 +365,8 @@ const onSubmitStep1 = handleSubmit(
   });
 
   if (verification.status === 'failed') {
-    verificationError.value = applicationFormMessages.toast.verificationFailedSubmit;
-    toast.error(applicationFormMessages.toast.verificationFailedSubmit);
+    verificationError.value = t('toast.verificationFailedSubmit');
+    toast.error(t('toast.verificationFailedSubmit'));
     return;
   }
 
@@ -376,7 +386,7 @@ const onSubmitStep1 = handleSubmit(
 
   const verificationId = verification.verificationId as string | undefined;
   if (!verificationId) {
-    toast.error(applicationFormMessages.toast.verificationIdMissing);
+    toast.error(t('toast.verificationIdMissing'));
     return;
   }
 
@@ -411,7 +421,7 @@ const onSubmitStep1 = handleSubmit(
     store.setApplicationId(res.applicationId);
     sessionStorage.setItem('driverApp.applicationId', res.applicationId);
 
-    toast.success(applicationFormMessages.toast.applicationCreated);
+    toast.success(t('toast.applicationCreated'));
 
     await router.push({
       name: 'payment',
@@ -430,15 +440,15 @@ const onSubmitStep1 = handleSubmit(
 
     const toastDuration = 7000;
     if (code === HEADSHOT_MISMATCH_CODE) {
-      toast.error(applicationFormMessages.toast.headshotMismatch, {
+      toast.error(t('toast.headshotMismatch'), {
         duration: toastDuration,
       });
     } else if (code === HEADSHOT_NO_FACE_CODE) {
-      toast.error(applicationFormMessages.toast.headshotNoFace, {
+      toast.error(t('toast.headshotNoFace'), {
         duration: toastDuration,
       });
     } else {
-      toast.error(applicationFormMessages.toast.applicationSubmitError, {
+      toast.error(t('toast.applicationSubmitError'), {
         duration: toastDuration,
       });
     }

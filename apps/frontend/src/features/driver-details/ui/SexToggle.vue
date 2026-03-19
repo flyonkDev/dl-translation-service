@@ -3,7 +3,7 @@
     <div
       class="inline-flex h-[42px] items-stretch rounded-xl border border-slate-200 bg-white shadow-[0_1px_0_rgba(15,23,42,0.04)]"
       role="radiogroup"
-      aria-label="Sex"
+      :aria-label="groupAriaLabel"
     >
       <button
         type="button"
@@ -38,22 +38,28 @@
 </template>
 
 <script setup lang="ts">
+import { computed, withDefaults } from 'vue';
+
 type Sex = 'male' | 'female';
 
-const props = defineProps<{
-  modelValue: Sex | '';
-  error?: string;
-  disabled?: boolean;
-  maleLabel?: string;
-  femaleLabel?: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    modelValue: Sex | '';
+    error?: string;
+    disabled?: boolean;
+    maleLabel?: string;
+    femaleLabel?: string;
+    groupAriaLabel?: string;
+  }>(),
+  { groupAriaLabel: 'Sex' },
+);
 
 const emit = defineEmits<{
   (e: 'update:modelValue', v: Sex): void;
 }>();
 
-const maleLabel = props.maleLabel ?? 'Male';
-const femaleLabel = props.femaleLabel ?? 'Female';
+const maleLabel = computed(() => props.maleLabel ?? 'Male');
+const femaleLabel = computed(() => props.femaleLabel ?? 'Female');
 
 function select(v: Sex) {
   if (props.disabled) return;

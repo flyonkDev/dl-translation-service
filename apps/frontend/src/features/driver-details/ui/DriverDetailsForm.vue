@@ -1,19 +1,17 @@
 <template>
   <section class="driver-details-form">
     <h1 class="text-4xl mb-4 font-extrabold text-slate-900">
-      Driver details
+      {{ t('form.driver.title') }}
     </h1>
 
     <p class="mb-4 text-sm leading-relaxed text-slate-500">
-      Please enter the exact data shown on your driver’s license.
-      All required fields must be filled so we can generate a correct translation
-      and run basic verification on your document.
+      {{ t('form.driver.lead') }}
     </p>
 
     <div class="form-grid form-grid--2 mb-3 gap-4">
       <BaseInput
         id="email"
-        label="Email"
+        :label="t('form.driver.email')"
         required
         type="email"
         :model-value="email"
@@ -23,7 +21,7 @@
       />
       <BaseInput
         id="phone"
-        label="Mobile phone (optional)"
+        :label="t('form.driver.phone')"
         :model-value="phone"
         @update:model-value="emit('update:phone', $event)"
         :error="errors.phone"
@@ -34,7 +32,7 @@
     <div class="form-grid form-grid--2 mb-3 gap-4">
       <BaseInput
         id="firstName"
-        label="First name"
+        :label="t('form.driver.firstName')"
         required
         :model-value="firstName"
         @update:model-value="emit('update:firstName', $event)"
@@ -43,7 +41,7 @@
       />
       <BaseInput
         id="lastName"
-        label="Last name"
+        :label="t('form.driver.lastName')"
         required
         :model-value="lastName"
         @update:model-value="emit('update:lastName', $event)"
@@ -55,9 +53,9 @@
     <div class="mb-3 grid grid-cols-1 gap-4">
       <BaseCountrySelect
         id="licenseCountry"
-        label="Where was your license issued?"
+        :label="t('form.driver.licenseCountryLabel')"
         required
-        placeholder="Select country"
+        :placeholder="t('form.driver.licenseCountryPlaceholder')"
         :model-value="licenseCountry"
         @update:model-value="emit('update:licenseCountry', $event)"
         :options="uiCountryOptions"
@@ -68,15 +66,15 @@
 
     <div class="mb-3">
       <div class="mb-1 text-[13px] font-bold text-slate-900">
-        Date of birth
+        {{ t('form.driver.dob') }}
       </div>
 
       <div class="form-grid form-grid--3 gap-3">
         <BaseSelect
           id="dobDay"
-          label="Day"
+          :label="t('form.driver.day')"
           required
-          placeholder="Day"
+          :placeholder="t('form.driver.dayPh')"
           :model-value="dobDay"
           @update:model-value="emit('update:dobDay', $event)"
           :options="dayOptions"
@@ -84,9 +82,9 @@
         />
         <BaseSelect
           id="dobMonth"
-          label="Month"
+          :label="t('form.driver.month')"
           required
-          placeholder="Month"
+          :placeholder="t('form.driver.monthPh')"
           :model-value="dobMonth"
           @update:model-value="emit('update:dobMonth', $event)"
           :options="monthOptions"
@@ -94,9 +92,9 @@
         />
         <BaseSelect
           id="dobYear"
-          label="Year"
+          :label="t('form.driver.year')"
           required
-          placeholder="Year"
+          :placeholder="t('form.driver.yearPh')"
           :model-value="dobYear"
           @update:model-value="emit('update:dobYear', $event)"
           :options="yearOptions"
@@ -107,13 +105,16 @@
 
     <div class="mt-2">
       <div class="mb-1 text-[13px] font-bold text-slate-900">
-        Sex
+        {{ t('form.driver.sex') }}
       </div>
 
       <SexToggle
         :model-value="sex"
         @update:model-value="emit('update:sex', $event)"
         :error="errors.sex"
+        :male-label="t('form.driver.sexMale')"
+        :female-label="t('form.driver.sexFemale')"
+        :group-aria-label="t('form.driver.sexAria')"
       />
     </div>
   </section>
@@ -121,12 +122,16 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import BaseInput from '@ui-kit/components/inputs/BaseInput.vue';
 import BaseSelect from '@ui-kit/components/inputs/BaseSelect.vue';
 import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue';
 import SexToggle from './SexToggle.vue';
+import type { Sex } from '@/shared/types/domain';
+
 export type { Sex } from '@/shared/types/domain';
 
+const { t } = useI18n();
 
 export type SelectOption = { value: string; label: string };
 
