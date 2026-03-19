@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-1 gap-2.5 md:grid-cols-3" role="tablist" :aria-label="t('plan.durationAria')">
       <button
-        v-for="opt in options"
+        v-for="opt in displayOptions"
         :key="opt.years"
         type="button"
         class="min-h-20 rounded-xl border bg-white p-3 text-left transition hover:-translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-activeBlue/10"
@@ -31,37 +31,52 @@
         </div>
 
         <div class="flex items-end justify-between gap-3">
-            <span class="text-xs text-slate-500">
-              {{ opt.sub }}
-            </span>
+          <span class="text-xs text-slate-500">
+            {{ opt.sub }}
+          </span>
 
-            <span class="text-lg font-extrabold text-slate-900">
-              {{ formatUsd(opt.priceCents) }}
-            </span>
-          </div>
+          <span class="text-lg font-extrabold text-slate-900">
+            {{ formatUsd(opt.priceCents) }}
+          </span>
+        </div>
       </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import type { PlanYears } from '@/entities/driver-application'
+import type { PlanYears } from '@/entities/driver-application';
+import type { PricingPlanDTO } from '@/shared/api/reference';
+import { formatUsd } from '@/shared/lib';
 
-const { t } = useI18n();
-import type { PricingPlanDTO } from '@/shared/api/reference'
-import { formatUsd } from '@/shared/lib'
+const props = defineProps<{
+  modelValue: PlanYears;
+  options: PricingPlanDTO[];
+}>();
 
-defineProps<{
-  modelValue: PlanYears
-  options: PricingPlanDTO[]
-}>()
+const { t, te } = useI18n();
+
+/** Title/sub/badge from i18n by plan length; price still from API. */
+const displayOptions = computed(() =>
+  props.options.map((opt) => {
+    const y = opt.years;
+    const badgeKey = `plan.tier.${y}.badge` as const;
+    return {
+      ...opt,
+      title: t(`plan.tier.${y}.title`),
+      sub: t(`plan.tier.${y}.sub`),
+      badge: te(badgeKey) ? t(badgeKey) : opt.badge,
+    };
+  }),
+);
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', v: PlanYears): void
-}>()
+  (e: 'update:modelValue', v: PlanYears): void;
+}>();
 
 function update(v: PlanYears) {
-  emit('update:modelValue', v)
+  emit('update:modelValue', v);
 }
 </script>

@@ -5,6 +5,23 @@ export default {
 	header: {
 		language: 'Idioma',
 	},
+	layout: {
+		logo: 'IDP Companion',
+	},
+	footer: {
+		popularTitle: 'Destinos populares',
+		productTitle: 'Producto',
+		companyTitle: 'Empresa',
+		supportTitle: 'Soporte',
+		linkPricing: 'Precios',
+		linkHowItWorks: 'Cómo funciona',
+		linkFaq: 'FAQ',
+		linkPrivacy: 'Política de privacidad',
+		linkTerms: 'Términos y condiciones',
+		linkRefund: 'Política de reembolsos',
+		linkContact: 'Formulario de contacto',
+		copyright: '© {year} IDP Companion. Todos los derechos reservados.',
+	},
 	steps: {
 		information: 'Datos y documentos',
 		payment: 'Pago',
@@ -87,6 +104,21 @@ export default {
 	plan: {
 		chooseDuration: 'Elige la duración',
 		durationAria: 'Duración del plan',
+		tier: {
+			1: {
+				title: '1 año',
+				sub: 'Ideal para un viaje largo o uso puntual.',
+			},
+			2: {
+				title: '2 años',
+				sub: 'Equilibrado para quien viaja con frecuencia.',
+				badge: 'Popular',
+			},
+			3: {
+				title: '3 años',
+				sub: 'Mejor relación calidad-precio si viajas mucho.',
+			},
+		},
 	},
 	summary: {
 		title: 'Tu PDF de traducción',

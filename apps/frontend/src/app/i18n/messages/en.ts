@@ -5,6 +5,23 @@ export default {
 	header: {
 		language: 'Language',
 	},
+	layout: {
+		logo: 'IDP Companion',
+	},
+	footer: {
+		popularTitle: 'Popular destinations',
+		productTitle: 'Product',
+		companyTitle: 'Company',
+		supportTitle: 'Support',
+		linkPricing: 'Pricing',
+		linkHowItWorks: 'How it works',
+		linkFaq: 'FAQ',
+		linkPrivacy: 'Privacy Policy',
+		linkTerms: 'Terms & Conditions',
+		linkRefund: 'Refund Policy',
+		linkContact: 'Contact form',
+		copyright: '© {year} IDP Companion. All rights reserved.',
+	},
 	steps: {
 		information: 'Information & documents',
 		payment: 'Payment',
@@ -87,6 +104,21 @@ export default {
 	plan: {
 		chooseDuration: 'Choose duration',
 		durationAria: 'Plan duration',
+		tier: {
+			1: {
+				title: '1 year',
+				sub: 'Good for a single long trip or short-term use.',
+			},
+			2: {
+				title: '2 years',
+				sub: 'Balanced option for regular travelers.',
+				badge: 'Popular',
+			},
+			3: {
+				title: '3 years',
+				sub: 'Best value if you travel often.',
+			},
+		},
 	},
 	summary: {
 		title: 'Your translation PDF',

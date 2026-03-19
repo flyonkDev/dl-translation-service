@@ -1,6 +1,13 @@
 <template>
   <div class="layout bg-mint/40">
     <AppHeader
+      :brand-name="t('layout.logo')"
+      :nav-how-label="t('footer.linkHowItWorks')"
+      :nav-faq-label="t('footer.linkFaq')"
+      :nav-pricing-label="t('footer.linkPricing')"
+      :how-href="footerLinks.howItWorks"
+      :faq-href="footerLinks.faq"
+      :pricing-href="footerLinks.pricing"
       :show-start-button="false"
       show-locale-switcher
       :locale="currentLocale"
@@ -13,7 +20,23 @@
       <slot />
     </main>
 
-    <AppFooter />
+    <AppFooter
+      :brand-name="t('layout.logo')"
+      :support-email="supportEmail"
+      :popular-title="t('footer.popularTitle')"
+      :product-title="t('footer.productTitle')"
+      :company-title="t('footer.companyTitle')"
+      :support-title="t('footer.supportTitle')"
+      :link-pricing="t('footer.linkPricing')"
+      :link-how-it-works="t('footer.linkHowItWorks')"
+      :link-faq="t('footer.linkFaq')"
+      :link-privacy="t('footer.linkPrivacy')"
+      :link-terms="t('footer.linkTerms')"
+      :link-refund="t('footer.linkRefund')"
+      :link-contact="t('footer.linkContact')"
+      :copyright-line="t('footer.copyright', { year })"
+      :links="footerLinks"
+    />
   </div>
 </template>
 
@@ -22,11 +45,28 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import AppHeader from '@ui-kit/components/layout/AppHeader.vue';
 import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
-import { useAppLocale } from '@/shared/lib';
-import { isSupportedLocale } from '@i18n';
+import { useAppLocale, marketingHash, marketingPath } from '@/shared/lib';
+import { isSupportedLocale, type SupportedLocale } from '@i18n';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const { currentLocale, selectLocale, localeChoices } = useAppLocale();
+
+const year = new Date().getFullYear();
+
+const supportEmail = String(import.meta.env.VITE_SUPPORT_EMAIL ?? 'petr.shchepetin@gmail.com');
+
+const footerLinks = computed(() => {
+  const loc = (isSupportedLocale(locale.value) ? locale.value : 'en') as SupportedLocale;
+  return {
+    pricing: marketingHash(loc, '#pricing'),
+    howItWorks: marketingHash(loc, '#how-it-works'),
+    faq: marketingHash(loc, '#faq'),
+    privacy: marketingPath(loc, '/privacy-policy'),
+    terms: marketingPath(loc, '/terms-of-service'),
+    refund: marketingPath(loc, '/refund-policy'),
+    contact: marketingHash(loc, '#faq'),
+  };
+});
 
 const localeChoicesForHeader = computed(() =>
   localeChoices.map((o) => ({
@@ -47,13 +87,6 @@ function onSelectLocale(code: string) {
   flex-direction: column;
   min-height: 100vh;
 }
-
-.layout-header,
-/* .layout-footer {
-  background: #f5f5f5;
-  padding: 1rem;
-  text-align: center;
-} */
 
 .layout-main {
   background: #def7d4;
