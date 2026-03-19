@@ -5,10 +5,10 @@ defineProps<{
 	doc: LegalDoc;
 }>();
 
-const SUPPORT_EMAIL = 'petr.shchepetin@gmail.com';
-
 const { t } = useI18n();
 const localePath = useLocalePath();
+const injectEmail = useInjectSupportEmail();
+const supportEmail = useSupportEmail();
 
 function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' }> {
 	return typeof b === 'object' && b !== null && 'kind' in b && b.kind === 'link';
@@ -28,7 +28,7 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 			>
 				<p class="m-0">
 					<strong>{{ t(sec.notice.labelKey) }}</strong>
-					{{ ' ' }}{{ sec.notice.body }}
+					{{ ' ' }}{{ injectEmail(sec.notice.body) }}
 				</p>
 			</div>
 
@@ -44,14 +44,14 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 				:key="'p' + pi"
 				class="legal-section__p text-sm leading-relaxed text-slate-700 mb-3"
 			>
-				{{ p }}
+				{{ injectEmail(p) }}
 			</p>
 
 			<p
 				v-if="sec.listIntro"
 				class="legal-section__p text-sm leading-relaxed text-slate-700 mb-3"
 			>
-				{{ sec.listIntro }}
+				{{ injectEmail(sec.listIntro) }}
 			</p>
 
 			<ul
@@ -60,15 +60,15 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 			>
 				<li v-for="(b, j) in sec.bullets" :key="j">
 					<template v-if="isLinkBullet(b)">
-						{{ b.before
+						{{ injectEmail(b.before)
 						}}<NuxtLink
 							:to="localePath(b.path)"
 							class="legal-section__link text-sea underline hover:text-sea-300"
 							>{{ t(b.linkLabelKey) }}</NuxtLink
-						>{{ b.after }}
+						>{{ injectEmail(b.after) }}
 					</template>
 					<template v-else>
-						{{ b }}
+						{{ injectEmail(b) }}
 					</template>
 				</li>
 			</ul>
@@ -77,12 +77,12 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 				v-if="sec.closingWithLink"
 				class="legal-section__p text-sm leading-relaxed text-slate-700"
 			>
-				{{ sec.closingWithLink.before
+				{{ injectEmail(sec.closingWithLink.before)
 				}}<NuxtLink
 					:to="localePath(sec.closingWithLink.path)"
 					class="legal-section__link text-sea underline hover:text-sea-300"
 					>{{ t(sec.closingWithLink.linkLabelKey) }}</NuxtLink
-				>{{ sec.closingWithLink.after }}
+				>{{ injectEmail(sec.closingWithLink.after) }}
 			</p>
 
 			<p
@@ -90,13 +90,13 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 				:key="'tp' + ti"
 				class="legal-section__p text-sm leading-relaxed text-slate-700 mb-3"
 			>
-				{{ tp }}
+				{{ injectEmail(tp) }}
 			</p>
 
 			<template v-if="sec.addressLines?.length">
 				<p class="legal-section__p text-sm leading-relaxed text-slate-700 mb-2">
 					<template v-for="(line, li) in sec.addressLines" :key="li">
-						{{ line }}<br v-if="li < sec.addressLines!.length - 1" />
+						{{ injectEmail(line) }}<br v-if="li < sec.addressLines!.length - 1" />
 					</template>
 				</p>
 			</template>
@@ -107,9 +107,9 @@ function isLinkBullet(b: LegalBullet): b is Extract<LegalBullet, { kind: 'link' 
 			>
 				{{ t(sec.contactWithEmail.beforeKey)
 				}}<a
-					:href="`mailto:${SUPPORT_EMAIL}`"
+					:href="`mailto:${supportEmail}`"
 					class="legal-section__link text-sea underline hover:text-sea-300"
-					>{{ SUPPORT_EMAIL }}</a
+					>{{ supportEmail }}</a
 				>{{ t(sec.contactWithEmail.afterKey) }}
 			</p>
 		</section>

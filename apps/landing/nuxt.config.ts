@@ -35,6 +35,9 @@ export default defineNuxtConfig({
 		public: {
 			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
+			/** Support / legal pages contact (override in production via NUXT_PUBLIC_SUPPORT_EMAIL) */
+			supportEmail:
+				process.env.NUXT_PUBLIC_SUPPORT_EMAIL || 'petr.shchepetin@gmail.com',
 		},
 	},
 

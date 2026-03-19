@@ -5,6 +5,9 @@ import termsEs from '~/content/legal/terms-es';
 import privacyEn from '~/content/legal/privacy-en';
 import privacyRu from '~/content/legal/privacy-ru';
 import privacyEs from '~/content/legal/privacy-es';
+import refundEn from '~/content/legal/refund-en';
+import refundRu from '~/content/legal/refund-ru';
+import refundEs from '~/content/legal/refund-es';
 
 function docForLocale<T extends LegalDoc>(en: T, ru: T, es: T, locale: string): T {
 	if (locale === 'ru') return ru;
@@ -20,4 +23,9 @@ export function useLegalTerms() {
 export function useLegalPrivacy() {
 	const { locale } = useI18n();
 	return computed(() => docForLocale(privacyEn, privacyRu, privacyEs, locale.value));
+}
+
+export function useLegalRefund() {
+	const { locale } = useI18n();
+	return computed(() => docForLocale(refundEn, refundRu, refundEs, locale.value));
 }

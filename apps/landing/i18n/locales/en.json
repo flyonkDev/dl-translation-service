@@ -42,7 +42,12 @@
     "privacyRightsBefore": "To exercise these rights, contact us at ",
     "privacyRightsAfter": ". We will verify your identity before processing your request.",
     "privacyContactBefore": "For questions about this Privacy Policy or your personal data, contact us at ",
-    "privacyContactAfter": "."
+    "privacyContactAfter": ".",
+    "refundTitle": "Refund Policy",
+    "seoRefundTitle": "Refund Policy | IDP Companion",
+    "seoRefundDesc": "IDP Companion refund policy. Full refund for car rental refusal with proof, download availability issues, or change of mind within 12 hours.",
+    "refundClosingBefore": "For refund requests or questions about this policy, contact us at ",
+    "refundClosingAfter": "."
   },
   "home": {
     "heroKicker": "International Driving Permit Companion Document",

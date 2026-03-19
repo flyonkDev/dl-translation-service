@@ -1,20 +1,22 @@
 <template>
 	<header class="header">
 		<div
-			class="header-inner container flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-2.5"
+			class="header-inner container flex flex-nowrap items-center justify-between gap-2 px-4 py-2 sm:gap-3"
 		>
 			<a :href="homeHref" class="logo inline-flex min-w-0 shrink-0 items-center gap-2">
 				<span class="logo-mark text-xs font-extrabold">IDP</span>
-				<span class="logo-text truncate text-sm font-bold">{{ brandName }}</span>
+				<span class="logo-text max-w-[9rem] truncate text-sm font-bold sm:max-w-none">{{ brandName }}</span>
 			</a>
 
-			<nav class="nav order-last flex w-full basis-full items-center justify-center gap-4 min-[960px]:order-none min-[960px]:flex-1 min-[960px]:basis-auto min-[960px]:justify-center">
+			<nav
+				class="nav flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+			>
 				<a :href="howHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navHowLabel }}</a>
 				<a :href="faqHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
 				<a :href="pricingHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
 			</nav>
 
-			<div class="header-actions ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+			<div class="header-actions flex shrink-0 items-center gap-2 sm:gap-3">
 				<slot name="localeSwitcher">
 					<div
 						v-if="showLocaleSwitcher && localeOptions.length"
@@ -141,9 +143,9 @@
 	}
 
 	.logo-mark {
-	  width: 28px;
-	  height: 28px;
-	  border-radius: 8px;
+	  width: 24px;
+	  height: 24px;
+	  border-radius: 6px;
 	  background: rgb(var(--c-sea));
 	  display: inline-flex;
 	  align-items: center;
@@ -165,9 +167,7 @@
 	  color: rgb(var(--c-slate-900));
 	}
 
-	@media (max-width: 959px) {
-	  .nav {
-	    justify-content: center;
-	  }
+	.nav {
+	  -webkit-overflow-scrolling: touch;
 	}
 </style>

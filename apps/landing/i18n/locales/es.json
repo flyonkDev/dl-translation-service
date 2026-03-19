@@ -42,7 +42,12 @@
     "privacyRightsBefore": "Para ejercer estos derechos, contáctenos en ",
     "privacyRightsAfter": ". Verificaremos su identidad antes de tramitar su solicitud.",
     "privacyContactBefore": "Para consultas sobre esta Política de privacidad o sus datos personales, escríbanos a ",
-    "privacyContactAfter": "."
+    "privacyContactAfter": ".",
+    "refundTitle": "Política de reembolsos",
+    "seoRefundTitle": "Política de reembolsos | IDP Companion",
+    "seoRefundDesc": "Política de reembolsos de IDP Companion: reembolso completo por rechazo de la rentadora con prueba, problemas de descarga o arrepentimiento en 12 horas.",
+    "refundClosingBefore": "Para solicitudes de reembolso o consultas sobre esta política, escríbanos a ",
+    "refundClosingAfter": "."
   },
   "home": {
     "heroKicker": "Documento complementario al Permiso Internacional de Conducir (IDP Companion)",
