@@ -3,18 +3,18 @@
 	<div class="layout">
 		<header class="layout-header">
 			<div class="layout-header__inner">
-				<div class="logo">DL Translate</div>
+				<div class="logo">{{ t('layout.logo') }}</div>
 
 				<nav class="nav">
-					<a href="#how-it-works" class="nav-link">How it works</a>
-					<a href="#faq" class="nav-link">FAQ</a>
-					<a href="#pricing" class="nav-link">Pricing</a>
+					<a href="#how-it-works" class="nav-link">{{ t('layout.navHow') }}</a>
+					<a href="#faq" class="nav-link">{{ t('layout.navFaq') }}</a>
+					<a href="#pricing" class="nav-link">{{ t('layout.navPricing') }}</a>
 				</nav>
 
 				<div
 					class="locale-switcher flex shrink-0 items-center gap-0.5 rounded-lg border border-slate-200 bg-white/80 p-0.5"
 					role="group"
-					aria-label="Language"
+					:aria-label="t('layout.languageAria')"
 				>
 					<NuxtLink
 						v-for="loc in landingLocales"
@@ -33,7 +33,7 @@
 				</div>
 
 				<BaseButton type="submit" variant="primary">
-					<span class="font-bold">Start application</span>
+					<span class="font-bold">{{ t('layout.ctaStart') }}</span>
 				</BaseButton>
 			</div>
 		</header>
@@ -51,7 +51,7 @@
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 
-	const { locale } = useI18n();
+	const { locale, t } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
 
 	const landingLocales = [

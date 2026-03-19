@@ -1,5 +1,181 @@
 {
-  "landing": {
-    "brand": "IDP Companion"
+  "seo": {
+    "title": "IDP Companion",
+    "description": "Upload your driver license and get a multilingual translation PDF in minutes. Works as a translation document together with your national license."
+  },
+  "layout": {
+    "logo": "IDP Companion",
+    "navHow": "How it works",
+    "navFaq": "FAQ",
+    "navPricing": "Pricing",
+    "languageAria": "Language",
+    "ctaStart": "Start application"
+  },
+  "footer": {
+    "popularTitle": "Popular destinations",
+    "productTitle": "Product",
+    "companyTitle": "Company",
+    "supportTitle": "Support",
+    "linkPricing": "Pricing",
+    "linkHowItWorks": "How it works",
+    "linkFaq": "FAQ",
+    "linkPrivacy": "Privacy Policy",
+    "linkTerms": "Terms & Conditions",
+    "linkRefund": "Refund Policy",
+    "linkContact": "Contact form",
+    "copyright": "© {year} IDP Companion. All rights reserved."
+  },
+  "legal": {
+    "linkRefundPolicy": "Refund Policy",
+    "linkPrivacyPolicy": "Privacy Policy",
+    "backHome": "← Back to home",
+    "updatedLabel": "Last updated:",
+    "termsTitle": "Terms and Conditions",
+    "privacyTitle": "Privacy Policy",
+    "seoTermsTitle": "Terms and Conditions | IDP Companion",
+    "seoTermsDesc": "Terms and Conditions for IDP Companion - driver license translation document service. Read our terms before using the service.",
+    "seoPrivacyTitle": "Privacy Policy | IDP Companion",
+    "seoPrivacyDesc": "Privacy Policy for IDP Companion - how we collect, use and protect your personal data. Compliance with POPIA and GDPR.",
+    "privacyNoticeLabel": "Legal notice:",
+    "termsContactBefore": "For questions about these Terms, contact us at ",
+    "termsContactAfter": ".",
+    "privacyRightsBefore": "To exercise these rights, contact us at ",
+    "privacyRightsAfter": ". We will verify your identity before processing your request.",
+    "privacyContactBefore": "For questions about this Privacy Policy or your personal data, contact us at ",
+    "privacyContactAfter": "."
+  },
+  "home": {
+    "heroKicker": "International Driving Permit Companion Document",
+    "heroTitle": "Get your International Driving Permit Companion Document in minutes",
+    "heroLead": "Multilingual driving document designed for international travel. Helps car rental agencies and authorities understand your license abroad when used together with your original driver license.",
+    "heroBullet1": "Generated from your real driver license after verification",
+    "heroBullet2": "Formatted for international use and multilingual recognition",
+    "heroBullet3": "Instant digital delivery, ready to print or use on your phone",
+    "heroBullet4": "Must be used together with your original driver license",
+    "seePricing": "See pricing",
+    "priceNote": "From {price} per document. No subscriptions.",
+    "trustTitle": "Why travelers use an International Driving Permit companion document",
+    "trustLead": "Driver licenses issued in many countries are difficult for foreign authorities and car rental agencies to read, especially when written in non-Latin alphabets or unfamiliar formats.",
+    "problemsTitle": "Common situations abroad",
+    "problem1": "Car rental staff cannot read your license language",
+    "problem2": "Your license uses Cyrillic, Arabic, Chinese, or other scripts",
+    "problem3": "Authorities may need a clearer interpretation of your license details",
+    "problem4": "Explaining your license abroad can be slow and stressful",
+    "solutionTitle": "Companion document solution",
+    "solution1": "Presents your license details in a clear multilingual format",
+    "solution2": "Generated from your real license after verification",
+    "solution3": "Easy to show digitally or as a printed document",
+    "solution4": "Designed for international travel use together with your original license",
+    "whoTitle": "Who needs an International Driving Permit companion document",
+    "who1": "Travelers planning to drive or rent a car abroad",
+    "who2": "Drivers whose license is not in English or uses a non-Latin alphabet",
+    "who3": "Digital nomads, expats, and frequent international travelers",
+    "who4": "Anyone who wants a clearer, internationally understandable license format",
+    "whoFootnote": "Used together with your original driver license for international travel.",
+    "receiveTitle": "What you receive",
+    "receive1": "International Driving Permit companion document in digital PDF format",
+    "receive2": "Multilingual presentation of your driver license information",
+    "receive3": "Clean, professional layout ready to print or show on your phone",
+    "receive4": "Generated after verification of your original driver license",
+    "howTitle": "How it works",
+    "step1Title": "Submit your driver license",
+    "step1Text": "Upload a photo or scan of your valid driver license through our secure online form.",
+    "step2Title": "Verification and document generation",
+    "step2Text": "We verify your license details and generate your International Driving Permit companion document in multilingual format.",
+    "step3Title": "Download and use internationally",
+    "step3Text": "Receive your companion document instantly and use it together with your original license when traveling abroad.",
+    "disclaimerShort": "*Companion document only. Not a government-issued International Driving Permit.",
+    "testimonialsTitle": "Trusted by international travelers",
+    "testimonialsLead": "Drivers worldwide use companion documents to make their licenses easier to understand abroad.",
+    "t1Text": "The process was very fast and simple. I received my companion document within minutes and used it when renting a car during my trip.",
+    "t1Author": "Daniel M. — Germany",
+    "t2Text": "My original license is not in English, so having a multilingual companion document made everything easier when traveling.",
+    "t2Author": "Alex K. — Poland",
+    "t3Text": "Clean layout, easy to download, and convenient to keep on my phone. The verification process was straightforward.",
+    "t3Author": "Marco R. — Italy",
+    "faqTitle": "Frequently asked questions",
+    "ctaTitle": "Get your International Driving Permit companion document today",
+    "ctaLead": "Apply online in minutes and receive your multilingual companion document instantly. Designed for international travel use together with your original driver license.",
+    "ctaDisclaimer": "Companion document only. Not a government-issued International Driving Permit.",
+    "ctaButton": "Get Document"
+  },
+  "widget": {
+    "title": "Start your application",
+    "introBefore": "You’ll receive an International Driving Permit companion document —",
+    "introNotGov": "not a government-issued IDP",
+    "introAfter": ". Generated from your real driver license and designed for international travel.",
+    "loadErrorTitle": "Failed to load data.",
+    "loadErrorCountries": "Countries error:",
+    "loadErrorPlans": "Plans error:",
+    "yes": "yes",
+    "no": "no",
+    "retry": "Retry",
+    "countryLabel": "Where was your license issued?",
+    "countryLoading": "Loading...",
+    "countryPlaceholder": "Select a country",
+    "durationLabel": "Choose duration",
+    "durationAria": "Plan duration",
+    "benefit1": "Automatic text extraction and formatting",
+    "benefit2": "Multiple languages in one PDF",
+    "benefit3": "Ready to download after checkout",
+    "paymentNote": "One-time payment. No subscriptions.",
+    "ctaDefault": "Get PDF in 2 minutes",
+    "plan1Title": "1 year",
+    "plan1Sub": "Basic",
+    "plan2Title": "2 years",
+    "plan2Sub": "Extended access",
+    "plan3Title": "3 years",
+    "plan3Sub": "Best value",
+    "plan3Badge": "Recommended"
+  },
+  "faq": {
+    "1": {
+      "q": "What is an International Driving Permit companion document?",
+      "a0": "An International Driving Permit companion document is a multilingual document that presents your driver license information in an internationally understandable format.",
+      "a1": "It is generated based on your real driver license and is designed to be used together with your original license when traveling abroad.",
+      "a2": "It helps authorities and car rental agencies interpret your license details more easily."
+    },
+    "2": {
+      "q": "Is this an official government-issued International Driving Permit?",
+      "a0": "No. This is not a government-issued International Driving Permit.",
+      "a1": "It is a companion document designed to accompany your original driver license and provide a multilingual presentation of your license information.",
+      "a2": "You must always carry your original driver license when using the companion document."
+    },
+    "3": {
+      "q": "Why is a companion document useful for international travel?",
+      "a0": "Driver licenses issued in one country may not be easily readable in another due to language differences or unfamiliar formats.",
+      "a1": "A companion document presents your license information in multiple languages, making it easier to understand abroad.",
+      "a2": "This can be helpful when renting cars or presenting your license during travel."
+    },
+    "4": {
+      "q": "Do you verify my driver license?",
+      "a0": "Yes. Your companion document is generated based on the information from your real driver license.",
+      "a1": "We require you to upload your license so we can verify and generate the document accurately.",
+      "a2": "This ensures the document reflects your actual license details."
+    },
+    "5": {
+      "q": "How long does it take to receive my companion document?",
+      "a0": "In most cases, your companion document is generated within minutes after submission.",
+      "a1": "You will receive it as a digital PDF file that you can download immediately.",
+      "a2": "You can print it or keep it on your phone for convenience."
+    },
+    "6": {
+      "q": "What format will I receive?",
+      "a0": "You will receive your companion document as a digital PDF file.",
+      "a1": "It is optimized for both printing and mobile display.",
+      "a2": "You can access it anytime after download."
+    },
+    "7": {
+      "q": "Is my personal information secure?",
+      "a0": "Yes. Your data is processed securely and used only for generating your companion document.",
+      "a1": "We do not sell or share your personal information with third parties.",
+      "a2": "All document generation is handled through secure systems."
+    },
+    "8": {
+      "q": "Do you offer refunds?",
+      "a0": "Yes. If there is a technical issue or your document cannot be generated, you may request a refund.",
+      "a1": "Please refer to our Refund Policy for full details.",
+      "a2": "Our support team is available to help resolve any issues."
+    }
   }
 }

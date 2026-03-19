@@ -1,5 +1,181 @@
 {
-  "landing": {
-    "brand": "IDP Companion"
+  "seo": {
+    "title": "IDP Companion",
+    "description": "Sube tu permiso de conducir y recibe un PDF multilingüe en minutos. Funciona como documento de traducción junto a tu permiso nacional."
+  },
+  "layout": {
+    "logo": "IDP Companion",
+    "navHow": "Cómo funciona",
+    "navFaq": "Preguntas",
+    "navPricing": "Precios",
+    "languageAria": "Idioma",
+    "ctaStart": "Iniciar solicitud"
+  },
+  "footer": {
+    "popularTitle": "Destinos populares",
+    "productTitle": "Producto",
+    "companyTitle": "Empresa",
+    "supportTitle": "Soporte",
+    "linkPricing": "Precios",
+    "linkHowItWorks": "Cómo funciona",
+    "linkFaq": "Preguntas frecuentes",
+    "linkPrivacy": "Política de privacidad",
+    "linkTerms": "Términos y condiciones",
+    "linkRefund": "Política de reembolsos",
+    "linkContact": "Formulario de contacto",
+    "copyright": "© {year} IDP Companion. Todos los derechos reservados."
+  },
+  "legal": {
+    "linkRefundPolicy": "Política de reembolsos",
+    "linkPrivacyPolicy": "Política de privacidad",
+    "backHome": "← Volver al inicio",
+    "updatedLabel": "Última actualización:",
+    "termsTitle": "Términos y condiciones",
+    "privacyTitle": "Política de privacidad",
+    "seoTermsTitle": "Términos y condiciones | IDP Companion",
+    "seoTermsDesc": "Términos y condiciones de IDP Companion — servicio de documento de traducción del permiso de conducir.",
+    "seoPrivacyTitle": "Política de privacidad | IDP Companion",
+    "seoPrivacyDesc": "Política de privacidad de IDP Companion: cómo recopilamos, usamos y protegemos tus datos (POPIA, GDPR).",
+    "privacyNoticeLabel": "Aviso legal:",
+    "termsContactBefore": "Para consultas sobre estos Términos, escríbanos a ",
+    "termsContactAfter": ".",
+    "privacyRightsBefore": "Para ejercer estos derechos, contáctenos en ",
+    "privacyRightsAfter": ". Verificaremos su identidad antes de tramitar su solicitud.",
+    "privacyContactBefore": "Para consultas sobre esta Política de privacidad o sus datos personales, escríbanos a ",
+    "privacyContactAfter": "."
+  },
+  "home": {
+    "heroKicker": "Documento complementario al Permiso Internacional de Conducir (IDP Companion)",
+    "heroTitle": "Obtén tu documento IDP Companion en minutos",
+    "heroLead": "Documento de conducción multilingüe pensado para viajar al extranjero. Ayuda a rentadoras y autoridades a entender tu permiso cuando lo presentas junto con el permiso nacional original.",
+    "heroBullet1": "Generado a partir de tu permiso real tras una verificación",
+    "heroBullet2": "Formato orientado al uso internacional y al reconocimiento multilingüe",
+    "heroBullet3": "Entrega digital al instante: imprímelo o muéstralo en el teléfono",
+    "heroBullet4": "Debe usarse siempre junto con tu permiso de conducir original",
+    "seePricing": "Ver precios",
+    "priceNote": "Desde {price} por documento. Sin suscripciones.",
+    "trustTitle": "Por qué los viajeros usan un documento complementario tipo IDP",
+    "trustLead": "Los permisos emitidos en muchos países son difíciles de leer en el extranjero, sobre todo si no están en alfabeto latino o tienen un formato poco habitual.",
+    "problemsTitle": "Situaciones habituales en el extranjero",
+    "problem1": "El personal de la rentadora no entiende el idioma de tu permiso",
+    "problem2": "Tu permiso está en cirílico, árabe, chino u otro sistema de escritura",
+    "problem3": "Las autoridades necesitan una lectura más clara de los datos del permiso",
+    "problem4": "Explicar el permiso en destino puede ser lento y estresante",
+    "solutionTitle": "Qué aporta el documento complementario",
+    "solution1": "Presenta los datos de tu permiso en un formato multilingüe claro",
+    "solution2": "Se genera a partir de tu permiso real, tras la verificación",
+    "solution3": "Fácil de mostrar en digital o en papel impreso",
+    "solution4": "Pensado para viajes internacionales junto con tu permiso original",
+    "whoTitle": "Quién necesita un documento IDP Companion",
+    "who1": "Viajeros que van a conducir o alquilar un coche en el extranjero",
+    "who2": "Conductores cuyo permiso no está en inglés o no usa alfabeto latino",
+    "who3": "Nómadas digitales, expatriados y quienes viajan mucho al extranjero",
+    "who4": "Quien quiera un formato más claro y comprensible internacionalmente",
+    "whoFootnote": "Úsalo junto con tu permiso de conducir original cuando viajes al extranjero.",
+    "receiveTitle": "Qué recibes",
+    "receive1": "Documento IDP Companion en PDF digital",
+    "receive2": "Presentación multilingüe de los datos de tu permiso",
+    "receive3": "Diseño profesional, listo para imprimir o ver en el móvil",
+    "receive4": "Generado tras verificar tu permiso de conducir original",
+    "howTitle": "Cómo funciona",
+    "step1Title": "Envía tu permiso de conducir",
+    "step1Text": "Sube una foto o escaneo de tu permiso vigente mediante nuestro formulario seguro en línea.",
+    "step2Title": "Verificación y generación del documento",
+    "step2Text": "Verificamos los datos y generamos tu documento IDP Companion en formato multilingüe.",
+    "step3Title": "Descarga y uso en el extranjero",
+    "step3Text": "Recibe el documento al instante y úsalo junto con tu permiso original cuando viajes.",
+    "disclaimerShort": "*Solo documento complementario. No es un Permiso Internacional de Conducir emitido por el gobierno.",
+    "testimonialsTitle": "La confianza de viajeros internacionales",
+    "testimonialsLead": "Conductores de todo el mundo usan documentos complementarios para que su permiso sea más fácil de entender en el extranjero.",
+    "t1Text": "El proceso fue muy rápido y sencillo. Recibí el documento en minutos y lo usé al alquilar un coche durante el viaje.",
+    "t1Author": "Daniel M. — Alemania",
+    "t2Text": "Mi permiso no está en inglés; tener un documento multilingüe lo hizo todo más fácil al viajar.",
+    "t2Author": "Alex K. — Polonia",
+    "t3Text": "Diseño limpio, descarga sencilla y cómodo llevarlo en el móvil. La verificación fue directa.",
+    "t3Author": "Marco R. — Italia",
+    "faqTitle": "Preguntas frecuentes",
+    "ctaTitle": "Obtén hoy tu documento IDP Companion",
+    "ctaLead": "Solicita en línea en minutos y recibe al instante tu documento multilingüe. Pensado para viajes internacionales junto con tu permiso original.",
+    "ctaDisclaimer": "Solo documento complementario. No es un Permiso Internacional de Conducir emitido por el gobierno.",
+    "ctaButton": "Obtener documento"
+  },
+  "widget": {
+    "title": "Inicia tu solicitud",
+    "introBefore": "Recibirás un documento IDP Companion —",
+    "introNotGov": "no es un IDP gubernamental",
+    "introAfter": ". Se genera a partir de tu permiso real y está pensado para viajes internacionales.",
+    "loadErrorTitle": "No se pudieron cargar los datos.",
+    "loadErrorCountries": "Error países:",
+    "loadErrorPlans": "Error planes:",
+    "yes": "sí",
+    "no": "no",
+    "retry": "Reintentar",
+    "countryLabel": "¿Dónde se emitió tu permiso?",
+    "countryLoading": "Cargando…",
+    "countryPlaceholder": "Selecciona un país",
+    "durationLabel": "Elige la duración",
+    "durationAria": "Duración del plan",
+    "benefit1": "Extracción y formato automáticos del texto",
+    "benefit2": "Varios idiomas en un solo PDF",
+    "benefit3": "Listo para descargar tras el pago",
+    "paymentNote": "Pago único. Sin suscripciones.",
+    "ctaDefault": "PDF en 2 minutos",
+    "plan1Title": "1 año",
+    "plan1Sub": "Básico",
+    "plan2Title": "2 años",
+    "plan2Sub": "Acceso ampliado",
+    "plan3Title": "3 años",
+    "plan3Sub": "Mejor valor",
+    "plan3Badge": "Recomendado"
+  },
+  "faq": {
+    "1": {
+      "q": "¿Qué es un documento complementario tipo Permiso Internacional de Conducir (IDP Companion)?",
+      "a0": "Es un documento multilingüe que presenta la información de tu permiso de conducir en un formato comprensible a nivel internacional.",
+      "a1": "Se genera a partir de tu permiso real y está pensado para usarse junto con el permiso original cuando viajas al extranjero.",
+      "a2": "Ayuda a autoridades y rentadoras a interpretar con más facilidad los datos de tu permiso."
+    },
+    "2": {
+      "q": "¿Es un Permiso Internacional de Conducir oficial emitido por el gobierno?",
+      "a0": "No. No es un Permiso Internacional de Conducir emitido por el gobierno.",
+      "a1": "Es un documento complementario que acompaña a tu permiso original y ofrece una presentación multilingüe de la información.",
+      "a2": "Siempre debes llevar contigo el permiso de conducir original cuando uses el documento complementario."
+    },
+    "3": {
+      "q": "¿Por qué es útil un documento complementario para viajar al extranjero?",
+      "a0": "Los permisos emitidos en un país pueden ser difíciles de leer en otro por el idioma o un formato poco familiar.",
+      "a1": "El documento complementario presenta la información en varios idiomas, lo que facilita su comprensión en el extranjero.",
+      "a2": "Puede ayudarte al alquilar un coche o al mostrar el permiso durante el viaje."
+    },
+    "4": {
+      "q": "¿Verifican mi permiso de conducir?",
+      "a0": "Sí. El documento complementario se genera a partir de la información de tu permiso real.",
+      "a1": "Necesitamos que subas el permiso para verificar los datos y generar el documento con precisión.",
+      "a2": "Así nos aseguramos de que el documento refleje los datos reales de tu permiso."
+    },
+    "5": {
+      "q": "¿Cuánto tardo en recibir el documento complementario?",
+      "a0": "En la mayoría de los casos, el documento se genera en cuestión de minutos tras enviar la solicitud.",
+      "a1": "Lo recibirás como archivo PDF digital que podrás descargar de inmediato.",
+      "a2": "Puedes imprimirlo o guardarlo en el teléfono para mayor comodidad."
+    },
+    "6": {
+      "q": "¿En qué formato lo recibiré?",
+      "a0": "Recibirás el documento complementario como archivo PDF digital.",
+      "a1": "Está optimizado tanto para impresión como para visualización en el móvil.",
+      "a2": "Podrás acceder a él en cualquier momento después de la descarga."
+    },
+    "7": {
+      "q": "¿Están seguros mis datos personales?",
+      "a0": "Sí. Tus datos se procesan de forma segura y solo se usan para generar tu documento complementario.",
+      "a1": "No vendemos ni compartimos tu información personal con terceros.",
+      "a2": "Toda la generación del documento se realiza mediante sistemas seguros."
+    },
+    "8": {
+      "q": "¿Ofrecen reembolsos?",
+      "a0": "Sí. Si hay un problema técnico o no se puede generar el documento, puedes solicitar un reembolso.",
+      "a1": "Consulta nuestra Política de reembolsos para todos los detalles.",
+      "a2": "Nuestro equipo de soporte está disponible para ayudarte a resolver cualquier incidencia."
+    }
   }
 }

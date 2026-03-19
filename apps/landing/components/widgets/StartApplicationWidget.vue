@@ -2,13 +2,12 @@
   <div class="rounded-2xl bg-white p-5 shadow-soft">
     <div class="mb-3">
       <h2 class="text-lg font-extrabold text-slate-900">
-        Start your application
+        {{ t('widget.title') }}
       </h2>
 
       <p class="mt-1 text-xs leading-relaxed text-slate-500">
-        You’ll receive an International Driving Permit companion document —
-        <span class="font-semibold text-slate-700">not a government-issued IDP</span>.
-        Generated from your real driver license and designed for international travel.
+        {{ t('widget.introBefore') }}
+        <span class="font-semibold text-slate-700">{{ t('widget.introNotGov') }}</span>{{ t('widget.introAfter') }}
       </p>
     </div>
 
@@ -17,17 +16,17 @@
       v-if="countriesHasError || plansHasError"
       class="mb-4 rounded-xl bg-red-50 px-4 py-3 text-xs text-red-700"
     >
-      <div class="font-bold">Failed to load data.</div>
+      <div class="font-bold">{{ t('widget.loadErrorTitle') }}</div>
       <div class="mt-1 opacity-80">
-        Countries error: {{ countriesHasError ? 'yes' : 'no' }},
-        Plans error: {{ plansHasError ? 'yes' : 'no' }}.
+        {{ t('widget.loadErrorCountries') }} {{ countriesHasError ? t('widget.yes') : t('widget.no') }},
+        {{ t('widget.loadErrorPlans') }} {{ plansHasError ? t('widget.yes') : t('widget.no') }}.
       </div>
       <button
         type="button"
         class="mt-2 underline"
         @click="retry"
       >
-        Retry
+        {{ t('widget.retry') }}
       </button>
     </div>
 
@@ -35,9 +34,9 @@
     <div class="mb-4">
       <BaseCountrySelect
         id="issueCountry"
-        label="Where was your license issued?"
+        :label="t('widget.countryLabel')"
         required
-        :placeholder="isLoading ? 'Loading...' : 'Select a country'"
+        :placeholder="isLoading ? t('widget.countryLoading') : t('widget.countryPlaceholder')"
         :model-value="issueCountry"
         :disabled="isLoading"
         :options="uiCountryOptions"
@@ -49,13 +48,13 @@
     <!-- Plan years -->
     <div class="mb-4">
       <div class="mb-2 text-xs font-bold text-slate-900">
-        Choose duration
+        {{ t('widget.durationLabel') }}
       </div>
 
       <div
         class="grid grid-cols-1 gap-2.5 md:grid-cols-3"
         role="tablist"
-        aria-label="Plan duration"
+        :aria-label="t('widget.durationAria')"
       >
         <button
           v-for="p in uiPlans"
@@ -100,15 +99,15 @@
       <ul class="space-y-1 text-xs text-slate-700">
         <li class="flex gap-2">
           <span class="text-sea">✓</span>
-          <span>Auto text extraction &amp; formatting</span>
+          <span>{{ t('widget.benefit1') }}</span>
         </li>
         <li class="flex gap-2">
           <span class="text-sea">✓</span>
-          <span>Multiple languages in one PDF</span>
+          <span>{{ t('widget.benefit2') }}</span>
         </li>
         <li class="flex gap-2">
           <span class="text-sea">✓</span>
-          <span>Ready to download after checkout</span>
+          <span>{{ t('widget.benefit3') }}</span>
         </li>
       </ul>
     </div>
@@ -131,7 +130,7 @@
     </a>
 
     <p class="mt-2 text-xs text-slate-500">
-      One-time payment. No subscriptions.
+      {{ t('widget.paymentNote') }}
     </p>
   </div>
 </template>
@@ -172,14 +171,22 @@ const {
   refresh: refreshPlans,
 } = usePricing()
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const isLoading = computed(() => countriesPending.value || plansPending.value)
 
 const countriesHasError = computed(() => Boolean(countriesError.value))
 const plansHasError = computed(() => Boolean(plansError.value))
 
-const uiPlans = computed(() => plans.value)
+const uiPlans = computed(() => {
+  void locale.value;
+  return plans.value.map((p) => ({
+    ...p,
+    title: t(`widget.plan${p.years}Title`),
+    sub: t(`widget.plan${p.years}Sub`),
+    badge: p.years === 3 ? t('widget.plan3Badge') : p.badge,
+  }));
+})
 
 const uiCountryOptions = computed<CountrySelectOption[]>(() => {
   return countries.value.map((c) => ({
@@ -195,12 +202,19 @@ function retry() {
 }
 
 function formatUsd(cents: number) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
-    .format(cents / 100)
+  const tag = locale.value === 'en' ? 'en-US' : locale.value === 'ru' ? 'ru-RU' : 'es';
+  return new Intl.NumberFormat(tag, {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  }).format(cents / 100);
 }
 
 const canStart = computed(() => Boolean(props.issueCountry) && !isLoading.value)
-const ctaText = computed(() => props.ctaLabel?.trim() || 'Get PDF in 2 minutes')
+const ctaText = computed(() => {
+  void locale.value
+  return props.ctaLabel?.trim() || t('widget.ctaDefault')
+})
 
 function normalizeBaseUrl(v: string) {
   return v.replace(/\/+$/, '')

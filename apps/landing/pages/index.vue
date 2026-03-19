@@ -6,37 +6,36 @@
 
         <div class="lg:pr-3">
           <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
-            International Driving Permit Companion Document
+            {{ t('home.heroKicker') }}
           </p>
 
           <h1 class="mb-4 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
-            Get your International Driving Permit Companion Document in minutes
+            {{ t('home.heroTitle') }}
           </h1>
 
           <p class="mb-4 max-w-xl text-sm leading-relaxed text-slate-700">
-            Multilingual driving document designed for international travel. Helps car rental agencies
-            and authorities understand your license abroad when used together with your original driver license.
+            {{ t('home.heroLead') }}
           </p>
 
           <ul class="mb-5 space-y-2 text-sm text-slate-900">
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Generated from your real driver license after verification</span>
+              <span>{{ t('home.heroBullet1') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Formatted for international use and multilingual recognition</span>
+              <span>{{ t('home.heroBullet2') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Instant digital delivery, ready to print or use on your phone</span>
+              <span>{{ t('home.heroBullet3') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Must be used together with your original driver license</span>
+              <span>{{ t('home.heroBullet4') }}</span>
             </li>
           </ul>
 
@@ -45,12 +44,12 @@
             class="link group inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4"
             @click.prevent="scrollToPricing"
           >
-            See pricing
+            {{ t('home.seePricing') }}
             <span aria-hidden="true" class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </a>
 
           <p class="mt-3 text-xs text-slate-500">
-            From <strong class="font-semibold text-slate-900">${{ fromPrice }}</strong> per document. No subscriptions.
+            {{ t('home.priceNote', { price: `$${fromPrice}` }) }}
           </p>
 
           <!-- <p class="mt-2 text-xs text-slate-400">
@@ -63,7 +62,6 @@
           v-model:issueCountry="issueCountry"
           v-model:planYears="planYears"
           :app-url="appUrl"
-          cta-label="Get PDF in 2 minutes"
         />
       </div>
     </section>
@@ -73,12 +71,11 @@
 
         <div class="mb-8 max-w-2xl">
           <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
-            Why travelers use an International Driving Permit companion document
+            {{ t('home.trustTitle') }}
           </h2>
 
           <p class="text-sm leading-relaxed text-slate-700">
-            Driver licenses issued in many countries are difficult for foreign authorities and car rental agencies to read,
-            especially when written in non-Latin alphabets or unfamiliar formats.
+            {{ t('home.trustLead') }}
           </p>
         </div>
 
@@ -87,29 +84,29 @@
           <!-- Problems -->
           <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
             <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-slate-900">
-              Common situations abroad
+              {{ t('home.problemsTitle') }}
             </h3>
 
             <ul class="space-y-2 text-sm text-slate-700">
 
               <li class="flex gap-2">
                 <span class="text-sea">•</span>
-                <span>Car rental staff cannot read your license language</span>
+                <span>{{ t('home.problem1') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">•</span>
-                <span>Your license uses Cyrillic, Arabic, Chinese, or other scripts</span>
+                <span>{{ t('home.problem2') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">•</span>
-                <span>Authorities may need a clearer interpretation of your license details</span>
+                <span>{{ t('home.problem3') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">•</span>
-                <span>Explaining your license abroad can be slow and stressful</span>
+                <span>{{ t('home.problem4') }}</span>
               </li>
 
             </ul>
@@ -118,29 +115,29 @@
           <!-- Solution -->
           <div class="rounded-2xl border border-sea/20 bg-mint/30 p-5">
             <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-slate-900">
-              Companion document solution
+              {{ t('home.solutionTitle') }}
             </h3>
 
             <ul class="space-y-2 text-sm text-slate-900">
 
               <li class="flex gap-2">
                 <span class="text-sea">✓</span>
-                <span>Presents your license details in a clear multilingual format</span>
+                <span>{{ t('home.solution1') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">✓</span>
-                <span>Generated from your real license after verification</span>
+                <span>{{ t('home.solution2') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">✓</span>
-                <span>Easy to show digitally or as a printed document</span>
+                <span>{{ t('home.solution3') }}</span>
               </li>
 
               <li class="flex gap-2">
                 <span class="text-sea">✓</span>
-                <span>Designed for international travel use together with your original license</span>
+                <span>{{ t('home.solution4') }}</span>
               </li>
 
             </ul>
@@ -158,35 +155,35 @@
         <!-- Who is this for -->
         <div>
           <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
-            Who needs an International Driving Permit companion document
+            {{ t('home.whoTitle') }}
           </h2>
 
           <ul class="space-y-3 text-sm text-slate-700">
 
             <li class="flex gap-2">
               <span class="text-sea">•</span>
-              <span>Travelers planning to drive or rent a car abroad</span>
+              <span>{{ t('home.who1') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">•</span>
-              <span>Drivers whose license is not in English or uses non-Latin alphabet</span>
+              <span>{{ t('home.who2') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">•</span>
-              <span>Digital nomads, expats, and frequent international travelers</span>
+              <span>{{ t('home.who3') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">•</span>
-              <span>Anyone who wants a clearer, internationally understandable license format</span>
+              <span>{{ t('home.who4') }}</span>
             </li>
 
           </ul>
 
           <p class="mt-4 text-sm text-slate-500">
-            Used together with your original driver license for international travel.
+            {{ t('home.whoFootnote') }}
           </p>
 
         </div>
@@ -194,29 +191,29 @@
         <!-- What you receive -->
         <div>
           <h2 class="mb-4 text-2xl font-extrabold text-slate-900">
-            What you receive
+            {{ t('home.receiveTitle') }}
           </h2>
 
           <ul class="space-y-3 text-sm text-slate-700">
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>International Driving Permit companion document in digital PDF format</span>
+              <span>{{ t('home.receive1') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Multilingual presentation of your driver license information</span>
+              <span>{{ t('home.receive2') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Clean, professional layout ready to print or show on your phone</span>
+              <span>{{ t('home.receive3') }}</span>
             </li>
 
             <li class="flex gap-2">
               <span class="text-sea">✓</span>
-              <span>Generated after verification of your original driver license</span>
+              <span>{{ t('home.receive4') }}</span>
             </li>
 
           </ul>
@@ -229,7 +226,7 @@
     <section id="how-it-works" class="section bg-mint/15">
       <div class="container">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
-          How it works
+          {{ t('home.howTitle') }}
         </h2>
 
         <div class="grid gap-5 md:grid-cols-3">
@@ -241,11 +238,11 @@
             </div>
 
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              Submit your driver license
+              {{ t('home.step1Title') }}
             </h3>
 
             <p class="text-sm leading-relaxed text-slate-700">
-              Upload a photo or scan of your valid driver license through our secure online form.
+              {{ t('home.step1Text') }}
             </p>
           </div>
 
@@ -256,11 +253,11 @@
             </div>
 
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              Verification and document generation
+              {{ t('home.step2Title') }}
             </h3>
 
             <p class="text-sm leading-relaxed text-slate-700">
-              We verify your license details and generate your International Driving Permit companion document in multilingual format.
+              {{ t('home.step2Text') }}
             </p>
           </div>
 
@@ -271,18 +268,18 @@
             </div>
 
             <h3 class="mb-2 text-base font-extrabold text-slate-900">
-              Download and use internationally
+              {{ t('home.step3Title') }}
             </h3>
 
             <p class="text-sm leading-relaxed text-slate-700">
-              Receive your companion document instantly and use it together with your original license when traveling abroad.
+              {{ t('home.step3Text') }}
             </p>
           </div>
 
         </div>
 
         <p class="mt-6 text-xs text-slate-400 italic">
-          *Companion document only. Not a government-issued International Driving Permit.
+          {{ t('home.disclaimerShort') }}
         </p>
 
       </div>
@@ -294,11 +291,11 @@
 
         <div class="mb-10 text-center">
           <h2 class="mb-3 text-2xl font-extrabold text-slate-900">
-            Trusted by international travelers
+            {{ t('home.testimonialsTitle') }}
           </h2>
 
           <p class="text-sm text-slate-600">
-            Drivers worldwide use companion documents to make their licenses easier to understand abroad.
+            {{ t('home.testimonialsLead') }}
           </p>
         </div>
 
@@ -312,11 +309,11 @@
             </div>
 
             <p class="mb-3 text-sm text-slate-700 leading-relaxed">
-              The process was very fast and simple. I received my companion document within minutes and used it when renting a car during my trip.
+              {{ t('home.t1Text') }}
             </p>
 
             <div class="text-xs text-slate-500">
-              Daniel M. — Germany
+              {{ t('home.t1Author') }}
             </div>
 
           </div>
@@ -329,11 +326,11 @@
             </div>
 
             <p class="mb-3 text-sm text-slate-700 leading-relaxed">
-              My original license is not in English, so having a multilingual companion document made everything easier when traveling.
+              {{ t('home.t2Text') }}
             </p>
 
             <div class="text-xs text-slate-500">
-              Alex K. — Poland
+              {{ t('home.t2Author') }}
             </div>
 
           </div>
@@ -346,11 +343,11 @@
             </div>
 
             <p class="mb-3 text-sm text-slate-700 leading-relaxed">
-              Clean layout, easy to download, and convenient to keep on my phone. The verification process was straightforward.
+              {{ t('home.t3Text') }}
             </p>
 
             <div class="text-xs text-slate-500">
-              Marco R. — Italy
+              {{ t('home.t3Author') }}
             </div>
 
           </div>
@@ -365,7 +362,7 @@
     <section id="faq" class="section bg-slate-50">
       <div class="container">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
-          Frequently asked questions
+          {{ t('home.faqTitle') }}
         </h2>
 
         <ul class="border-t-2 border-sea">
@@ -411,23 +408,22 @@
 
         <div>
           <h2 class="mb-2 text-2xl font-extrabold text-slate-900">
-            Get your International Driving Permit companion document today
+            {{ t('home.ctaTitle') }}
           </h2>
 
           <p class="max-w-xl text-sm leading-relaxed text-slate-700">
-            Apply online in minutes and receive your multilingual companion document instantly.
-            Designed for international travel use together with your original driver license.
+            {{ t('home.ctaLead') }}
           </p>
 
           <p class="mt-2 text-xs text-slate-400">
-            Companion document only. Not a government-issued International Driving Permit.
+            {{ t('home.ctaDisclaimer') }}
           </p>
         </div>
 
         <div>
           <BaseButton type="button" variant="primary" @click="scrollToPricing">
             <span class="font-bold">
-              Get Document
+              {{ t('home.ctaButton') }}
             </span>
           </BaseButton>
         </div>
@@ -439,31 +435,25 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useHead } from '#imports'
-import { useRuntimeConfig } from '#imports'
+import { useHead, useI18n, useRuntimeConfig } from '#imports'
 import { Icon } from '@iconify/vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import StartApplicationWidget from '~/components/widgets/StartApplicationWidget.vue'
-import { LANDING_FAQS } from '~/content/faqs'
 import { useStartApplication } from '~/composables/useStartApplication'
+import { useLandingFaqs } from '~/composables/useLandingFaqs'
 
 const config = useRuntimeConfig()
 const appUrl = computed(() => String(config.public.appUrl || '').trim())
 
+const { t } = useI18n()
 const { issueCountry, planYears, fromPrice, scrollToPricing } = useStartApplication(appUrl)
 
-useHead({
-  title: 'IDP Companion',
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Upload your driver license and get a multilingual translation PDF in minutes. Works as a translation document together with your national license.',
-    },
-  ],
-})
+useHead(() => ({
+  title: t('seo.title'),
+  meta: [{ name: 'description', content: t('seo.description') }],
+}))
 
-const faqs = LANDING_FAQS
+const faqs = useLandingFaqs()
 
 const openIndex = ref<number>(0)
 

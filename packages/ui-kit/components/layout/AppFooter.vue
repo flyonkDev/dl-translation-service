@@ -3,7 +3,7 @@
 		<div class="footer-inner container">
 			<div class="columns grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-5">
 				<div class="col">
-					<h5 class="col-title text-sm font-bold mb-2">Popular destinations</h5>
+					<h5 class="col-title text-sm font-bold mb-2">{{ popularTitle }}</h5>
 					<ul class="list">
 						<li class="list-item flex items-center gap-2 text-sm mb-1.5">
 							<span class="fi fi-us mr-2" aria-hidden="true" />
@@ -33,39 +33,39 @@
 				</div>
 
 				<div class="col">
-					<h5 class="col-title text-sm font-bold mb-2">Product</h5>
+					<h5 class="col-title text-sm font-bold mb-2">{{ productTitle }}</h5>
 					<ul class="list">
-						<li class="list-link text-sm mb-1.5"><a :href="links.pricing" class="link-underline">Pricing</a></li>
+						<li class="list-link text-sm mb-1.5"><a :href="links.pricing" class="link-underline">{{ linkPricing }}</a></li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.howItWorks" class="link-underline">How it works</a>
+							<a :href="links.howItWorks" class="link-underline">{{ linkHowItWorks }}</a>
 						</li>
-						<li class="list-link text-sm mb-1.5"><a :href="links.faq" class="link-underline">FAQ</a></li>
+						<li class="list-link text-sm mb-1.5"><a :href="links.faq" class="link-underline">{{ linkFaq }}</a></li>
 					</ul>
 				</div>
 
 				<div class="col">
-					<h5 class="col-title text-sm font-bold mb-2">Company</h5>
+					<h5 class="col-title text-sm font-bold mb-2">{{ companyTitle }}</h5>
 					<ul class="list">
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.privacy" class="link-underline">Privacy Policy</a>
+							<a :href="links.privacy" class="link-underline">{{ linkPrivacy }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.terms" class="link-underline">Terms &amp; Conditions</a>
+							<a :href="links.terms" class="link-underline">{{ linkTerms }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.refund" class="link-underline">Refund Policy</a>
+							<a :href="links.refund" class="link-underline">{{ linkRefund }}</a>
 						</li>
 					</ul>
 				</div>
 
 				<div class="col">
-					<h5 class="col-title text-sm font-bold mb-2">Support</h5>
+					<h5 class="col-title text-sm font-bold mb-2">{{ supportTitle }}</h5>
 					<ul class="list">
 						<li class="list-link text-sm mb-1.5">
 							<a :href="`mailto:${supportEmail}`" class="link-underline">{{ supportEmail }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
-							<a :href="links.contact" class="link-underline">Contact form</a>
+							<a :href="links.contact" class="link-underline">{{ linkContact }}</a>
 						</li>
 					</ul>
 				</div>
@@ -73,7 +73,7 @@
 
 			<div class="bottom flex items-center justify-between gap-3 pt-3">
 				<div class="reserved text-xs">
-					© {{ year }} {{ brandName }}. All rights reserved.
+					{{ copyrightLine }}
 				</div>
 
 				<div class="payments flex items-center gap-2">
@@ -96,6 +96,19 @@
 	    brandName?: string;
 	    supportEmail?: string;
 	    year?: number;
+	    popularTitle?: string;
+	    productTitle?: string;
+	    companyTitle?: string;
+	    supportTitle?: string;
+	    linkPricing?: string;
+	    linkHowItWorks?: string;
+	    linkFaq?: string;
+	    linkPrivacy?: string;
+	    linkTerms?: string;
+	    linkRefund?: string;
+	    linkContact?: string;
+	    /** Full copyright line, e.g. "© 2025 Name. All rights reserved." */
+	    copyrightLine?: string;
 
 	    links?: Partial<{
 	      pricing: string;
@@ -113,9 +126,26 @@
 	    brandName: 'IDP Companion',
 	    supportEmail: 'petr.shchepetin@gmail.com',
 	    year: new Date().getFullYear(),
+	    popularTitle: 'Popular destinations',
+	    productTitle: 'Product',
+	    companyTitle: 'Company',
+	    supportTitle: 'Support',
+	    linkPricing: 'Pricing',
+	    linkHowItWorks: 'How it works',
+	    linkFaq: 'FAQ',
+	    linkPrivacy: 'Privacy Policy',
+	    linkTerms: 'Terms & Conditions',
+	    linkRefund: 'Refund Policy',
+	    linkContact: 'Contact form',
+	    copyrightLine: '',
 	    links: () => ({}),
 	  },
 	);
+
+	const copyrightLine = computed(() => {
+		if (props.copyrightLine?.trim()) return props.copyrightLine;
+		return `© ${props.year} ${props.brandName}. All rights reserved.`;
+	});
 
 	const links = computed(() => ({
 	  pricing: props.links?.pricing ?? '#pricing',

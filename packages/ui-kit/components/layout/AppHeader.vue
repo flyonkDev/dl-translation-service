@@ -1,46 +1,48 @@
 <template>
 	<header class="header">
 		<div
-			class="header-inner container flex items-center justify-between gap-4 px-4 py-2.5"
+			class="header-inner container flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-2.5"
 		>
-			<a :href="homeHref" class="logo inline-flex items-center gap-2">
+			<a :href="homeHref" class="logo inline-flex min-w-0 shrink-0 items-center gap-2">
 				<span class="logo-mark text-xs font-extrabold">IDP</span>
-				<span class="logo-text text-sm font-bold">IDP Companion</span>
+				<span class="logo-text truncate text-sm font-bold">{{ brandName }}</span>
 			</a>
 
-			<nav class="nav flex items-center gap-4">
-				<a :href="howHref" class="nav-link link-underline text-sm">How it works</a>
-				<a :href="faqHref" class="nav-link link-underline text-sm">FAQ</a>
-				<a :href="pricingHref" class="nav-link link-underline text-sm">Pricing</a>
+			<nav class="nav order-last flex w-full basis-full items-center justify-center gap-4 min-[960px]:order-none min-[960px]:flex-1 min-[960px]:basis-auto min-[960px]:justify-center">
+				<a :href="howHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navHowLabel }}</a>
+				<a :href="faqHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
+				<a :href="pricingHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
 			</nav>
 
-			<div class="header-actions flex shrink-0 items-center gap-2 sm:gap-3">
-				<div
-					v-if="showLocaleSwitcher && localeOptions.length"
-					class="locale-switcher flex items-center gap-1 rounded-lg border border-slate-200/80 bg-white/60 p-0.5"
-					role="group"
-					:aria-label="localeSwitcherAriaLabel"
-				>
-					<button
-						v-for="opt in localeOptions"
-						:key="opt.code"
-						type="button"
-						class="locale-switcher__btn inline-flex h-8 w-8 items-center justify-center rounded-md transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-activeBlue/30"
-						:class="{
-							'bg-mint ring-1 ring-sea/20': locale === opt.code,
-						}"
-						:title="opt.label"
-						:aria-label="opt.label"
-						:aria-pressed="locale === opt.code"
-						@click="$emit('selectLocale', opt.code)"
+			<div class="header-actions ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+				<slot name="localeSwitcher">
+					<div
+						v-if="showLocaleSwitcher && localeOptions.length"
+						class="locale-switcher flex items-center gap-1 rounded-lg border border-slate-200/80 bg-white/60 p-0.5"
+						role="group"
+						:aria-label="localeSwitcherAriaLabel"
 					>
-						<span
-							class="fi h-4 w-5 rounded-sm bg-cover bg-center shadow-sm"
-							:class="`fi-${opt.flagCode}`"
-							aria-hidden="true"
-						/>
-					</button>
-				</div>
+						<button
+							v-for="opt in localeOptions"
+							:key="opt.code"
+							type="button"
+							class="locale-switcher__btn inline-flex h-8 w-8 items-center justify-center rounded-md transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-activeBlue/30"
+							:class="{
+								'bg-mint ring-1 ring-sea/20': locale === opt.code,
+							}"
+							:title="opt.label"
+							:aria-label="opt.label"
+							:aria-pressed="locale === opt.code"
+							@click="$emit('selectLocale', opt.code)"
+						>
+							<span
+								class="fi h-4 w-5 rounded-sm bg-cover bg-center shadow-sm"
+								:class="`fi-${opt.flagCode}`"
+								aria-hidden="true"
+							/>
+						</button>
+					</div>
+				</slot>
 
 				<BaseButton
 					v-if="showStartButton"
@@ -70,6 +72,10 @@
 
 	withDefaults(
 	  defineProps<{
+	    brandName?: string;
+	    navHowLabel?: string;
+	    navFaqLabel?: string;
+	    navPricingLabel?: string;
 	    showStartButton?: boolean;
 	    startLabel?: string;
 	    startHref?: string;
@@ -86,6 +92,11 @@
 	    localeSwitcherAriaLabel?: string;
 	  }>(),
 	  {
+	    brandName: 'IDP Companion',
+	    navHowLabel: 'How it works',
+	    navFaqLabel: 'FAQ',
+	    navPricingLabel: 'Pricing',
+
 	    showStartButton: true,
 
 	    startLabel: 'Start application',
@@ -154,9 +165,9 @@
 	  color: rgb(var(--c-slate-900));
 	}
 
-	@media (max-width: 720px) {
+	@media (max-width: 959px) {
 	  .nav {
-	    display: none;
+	    justify-content: center;
 	  }
 	}
 </style>
