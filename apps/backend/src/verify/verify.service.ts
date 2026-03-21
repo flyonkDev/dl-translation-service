@@ -1,23 +1,35 @@
 // apps/backend/src/verify/verify.service.ts
 import { Injectable, Logger } from '@nestjs/common'
 import type { Express } from 'express'
-import { VerificationStore } from './verify.store';
-import { VerifyStorageService } from './verify-storage.service';
+import { randomUUID } from 'node:crypto'
+import fs from 'node:fs/promises'
+import os from 'node:os'
+import path from 'node:path'
+import sharp from 'sharp'
+import { VerificationStore } from './verify.store'
+import { VerifyStorageService } from './verify-storage.service'
 import * as TesseractNS from 'tesseract.js'
-import { getKeywordsForCountry } from './verify.keywords'
+import { getKeywordsForCountry } from './data/keywords-by-country'
+import { getOcrLanguageAttempts, normalizeCountryCode } from './country-registry'
 import {
   type VerifyLicenseResponseDto,
   type VerifyLicenseBodyDto,
   type VerifyCheck,
 } from './verify.dto'
 
-function resolveTesseractRecognize(): (path: string, lang: string) => Promise<any> {
-  const ns: any = TesseractNS as any
+function resolveTesseractRecognize(): (
+  path: string,
+  lang: string,
+) => Promise<{ data: { text?: string; confidence?: number } }> {
+  const ns = TesseractNS as unknown as {
+    recognize?: typeof import('tesseract.js').recognize
+    default?: { recognize?: typeof import('tesseract.js').recognize }
+  }
   const fn = ns?.recognize ?? ns?.default?.recognize
-  if (typeof fn === 'function') return fn
+  if (typeof fn === 'function') return fn as typeof import('tesseract.js').recognize
 
   return async (imagePath: string, lang: string) => {
-    const mod: any = await import('tesseract.js')
+    const mod = await import('tesseract.js')
     const recognize = mod?.recognize ?? mod?.default?.recognize
     if (typeof recognize !== 'function') {
       throw new Error('Tesseract.recognize not available')
@@ -35,12 +47,6 @@ function normalizeText(raw: string) {
 
 function detectCyrillic(raw: string) {
   return /[а-яё]/i.test(raw)
-}
-
-function pickOcrLang(country: string) {
-  const c = country.toUpperCase().trim()
-  if (c === 'RU' || c === 'RUS' || c === 'RUSSIA') return 'rus+eng'
-  return 'eng'
 }
 
 function countKeywordHits(text: string, keywords: string[]) {
@@ -65,6 +71,13 @@ function hasCategories(text: string) {
   return /\b(a1|a|b1|b|c1|c|d1|d|be|ce|de|m)\b/i.test(text)
 }
 
+type OcrCascadeResult = {
+  rawText: string
+  usedLang: string
+  attemptsTried: readonly string[]
+  bestConfidence: number
+}
+
 @Injectable()
 export class VerifyService {
   private readonly logger = new Logger(VerifyService.name)
@@ -73,8 +86,43 @@ export class VerifyService {
     private readonly store: VerificationStore,
     private readonly verifyStorage: VerifyStorageService,
   ) {}
-  
 
+  private async runOcrCascade(
+    imagePath: string,
+    attempts: readonly string[],
+  ): Promise<OcrCascadeResult> {
+    let bestText = ''
+    let bestLang = attempts[0] ?? 'eng'
+    let bestConf = -1
+    const attemptsTried: string[] = []
+
+    for (const lang of attempts) {
+      try {
+        const { data } = await tesseractRecognize(imagePath, lang)
+        const text = String(data?.text ?? '')
+        const conf = typeof data?.confidence === 'number' ? data.confidence : 0
+        attemptsTried.push(lang)
+        const better =
+          conf > bestConf ||
+          (conf === bestConf && text.length > bestText.length)
+        if (better) {
+          bestText = text
+          bestLang = lang
+          bestConf = conf
+        }
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : String(e)
+        this.logger.warn(`tesseract error (${lang}): ${msg}`)
+      }
+    }
+
+    return {
+      rawText: bestText,
+      usedLang: bestLang,
+      attemptsTried,
+      bestConfidence: bestConf < 0 ? 0 : bestConf,
+    }
+  }
 
   async verifyLicense(
     file: Express.Multer.File,
@@ -84,7 +132,7 @@ export class VerifyService {
 
     const finalize = (
       payload: Omit<VerifyLicenseResponseDto, 'verificationId' | 'expiresAt'> & {
-        licenseImagePath?: string;
+        licenseImagePath?: string
       },
     ) => {
       const snap = this.store.createAndSave({
@@ -94,101 +142,77 @@ export class VerifyService {
           mimetype: file.mimetype,
           size: file.size,
         },
-      });
+      })
 
       return {
         ...payload,
         verificationId: snap.verificationId,
         expiresAt: new Date(snap.expiresAtMs).toISOString(),
-      };
-    };
+      }
+    }
+
+    let pdfRasterPath: string | undefined
 
     try {
-      
       const mimetype = file?.mimetype ?? ''
       const size = file?.size ?? 0
 
-      const isImage = /image\/(jpe?g|png|webp)/i.test(mimetype);
-      const isPdf = mimetype === 'application/pdf';
+      const isImage = /image\/(jpe?g|png|webp)/i.test(mimetype)
+      const isPdf = mimetype === 'application/pdf'
 
-      checks['mime'] = { passed: isImage || isPdf, info: mimetype };
+      checks['mime'] = { passed: isImage || isPdf, info: mimetype }
       checks['size'] = { passed: size <= 15 * 1024 * 1024, info: String(size) }
 
       if (!checks['mime'].passed || !checks['size'].passed) {
-        const hints: string[] = [];
+        const hints: string[] = []
 
         if (!checks['size'].passed) {
-          hints.push('File is too large. Upload up to 15MB.');
+          hints.push('File is too large. Upload up to 15MB.')
         }
 
         if (!checks['mime'].passed) {
-          hints.push('Only JPG/PNG/WebP images or PDF are allowed.');
-        } else if (isPdf) {
-          hints.push('PDF support is coming soon. For now, upload an image (JPG/PNG/WebP).');
+          hints.push('Only JPG/PNG/WebP images or PDF are allowed.')
         }
 
-        return finalize({ status: 'failed', checks, hints });
+        return finalize({ status: 'failed', checks, hints })
       }
-      
+
+      const countryRaw = body?.licenseCountry
+      const countryIso = normalizeCountryCode(countryRaw)
+      const keywords = getKeywordsForCountry(countryRaw)
+      const ocrAttempts = getOcrLanguageAttempts(countryRaw)
+
+      let ocrPath = file.path
+
       if (isPdf) {
-        //temporary
-        return finalize({
-          status: 'failed',
-          checks,
-          hints: [
-            'PDF support is coming soon.',
-            'For now, upload an image (JPG/PNG/WebP).',
-          ],
-        });
-      }
-
-      const country = (body?.licenseCountry ?? '').toUpperCase().trim()
-      const keywords = getKeywordsForCountry(country)
-      const preferRus = pickOcrLang(country) === 'rus+eng'
-
-      let rawText = ''
-      let usedLang = pickOcrLang(country)
-
-      const runOcr = async (lang: string) => {
-        const { data } = await tesseractRecognize(file.path, lang)
-        return String(data?.text ?? '')
-      }
-
-      try {
-        rawText = await runOcr(usedLang)
-      } catch (e: any) {
-        this.logger.error(`tesseract error (${usedLang}): ${e?.message || e}`)
-        checks['ocr_text'] = { passed: false, info: e?.message || 'tesseract failed' }
-      }
-
-      if (!preferRus && rawText) {
-        const normalizedEng = normalizeText(rawText)
-        const { hits } = countKeywordHits(normalizedEng, keywords)
-        const cyr = detectCyrillic(rawText)
-
-        const tooShort = normalizedEng.length < 60
-        const weakSignal = hits === 0 && (cyr || tooShort)
-
-        if (weakSignal) {
-          try {
-            const raw2 = await runOcr('rus+eng')
-            // берём “лучший” текст: чаще всего он просто длиннее и чище
-            if (raw2 && raw2.length > rawText.length) {
-              rawText = raw2
-              usedLang = 'rus+eng'
-            }
-          } catch (e: any) {
-            this.logger.warn(`tesseract fallback failed (rus+eng): ${e?.message || e}`)
-          }
+        try {
+          pdfRasterPath = path.join(os.tmpdir(), `verify-${randomUUID()}.png`)
+          await sharp(file.path, { density: 200, page: 0 })
+            .png()
+            .toFile(pdfRasterPath)
+          ocrPath = pdfRasterPath
+        } catch (e: unknown) {
+          const msg = e instanceof Error ? e.message : String(e)
+          this.logger.warn(`PDF rasterize failed: ${msg}`)
+          return finalize({
+            status: 'failed',
+            checks,
+            hints: [
+              'Could not read this PDF. Try a clear photo (JPG/PNG/WebP) of the license.',
+              'If the file is a scan, export it as an image from your viewer.',
+            ],
+          })
         }
       }
+
+      const { rawText, usedLang, attemptsTried, bestConfidence } =
+        await this.runOcrCascade(ocrPath, ocrAttempts)
 
       const text = normalizeText(rawText)
 
-      if (!checks['ocr_text']) {
-        checks['ocr_text'] = { passed: text.length > 20, info: `len=${text.length}, lang=${usedLang}` }
-      } else {
-        checks['ocr_text'].info = `${checks['ocr_text'].info ?? ''} lang=${usedLang}`.trim()
+      checks['ocr_text'] = {
+        passed: text.length > 20,
+        info: `len=${text.length}, lang=${usedLang}, conf=${Math.round(bestConfidence)}`,
       }
 
       if (!checks['ocr_text'].passed) {
@@ -204,12 +228,8 @@ export class VerifyService {
       const dateRegex =
         /\b(0?[1-9]|[12]\d|3[01])[-/.](0?[1-9]|1[0-2])[-/.](19|20)\d{2}\b|\b(19|20)\d{2}[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12]\d|3[01])\b/g
 
-      // ID — делаем адекватнее:
-      // 1) длинная группа цифр (6+)
       const digitIdRegex = /\b\d{6,12}\b/g
-      // 2) алфанумерик 6..15, но ОБЯЗАТЕЛЬНО с цифрой (иначе имена капсом попадают как “id”)
       const alnumWithDigitRegex = /\b(?=[a-z0-9]{6,15}\b)(?=.*\d)[a-z0-9]+\b/gi
-      // 3) RU серия+номер: "59 12 007870" (с пробелами)
       const ruSeriesNumberRegex = /\b\d{2}\s?\d{2}\s?\d{6}\b/g
 
       const dateMatch = text.match(dateRegex)
@@ -221,8 +241,8 @@ export class VerifyService {
 
       const hasIdLike = Boolean(
         (digitIdMatch && digitIdMatch.length) ||
-        (alnumIdMatch && alnumIdMatch.length) ||
-        (ruSeriesMatch && ruSeriesMatch.length),
+          (alnumIdMatch && alnumIdMatch.length) ||
+          (ruSeriesMatch && ruSeriesMatch.length),
       )
 
       const fieldNums = hasFieldNumbers(text)
@@ -231,7 +251,10 @@ export class VerifyService {
 
       checks['keywords'] = {
         passed: keywordHits > 0,
-        info: keywordHits > 0 ? `hits=${keywordHits} (${hitList.slice(0, 5).join(', ')})` : 'hits=0',
+        info:
+          keywordHits > 0
+            ? `hits=${keywordHits} (${hitList.slice(0, 5).join(', ')})`
+            : 'hits=0',
       }
       checks['has_date'] = { passed: hasDate }
       checks['has_id'] = { passed: hasIdLike }
@@ -239,18 +262,13 @@ export class VerifyService {
       checks['has_categories'] = { passed: categories }
       checks['has_cyrillic'] = { passed: cyrillic }
 
-      // --- L3: скоринг (главное изменение)
-      // Идея:
-      // - keywords теперь НЕ обязателен
-      // - для passed хотим минимум 2 “якоря”: date + id
-      // - плюс хотя бы один “форматный” сигнал (field numbers / categories / keywords)
       let score = 0
       if (keywordHits > 0) score += 2
       if (hasDate) score += 2
       if (hasIdLike) score += 2
       if (fieldNums) score += 1
       if (categories) score += 1
-      if (cyrillic) score += 0.5 // слабый бонус, просто намёк
+      if (cyrillic) score += 0.5
 
       checks['score'] = { passed: score >= 5, info: String(score) }
 
@@ -259,7 +277,6 @@ export class VerifyService {
       const hasTwoAnchors = hasDate && hasIdLike
       const hasFormatSignal = fieldNums || categories || keywordHits > 0
 
-      // PASSED: якоря + форматный сигнал + нормальный score
       if (hasTwoAnchors && hasFormatSignal && score >= 5) {
         status = 'passed'
       } else if (score >= 3) {
@@ -288,12 +305,26 @@ export class VerifyService {
             ]
 
       this.logger.log(
+        JSON.stringify({
+          evt: 'verify_metrics',
+          country: countryIso ?? null,
+          ocrAttempts: ocrAttempts,
+          ocrAttemptsTried: attemptsTried,
+          ocrUsed: usedLang,
+          ocrConfidence: Math.round(bestConfidence),
+          score,
+          status,
+          keywordHits,
+        }),
+      )
+
+      this.logger.log(
         `[verify] status=${status} score=${score} lang=${usedLang} hits=${keywordHits} date=${hasDate} id=${hasIdLike} fields=${fieldNums} cat=${categories}`,
       )
 
-      let licenseImagePath: string | undefined;
+      let licenseImagePath: string | undefined
       if (status === 'passed' || status === 'review') {
-        licenseImagePath = await this.verifyStorage.save(file);
+        licenseImagePath = await this.verifyStorage.save(file)
       }
 
       return finalize({
@@ -302,10 +333,23 @@ export class VerifyService {
         extracted: { text: text.slice(0, 5000), fields },
         hints,
         licenseImagePath,
-      });
-    } catch (e: any) {
-      this.logger.error('verifyLicense fatal', e)
-      return finalize({ status: 'failed', checks, hints: ['Server error while processing file'] })
+      })
+    } catch (e: unknown) {
+      const err = e instanceof Error ? e : new Error(String(e))
+      this.logger.error('verifyLicense fatal', err)
+      return finalize({
+        status: 'failed',
+        checks,
+        hints: ['Server error while processing file'],
+      })
+    } finally {
+      if (pdfRasterPath) {
+        try {
+          await fs.unlink(pdfRasterPath)
+        } catch {
+          /* ignore */
+        }
+      }
     }
   }
 }

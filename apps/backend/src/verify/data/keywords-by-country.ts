@@ -1,0 +1,163 @@
+/**
+ * Ключевые слова и фразы для эвристики «похоже на водительское удостоверение».
+ * Плюс локальные маркеры по ISO 3166-1 alpha-2 (как приходит с клиента).
+ */
+
+function batch(
+  codes: readonly string[],
+  phrases: readonly string[],
+): Record<string, string[]> {
+  return Object.fromEntries(codes.map((c) => [c, [...phrases]]))
+}
+
+/** Общие маркеры (латиница + частые переводы на картах). */
+export const COMMON_KEYWORDS: readonly string[] = [
+  'driver license',
+  "driver's license",
+  'drivers license',
+  'driving licence',
+  'driving license',
+  'driving permit',
+  'licence',
+  'license',
+  'licencia',
+  'permis',
+  'permiso',
+  'führerschein',
+  'fuhrerschein',
+  'carteira',
+  'categoria',
+  'category',
+  'categorie',
+  'catégorie',
+  'endorsements',
+  'restriction',
+  'class',
+  'dl no',
+  'dl#',
+  'id no',
+  'id number',
+  'expires',
+  'expiry',
+  'valid',
+  'issue',
+  'date of birth',
+  'dob',
+  'blood',
+  'eyes',
+  'height',
+  'sex',
+  'address',
+  'motor',
+  'vehicle',
+  'commercial',
+  'motorcycle',
+  'tractor',
+  'trailer',
+]
+
+const KEYWORDS_BY_ISO: Record<string, string[]> = {
+  ...batch(
+    [
+      'RU',
+      'BY',
+      'KZ',
+      'KG',
+      'TJ',
+      'TM',
+      'UZ',
+      'UA',
+    ],
+    [
+      'водительское удостоверение',
+      'удостоверение',
+      'водительские права',
+      'права',
+      'гибдд',
+      'gibdd',
+      'rus',
+      'permis de conduire',
+      'driving licence',
+    ],
+  ),
+  ...batch(['UA'], ['посвідчення водія', 'водійське посвідчення', 'ukr']),
+  ...batch(['GE'], ['driving licence', 'driving license', 'georgia', 'geo', 'საქართველო']),
+  ...batch(
+    ['DE', 'AT', 'CH', 'LI'],
+    ['führerschein', 'fahrerlaubnis', 'klasse', 'bundesrepublik', 'schweiz', 'suisse'],
+  ),
+  ...batch(['FR', 'MC', 'LU', 'BE', 'CH'], ['permis de conduire', 'république', 'republique', 'française', 'francaise']),
+  ...batch(['GB', 'IE', 'GG', 'JE', 'IM'], ['driving licence', 'dvla', 'driving license', 'united kingdom', 'great britain']),
+  ...batch(['US', 'UM', 'AS', 'PR', 'GU', 'VI', 'MP'], ['driver license', "driver's license", 'dmv', 'operator', 'non-commercial', 'commercial']),
+  ...batch(['CA'], ['driver licence', 'driver license', 'permis de conduire', 'province']),
+  ...batch(['AU'], ['driver licence', 'driver license', 'licence no', 'australia']),
+  ...batch(['NZ'], ['driver licence', 'driver license', 'new zealand']),
+  ...batch(
+    ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'BO', 'CU', 'DO', 'HN', 'NI', 'SV', 'PY', 'CR', 'PA', 'UY', 'GQ'],
+    ['permiso de conducción', 'permiso de conduccion', 'licencia de conducir', 'clase', 'categoría', 'categoria', 'dgt'],
+  ),
+  ...batch(['BR', 'PT', 'AO', 'MZ', 'CV', 'GW', 'ST', 'TL'], ['carta de condução', 'carta de conducao', 'habilitação', 'habilitacao', 'categoria', 'portugal', 'brasil']),
+  ...batch(['IT', 'SM', 'VA'], ['patente', 'patente di guida', 'categoria', 'repubblica italiana']),
+  ...batch(['NL'], ['rijbewijs', 'categorie', 'koninkrijk']),
+  ...batch(['PL'], ['prawo jazdy', 'kategoria', 'polska']),
+  ...batch(['CZ'], ['řidičský průkaz', 'ridicsky prukaz', 'skupina']),
+  ...batch(['SK'], ['vodičský preukaz', 'vodicsky preukaz', 'skupina']),
+  ...batch(['HU'], ['vezetői engedély', 'vezetoi engedely', 'jogosítvány', 'jogositvany']),
+  ...batch(['RO', 'MD'], ['permis de conducere', 'categorie', 'românia', 'romania', 'moldova', 'moldova republic']),
+  ...batch(['BG'], ['свидетелство', 'шофьорска книжка', 'kategoria']),
+  ...batch(['GR', 'CY'], ['άδεια οδήγησης', 'adeia odigisis', 'δίπλωμα', 'diploma', 'κατηγορία', 'katigoria']),
+  ...batch(['SE'], ['körkort', 'korkort', 'klass']),
+  ...batch(['NO', 'SJ'], ['førerkort', 'forerkort', 'klasse']),
+  ...batch(['DK', 'FO', 'GL'], ['kørekort', 'korekort', 'klasse']),
+  ...batch(['FI', 'AX'], ['ajokortti', 'luokka']),
+  ...batch(['EE'], ['juhiluba', 'kategooria']),
+  ...batch(['LV'], ['vadītāja apliecība', 'vaditaja aplieciba', 'kategorija']),
+  ...batch(['LT'], ['vairuotojo pažymėjimas', 'vairuotojo pazymejimas', 'kategorija']),
+  ...batch(['IS'], ['ökuskírteini', 'okuskirteini', 'flokkur']),
+  ...batch(['RS', 'BA', 'ME'], ['возачка дозвола', 'vozacka dozvola', 'категорија', 'kategorija']),
+  ...batch(['HR'], ['vozačka dozvola', 'vozacka dozvola', 'kategorija']),
+  ...batch(['SI'], ['vozniško dovoljenje', 'voznisko dovoljenje', 'kategorija']),
+  ...batch(['MK'], ['возачка дозвола', 'vozacka dozvola']),
+  ...batch(['AL'], ['leje drejtimi', 'kategori']),
+  ...batch(
+    ['SA', 'AE', 'QA', 'KW', 'BH', 'OM', 'YE', 'JO', 'LB', 'IQ', 'SY', 'EG', 'DZ', 'TN', 'MA', 'LY', 'SD', 'MR', 'PS', 'DJ', 'KM'],
+    ['رخصة', 'قيادة', 'سائق', 'license', 'driving'],
+  ),
+  ...batch(['IL'], ['רישיון', 'נהיגה', 'rishayon', 'nehiga', 'driving license']),
+  ...batch(['IR'], ['گواهینامه', 'رانندگی', 'gavahiname', 'driving license']),
+  ...batch(['TR'], ['sürücü belgesi', 'surucu belgesi', 'ehliyet', 'sınıf', 'sinif']),
+  ...batch(['IN'], ['ड्राइविंग', 'लाइसेंस', 'driving licence', 'driving license', 'transport']),
+  ...batch(['PK'], ['ڈرائیونگ', 'لائسنس', 'driving license']),
+  ...batch(['BD'], ['ড্রাইভিং', 'লাইসেন্স', 'driving license']),
+  ...batch(['LK'], ['රියදුරු', 'බලපත්‍රය', 'driving license']),
+  ...batch(['NP'], ['चालक अनुमतिपत्र', 'driving license']),
+  ...batch(['CN'], ['驾驶证', '机动车', '驾照', 'driving license', 'china']),
+  ...batch(['TW', 'HK', 'MO'], ['駕駛執照', '驾驶执照', 'driving licence', 'driving license']),
+  ...batch(['JP'], ['運転免許', '免許証', 'driving license']),
+  ...batch(['KR'], ['운전면허', '면허증', 'driving license']),
+  ...batch(['VN'], ['giấy phép lái xe', 'giay phep lai xe', 'gplx', 'bằng lái', 'bang lai']),
+  ...batch(['TH'], ['ใบขับขี่', 'ใบอนุญาต', 'driving license']),
+  ...batch(['MY', 'BN', 'SG'], ['lesen memandu', 'driving licence', 'driving license', 'cukai jalan']),
+  ...batch(['ID'], ['surat izin mengemudi', 'sim', 'driving license']),
+  ...batch(['PH'], ["driver's license", 'driver license', 'lto', 'philippines']),
+  ...batch(['MM'], ['ယာဉ်မောင်းလိုင်စင်', 'driving license']),
+  ...batch(['KH'], ['បណ្ណបើកបរ', 'driving license']),
+  ...batch(['LA'], ['ໃບຂັບຂີ່', 'driving license']),
+  ...batch(['MN'], ['жолооны', 'driving license']),
+  ...batch(['ZA'], ['driving licence', 'driving license', 'traffic register', 'south africa']),
+  ...batch(['NG', 'KE', 'GH', 'TZ', 'UG', 'RW', 'ET', 'ZW', 'ZM', 'BW', 'MW', 'LS', 'SZ', 'SL', 'LR', 'GM', 'SN', 'CI'], [
+    'driving licence',
+    'driving license',
+    'driver licence',
+    'permit',
+  ]),
+  ...batch(['MX'], ['licencia para conducir', 'secretaría', 'secretaria']),
+}
+
+export function getKeywordsForCountry(country?: string): string[] {
+  const c = (country ?? '').toUpperCase().trim()
+  const local = (c ? KEYWORDS_BY_ISO[c] : undefined) ?? []
+  return Array.from(new Set([...COMMON_KEYWORDS, ...local]))
+}
+
+export { KEYWORDS_BY_ISO }
