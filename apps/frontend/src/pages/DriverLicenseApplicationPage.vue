@@ -314,10 +314,8 @@ const onSubmitStep1 = handleSubmit(
     return;
   }
 
-  const [ph, pl] = await Promise.all([
-    runHeadshotPrecheck(headshotFile.value),
-    runFilePrecheck(licenseFile.value),
-  ]);
+  const ph = runHeadshotPrecheck(headshotFile.value);
+  const pl = runFilePrecheck(licenseFile.value);
 
   if (!ph.ok) {
     toast.error(t('toast.headshotInvalid'));

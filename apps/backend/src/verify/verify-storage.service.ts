@@ -64,6 +64,21 @@ export class VerifyStorageService implements OnModuleInit {
   }
 
   /**
+   * Копирует уже подготовленный файл (например PNG после растра PDF) в uploads/verify.
+   * Нужен для downstream: face match и прочие шаги ожидают растровое изображение, не PDF.
+   */
+  async saveCopyFromPath(sourcePath: string, ext: string): Promise<string> {
+    if (!fs.existsSync(this.verifyDir)) {
+      fs.mkdirSync(this.verifyDir, { recursive: true });
+    }
+    const safeExt = ext.startsWith('.') ? ext : `.${ext}`;
+    const filename = `${randomUUID()}${safeExt}`;
+    const destPath = path.join(this.verifyDir, filename);
+    await fs.promises.copyFile(sourcePath, destPath);
+    return path.resolve(destPath);
+  }
+
+  /**
    * Удаляем файл по пути. Разрешено только если путь лежит внутри нашей verify-папки,
    * иначе кто-то мог бы передать путь типа /etc/passwd (path traversal).
    */

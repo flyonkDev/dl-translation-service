@@ -35,7 +35,7 @@ export function useVerificationFlow(options: UseVerificationFlowOptions) {
 				return;
 			}
 
-			const pre = await runFilePrecheck(file);
+			const pre = runFilePrecheck(file);
 			if (!pre.ok) {
 				lastVerifiedKey.value = '';
 				verify.reset();

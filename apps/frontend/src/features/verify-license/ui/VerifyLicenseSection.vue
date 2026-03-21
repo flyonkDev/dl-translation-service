@@ -24,7 +24,7 @@
         class="verify__headshot"
         :label="t('verify.headshotLabel')"
         required
-        accept="image/*"
+        accept="image/jpeg,image/png,image/webp"
         :model-value="headshotFile"
         @update:model-value="emit('update:headshotFile', $event)"
         :error="headshotError"
@@ -48,7 +48,7 @@
         class="verify__license-file"
         :label="t('verify.licenseFileLabel')"
         required
-        accept="image/*,.pdf"
+        accept="image/jpeg,image/png,image/webp,application/pdf"
         :model-value="licenseFile"
         @update:model-value="emit('update:licenseFile', $event)"
         :hint="t('verify.licenseFileHint')"

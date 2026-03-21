@@ -15,6 +15,7 @@ describe('VerifyService', () => {
           provide: VerifyStorageService,
           useValue: {
             save: jest.fn(),
+            saveCopyFromPath: jest.fn(),
             deleteByPath: jest.fn(),
             onModuleInit: jest.fn(),
             cleanupStaleFilesOlderThan: jest.fn(),

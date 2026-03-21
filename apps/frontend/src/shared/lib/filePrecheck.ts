@@ -20,7 +20,9 @@ export function runHeadshotPrecheck(file: File): PrecheckResult {
 
 export function runFilePrecheck(file: File): PrecheckResult {
 	const isImage = LICENSE_IMAGE_TYPES.test(file.type);
-	const isPdf = file.type === 'application/pdf';
+	/** Некоторые браузеры не выставляют type для PDF — ориентируемся ещё и на имя. */
+	const isPdf =
+		file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
 	const okType = isImage || isPdf;
 	const okSize = file.size <= LICENSE_MAX_BYTES;
 	if (!okType) return { ok: false, reasonKey: 'unsupportedType' };

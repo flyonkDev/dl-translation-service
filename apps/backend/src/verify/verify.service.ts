@@ -324,7 +324,19 @@ export class VerifyService {
 
       let licenseImagePath: string | undefined
       if (status === 'passed' || status === 'review') {
-        licenseImagePath = await this.verifyStorage.save(file)
+        if (isPdf && pdfRasterPath) {
+          licenseImagePath = await this.verifyStorage.saveCopyFromPath(
+            pdfRasterPath,
+            '.png',
+          )
+          try {
+            await fs.unlink(file.path)
+          } catch {
+            /* multer temp PDF cleanup */
+          }
+        } else {
+          licenseImagePath = await this.verifyStorage.save(file)
+        }
       }
 
       return finalize({
