@@ -3,9 +3,8 @@
 		<div
 			class="header-inner container flex flex-nowrap items-center justify-between gap-2 px-4 py-2 sm:gap-3"
 		>
-			<a :href="homeHref" class="logo inline-flex min-w-0 shrink-0 items-center gap-2">
-				<span class="logo-mark text-xs font-extrabold">IDP</span>
-				<span class="logo-text max-w-36 truncate text-sm font-bold sm:max-w-none">{{ brandName }}</span>
+			<a :href="homeHref" class="logo inline-flex min-w-0 shrink-0 items-center">
+				<img :src="brandLogoSrc" :alt="brandName" class="logo-image" />
 			</a>
 
 			<nav
@@ -52,6 +51,7 @@
 
 <script setup lang="ts">
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+	import brandLogoSrc from '@ui-kit/assets/branding/logo_1_teal_svg.svg';
 	import LocaleSwitcher from './LocaleSwitcher.vue';
 	import MobileNavMenu from './MobileNavMenu.vue';
 
@@ -134,20 +134,11 @@
 	  text-decoration: none;
 	}
 
-	.logo-mark {
-	  width: 24px;
-	  height: 24px;
-	  border-radius: 6px;
-	  background: rgb(var(--c-sea));
-	  display: inline-flex;
-	  align-items: center;
-	  justify-content: center;
-	  color: white;
-	  letter-spacing: -0.02em;
-	}
-
-	.logo-text {
-	  color: rgb(var(--c-slate-900));
+	.logo-image {
+	  width: clamp(160px, 22vw, 230px);
+	  height: auto;
+	  display: block;
+	  flex-shrink: 0;
 	}
 
 	.nav-link {
