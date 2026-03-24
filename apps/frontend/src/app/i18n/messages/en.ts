@@ -163,8 +163,9 @@ export default {
 		subtitle: 'Stripe integration will be here. For now, this is a placeholder.',
 		verifiedPassed: 'Your document has passed the automatic verification ✅',
 		verifiedReview: 'We’ll review this manually ⚠️',
-		verifiedMissing:
-			'Verification info is missing (refresh). You still can download PDF in dev mode.',
+		verifiedMissing: 'Verification info is missing. Please refresh the page.',
+		comingSoon:
+			'Payment integration is coming soon. Download will be available after checkout is complete.',
 		backToDetails: 'Back to details',
 		previewBrowser: 'Preview in browser',
 		downloadPdf: 'Download PDF',

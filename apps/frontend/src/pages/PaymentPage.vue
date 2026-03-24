@@ -40,23 +40,27 @@
 					<div class="section-footer">
 						<BaseButton variant="secondary" @click="goBack">{{ t('payment.backToDetails') }}</BaseButton>
 
-						<BaseButton
-							variant="secondary"
-							:disabled="!applicationId || isDownloading"
-							@click="onPreview"
-						>
-							{{ t('payment.previewBrowser') }}
-						</BaseButton>
+						<template v-if="isDev">
+							<BaseButton
+								variant="secondary"
+								:disabled="!applicationId || isDownloading"
+								@click="onPreview"
+							>
+								{{ t('payment.previewBrowser') }}
+							</BaseButton>
 
-						<BaseButton
-							variant="primary"
-							:loading="isDownloading"
-							:disabled="!applicationId || isDownloading"
-							@click="onDownload"
-						>
-							{{ t('payment.downloadPdf') }}
-						</BaseButton>
+							<BaseButton
+								variant="primary"
+								:loading="isDownloading"
+								:disabled="!applicationId || isDownloading"
+								@click="onDownload"
+							>
+								{{ t('payment.downloadPdf') }}
+							</BaseButton>
+						</template>
 					</div>
+
+					<p v-if="!isDev" class="payment-notice">{{ t('payment.comingSoon') }}</p>
 
 					<p v-if="applicationId" class="hint">{{ t('payment.applicationIdHint', { id: applicationId }) }}</p>
 				</section>
@@ -75,6 +79,8 @@
 	import { useDriverApplicationStore } from '@/entities/driver-application';
 	import { apiGetBlob } from '@/shared/api/apiClient';
 	import { API_BASE_URL } from '@/shared/api/httpClient';
+
+	const isDev = import.meta.env.DEV;
 
 	const route = useRoute();
 	const router = useRouter();
@@ -262,5 +268,15 @@
 	  margin-top: 12px;
 	  @include text-xs;
 	  color: $slate-500;
+	}
+
+	.payment-notice {
+	  margin-top: 16px;
+	  padding: 12px 16px;
+	  border-radius: 10px;
+	  background: #eff6ff;
+	  border: 1px solid #bfdbfe;
+	  @include text-sm;
+	  color: #1e40af;
 	}
 </style>
