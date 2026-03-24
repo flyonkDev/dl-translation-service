@@ -7,3 +7,5 @@ apps/frontend
 apps/landing
 .git
 .claude
+**/.env
+**/.env.*
