@@ -4,7 +4,7 @@
 
 ## Как устроено в коде
 
-- **OCR:** Tesseract.js, цепочки языков по стране — `src/verify/data/ocr-languages.ts`, нормализация кода страны — `src/verify/country-registry.ts`.
+- **OCR (Optical Character Recognition):** Tesseract.js, цепочки языков по стране — `src/verify/data/ocr-languages.ts`, нормализация кода страны — `src/verify/country-registry.ts`.
 - **Текстовые маркеры:** `src/verify/data/keywords-by-country.ts`.
 - **Лимит попыток OCR:** переменная окружения `VERIFY_OCR_MAX_ATTEMPTS` (по умолчанию 6).
 

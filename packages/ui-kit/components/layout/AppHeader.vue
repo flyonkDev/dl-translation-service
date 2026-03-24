@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
-	import brandLogoSrc from '@ui-kit/assets/branding/logo_1_teal_svg.svg';
+	import brandLogoSrc from '@ui-kit/assets/branding/logo_1_black.svg';
 	import LocaleSwitcher from './LocaleSwitcher.vue';
 	import MobileNavMenu from './MobileNavMenu.vue';
 
