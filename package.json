@@ -1,6 +1,21 @@
 {
 	"name": "driver-license-monorepo",
 	"private": true,
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@nestjs/core",
+			"@parcel/watcher",
+			"@prisma/client",
+			"@prisma/engines",
+			"esbuild",
+			"prisma",
+			"puppeteer",
+			"sharp",
+			"tesseract.js",
+			"unrs-resolver",
+			"vue-demi"
+		]
+	},
 	"scripts": {
 		"dev": "pnpm -r --parallel dev",
 		"build": "pnpm -r build",

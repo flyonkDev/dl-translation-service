@@ -50,7 +50,7 @@
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
-const props = withDefaults(
+withDefaults(
 	defineProps<{
 		navHowLabel: string;
 		navFaqLabel: string;

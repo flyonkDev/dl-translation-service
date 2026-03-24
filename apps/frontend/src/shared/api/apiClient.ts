@@ -1,6 +1,6 @@
 import type { AxiosResponse } from 'axios';
 import { httpClient } from './httpClient';
-import { toApiError, type ApiError, type ApiRequestConfig } from './types';
+import { toApiError, type ApiRequestConfig } from './types';
 
 /**
  * Performs a typed GET request.

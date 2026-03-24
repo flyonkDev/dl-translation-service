@@ -14,11 +14,6 @@ export const httpClient: AxiosInstance = axios.create({
 
 // Request interceptor: attach common headers if needed
 httpClient.interceptors.request.use((config) => {
-	// Example: attach JSON header by default
-	if (!config.headers) {
-		config.headers = {};
-	}
-
 	// Only set if not provided manually
 	if (!config.headers['Content-Type'] && !(config.data instanceof FormData)) {
 		config.headers['Content-Type'] = 'application/json';

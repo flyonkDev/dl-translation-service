@@ -8,7 +8,13 @@ const i18nPkgPath = resolve(repoRoot, 'packages/i18n');
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: true },
+	ssr: false,
+	buildDir: '.nuxt',
 	components: true,
+
+	experimental: {
+		appManifest: false,
+	},
 
 	modules: ['@nuxtjs/i18n'],
 
@@ -20,7 +26,6 @@ export default defineNuxtConfig({
 			{ code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru.json' },
 			{ code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
 		],
-		lazy: true,
 		langDir: 'locales',
 		detectBrowserLanguage: {
 			useCookie: true,
@@ -59,7 +64,19 @@ export default defineNuxtConfig({
 	],
 
 	vite: {
-		plugins: [tailwindcss()],
+		plugins: [
+			tailwindcss(),
+			// Nuxt 4.4.x bug: route-rules.mjs template is not generated but is imported
+			// by nuxt/dist/app/composables/manifest.js — provide a stub to unblock the build
+			{
+				name: 'nuxt-route-rules-stub',
+				load(id) {
+					if (id.includes('route-rules.mjs')) {
+						return 'export default (_path) => ({})';
+					}
+				},
+			},
+		],
 
 		resolve: {
 			alias: {
