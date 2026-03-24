@@ -27,4 +27,4 @@ RUN ls -la /app/apps/backend/dist/
 EXPOSE 3001
 
 WORKDIR /app/apps/backend
-CMD npx prisma migrate deploy && node dist/main
+CMD npx prisma migrate deploy && node dist/src/main
