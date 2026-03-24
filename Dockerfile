@@ -21,6 +21,10 @@ RUN pnpm --filter backend exec prisma generate
 # Build backend
 RUN pnpm --filter backend build
 
+# Verify dist was created
+RUN ls -la /app/apps/backend/dist/
+
 EXPOSE 3001
 
-CMD pnpm --filter backend exec prisma migrate deploy && node apps/backend/dist/main
+WORKDIR /app/apps/backend
+CMD npx prisma migrate deploy && node dist/main
