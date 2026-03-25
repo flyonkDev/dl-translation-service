@@ -147,6 +147,7 @@
 	  position: relative;
 	  display: inline-flex;
 	  align-items: center;
+	  padding-bottom: 2px;
 	}
 
 	.nav-link:hover {
@@ -157,7 +158,7 @@
 	  content: '';
 	  position: absolute;
 	  left: 0;
-	  bottom: -2px;
+	  bottom: 0;
 	  width: 100%;
 	  height: 1px;
 	  background: rgb(var(--c-sea));
