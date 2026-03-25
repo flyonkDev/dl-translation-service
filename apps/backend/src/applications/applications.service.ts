@@ -5,6 +5,9 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { FaceVerificationService } from '../face-verification/face-verification.service';
 import { VerificationStore } from '../verify/verify.store';
 import { ApplicationsPdfService } from './applications-pdf.service';
+import { ResendEmailService } from '../email/resend-email.service';
+import { buildThankYouEmail } from '../email/email.templates';
+import { resolveEmailLogoDataUri } from '../email/email.branding';
 
 import type { ApplicationSnapshot } from './types/index';
 import { CreateApplicationDto } from './dto/create-application.dto';
@@ -21,6 +24,7 @@ export class ApplicationsService {
     private readonly verificationStore: VerificationStore,
     private readonly pdf: ApplicationsPdfService,
     private readonly faceVerification: FaceVerificationService,
+    private readonly email: ResendEmailService,
   ) {}
 
   async create(dto: CreateApplicationDto, headshot: Express.Multer.File) {
@@ -88,6 +92,55 @@ export class ApplicationsService {
       },
       select: { id: true },
     });
+
+    const shouldSendEmail =
+      process.env.EMAIL_SEND_ON_APPLICATION_CREATE === '1' ||
+      process.env.EMAIL_SEND_ON_APPLICATION_CREATE === 'true';
+
+    if (shouldSendEmail) {
+      const brand = resolveEmailLogoDataUri();
+      const { subject, html, text } = buildThankYouEmail({
+        customerEmail: dto.email,
+        applicationId: created.id,
+        dto: {
+          firstName: dto.firstName,
+          lastName: dto.lastName,
+          planYears: dto.planYears,
+          issueCountry: dto.issueCountry,
+        },
+        brand,
+      });
+
+      try {
+        const pdfBuf = await this.getPdf(created.id);
+        const result = await this.email.sendEmail({
+          to: dto.email,
+          subject,
+          html,
+          text,
+          attachments: [
+            {
+              filename: `idp-companion-${created.id}.pdf`,
+              contentType: 'application/pdf',
+              contentBase64: pdfBuf.toString('base64'),
+            },
+          ],
+          tags: [
+            { name: 'event', value: 'application_created' },
+            { name: 'applicationId', value: created.id },
+          ],
+        });
+        if (!result.ok) {
+          this.logger.warn(
+            `application created but email not sent: kind=${result.error.kind} status=${result.error.status ?? 'n/a'}`,
+          );
+        }
+      } catch (e) {
+        this.logger.error('application created but email send threw', e as any);
+      }
+    } else {
+      this.logger.debug('application created: email send skipped (EMAIL_SEND_ON_APPLICATION_CREATE is disabled)');
+    }
 
     return {
       applicationId: created.id,
