@@ -7,14 +7,16 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 
+const isCI = process.env.CI === 'true' || process.env.CF_PAGES === '1';
+
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		vue(),
-		Prerender({
+		...(!isCI ? [Prerender({
 			staticDir: path.resolve(__dirname, 'dist'),
 			routes: ['/', '/checkout', '/success'],
-		}),
+		})] : []),
 	],
 	resolve: {
 		alias: {
