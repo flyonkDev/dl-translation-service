@@ -10,9 +10,9 @@
 			<nav
 				class="nav hidden sm:flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
-				<a :href="howHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navHowLabel }}</a>
-				<a :href="faqHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
-				<a :href="pricingHref" class="nav-link link-underline text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
+				<a :href="howHref" class="nav-link text-sm whitespace-nowrap">{{ navHowLabel }}</a>
+				<a :href="faqHref" class="nav-link text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
+				<a :href="pricingHref" class="nav-link text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
 			</nav>
 
 			<div class="header-actions flex shrink-0 items-center gap-2 sm:gap-3">
@@ -144,10 +144,31 @@
 	.nav-link {
 	  color: rgb(var(--c-slate-700));
 	  text-decoration: none;
+	  position: relative;
+	  display: inline-flex;
+	  align-items: center;
 	}
 
 	.nav-link:hover {
 	  color: rgb(var(--c-slate-900));
+	}
+
+	.nav-link::after {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  bottom: -2px;
+	  width: 100%;
+	  height: 1px;
+	  background: rgb(var(--c-sea));
+	  transform: scaleX(0);
+	  transform-origin: left;
+	  transition: transform 0.2s ease;
+	}
+
+	.nav-link:hover::after,
+	.nav-link:focus-visible::after {
+	  transform: scaleX(1);
 	}
 
 	.nav {
