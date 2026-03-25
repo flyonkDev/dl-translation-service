@@ -41,7 +41,7 @@ export default defineNuxtConfig({
 			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
 			supportEmail:
-				process.env.NUXT_PUBLIC_SUPPORT_EMAIL || 'petr.shchepetin@gmail.com',
+				process.env.NUXT_PUBLIC_SUPPORT_EMAIL || 'support@idpcompanion.com',
 		},
 	},
 

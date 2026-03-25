@@ -124,7 +124,7 @@
 	  }>(),
 	  {
 	    brandName: 'IDP Companion',
-	    supportEmail: 'petr.shchepetin@gmail.com',
+	    supportEmail: 'support@idpcompanion.com',
 	    year: new Date().getFullYear(),
 	    popularTitle: 'Popular destinations',
 	    productTitle: 'Product',

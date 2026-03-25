@@ -107,10 +107,26 @@
 	  font-size: 13px;
 	  text-decoration: none;
 	  color: #475569;
+	  position: relative;
+	}
+
+	.nav-link::after {
+	  content: '';
+	  position: absolute;
+	  bottom: -2px;
+	  left: 0;
+	  width: 0;
+	  height: 2px;
+	  background-color: #2dd4bf;
+	  transition: width 0.2s ease;
 	}
 
 	.nav-link:hover {
 	  color: #0f172a;
+	}
+
+	.nav-link:hover::after {
+	  width: 100%;
 	}
 
 	.nav-cta {
