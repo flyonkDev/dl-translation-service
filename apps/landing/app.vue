@@ -27,6 +27,7 @@
 			:product-title="t('footer.productTitle')"
 			:company-title="t('footer.companyTitle')"
 			:support-title="t('footer.supportTitle')"
+			:disclaimer-line="t('footer.digitalDelivery')"
 			:link-pricing="t('footer.linkPricing')"
 			:link-how-it-works="t('footer.linkHowItWorks')"
 			:link-faq="t('footer.linkFaq')"

@@ -13,6 +13,10 @@
             {{ t('home.heroTitle') }}
           </h1>
 
+          <p class="mb-3 max-w-xl text-sm font-semibold leading-relaxed text-slate-800">
+            {{ t('home.heroSubtitle') }}
+          </p>
+
           <p class="mb-4 max-w-xl text-sm leading-relaxed text-slate-700">
             {{ t('home.heroLead') }}
           </p>

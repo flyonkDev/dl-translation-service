@@ -73,7 +73,12 @@
 
 			<div class="bottom flex items-center justify-between gap-3 pt-3">
 				<div class="reserved text-xs">
-					{{ copyrightLine }}
+					<div v-if="disclaimerLine" class="mb-1">
+						{{ disclaimerLine }}
+					</div>
+					<div>
+						{{ copyrightLine }}
+					</div>
 				</div>
 
 				<div class="payments flex items-center gap-2">
@@ -100,6 +105,7 @@
 	    productTitle?: string;
 	    companyTitle?: string;
 	    supportTitle?: string;
+	    disclaimerLine?: string;
 	    linkPricing?: string;
 	    linkHowItWorks?: string;
 	    linkFaq?: string;
@@ -130,6 +136,7 @@
 	    productTitle: 'Product',
 	    companyTitle: 'Company',
 	    supportTitle: 'Support',
+	    disclaimerLine: '',
 	    linkPricing: 'Pricing',
 	    linkHowItWorks: 'How it works',
 	    linkFaq: 'FAQ',

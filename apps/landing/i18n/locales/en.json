@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "IDP Companion",
-    "description": "Upload your driver license and get a multilingual translation PDF in minutes. Works as a translation document together with your national license."
+    "description": "Automated digital PDF download: upload your driver license and our software automatically generates a multilingual companion document in minutes. Use together with your national license."
   },
   "layout": {
     "logo": "IDP Companion",
@@ -16,6 +16,7 @@
     "productTitle": "Product",
     "companyTitle": "Company",
     "supportTitle": "Support",
+    "digitalDelivery": "Digital product — instant PDF delivery",
     "linkPricing": "Pricing",
     "linkHowItWorks": "How it works",
     "linkFaq": "FAQ",
@@ -40,7 +41,7 @@
     "termsContactBefore": "For questions about these Terms, contact us at ",
     "termsContactAfter": ".",
     "privacyRightsBefore": "To exercise these rights, contact us at ",
-    "privacyRightsAfter": ". We will verify your identity before processing your request.",
+    "privacyRightsAfter": ". We will automatically process identity details to handle your request.",
     "privacyContactBefore": "For questions about this Privacy Policy or your personal data, contact us at ",
     "privacyContactAfter": ".",
     "refundTitle": "Refund Policy",
@@ -52,8 +53,9 @@
   "home": {
     "heroKicker": "International Driving Permit Companion Document",
     "heroTitle": "Get your International Driving Permit Companion Document in minutes",
+    "heroSubtitle": "Automated PDF generation tool for international drivers",
     "heroLead": "Multilingual driving document designed for international travel. Helps car rental agencies and authorities understand your license abroad when used together with your original driver license.",
-    "heroBullet1": "Generated from your real driver license after verification",
+    "heroBullet1": "Generated from your real driver license after automated processing",
     "heroBullet2": "Formatted for international use and multilingual recognition",
     "heroBullet3": "Instant digital delivery, ready to print or use on your phone",
     "heroBullet4": "Must be used together with your original driver license",
@@ -68,7 +70,7 @@
     "problem4": "Explaining your license abroad can be slow and stressful",
     "solutionTitle": "Companion document solution",
     "solution1": "Presents your license details in a clear multilingual format",
-    "solution2": "Generated from your real license after verification",
+    "solution2": "Generated from your real license after automated processing",
     "solution3": "Easy to show digitally or as a printed document",
     "solution4": "Designed for international travel use together with your original license",
     "whoTitle": "Who needs an International Driving Permit companion document",
@@ -81,12 +83,12 @@
     "receive1": "International Driving Permit companion document in digital PDF format",
     "receive2": "Multilingual presentation of your driver license information",
     "receive3": "Clean, professional layout ready to print or show on your phone",
-    "receive4": "Generated after verification of your original driver license",
+    "receive4": "Generated after automated processing of your original driver license",
     "howTitle": "How it works",
     "step1Title": "Submit your driver license",
     "step1Text": "Upload a photo or scan of your valid driver license through our secure online form.",
-    "step2Title": "Verification and document generation",
-    "step2Text": "We verify your license details and generate your International Driving Permit companion document in multilingual format.",
+    "step2Title": "Automated processing and PDF generation",
+    "step2Text": "Our software automatically processes your license details and generates your International Driving Permit companion document in multilingual format.",
     "step3Title": "Download and use internationally",
     "step3Text": "Receive your companion document instantly and use it together with your original license when traveling abroad.",
     "disclaimerShort": "*Companion document only. Not a government-issued International Driving Permit.",
@@ -96,7 +98,7 @@
     "t1Author": "Daniel M. — Germany",
     "t2Text": "My original license is not in English, so having a multilingual companion document made everything easier when traveling.",
     "t2Author": "Alex K. — Poland",
-    "t3Text": "Clean layout, easy to download, and convenient to keep on my phone. The verification process was straightforward.",
+    "t3Text": "Clean layout, easy to download, and convenient to keep on my phone. The automated process was straightforward.",
     "t3Author": "Marco R. — Italy",
     "faqTitle": "Frequently asked questions",
     "ctaTitle": "Get your International Driving Permit companion document today",
@@ -153,10 +155,10 @@
       "a2": "This can be helpful when renting cars or presenting your license during travel."
     },
     "4": {
-      "q": "Do you verify my driver license?",
-      "a0": "Yes. Your companion document is generated based on the information from your real driver license.",
-      "a1": "We require you to upload your license so we can verify and generate the document accurately.",
-      "a2": "This ensures the document reflects your actual license details."
+      "q": "Do you check my driver license details?",
+      "a0": "Your companion document is generated from the information on your real driver license.",
+      "a1": "You upload your license so our software can automatically process the details and generate the document accurately.",
+      "a2": "This helps ensure the document reflects your actual license details."
     },
     "5": {
       "q": "How long does it take to receive my companion document?",
@@ -174,7 +176,7 @@
       "q": "Is my personal information secure?",
       "a0": "Yes. Your data is processed securely and used only for generating your companion document.",
       "a1": "We do not sell or share your personal information with third parties.",
-      "a2": "All document generation is handled through secure systems."
+      "a2": "All document generation is handled automatically through secure systems."
     },
     "8": {
       "q": "Do you offer refunds?",

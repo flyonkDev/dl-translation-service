@@ -87,7 +87,7 @@ const doc: LegalDoc = {
 				'All Services are provided exclusively online.',
 				'We reserve the right to modify or discontinue any service without prior notice.',
 				'Prices are displayed in the currency shown on the Website and may not include VAT, import duties or other taxes, depending on your location.',
-				'Payment is processed through our authorized payment provider (Paddle). You must provide accurate and complete payment information.',
+				'Payment is processed through our authorized payment provider (Lemon Squeezy). You must provide accurate and complete payment information.',
 				{
 					kind: 'link',
 					before: 'We offer refunds under specific conditions as described in our ',
@@ -96,6 +96,14 @@ const doc: LegalDoc = {
 					after:
 						'. We are not responsible if our document is not accepted due to your failure to verify its suitability or acceptance in a particular jurisdiction.',
 				},
+			],
+		},
+		{
+			id: 'delivery',
+			heading: '6A. Digital Delivery',
+			paragraphs: [
+				'Product is delivered as a digital PDF file via our payment processor immediately after purchase.',
+				'No physical goods. No manual services. Fully automated digital delivery.',
 			],
 		},
 		{

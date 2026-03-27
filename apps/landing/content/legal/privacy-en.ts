@@ -45,7 +45,7 @@ const doc: LegalDoc = {
 				'Signature',
 			],
 			trailingParagraphs: [
-				`Payment information: Payment is processed by our payment provider (Paddle). We do not store your credit card, debit card or bank account details. Paddle's own privacy policy applies to payment data.`,
+				`Payment information: Payment is processed by our payment provider (Lemon Squeezy). We do not store your credit card, debit card or bank account details. Lemon Squeezy's own privacy policy applies to payment data.`,
 				`We may also collect information automatically when you use our Website, such as your IP address, device type, browser, pages visited and time spent on the site. We use cookies and similar technologies for this purpose (see section 8).`,
 			],
 		},
@@ -69,7 +69,7 @@ const doc: LegalDoc = {
 			heading: '5. Sharing and Disclosure',
 			listIntro: 'We may share your information with:',
 			bullets: [
-				`Payment processor (Paddle) — to process your payment. Paddle has its own privacy policy.`,
+				`Payment processor (Lemon Squeezy) — to process your payment. Lemon Squeezy has its own privacy policy.`,
 				`Service providers — who assist us (e.g. hosting). They are bound to protect your data.`,
 				`Legal authorities — when required by law, court order or to protect our rights and safety.`,
 			],

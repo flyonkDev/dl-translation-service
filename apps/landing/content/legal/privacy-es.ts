@@ -45,7 +45,7 @@ const doc: LegalDoc = {
 				'Firma',
 			],
 			trailingParagraphs: [
-				`Información de pago: el pago lo procesa nuestro proveedor de pagos (Paddle). No almacenamos los datos de su tarjeta de crédito, débito ni cuenta bancaria. Los datos de pago se rigen por la política de privacidad de Paddle.`,
+				`Información de pago: el pago lo procesa nuestro proveedor de pagos (Lemon Squeezy). No almacenamos los datos de su tarjeta de crédito, débito ni cuenta bancaria. Los datos de pago se rigen por la política de privacidad de Lemon Squeezy.`,
 				`También podemos recopilar información automáticamente cuando utiliza nuestro Sitio web, como su dirección IP, tipo de dispositivo, navegador, páginas visitadas y tiempo en el sitio. Utilizamos cookies y tecnologías similares para ello (véase la sección 8).`,
 			],
 		},
@@ -69,7 +69,7 @@ const doc: LegalDoc = {
 			heading: '5. Cesión y divulgación',
 			listIntro: 'Podemos compartir su información con:',
 			bullets: [
-				`Procesador de pagos (Paddle) — para procesar su pago. Paddle tiene su propia política de privacidad.`,
+				`Procesador de pagos (Lemon Squeezy) — para procesar su pago. Lemon Squeezy tiene su propia política de privacidad.`,
 				`Proveedores de servicios — que nos prestan asistencia (p. ej., alojamiento). Están obligados a proteger sus datos.`,
 				`Autoridades legales — cuando lo exija la ley, una orden judicial o para proteger nuestros derechos y la seguridad.`,
 			],

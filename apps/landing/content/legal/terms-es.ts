@@ -88,7 +88,7 @@ const doc: LegalDoc = {
 				'Todos los Servicios se prestan exclusivamente en línea.',
 				'Nos reservamos el derecho a modificar o interrumpir cualquier servicio sin previo aviso.',
 				'Los precios se muestran en la divisa indicada en el Sitio web y pueden no incluir IVA, aranceles u otros impuestos, según su ubicación.',
-				'El pago se procesa a través de nuestro proveedor de pagos autorizado (Paddle). Debe facilitar datos de pago exactos y completos.',
+				'El pago se procesa a través de nuestro proveedor de pagos autorizado (Lemon Squeezy). Debe facilitar datos de pago exactos y completos.',
 				{
 					kind: 'link',
 					before: 'Ofrecemos reembolsos en condiciones concretas, descritas en nuestra ',
@@ -97,6 +97,14 @@ const doc: LegalDoc = {
 					after:
 						'. No somos responsables si nuestro documento no es aceptado debido a que usted no haya verificado su idoneidad o aceptación en una jurisdicción determinada.',
 				},
+			],
+		},
+		{
+			id: 'delivery',
+			heading: '6A. Entrega digital',
+			paragraphs: [
+				'El producto se entrega como un archivo PDF digital a través de nuestro procesador de pagos inmediatamente después de la compra.',
+				'No hay bienes físicos. No hay servicios manuales. Entrega digital totalmente automatizada.',
 			],
 		},
 		{
