@@ -12,7 +12,7 @@ function normalizeBaseUrl(v: string) {
 export function useStartApplication(appUrl: MaybeRef<string>) {
 	const { locale } = useI18n();
 	const issueCountry = ref<string>('');
-	const planYears = ref<PlanYears>(3);
+	const planYears = ref<PlanYears>(5);
 
 	const startAppHref = computed(() => {
 		const base = normalizeBaseUrl(String(unref(appUrl) || '').trim());
@@ -24,7 +24,7 @@ export function useStartApplication(appUrl: MaybeRef<string>) {
 		return `${base}/apply?${qs.toString()}`;
 	});
 
-	const fromPrice = computed(() => 19);
+	const fromPrice = computed(() => 35);
 
 	function scrollToPricing() {
 		if (!process.client) return;

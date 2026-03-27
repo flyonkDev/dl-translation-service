@@ -170,7 +170,7 @@ export class ApplicationsService {
       dobYear: row.dobYear,
 
       sex: row.sex,
-      planYears: row.planYears as 1 | 2 | 3,
+      planYears: row.planYears as 1 | 3 | 5,
 
       licenseNumber: row.licenseNumber ?? undefined,
       licenseCategories: row.licenseCategories as LicenseCategory[],

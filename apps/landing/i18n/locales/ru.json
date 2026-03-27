@@ -127,11 +127,11 @@
     "ctaDefault": "PDF за 2 минуты",
     "plan1Title": "1 год",
     "plan1Sub": "Базовый",
-    "plan2Title": "2 года",
-    "plan2Sub": "Дольше срок",
     "plan3Title": "3 года",
-    "plan3Sub": "Выгоднее",
-    "plan3Badge": "Рекомендуем"
+    "plan3Sub": "Дольше срок",
+    "plan5Title": "5 лет",
+    "plan5Sub": "Выгоднее",
+    "plan5Badge": "Рекомендуем"
   },
   "faq": {
     "1": {

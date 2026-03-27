@@ -9,7 +9,7 @@ export type CountriesResponse = {
 	items: CountryDTO[];
 };
 
-export type PlanYears = 1 | 2 | 3;
+export type PlanYears = 1 | 3 | 5;
 
 export type PricingPlanDTO = {
 	id: string;

@@ -17,7 +17,7 @@ export interface CreateApplicationPayload {
 
 	sex: Sex;
 
-	planYears: 1 | 2 | 3;
+	planYears: 1 | 3 | 5;
 
 	licenseNumber?: string;
 

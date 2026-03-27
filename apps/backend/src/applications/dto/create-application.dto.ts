@@ -62,8 +62,8 @@ export class CreateApplicationDto {
 
   @Type(() => Number)
   @IsInt()
-  @IsIn([1, 2, 3])
-  planYears!: 1 | 2 | 3;
+  @IsIn([1, 3, 5])
+  planYears!: 1 | 3 | 5;
 
   @IsOptional()
   @IsString()

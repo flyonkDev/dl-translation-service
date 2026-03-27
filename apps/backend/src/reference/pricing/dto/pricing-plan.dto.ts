@@ -1,6 +1,6 @@
 export type PricingPlanDTO = {
   id: string;
-  years: 1 | 2 | 3;
+  years: 1 | 3 | 5;
   title: string;
   sub: string;
   priceCents: number;

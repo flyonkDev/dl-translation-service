@@ -20,7 +20,7 @@ export class PricingService {
     const sorted = [...items].sort((a, b) => b.years - a.years);
 
     // TODO: make default plan logic
-    const defaultPlanId = 'plan_3y';
+    const defaultPlanId = 'plan_5y';
 
     return {
       currency: 'USD',

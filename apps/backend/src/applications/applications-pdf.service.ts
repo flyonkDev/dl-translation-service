@@ -247,7 +247,7 @@ export class ApplicationsPdfService {
     return `${dd}-${m}-${year}`;
   }
 
-  private formatValidUntil(planYears: 1 | 2 | 3) {
+  private formatValidUntil(planYears: 1 | 3 | 5) {
     const now = new Date();
     const d = new Date(now);
     d.setFullYear(d.getFullYear() + planYears);

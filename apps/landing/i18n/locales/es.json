@@ -127,11 +127,11 @@
     "ctaDefault": "PDF en 2 minutos",
     "plan1Title": "1 año",
     "plan1Sub": "Básico",
-    "plan2Title": "2 años",
-    "plan2Sub": "Acceso ampliado",
     "plan3Title": "3 años",
-    "plan3Sub": "Mejor valor",
-    "plan3Badge": "Recomendado"
+    "plan3Sub": "Acceso ampliado",
+    "plan5Title": "5 años",
+    "plan5Sub": "Mejor valor",
+    "plan5Badge": "Recomendado"
   },
   "faq": {
     "1": {

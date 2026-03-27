@@ -13,7 +13,7 @@ export type ApplicationSnapshot = {
   dobMonth: number;
   dobYear: number;
   sex: 'male' | 'female';
-  planYears: 1 | 2 | 3;
+  planYears: 1 | 3 | 5;
   licenseNumber?: string;
   licenseCategories: LicenseCategory[];
   signatureDataUrl: string;

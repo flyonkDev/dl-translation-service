@@ -109,13 +109,13 @@ export default {
 				title: '1 año',
 				sub: 'Ideal para un viaje largo o uso puntual.',
 			},
-			2: {
-				title: '2 años',
+			3: {
+				title: '3 años',
 				sub: 'Equilibrado para quien viaja con frecuencia.',
 				badge: 'Popular',
 			},
-			3: {
-				title: '3 años',
+			5: {
+				title: '5 años',
 				sub: 'Mejor relación calidad-precio si viajas mucho.',
 			},
 		},

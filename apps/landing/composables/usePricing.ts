@@ -2,20 +2,20 @@ import type { PricingResponse, PricingPlanDTO } from '~/types/reference';
 
 const STATIC_PLANS: PricingPlanDTO[] = [
 	{
-		id: 'plan_3y',
-		years: 3,
-		title: '3 years',
+		id: 'plan_5y',
+		years: 5,
+		title: '5 years',
 		sub: 'Best value',
-		priceCents: 3900,
+		priceCents: 5500,
 		currency: 'USD',
 		badge: 'Recommended',
 	},
 	{
-		id: 'plan_2y',
-		years: 2,
-		title: '2 years',
+		id: 'plan_3y',
+		years: 3,
+		title: '3 years',
 		sub: 'Extended access',
-		priceCents: 2900,
+		priceCents: 4500,
 		currency: 'USD',
 	},
 	{
@@ -23,7 +23,7 @@ const STATIC_PLANS: PricingPlanDTO[] = [
 		years: 1,
 		title: '1 year',
 		sub: 'Basic',
-		priceCents: 1900,
+		priceCents: 3500,
 		currency: 'USD',
 	},
 ];

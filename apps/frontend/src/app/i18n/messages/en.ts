@@ -109,13 +109,13 @@ export default {
 				title: '1 year',
 				sub: 'Good for a single long trip or short-term use.',
 			},
-			2: {
-				title: '2 years',
+			3: {
+				title: '3 years',
 				sub: 'Balanced option for regular travelers.',
 				badge: 'Popular',
 			},
-			3: {
-				title: '3 years',
+			5: {
+				title: '5 years',
 				sub: 'Best value if you travel often.',
 			},
 		},
