@@ -184,7 +184,7 @@ const uiPlans = computed(() => {
     ...p,
     title: t(`widget.plan${p.years}Title`),
     sub: t(`widget.plan${p.years}Sub`),
-    badge: p.years === 3 ? t('widget.plan3Badge') : p.badge,
+    badge: p.years === 5 ? t('widget.plan5Badge') : p.badge,
   }));
 })
 
