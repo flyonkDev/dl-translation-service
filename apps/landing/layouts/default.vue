@@ -61,8 +61,8 @@
 	import { useI18n } from '#imports';
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
-	import brandLogoFullSrc from '@ui-kit/assets/branding/idp-companion-logo-full.svg';
-	import brandLogoCompactSrc from '@ui-kit/assets/branding/idp-companion-logo1.svg';
+	import brandLogoFullSrc from '@ui-kit/assets/branding/idp-logo-header.svg';
+	import brandLogoCompactSrc from '@ui-kit/assets/branding/idp-logo-mobile_1.svg';
 
 	const { locale, t } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();

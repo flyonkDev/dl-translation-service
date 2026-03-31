@@ -1,0 +1,12 @@
+<svg width="44" height="44" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#1a2744"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#2a3d6e" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#2e4d8a" stroke-width="1.2" opacity="0.6"/>
+  <ellipse cx="32" cy="32" rx="18" ry="7" fill="none" stroke="#2e4d8a" stroke-width="1" opacity="0.45"/>
+  <ellipse cx="32" cy="32" rx="8" ry="18" fill="none" stroke="#2e4d8a" stroke-width="1" opacity="0.38"/>
+  <line x1="14" y1="32" x2="50" y2="32" stroke="#2e4d8a" stroke-width="1" opacity="0.38"/>
+  <circle cx="32" cy="17" r="6" fill="#F5C842"/>
+  <path d="M 26.5 22.5 Q 25 32 32 30.5 Q 39 32 37.5 22.5 Z" fill="#F5C842"/>
+  <rect x="22" y="39" width="20" height="10" rx="2.5" fill="#2e4d8a"/>
+  <text x="32" y="47" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="6.5" font-weight="800" fill="#F5C842" letter-spacing="1.5">IDP</text>
+</svg>

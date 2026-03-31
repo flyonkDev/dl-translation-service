@@ -46,7 +46,7 @@ export function resolveEmailLogoDataUri(): {
     'ui-kit',
     'assets',
     'branding',
-    'idp-companion-logo-full.svg',
+    'idp-logo-header.svg',
   );
   const rel = getEnv('EMAIL_LOGO_ASSET_PATH') ?? defaultRel;
   const abs = path.resolve(process.cwd(), rel);
