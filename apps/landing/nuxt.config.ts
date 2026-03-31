@@ -53,6 +53,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
+			apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:3001/api',
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
 			supportEmail:
 				process.env.NUXT_PUBLIC_SUPPORT_EMAIL || 'support@idpcompanion.com',

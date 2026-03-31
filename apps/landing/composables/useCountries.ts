@@ -1,4 +1,5 @@
 import type { CountriesResponse, CountryDTO } from '~/types/reference';
+import { useRuntimeConfig } from '#imports';
 
 const STATIC_COUNTRIES: CountryDTO[] = [
 	{ code: 'US', name: 'United States', priority: 1 },
@@ -19,7 +20,10 @@ export function useCountries() {
 
 		async () => {
 			try {
-				const res = await $fetch<CountriesResponse>('/api/countries', {
+				const config = useRuntimeConfig();
+				const baseURL = String(config.public.apiBaseUrl || '').trim().replace(/\/+$/, '');
+				const res = await $fetch<CountriesResponse>('/countries', {
+					baseURL,
 					timeout: 2000,
 				});
 

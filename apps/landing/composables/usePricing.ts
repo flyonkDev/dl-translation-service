@@ -1,4 +1,5 @@
 import type { PricingResponse, PricingPlanDTO } from '~/types/reference';
+import { useRuntimeConfig } from '#imports';
 
 const STATIC_PLANS: PricingPlanDTO[] = [
 	{
@@ -34,7 +35,10 @@ export function usePricing() {
 
 		async () => {
 			try {
-				const res = await $fetch<PricingResponse>('/api/pricing', {
+				const config = useRuntimeConfig();
+				const baseURL = String(config.public.apiBaseUrl || '').trim().replace(/\/+$/, '');
+				const res = await $fetch<PricingResponse>('/pricing', {
+					baseURL,
 					timeout: 2000,
 				});
 
