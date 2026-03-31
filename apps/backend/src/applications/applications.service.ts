@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { BadRequestException, ForbiddenException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import type { Express } from 'express';
 
 import { PrismaService } from '../../prisma/prisma.service';
@@ -153,6 +153,13 @@ export class ApplicationsService {
       where: { id: applicationId },
     });
     if (!row) throw new NotFoundException('application not found');
+
+    const requirePayment =
+      process.env.REQUIRE_PAYMENT_FOR_PDF === '1' ||
+      process.env.REQUIRE_PAYMENT_FOR_PDF === 'true';
+    if (requirePayment && row.status !== 'paid' && row.status !== 'pdf_ready') {
+      throw new ForbiddenException('payment required');
+    }
 
     const snap: ApplicationSnapshot = {
       applicationId: row.id,
