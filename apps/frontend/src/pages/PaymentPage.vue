@@ -187,6 +187,7 @@
 		const u = new URL(GUMROAD_URLS[planYears.value]);
 		u.searchParams.set('wanted', 'true');
 		u.searchParams.set('quantity', '1');
+		u.searchParams.set('referrer', window.location.href);
 		return u.toString();
 	});
 
