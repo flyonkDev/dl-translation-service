@@ -65,23 +65,16 @@ export default defineNuxtConfig({
 
 	vite: {
 		plugins: [
-			tailwindcss(),
-			// Nuxt 4.4.x bug: route-rules.mjs template is not generated but is imported
-			// by nuxt/dist/app/composables/manifest.js — provide a stub to unblock the build
-			{
-				name: 'nuxt-route-rules-stub',
-				load(id) {
-					if (id.includes('route-rules.mjs')) {
-						return 'export default (_path) => ({})';
-					}
-				},
-			},
+			tailwindcss() as any,
 		],
 
 		resolve: {
 			alias: {
 				'@ui-kit': uiKitPath,
 				'@i18n': i18nPkgPath,
+				// Nuxt 4.4.x bug: route-rules.mjs template is not generated but is imported
+				// by nuxt/dist/app/composables/manifest.js — provide a stable stub so dev server works.
+				'#build/route-rules.mjs': resolve(process.cwd(), './_nuxt-build-stubs/route-rules.mjs'),
 			},
 		},
 

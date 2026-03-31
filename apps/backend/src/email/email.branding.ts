@@ -39,7 +39,15 @@ export function resolveEmailLogoDataUri(): {
   const enabled = inline === '1' || inline === 'true';
   if (!enabled) return { productUrl };
 
-  const defaultRel = path.join('..', '..', 'packages', 'ui-kit', 'assets', 'branding', 'logo_1_black.svg');
+  const defaultRel = path.join(
+    '..',
+    '..',
+    'packages',
+    'ui-kit',
+    'assets',
+    'branding',
+    'idp-companion-logo-full.svg',
+  );
   const rel = getEnv('EMAIL_LOGO_ASSET_PATH') ?? defaultRel;
   const abs = path.resolve(process.cwd(), rel);
   const svg = readTextFileSafe(abs);

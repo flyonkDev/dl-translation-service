@@ -36,7 +36,7 @@ export class EmailController {
   logoSvg() {
     const rel =
       process.env.EMAIL_LOGO_ASSET_PATH?.trim() ||
-      '../../packages/ui-kit/assets/branding/logo_1_black.svg';
+      '../../packages/ui-kit/assets/branding/idp-companion-logo-full.svg';
     const abs = path.resolve(process.cwd(), rel);
     try {
       return fs.readFileSync(abs, 'utf8');

@@ -3,7 +3,18 @@
 	<div class="layout">
 		<header class="layout-header">
 			<div class="layout-header__inner">
-				<div class="logo">{{ t('layout.logo') }}</div>
+				<NuxtLink to="/" class="logo inline-flex min-w-0 shrink-0 items-center no-underline">
+					<img
+						:src="brandLogoCompactSrc"
+						:alt="t('layout.logo')"
+						class="logo-image logo-image--compact block sm:hidden"
+					/>
+					<img
+						:src="brandLogoFullSrc"
+						:alt="t('layout.logo')"
+						class="logo-image logo-image--full hidden sm:block"
+					/>
+				</NuxtLink>
 
 				<nav class="nav">
 					<a href="#how-it-works" class="nav-link">{{ t('layout.navHow') }}</a>
@@ -50,6 +61,8 @@
 	import { useI18n } from '#imports';
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+	import brandLogoFullSrc from '@ui-kit/assets/branding/idp-companion-logo-full.svg';
+	import brandLogoCompactSrc from '@ui-kit/assets/branding/idp-companion-logo1.svg';
 
 	const { locale, t } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
@@ -90,10 +103,20 @@
 	}
 
 	.logo {
-	  font-weight: 800;
-	  letter-spacing: 0.04em;
-	  font-size: 16px;
-	  color: #0f172a;
+	  text-decoration: none;
+	}
+
+	.logo-image {
+	  height: auto;
+	  flex-shrink: 0;
+	}
+
+	.logo-image--full {
+	  width: clamp(170px, 22vw, 240px);
+	}
+
+	.logo-image--compact {
+	  width: 44px;
 	}
 
 	.nav {
