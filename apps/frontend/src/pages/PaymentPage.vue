@@ -116,9 +116,7 @@
 						</BaseButton>
 					</div>
 
-					<p v-if="applicationId" class="hint">
-						{{ t('payment.applicationIdHint', { id: applicationId }) }}
-					</p>
+					<!-- applicationId is internal; don't show to users -->
 				</section>
 			</main>
 		</div>
