@@ -1,11 +1,22 @@
+import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'pathe';
+import { nuxtRouteRulesStubPlugin } from './vite-plugins/nuxtRouteRulesStub';
 
 const repoRoot = resolve(process.cwd(), '../..');
 const uiKitPath = resolve(repoRoot, 'packages/ui-kit');
 const i18nPkgPath = resolve(repoRoot, 'packages/i18n');
 
+/** Fallback if something resolves before the Vite plugin (disk path from config dir) */
+const routeRulesStub = fileURLToPath(
+	new URL('./_nuxt-build-stubs/route-rules.mjs', import.meta.url),
+);
+
 export default defineNuxtConfig({
+	alias: {
+		'#build/route-rules.mjs': routeRulesStub,
+	},
+
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: true },
 	ssr: false,
@@ -30,7 +41,21 @@ export default defineNuxtConfig({
 		appManifest: false,
 	},
 
-	modules: ['@nuxtjs/i18n'],
+	modules: [
+		// Nuxt 4.4.x doesn't emit route-rules.mjs when appManifest is disabled,
+		// but nuxt/dist/app/composables/manifest.js still statically imports it.
+		// addTemplate writes the stub before Vite resolves imports.
+		async () => {
+			const { addTemplate } = await import('@nuxt/kit');
+			addTemplate({
+				filename: 'route-rules.mjs',
+				write: true,
+				getContents: () =>
+					'export default function routeRulesMatcher(_path) { return {}; }\n',
+			});
+		},
+		'@nuxtjs/i18n',
+	],
 
 	i18n: {
 		defaultLocale: 'en',
@@ -84,6 +109,7 @@ export default defineNuxtConfig({
 
 	vite: {
 		plugins: [
+			nuxtRouteRulesStubPlugin(),
 			tailwindcss() as any,
 		],
 
@@ -91,9 +117,7 @@ export default defineNuxtConfig({
 			alias: {
 				'@ui-kit': uiKitPath,
 				'@i18n': i18nPkgPath,
-				// Nuxt 4.4.x bug: route-rules.mjs template is not generated but is imported
-				// by nuxt/dist/app/composables/manifest.js — provide a stable stub so dev server works.
-				'#build/route-rules.mjs': resolve(process.cwd(), './_nuxt-build-stubs/route-rules.mjs'),
+				'#build/route-rules.mjs': routeRulesStub,
 			},
 		},
 
