@@ -53,7 +53,11 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
-			apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:3001/api',
+			// Production builds must never default to localhost (mixed content on HTTPS).
+			// Use same-origin `/api` (proxy on Cloudflare) or set NUXT_PUBLIC_API_BASE_URL to the Railway URL + `/api`.
+			apiBaseUrl:
+				process.env.NUXT_PUBLIC_API_BASE_URL?.trim() ||
+				(process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001/api'),
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL || '',
 			supportEmail:
 				process.env.NUXT_PUBLIC_SUPPORT_EMAIL || 'support@idpcompanion.com',

@@ -1,4 +1,5 @@
 import type { CountriesResponse, CountryDTO } from '~/types/reference';
+import { resolveBrowserApiBase } from '~/utils/publicApiBase';
 import { useRuntimeConfig } from '#imports';
 
 const STATIC_COUNTRIES: CountryDTO[] = [
@@ -21,7 +22,7 @@ export function useCountries() {
 		async () => {
 			try {
 				const config = useRuntimeConfig();
-				const baseURL = String(config.public.apiBaseUrl || '').trim().replace(/\/+$/, '');
+				const baseURL = resolveBrowserApiBase(String(config.public.apiBaseUrl || ''));
 				const res = await $fetch<CountriesResponse>('/countries', {
 					baseURL,
 					timeout: 2000,
