@@ -20,6 +20,16 @@ function getEnv(name: string): string | undefined {
   return trimmed.length ? trimmed : undefined;
 }
 
+/** Resend: tag values may only contain ASCII letters, numbers, underscores, dashes. */
+function resendSafeTagValue(raw: string, maxLen = 128): string {
+  const s = String(raw).slice(0, maxLen);
+  const cleaned = s
+    .replace(/[^a-zA-Z0-9_-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  return cleaned.length ? cleaned : 'na';
+}
+
 function extractApplicationIdFromReferrer(referrer: string): string | null {
   try {
     const u = new URL(referrer);
@@ -145,8 +155,8 @@ export class GumroadWebhookController {
         tags: [
           { name: 'event', value: 'payment_confirmed' },
           { name: 'applicationId', value: applicationId },
-          { name: 'saleId', value: String(payload.sale_id ?? '') },
-          { name: 'product', value: String(payload.product_permalink ?? '') },
+          { name: 'saleId', value: resendSafeTagValue(String(payload.sale_id ?? '')) },
+          { name: 'product', value: resendSafeTagValue(String(payload.product_permalink ?? '')) },
         ],
       });
 
