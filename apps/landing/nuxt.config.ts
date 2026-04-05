@@ -1,7 +1,10 @@
 import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'pathe';
-import { nuxtRouteRulesStubPlugin } from './vite-plugins/nuxtRouteRulesStub';
+import {
+	nuxtRouteRulesStubPlugin,
+	ROUTE_RULES_STUB_SOURCE,
+} from './vite-plugins/nuxtRouteRulesStub';
 
 const repoRoot = resolve(process.cwd(), '../..');
 const uiKitPath = resolve(repoRoot, 'packages/ui-kit');
@@ -50,8 +53,7 @@ export default defineNuxtConfig({
 			addTemplate({
 				filename: 'route-rules.mjs',
 				write: true,
-				getContents: () =>
-					'export default function routeRulesMatcher(_path) { return {}; }\n',
+				getContents: () => ROUTE_RULES_STUB_SOURCE,
 			});
 		},
 		'@nuxtjs/i18n',
