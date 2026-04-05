@@ -143,6 +143,7 @@ import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import BaseCountrySelect, { type CountrySelectOption } from '@ui-kit/components/inputs/BaseCountrySelect.vue'
 import { useCountries } from '~/composables/useCountries'
 import { usePricing } from '~/composables/usePricing'
+import { useProductAnalytics } from '~/composables/useProductAnalytics'
 import type { PlanYears } from '~/types/reference'
 
 const props = defineProps<{
@@ -172,6 +173,7 @@ const {
 } = usePricing()
 
 const { locale, t } = useI18n()
+const { capture } = useProductAnalytics()
 
 const isLoading = computed(() => countriesPending.value || plansPending.value)
 
@@ -232,6 +234,12 @@ const appHref = computed(() => {
 
 function onStartClick() {
   if (!canStart.value) return
+  capture('application_start_intent', {
+    issue_country: props.issueCountry,
+    plan_years: props.planYears,
+    locale: locale.value,
+    source: 'pricing_widget',
+  })
   window.location.href = appHref.value
 }
 </script>

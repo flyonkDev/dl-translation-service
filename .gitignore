@@ -40,6 +40,9 @@ prisma/dev.db
 prisma/dev.db-journal
 *.sqlite
 
+# Claude Code — локальные настройки (не пушить)
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

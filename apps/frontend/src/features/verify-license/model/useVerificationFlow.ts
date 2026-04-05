@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n';
 import { toast } from 'vue-sonner';
 
 import { extractApiErrorMessage, runFilePrecheck } from '@/shared/lib';
+import { captureProductEvent } from '@/shared/lib/posthog';
 
 import type { UseUploadLicenseState } from './useUploadLicense';
 
@@ -59,6 +60,11 @@ export function useVerificationFlow(options: UseVerificationFlowOptions) {
 				if (toastKey !== lastToastKey.value) {
 					lastToastKey.value = toastKey;
 
+					captureProductEvent('license_verify_result', {
+						status: res.status,
+						license_country: country,
+					});
+
 					if (res.status === 'passed') toast.success(t('toast.licensePassed'));
 					else if (res.status === 'review') toast.warning(t('toast.licenseReview'));
 					else toast.error(t('toast.licenseFailed'));
@@ -74,6 +80,10 @@ export function useVerificationFlow(options: UseVerificationFlowOptions) {
 				const toastKey = `${key}:error`;
 				if (toastKey !== lastToastKey.value) {
 					lastToastKey.value = toastKey;
+					captureProductEvent('license_verify_result', {
+						status: 'error',
+						license_country: country,
+					});
 					toast.error(t('toast.verifyError'));
 				}
 			}

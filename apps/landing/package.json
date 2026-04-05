@@ -10,6 +10,7 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
+		"posthog-js": "^1.298.0",
 		"@iconify/vue": "^5.0.0",
 		"@nuxtjs/i18n": "^10.2.3",
 		"flag-icons": "^7.5.0",

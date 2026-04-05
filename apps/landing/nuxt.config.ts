@@ -77,6 +77,11 @@ export default defineNuxtConfig({
 
 	runtimeConfig: {
 		public: {
+			/** Product analytics (optional; omit key to disable). EU cloud default host. */
+			posthogKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
+			posthogHost:
+				process.env.NUXT_PUBLIC_POSTHOG_HOST?.trim() ||
+				'https://eu.i.posthog.com',
 			appUrl: process.env.NUXT_PUBLIC_APP_URL || 'http://localhost:5173',
 			// Production builds must never default to localhost (mixed content on HTTPS).
 			// Use same-origin `/api` (proxy on Cloudflare) or set NUXT_PUBLIC_API_BASE_URL to the Railway URL + `/api`.

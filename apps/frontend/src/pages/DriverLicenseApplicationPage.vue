@@ -96,6 +96,10 @@ import {
 	runFilePrecheck,
 	runHeadshotPrecheck,
 } from '@/shared/lib';
+import {
+	captureProductEvent,
+	identifyByApplicationId,
+} from '@/shared/lib/posthog';
 import type { CreateApplicationPayload, CreateApplicationError } from '@/shared/types/applications';
 import { HEADSHOT_MISMATCH_CODE, HEADSHOT_NO_FACE_CODE } from '@/shared/types/applications';
 import type { PlanYears, Sex } from '@/entities/driver-application';
@@ -159,6 +163,13 @@ onMounted(async () => {
   } finally {
     refLoading.value = false;
   }
+});
+
+onMounted(() => {
+  captureProductEvent('apply_form_viewed', {
+    plan_years: selectedYears.value,
+    issue_country: issueCountryFromQuery || undefined,
+  });
 });
 
 const countryOptions = computed<SelectOption[]>(() => {
@@ -418,6 +429,17 @@ const onSubmitStep1 = handleSubmit(
 
     store.setApplicationId(res.applicationId);
     sessionStorage.setItem('driverApp.applicationId', res.applicationId);
+
+    captureProductEvent('application_submitted', {
+      application_id: res.applicationId,
+      plan_years: selectedYears.value,
+      issue_country: vals.licenseCountry,
+      verify_status: verification.status,
+    });
+    identifyByApplicationId(res.applicationId, {
+      plan_years: selectedYears.value,
+      issue_country: vals.licenseCountry,
+    });
 
     toast.success(t('toast.applicationCreated'));
 

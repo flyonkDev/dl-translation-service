@@ -58,6 +58,7 @@
 							:href="gumroadUrl"
 							data-gumroad-ignore="true"
 							class="checkout-link"
+							@click="onCheckoutClick"
 						>
 							<BaseButton class="checkout-btn" variant="primary" type="button">
 								<span class="checkout-btn__lock">🔒</span>
@@ -131,6 +132,7 @@
 
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 	import { useDriverApplicationStore } from '@/entities/driver-application';
+	import { captureProductEvent } from '@/shared/lib/posthog';
 	import { apiGetBlob } from '@/shared/api/apiClient';
 	import { API_BASE_URL } from '@/shared/api/httpClient';
 	import type { PlanYears } from '@/entities/driver-application/model/types';
@@ -199,8 +201,30 @@
 
 	const applicationId = ref<string | null>(pickParam(route.params.applicationId));
 
+	function emitPaymentPageViewed() {
+		const id = applicationId.value;
+		if (!id) return;
+		captureProductEvent('payment_page_viewed', {
+			application_id: id,
+			plan_years: planYears.value,
+		});
+	}
+
+	function onCheckoutClick() {
+		captureProductEvent('checkout_started', {
+			payment_provider: 'gumroad',
+			plan_years: planYears.value,
+			application_id: applicationId.value ?? undefined,
+		});
+	}
+
 	function onGumroadPurchaseComplete(_data: unknown) {
 		isPaid.value = true;
+		captureProductEvent('purchase_completed', {
+			payment_provider: 'gumroad',
+			plan_years: planYears.value,
+			application_id: applicationId.value ?? undefined,
+		});
 		toast.success(t('payment.paymentConfirmed'));
 	}
 
@@ -217,6 +241,7 @@
 		if (applicationId.value) {
 			store.setApplicationId(applicationId.value);
 			sessionStorage.setItem('driverApp.applicationId', applicationId.value);
+			emitPaymentPageViewed();
 			return;
 		}
 
@@ -225,6 +250,7 @@
 			applicationId.value = saved;
 			store.setApplicationId(saved);
 			await router.replace({ name: 'payment', params: { applicationId: saved } });
+			emitPaymentPageViewed();
 			return;
 		}
 
@@ -242,6 +268,12 @@
 
 	function simulatePaid() {
 		isPaid.value = true;
+		captureProductEvent('purchase_completed', {
+			payment_provider: 'gumroad',
+			plan_years: planYears.value,
+			application_id: applicationId.value ?? undefined,
+			dev_simulate: true,
+		});
 	}
 
 	function makePdfUrl(disposition: 'inline' | 'attachment') {
@@ -276,6 +308,9 @@
 			a.remove();
 			URL.revokeObjectURL(objectUrl);
 
+			captureProductEvent('companion_pdf_downloaded', {
+				application_id: id,
+			});
 			toast.success(t('payment.pdfDownloaded'));
 		} catch {
 			toast.error(t('payment.pdfDownloadFailed'));
