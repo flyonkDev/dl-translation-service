@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const doc = useLegalTerms();
 
 useSeoMeta({
@@ -36,16 +36,14 @@ useSeoMeta({
 });
 
 const config = useRuntimeConfig();
+const localePath = useLocalePath();
 const canonicalUrl = computed(() => {
-	const base = config.public.siteUrl
-		? String(config.public.siteUrl).replace(/\/$/, '')
-		: '';
-	if (!base) return null;
-	const path = locale.value === 'en' ? '/terms-of-service' : `/${locale.value}/terms-of-service`;
-	return `${base}${path}`;
+	const base = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
+	const p = String(localePath({ name: 'terms-of-service' }));
+	return `${base}${p}`;
 });
 
 useHead({
-	link: () => (canonicalUrl.value ? [{ rel: 'canonical', href: canonicalUrl.value }] : []),
+	link: () => [{ rel: 'canonical', href: canonicalUrl.value }],
 });
 </script>

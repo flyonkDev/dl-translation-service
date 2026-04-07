@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "IDP Companion",
-    "description": "Automated digital PDF download: sube tu permiso de conducir y nuestro software genera automáticamente un documento complementario multilingüe en minutos. Úsalo junto con tu permiso nacional."
+    "title": "IDP Companion — Permiso de conducir internacional (PDF) en minutos",
+    "description": "Genera un documento complementario multilingüe en minutos. Sube tu permiso de conducir y recibe un PDF al instante para conducir y viajar al extranjero. Aceptado en 150+ países (úsalo junto con tu permiso original).",
+    "ogImage": "https://www.idpcompanion.com/og-image.png"
   },
   "layout": {
     "logo": "IDP Companion",
@@ -53,8 +54,8 @@
   "home": {
     "heroKicker": "Documento complementario al Permiso Internacional de Conducir (IDP Companion)",
     "heroTitle": "Obtén tu documento IDP Companion en minutos",
-    "heroSubtitle": "Herramienta de generación automática de PDF para conductores internacionales",
-    "heroLead": "Documento de conducción multilingüe pensado para viajar al extranjero. Ayuda a rentadoras y autoridades a entender tu permiso cuando lo presentas junto con el permiso nacional original.",
+    "heroSubtitle": "PDF multilingüe para viajar y conducir en el extranjero — entrega al instante",
+    "heroLead": "Documento complementario multilingüe pensado para viajar y conducir en el extranjero. Sube tu permiso y recibe un PDF al instante — aceptado en 150+ países. Ayuda a rentadoras y autoridades a entender tu permiso cuando lo presentas junto con el permiso nacional original.",
     "heroBullet1": "Generado a partir de tu permiso real tras un procesamiento automático",
     "heroBullet2": "Formato orientado al uso internacional y al reconocimiento multilingüe",
     "heroBullet3": "Entrega digital al instante: imprímelo o muéstralo en el teléfono",
@@ -102,7 +103,7 @@
     "t3Author": "Marco R. — Italia",
     "faqTitle": "Preguntas frecuentes",
     "ctaTitle": "Obtén hoy tu documento IDP Companion",
-    "ctaLead": "Solicita en línea en minutos y recibe al instante tu documento multilingüe. Pensado para viajes internacionales junto con tu permiso original.",
+    "ctaLead": "Solicita en línea en minutos y recibe al instante tu documento multilingüe en PDF. Para viajar y alquilar coche en 150+ países, siempre junto con tu permiso original.",
     "ctaDisclaimer": "Solo documento complementario. No es un Permiso Internacional de Conducir emitido por el gobierno.",
     "ctaButton": "Obtener documento"
   },
