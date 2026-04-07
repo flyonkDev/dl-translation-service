@@ -39,7 +39,28 @@ export default defineNuxtConfig({
 
 	modules: [
 		'@nuxtjs/i18n',
+		'@nuxtjs/sitemap',
 	],
+
+	site: {
+		url: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.idpcompanion.com',
+		name: 'IDP Companion',
+	},
+
+	sitemap: {
+		// Exclude legal pages from sitemap (low SEO value, no crawl budget waste)
+		exclude: [
+			'/privacy-policy',
+			'/refund-policy',
+			'/terms-of-service',
+			'/ru/privacy-policy',
+			'/ru/refund-policy',
+			'/ru/terms-of-service',
+			'/es/privacy-policy',
+			'/es/refund-policy',
+			'/es/terms-of-service',
+		],
+	},
 
 	i18n: {
 		defaultLocale: 'en',
