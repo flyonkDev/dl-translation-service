@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "IDP Companion",
-    "description": "Automated digital PDF download: upload your driver license and our software automatically generates a multilingual companion document in minutes. Use together with your national license."
+    "title": "International Driving Permit Companion — Instant PDF Generator",
+    "description": "Generate your International Driving Permit companion document in minutes. Upload your driver's license, get a multilingual PDF instantly. Accepted in 150+ countries.",
+    "ogImage": "https://www.idpcompanion.com/og-image.png"
   },
   "layout": {
     "logo": "IDP Companion",

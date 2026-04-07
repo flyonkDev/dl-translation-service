@@ -439,7 +439,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useHead, useI18n, useRuntimeConfig } from '#imports'
+import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath } from '#imports'
 import { Icon } from '@iconify/vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import StartApplicationWidget from '~/components/widgets/StartApplicationWidget.vue'
@@ -452,12 +452,67 @@ const appUrl = computed(() => String(config.public.appUrl || '').trim())
 const { t } = useI18n()
 const { issueCountry, planYears, fromPrice, scrollToPricing } = useStartApplication(appUrl)
 
-useHead(() => ({
-  title: t('seo.title'),
-  meta: [{ name: 'description', content: t('seo.description') }],
-}))
-
 const faqs = useLandingFaqs()
+
+const siteUrl = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '')
+const localePath = useLocalePath()
+const canonicalPath = computed(() => String(localePath({ name: 'index' })))
+const canonicalUrl = computed(() => siteUrl + canonicalPath.value)
+
+useSeoMeta({
+  title: () => t('seo.title'),
+  description: () => t('seo.description'),
+  ogTitle: () => t('seo.title'),
+  ogDescription: () => t('seo.description'),
+  ogImage: () => t('seo.ogImage'),
+  ogUrl: () => canonicalUrl.value,
+  ogType: 'website',
+  ogSiteName: 'IDP Companion',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => t('seo.title'),
+  twitterDescription: () => t('seo.description'),
+  twitterImage: () => t('seo.ogImage'),
+})
+
+useHead(() => ({
+  link: [{ rel: 'canonical', href: canonicalUrl.value }],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'IDP Companion',
+        applicationCategory: 'UtilityApplication',
+        operatingSystem: 'Web',
+        description: t('seo.description'),
+        url: canonicalUrl.value,
+        offers: {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'USD',
+          lowPrice: '35',
+          highPrice: '55',
+          offerCount: '3',
+        },
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.value.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer.filter(Boolean).join(' '),
+          },
+        })),
+      }),
+    },
+  ],
+}))
 
 const openIndex = ref<number>(0)
 

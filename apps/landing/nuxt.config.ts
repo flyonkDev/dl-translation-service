@@ -63,6 +63,7 @@ export default defineNuxtConfig({
 	},
 
 	i18n: {
+		baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.idpcompanion.com',
 		defaultLocale: 'en',
 		strategy: 'prefix_except_default',
 		locales: [

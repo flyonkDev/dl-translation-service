@@ -43,13 +43,21 @@
 
 <script setup lang="ts">
 	import { computed } from 'vue';
-	import { useI18n, useRuntimeConfig, useLocalePath } from '#imports';
+	import { useI18n, useRuntimeConfig, useLocalePath, useLocaleHead, useHead } from '#imports';
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import AppHeader from '@ui-kit/components/layout/AppHeader.vue';
 	import LandingLocaleSwitcher from '~/components/LandingLocaleSwitcher.vue';
 	import { LOCALE_QUERY_PARAM } from '@i18n';
 
 	const { t, locale } = useI18n();
+
+	// Adds hreflang alternate links to <head> for all locales
+	const i18nHead = useLocaleHead({ addSeoAttributes: true });
+	useHead(() => ({
+		htmlAttrs: i18nHead.value.htmlAttrs,
+		link: i18nHead.value.link,
+		meta: i18nHead.value.meta,
+	}));
 	const config = useRuntimeConfig();
 	const localePath = useLocalePath();
 
