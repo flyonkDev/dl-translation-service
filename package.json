@@ -2,6 +2,9 @@
 	"name": "driver-license-monorepo",
 	"private": true,
 	"pnpm": {
+		"overrides": {
+			"@nuxt/nitro-server": "4.4.2"
+		},
 		"onlyBuiltDependencies": [
 			"@nestjs/core",
 			"@parcel/watcher",
