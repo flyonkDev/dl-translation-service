@@ -27,20 +27,27 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const doc = useLegalRefund();
+const config = useRuntimeConfig();
+const localePath = useLocalePath();
+
+const canonicalUrl = computed(() => {
+	const base = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
+	const p = String(localePath({ name: 'refund-policy' }));
+	return `${base}${p}`;
+});
 
 useSeoMeta({
 	title: () => t('legal.seoRefundTitle'),
 	description: () => t('legal.seoRefundDesc'),
 	ogTitle: () => t('legal.seoRefundTitle'),
 	ogDescription: () => t('legal.seoRefundDesc'),
-});
-
-const config = useRuntimeConfig();
-const localePath = useLocalePath();
-const canonicalUrl = computed(() => {
-	const base = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
-	const p = String(localePath({ name: 'refund-policy' }));
-	return `${base}${p}`;
+	ogType: 'website',
+	ogUrl: () => canonicalUrl.value,
+	ogImage: () => t('seo.ogImage'),
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => t('legal.seoRefundTitle'),
+	twitterDescription: () => t('legal.seoRefundDesc'),
+	twitterImage: () => t('seo.ogImage'),
 });
 
 useHead({

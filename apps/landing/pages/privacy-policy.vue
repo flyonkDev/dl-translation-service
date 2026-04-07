@@ -27,20 +27,27 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const doc = useLegalPrivacy();
+const config = useRuntimeConfig();
+const localePath = useLocalePath();
+
+const canonicalUrl = computed(() => {
+	const base = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
+	const p = String(localePath({ name: 'privacy-policy' }));
+	return `${base}${p}`;
+});
 
 useSeoMeta({
 	title: () => t('legal.seoPrivacyTitle'),
 	description: () => t('legal.seoPrivacyDesc'),
 	ogTitle: () => t('legal.seoPrivacyTitle'),
 	ogDescription: () => t('legal.seoPrivacyDesc'),
-});
-
-const config = useRuntimeConfig();
-const localePath = useLocalePath();
-const canonicalUrl = computed(() => {
-	const base = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
-	const p = String(localePath({ name: 'privacy-policy' }));
-	return `${base}${p}`;
+	ogType: 'website',
+	ogUrl: () => canonicalUrl.value,
+	ogImage: () => t('seo.ogImage'),
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => t('legal.seoPrivacyTitle'),
+	twitterDescription: () => t('legal.seoPrivacyDesc'),
+	twitterImage: () => t('seo.ogImage'),
 });
 
 useHead({
