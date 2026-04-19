@@ -179,7 +179,10 @@ export class NowPaymentsProvider implements IPaymentProvider {
       ipn_callback_url: params.ipnCallbackUrl,
       success_url: `${params.returnUrl}?paid=1`,
       cancel_url: `${params.returnUrl}?cancelled=1`,
-      is_fixed_rate: true,
+      // `is_fixed_rate: true` reserves a margin to cover the 15-min rate lock,
+      // which inflates NOWPayments' minimum payment (empirically rejects $5–10
+      // on USDT). Floating rate is fine for our use case — the user sees the
+      // exact amount on NOWPayments' page and has ~15 min to pay.
     };
     // Single currency → lock the invoice to it (user cannot change coin).
     // Multiple → we intentionally omit the field. NOWPayments' /invoice endpoint
@@ -206,7 +209,9 @@ export class NowPaymentsProvider implements IPaymentProvider {
 
     const text = await response.text();
     if (!response.ok) {
-      this.logger.error(`NOWPayments invoice failed ${response.status}: ${text.slice(0, 500)}`);
+      this.logger.error(
+        `NOWPayments invoice failed ${response.status} — request=${JSON.stringify(body)} response=${text.slice(0, 500)}`,
+      );
       throw new InternalServerErrorException(`NOWPayments invoice failed (${response.status})`);
     }
 
