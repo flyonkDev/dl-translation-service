@@ -52,17 +52,27 @@ const doc: LegalDoc = {
 			],
 		},
 		{
+			id: 'crypto',
+			heading: '4. Cryptocurrency Payments',
+			paragraphs: [
+				`Cryptocurrency transactions are irreversible once confirmed on the underlying blockchain. For this reason, refunds for crypto payments are handled manually: if your claim is approved, we will send you the equivalent amount in USDT (TRC-20) to a wallet address you provide.`,
+				`Network fees for the outgoing refund transfer are deducted from the refunded amount. The reference rate used is the rate at the time we process the refund, not the rate at the time of your original payment.`,
+				`All other refund conditions (car rental refusal, delivery failure, 12-hour change of mind) apply equally to crypto payments.`,
+			],
+		},
+		{
 			id: 'notRefunded',
-			heading: '4. What We Do Not Refund',
+			heading: '5. What We Do Not Refund',
 			bullets: [
 				`Law enforcement or police acceptance — We do not guarantee that our document will be accepted by police or other authorities. Our document is a translation companion for car rental and similar purposes. Refunds are not granted solely on the basis of law enforcement refusal.`,
 				`Refusal without documentation — Refund requests for car rental refusal must include written proof from the rental company. Requests without supporting documentation cannot be processed.`,
 				`Lost or misplaced documents — If you lose your PDF, contact us and we can help you retrieve it. This is not a refund scenario.`,
+				`Exchange-rate losses — For crypto payments, any difference between the payment-time exchange rate and the refund-time exchange rate is not compensated.`,
 			],
 		},
 		{
 			id: 'howTo',
-			heading: '5. How to Request a Refund',
+			heading: '6. How to Request a Refund',
 			listIntro: 'Send an email to {{EMAIL}} with:',
 			bullets: [
 				'Your order ID or the email used at purchase',
@@ -75,7 +85,7 @@ const doc: LegalDoc = {
 		},
 		{
 			id: 'contact',
-			heading: '6. Contact',
+			heading: '7. Contact',
 			paragraphs: [
 				`IDP Companion is operated by SKYFOM (Pty) Ltd, 301 Long Street, Cape Town, South Africa.`,
 			],

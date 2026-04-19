@@ -54,18 +54,70 @@
 
 					<!-- Checkout section (before payment) -->
 					<div v-if="!isPaid" class="checkout-section">
+						<div
+							class="pay-methods"
+							role="radiogroup"
+							:aria-label="t('payment.methodLabel')"
+						>
+							<button
+								type="button"
+								class="pay-method"
+								:class="{ 'is-selected': selectedMethod === 'gumroad' }"
+								role="radio"
+								:aria-checked="selectedMethod === 'gumroad'"
+								@click="selectedMethod = 'gumroad'"
+							>
+								<span class="pay-method__icon" aria-hidden="true">💳</span>
+								<span class="pay-method__body">
+									<span class="pay-method__title">{{ t('payment.methodCard') }}</span>
+									<span class="pay-method__sub">{{ t('payment.methodCardSub') }}</span>
+								</span>
+							</button>
+							<button
+								type="button"
+								class="pay-method"
+								:class="{ 'is-selected': selectedMethod === 'nowpayments' }"
+								role="radio"
+								:aria-checked="selectedMethod === 'nowpayments'"
+								@click="selectedMethod = 'nowpayments'"
+							>
+								<span class="pay-method__icon" aria-hidden="true">₿</span>
+								<span class="pay-method__body">
+									<span class="pay-method__title">{{ t('payment.methodCrypto') }}</span>
+									<span class="pay-method__sub">{{ t('payment.methodCryptoSub') }}</span>
+								</span>
+							</button>
+						</div>
+
+						<!-- Gumroad: keep hosted overlay link for instant callback. -->
 						<a
+							v-if="selectedMethod === 'gumroad'"
 							:href="gumroadUrl"
 							data-gumroad-ignore="true"
 							class="checkout-link"
-							@click="onCheckoutClick"
+							@click="onGumroadCheckoutClick"
 						>
 							<BaseButton class="checkout-btn" variant="primary" type="button">
 								<span class="checkout-btn__lock">🔒</span>
 								{{ t('payment.payButton', { price: priceLabel }) }}
 							</BaseButton>
 						</a>
-						<p class="checkout-note">{{ t('payment.checkoutNote') }}</p>
+
+						<!-- Crypto: server-side invoice, then redirect. -->
+						<BaseButton
+							v-else
+							class="checkout-btn"
+							variant="primary"
+							type="button"
+							:loading="isCreatingCheckout"
+							:disabled="isCreatingCheckout || !applicationId"
+							@click="onCryptoCheckoutClick"
+						>
+							<span class="checkout-btn__lock">🔒</span>
+							{{ t('payment.payCryptoButton', { price: priceLabel }) }}
+						</BaseButton>
+
+						<p class="checkout-note">{{ checkoutNote }}</p>
 					</div>
 
 					<!-- Download section (after payment confirmed) -->
@@ -136,6 +188,11 @@
 	import { apiGetBlob } from '@/shared/api/apiClient';
 	import { API_BASE_URL } from '@/shared/api/httpClient';
 	import type { PlanYears } from '@/entities/driver-application/model/types';
+	import {
+		createCheckout,
+		getApplicationStatus,
+		type PaymentProviderId,
+	} from '@/features/payment';
 
 	const GUMROAD_URLS: Record<PlanYears, string> = {
 		1: 'https://companion5.gumroad.com/l/irwbas',
@@ -158,6 +215,15 @@
 
 	const isDownloading = ref(false);
 	const isPaid = ref(false);
+	const isCreatingCheckout = ref(false);
+	const selectedMethod = ref<PaymentProviderId>('gumroad');
+	let statusPollTimer: ReturnType<typeof setInterval> | null = null;
+
+	const checkoutNote = computed(() => {
+		return selectedMethod.value === 'nowpayments'
+			? t('payment.checkoutNoteCrypto')
+			: t('payment.checkoutNote');
+	});
 
 	const verifyStatus = computed(() => store.verify?.verification?.status ?? null);
 
@@ -210,12 +276,65 @@
 		});
 	}
 
-	function onCheckoutClick() {
+	function onGumroadCheckoutClick() {
 		captureProductEvent('checkout_started', {
 			payment_provider: 'gumroad',
 			plan_years: planYears.value,
 			application_id: applicationId.value ?? undefined,
 		});
+	}
+
+	async function onCryptoCheckoutClick() {
+		const id = applicationId.value;
+		if (!id || isCreatingCheckout.value) return;
+
+		try {
+			isCreatingCheckout.value = true;
+			captureProductEvent('checkout_started', {
+				payment_provider: 'nowpayments',
+				plan_years: planYears.value,
+				application_id: id,
+			});
+			const { redirectUrl } = await createCheckout(id, 'nowpayments');
+			window.location.href = redirectUrl;
+		} catch {
+			toast.error(t('payment.cryptoCheckoutFailed'));
+			isCreatingCheckout.value = false;
+		}
+	}
+
+	async function refreshStatus() {
+		const id = applicationId.value;
+		if (!id) return;
+		try {
+			const { status } = await getApplicationStatus(id);
+			if (status === 'paid' || status === 'pdf_ready') {
+				if (!isPaid.value) {
+					isPaid.value = true;
+					captureProductEvent('purchase_completed', {
+						payment_provider: selectedMethod.value,
+						plan_years: planYears.value,
+						application_id: id,
+					});
+					toast.success(t('payment.paymentConfirmed'));
+				}
+				stopStatusPolling();
+			}
+		} catch {
+			// keep polling — network blips are fine
+		}
+	}
+
+	function startStatusPolling() {
+		if (statusPollTimer) return;
+		statusPollTimer = setInterval(refreshStatus, 5000);
+	}
+
+	function stopStatusPolling() {
+		if (statusPollTimer) {
+			clearInterval(statusPollTimer);
+			statusPollTimer = null;
+		}
 	}
 
 	function onGumroadPurchaseComplete(_data: unknown) {
@@ -238,28 +357,33 @@
 		// Register Gumroad purchase callback
 		window.onGumroadPurchaseComplete = onGumroadPurchaseComplete;
 
-		if (applicationId.value) {
-			store.setApplicationId(applicationId.value);
-			sessionStorage.setItem('driverApp.applicationId', applicationId.value);
-			emitPaymentPageViewed();
+		const resolvedId = applicationId.value ?? sessionStorage.getItem('driverApp.applicationId');
+		if (!resolvedId) {
+			toast.error(t('payment.applicationNotFound'));
+			await router.replace({ name: 'apply' });
 			return;
 		}
 
-		const saved = sessionStorage.getItem('driverApp.applicationId');
-		if (saved) {
-			applicationId.value = saved;
-			store.setApplicationId(saved);
-			await router.replace({ name: 'payment', params: { applicationId: saved } });
-			emitPaymentPageViewed();
-			return;
+		if (!applicationId.value) {
+			applicationId.value = resolvedId;
+			await router.replace({ name: 'payment', params: { applicationId: resolvedId } });
 		}
+		store.setApplicationId(resolvedId);
+		sessionStorage.setItem('driverApp.applicationId', resolvedId);
+		emitPaymentPageViewed();
 
-		toast.error(t('payment.applicationNotFound'));
-		await router.replace({ name: 'apply' });
+		// If we came back from a crypto provider's success redirect, expect status=paid soon.
+		// Even without ?paid=1, polling gives us Gumroad-completion feedback without UX regressions.
+		if (route.query.paid != null) {
+			selectedMethod.value = 'nowpayments';
+		}
+		await refreshStatus();
+		if (!isPaid.value) startStatusPolling();
 	});
 
 	onUnmounted(() => {
 		delete window.onGumroadPurchaseComplete;
+		stopStatusPolling();
 	});
 
 	function goBack() {
@@ -494,6 +618,67 @@
 		align-items: stretch;
 		gap: 10px;
 		margin-bottom: 16px;
+	}
+
+	.pay-methods {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		margin-bottom: 6px;
+	}
+
+	.pay-method {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 12px 14px;
+		border: 1px solid $slate-200;
+		border-radius: 12px;
+		background: #fff;
+		cursor: pointer;
+		text-align: left;
+		transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+
+		&:hover {
+			border-color: $slate-400;
+		}
+
+		&.is-selected {
+			border-color: #2563eb;
+			background: #eff6ff;
+			box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+		}
+	}
+
+	.pay-method__icon {
+		font-size: 20px;
+		line-height: 1;
+		width: 28px;
+		text-align: center;
+	}
+
+	.pay-method__body {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		min-width: 0;
+	}
+
+	.pay-method__title {
+		@include text-sm;
+		font-weight: 600;
+		color: $slate-900;
+	}
+
+	.pay-method__sub {
+		@include text-xs;
+		color: $slate-500;
+	}
+
+	@media (max-width: 480px) {
+		.pay-methods {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.checkout-link {

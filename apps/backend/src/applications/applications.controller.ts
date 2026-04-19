@@ -54,6 +54,11 @@ export class ApplicationsController {
     return this.service.create(dto, headshot);
   }
 
+  @Get(':applicationId/status')
+  getStatus(@Param('applicationId') applicationId: string) {
+    return this.service.getStatus(applicationId);
+  }
+
   @Get(':applicationId/pdf')
   async pdf(
     @Param('applicationId') applicationId: string,

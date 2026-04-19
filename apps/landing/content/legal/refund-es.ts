@@ -52,17 +52,27 @@ const doc: LegalDoc = {
 			],
 		},
 		{
+			id: 'crypto',
+			heading: '4. Pagos en criptomonedas',
+			paragraphs: [
+				`Las transacciones con criptomonedas son irreversibles una vez confirmadas en la red. Por este motivo, los reembolsos por pagos en cripto se gestionan manualmente: si su solicitud se aprueba, le enviaremos el importe equivalente en USDT (red TRC-20) a la dirección de monedero que nos indique.`,
+				`Las comisiones de red del envío de reembolso se descuentan del importe a devolver. Se utiliza el tipo de cambio vigente en el momento de procesar el reembolso, no el del pago original.`,
+				`El resto de condiciones de reembolso (rechazo de la rentadora, fallo de entrega, ventana de 12 horas) aplica por igual a los pagos en cripto.`,
+			],
+		},
+		{
 			id: 'notRefunded',
-			heading: '4. Qué no reembolsamos',
+			heading: '5. Qué no reembolsamos',
 			bullets: [
 				`Aceptación por fuerzas de seguridad o policía — No garantizamos que nuestro documento sea aceptado por la policía u otras autoridades. Es un complemento de traducción orientado al alquiler de vehículos y usos similares. No se conceden reembolsos únicamente por rechazo de las fuerzas de seguridad.`,
 				`Rechazo sin documentación — Las solicitudes por rechazo de la rentadora deben incluir prueba escrita de la empresa. No podemos tramitar solicitudes sin documentación de respaldo.`,
 				`Documentos perdidos — Si pierde su PDF, contáctenos: podemos ayudarle a recuperarlo. No es un supuesto de reembolso.`,
+				`Diferencia de tipo de cambio — Para pagos en cripto no se compensa la diferencia entre el tipo de cambio del pago y el del reembolso.`,
 			],
 		},
 		{
 			id: 'howTo',
-			heading: '5. Cómo solicitar un reembolso',
+			heading: '6. Cómo solicitar un reembolso',
 			listIntro: 'Envíe un correo a {{EMAIL}} con:',
 			bullets: [
 				'Su ID de pedido o el correo utilizado en la compra',
@@ -75,7 +85,7 @@ const doc: LegalDoc = {
 		},
 		{
 			id: 'contact',
-			heading: '6. Contacto',
+			heading: '7. Contacto',
 			paragraphs: [
 				`IDP Companion es operado por SKYFOM (Pty) Ltd, 301 Long Street, Cape Town, South Africa.`,
 			],

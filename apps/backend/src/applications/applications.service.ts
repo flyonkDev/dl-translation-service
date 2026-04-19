@@ -148,6 +148,20 @@ export class ApplicationsService {
     };
   }
 
+  async getStatus(applicationId: string) {
+    const row = await this.prisma.application.findUnique({
+      where: { id: applicationId },
+      select: { id: true, status: true, planYears: true, createdAt: true },
+    });
+    if (!row) throw new NotFoundException('application not found');
+    return {
+      applicationId: row.id,
+      status: row.status,
+      planYears: row.planYears,
+      createdAt: row.createdAt.toISOString(),
+    };
+  }
+
   async getPdf(applicationId: string, opts?: { debug?: boolean }) {
     const row = await this.prisma.application.findUnique({
       where: { id: applicationId },

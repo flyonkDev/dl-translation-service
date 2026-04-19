@@ -28,6 +28,6 @@ import { PRICING_MVP } from './pricing/pricing.data';
       }
     }
   ],
-  exports: [],
+  exports: [PricingService],
 })
 export class ReferenceModule {}

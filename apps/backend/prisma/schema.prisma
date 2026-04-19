@@ -26,6 +26,18 @@ enum LicenseCategory {
   E
 }
 
+enum PaymentProvider {
+  gumroad
+  nowpayments
+}
+
+enum PaymentStatus {
+  pending
+  confirmed
+  failed
+  expired
+}
+
 model Application {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
@@ -58,5 +70,28 @@ model Application {
 
   status ApplicationStatus @default(created)
 
+  payments Payment[]
+
   @@index([createdAt])
+}
+
+model Payment {
+  id            String          @id @default(uuid())
+  applicationId String
+  application   Application     @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  provider      PaymentProvider
+  externalId    String?
+  amountCents   Int
+  currency      String          @default("USD")
+  status        PaymentStatus   @default(pending)
+
+  rawPayload    Json?
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@unique([provider, externalId])
+  @@index([applicationId])
+  @@index([status])
 }

@@ -23,7 +23,9 @@ import { AppModule } from './app.module';
 import cookieParser from 'cookie-parser';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule)
+  // rawBody: true exposes req.rawBody on controller handlers — required for
+  // HMAC-based webhook signature verification (e.g. NOWPayments).
+  const app = await NestFactory.create(AppModule, { rawBody: true })
 
   app.use(cookieParser())
   app.enableCors({ origin: true, credentials: true })
