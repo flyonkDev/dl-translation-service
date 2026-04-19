@@ -182,12 +182,11 @@ export class NowPaymentsProvider implements IPaymentProvider {
       is_fixed_rate: true,
     };
     // Single currency → lock the invoice to it (user cannot change coin).
-    // Multiple → whitelist at invoice level via `pay_currencies` — NOWPayments'
-    // checkout page only offers these coins to the customer.
+    // Multiple → we intentionally omit the field. NOWPayments' /invoice endpoint
+    // does not accept a `pay_currencies` array (it returns 400), so the multi-coin
+    // whitelist must live in the NOWPayments dashboard (Settings → Coins).
     if (currencies.length === 1) {
       body.pay_currency = currencies[0];
-    } else if (currencies.length > 1) {
-      body.pay_currencies = currencies;
     }
 
     let response: Response;
