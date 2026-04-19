@@ -126,9 +126,32 @@ export class NowPaymentsProvider implements IPaymentProvider {
     return isSandbox ? 'https://api-sandbox.nowpayments.io/v1' : 'https://api.nowpayments.io/v1';
   }
 
-  private get payCurrency(): string | undefined {
-    // If unset, NOWPayments lets the user pick any supported coin at checkout.
-    return process.env.NOWPAYMENTS_PAY_CURRENCY?.trim() || undefined;
+  private get payCurrencies(): string[] {
+    // Preferred: NOWPAYMENTS_PAY_CURRENCIES (CSV, e.g. "usdttrc20,usdtmatic").
+    // Legacy: NOWPAYMENTS_PAY_CURRENCY (single value) — still honored for back-compat.
+    const csv =
+      process.env.NOWPAYMENTS_PAY_CURRENCIES?.trim() ||
+      process.env.NOWPAYMENTS_PAY_CURRENCY?.trim() ||
+      '';
+    return csv
+      .split(',')
+      .map((s) => s.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  /**
+   * Development helper: when set, the invoice uses this amount instead of the plan price.
+   *
+   * ⚠️ Active ONLY on the NOWPayments flow. Gumroad keeps the real plan price.
+   * ⚠️ Log emits a WARN on every checkout while this is set, so a forgotten
+   *    production override is obvious in the logs.
+   */
+  private get testAmountCents(): number | undefined {
+    const raw = (process.env.NOWPAYMENTS_TEST_AMOUNT_CENTS ?? '').trim();
+    if (!raw) return undefined;
+    const n = Number(raw);
+    if (!Number.isFinite(n) || n <= 0) return undefined;
+    return Math.round(n);
   }
 
   async createCheckout(params: CreateCheckoutParams): Promise<CreateCheckoutResult> {
@@ -136,8 +159,20 @@ export class NowPaymentsProvider implements IPaymentProvider {
       throw new InternalServerErrorException('NOWPayments is not configured (NOWPAYMENTS_API_KEY missing)');
     }
 
+    const priceCents = this.testAmountCents ?? params.priceCents;
+    if (this.testAmountCents != null) {
+      this.logger.warn(
+        `NOWPAYMENTS_TEST_AMOUNT_CENTS=${this.testAmountCents} is active — charging $${(
+          priceCents / 100
+        ).toFixed(2)} instead of real plan price $${(params.priceCents / 100).toFixed(
+          2,
+        )}. Unset this env var before serving real customers.`,
+      );
+    }
+
+    const currencies = this.payCurrencies;
     const body: Record<string, unknown> = {
-      price_amount: params.priceCents / 100,
+      price_amount: priceCents / 100,
       price_currency: params.currency.toLowerCase(),
       order_id: params.application.id,
       order_description: `IDP Companion — ${params.planYears}Y Plan`,
@@ -146,7 +181,9 @@ export class NowPaymentsProvider implements IPaymentProvider {
       cancel_url: `${params.returnUrl}?cancelled=1`,
       is_fixed_rate: true,
     };
-    if (this.payCurrency) body.pay_currency = this.payCurrency;
+    // Single currency → lock the invoice to it (user cannot change coin).
+    // Multiple → omit; user picks from the list enabled in NOWPayments dashboard.
+    if (currencies.length === 1) body.pay_currency = currencies[0];
 
     let response: Response;
     try {

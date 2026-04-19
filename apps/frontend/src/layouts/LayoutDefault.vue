@@ -2,12 +2,7 @@
   <div class="layout bg-mint/40">
     <AppHeader
       :brand-name="t('layout.logo')"
-      :nav-how-label="t('footer.linkHowItWorks')"
-      :nav-faq-label="t('footer.linkFaq')"
-      :nav-pricing-label="t('footer.linkPricing')"
-      :how-href="footerLinks.howItWorks"
-      :faq-href="footerLinks.faq"
-      :pricing-href="footerLinks.pricing"
+      :show-primary-nav="false"
       :show-start-button="false"
       show-locale-switcher
       :locale="currentLocale"

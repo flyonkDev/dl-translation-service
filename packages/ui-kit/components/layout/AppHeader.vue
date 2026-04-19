@@ -17,12 +17,14 @@
 			</a>
 
 			<nav
+				v-if="showPrimaryNav"
 				class="nav hidden sm:flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
 				<a :href="howHref" class="nav-link text-sm whitespace-nowrap">{{ navHowLabel }}</a>
 				<a :href="faqHref" class="nav-link text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
 				<a :href="pricingHref" class="nav-link text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
 			</nav>
+			<div v-else class="header-spacer hidden sm:block min-w-0 flex-1" aria-hidden="true" />
 
 			<div class="header-actions flex shrink-0 items-center gap-2 sm:gap-3">
 				<slot name="localeSwitcher">
@@ -36,6 +38,7 @@
 				</slot>
 
 				<MobileNavMenu
+					v-if="showPrimaryNav"
 					:nav-how-label="navHowLabel"
 					:nav-faq-label="navFaqLabel"
 					:nav-pricing-label="navPricingLabel"
@@ -80,6 +83,11 @@
 	    navHowLabel?: string;
 	    navFaqLabel?: string;
 	    navPricingLabel?: string;
+	    /**
+	     * When false, hide the marketing nav (How / FAQ / Pricing) and the mobile
+	     * nav burger. Use on the SPA where those links would take the user out of the flow.
+	     */
+	    showPrimaryNav?: boolean;
 	    showStartButton?: boolean;
 	    startLabel?: string;
 	    startHref?: string;
@@ -101,6 +109,7 @@
 	    navFaqLabel: 'FAQ',
 	    navPricingLabel: 'Pricing',
 
+	    showPrimaryNav: true,
 	    showStartButton: true,
 
 	    startLabel: 'Start application',
