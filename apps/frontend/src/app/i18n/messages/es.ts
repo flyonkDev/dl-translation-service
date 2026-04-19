@@ -175,7 +175,7 @@ export default {
 		methodCard: 'Tarjeta',
 		methodCardSub: 'Visa, Mastercard vía Gumroad',
 		methodCrypto: 'Cripto',
-		methodCryptoSub: 'USDT (TRC-20) vía NOWPayments',
+		methodCryptoSub: 'USDT (TRC-20, Polygon) vía NOWPayments',
 		payButton: 'Pagar {price} y descargar',
 		payCryptoButton: 'Pagar {price} con cripto',
 		checkoutNote: 'Pago seguro · Entrega digital instantánea',
