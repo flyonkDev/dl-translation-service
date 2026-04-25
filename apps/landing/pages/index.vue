@@ -56,9 +56,13 @@
             {{ t('home.priceNote', { price: `$${fromPrice}` }) }}
           </p>
 
-          <!-- <p class="mt-2 text-xs text-slate-400">
-            Companion document only. Not a government-issued International Driving Permit.
-          </p> -->
+          <NuxtLinkLocale
+            to="/pricing"
+            class="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-sea hover:underline"
+          >
+            {{ t('home.seePricingDetails') }}
+            <span aria-hidden="true">→</span>
+          </NuxtLinkLocale>
         </div>
 
         <StartApplicationWidget
@@ -364,45 +368,12 @@
 
     <!-- FAQ -->
     <section id="faq" class="section bg-slate-50">
-      <div class="container">
+      <div class="container max-w-3xl">
         <h2 class="mb-6 text-2xl font-extrabold text-slate-900">
           {{ t('home.faqTitle') }}
         </h2>
 
-        <ul class="border-t-2 border-sea">
-          <li v-for="(item, index) in faqs" :key="item.id" class="border-b border-slate-200">
-            <button
-              class="flex w-full items-center justify-between gap-4 py-3 text-left text-sm font-semibold text-slate-900 cursor-pointer"
-              :aria-expanded="openIndex === index"
-              :aria-controls="`faq-panel-${item.id}`"
-              @click="toggle(index)"
-            >
-              <span>{{ item.question }}</span>
-
-              <Icon
-                icon="heroicons:chevron-down-20-solid"
-                class="transition-transform duration-200"
-                :class="{ 'rotate-180': openIndex === index }"
-                width="18"
-              />
-            </button>
-
-            <transition name="faq">
-              <div
-                v-show="openIndex === index"
-                :id="`faq-panel-${item.id}`"
-                role="region"
-                class="overflow-hidden"
-              >
-                <div class="pb-4 text-sm leading-relaxed text-slate-700">
-                  <p v-for="(p, i) in item.answer" :key="i" class="mb-2 last:mb-0">
-                    {{ p }}
-                  </p>
-                </div>
-              </div>
-            </transition>
-          </li>
-        </ul>
+        <FaqAccordion :items="faqs" id-prefix="home-faq" />
       </div>
     </section>
 
@@ -438,11 +409,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath } from '#imports'
-import { Icon } from '@iconify/vue'
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue'
 import StartApplicationWidget from '~/components/widgets/StartApplicationWidget.vue'
+import FaqAccordion from '~/components/FaqAccordion.vue'
 import { useStartApplication } from '~/composables/useStartApplication'
 import { useLandingFaqs } from '~/composables/useLandingFaqs'
 
@@ -473,7 +444,7 @@ useSeoMeta({
   ogUrl: () => canonicalUrl.value,
   ogType: 'website',
   ogSiteName: 'IDP Companion',
-  ogLocale: () => locale.value,
+  ogLocale: () => toOgLocale(locale.value),
   twitterCard: 'summary_large_image',
   twitterTitle: () => t('seo.title'),
   twitterDescription: () => t('seo.description'),
@@ -546,23 +517,4 @@ useHead(() => ({
     },
   ],
 }))
-
-const openIndex = ref<number>(0)
-
-function toggle(index: number) {
-  openIndex.value = openIndex.value === index ? -1 : index
-}
 </script>
-
-<style scoped lang="scss">
-.faq-enter-active,
-.faq-leave-active {
-  transition: all 0.15s ease;
-}
-
-.faq-enter-from,
-.faq-leave-to {
-  max-height: 0;
-  opacity: 0;
-}
-</style>

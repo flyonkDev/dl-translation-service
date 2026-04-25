@@ -50,7 +50,7 @@ useSeoMeta({
 	ogImageAlt: 'IDP Companion — Instant Multilingual PDF',
 	ogImageSecureUrl: () => t('seo.ogImage'),
 	ogSiteName: 'IDP Companion',
-	ogLocale: () => locale.value,
+	ogLocale: () => toOgLocale(locale.value),
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => t('legal.seoRefundTitle'),
 	twitterDescription: () => t('legal.seoRefundDesc'),

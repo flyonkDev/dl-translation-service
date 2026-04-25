@@ -8,7 +8,7 @@
 			:home-href="localePath({ name: 'index' })"
 			how-href="#how-it-works"
 			faq-href="#faq"
-			pricing-href="#pricing"
+			:pricing-href="localePath({ name: 'pricing' })"
 			:brand-name="t('layout.logo')"
 			:nav-how-label="t('layout.navHow')"
 			:nav-faq-label="t('layout.navFaq')"
@@ -71,7 +71,7 @@
 	});
 
 	const footerLinks = computed(() => ({
-		pricing: localePath({ name: 'index', hash: '#pricing' }),
+		pricing: localePath({ name: 'pricing' }),
 		howItWorks: localePath({ name: 'index', hash: '#how-it-works' }),
 		faq: localePath({ name: 'index', hash: '#faq' }),
 		privacy: localePath({ name: 'privacy-policy' }),
