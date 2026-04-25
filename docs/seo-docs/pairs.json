@@ -1,0 +1,257 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "created": "2026-04-25",
+    "description": "Country-pair URLs для IDP Companion SEO. Tier 1 = ручной/моя помощь, Tier 2 = batch через Claude Code",
+    "totalPages": 500,
+    "tier1Count": 50,
+    "tier2Count": 450,
+    "urlTemplate": "/idp-for-{origin}-drivers-in-{destination}/"
+  },
+
+  "origins": {
+    "us": { "name": "United States", "alphabet": "Latin", "outboundVolume": 95, "currency": "USD" },
+    "uk": { "name": "United Kingdom", "alphabet": "Latin", "outboundVolume": 88, "currency": "GBP" },
+    "germany": { "name": "Germany", "alphabet": "Latin", "outboundVolume": 92, "currency": "EUR" },
+    "france": { "name": "France", "alphabet": "Latin", "outboundVolume": 85, "currency": "EUR" },
+    "russia": { "name": "Russia", "alphabet": "Cyrillic", "outboundVolume": 75, "currency": "RUB" },
+    "india": { "name": "India", "alphabet": "Devanagari/Latin", "outboundVolume": 90, "currency": "INR" },
+    "china": { "name": "China", "alphabet": "Chinese", "outboundVolume": 95, "currency": "CNY" },
+    "brazil": { "name": "Brazil", "alphabet": "Latin", "outboundVolume": 70, "currency": "BRL" },
+    "japan": { "name": "Japan", "alphabet": "Japanese", "outboundVolume": 80, "currency": "JPY" },
+    "canada": { "name": "Canada", "alphabet": "Latin", "outboundVolume": 82, "currency": "CAD" },
+    "australia": { "name": "Australia", "alphabet": "Latin", "outboundVolume": 78, "currency": "AUD" },
+    "mexico": { "name": "Mexico", "alphabet": "Latin", "outboundVolume": 65, "currency": "MXN" },
+    "italy": { "name": "Italy", "alphabet": "Latin", "outboundVolume": 75, "currency": "EUR" },
+    "spain": { "name": "Spain", "alphabet": "Latin", "outboundVolume": 78, "currency": "EUR" },
+    "netherlands": { "name": "Netherlands", "alphabet": "Latin", "outboundVolume": 72, "currency": "EUR" },
+    "south-korea": { "name": "South Korea", "alphabet": "Hangul", "outboundVolume": 78, "currency": "KRW" },
+    "sweden": { "name": "Sweden", "alphabet": "Latin", "outboundVolume": 68, "currency": "SEK" },
+    "poland": { "name": "Poland", "alphabet": "Latin", "outboundVolume": 65, "currency": "PLN" },
+    "turkey": { "name": "Turkey", "alphabet": "Latin", "outboundVolume": 62, "currency": "TRY" },
+    "saudi-arabia": { "name": "Saudi Arabia", "alphabet": "Arabic", "outboundVolume": 70, "currency": "SAR" },
+    "uae": { "name": "United Arab Emirates", "alphabet": "Arabic", "outboundVolume": 75, "currency": "AED" },
+    "singapore": { "name": "Singapore", "alphabet": "Latin/Chinese", "outboundVolume": 70, "currency": "SGD" },
+    "south-africa": { "name": "South Africa", "alphabet": "Latin", "outboundVolume": 55, "currency": "ZAR" },
+    "argentina": { "name": "Argentina", "alphabet": "Latin", "outboundVolume": 50, "currency": "ARS" },
+    "indonesia": { "name": "Indonesia", "alphabet": "Latin", "outboundVolume": 60, "currency": "IDR" }
+  },
+
+  "destinations": {
+    "thailand": { "name": "Thailand", "tourismVolume": 95, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": "Digital not accepted, Printed only, 1-year max" },
+    "italy": { "name": "Italy", "tourismVolume": 92, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "spain": { "name": "Spain", "tourismVolume": 95, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": "Digital not accepted, 1-year only" },
+    "france": { "name": "France", "tourismVolume": 90, "idpRequired": false, "idpType": "EU mostly exempt", "drivingSide": "right", "limitations": "Not required for EU drivers" },
+    "greece": { "name": "Greece", "tourismVolume": 80, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "turkey": { "name": "Turkey", "tourismVolume": 78, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "mexico": { "name": "Mexico", "tourismVolume": 70, "idpRequired": false, "idpType": "Recommended", "drivingSide": "right", "limitations": null },
+    "uae": { "name": "United Arab Emirates", "tourismVolume": 75, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": "Digital not accepted, Printed booklet required, 1-year max" },
+    "egypt": { "name": "Egypt", "tourismVolume": 60, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "indonesia": { "name": "Indonesia", "tourismVolume": 75, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": "Digital not accepted, Printed only" },
+    "vietnam": { "name": "Vietnam", "tourismVolume": 65, "idpRequired": true, "idpType": "1968 Vienna", "drivingSide": "right", "limitations": "Geneva 1949 IDP NOT accepted, only Vienna 1968" },
+    "portugal": { "name": "Portugal", "tourismVolume": 70, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "croatia": { "name": "Croatia", "tourismVolume": 55, "idpRequired": false, "idpType": "EU mostly exempt", "drivingSide": "right", "limitations": null },
+    "morocco": { "name": "Morocco", "tourismVolume": 50, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "cyprus": { "name": "Cyprus", "tourismVolume": 45, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "malta": { "name": "Malta", "tourismVolume": 40, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "costa-rica": { "name": "Costa Rica", "tourismVolume": 50, "idpRequired": false, "idpType": "Optional", "drivingSide": "right", "limitations": null },
+    "dominican-republic": { "name": "Dominican Republic", "tourismVolume": 45, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "south-africa": { "name": "South Africa", "tourismVolume": 50, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "australia": { "name": "Australia", "tourismVolume": 65, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "new-zealand": { "name": "New Zealand", "tourismVolume": 55, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "iceland": { "name": "Iceland", "tourismVolume": 50, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "ireland": { "name": "Ireland", "tourismVolume": 60, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "uk": { "name": "United Kingdom", "tourismVolume": 78, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null },
+    "germany": { "name": "Germany", "tourismVolume": 80, "idpRequired": true, "idpType": "1968 Vienna", "drivingSide": "right", "limitations": null },
+    "switzerland": { "name": "Switzerland", "tourismVolume": 65, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "austria": { "name": "Austria", "tourismVolume": 55, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "norway": { "name": "Norway", "tourismVolume": 45, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "right", "limitations": null },
+    "japan": { "name": "Japan", "tourismVolume": 80, "idpRequired": true, "idpType": "1949 Geneva ONLY", "drivingSide": "left", "limitations": "Vienna 1968 NOT accepted" },
+    "sri-lanka": { "name": "Sri Lanka", "tourismVolume": 50, "idpRequired": true, "idpType": "1949 Geneva", "drivingSide": "left", "limitations": null }
+  },
+
+  "tier1_pages": [
+    { "origin": "us", "destination": "italy", "url": "/idp-for-us-drivers-in-italy/", "priority": 100, "notes": "Top pair, high volume, Latin alphabet but Italian language barrier" },
+    { "origin": "us", "destination": "thailand", "url": "/idp-for-us-drivers-in-thailand/", "priority": 100, "notes": "Top tourist destination, IDP STRICT requirement" },
+    { "origin": "us", "destination": "mexico", "url": "/idp-for-us-drivers-in-mexico/", "priority": 95, "notes": "Border traffic, but IDP recommended for inland" },
+    { "origin": "us", "destination": "greece", "url": "/idp-for-us-drivers-in-greece/", "priority": 95, "notes": "High tourism, Greek alphabet barrier" },
+    { "origin": "us", "destination": "japan", "url": "/idp-for-us-drivers-in-japan/", "priority": 100, "notes": "STRICT 1949 only, Japanese alphabet" },
+    { "origin": "us", "destination": "spain", "url": "/idp-for-us-drivers-in-spain/", "priority": 95, "notes": "Top destination, Spain has digital limitation" },
+    { "origin": "us", "destination": "france", "url": "/idp-for-us-drivers-in-france/", "priority": 90, "notes": "Recommended though not strictly required" },
+    { "origin": "us", "destination": "uae", "url": "/idp-for-us-drivers-in-uae/", "priority": 95, "notes": "Strict requirement, printed only" },
+    { "origin": "us", "destination": "costa-rica", "url": "/idp-for-us-drivers-in-costa-rica/", "priority": 85, "notes": "Popular family destination" },
+    { "origin": "us", "destination": "iceland", "url": "/idp-for-us-drivers-in-iceland/", "priority": 80, "notes": "Self-drive tours popular" },
+
+    { "origin": "uk", "destination": "thailand", "url": "/idp-for-uk-drivers-in-thailand/", "priority": 100, "notes": "Massive UK→Thailand tourism" },
+    { "origin": "uk", "destination": "spain", "url": "/idp-for-uk-drivers-in-spain/", "priority": 100, "notes": "Top UK destination, post-Brexit IDP needed" },
+    { "origin": "uk", "destination": "greece", "url": "/idp-for-uk-drivers-in-greece/", "priority": 95, "notes": "Island hopping = car rental" },
+    { "origin": "uk", "destination": "cyprus", "url": "/idp-for-uk-drivers-in-cyprus/", "priority": 90, "notes": "British communities, popular retirement" },
+    { "origin": "uk", "destination": "uae", "url": "/idp-for-uk-drivers-in-uae/", "priority": 90, "notes": "Business + tourism" },
+    { "origin": "uk", "destination": "australia", "url": "/idp-for-uk-drivers-in-australia/", "priority": 85, "notes": "Working holiday / tourism" },
+    { "origin": "uk", "destination": "portugal", "url": "/idp-for-uk-drivers-in-portugal/", "priority": 85, "notes": "Algarve tourism" },
+    { "origin": "uk", "destination": "morocco", "url": "/idp-for-uk-drivers-in-morocco/", "priority": 80, "notes": "Adventure tourism" },
+
+    { "origin": "russia", "destination": "thailand", "url": "/idp-for-russian-drivers-in-thailand/", "priority": 100, "notes": "MASSIVE Russian tourism, Cyrillic = real pain at rental desk" },
+    { "origin": "russia", "destination": "turkey", "url": "/idp-for-russian-drivers-in-turkey/", "priority": 100, "notes": "Top destination for Russians" },
+    { "origin": "russia", "destination": "uae", "url": "/idp-for-russian-drivers-in-uae/", "priority": 95, "notes": "Growing Russian community, business" },
+    { "origin": "russia", "destination": "egypt", "url": "/idp-for-russian-drivers-in-egypt/", "priority": 90, "notes": "Resort tourism" },
+    { "origin": "russia", "destination": "indonesia", "url": "/idp-for-russian-drivers-in-indonesia/", "priority": 90, "notes": "Bali expat community" },
+    { "origin": "russia", "destination": "greece", "url": "/idp-for-russian-drivers-in-greece/", "priority": 80, "notes": "Mediterranean tourism" },
+    { "origin": "russia", "destination": "cyprus", "url": "/idp-for-russian-drivers-in-cyprus/", "priority": 85, "notes": "Russian community in Limassol" },
+    { "origin": "russia", "destination": "italy", "url": "/idp-for-russian-drivers-in-italy/", "priority": 80, "notes": "Cultural tourism" },
+
+    { "origin": "india", "destination": "uae", "url": "/idp-for-indian-drivers-in-uae/", "priority": 100, "notes": "Massive Indian community in UAE" },
+    { "origin": "india", "destination": "thailand", "url": "/idp-for-indian-drivers-in-thailand/", "priority": 95, "notes": "Top Indian tourist destination" },
+    { "origin": "india", "destination": "singapore", "url": "/idp-for-indian-drivers-in-singapore/", "priority": 85, "notes": "Business + tourism" },
+    { "origin": "india", "destination": "australia", "url": "/idp-for-indian-drivers-in-australia/", "priority": 95, "notes": "Students, immigrants, tourism" },
+    { "origin": "india", "destination": "italy", "url": "/idp-for-indian-drivers-in-italy/", "priority": 80, "notes": "Cultural tourism" },
+    { "origin": "india", "destination": "greece", "url": "/idp-for-indian-drivers-in-greece/", "priority": 75, "notes": "Honeymoon destination" },
+
+    { "origin": "germany", "destination": "thailand", "url": "/idp-for-german-drivers-in-thailand/", "priority": 100, "notes": "Top German destination" },
+    { "origin": "germany", "destination": "egypt", "url": "/idp-for-german-drivers-in-egypt/", "priority": 80, "notes": "Resort tourism" },
+    { "origin": "germany", "destination": "morocco", "url": "/idp-for-german-drivers-in-morocco/", "priority": 80, "notes": "Adventure tourism" },
+    { "origin": "germany", "destination": "indonesia", "url": "/idp-for-german-drivers-in-indonesia/", "priority": 90, "notes": "Bali, surfing" },
+    { "origin": "germany", "destination": "sri-lanka", "url": "/idp-for-german-drivers-in-sri-lanka/", "priority": 75, "notes": "Tropical tourism" },
+
+    { "origin": "brazil", "destination": "italy", "url": "/idp-for-brazilian-drivers-in-italy/", "priority": 80, "notes": "Italian heritage" },
+    { "origin": "brazil", "destination": "portugal", "url": "/idp-for-brazilian-drivers-in-portugal/", "priority": 95, "notes": "Massive Brazilian community" },
+    { "origin": "brazil", "destination": "spain", "url": "/idp-for-brazilian-drivers-in-spain/", "priority": 80, "notes": "Tourism + study" },
+
+    { "origin": "china", "destination": "thailand", "url": "/idp-for-chinese-drivers-in-thailand/", "priority": 95, "notes": "Top destination for Chinese" },
+    { "origin": "china", "destination": "indonesia", "url": "/idp-for-chinese-drivers-in-indonesia/", "priority": 85, "notes": "Bali tourism" },
+    { "origin": "china", "destination": "japan", "url": "/idp-for-chinese-drivers-in-japan/", "priority": 90, "notes": "Tourism, but IDP not accepted!" },
+
+    { "origin": "canada", "destination": "mexico", "url": "/idp-for-canadian-drivers-in-mexico/", "priority": 90, "notes": "Snowbird population" },
+    { "origin": "canada", "destination": "italy", "url": "/idp-for-canadian-drivers-in-italy/", "priority": 80, "notes": "Heritage tourism" },
+    { "origin": "australia", "destination": "thailand", "url": "/idp-for-australian-drivers-in-thailand/", "priority": 100, "notes": "Top Australian destination" },
+    { "origin": "australia", "destination": "indonesia", "url": "/idp-for-australian-drivers-in-indonesia/", "priority": 100, "notes": "Bali = Australian beach" },
+    { "origin": "japan", "destination": "italy", "url": "/idp-for-japanese-drivers-in-italy/", "priority": 75, "notes": "Cultural tourism" },
+    { "origin": "france", "destination": "morocco", "url": "/idp-for-french-drivers-in-morocco/", "priority": 90, "notes": "Historical ties" },
+    { "origin": "italy", "destination": "greece", "url": "/idp-for-italian-drivers-in-greece/", "priority": 75, "notes": "Mediterranean tourism" },
+    { "origin": "spain", "destination": "portugal", "url": "/idp-for-spanish-drivers-in-portugal/", "priority": 70, "notes": "Border tourism" },
+    { "origin": "netherlands", "destination": "greece", "url": "/idp-for-dutch-drivers-in-greece/", "priority": 75, "notes": "Mediterranean holidays" },
+    { "origin": "saudi-arabia", "destination": "uae", "url": "/idp-for-saudi-drivers-in-uae/", "priority": 85, "notes": "Regional travel" },
+    { "origin": "uae", "destination": "georgia", "url": "/idp-for-uae-drivers-in-georgia/", "priority": 70, "notes": "Growing destination" },
+    { "origin": "singapore", "destination": "thailand", "url": "/idp-for-singaporean-drivers-in-thailand/", "priority": 90, "notes": "Regional weekend travel" }
+  ],
+
+  "tier2_pages_strategy": {
+    "description": "450 страниц генерируются скриптом из всех валидных пар origins × destinations минус Tier 1 минус excluded.",
+    "generation": "scripts/generate-tier2-pairs.ts читает origins + destinations + tier1_pages, фильтрует, выдаёт массив 450 пар.",
+    "excluded_combinations": [
+      "germany-france (EU exempt)",
+      "germany-italy (EU exempt)",
+      "germany-spain (EU exempt)",
+      "germany-portugal (EU exempt)",
+      "germany-netherlands (EU exempt)",
+      "germany-austria (EU exempt)",
+      "germany-switzerland (EU exempt)",
+      "france-italy (EU exempt)",
+      "france-spain (EU exempt)",
+      "france-portugal (EU exempt)",
+      "france-greece (EU exempt)",
+      "italy-france (EU exempt)",
+      "italy-spain (EU exempt)",
+      "italy-portugal (EU exempt)",
+      "spain-france (EU exempt)",
+      "spain-italy (EU exempt)",
+      "spain-portugal (EU exempt)",
+      "netherlands-france (EU exempt)",
+      "netherlands-germany (EU exempt)",
+      "netherlands-italy (EU exempt)",
+      "netherlands-spain (EU exempt)",
+      "sweden-norway (Nordic exempt)",
+      "australia-new-zealand (bilateral)",
+      "us-canada (bilateral exempt for short)",
+      "us-mexico (border short stay)"
+    ],
+    "tier2_priority_buckets": [
+      {
+        "bucket": "Bucket A — Russia/Cyrillic origins (high pain point)",
+        "pairs_count": 60,
+        "examples": [
+          "/idp-for-russian-drivers-in-spain/",
+          "/idp-for-russian-drivers-in-portugal/",
+          "/idp-for-russian-drivers-in-france/",
+          "/idp-for-russian-drivers-in-vietnam/",
+          "..."
+        ]
+      },
+      {
+        "bucket": "Bucket B — Asian origins (high outbound, language barrier)",
+        "pairs_count": 100,
+        "examples": [
+          "/idp-for-chinese-drivers-in-italy/",
+          "/idp-for-japanese-drivers-in-spain/",
+          "/idp-for-south-korean-drivers-in-thailand/",
+          "/idp-for-indonesian-drivers-in-australia/",
+          "..."
+        ]
+      },
+      {
+        "bucket": "Bucket C — Middle East/Arabic origins",
+        "pairs_count": 60,
+        "examples": [
+          "/idp-for-saudi-drivers-in-thailand/",
+          "/idp-for-uae-drivers-in-italy/",
+          "..."
+        ]
+      },
+      {
+        "bucket": "Bucket D — South American origins",
+        "pairs_count": 50,
+        "examples": [
+          "/idp-for-argentinian-drivers-in-italy/",
+          "/idp-for-brazilian-drivers-in-france/",
+          "..."
+        ]
+      },
+      {
+        "bucket": "Bucket E — Long-tail combinations (lower priority but cumulative)",
+        "pairs_count": 180,
+        "examples": [
+          "/idp-for-polish-drivers-in-thailand/",
+          "/idp-for-turkish-drivers-in-greece/",
+          "/idp-for-mexican-drivers-in-italy/",
+          "..."
+        ]
+      }
+    ]
+  },
+
+  "long_form_guides": [
+    {
+      "url": "/guides/driving-abroad-complete-guide-2026/",
+      "title": "Complete Guide to Driving Abroad in 2026: Everything You Need to Know",
+      "wordCount": 5000,
+      "tier": 3,
+      "purpose": "Backlink magnet, ranking on 'driving abroad guide' queries"
+    },
+    {
+      "url": "/guides/idp-vs-idl-vs-license/",
+      "title": "IDP vs IDL vs National License: The Legal Truth Explained",
+      "wordCount": 3000,
+      "tier": 3,
+      "purpose": "Debunking myths, building authority on the topic"
+    },
+    {
+      "url": "/guides/driving-without-idp-real-cases/",
+      "title": "What Happens If You Drive Without IDP: Real Cases by Country",
+      "wordCount": 3000,
+      "tier": 3,
+      "purpose": "Fear-driven content, case studies, internal links to country pages"
+    }
+  ],
+
+  "supporting_pages": [
+    { "url": "/", "type": "landing" },
+    { "url": "/pricing/", "type": "pricing" },
+    { "url": "/countries/", "type": "directory" },
+    { "url": "/faq/", "type": "faq" },
+    { "url": "/about/", "type": "about" },
+    { "url": "/refund-policy/", "type": "policy" },
+    { "url": "/privacy/", "type": "policy" },
+    { "url": "/terms/", "type": "policy" },
+    { "url": "/blog/", "type": "blog-index" }
+  ]
+}

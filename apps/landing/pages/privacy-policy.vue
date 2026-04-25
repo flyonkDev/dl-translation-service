@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const doc = useLegalPrivacy();
 const config = useRuntimeConfig();
 const localePath = useLocalePath();
@@ -44,10 +44,18 @@ useSeoMeta({
 	ogType: 'website',
 	ogUrl: () => canonicalUrl.value,
 	ogImage: () => t('seo.ogImage'),
+	ogImageWidth: 1200,
+	ogImageHeight: 630,
+	ogImageType: 'image/png',
+	ogImageAlt: 'IDP Companion — Instant Multilingual PDF',
+	ogImageSecureUrl: () => t('seo.ogImage'),
+	ogSiteName: 'IDP Companion',
+	ogLocale: () => locale.value,
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => t('legal.seoPrivacyTitle'),
 	twitterDescription: () => t('legal.seoPrivacyDesc'),
 	twitterImage: () => t('seo.ogImage'),
+	twitterImageAlt: 'IDP Companion — Instant Multilingual PDF',
 });
 
 useHead({

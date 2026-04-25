@@ -449,7 +449,7 @@ import { useLandingFaqs } from '~/composables/useLandingFaqs'
 const config = useRuntimeConfig()
 const appUrl = computed(() => String(config.public.appUrl || '').trim())
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { issueCountry, planYears, fromPrice, scrollToPricing } = useStartApplication(appUrl)
 
 const faqs = useLandingFaqs()
@@ -465,18 +465,50 @@ useSeoMeta({
   ogTitle: () => t('seo.title'),
   ogDescription: () => t('seo.description'),
   ogImage: () => t('seo.ogImage'),
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/png',
+  ogImageAlt: 'IDP Companion — Instant Multilingual PDF',
+  ogImageSecureUrl: () => t('seo.ogImage'),
   ogUrl: () => canonicalUrl.value,
   ogType: 'website',
   ogSiteName: 'IDP Companion',
+  ogLocale: () => locale.value,
   twitterCard: 'summary_large_image',
   twitterTitle: () => t('seo.title'),
   twitterDescription: () => t('seo.description'),
   twitterImage: () => t('seo.ogImage'),
+  twitterImageAlt: 'IDP Companion — Instant Multilingual PDF',
 })
 
 useHead(() => ({
   link: [{ rel: 'canonical', href: canonicalUrl.value }],
   script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': `${siteUrl}/#organization`,
+        name: 'IDP Companion',
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}/web-app-manifest-512x512.png`,
+        email: 'support@idpcompanion.com',
+        sameAs: [],
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        name: 'IDP Companion',
+        url: `${siteUrl}/`,
+        publisher: { '@id': `${siteUrl}/#organization` },
+        inLanguage: locale.value,
+      }),
+    },
     {
       type: 'application/ld+json',
       children: JSON.stringify({
@@ -487,6 +519,7 @@ useHead(() => ({
         operatingSystem: 'Web',
         description: t('seo.description'),
         url: canonicalUrl.value,
+        publisher: { '@id': `${siteUrl}/#organization` },
         offers: {
           '@type': 'AggregateOffer',
           priceCurrency: 'USD',
