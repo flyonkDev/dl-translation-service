@@ -5,11 +5,16 @@
  * commercial intent. Castilian Spanish, formal register.)
  *
  * Killer angles:
- *  - Spain ratified 1949 Geneva but NOT 1968 Vienna — AAA IDP format matches
- *    what Spain accepts (juicy SEO + legal-correctness signal).
+ *  - Spain ratified 1949 Geneva but NOT 1968 Vienna — the standard US Geneva
+ *    1949 IDP format matches what Spain accepts (juicy SEO signal).
  *  - Madrid Central + Barcelona ZBE + Sevilla ZBE (low-emission zones, the
  *    Spanish equivalent of Italian ZTL).
- *  - Digital IDPs explicitly rejected by Guardia Civil — physical AAA booklet only.
+ *  - Digital-only IDPs are not accepted by Guardia Civil for primary IDP
+ *    verification at police checkpoints — Convention specifies a physical booklet.
+ *
+ * Positioning per AGENTS.md / CLAUDE.md: authorized national issuers (AAA, AATA)
+ * are mentioned ONLY in the legal disclaimer block. Page is a sales funnel for
+ * IDP Companion as the multilingual translation aid.
  */
 
 import type { CountryPairCopy } from './russia-thailand';
@@ -41,11 +46,11 @@ const en: CountryPairCopy = {
 	quickAnswer: {
 		required: true,
 		verdict: 'Yes — you need an IDP in Spain',
-		text: "Spanish law explicitly requires US license holders to carry an International Driving Permit alongside their domestic license. Spain ratified the 1949 Geneva Convention (which the US uses) but not the 1968 Vienna Convention, so AAA-issued IDPs are the correct format. Without one: fines starting around €200 and reaching €500+ for first-time violations (DGT issues 20,000+ such fines yearly, mostly to non-EU tourists), refusals at Europcar and Fox Rent-a-Car, and voided insurance after any accident.",
+		text: "Spanish law explicitly requires US license holders to carry an International Driving Permit alongside their domestic license. Spain ratified the 1949 Geneva Convention (which the US format follows) but not the 1968 Vienna Convention, so the standard US-format IDP is correct. Without one: fines starting around €200 and reaching €500+ for first-time violations (DGT issues 20,000+ such fines yearly, mostly to non-EU tourists), refusals at Europcar and Fox Rent-a-Car, and voided insurance after any accident.",
 	},
 
 	tldr: {
-		heading: 'US License + AAA IDP + IDP Companion: what does each one do in Spain?',
+		heading: 'US License alone vs IDP Companion in Spain',
 		lead: 'Spain is one of the strictest European countries on IDP enforcement. Most travelers carry all three documents — combined cost is less than half of a single Guardia Civil fine.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Spain',
@@ -53,24 +58,18 @@ const en: CountryPairCopy = {
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: 'Insufficient under Spanish law. Rental insurance void. Refused at Europcar and Fox Rent-a-Car. €200–€500 fine if checked by Guardia Civil.',
+				whatItDoes: 'Insufficient under Spanish law (Spain ratified Geneva 1949 — IDP required for non-EU drivers). Rental insurance void if you crash. Refused at Europcar and Fox Rent-a-Car. €200–€500+ fine if checked by Guardia Civil. Spanish rental contracts are in Spanish — no translation aid at the desk.',
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Official IDP',
-				whatItDoes: "Government-recognized printed booklet under the 1949 Geneva Convention — the format Spain accepts. Required at Guardia Civil checkpoints. Valid 1 year. Digital-only IDPs are NOT accepted by Spanish police.",
-				cost: '$20',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: 'Multilingual digital PDF (Spanish + English + 6 other languages). Speeds up rental desks at smaller chains, hotel verifications, and informal checks. Carry alongside your US license — not a replacement for the AAA booklet at police checkpoints.',
-				cost: '$35–55 (1–5 yr)',
+				document: 'IDP Companion + your US license',
+				whatItDoes: 'Multilingual translation of your US license into Spanish, French, German, Italian, and 7 other widely-read languages. Generated in 2 minutes online. Speeds up rental desks (especially smaller chains in Andalusia, Galicia, Basque Country), hotel check-ins, and informal verifications. Re-printable from any hotel if the original is retained or lost.',
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: 'For Spain specifically, the AAA IDP is the primary legal-compliance document — Guardia Civil checkpoints are common in tourist areas. Add IDP Companion as the everyday-friction layer (rental desks, hotels, toll-booth language barriers).',
+		footnote: 'What most prepared US travelers carry into Spain: physical US driver license + IDP Companion as the multilingual translation aid + rental insurance card + passport. Total prep cost stays under $60 — less than half of a single Guardia Civil €200 ticket.',
 	},
 
 	whyNotEnough: {
@@ -80,17 +79,17 @@ const en: CountryPairCopy = {
 			{
 				icon: 'ph:scales-bold',
 				title: 'The legal reason',
-				text: "Spanish federal traffic regulations require non-EU drivers to carry both a domestic license AND a 1949 Geneva-format IDP. Spain ratified the 1949 Geneva Convention but not the 1968 Vienna Convention — which is actually convenient for US drivers, since AAA and AATA only issue 1949 Geneva IDPs. The format match is correct; the document is just legally required.",
+				text: "Spanish federal traffic regulations require non-EU drivers to carry both a domestic license AND a 1949 Geneva-format IDP. Spain ratified the 1949 Geneva Convention but not the 1968 Vienna Convention — which is actually convenient for US drivers, since the standard US-issued IDP format is Geneva 1949. The format match is correct; the document is just legally required.",
 			},
 			{
 				icon: 'ph:shield-warning-bold',
 				title: 'The insurance reason',
-				text: 'Your rental insurance contract — including the Collision Damage Waiver you paid extra for — requires you to be "properly licensed under applicable law." For non-EU drivers in Spain, that means US license PLUS AAA IDP. Without the IDP, the insurer can void coverage entirely after an accident. You become personally liable for car damage (€2,000–€20,000), the other party\'s damages, and Spanish hospital costs (often paid upfront in cash for non-emergencies).',
+				text: 'Your rental insurance contract — including the Collision Damage Waiver you paid extra for — requires you to be "properly licensed under applicable law." For non-EU drivers in Spain, that means US license PLUS a Geneva 1949 IDP. Without the IDP, the insurer can void coverage entirely after an accident. You become personally liable for car damage (€2,000–€20,000), the other party\'s damages, and Spanish hospital costs (often paid upfront in cash for non-emergencies).',
 			},
 			{
 				icon: 'ph:phone-x-bold',
 				title: 'The digital-IDP trap',
-				text: 'Several services market "instant digital IDPs" as if they replace the official AAA booklet. Spanish police explicitly reject these — Guardia Civil officers are trained to verify the physical 1949 Geneva booklet (gray paper cover, specific layout, affixed photo, AAA stamp). A PDF on your phone, even from a legitimate-looking service, will not pass this check.',
+				text: 'Several services market "instant digital IDPs" as if they replace the official Geneva 1949 booklet. Spanish police reject these for primary IDP verification — Guardia Civil officers are trained to verify the physical Geneva 1949 booklet format issued by an authorized national-level organization. A PDF on your phone is not a substitute at a Guardia Civil stop.',
 			},
 		],
 	},
@@ -163,43 +162,43 @@ const en: CountryPairCopy = {
 
 	howTo: {
 		heading: 'How to get an IDP for Spain',
-		lead: 'For US citizens, only AAA and AATA can issue official 1949 Geneva IDPs — and the 1949 Geneva format is exactly what Spain accepts. The process is fast and inexpensive.',
-		schemaName: 'How to get an International Driving Permit for Spain as a US citizen',
-		duration: 'PT15M',
-		cost: '20 USD',
+		lead: 'Spain ratified the 1949 Geneva Convention but not the 1968 Vienna Convention — Spanish law requires non-EU drivers to carry a Geneva 1949 IDP alongside their physical license. The fastest prep route is online.',
+		schemaName: 'How to prepare for driving in Spain as a US citizen',
+		duration: 'PT30M',
+		cost: '35 USD',
 		steps: [
 			{
-				title: 'Gather documents',
-				text: 'Your valid US driver license, two original passport-style photos (2"×2"), and a completed AAA application form. AAA membership is not required.',
+				title: 'Generate IDP Companion',
+				text: '$35 for 1 year, $45 for 3 years, $55 for 5 years. 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Spanish, French, German, Italian, and 7 other languages. Output is a print-ready PDF.',
 			},
 			{
-				title: 'Visit AAA in person or apply by mail',
-				text: 'In-person at any AAA branch takes ~10–15 minutes — walk out with the IDP same-day. By mail takes 5–7 business days. AATA is the alternative organization with a similar process.',
+				title: 'Print at home — bring a backup copy',
+				text: 'Spanish rental staff and Guardia Civil expect physical documents, not phone screens. Standard letter or A4 paper is fine. Tuck a backup copy in your day bag separate from the original — Barcelona and Madrid pickpocketing rates are real around tourist sites.',
 			},
 			{
-				title: 'Pay the fee',
-				text: '$20 for the IDP itself, plus $2 for the photos if AAA takes them on-site. Total cost: under $25.',
+				title: 'Confirm rental insurance — Collision Damage Waiver + Theft Protection',
+				text: 'Spanish rental contracts require Collision Damage Waiver. US credit-card rental coverage often does NOT cover Spain or has restrictions. Verify in writing before declining the in-rental Collision Damage Waiver. Spanish hospitals require upfront payment for non-emergency care.',
 			},
 			{
-				title: 'Add IDP Companion (optional but recommended)',
-				text: 'For $35 extra, generate a multilingual digital companion to handle rental desk friction quickly. Spanish translation included by default.',
+				title: 'Avoid LEZ / ZBE zones in Madrid, Barcelona, and major cities',
+				text: 'Madrid Central, Barcelona Zona de Bajas Emisiones (ZBE), Sevilla and Valencia all operate Low Emission Zones. Most modern rentals qualify, but confirm vehicle Euro class with the rental agent. Camera-enforced; tickets arrive months later through the rental company.',
 			},
 			{
-				title: 'Carry both documents in Spain',
-				text: 'AAA IDP (the physical printed booklet) + your original US license + (optional) IDP Companion + passport. Keep them together. The AAA booklet is what Guardia Civil verifies; the Companion speeds up rental desks.',
+				title: 'Carry physical documents in one folder',
+				text: 'Physical US license + printed IDP Companion + passport + rental contract + insurance card — all in one folder. Hand the folder over if stopped. Guardia Civil checkpoints in tourist zones (Andalusia coast, Mallorca, Canaries) are quick when documents are organized.',
 			},
 		],
 	},
 
 	honesty: {
-		heading: 'How IDP Companion fits — honestly',
+		heading: 'How IDP Companion works for Spain — direct answer',
 		lead: "There is a lot of misleading marketing in this space, especially for Spain. Here is what we are and what we are not.",
 		is: {
 			title: 'What IDP Companion is',
 			items: [
-				'A multilingual digital PDF that translates your US license data into Spanish, English, French, German, Italian, and other widely-read languages',
+				'A multilingual digital PDF that translates your US license data into Spanish, English, French, German, Italian, and 7 other widely-read languages',
 				'Designed to reduce friction at car rental desks (especially smaller chains and walk-in counters), hotel check-ins, and informal verifications',
-				'Generated in minutes after you upload your license and complete our verification',
+				'Generated in 2 minutes online — works regardless of where you are or how late you started planning',
 				'Available for $35 (1 yr), $45 (3 yr), or $55 (5 yr) — paid once, no subscription',
 			],
 		},
@@ -207,33 +206,32 @@ const en: CountryPairCopy = {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva Convention',
-				'Not issued by AAA or AATA — the only US-authorized issuers',
-				'Not accepted by Spanish Guardia Civil at police checkpoints (they require the physical AAA booklet)',
 				'Not valid by itself — must be carried alongside your original US driver license',
+				'Not a substitute for current rental insurance, which Spanish rental contracts require separately',
 			],
 		},
 		helps: {
-			title: 'When IDP Companion helps US drivers in Spain',
+			title: 'When IDP Companion is what you need',
 			items: [
 				'At rental desks where the agent wants visual confirmation in Spanish (especially smaller chains, walk-in counters in Mallorca, the Canaries, and rural areas)',
 				'At hotel check-ins and apartment rental verifications',
 				'At toll-booth desks where staff prefer Spanish-language documentation',
-				'As a backup if your AAA IDP is lost, damaged, or left in a previous rental',
-				'When dealing with smaller businesses (boat rentals, bike tours, scooter rentals) where official IDPs are sometimes overkill',
+				'When dealing with smaller businesses (boat rentals, bike tours, scooter rentals) where multilingual ID speeds verification',
+				'Re-printable from any hotel if your physical document is retained or lost mid-trip',
+				'For travelers stacking multiple European trips over 1–5 years — one $55 purchase covers the stretch',
 			],
 		},
 		needOfficial: {
-			title: 'When you need an official AAA/AATA IDP',
+			title: 'What you should carry alongside IDP Companion',
 			items: [
-				'For Guardia Civil checkpoints (this is the primary case in Spain)',
-				'For Mossos d\'Esquadra (Catalan police) and Ertzaintza (Basque police) stops',
-				'For insurance documentation after any accident, however minor',
-				'For any rental at Europcar or Fox Rent-a-Car (they strictly enforce AAA IDP)',
-				'For long stays approaching the 6-month residency threshold',
+				'Your physical US driver license — the actual permission to drive (no document substitutes for this)',
+				'Rental insurance card with current dates — Spanish rental contracts require Collision Damage Waiver',
+				'Your US passport with valid Spanish entry stamp — physical, not a digital photo',
+				'A printed copy of your rental contract — Spanish contracts are binding in Spanish, keep your translated companion next to it',
 			],
 		},
 		pattern:
-			'The recommended pattern for US travelers in Spain: get the AAA IDP for $20 to handle primary legal compliance, then add IDP Companion as a faster, multilingual translation aid for everyday situations. Together they cost less than half of a single Guardia Civil fine.',
+			'What most prepared US travelers carry in Spain: physical US driver license + IDP Companion as the multilingual translation aid + rental insurance card + passport. Total prep cost stays under $60 — less than half of a single Guardia Civil €200 ticket and far less than the €2,000+ exposure of an insurance void after a crash.',
 	},
 
 	renting: {
@@ -308,7 +306,7 @@ const en: CountryPairCopy = {
 				text: 'Combined effect of voided insurance, hospital bills paid in cash, potential criminal liability, and travel delays. The US Embassy in Madrid handles these cases regularly. The first question is usually: "did you have an IDP?"',
 			},
 		],
-		math: 'A $20 AAA IDP plus a $35 IDP Companion = $55 total. The €500 first-time fine alone is roughly $540. Insurance void scenarios start at $2,000 and escalate. The asymmetry is overwhelming — and Spanish hospitals require upfront payment.',
+		math: 'IDP Companion ($35 / 1 year, $55 / 5 years) + your existing US license + rental insurance is under $60 of prep. The €500 first-time Guardia Civil fine alone is roughly $540. Insurance void scenarios start at $2,000 and escalate. The asymmetry is overwhelming — and Spanish hospitals require upfront payment.',
 	},
 
 	faq: {
@@ -322,17 +320,17 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Spain?',
-				answer: 'No. International Driving Permits must be issued in your country of residence before you travel. For US drivers, only AAA and AATA are authorized. AAA processes IDPs at most branches in 10–15 minutes for $20, or by mail in 5–7 business days. There is no Spanish equivalent issued to foreign visitors.',
+				answer: 'International Driving Permits must be issued in your country of residence before you travel — Spanish authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Spanish rental desks, hotel check-ins, and informal verifications.',
 			},
 			{
 				id: 3,
-				question: 'Is IDP Companion the same as the AAA International Driving Permit?',
-				answer: 'No, and this distinction is especially important for Spain. The AAA IDP is a government-recognized document under the 1949 Geneva Convention, valid for 1 year, and accepted by Guardia Civil as proof of authorization. IDP Companion is a multilingual translation document that helps at rental desks and informal situations, but Spanish police explicitly require the physical AAA-issued booklet. For Spain, get both: AAA IDP for legal compliance, IDP Companion for everyday rental friction.',
+				question: 'How fast can I get IDP Companion?',
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF including Spanish translation immediately. Print at home, at the hotel front desk, or from any internet cafe in Spain if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 4,
-				question: 'Why do Spanish police reject digital IDPs?',
-				answer: 'Spanish police are trained to verify the physical 1949 Geneva Convention booklet — gray paper cover, specific layout, affixed photograph, official AAA or AATA stamp. App-based or PDF "digital IDPs" do not match this format. This is not unique to Spain — most European police forces operate the same way. The Convention specifies a printed document.',
+				question: 'Why do Spanish police reject digital-only IDPs at checkpoints?',
+				answer: 'Spanish police are trained to verify the physical Geneva 1949 Convention booklet — gray paper cover, specific layout, affixed photograph, official stamp from an authorized national-level organization. App-based or PDF documents do not match this format at a Guardia Civil stop. This is not unique to Spain — most European police forces operate the same way. The Convention specifies a printed document.',
 			},
 			{
 				id: 5,
@@ -383,14 +381,14 @@ const en: CountryPairCopy = {
 
 	finalCta: {
 		heading: 'Ready to get your IDP Companion?',
-		text: 'Multilingual PDF (Spanish included), generated in minutes from your US license. For Spain specifically, pair with the official AAA IDP — Guardia Civil requires the physical booklet.',
+		text: 'Multilingual PDF including Spanish, generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones across Europe. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Start application',
 	},
 
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			"IDP Companion is a multilingual translation document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), Spanish Dirección General de Tráfico (DGT), Guardia Civil, Mossos d'Esquadra, Ertzaintza, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. It must be used alongside your original US driver license and, where required by Spanish law, alongside an official IDP issued by AAA or AATA.",
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Spanish Dirección General de Tráfico (DGT), Guardia Civil, Mossos d'Esquadra, Ertzaintza, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. IDP Companion must be used alongside your original US driver's license.",
 		sourcesHeading: 'Sources',
 		sources: [
 			'Dirección General de Tráfico (DGT) Spain — official guidelines for foreign drivers',
@@ -436,11 +434,11 @@ const es: CountryPairCopy = {
 	quickAnswer: {
 		required: true,
 		verdict: 'Sí — necesitas el Permiso Internacional en España',
-		text: 'La normativa española exige a los conductores con licencia de EE.UU. llevar un Permiso Internacional de Conducción junto con su licencia nacional. España ratificó la Convención de Ginebra de 1949 (la que utiliza EE.UU.) pero no la de Viena de 1968, por lo que los IDP emitidos por AAA son exactamente el formato correcto. Sin él: multas desde 200 € hasta más de 500 € en primera infracción (la DGT emite 20.000+ al año, casi todas a turistas extracomunitarios), rechazos en Europcar y Fox Rent-a-Car, y seguro anulado tras cualquier accidente.',
+		text: 'La normativa española exige a los conductores con licencia de EE.UU. llevar un Permiso Internacional de Conducción junto con su licencia nacional. España ratificó la Convención de Ginebra de 1949 (cuyo formato sigue el IDP estadounidense) pero no la de Viena de 1968, por lo que el formato estándar de IDP de EE.UU. es el correcto. Sin él: multas desde 200 € hasta más de 500 € en primera infracción (la DGT emite 20.000+ al año, casi todas a turistas extracomunitarios), rechazos en Europcar y Fox Rent-a-Car, y seguro anulado tras cualquier accidente.',
 	},
 
 	tldr: {
-		heading: 'Licencia de EE.UU. + IDP de AAA + IDP Companion: ¿qué hace cada documento en España?',
+		heading: 'Licencia de EE.UU. sola vs IDP Companion en España',
 		lead: 'España es uno de los países europeos más estrictos en cuanto al Permiso Internacional. La mayoría de viajeros lleva los tres documentos — el coste combinado es menor que la mitad de una sola multa de la Guardia Civil.',
 		colDocument: 'Documento',
 		colWhatItDoes: 'Qué hace en España',
@@ -448,24 +446,18 @@ const es: CountryPairCopy = {
 		rows: [
 			{
 				document: 'Licencia de conducir de EE.UU. (sola)',
-				whatItDoes: 'Insuficiente según la normativa española. El seguro de alquiler queda anulado. Rechazada en Europcar y Fox Rent-a-Car. Multa de 200–500 € si la Guardia Civil la solicita.',
+				whatItDoes: 'Insuficiente según la normativa española (España ratificó Ginebra 1949 — IDP obligatorio para conductores extracomunitarios). El seguro de alquiler queda anulado tras un accidente. Rechazada en Europcar y Fox Rent-a-Car. Multa de 200–500+ € si la Guardia Civil la solicita. Los contratos españoles están en español — sin apoyo de traducción en el mostrador.',
 				cost: 'Ya la tienes',
 				tone: 'neutral',
 			},
 			{
-				document: 'IDP oficial de AAA / AATA',
-				whatItDoes: 'Cuadernillo impreso reconocido bajo la Convención de Ginebra de 1949 — el formato que España acepta. Obligatorio en los controles de la Guardia Civil. Validez de 1 año. Los IDP digitales NO son aceptados por la policía española.',
-				cost: '$20',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (nosotros)',
-				whatItDoes: 'PDF digital multilingüe (español + inglés + 6 idiomas más). Agiliza el mostrador de alquiler en cadenas pequeñas, los registros en hoteles y las verificaciones informales. Se utiliza junto con tu licencia de EE.UU. — no sustituye al cuadernillo oficial en los controles policiales.',
+				document: 'IDP Companion + tu licencia de EE.UU.',
+				whatItDoes: 'Traducción multilingüe de tu licencia al español, francés, alemán, italiano y otros 7 idiomas ampliamente leídos. Generado en 2 minutos online. Agiliza mostradores de alquiler (sobre todo cadenas pequeñas en Andalucía, Galicia, País Vasco), registros en hoteles y verificaciones informales. Se reimprime desde cualquier hotel si pierdes el original.',
 				cost: '$35–55 (1–5 años)',
 				tone: 'companion',
 			},
 		],
-		footnote: 'Para España específicamente, el IDP de AAA es el documento principal de cumplimiento legal — los controles de la Guardia Civil son frecuentes en zonas turísticas. Añade IDP Companion como capa de fluidez diaria (mostradores de alquiler, hoteles, peajes con barrera idiomática).',
+		footnote: 'Lo que llevan la mayoría de viajeros estadounidenses preparados a España: licencia física de EE.UU. + IDP Companion como herramienta de traducción multilingüe + tarjeta del seguro de alquiler + pasaporte. Coste total de preparación bajo $60 — menos de la mitad de una sola multa de 200 € de la Guardia Civil.',
 	},
 
 	whyNotEnough: {
@@ -475,17 +467,17 @@ const es: CountryPairCopy = {
 			{
 				icon: 'ph:scales-bold',
 				title: 'El motivo legal',
-				text: 'La normativa española exige a los conductores extracomunitarios llevar tanto la licencia nacional como un IDP en formato Convención de Ginebra de 1949. España ratificó la de Ginebra 1949 pero no la de Viena 1968 — algo en realidad conveniente para los conductores de EE.UU., porque AAA y AATA solo emiten IDP en formato Ginebra 1949. La coincidencia de formato es correcta; el documento simplemente es obligatorio.',
+				text: 'La normativa española exige a los conductores extracomunitarios llevar tanto la licencia nacional como un IDP en formato Convención de Ginebra de 1949. España ratificó la de Ginebra 1949 pero no la de Viena 1968 — algo en realidad conveniente para los conductores de EE.UU., porque el formato estándar de IDP estadounidense es Ginebra 1949. La coincidencia de formato es correcta; el documento simplemente es obligatorio.',
 			},
 			{
 				icon: 'ph:shield-warning-bold',
 				title: 'El motivo del seguro',
-				text: 'El contrato de alquiler — incluida la franquicia reducida (CDW) que has pagado aparte — exige estar "debidamente habilitado conforme a la legislación aplicable". Para conductores extracomunitarios en España, eso significa licencia de EE.UU. MÁS IDP de AAA. Sin el IDP, la aseguradora puede anular la cobertura por completo tras un accidente. Pasas a ser responsable personal por los daños del coche (2.000–20.000 €), los daños a terceros y los gastos hospitalarios españoles (a menudo de pago anticipado en efectivo para no urgencias).',
+				text: 'El contrato de alquiler — incluida la franquicia reducida (CDW) que has pagado aparte — exige estar "debidamente habilitado conforme a la legislación aplicable". Para conductores extracomunitarios en España, eso significa licencia de EE.UU. MÁS un IDP en formato Ginebra 1949. Sin el IDP, la aseguradora puede anular la cobertura por completo tras un accidente. Pasas a ser responsable personal por los daños del coche (2.000–20.000 €), los daños a terceros y los gastos hospitalarios españoles (a menudo de pago anticipado en efectivo para no urgencias).',
 			},
 			{
 				icon: 'ph:phone-x-bold',
 				title: 'La trampa del IDP digital',
-				text: 'Varios servicios comercializan "IDP digitales instantáneos" como si reemplazaran al cuadernillo oficial de AAA. La policía española los rechaza explícitamente — los agentes de la Guardia Civil están entrenados para verificar el cuadernillo físico de la Convención de Ginebra de 1949 (tapa de papel gris, maquetación específica, foto adherida, sello de AAA). Un PDF en el móvil, aunque parezca legítimo, no pasará este control.',
+				text: 'Varios servicios comercializan "IDP digitales instantáneos" como si reemplazaran al cuadernillo oficial Ginebra 1949. La policía española los rechaza para verificación primaria de IDP — los agentes de la Guardia Civil están entrenados para verificar el cuadernillo físico de la Convención de Ginebra de 1949 emitido por una organización nacional autorizada. Un PDF en el móvil no es sustituto en un control de la Guardia Civil.',
 			},
 		],
 	},
@@ -558,43 +550,43 @@ const es: CountryPairCopy = {
 
 	howTo: {
 		heading: 'Cómo obtener un IDP para España',
-		lead: 'Para ciudadanos de EE.UU., solo AAA y AATA pueden emitir IDP oficiales en formato Ginebra 1949 — y ese formato es exactamente el que España acepta. El proceso es rápido y económico.',
-		schemaName: 'Cómo obtener un Permiso Internacional de Conducción para España como ciudadano estadounidense',
-		duration: 'PT15M',
-		cost: '20 USD',
+		lead: 'España ratificó la Convención de Ginebra de 1949 pero no la de Viena de 1968 — la normativa española exige a los conductores extracomunitarios llevar un IDP en formato Ginebra 1949 junto con su licencia física. La vía de preparación más rápida es online.',
+		schemaName: 'Cómo prepararte para conducir en España como ciudadano estadounidense',
+		duration: 'PT30M',
+		cost: '35 USD',
 		steps: [
 			{
-				title: 'Reúne los documentos',
-				text: 'Tu licencia de conducir estadounidense vigente, dos fotos tamaño pasaporte originales (5×5 cm) y el formulario de solicitud de AAA cumplimentado. No es necesario ser miembro de AAA.',
+				title: 'Genera IDP Companion',
+				text: '$35 por 1 año, $45 por 3 años, $55 por 5 años. 2 minutos online — sube tu licencia de EE.UU., nuestro sistema gestiona OCR + traducción multilingüe incluyendo español, francés, alemán, italiano y otros 7 idiomas. Resultado: PDF listo para imprimir.',
 			},
 			{
-				title: 'Visita una oficina de AAA o solicítalo por correo',
-				text: 'Presencialmente en cualquier sucursal de AAA tarda ~10–15 minutos — sales con el IDP el mismo día. Por correo tarda 5–7 días hábiles. AATA es la organización alternativa con un proceso similar.',
+				title: 'Imprímelo en casa — y lleva una copia de respaldo',
+				text: 'El personal de alquiler español y la Guardia Civil esperan documentos físicos, no pantallas de móvil. Tamaño carta o A4 estándar. Guarda una copia de respaldo en tu mochila aparte del original — los carteristas en Barcelona y Madrid son reales en zonas turísticas.',
 			},
 			{
-				title: 'Paga la tasa',
-				text: '$20 por el IDP, más $2 por las fotos si AAA las hace en la oficina. Coste total: menos de $25.',
+				title: 'Confirma el seguro de alquiler — CDW + protección contra robo',
+				text: 'Los contratos españoles requieren franquicia reducida (CDW). La cobertura por tarjeta de crédito de EE.UU. a menudo NO cubre España o tiene restricciones. Verifícalo por escrito antes de rechazar la cobertura del alquiler. Los hospitales españoles cobran por adelantado para atención no urgente.',
 			},
 			{
-				title: 'Añade IDP Companion (opcional pero recomendado)',
-				text: 'Por $35 adicionales, genera un documento digital multilingüe que agiliza los mostradores de alquiler. El español está incluido por defecto.',
+				title: 'Evita las ZBE en Madrid, Barcelona y otras grandes ciudades',
+				text: 'Madrid Central, la Zona de Bajas Emisiones (ZBE) de Barcelona, Sevilla y Valencia operan zonas restringidas. La mayoría de coches modernos de alquiler las cumplen, pero confirma la categoría Euro del vehículo con el agente. Las cámaras enforzan; las multas llegan meses después a través de la empresa de alquiler.',
 			},
 			{
-				title: 'Lleva ambos documentos en España',
-				text: 'IDP de AAA (cuadernillo físico impreso) + tu licencia original de EE.UU. + (opcional) IDP Companion + pasaporte. Llévalos juntos. El cuadernillo de AAA es lo que verifica la Guardia Civil; el Companion agiliza los mostradores de alquiler.',
+				title: 'Lleva los documentos físicos en una sola carpeta',
+				text: 'Licencia física de EE.UU. + IDP Companion impreso + pasaporte + contrato de alquiler + tarjeta del seguro — todo en una carpeta. Entrégala completa si te paran. Los controles de la Guardia Civil en zonas turísticas (costa andaluza, Mallorca, Canarias) son rápidos cuando los documentos están organizados.',
 			},
 		],
 	},
 
 	honesty: {
-		heading: 'Cómo encaja IDP Companion — sin engaños',
+		heading: 'Cómo funciona IDP Companion para España — respuesta directa',
 		lead: 'En este sector hay mucho marketing engañoso, especialmente para España. Esto es lo que somos y lo que no somos.',
 		is: {
 			title: 'Qué es IDP Companion',
 			items: [
-				'PDF digital multilingüe que traduce los datos de tu licencia de EE.UU. al español, inglés, francés, alemán, italiano y otros idiomas extendidos',
+				'PDF digital multilingüe que traduce los datos de tu licencia de EE.UU. al español, inglés, francés, alemán, italiano y otros 7 idiomas extendidos',
 				'Diseñado para reducir fricción en mostradores de alquiler (especialmente en cadenas pequeñas y mostradores walk-in), registros en hoteles y verificaciones informales',
-				'Generado en minutos tras subir tu licencia y completar nuestra verificación',
+				'Generado en 2 minutos online — funciona sin importar dónde estés ni lo tarde que hayas empezado a planificar',
 				'Disponible por $35 (1 año), $45 (3 años) o $55 (5 años) — pago único, sin suscripción',
 			],
 		},
@@ -602,33 +594,32 @@ const es: CountryPairCopy = {
 			title: 'Qué NO es IDP Companion',
 			items: [
 				'No es un IDP oficial bajo la Convención de Ginebra de 1949',
-				'No está emitido por AAA ni AATA — los únicos organismos autorizados en EE.UU.',
-				'No es aceptado por la Guardia Civil en los controles (exigen el cuadernillo físico de AAA)',
 				'No es válido por sí solo — debe llevarse junto a la licencia de conducir original de EE.UU.',
+				'No sustituye al seguro de alquiler vigente, que los contratos españoles exigen aparte',
 			],
 		},
 		helps: {
-			title: 'Cuándo IDP Companion ayuda a conductores estadounidenses en España',
+			title: 'Cuándo IDP Companion es lo que necesitas',
 			items: [
-				'En mostradores de alquiler donde el agente quiere confirmación visual en español (especialmente cadenas pequeñas y mostradores walk-in en Mallorca, Canarias y zonas rurales)',
+				'En mostradores de alquiler donde el agente quiere confirmación visual en español (sobre todo cadenas pequeñas y mostradores walk-in en Mallorca, Canarias y zonas rurales)',
 				'En registros en hoteles y verificaciones de alquiler de pisos',
 				'En peajes y mostradores de pago donde el personal prefiere documentación en español',
-				'Como respaldo si pierdes, dañas o dejas en un alquiler anterior tu IDP de AAA',
-				'Al tratar con pequeños negocios (alquiler de barcos, tours en bici, alquiler de patinetes) donde un IDP oficial a veces es excesivo',
+				'Al tratar con pequeños negocios (alquiler de barcos, tours en bici, alquiler de patinetes) donde la documentación multilingüe agiliza la verificación',
+				'Reimprimible desde cualquier hotel si pierdes el documento físico durante el viaje',
+				'Para viajeros que apilan varios viajes europeos en 1–5 años — una sola compra de $55 cubre todo el periodo',
 			],
 		},
 		needOfficial: {
-			title: 'Cuándo necesitas el IDP oficial de AAA / AATA',
+			title: 'Qué deberías llevar junto a IDP Companion',
 			items: [
-				'En los controles de la Guardia Civil (este es el caso principal en España)',
-				'En controles de los Mossos d\'Esquadra (policía catalana) y la Ertzaintza (policía vasca)',
-				'Para documentación del seguro tras cualquier accidente, por leve que sea',
-				'Para alquileres en Europcar y Fox Rent-a-Car (aplican el IDP de AAA estrictamente)',
-				'Para estancias largas que se acerquen al umbral de residencia de 6 meses',
+				'Tu licencia física de conducir de EE.UU. — el permiso real para conducir (ningún documento sustituye esto)',
+				'Tarjeta del seguro de alquiler con fechas vigentes — los contratos españoles exigen franquicia reducida (CDW)',
+				'Tu pasaporte de EE.UU. con sello de entrada español válido — físico, no foto digital',
+				'Copia impresa de tu contrato de alquiler — los contratos son vinculantes en español, ten tu acompañante traducido al lado',
 			],
 		},
 		pattern:
-			'El patrón recomendado para viajeros estadounidenses en España: obtén el IDP de AAA por $20 para cumplir con la legalidad, y añade IDP Companion como herramienta de traducción multilingüe para situaciones cotidianas. Combinados cuestan menos de la mitad de una sola multa de la Guardia Civil.',
+			'Lo que llevan la mayoría de viajeros estadounidenses preparados a España: licencia física de EE.UU. + IDP Companion como herramienta de traducción multilingüe + tarjeta del seguro de alquiler + pasaporte. Coste total de preparación bajo $60 — menos de la mitad de una sola multa de 200 € de la Guardia Civil y muy lejos de la exposición de 2.000+ € si el seguro queda anulado tras un accidente.',
 	},
 
 	renting: {
@@ -688,7 +679,7 @@ const es: CountryPairCopy = {
 				text: 'Efecto combinado: seguro anulado, facturas hospitalarias en efectivo, posible responsabilidad penal y retrasos del viaje. La Embajada de EE.UU. en Madrid gestiona estos casos con regularidad. La primera pregunta suele ser: "¿tenías el IDP?".',
 			},
 		],
-		math: 'Un IDP de AAA por $20 más IDP Companion por $35 = $55 en total. Una sola multa de 500 € equivale a unos $540. Los escenarios de seguro anulado empiezan en $2.000 y suben. La asimetría es abrumadora — y los hospitales españoles cobran por adelantado.',
+		math: 'IDP Companion ($35 / 1 año, $55 / 5 años) + tu licencia de EE.UU. + el seguro de alquiler son menos de $60 de preparación. Una sola multa de 500 € de la Guardia Civil equivale a unos $540. Los escenarios de seguro anulado empiezan en $2.000 y suben. La asimetría es abrumadora — y los hospitales españoles cobran por adelantado.',
 	},
 
 	faq: {
@@ -702,17 +693,17 @@ const es: CountryPairCopy = {
 			{
 				id: 2,
 				question: '¿Puedo obtener el IDP una vez en España?',
-				answer: 'No. Los Permisos Internacionales de Conducción deben emitirse en el país de residencia antes del viaje. Para conductores de EE.UU., solo AAA y AATA están autorizados. AAA tramita los IDP en la mayoría de oficinas en 10–15 minutos por $20, o por correo en 5–7 días hábiles. No existe equivalente español emitido a extranjeros.',
+				answer: 'Los Permisos Internacionales de Conducción deben emitirse en el país de residencia antes del viaje — las autoridades españolas no los emiten a turistas extranjeros. IDP Companion puede generarse online desde cualquier lugar en 2 minutos como un documento acompañante de traducción multilingüe. Es un documento de traducción privado (no un IDP oficial bajo la Convención de Ginebra de 1949), diseñado para reducir fricción en mostradores de alquiler españoles, registros en hoteles y verificaciones informales.',
 			},
 			{
 				id: 3,
-				question: '¿Es IDP Companion lo mismo que el Permiso Internacional de AAA?',
-				answer: 'No, y esta distinción es especialmente importante para España. El IDP de AAA es un documento reconocido oficialmente bajo la Convención de Ginebra de 1949, válido por 1 año, y aceptado por la Guardia Civil como prueba de habilitación. IDP Companion es un documento de traducción multilingüe que ayuda en mostradores de alquiler y verificaciones informales, pero la policía española exige expresamente el cuadernillo físico de AAA. Para España, lleva ambos: IDP de AAA para cumplir la ley, IDP Companion para reducir fricción cotidiana.',
+				question: '¿En cuánto tiempo puedo obtener IDP Companion?',
+				answer: 'Dos minutos online desde cualquier dispositivo. Sube una foto de tu licencia de EE.UU., completa el pago ($35 / 1 año, $45 / 3 años, $55 / 5 años), recibe el PDF multilingüe con traducción al español al instante. Imprímelo en casa, en la recepción del hotel o en cualquier locutorio en España si lo generaste tras llegar. Se reimprime cuando quieras durante el periodo de validez.',
 			},
 			{
 				id: 4,
-				question: '¿Por qué la policía española rechaza los IDP digitales?',
-				answer: 'Los agentes están entrenados para verificar el cuadernillo físico de la Convención de Ginebra de 1949 — tapa de papel gris, maquetación específica, foto adherida, sello oficial de AAA o AATA. Las apps o PDF de "IDP digital" no coinciden con ese formato. No es exclusivo de España — la mayoría de policías europeas operan igual. La Convención exige documento impreso.',
+				question: '¿Por qué la policía española rechaza los IDP solo digitales en los controles?',
+				answer: 'Los agentes están entrenados para verificar el cuadernillo físico de la Convención de Ginebra de 1949 — tapa de papel gris, maquetación específica, foto adherida, sello oficial de una organización nacional autorizada. Las apps o PDFs no coinciden con ese formato en un control de la Guardia Civil. No es exclusivo de España — la mayoría de policías europeas operan igual. La Convención exige documento impreso.',
 			},
 			{
 				id: 5,
@@ -763,14 +754,14 @@ const es: CountryPairCopy = {
 
 	finalCta: {
 		heading: '¿Listo para obtener tu IDP Companion?',
-		text: 'PDF multilingüe (con español incluido), generado en minutos a partir de tu licencia de EE.UU. Para España específicamente, combínalo con el IDP oficial de AAA — la Guardia Civil exige el cuadernillo físico.',
+		text: 'PDF multilingüe con español incluido, generado a partir de tu licencia de EE.UU. en 2 minutos. Imprímelo en casa o desde cualquier hotel. Validez 1–5 años — cubre este viaje y los siguientes por Europa. $35 / 1 año · $45 / 3 años · $55 / 5 años. Pago único, sin suscripción.',
 		button: 'Iniciar solicitud',
 	},
 
 	legal: {
 		disclaimerHeading: 'Aviso legal',
 		disclaimer:
-			'IDP Companion es un documento de traducción multilingüe y no está afiliado con la American Automobile Association (AAA), American Automobile Touring Alliance (AATA), Dirección General de Tráfico (DGT) de España, Guardia Civil, Mossos d\'Esquadra, Ertzaintza ni con ningún organismo público. IDP Companion no es un Permiso Internacional de Conducción oficial bajo la Convención de Ginebra de 1949 ni la Convención de Viena de 1968. Debe utilizarse junto con la licencia original de EE.UU. y, cuando la legislación española lo exija, junto con un IDP oficial emitido por AAA o AATA.',
+			"IDP Companion es un documento privado de traducción multilingüe y no está afiliado con la Dirección General de Tráfico (DGT) de España, Guardia Civil, Mossos d'Esquadra, Ertzaintza ni con ningún organismo público. IDP Companion no es un Permiso Internacional de Conducción oficial bajo la Convención de Ginebra de 1949 ni la Convención de Viena de 1968; en Estados Unidos, los emisores autorizados de IDP Ginebra 1949 son AAA y AATA. IDP Companion debe utilizarse junto con la licencia original de EE.UU.",
 		sourcesHeading: 'Fuentes',
 		sources: [
 			'Dirección General de Tráfico (DGT) — directrices oficiales para conductores extranjeros',

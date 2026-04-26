@@ -318,8 +318,31 @@ The 5 live pages ([us-italy](apps/landing/content/country-pairs/us-italy.ts), [u
 - `labels.freshnessPrefix` — locale override for "Last reviewed:" prefix. Default handles en/es/ru.
 
 **Honesty block reframing rules:**
-- Countries that **require** an official IDP (Italy, Greece, Japan, Spain, Thailand): standard framing — `is/isNot/helps/needOfficial.title = "When you need an official AAA/AATA IDP"`
-- Countries that **don't require** an IDP (Mexico): reframe `needOfficial.title = "Documents Mexican law actually cares about (we are not these)"` and list the docs the user actually needs (physical license, TPL insurance, passport, FMM). **Don't pretend an IDP is needed when it isn't** — Google's helpful-content classifier punishes this and AGENTS.md forbids it.
+- `honesty.needOfficial` lists **documents the user must carry alongside IDP Companion** — physical home-country license, passport, motorcycle endorsement (where relevant), local insurance card, FMM/visa stamp. **Never list competitor IDP issuers (AAA, AATA, etc.) here.** Title patterns: "What you should carry alongside IDP Companion" or "Documents the local law cares about".
+- Countries that **don't require** an IDP (Mexico): same `needOfficial` pattern — list local-law documents (physical license, TPL insurance, passport, FMM). **Don't pretend an IDP is needed when it isn't** — Google's helpful-content classifier punishes this and AGENTS.md forbids it.
+
+**Positioning rules — binding (per AGENTS.md):**
+- **Authorized national IDP issuers (AAA, AATA, РОСАВТОКЛУБ, ADAC, RACE, ACI, etc.) appear in the legal disclaimer ONLY** — single brief sentence disclosing we are not them. They do **not** appear in `tldr` comparison rows, `honesty` recommendations, `howTo` step text, `faq` answers as alternatives, `finalCta`, or anywhere in the main conversion flow.
+- **`tldr` table** compares **US License (alone) vs IDP Companion** — two rows, not three. Do not add a "competitor IDP" row. The comparison's job is to show why IDP Companion solves the friction the bare US license creates.
+- **No "When you should also carry an AAA IDP" lists**, no "AAA route works fine if X" footnotes, no "Get AAA →" links anywhere on the page (including FAQ answers and final CTA helper text).
+- **Treat the page as a sales funnel.** The reader landed via a search query. The page's job is to inform honestly about the destination + close the sale on IDP Companion. Confident, fact-based, source-cited (academic + government + travel-industry sources). Never scammy (no fake seals, no fake urgency).
+- **Honest disclosures stay** — `honesty.is`, `honesty.isNot` keep the "we are a private translation document, not a government IDP" disclosure (legal floor + brand differentiation from scammy IDA-style sites). These do **not** redirect users to competitors — they disclose what we are not, period.
+- **Tone for IDP-required destinations**: position IDP Companion as the document the reader uses for friction reduction at rental desks, hotel verifications, and police interactions. Mention destination's legal requirement factually (e.g., "Italian law requires foreign drivers to carry an IDP") without then recommending which specific issuer the reader should buy from. The reader can figure out their own due-diligence path; the page's job is to convert.
+- **Tone for IDP-not-required destinations (Mexico-style)**: position IDP Companion as the friction reducer at rental desks and informal verification stops. The "no IDP legally required" framing already drives our conversion (skip the AAA visit, save the time, get our companion for translation aid).
+
+**`honesty.isNot` template** (use this exact pattern across all pages):
+```
+- Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention
+- Not valid by itself — must be carried alongside your physical home-country driver license
+- Not a replacement for [destination-specific local document if relevant — e.g., motorcycle endorsement for Thailand, Mexican TPL insurance for Mexico]
+```
+**Do NOT add** "Not a substitute for AAA / AATA" or any line that names a competitor issuer in `isNot`. The fact we are not a government IDP is the disclosure; naming the competitor is a recommendation.
+
+**Legal disclaimer template** (single allowed mention of authorized issuers):
+```
+IDP Companion is a private multilingual translation companion document and is not affiliated with [list relevant government agencies]. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. Authorized issuers of US-origin Geneva 1949 IDPs are AAA and AATA. IDP Companion must be used alongside your original [home-country] driver's license.
+```
+That single sentence in the legal block discharges the legal disclosure obligation. No additional AAA mentions are needed anywhere else on the page.
 
 **`quickAnswer.required` semantics:** `true` for IDP-required destinations (the verdict reads "Yes — you need an IDP in X"). `false` for Mexico-style (verdict reads "No — but...followed by the friction reality").
 

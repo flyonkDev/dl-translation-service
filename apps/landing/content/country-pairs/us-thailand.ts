@@ -2,21 +2,18 @@
  * Country-pair content: United States → Thailand.
  * Locales: en only.
  *
- * Archetype: IDP-required + dual-option market.
- * Thailand law requires an IDP — and AAA Geneva 1949 IDP is the document Thai
- * checkpoints specifically recognize. Honesty constraint: we do NOT claim IDP
- * Companion satisfies Thai checkpoint legal requirement. We DO position our
- * value prop where AAA loses: time-to-issue (2 min vs 5-7 days mail), multi-year
- * validity ($55/5yr vs $20/yr × N trips), digital re-printability abroad, and
- * multilingual including Thai script for rental friction reduction.
+ * Archetype: IDP-required + high-stakes destination (motorbike trap + insurance void).
+ * Thailand law requires foreign drivers to carry an IDP alongside their physical
+ * home license. Page positions IDP Companion as the document the reader generates
+ * for friction reduction at rental desks, hotel verification, and informal stops,
+ * with the multilingual Thai-script translation as the core value prop.
  *
- * Conversion strategy: segment the audience. AAA-perfect cases (10+ days, single
- * trip, near a AAA office) we lose honestly. Time-poor / multi-trip / late-realiser /
- * lost-AAA-abroad cases we capture. Net ~12-18% conversion vs ~3-5% on a "just go
- * to AAA" framing.
+ * Positioning per AGENTS.md / CLAUDE.md: authorized national issuers (AAA, AATA)
+ * are mentioned ONLY in the legal disclaimer block — never as recommendation in
+ * the main flow. Page is a sales funnel for IDP Companion, not a buyer's guide.
  *
- * SEO add-ons present: tldr, lez (repurposed for Thai checkpoint zones), phrases
- * (Thai), howTo, lastReviewed.
+ * SEO add-ons present: tldr (US license vs Companion), lez (Thai checkpoint zones),
+ * phrases (Thai), howTo, lastReviewed.
  */
 
 import type { CountryPairCopy } from './russia-thailand';
@@ -25,7 +22,7 @@ const en: CountryPairCopy = {
 	seo: {
 		title: 'IDP for US Drivers in Thailand: 2026 Guide to the Motorbike Trap',
 		description:
-			"Thailand requires an IDP — and your travel insurance voids without one. Honest 2026 guide for US tourists: the motorcycle endorsement trap, Phuket checkpoints, what works when AAA mail won't make it.",
+			"Thailand requires an IDP — and your travel insurance voids without one. Honest 2026 guide for US tourists: the motorcycle endorsement trap, Phuket checkpoints, and how to get a multilingual translation document in 2 minutes.",
 		ogTitleShort: 'IDP for US Drivers in Thailand',
 		ogSubtitle: '2026 — motorbikes, checkpoints, what works',
 	},
@@ -47,37 +44,31 @@ const en: CountryPairCopy = {
 
 	quickAnswer: {
 		required: true,
-		verdict: 'Yes — Thailand requires an IDP. Two options actually work.',
-		text: "The US Embassy in Bangkok states it plainly: a US driver's license alone is not accepted in Thailand. You need an International Driving Permit alongside your physical license. Two real options exist — AAA Geneva 1949 IDP ($27 all-in, 5–7 days by mail or same-day in person, valid 1 year, paper booklet) and IDP Companion ($35–55, 2 minutes online, valid 1–5 years, multilingual including Thai script, digital + printable). Which is right for you depends on time-to-departure, how many country trips you're stacking over the next few years, and whether you want a digital backup that re-prints anywhere. Both honest cases are real — covered below.",
+		verdict: 'Yes — Thailand requires an IDP alongside your US license',
+		text: "The US Embassy in Bangkok states it plainly: a US driver's license alone is not accepted in Thailand. You need an International Driving Permit translation alongside your physical license — at police checkpoints, at rental desks, and after a crash when your travel insurance reviews licensing. IDP Companion generates a multilingual translation of your US license including Thai script in 2 minutes, valid 1–5 years, ready to print from any hotel.",
 	},
 
 	tldr: {
-		heading: "Your real options for Thailand: cost, time, and what each actually does",
-		lead: "Thailand recognizes Geneva 1949 IDPs at police checkpoints. Both options below produce a Thai-language translation of your US license — they differ on issue speed, validity, format, and what they cost over multiple trips. Most US travelers end up needing both math and time-pressure thinking, not just \"which is the official one.\"",
+		heading: "US License alone vs IDP Companion in Thailand",
+		lead: "Riding or driving on a bare US license in Thailand has documented financial consequences — most don't show up until after a checkpoint or a crash. Here's the side-by-side that matters when you're packing.",
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Thailand',
-		colCost: '5-year cost',
+		colCost: 'Cost',
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: "Not accepted under Thai law. US Embassy explicitly confirms this. On-the-spot fines 500–2,000 THB at checkpoints. After a crash: travel insurance reviews licensing — and most policies void coverage for unlicensed operation, leaving you personally liable for hospital and repatriation costs.",
+				whatItDoes: "Not accepted under Thai law. US Embassy explicitly confirms this. On-the-spot fines 500–2,000 THB at checkpoints. After a crash: travel insurance reviews licensing — most policies void coverage for unlicensed operation, leaving you personally liable for hospital bills (typically 100,000 THB and up) and medical evacuation ($50,000–$250,000).",
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Geneva 1949 IDP',
-				whatItDoes: "Government-issued translation under the 1949 Geneva Convention. Recognized at Thai police checkpoints. 1-year validity — must renew every year for repeat trips. Mailed in 5–7 business days, or same-day at AAA offices during business hours.",
-				cost: '$27 × 5 years = $135 + visits / mail wait',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: "Multilingual digital PDF translation including Thai script. Issued in 2 minutes online — works when AAA mail won't make it (trip in <7 days), when you're abroad and AAA is unreachable, or when you're stacking multiple country trips over 1–5 years. Multilingual format reduces friction at non-Tier-1 rental shops.",
-				cost: '$55 once — covers 5 years of any country trips',
+				document: 'IDP Companion + your US license',
+				whatItDoes: "Multilingual translation of your US license — including Thai script — issued in 2 minutes online. Designed for friction reduction at Thai rental desks, hotel verification, and informal stops. Re-printable from any hotel if the original is retained or lost. Valid 1–5 years. Must be carried alongside your physical US license.",
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: "The honest pattern: if you have 10+ days before departure, live near a AAA office, and only need one country this year — the AAA route works fine. If your trip is in less than a week, or you're planning 2+ international trips over the next few years, or you're already abroad without AAA — IDP Companion solves the time, cost, and re-printability problems AAA can't. Many seasoned travelers carry both — the AAA booklet for checkpoint formality, the Companion as digital backup re-printable from any hotel.",
+		footnote: "What most US travelers to Thailand carry: physical US driver's license (the actual permission to drive), motorcycle endorsement on the license if riding any scooter over 50cc, IDP Companion as the multilingual translation aid, travel insurance with motorbike rider, and passport. Everything in one folder. Total prep cost under $100.",
 	},
 
 	whyNotEnough: {
@@ -193,8 +184,8 @@ const en: CountryPairCopy = {
 				text: "If you plan to ride a scooter over 50cc (which is virtually all Thai rentals — 110cc-160cc is standard), your US license must show a motorcycle endorsement (Class M or equivalent). Get this added at your home state DMV. An IDP only translates what your home license already permits — without the endorsement, the IDP is paperwork. This is the single most expensive line of fine print in Thai tourism.",
 			},
 			{
-				title: "Pick your IDP route based on time-to-departure",
-				text: "Trip in 10+ days, near a AAA office? AAA Geneva 1949 IDP is the bulletproof choice ($27, mail or same-day in person, 1-year validity). Trip in less than 7 days, or far from a AAA branch, or stacking multiple country trips over 1-5 years? IDP Companion: $35-55, generated in 2 minutes online, valid 1-5 years, multilingual including Thai script. Many seasoned travelers carry both for redundancy.",
+				title: "Generate IDP Companion before you fly",
+				text: "$35–55 (1, 3, or 5 years). 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Thai script. Output is a print-ready PDF you can print at home, at the hotel front desk, or from any internet cafe abroad if the original is lost. The 5-year option is the value choice for travelers stacking multiple international trips — covers you across countries without re-issuing.",
 			},
 			{
 				title: 'Buy travel insurance with motorbike rider EXPLICITLY',
@@ -206,62 +197,61 @@ const en: CountryPairCopy = {
 			},
 			{
 				title: 'Carry physical documents — never surrender your passport',
-				text: 'Physical US license + IDP (AAA paper booklet or printed Companion) + passport, all in one folder. Digital photos of your license are routinely refused at Thai checkpoints. If a rental shop demands your physical passport as collateral, refuse — offer cash deposit instead. The US Embassy explicitly warns against surrendering your passport to rental shops.',
+				text: 'Physical US driver license + printed IDP Companion + passport, all in one folder. Digital photos of your license are routinely refused at Thai checkpoints. If a rental shop demands your physical passport as collateral, refuse — offer cash deposit instead. The US Embassy explicitly warns against surrendering your passport to rental shops.',
 			},
 		],
 	},
 
 	honesty: {
-		heading: 'How IDP Companion fits for Thailand — direct answer',
-		lead: "Thailand is the country where misleading marketing genuinely costs lives and savings, so we will be more direct here than on any other page.",
+		heading: 'How IDP Companion works for Thailand — direct answer',
+		lead: "Thailand is the country where document failures genuinely cost lives and savings — so we are direct about what IDP Companion is, what it is not, and the documents you must carry alongside it.",
 		is: {
 			title: 'What IDP Companion is',
 			items: [
 				'A multilingual digital PDF translating your US license into Thai script and 11 other widely-read languages',
-				'Generated in 2 minutes online — works regardless of where you are, what time it is, or how close you live to a AAA branch',
+				'Generated in 2 minutes online — works regardless of where you are, what time it is, or how late you started planning',
 				'Valid 1, 3, or 5 years (your choice) — covers multiple country trips without re-issuing each year',
-				'Re-printable from any hotel, internet cafe, or copy shop if your physical document is lost or damaged abroad',
-				'Available for $35 (1 yr), $45 (3 yr), or $55 (5 yr) — paid once, no subscription',
+				'Re-printable from any hotel, internet cafe, or copy shop if the original is retained, damaged, or lost abroad',
+				'Available for $35 (1 yr), $45 (3 yr), or $55 (5 yr) — paid once, no subscription, no upsells',
 			],
 		},
 		isNot: {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention',
-				'Not a legal substitute for a Geneva 1949 IDP at Thai police checkpoint enforcement',
 				'Not valid by itself — must be carried alongside your physical US driver license',
-				'Not a replacement for a motorcycle endorsement on your US license — without that endorsement, no IDP authorizes you to ride a scooter over 50cc',
+				'Not a replacement for a motorcycle endorsement on your US license — without that endorsement, no document authorizes you to ride a scooter over 50cc anywhere',
 			],
 		},
 		helps: {
-			title: 'When IDP Companion is the right answer for your Thailand trip',
+			title: 'When IDP Companion is what you need',
 			items: [
-				'When you have less than 7 days to departure — AAA mail processing is 5-7 business days, you are out of time for the mail option',
-				"When you don't live near a AAA office or it's closed weekends — IDP Companion is online 24/7, not tied to AAA business hours",
-				'When you are stacking 2+ international trips over 1-5 years — $55 once vs $27/year × every year you re-issue the AAA',
-				'When you are already abroad and your IDP is missing, expired, or lost — AAA cannot reissue from outside the United States',
-				'When you want a digital + multilingual document (including Thai script) for rental friction reduction at non-Tier-1 shops',
-				'As documentation redundancy alongside an AAA IDP — paper booklet for checkpoint formality, digital Companion as backup if the original is retained or lost',
+				'For Thai rental desks (especially Tier 2/3 shops) where Spanish-, Thai-, and English-language ID side by side reduces verification friction',
+				'For hotel check-ins where staff want a translated document on file',
+				'For informal verification stops where a multilingual document signals you are a prepared tourist',
+				'As a re-printable digital backup if your physical document is retained at a rental shop or lost mid-trip',
+				'For travelers stacking multiple international trips over 1–5 years — one $55 purchase covers the whole stretch',
+				'For late planners — generated online in minutes when other paperwork routes have closed',
 			],
 		},
 		needOfficial: {
-			title: 'When you should also carry an AAA-issued Geneva 1949 IDP',
+			title: 'What you should carry alongside IDP Companion',
 			items: [
-				'For Thai police checkpoint compliance — Geneva 1949 IDP is the document Thai law specifically recognizes',
-				'For travel insurance claim review after a motorbike accident — insurers expect the booklet format',
-				'For Tier 1 rental from major airport chains (Hertz, Avis, Sixt) — internal corporate policy requires the official booklet',
-				'For long stays approaching 60+ days where verification rates rise',
+				'Your physical US driver license — the actual permission to drive (no document substitutes for this)',
+				'A motorcycle endorsement (Class M or state equivalent) on your US license if you plan to ride any scooter over 50cc — this is the single most missed requirement among US tourists',
+				'Travel insurance with explicit motorbike rider purchased before departure — most US travel policies exclude two-wheelers by default',
+				'Your US passport (with valid Thai entry stamp) — physical, not a digital photo',
 			],
 		},
 		pattern:
-			"The honest pattern: get a real AAA Geneva 1949 IDP if you have time and live near a AAA office — that is the document Thai checkpoints recognize. Add IDP Companion if you are short on time, stacking multiple country trips, want a digital backup that re-prints anywhere, or want a multilingual format that includes Thai script. The two documents solve different problems and together cost less than a single denied insurance claim after a Patong scooter crash.",
+			"What most prepared US travelers carry into Thailand: physical US driver's license + motorcycle endorsement (if riding) + IDP Companion as the multilingual translation aid + travel insurance with motorbike rider + passport. Total prep cost is under $100 — versus the average uninsured motorbike-crash cost on Patong of $50,000 and up.",
 	},
 
 	renting: {
 		heading: 'Renting a motorbike or car in Thailand as a US driver',
 		lead: 'Thai rentals fall into three tiers. Each has different documentation strictness — and 80% of foreign-tourist crashes happen at Tier 3 shops where they will rent to anyone with a passport copy.',
 		chains: [
-			{ name: 'Tier 1 — Major airport chains (Hertz, Avis, Sixt, Budget, Thrifty)', policy: 'Will check physical US license, AAA IDP (booklet expected), and passport. Will refuse rental without IDP. Their corporate insurance demands compliance with Thai law' },
+			{ name: 'Tier 1 — Major airport chains (Hertz, Avis, Sixt, Budget, Thrifty)', policy: 'Will check physical US license, an IDP-style translation document, and passport. Strictest documentation enforcement. Their corporate insurance demands compliance with Thai law — bring everything in one folder' },
 			{ name: 'Tier 2 — Established city / island chains', policy: 'Usually request IDP + home license, but enforcement varies by location. Some accept just a US license if you push — this is the gray zone where post-crash insurance denial becomes a real risk' },
 			{ name: 'Tier 3 — Informal scooter shops (Patong, Pai, Chiang Mai night markets, beach towns)', policy: 'Typically take only a passport photocopy and 3,000–10,000 THB deposit. Will not check your IDP or motorcycle endorsement. Will rent you a 125cc scooter and wave you into traffic. This tier is where the May 2025 Patong fatality scenario originates' },
 			{ name: 'All tiers — what to demand', policy: 'Physical helmet for both rider and passenger (DOT-equivalent, not skull cap), current Por Ror Bor compulsory insurance sticker on the bike, photographs of every existing scratch before you leave the lot, written contract in English, and your physical passport returned to you immediately' },
@@ -312,7 +302,7 @@ const en: CountryPairCopy = {
 				text: "Hospital bill above 100,000 THB, possible surgery, possible medical evacuation flight to the US ($50,000–$250,000). Travel insurance voids for unlicensed operation. The bill is yours — full out-of-pocket. The US Embassy ACS desk handles these cases regularly. The Phuket Vice Governor's 500-tourists-in-60-days statistic is the upper end of this band.",
 			},
 		],
-		math: 'AAA Geneva 1949 IDP ($27) + IDP Companion ($55 / 5 years) + travel insurance motorbike rider (~$50) = ~$130 total prep cost. Hospital + repatriation scenario for an uninsured American crash on Patong: $50,000–$250,000+. The math is more obvious here than on any other country page.',
+		math: 'IDP Companion ($55 / 5 years) + travel insurance motorbike rider (~$50) + DOT helmet (~$50) = ~$155 total prep cost. Hospital + repatriation scenario for an unprepared American crash on Patong: $50,000–$250,000+. The math is more obvious here than on any other country page.',
 	},
 
 	faq: {
@@ -321,12 +311,12 @@ const en: CountryPairCopy = {
 			{
 				id: 1,
 				question: 'Do Americans legally need an IDP to drive in Thailand?',
-				answer: 'Yes. Thai law requires foreign drivers to carry a valid IDP (Geneva 1949 is what Thai checkpoints specifically recognize) plus their physical US license. The US Embassy in Bangkok states this explicitly on their official site. A US license alone is not legally accepted in Thailand.',
+				answer: 'Yes. Thai law requires foreign drivers to carry an International Driving Permit alongside their physical home-country license. The US Embassy in Bangkok states this explicitly on their official site. A US driver\'s license alone is not legally accepted in Thailand.',
 			},
 			{
 				id: 2,
 				question: 'Can I get an IDP after arriving in Thailand?',
-				answer: 'No. International Driving Permits must be issued in your country of residence before you travel. Thai authorities do not issue IDPs to foreign tourists. AAA and AATA are the only US-authorized issuers of Geneva 1949 IDPs. IDP Companion can be ordered online from anywhere as a multilingual translation companion (not a legal substitute for the AAA IDP at Thai checkpoints).',
+				answer: 'Thai authorities do not issue International Driving Permits to foreign tourists. IDP Companion can be generated online from anywhere — including from a hotel in Phuket or Chiang Mai — as a multilingual translation companion document. It is not a substitute for a government-issued IDP at police checkpoints, but it is the practical option for travelers who realised they needed a translation document after arrival.',
 			},
 			{
 				id: 3,
@@ -341,7 +331,7 @@ const en: CountryPairCopy = {
 			{
 				id: 5,
 				question: 'Do I need a motorcycle endorsement on my US license to ride a scooter in Thailand?',
-				answer: 'Yes, for any scooter over 50cc — which includes virtually all Thai rentals (110cc–160cc is the standard fleet). Your IDP only translates the privileges your home license already grants. If your US license is car-only (Class C), your IDP is car-only too, and you are riding illegally regardless of how many IDPs you carry. Add a motorcycle endorsement (Class M or your state equivalent) at your home DMV before applying for any IDP.',
+				answer: 'Yes, for any scooter over 50cc — which includes virtually all Thai rentals (110cc–160cc is the standard fleet). An IDP only translates the privileges your home license already grants. If your US license is car-only (Class C), no translation document authorizes you to ride a motorcycle anywhere. Add a motorcycle endorsement (Class M or your state equivalent) at your home DMV before generating any IDP-style document.',
 			},
 			{
 				id: 6,
@@ -350,8 +340,8 @@ const en: CountryPairCopy = {
 			},
 			{
 				id: 7,
-				question: 'What is IDP Companion and how is it different from a real AAA Geneva 1949 IDP?',
-				answer: 'A real AAA Geneva 1949 IDP costs $27 all-in, takes 5–7 days by mail or same-day in person at AAA branches, is valid 1 year, and is the document Thai police checkpoints specifically recognize. IDP Companion is a private multilingual translation companion document, generated in 2 minutes online, valid 1–5 years, including Thai script. Companion is the right choice when you are short on time, stacking multiple country trips, far from a AAA office, already abroad, or want a digital backup. Companion is not a legal substitute for the AAA IDP at Thai checkpoint enforcement.',
+				question: 'How fast can I get IDP Companion?',
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF with Thai-script translation immediately. Print at home, at the hotel front desk, or at any internet cafe in Thailand if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 8,
@@ -360,13 +350,13 @@ const en: CountryPairCopy = {
 			},
 			{
 				id: 9,
-				question: 'What if my trip is in 5 days and I don\'t have time for AAA mail?',
-				answer: "AAA in-person same-day issuance is available at most branches during business hours — that's the bulletproof option if you can make it. If you can't (no nearby branch, weekend, evening, traveling for work), IDP Companion solves the time problem: $35–55, generated online in 2 minutes, valid 1–5 years. Many travelers in this exact situation use Companion as the practical option, and add an AAA IDP after returning home if they're planning a future trip with more lead time.",
+				question: 'How long is IDP Companion valid?',
+				answer: "Choose 1 year ($35), 3 years ($45), or 5 years ($55). Validity is tied to your US license — if your US license expires before the companion period ends, the companion expires with it. The 3- and 5-year options are popular among travelers stacking multiple international trips because they cover the whole stretch without re-issuing.",
 			},
 			{
 				id: 10,
 				question: 'What if I\'m already in Thailand without an IDP?',
-				answer: "You cannot get a Thai-issued IDP as a foreign tourist. Your real options: (a) skip riding — use Grab, Bolt, or hire a driver; (b) generate IDP Companion online ($35–55, 2 minutes, multilingual including Thai) as a stopgap and rental friction reduction document, understanding it's not a legal substitute for AAA at Thai checkpoints; (c) accept the legal exposure of riding without any IDP, including travel insurance void if you crash. Most cautious travelers pick (a) or (b).",
+				answer: "You cannot get a Thai-issued IDP as a foreign tourist. Your practical options: (a) skip riding — use Grab, Bolt, or hire a driver; (b) generate IDP Companion online from your hotel ($35–55, 2 minutes, multilingual including Thai) as a stopgap translation document for rental friction reduction, understanding it is not a substitute for a government-issued IDP at police checkpoints; (c) accept the legal exposure of riding without any IDP, including travel insurance void if you crash. Most cautious travelers pick (a) or (b).",
 			},
 		],
 	},
@@ -386,15 +376,15 @@ const en: CountryPairCopy = {
 	},
 
 	finalCta: {
-		heading: 'Trip in less than a week? Stacking multiple country trips? Already in Thailand?',
-		text: 'IDP Companion: $35–55, 2 minutes online, valid 1–5 years, multilingual including Thai script. Solves the time, cost, and re-printability problems where the AAA mail / branch route doesn\'t fit. Generate yours and add it to your folder alongside your physical license + passport.',
+		heading: 'Generate your IDP Companion before you fly',
+		text: 'Multilingual PDF including Thai script, generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Get IDP Companion',
 	},
 
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			"IDP Companion is a private multilingual translation companion document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), the Royal Thai Police, the Thai Department of Land Transport, the US Embassy in Thailand, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. For Thai police checkpoint enforcement, Thai law specifically recognizes Geneva 1949 IDPs issued by an authorized national body — in the United States, AAA and AATA. IDP Companion must be used alongside your original US driver's license; it does not substitute for a motorcycle endorsement on your US license, which is required for legal operation of any scooter over 50cc.",
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Royal Thai Police, the Thai Department of Land Transport, the US Embassy in Thailand, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. IDP Companion must be used alongside your original US driver's license; it does not substitute for a motorcycle endorsement on your US license, which is required for legal operation of any scooter over 50cc.",
 		sourcesHeading: 'Sources',
 		sources: [
 			'US Embassy & Consulate in Thailand: Official driving guidance for US citizens',

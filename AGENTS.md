@@ -7,6 +7,17 @@ This is not an official government International Driving Permit (IDP).
 The product generates a companion IDP-style document to help drivers present their license abroad.
 
 
+Positioning rules (binding for all marketing / SEO content)
+
+1. Never claim IDP Companion is a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention. Legal floor — non-negotiable.
+2. Authorized national IDP issuers (AAA, AATA, РОСАВТОКЛУБ, ADAC, RACE, ACI, etc.) may be referenced ONLY in the legal disclaimer block, as a single brief mention disclosing what we are not. Never as recommendation, comparison row, "you should also get" list, or CTA target.
+3. SEO landing pages are sales funnels. Position IDP Companion as the document the reader is here to buy. Confident, fact-based, source-cited. Never scammy (no fake government seals, no false claims, no "expedited" upsells).
+4. Honest disclosures stay (legal floor + Google E-E-A-T). Disclosures live in the legal/disclaimer block, not the main conversion flow.
+5. Comparison tables (tldr) compare US license alone vs IDP Companion. Do not include competitor IDP issuers as a third row.
+6. honesty.needOfficial section lists DOCUMENTS the user needs (physical license, passport, insurance, motorcycle endorsement) — NOT competitor products.
+7. Final CTA is ours only. No links or recommendations to competitor issuers anywhere outside the legal disclaimer.
+
+
 
 Product Overview
 

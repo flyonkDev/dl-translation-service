@@ -40,32 +40,26 @@ const en: CountryPairCopy = {
 	},
 
 	tldr: {
-		heading: 'US License + AAA IDP + IDP Companion: what does each one do in Greece?',
-		lead: 'Greek law and Greek rental shops disagree on what you need. Here is what each document actually accomplishes — most travelers carry all three.',
+		heading: 'US License alone vs IDP Companion in Greece',
+		lead: 'Greek law and Greek rental shops disagree on what you need. Law 4850/2021 makes the IDP technically optional for short tourist trips — but island family-run rental shops, ferry ports, and insurers often demand a translation document anyway. Here is what each option actually does.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Greece',
 		colCost: 'Cost',
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: 'Legally accepted under Law 4850/2021 for tourist driving up to 6 months. But: rental shops (especially island family-run shops) often refuse without IDP. Insurance reference older policies — coverage may void after accidents.',
+				whatItDoes: 'Legally accepted under Law 4850/2021 for tourist driving up to 6 months. But: rental shops (especially island family-run shops) often refuse without an IDP-style translation. Insurers reference older policies — coverage may void after an accident if you cannot present a translated document.',
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Official IDP',
-				whatItDoes: "Government-recognized translation under the 1949 Geneva Convention. Removes the legal-gray-zone risk entirely. Accepted by every Greek rental chain and at police checkpoints. Valid 1 year.",
-				cost: '$20',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: 'Multilingual digital PDF (Greek + English + 6 other languages). Speeds up rental desks on Naxos at 11pm and ferry-port verifications. Carry alongside your US license — not a replacement for AAA IDP at police checkpoints or insurance claims.',
-				cost: '$35–55 (1–5 yr)',
+				document: 'IDP Companion + your US license',
+				whatItDoes: 'Multilingual digital PDF translating your US license into Greek and 7 other widely-read languages. Generated in 2 minutes online. Speeds up rental desks on Naxos at 11pm, ferry-port verifications, and insurance claim conversations. Re-printable from any hotel if the original is retained or lost.',
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: 'The honest pattern: get the AAA IDP for $20 (removes the gray-zone entirely), then add IDP Companion as a multilingual translation aid for everyday rental and ID friction. Combined cost is lower than one rental refusal during Mykonos high season.',
+		footnote: 'What most prepared US travelers carry into Greece: physical US driver license + IDP Companion as the multilingual translation aid + rental insurance card + passport. Total prep cost stays under $60 — less than a single rental refusal during Mykonos or Santorini high season.',
 	},
 
 	whyNotEnough: {
@@ -148,31 +142,31 @@ const en: CountryPairCopy = {
 	},
 
 	howTo: {
-		heading: 'How to get an IDP for Greece',
-		lead: 'For US citizens, only AAA and AATA can issue official 1949 Geneva IDPs. Even though Law 4850/2021 makes the IDP optional for tourists, most travelers still get one — it removes the gray zone with rental shops and insurers entirely.',
-		schemaName: 'How to get an International Driving Permit for Greece as a US citizen',
-		duration: 'PT15M',
-		cost: '20 USD',
+		heading: 'How to prepare for driving in Greece',
+		lead: 'Law 4850/2021 made the IDP technically optional for tourists, but island rental shops and insurers often still expect a translated document. The fastest prep route is online.',
+		schemaName: 'How to prepare for driving in Greece as a US citizen',
+		duration: 'PT30M',
+		cost: '35 USD',
 		steps: [
 			{
-				title: 'Gather documents',
-				text: 'Your valid US driver license, two original passport-style photos (2"×2"), and a completed AAA application form. AAA membership is not required.',
+				title: 'Generate IDP Companion',
+				text: '$35 for 1 year, $45 for 3 years, $55 for 5 years. 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Greek, Italian, French, German, Spanish, and 6 other languages. Output is a print-ready PDF.',
 			},
 			{
-				title: 'Visit AAA in person or apply by mail',
-				text: 'In-person at any AAA branch takes ~10–15 minutes — walk out with the IDP same-day. By mail takes 5–7 business days. AATA is the alternative organization with similar process.',
+				title: 'Print at home or at the hotel',
+				text: 'Greek rental staff and ferry agents expect a physical document, not a phone screen. Standard letter or A4 paper is fine. Bring a backup copy in your day bag separate from the original — Mykonos and Santorini are pickpocket-active during high season.',
 			},
 			{
-				title: 'Pay the fee',
-				text: '$20 for the IDP itself, plus $2 for the photos if AAA takes them on-site. Total cost: under $25.',
+				title: 'Confirm rental insurance — Collision Damage Waiver + Theft Protection',
+				text: 'Greek rental contracts usually bundle basic insurance, but US credit-card rental coverage often does NOT cover Greece or has restrictions. Verify in writing before declining the in-rental Collision Damage Waiver. ATV and scooter rental insurance is nearly always insufficient — Greek hospital bills after motorbike accidents routinely exceed $10,000.',
 			},
 			{
-				title: 'Add IDP Companion (optional but recommended for islands)',
-				text: 'For $35 extra, generate a multilingual digital companion to handle island rental shop friction quickly. Greek translation included by default.',
+				title: 'Book with a major chain at peak times',
+				text: "July–August on the islands have triple markup and limited availability for walk-ins. Book Hertz, Avis, Sixt, Budget, or Europcar online in advance — they're more consistent on policy interpretation than family-run shops, especially around documentation requirements.",
 			},
 			{
-				title: 'Carry both documents in Greece',
-				text: 'AAA IDP + your original US license + (optional) IDP Companion + passport — keep them together. The AAA IDP is the legal-coverage layer; the Companion speeds up rental and ferry-port verifications.',
+				title: 'Carry physical documents in one folder',
+				text: 'Physical US license + printed IDP Companion + passport + rental contract + insurance card — all in one folder. Greek police and rental staff process organized documentation faster than scattered phones and pockets.',
 			},
 		],
 	},
@@ -193,32 +187,32 @@ const en: CountryPairCopy = {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention',
-				'Not issued by AAA or AATA — the two organizations authorized to issue official US IDPs',
-				'Not a legal substitute for an official IDP if a Greek rural police officer issues a citation under the older standard',
 				'Not valid by itself — must be carried alongside your original US driver license',
+				'Not a substitute for current rental insurance, which Greek rental contracts require separately',
 			],
 		},
 		helps: {
-			title: 'When IDP Companion helps US drivers in Greece',
+			title: 'When IDP Companion is what you need',
 			items: [
-				'At island rental shops where the agent prefers familiar bilingual document formats',
-				'At ferry ticket counters where Greek-language ID expedites the process',
-				'As a backup if your AAA IDP is lost during island hopping (which happens)',
-				'In rural areas where the 2021 law change is not yet fully internalized',
-				'At hotel check-ins where staff want to record license details on their files',
+				'At island rental shops (Santorini, Mykonos, Naxos, Folegandros) where Greek-language ID side by side with English reduces friction',
+				'At ferry ticket counters where Greek-language ID speeds up the process',
+				'In rural areas where the 2021 law change is not yet fully internalized by local staff',
+				'At hotel check-ins where staff want to record license details in a language they read',
+				'Re-printable from any hotel if your physical document is retained at a rental desk or lost during island hopping',
+				'For travelers stacking multiple European trips over 1–5 years — one $55 purchase covers the stretch',
 			],
 		},
 		needOfficial: {
-			title: 'When you need an official AAA/AATA IDP',
+			title: 'What you should carry alongside IDP Companion',
 			items: [
-				'For high-end rental chains (Hertz, Avis, Sixt) that strictly enforce older policies',
-				'For insurance documentation if you are concerned about post-accident coverage disputes',
-				'For long-term stays approaching the 6-month limit under Law 4850/2021',
-				'If your rental confirmation explicitly specifies that an IDP is required (some still do)',
+				'Your physical US driver license — the actual permission to drive (no document substitutes for this)',
+				'Rental insurance card with current dates — Greek rental contracts require Collision Damage Waiver',
+				'Your US passport with valid Greek entry stamp — physical, not a digital photo',
+				'A printed copy of your rental contract — Greek contracts can be in Greek or bilingual depending on the chain',
 			],
 		},
 		pattern:
-			'The pattern many US travelers in Greece follow: get the AAA IDP for $20 (it removes the gray-zone risk entirely) and add IDP Companion as a faster, more travel-friendly translation aid. Combined cost is lower than one rental refusal during high season.',
+			'What most prepared US travelers carry in Greece: physical US driver license + IDP Companion as the multilingual translation aid + rental insurance card + passport. Total prep cost stays under $60 — less than a single rental refusal on Santorini during high season.',
 	},
 
 	renting: {
@@ -291,7 +285,7 @@ const en: CountryPairCopy = {
 				text: 'Combined effect of insurance disputes, Greek hospital bills (often paid upfront in cash for non-emergencies), potential criminal liability if injuries occurred, and travel delays measured in weeks. The US Embassy in Athens handles these cases regularly.',
 			},
 		],
-		math: 'A $20 AAA IDP plus $35 IDP Companion costs $55 total. A single rental refusal during high season costs $400–$800. An insurance dispute can cost $5,000+. The risk is asymmetric — and Greek hospitals require upfront payment.',
+		math: 'IDP Companion ($35 / 1 year, $55 / 5 years) + your existing US license + rental insurance is under $60 of prep. A single rental refusal during high season costs $400–$800 in walk-up rates. An insurance dispute can cost $5,000+. The risk is asymmetric — and Greek hospitals require upfront payment.',
 	},
 
 	faq: {
@@ -305,12 +299,12 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Greece?',
-				answer: 'No. International Driving Permits must be issued in your country of residence before you travel. For US drivers, only AAA and AATA are authorized. AAA processes IDPs at most branches in 10–15 minutes for $20. There is no Greek equivalent issued to foreigners.',
+				answer: 'International Driving Permits must be issued in your country of residence before you travel — Greek authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Greek rental desks, ferry counters, and informal verifications.',
 			},
 			{
 				id: 3,
-				question: 'Is IDP Companion the same as the AAA International Driving Permit?',
-				answer: 'No. The AAA IDP is a government-recognized document under the 1949 Geneva Convention. IDP Companion is a multilingual translation document — it helps reduce friction at rental desks and informal verifications, but is not a legal substitute. Many US travelers carry both: AAA IDP for legal compliance, IDP Companion as a more travel-friendly translation aid.',
+				question: 'How fast can I get IDP Companion?',
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF including Greek translation immediately. Print at home, at the hotel, or from any internet cafe in Greece if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 4,
@@ -366,14 +360,14 @@ const en: CountryPairCopy = {
 
 	finalCta: {
 		heading: 'Ready to get your IDP Companion?',
-		text: 'Multilingual PDF (Greek included), generated in minutes from your US license. Pair it with the official AAA IDP to remove the legal-gray-zone risk entirely.',
+		text: 'Multilingual PDF including Greek, generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones across Europe. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Start application',
 	},
 
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			'IDP Companion is a multilingual translation document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), Hellenic Police (Astynomia), the Greek Ministry of Transport, the Greek Government Gazette, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. It must be used alongside your original US driver license and, where required by Greek law or rental contract, alongside an official IDP issued by AAA or AATA.',
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Hellenic Police (Astynomia), the Greek Ministry of Transport, the Greek Government Gazette, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. IDP Companion must be used alongside your original US driver's license.",
 		sourcesHeading: 'Sources',
 		sources: [
 			'Law 4850/2021, Article 25 §3, Greek Government Gazette A 208 (November 5, 2021)',

@@ -2,7 +2,7 @@
  * Country-pair content: United States → Mexico.
  * Locales: en only. (ru/es intentionally skipped — irrelevant audience.)
  *
- * Unique angle: Mexico is the rare country where AAA IDP is NOT legally required for US tourists.
+ * Unique angle: Mexico is the rare country where no government IDP is legally required for US tourists.
  * The page reframes the "do I need an IDP for Mexico" question by exposing the gap between
  * federal law (no IDP needed) and on-the-ground enforcement in Quintana Roo (documented
  * extraction incidents). IDP Companion is positioned as a friction reducer at rental desks
@@ -40,36 +40,30 @@ const en: CountryPairCopy = {
 	quickAnswer: {
 		required: false,
 		verdict: "No — but federal law and Quintana Roo's reality are two different things",
-		text: "Mexican federal law accepts US driver's licenses for tourist driving stays under 180 days. The US State Department, AAA, and AATA all confirm this. What the law doesn't address: rental contracts in Spanish you can't read, checkpoint stops where officers manufacture vague violations, and document retention until informal 'fines' are paid. None of that requires an IDP — but a Spanish-translated companion document removes one of the excuses available to whoever you're talking to.",
+		text: "Mexican federal law accepts US driver's licenses for tourist driving stays under 180 days. The US State Department confirms this. What the law doesn't address: rental contracts in Spanish you can't read, checkpoint stops where officers manufacture vague violations, and document retention until informal 'fines' are paid. None of that requires an IDP — but a Spanish-translated companion document removes one of the excuses available to whoever you're talking to.",
 	},
 
 	tldr: {
-		heading: 'US License + AAA IDP + IDP Companion: what each does in Mexico',
-		lead: "Mexico is one of the few major destinations where you can legitimately skip the AAA trip — but the friction reasons that make people get an IDP elsewhere still exist here. Here's what each document does (and doesn't do) under Mexican enforcement realities.",
+		heading: 'US License alone vs IDP Companion in Mexico',
+		lead: "Mexican federal law accepts your US license for tourist driving — no IDP is legally required. But Spanish-only rental contracts, Quintana Roo checkpoint realities, and informal verification stops make a multilingual translation document quietly valuable.",
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Mexico',
 		colCost: 'Cost',
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: 'Legally sufficient under Mexican federal law for tourist stays under 180 days. English-only format and unfamiliar layout raise friction at smaller rental chains and informal verification stops.',
+				whatItDoes: 'Legally sufficient under Mexican federal law for tourist stays under 180 days. English-only format and unfamiliar layout raise friction at smaller rental chains and informal verification stops. Spanish-only rental contracts give the agent leverage in any subsequent dispute.',
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Official IDP',
-				whatItDoes: "NOT legally required in Mexico for US drivers. Provides the same Spanish translation effect as our companion, but takes 5–7 days by mail, costs $20 + photo fee, and is only valid for 1 year. Most US travelers to Mexico skip it.",
-				cost: '$20 + photo',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: "Multilingual digital PDF with Spanish translation of your license details. Same friction-reduction effect at rental desks and stops as a printed AAA IDP — issued in minutes, valid 1–5 years, no AAA trip required. Not a legal substitute for any official document.",
-				cost: '$35–55 (1–5 yr)',
+				document: 'IDP Companion + your US license',
+				whatItDoes: 'Multilingual digital PDF with Spanish translation of your license details — plus 11 other languages. Reduces friction at rental desks (especially smaller chains in Cancún, Tulum, CDMX, Cabo) and informal stops. Issued in 2 minutes online. Re-printable from any hotel if the original is retained or lost.',
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: "The honest pattern most US travelers in Mexico follow: skip the AAA visit (legally not needed), get IDP Companion as a Spanish translation aid, pair it with the free Quintana Roo Tourist Mobility Pass, and print Article 241. Total spend: $35. The May 2025 Tulum incident: $1,094.50.",
+		footnote: "Mexico is one of the rare destinations where no government IDP is legally required. What most US travelers actually need: physical US driver license + IDP Companion as the Spanish translation aid + Mexican third-party liability insurance (from rental, $25–65/day) + passport + Quintana Roo Tourist Mobility Pass (free, via Guest Assist app). Total prep cost stays under $60.",
 	},
 
 	whyNotEnough: {
@@ -175,18 +169,18 @@ const en: CountryPairCopy = {
 
 	howTo: {
 		heading: 'How to prepare for driving in Mexico (US citizens)',
-		lead: "Mexico is unique: you don't need an AAA visit. The preparation list is shorter — but skipping any of it is where trips go wrong.",
+		lead: "Mexico is unique: no IDP is legally required, so the preparation list is shorter than for Italy or Japan. The trade-off is that everything you do bring needs to be physical and Spanish-readable. Skipping any of it is where trips go wrong.",
 		schemaName: 'How to prepare for driving in Mexico as a US citizen',
 		duration: 'PT20M',
 		cost: '35 USD',
 		steps: [
 			{
-				title: 'Skip the AAA / AATA trip',
-				text: "Mexican federal law does not require US citizens to hold an International Driving Permit for tourist stays under 180 days. AAA themselves confirm this. Save $20 and 5–7 days. (If you genuinely want an IDP for the Spanish translation effect, see step 2.)",
+				title: 'Skip the official-IDP route — Mexico does not require it',
+				text: "Mexican federal law does not require US citizens to hold an International Driving Permit for tourist stays under 180 days. Save the time and the trip to a national-level issuer. Mexico is one of the few major destinations where this step is genuinely unnecessary.",
 			},
 			{
-				title: 'Get IDP Companion (optional but recommended)',
-				text: "$35 buys a Spanish-translated digital PDF of your license details. Same friction-reduction effect at rental desks and informal stops as a printed AAA IDP — issued in minutes, valid 1–5 years. Not a legal requirement; it's a documented friction reducer.",
+				title: 'Generate IDP Companion as the Spanish translation aid',
+				text: "$35 buys a multilingual digital PDF translating your US license into Spanish (plus 11 other languages). Issued in 2 minutes online, valid 1–5 years. Reduces friction at rental desks, hotel check-ins, and informal stops. Print at home or from any hotel — physical paper, not phone screens, is what Mexican counters and checkpoints expect.",
 			},
 			{
 				title: 'Get the free Tourist Mobility Pass (Quintana Roo)',
@@ -219,7 +213,7 @@ const en: CountryPairCopy = {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention',
-				'Not issued by AAA or AATA (the only US-authorized IDP issuers)',
+				'Not valid by itself — must be carried alongside your physical US driver license',
 				'Not legally required in Mexico — Mexican federal law accepts your US license alone',
 				'Not a magic shield against police extortion — nothing on paper is that',
 			],
@@ -243,7 +237,7 @@ const en: CountryPairCopy = {
 			],
 		},
 		pattern:
-			"The honest pattern most US travelers in Mexico follow: skip the AAA visit (legally not required, saves $20 and a week), get IDP Companion for $35 as a Spanish translation aid, get the free Tourist Mobility Pass for Quintana Roo, buy Mexican TPL insurance from your rental, print Article 241. Total: $35. May 2025 Tulum incident on a US tourist with no Spanish documentation: $1,094.50. The math is simpler here than anywhere else we cover.",
+			"The honest pattern most US travelers in Mexico follow: skip the official-IDP route entirely (Mexico does not require it), get IDP Companion for $35 as the Spanish translation aid, get the free Tourist Mobility Pass for Quintana Roo, buy Mexican TPL insurance from your rental, print Article 241. Total documentation cost: $35. May 2025 Tulum incident on a US tourist with no Spanish documentation: $1,094.50. The math is simpler here than anywhere else we cover.",
 	},
 
 	renting: {
@@ -302,7 +296,7 @@ const en: CountryPairCopy = {
 				text: 'Mexican law does not recognize most US auto policies for liability. After an accident, you become personally liable for vehicle damage, the other party\'s damages, and medical costs. Exposure starts at $5,000 and routinely runs to $50,000+ in cross-border cases. The US Embassy in Mexico City handles these regularly. The first question is always: "did you have Mexican TPL?"',
 			},
 		],
-		math: 'IDP Companion ($35) + Tourist Mobility Pass (free) + Article 241 print (free) = $35. Mexican TPL insurance is a separate non-negotiable cost regardless. May 2025 Tulum incident on a US tourist with no Spanish documentation: $1,094.50. The decision is obvious — and unlike Italy or Japan, you don\'t even need the $20 AAA trip.',
+		math: 'IDP Companion ($35) + Tourist Mobility Pass (free) + Article 241 print (free) = $35. Mexican TPL insurance is a separate non-negotiable cost regardless. May 2025 Tulum incident on a US tourist with no Spanish documentation: $1,094.50. The decision is obvious — and unlike Italy or Japan, no government IDP is legally required.',
 	},
 
 	faq: {
@@ -311,7 +305,7 @@ const en: CountryPairCopy = {
 			{
 				id: 1,
 				question: 'Do I legally need an IDP to drive in Mexico as a US citizen?',
-				answer: "No. US driver's licenses are valid for tourist driving in Mexico for stays up to 180 days. AAA, AATA, and the US State Department all confirm this. Mexico is one of the few major travel destinations where the AAA visit is genuinely unnecessary.",
+				answer: "No. US driver's licenses are valid for tourist driving in Mexico for stays up to 180 days. The US State Department confirms this. Mexico is one of the few major travel destinations where no government-issued IDP is legally required.",
 			},
 			{
 				id: 2,
@@ -321,12 +315,12 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion an actual International Driving Permit?',
-				answer: 'No. Only AAA and AATA can issue a real US-origin IDP under the 1949 Geneva Convention. IDP Companion is a private translation companion document — your license details rendered in Spanish and 11 other languages, designed for rental desks and informal verifications. We are explicit about this on every page because the alternative is what every other site does, and we think that is dishonest.',
+				answer: 'No. IDP Companion is a private multilingual translation companion document — your license details rendered in Spanish and 11 other languages, designed for rental desks and informal verifications. It is not a government-issued IDP under the 1949 Geneva Convention. For Mexico, this distinction does not matter for legal compliance because Mexican federal law does not require any IDP for US tourists in the first place.',
 			},
 			{
 				id: 4,
-				question: "What's the difference between IDP Companion and a real AAA IDP for Mexico?",
-				answer: 'For Mexico specifically: almost none, in practical terms. A real AAA IDP costs $20 + photo fee, requires a US visit or 5–7 days by mail, and is valid for 1 year. IDP Companion costs $35, is issued in minutes online, and is valid 1–5 years. Neither is legally required by Mexican federal law. Both produce the same Spanish translation effect at rental desks. Most US travelers to Mexico choose IDP Companion for the speed and longer validity.',
+				question: "How fast can I get IDP Companion?",
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF including Spanish translation immediately. Print at home, at the hotel, or from any internet cafe in Mexico if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 5,
@@ -384,7 +378,7 @@ const en: CountryPairCopy = {
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			"IDP Companion is a private multilingual translation companion document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), the Government of Mexico, the Government of Quintana Roo, the Mexican Federal Police (Guardia Nacional), the Mexican Tesorería, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. Mexican federal law does not require US citizens to carry an IDP for tourist stays under 180 days — IDP Companion is purchased as a translation aid for friction reduction at rental desks and informal verifications, not for legal compliance. It must be used alongside your original US driver's license.",
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Government of Mexico, the Government of Quintana Roo, the Mexican Federal Police (Guardia Nacional), the Mexican Tesorería, or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. Mexican federal law does not require US citizens to carry an IDP for tourist stays under 180 days — IDP Companion is purchased as a translation aid for friction reduction at rental desks and informal verifications, not for legal compliance. It must be used alongside your original US driver's license.",
 		sourcesHeading: 'Sources',
 		sources: [
 			"US Department of State / USAGov: International Driver's License guidance for US citizens",

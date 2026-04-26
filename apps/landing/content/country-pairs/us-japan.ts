@@ -39,37 +39,31 @@ const en: CountryPairCopy = {
 
 	quickAnswer: {
 		required: true,
-		verdict: 'Yes — and specifically a 1949 Geneva IDP issued by AAA or AATA',
-		text: "Japan ratified the 1949 Geneva Convention on Road Traffic but explicitly rejects IDPs issued under any other convention or by unauthorized organizations. AAA and AATA issue exactly the right format. The complications start when travelers try to skip this step — Japan's National Police Agency and every major rental chain (Toyota, Nippon, ORIX, Times, Nissan) reject online \"digital IDPs\" outright. For US drivers: get an AAA IDP for $20 before you fly. There are no real shortcuts.",
+		verdict: 'Yes — Japan requires a 1949 Geneva Convention IDP for rental cars',
+		text: "Japan is one of the strictest IDP-enforcement countries in our coverage. Japanese rental chains (Toyota, Nippon, ORIX, Times, Nissan) explicitly require a Geneva 1949 IDP issued by an authorized national body — they reject online or digital-only IDP-style documents at the counter. IDP Companion's role for Japan is supplementary: hotel verification, JR Pass desks, smaller-venue ID checks, and as a multilingual backup translation. For renting a car, you need an authorized Geneva 1949 IDP issued in your home country before you fly.",
 	},
 
 	tldr: {
-		heading: 'US License + AAA IDP + IDP Companion: what does each one do in Japan?',
-		lead: 'Japan is the country where the asymmetry between cost-of-prevention and cost-of-failure is most extreme. AAA IDP is non-negotiable for legal driving — IDP Companion is purely supplementary friction-reduction.',
+		heading: 'Driving in Japan: what your US license alone gets you',
+		lead: 'Japan is the country where the asymmetry between cost-of-prevention and cost-of-failure is most extreme. An authorized Geneva 1949 IDP is required for renting a car. IDP Companion is the multilingual translation aid for everything outside the rental counter — hotel check-ins, JR Pass desks, smaller-venue verifications, and as a backup if your physical IDP is lost during the trip.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Japan',
 		colCost: 'Cost',
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: 'Insufficient under Japanese law. Refused at every major rental chain. Rental insurance void. Up to ¥500,000 fine + up to 3 years prison if stopped. Foreigners are not exempt.',
+				whatItDoes: 'Insufficient under Japanese law. Refused at every major rental chain (Toyota, Nippon, ORIX, Times, Nissan). Rental insurance void. Up to ¥500,000 fine + up to 3 years prison if stopped while driving. Foreigners are not exempt.',
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Official IDP',
-				whatItDoes: "Government-recognized printed booklet under the 1949 Geneva Convention — the ONLY format Japan accepts. Required by Japanese police and every major rental chain. Valid 1 year from issue or 1 year from your entry stamp date (whichever ends sooner).",
-				cost: '$20',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: 'Multilingual digital PDF (Japanese + English + 6 other languages). Helps at smaller rural rental shops, hotel check-ins, and toll booths where staff prefer Japanese-language ID. NOT accepted by Japanese police as an IDP substitute.',
-				cost: '$35–55 (1–5 yr)',
+				document: 'IDP Companion + your US license',
+				whatItDoes: 'Multilingual translation including Japanese script. Useful for hotel check-ins, JR Pass desks, smaller-venue verifications, and as a multilingual backup. Re-printable from any hotel if your physical IDP is lost mid-trip. Not accepted by Japanese rental chains or police as a substitute for an authorized Geneva 1949 IDP.',
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: 'For Japan, the AAA IDP is non-negotiable — it is the legal foundation for driving. IDP Companion is supplementary, not a substitute. Combined cost is under $60, vs $3,400+ exposure if caught without an IDP.',
+		footnote: 'Honest disclosure for Japan: an authorized Geneva 1949 IDP issued in your home country is what Japanese rental chains and police require. IDP Companion is a supplementary translation aid for non-rental contexts (hotels, JR Pass, tourist help desks) and as a printable backup. We are upfront about this because Japan is the country where document failures most frequently end trips before they start.',
 	},
 
 	whyNotEnough: {
@@ -102,12 +96,12 @@ const en: CountryPairCopy = {
 			{
 				icon: 'ph:globe-x-bold',
 				title: 'Online "digital IDPs" from unauthorized issuers',
-				text: 'Companies like IDL, IAA, KIDA, IDD, IADA, and ITDL sell "International Driving Permits" online for $30–150. They look official, translate licenses into multiple languages, and ship same-day by email. Toyota Rent a Car explicitly names these as invalid in their requirements. The legitimate US issuers are exactly two: AAA and AATA. Anything else gets you turned away.',
+				text: 'Companies like IDL, IAA, KIDA, IDD, IADA, and ITDL sell "International Driving Permits" online for $30–150 and claim they are accepted in Japan. They are not. Toyota Rent a Car explicitly names these as invalid in their counter requirements, as do Nippon, ORIX, and Times. Japan only accepts a Geneva 1949 IDP issued by an authorized national-level organization in the driver\'s home country.',
 			},
 			{
 				icon: 'ph:scroll-bold',
 				title: '1968 Vienna Convention IDPs',
-				text: 'Japan only ratified the 1949 Geneva Convention. Russia, Germany, France, and most EU countries issue Vienna 1968 IDPs — Japan refuses them. The US is fortunate that AAA only issues 1949 Geneva format, so standard AAA IDPs work in Japan automatically. European travelers visiting Japan need a JAF translation of their license instead.',
+				text: 'Japan only ratified the 1949 Geneva Convention. Russia, Germany, France, and most EU countries issue Vienna 1968 IDPs — Japan refuses them. The US is fortunate that the standard US-issued IDP format is Geneva 1949, which works in Japan automatically. European travelers visiting Japan need a JAF translation of their license instead.',
 			},
 			{
 				icon: 'ph:clock-counter-clockwise-bold',
@@ -117,7 +111,7 @@ const en: CountryPairCopy = {
 			{
 				icon: 'ph:passport-bold',
 				title: 'IDPs whose nationality does not match your license',
-				text: 'If you somehow obtained an IDP from a country that is not where your license was issued, Japan will reject it. The IDP must come from the same country as your domestic driver license. For US drivers this is straightforward — get the AAA IDP from any US AAA branch.',
+				text: 'If you somehow obtained an IDP from a country that is not where your license was issued, Japan will reject it. The IDP must come from the same country as your domestic driver license. For US drivers this means an authorized Geneva 1949 IDP issued in the United States.',
 			},
 		],
 	},
@@ -181,31 +175,31 @@ const en: CountryPairCopy = {
 	},
 
 	howTo: {
-		heading: 'How to get an IDP for Japan',
-		lead: 'For US citizens, only AAA and AATA can issue official 1949 Geneva IDPs — and that is the only format Japan accepts. The process is fast and inexpensive. There are no shortcuts that work.',
-		schemaName: 'How to get an International Driving Permit for Japan as a US citizen',
-		duration: 'PT15M',
-		cost: '20 USD',
+		heading: 'How to prepare for driving in Japan',
+		lead: 'Japan has the strictest IDP enforcement in our coverage. Two preparation tracks matter: getting an authorized Geneva 1949 IDP for the rental counter (issued in your home country before you fly), and adding IDP Companion as the multilingual translation aid for everything outside the rental counter.',
+		schemaName: 'How to prepare for driving in Japan as a US citizen',
+		duration: 'PT30M',
+		cost: '35 USD',
 		steps: [
 			{
-				title: 'Gather documents',
-				text: 'Your valid US driver license, two original passport-style photos (2"×2"), and a completed AAA application form. AAA membership is not required.',
+				title: 'Generate IDP Companion before you fly',
+				text: '$35 for 1 year, $45 for 3 years, $55 for 5 years. 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Japanese, French, German, Spanish, and 8 other languages. Output is a print-ready PDF you can use at hotels, JR Pass desks, tourist help points, and as a backup if your physical IDP is lost mid-trip.',
 			},
 			{
-				title: 'Visit AAA in person or apply by mail',
-				text: 'In-person at any AAA branch takes ~10–15 minutes — walk out with the IDP same-day. By mail takes 5–7 business days. AATA is the alternative authorized organization.',
+				title: 'Verify your IDP validity dates align with your trip',
+				text: 'Japan validates IDPs against both the issue date AND your entry date. Your driving privileges in Japan extend 1 year from your entry stamp date OR 1 year from your IDP issue date — whichever ends sooner. Generate your IDP no earlier than ~3–4 months before departure to maximize the window.',
 			},
 			{
-				title: 'Pay the fee',
-				text: '$20 for the IDP itself, plus $2 for the photos if AAA takes them on-site. Total cost: under $25.',
+				title: 'Confirm your rental booking documentation requirements',
+				text: 'Toyota Rent a Car, Nippon, ORIX, Times, and Nissan all require an authorized Geneva 1949 IDP at the counter — they explicitly reject digital-only or unauthorized-issuer IDPs. Confirm this in writing on your booking before you travel. There is no soft chain in Japan that overlooks documentation.',
 			},
 			{
-				title: 'Add IDP Companion (optional)',
-				text: 'For $35 extra, generate a multilingual digital companion to handle smaller rural rental shops and hotel check-ins quickly. Japanese translation included by default. NOT a replacement for the AAA IDP at police checkpoints.',
+				title: 'Print all documents — Japan is a paper culture',
+				text: 'Print IDP Companion on standard letter or A4 paper. Japanese rental staff and police expect physical documents, not phone screens. Bring a backup copy. JR Pass desks, hotel check-ins, and prefecture tourist offices accept multilingual paper printouts faster than any digital alternative.',
 			},
 			{
-				title: 'Carry both documents in Japan',
-				text: 'AAA IDP (the physical printed booklet) + your original US license + (optional) IDP Companion + passport. The AAA booklet is what every Japanese rental chain and police officer verifies.',
+				title: 'Carry physical documents in one folder',
+				text: 'Physical US license + authorized Geneva 1949 IDP + printed IDP Companion + passport — all in one folder. The combination clears every Japanese checkpoint, hotel check-in, and JR Pass desk efficiently.',
 			},
 		],
 	},
@@ -226,33 +220,32 @@ const en: CountryPairCopy = {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva Convention',
-				'Not issued by AAA or AATA — the two organizations Japan recognizes',
-				'Not accepted by Japanese rental chains (Toyota, ORIX, Nippon, Times, Nissan) as a substitute for AAA IDP',
+				'Not accepted by Japanese rental chains (Toyota, ORIX, Nippon, Times, Nissan) as a substitute for an authorized Geneva 1949 IDP at the counter — Japan is the strictest market in our coverage on this point',
 				'Not valid by itself — must be carried alongside your original US driver license',
-				'Will NOT satisfy Japanese police at a checkpoint',
+				'Will not satisfy Japanese police at a roadside checkpoint as the primary licensing document',
 			],
 		},
 		helps: {
-			title: 'When IDP Companion helps US drivers in Japan',
+			title: 'When IDP Companion is what you need',
 			items: [
-				"At smaller rental shops in rural areas where the agent's English is limited",
-				'At hotel check-ins in Kyoto, Hakone, or rural Hokkaido where staff prefer Japanese-script details',
-				'At toll booths where Japanese-language ID expedites the process',
-				'As a backup if your AAA IDP is lost during the trip',
+				'At hotel check-ins in Kyoto, Hakone, or rural Hokkaido where staff prefer Japanese-script document details',
+				'At JR Pass exchange counters, prefecture tourist help desks, and tourist information offices for verification',
 				'At gas stations and convenience stores for ID verification',
+				'As a multilingual backup printable from any hotel if your physical IDP is lost mid-trip',
+				'For travelers stacking multiple country trips over 1–5 years — one $55 purchase covers Japan + Europe + everywhere else',
 			],
 		},
 		needOfficial: {
-			title: 'When you need the official AAA / AATA IDP',
+			title: 'What you should carry alongside IDP Companion in Japan',
 			items: [
-				'For ANY rental at major Japanese chains (Toyota, ORIX, Nippon, Nissan, Times) — they will refuse you without it',
-				'For police checkpoints (Japanese police are particularly strict about IDP authenticity)',
-				'For insurance coverage validity after any accident',
-				'For any driving in Japan — the AAA IDP is the legal foundation, our companion is supplementary',
+				'An authorized Geneva 1949 IDP issued in your home country before you fly — required by every major Japanese rental chain at the counter',
+				'Your physical US driver license — the actual permission to drive (no document substitutes for this)',
+				'Your US passport with valid Japanese entry stamp — physical, not a digital photo',
+				'Confirmation that your IDP issue date + your entry date give you at least the trip duration of valid driving (Japan validates whichever ends sooner)',
 			],
 		},
 		pattern:
-			'The recommended pattern for US travelers in Japan: get the AAA IDP first — no exceptions. This is the legal baseline. Then add IDP Companion as a translation aid for smaller venues and rural rentals. Together they cost less than $60 and protect against $3,400+ fine scenarios.',
+			"What every prepared US traveler carries into Japan for driving: physical US driver license + authorized Geneva 1949 IDP + IDP Companion as the multilingual translation aid (hotels, JR Pass desks, backup) + passport. Japan is the country where document failures most frequently end trips before they start — preparation is everything.",
 	},
 
 	renting: {
@@ -306,7 +299,7 @@ const en: CountryPairCopy = {
 				severity: 'med',
 				frequency: '~25% of attempts',
 				label: 'Refused at the rental counter',
-				text: "Japan's rental industry is unified — major chains will refuse you without a valid AAA IDP. You lose your reservation, scramble for alternatives, miss connections. There is no \"soft\" chain in Japan that overlooks documentation.",
+				text: "Japan's rental industry is unified — major chains require an authorized Geneva 1949 IDP and will refuse you without it. You lose your reservation, scramble for alternatives, miss connections. There is no \"soft\" chain in Japan that overlooks documentation.",
 			},
 			{
 				severity: 'high',
@@ -327,7 +320,7 @@ const en: CountryPairCopy = {
 				text: 'Japanese hospital bills + voided insurance + criminal investigation if injuries occurred + travel delays measured in months. Driving without a license is a criminal offense, and foreigners can be detained up to 23 days before charges are filed in serious cases. The US Embassy in Tokyo handles these situations regularly.',
 			},
 		],
-		math: 'A $20 AAA IDP plus a $35 IDP Companion = $55 total. A single fine for invalid IDP is roughly $3,400. Insurance void scenarios start at $5,000 and climb fast. Japan is the country where the asymmetry is most extreme.',
+		math: 'IDP Companion ($35 / 1 year, $55 / 5 years) + an authorized Geneva 1949 IDP for the rental counter is under $60 of prep. A single fine for invalid IDP is roughly $3,400. Insurance void scenarios start at $5,000 and climb fast. Japan is the country where the asymmetry is most extreme.',
 	},
 
 	faq: {
@@ -336,27 +329,27 @@ const en: CountryPairCopy = {
 			{
 				id: 1,
 				question: "Do I really need an IDP if I'm only renting a car for a weekend in Hakone?",
-				answer: "Yes. Japan's law applies regardless of trip length. Tourist areas like Hakone, Mt. Fuji, and Kyoto have active police checkpoints. A weekend rental still requires a valid AAA IDP for legal compliance, and your insurance is voided without it. Japanese rental chains will refuse the rental at the desk.",
+				answer: "Yes. Japan's law applies regardless of trip length. Tourist areas like Hakone, Mt. Fuji, and Kyoto have active police checkpoints. A weekend rental still requires an authorized Geneva 1949 IDP for legal compliance, and your insurance is voided without it. Japanese rental chains will refuse the rental at the desk.",
 			},
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Japan?',
-				answer: 'No. International Driving Permits must be issued in your country of residence before you travel. For US drivers, only AAA and AATA are authorized. There is no Japanese equivalent issued to foreigners. AAA processes IDPs at most branches in 10–15 minutes for $20.',
+				answer: 'Japanese authorities do not issue IDPs to foreign tourists. International Driving Permits must be issued in your country of residence before you travel. IDP Companion can be generated online from anywhere as a multilingual translation companion (Japanese script included), useful at hotels, JR Pass desks, and as a backup — but it is not accepted by Japanese rental chains as a substitute for an authorized Geneva 1949 IDP issued in your home country.',
 			},
 			{
 				id: 3,
 				question: 'What about those "instant digital IDP" services I see advertised online?',
-				answer: 'Japan explicitly rejects them. Toyota Rent a Car\'s official policy lists "International driving permits issued by organizations that are not authorized to issue such licenses (IAA, IDL, etc., including those issued via the Internet)" as invalid. Other major Japanese chains use identical language. Save your money — get the AAA IDP instead.',
+				answer: 'Japan explicitly rejects them. Toyota Rent a Car\'s official policy lists "International driving permits issued by organizations that are not authorized to issue such licenses (IAA, IDL, etc., including those issued via the Internet)" as invalid. Other major Japanese chains use identical language. Use only an authorized Geneva 1949 IDP issued by a national-level organization in your home country.',
 			},
 			{
 				id: 4,
-				question: 'Is IDP Companion the same as the AAA International Driving Permit?',
-				answer: 'No, and this is especially important in Japan. The AAA IDP is the only document Japanese rental chains and police accept. IDP Companion is a multilingual translation document that helps in informal verification situations, but it is not a legal substitute. For Japan, get both: AAA IDP for legal compliance (essential), IDP Companion for everyday rental friction reduction (supplementary).',
+				question: 'How does IDP Companion help if Japan rentals require an authorized IDP?',
+				answer: "IDP Companion is the multilingual translation aid for everything outside the rental counter. Japanese-script translation of your US license details speeds up hotel check-ins, JR Pass exchange, prefecture tourist help desks, and informal verifications. It is also a multilingual printable backup if your physical IDP is lost mid-trip. We are upfront that it is not a substitute for an authorized Geneva 1949 IDP at the rental counter — Japan is the strictest market in our coverage on this point.",
 			},
 			{
 				id: 5,
 				question: 'Why does Japan reject Vienna 1968 IDPs?',
-				answer: 'Japan only ratified the 1949 Geneva Convention. The 1968 Vienna Convention modernized IDPs and is signed by most European countries (and Russia), but Japan never ratified it. Tourists from countries that issue Vienna 1968 IDPs (Germany, France, Russia) cannot use them in Japan — they need a Japanese translation of their license through JAF (Japan Automobile Federation). For US drivers this is not an issue — AAA only issues 1949 Geneva format.',
+				answer: 'Japan only ratified the 1949 Geneva Convention. The 1968 Vienna Convention modernized IDPs and is signed by most European countries (and Russia), but Japan never ratified it. Tourists from countries that issue Vienna 1968 IDPs (Germany, France, Russia) cannot use them in Japan — they need a Japanese translation of their license through JAF (Japan Automobile Federation). For US drivers this is not an issue — the standard US-issued IDP format is Geneva 1949.',
 			},
 			{
 				id: 6,
@@ -376,12 +369,12 @@ const en: CountryPairCopy = {
 			{
 				id: 9,
 				question: 'Are there any differences for driving in Okinawa vs the main Japanese islands?',
-				answer: 'Same legal rules — your US license + AAA IDP combination is required. Okinawa is more car-dependent than mainland Japan (less developed train network), so rental volume is higher. Japanese-only signage is more common on rural Okinawan roads, making IDP Companion specifically useful for hotel check-ins and gas stations there. Driving customs in Okinawa are slightly more relaxed than Tokyo, but enforcement standards are identical.',
+				answer: 'Same legal rules — physical US license + an authorized Geneva 1949 IDP is required to drive. Okinawa is more car-dependent than mainland Japan (less developed train network), so rental volume is higher. Japanese-only signage is more common on rural Okinawan roads, making IDP Companion specifically useful for hotel check-ins, gas stations, and tourist help desks there. Driving customs in Okinawa are slightly more relaxed than Tokyo, but enforcement standards are identical.',
 			},
 			{
 				id: 10,
-				question: 'What if my AAA IDP was issued more than a year before my trip?',
-				answer: 'Japan validates your IDP against both its issue date AND your entry stamp date — your driving privileges end at whichever expires first. If your AAA IDP was issued more than 12 months before you arrive, you cannot legally drive in Japan, even on day one. Plan ahead: get a fresh AAA IDP within 12 months of your travel date.',
+				question: 'What if my IDP was issued more than a year before my trip?',
+				answer: 'Japan validates your IDP against both its issue date AND your entry stamp date — your driving privileges end at whichever expires first. If your IDP was issued more than 12 months before you arrive, you cannot legally drive in Japan, even on day one. Plan ahead: time your authorized Geneva 1949 IDP issuance within 12 months of your travel date.',
 			},
 		],
 	},
@@ -402,14 +395,14 @@ const en: CountryPairCopy = {
 
 	finalCta: {
 		heading: 'Ready to get your IDP Companion?',
-		text: 'Multilingual PDF (Japanese included), generated in minutes from your US license. For Japan specifically, the AAA IDP is non-negotiable — get it from any AAA branch for $20. IDP Companion is the friction-reduction layer.',
+		text: 'Multilingual PDF including Japanese, generated from your US license in 2 minutes. Print at home or from any hotel. The translation aid for hotels, JR Pass desks, tourist offices, and as a backup. Valid 1–5 years. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Start application',
 	},
 
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			'IDP Companion is a multilingual translation document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), Japan Automobile Federation (JAF), Japanese National Police Agency, Toyota Rent a Car, ORIX Rent a Car, Nippon Rent-A-Car, or any government agency or rental company. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention. It must be used alongside your original US driver license and, where required by Japanese law, alongside an official IDP issued by AAA or AATA.',
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Japan Automobile Federation (JAF), Japanese National Police Agency, Toyota Rent a Car, ORIX Rent a Car, Nippon Rent-A-Car, or any government agency or rental company. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. Japan requires foreign drivers to carry an authorized Geneva 1949 IDP issued in their home country alongside their physical license — IDP Companion does not satisfy that requirement at Japanese rental counters or police checkpoints, and is intended only as a multilingual translation aid for non-rental contexts.",
 		sourcesHeading: 'Sources',
 		sources: [
 			'Japanese Road Traffic Act, Article 117-2-2 (driving without a valid license penalties)',

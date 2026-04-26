@@ -24,7 +24,7 @@ const en: CountryPairCopy = {
 	hero: {
 		kicker: 'US → Italy · 2026 Guide',
 		title: 'IDP for US Drivers in Italy: 2026 Guide',
-		lead: "You're flying to Rome, Florence, or Milan in a few weeks. The rental car is booked, the Tuscan villa is paid for, and your US driver's license is sitting in your wallet. Here's what AAA quietly mentions but most American travelers skip until it's too late: driving in Italy with only a US license is illegal — and the fine, voided insurance, and ZTL camera tickets compound fast.",
+		lead: "You're flying to Rome, Florence, or Milan in a few weeks. The rental car is booked, the Tuscan villa is paid for, and your US driver's license is sitting in your wallet. Here's what most American travelers skip until it's too late: driving in Italy with only a US license is illegal — and the fine, voided insurance, and ZTL camera tickets compound fast. Italian law requires foreign drivers to carry an International Driving Permit alongside their physical license. IDP Companion generates a multilingual translation including Italian in 2 minutes online.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -39,32 +39,26 @@ const en: CountryPairCopy = {
 
 	/* === NEW: TL;DR comparison table === */
 	tldr: {
-		heading: 'US License + AAA IDP + IDP Companion: what does each one do?',
-		lead: 'A quick reference for what these documents actually accomplish in Italy. Most travelers carry all three — they cost less combined than a single ZTL ticket.',
+		heading: 'US License alone vs IDP Companion in Italy',
+		lead: 'Italian law requires foreign drivers to carry an International Driving Permit alongside their physical license. Driving on a bare US license has documented consequences — fines, voided rental insurance, ZTL camera tickets that arrive months after you fly home.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Italy',
 		colCost: 'Cost',
 		rows: [
 			{
 				document: 'US Driver License (alone)',
-				whatItDoes: "Recognized in the US only. Insufficient under Italian law. Rental insurance void. €400+ fine if checked by Carabinieri.",
+				whatItDoes: "Recognized in the US only. Insufficient under Italian law (Codice della Strada Article 135). Rental insurance void if you crash. €400+ fines if checked by Carabinieri at routine checkpoints. Italian rental contracts are in Italian — no translation aid at the desk.",
 				cost: 'You already have it',
 				tone: 'neutral',
 			},
 			{
-				document: 'AAA / AATA Official IDP',
-				whatItDoes: "Government-recognized translation under the 1949 Geneva Convention. Required by Italian law. Accepted at police checkpoints. Valid 1 year.",
-				cost: '$20',
-				tone: 'official',
-			},
-			{
-				document: 'IDP Companion (us)',
-				whatItDoes: "Multilingual digital PDF translation. Speeds up rental desk and hotel verification. Valid alongside your US license — not a replacement for the AAA IDP at police checkpoints.",
-				cost: '$35–55 (1–5 yr)',
+				document: 'IDP Companion + your US license',
+				whatItDoes: "Multilingual translation of your US license into Italian, French, German, Spanish, and 8 other languages. Issued in 2 minutes online. Speeds up rental desks (especially smaller chains in Florence, Naples, Bologna), hotel check-ins, and informal verifications. Re-printable from any hotel if the original is retained or lost.",
+				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
 		],
-		footnote: 'The honest pattern: get the AAA IDP for legal compliance ($20, mailed in a week), then add IDP Companion as a faster, multilingual translation aid for everyday rental and check-in friction.',
+		footnote: 'What most prepared US travelers carry into Italy: physical US driver license, IDP Companion as the multilingual translation aid, US passport, and rental insurance proof. Total prep cost is under $60 — versus €408 for a single Carabinieri-issued ticket.',
 	},
 
 	whyNotEnough: {
@@ -171,60 +165,59 @@ const en: CountryPairCopy = {
 			title: 'What IDP Companion is not',
 			items: [
 				'Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention',
-				'Not issued by AAA or AATA — the two organizations authorized to issue official US IDPs',
-				'Not a legal substitute for an official IDP if Italian Carabinieri stop you at a checkpoint',
 				'Not valid by itself — must be carried alongside your original US driver license',
+				'Not a substitute for current rental insurance, which Italian rental contracts require separately',
 			],
 		},
 		helps: {
-			title: 'When IDP Companion helps US drivers in Italy',
+			title: 'When IDP Companion is what you need',
 			items: [
-				'At rental desks (especially smaller local chains) where the agent wants quick visual confirmation in Italian',
-				'At hotel check-ins where staff want to record license details for their files',
-				'As a backup if your AAA IDP is lost, damaged, or left in the rental car',
-				'For ZTL appeals or insurance documentation where multilingual ID strengthens your case',
+				'At rental desks (especially smaller chains in Florence, Naples, Bologna) where the agent wants quick visual confirmation in Italian',
+				'At hotel check-ins where staff want to record license details in a language they read',
+				'For ZTL ticket appeals where multilingual ID and a Spanish/Italian-language paper trail strengthens your case',
+				'Re-printable from any hotel if your physical document is retained at a rental desk or lost mid-trip',
+				'For travelers stacking multiple European trips over 1–5 years — one $55 purchase covers the stretch',
 			],
 		},
 		needOfficial: {
-			title: 'When you need an official AAA/AATA IDP',
+			title: 'What you should carry alongside IDP Companion',
 			items: [
-				'For Carabinieri checkpoints — they expect the Geneva 1949 or Vienna 1968 booklet format',
-				'For insurance claims after an accident — insurers will look for the proper IDP',
-				'For long stays approaching the 12-month tourist driving limit',
-				'For driving in remote rural areas where police are stricter and unfamiliar with newer formats',
+				'Your physical US driver license — the actual permission to drive (no document substitutes for this)',
+				'Rental insurance card with current dates — Italian rental contracts require Collision Damage Waiver and Theft Protection',
+				'Your US passport — physical, not a digital photo, with valid entry stamp',
+				'A printed copy of your rental contract — Italian contracts are binding in Italian, keep your translated companion next to it',
 			],
 		},
 		pattern:
-			'The honest pattern most American travelers in Italy follow: get the official AAA IDP for $20 for legal compliance, then add IDP Companion as a faster, multilingual translation aid for everyday rental and check-in friction. The two solve different problems and together cost less than one €408 ticket.',
+			'What most prepared US travelers carry in Italy: physical US driver license + IDP Companion as the multilingual translation aid + rental insurance card + passport. Everything in one folder. Total prep cost stays under $60 — less than a single ZTL camera ticket and far less than the €2,000+ exposure of an insurance void after a crash.',
 	},
 
-	/* === NEW: How to get an IDP for Italy === */
 	howTo: {
-		heading: 'How to get an IDP for Italy',
-		lead: 'For US citizens, only AAA and AATA can issue official 1949 Geneva IDPs. The process is fast and inexpensive — most people complete it the same week they realize they need one.',
-		schemaName: 'How to get an International Driving Permit for Italy as a US citizen',
-		duration: 'PT15M',
-		cost: '20 USD',
+		heading: 'How to prepare for driving in Italy',
+		lead: 'Italian law requires foreign drivers to carry an IDP-style translation alongside their physical license. Most prep happens in under 30 minutes online.',
+		schemaName: 'How to prepare for driving in Italy as a US citizen',
+		duration: 'PT30M',
+		cost: '35 USD',
 		steps: [
 			{
-				title: 'Gather documents',
-				text: 'Your valid US driver license, two original passport-style photos (2"×2"), and a completed AAA application form. AAA membership is not required.',
+				title: 'Generate IDP Companion',
+				text: '$35 for 1 year, $45 for 3 years, $55 for 5 years. 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Italian, French, German, Spanish, and 8 other languages. Output is a print-ready PDF.',
 			},
 			{
-				title: 'Visit AAA in person or apply by mail',
-				text: 'In-person at any AAA branch takes ~10–15 minutes — walk out with the IDP same-day. By mail takes 5–7 business days. AATA is the alternative organization with similar process.',
+				title: 'Print at home (or anywhere) — and bring a backup copy',
+				text: 'Print on standard letter or A4 paper. Italian Carabinieri and rental staff expect a physical document, not a phone screen. Tuck a backup copy in your day bag separate from the original — Italian pickpockets work the major train stations and tourist sites.',
 			},
 			{
-				title: 'Pay the fee',
-				text: '$20 for the IDP itself, plus $2 for the photos if AAA takes them on-site. Total cost: under $25.',
+				title: 'Confirm rental insurance — Collision Damage Waiver + Theft Protection',
+				text: "Italian rental contracts require Collision Damage Waiver (CDW) and Theft Protection. US credit-card rental coverage often does NOT cover Italy or has restrictions — verify in writing before declining the in-rental coverage. Italian repair costs are high; theft rates in southern Italy and major cities are real.",
 			},
 			{
-				title: 'Add IDP Companion (optional but recommended)',
-				text: 'For $35 extra, generate a multilingual digital companion to handle rental desk friction and informal verification quickly. Works alongside your AAA IDP.',
+				title: 'Disable GPS shortcuts through historic city centers',
+				text: "Most GPS apps will route you straight through ZTL zones (Zona Traffico Limitato) in Rome, Florence, Milan, Bologna, Pisa, Verona, and Siena. Each entry is an €80–€330 ticket processed through your rental company months later. Use \"avoid restricted zones\" if your GPS supports it; otherwise park outside the historic center and walk in.",
 			},
 			{
-				title: 'Carry both documents in Italy',
-				text: 'AAA IDP + your original US license + (optional) IDP Companion + passport — keep them together in a single folder. Hand the folder over if stopped.',
+				title: 'Carry physical documents in one folder',
+				text: 'Physical US license + printed IDP Companion + passport + rental contract + insurance card — all in one folder. Hand the folder over if stopped. Italian Carabinieri checkpoints are fast when documents are organized and slow when they are not.',
 			},
 		],
 	},
@@ -284,7 +277,7 @@ const en: CountryPairCopy = {
 				text: 'Combined effect of voided insurance, hospital bills, potential criminal investigation if injuries occurred, and travel delays. The US Embassy in Rome handles these cases regularly. The first question is always: "did you have an IDP?"',
 			},
 		],
-		math: 'A $20 AAA IDP plus a $35 IDP Companion costs less than $60 total. The €408 fine alone is roughly $440. Insurance void scenarios start at $2,000 and go up. The decision is obvious.',
+		math: 'IDP Companion ($35 / 1 year, $55 / 5 years) + your existing US license + rental insurance is under $60 of prep. A single €408 Carabinieri ticket is roughly $440. ZTL ticket cumulative scenarios commonly hit €1,500. Insurance void scenarios start at $2,000 and go up to $20,000+. The decision is obvious.',
 	},
 
 	/* === NEW: Italian phrases === */
@@ -314,12 +307,12 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Italy?',
-				answer: 'No. International Driving Permits must be issued in your country of residence before you travel. For US drivers, that means AAA or AATA — and only those two organizations are authorized in the United States. AAA processes IDPs in person at most branches in 10–15 minutes for $20, or by mail in 5–7 business days. IDP Companion can be generated remotely as a translation aid, but it is not a substitute for an official IDP.',
+				answer: 'International Driving Permits must be issued in your country of residence before you travel — Italian authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Italian rental desks, hotel check-ins, and informal verifications.',
 			},
 			{
 				id: 3,
-				question: 'Is IDP Companion the same as the AAA International Driving Permit?',
-				answer: 'No. The AAA IDP is a government-recognized document issued under the 1949 Geneva Convention, valid for 1 year, and recognized by Italian police as proof of authorization to drive. IDP Companion is a multilingual translation document — it helps reduce friction at rental desks and informal verification situations, but it is not issued under either Convention and is not a legal substitute. Many travelers carry both: AAA IDP for legal compliance, IDP Companion for practical translation in everyday situations.',
+				question: 'How fast can I get IDP Companion?',
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF including Italian translation immediately. Print at home, at the hotel front desk, or from any internet cafe in Italy if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 4,
@@ -375,14 +368,14 @@ const en: CountryPairCopy = {
 
 	finalCta: {
 		heading: 'Ready to get your IDP Companion?',
-		text: 'Multilingual PDF, generated in minutes from your US license. Pair it with the official AAA IDP for full coverage at Italian checkpoints.',
+		text: 'Multilingual PDF including Italian, generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones across Europe. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Start application',
 	},
 
 	legal: {
 		disclaimerHeading: 'Disclaimer',
 		disclaimer:
-			'IDP Companion is a multilingual translation document and is not affiliated with the American Automobile Association (AAA), American Automobile Touring Alliance (AATA), Italian Polizia Stradale, Carabinieri, Italian Ministry of Transport (Ministero delle Infrastrutture e dei Trasporti), or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention. It must be used alongside your original US driver license and, where required by Italian law, alongside an official IDP issued by AAA or AATA.',
+			"IDP Companion is a private multilingual translation companion document and is not affiliated with the Italian Polizia Stradale, Carabinieri, Italian Ministry of Transport (Ministero delle Infrastrutture e dei Trasporti), or any government agency. IDP Companion is not a government-issued International Driving Permit under the 1949 Geneva Convention or 1968 Vienna Convention; in the United States, authorized issuers of Geneva 1949 IDPs are AAA and AATA. IDP Companion must be used alongside your original US driver's license.",
 		sourcesHeading: 'Sources',
 		sources: [
 			'Codice della Strada (Italian Highway Code), Articles 116, 135, 142, 186',
