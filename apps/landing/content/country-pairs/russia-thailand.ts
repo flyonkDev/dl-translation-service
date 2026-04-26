@@ -53,6 +53,37 @@ export interface RelatedCard {
 	status: string;
 }
 
+/**
+ * Optional rich blocks — country-specific add-ons to lift SEO depth and conversion.
+ * Pages render these only when present. Russia-Thailand currently doesn't use them;
+ * US-Italy uses all of them.
+ */
+export interface TldrRow {
+	label: string;
+	domestic: string;
+	officialIdp: string;
+	companion: string;
+}
+
+export interface LezZone {
+	city: string;
+	name: string;
+	description: string;
+	fine: string;
+	note: string;
+}
+
+export interface PhraseItem {
+	phrase: string;
+	translation: string;
+	context: string;
+}
+
+export interface HowToStep {
+	title: string;
+	text: string;
+}
+
 export interface CountryPairCopy {
 	seo: {
 		title: string;
@@ -143,6 +174,46 @@ export interface CountryPairCopy {
 	og: {
 		originName: string;
 		destinationName: string;
+	};
+
+	/* --- optional blocks --- */
+	lastReviewed?: string;
+
+	tldr?: {
+		heading: string;
+		lead: string;
+		colDocument: string;
+		colWhatItDoes: string;
+		colCost: string;
+		rows: Array<{
+			document: string;
+			whatItDoes: string;
+			cost: string;
+			tone: 'neutral' | 'official' | 'companion';
+		}>;
+		footnote: string;
+	};
+
+	lez?: {
+		heading: string;
+		lead: string;
+		zones: LezZone[];
+		tip: string;
+	};
+
+	phrases?: {
+		heading: string;
+		lead: string;
+		items: PhraseItem[];
+	};
+
+	howTo?: {
+		heading: string;
+		lead: string;
+		steps: HowToStep[];
+		duration: string;
+		cost: string;
+		schemaName: string;
 	};
 }
 
