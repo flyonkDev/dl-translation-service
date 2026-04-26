@@ -127,6 +127,7 @@ const en: CountryPairCopy = {
 	/* === NEW: ZTL/LEZ deep-dive === */
 	lez: {
 		heading: 'ZTL and LEZ: the camera traps that cost Americans the most',
+		badge: 'Italy-specific',
 		lead: 'These are the single biggest source of unexpected fines for American tourists. GPS routinely routes you straight through both — multiple violations in one day stack, and the bill arrives months after you fly home.',
 		zones: [
 			{
@@ -363,11 +364,11 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US travelers and Italy-bound drivers — coming soon.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Coming soon' },
-			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Coming soon' },
+			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece' },
+			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
 			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Coming soon' },
 			{ flagFrom: 'gb', flagTo: 'it', label: 'UK → Italy', status: 'Coming soon' },
-			{ flagFrom: 'de', flagTo: 'it', label: 'Germany → Italy', status: 'Coming soon' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Coming soon' },
 		],
 	},

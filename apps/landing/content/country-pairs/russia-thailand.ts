@@ -51,6 +51,8 @@ export interface RelatedCard {
 	flagTo: string;
 	label: string;
 	status: string;
+	/** Internal href if the pair is live. Omit/empty for "coming soon" stubs. */
+	href?: string;
 }
 
 /**
@@ -88,6 +90,12 @@ export interface AlphabetExample {
 	sign: string;
 	latin: string;
 	meaning: string;
+}
+
+export interface RejectItem {
+	icon: string;
+	title: string;
+	text: string;
 }
 
 export interface CountryPairCopy {
@@ -203,8 +211,20 @@ export interface CountryPairCopy {
 	lez?: {
 		heading: string;
 		lead: string;
+		badge?: string;
 		zones: LezZone[];
 		tip: string;
+	};
+
+	rejects?: {
+		heading: string;
+		lead: string;
+		badge?: string;
+		items: RejectItem[];
+	};
+
+	labels?: {
+		freshnessPrefix?: string;
 	};
 
 	phrases?: {

@@ -133,6 +133,7 @@ const en: CountryPairCopy = {
 
 	lez: {
 		heading: 'Madrid Central, Barcelona ZBE, Sevilla ZBE: low-emission zones US drivers stumble into',
+		badge: 'Spain-specific',
 		lead: 'Spanish cities have rolled out Zonas de Bajas Emisiones (ZBEs) — low-emission zones similar to Italian ZTLs. GPS routes you through them, cameras log your plate, and the bill arrives via your rental company months later. Most rental cars qualify, but you still need the right environmental sticker (etiqueta ambiental) visible on the windscreen.',
 		zones: [
 			{
@@ -371,11 +372,11 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US travelers and Spain-bound drivers — coming soon.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live' },
-			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
+			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
 			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Coming soon' },
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Coming soon' },
-			{ flagFrom: 'de', flagTo: 'es', label: 'Germany → Spain', status: 'Coming soon' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Coming soon' },
 		],
 	},
@@ -527,6 +528,7 @@ const es: CountryPairCopy = {
 
 	lez: {
 		heading: 'Madrid Central, ZBE Barcelona y otras ZBE: trampa para turistas estadounidenses',
+		badge: 'Específico de España',
 		lead: 'Las ciudades españolas han implantado Zonas de Bajas Emisiones (ZBE) — el equivalente español a las ZTL italianas. El GPS suele dirigirte hacia el centro, las cámaras registran tu matrícula y la multa llega meses después a través de la empresa de alquiler. La mayoría de coches alquilados cumple, pero la pegatina ambiental (etiqueta DGT) debe estar visible en el parabrisas.',
 		zones: [
 			{
@@ -750,11 +752,11 @@ const es: CountryPairCopy = {
 		lead: 'Más guías de pares de países para viajeros estadounidenses y conductores con destino España — próximamente.',
 		comingSoonLabel: 'Próximamente',
 		items: [
-			{ flagFrom: 'us', flagTo: 'it', label: 'EE.UU. → Italia', status: 'En vivo' },
-			{ flagFrom: 'us', flagTo: 'gr', label: 'EE.UU. → Grecia', status: 'En vivo' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'EE.UU. → Italia', status: 'En vivo', href: '/idp-for-us-drivers-in-italy' },
+			{ flagFrom: 'us', flagTo: 'gr', label: 'EE.UU. → Grecia', status: 'En vivo', href: '/idp-for-us-drivers-in-greece' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'EE.UU. → Japón', status: 'En vivo', href: '/idp-for-us-drivers-in-japan' },
 			{ flagFrom: 'us', flagTo: 'fr', label: 'EE.UU. → Francia', status: 'Próximamente' },
 			{ flagFrom: 'gb', flagTo: 'es', label: 'Reino Unido → España', status: 'Próximamente' },
-			{ flagFrom: 'de', flagTo: 'es', label: 'Alemania → España', status: 'Próximamente' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'EE.UU. → Tailandia', status: 'Próximamente' },
 		],
 	},

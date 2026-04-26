@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
 import CountryPairPage from '~/components/CountryPair/Page.vue';
-import { usGreeceCopy } from '~/content/country-pairs/us-greece';
+import { usJapanCopy } from '~/content/country-pairs/us-japan';
 
 defineI18nRoute({
 	locales: ['en'],
@@ -10,14 +10,14 @@ defineI18nRoute({
 
 <template>
 	<CountryPairPage
-		:copy-by-locale="usGreeceCopy"
+		:copy-by-locale="usJapanCopy"
 		origin-flag="us"
-		destination-flag="gr"
+		destination-flag="jp"
 		issue-country="US"
-		canonical-path="/idp-for-us-drivers-in-greece"
-		id-prefix="us-gr-faq"
-		illustration="/illustrations/us-greece-hero.svg"
+		canonical-path="/idp-for-us-drivers-in-japan"
+		id-prefix="us-jp-faq"
+		illustration="/illustrations/us-japan-hero.svg"
 		analytics-origin="us"
-		analytics-destination="greece"
+		analytics-destination="japan"
 	/>
 </template>
