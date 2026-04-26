@@ -43,26 +43,17 @@
             </li>
           </ul>
 
-          <a
-            href="#pricing"
+          <NuxtLinkLocale
+            to="/pricing"
             class="link group inline-flex items-center gap-2 text-sm font-semibold text-slate-900 underline decoration-sea/40 underline-offset-4"
-            @click.prevent="scrollToPricing"
           >
-            {{ t('home.seePricing') }}
+            {{ t('home.seePricingDetails') }}
             <span aria-hidden="true" class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </a>
+          </NuxtLinkLocale>
 
           <p class="mt-3 text-xs text-slate-500">
             {{ t('home.priceNote', { price: `$${fromPrice}` }) }}
           </p>
-
-          <NuxtLinkLocale
-            to="/pricing"
-            class="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-sea hover:underline"
-          >
-            {{ t('home.seePricingDetails') }}
-            <span aria-hidden="true">→</span>
-          </NuxtLinkLocale>
         </div>
 
         <StartApplicationWidget
