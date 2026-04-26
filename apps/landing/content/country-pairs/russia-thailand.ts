@@ -84,6 +84,12 @@ export interface HowToStep {
 	text: string;
 }
 
+export interface AlphabetExample {
+	sign: string;
+	latin: string;
+	meaning: string;
+}
+
 export interface CountryPairCopy {
 	seo: {
 		title: string;
@@ -214,6 +220,16 @@ export interface CountryPairCopy {
 		duration: string;
 		cost: string;
 		schemaName: string;
+	};
+
+	alphabet?: {
+		heading: string;
+		lead: string;
+		badge: string;
+		examples: AlphabetExample[];
+		helpsHeading: string;
+		helps: string[];
+		outro: string;
 	};
 }
 

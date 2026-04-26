@@ -1226,8 +1226,10 @@ useHead(() => {
 
 	&:hover {
 		transform: translateY(-3px);
-		border-color: rgba(var(--c-sea), 0.2);
-		box-shadow: 0 14px 32px -14px rgba(15, 23, 42, 0.14), 0 4px 12px -6px rgba(var(--c-sea), 0.10);
+		border-color: rgba(var(--c-sea), 0.55);
+		box-shadow:
+			0 16px 36px -16px rgba(var(--c-sea), 0.45),
+			0 6px 16px -8px rgba(var(--c-sea), 0.25);
 
 		.related-card__sep {
 			color: rgb(var(--c-sea));

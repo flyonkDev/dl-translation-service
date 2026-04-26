@@ -5,8 +5,8 @@
 		<CountryPairHero
 			:breadcrumbs-home="copy.breadcrumbs.home"
 			:breadcrumbs-current="copy.breadcrumbs.current"
-			origin-flag="ru"
-			destination-flag="th"
+			origin-flag="us"
+			destination-flag="gr"
 			:kicker="copy.hero.kicker"
 			:title="copy.hero.title"
 			:lead="copy.hero.lead"
@@ -15,14 +15,57 @@
 			:cta-primary-href="appHref"
 			:cta-secondary-label="copy.hero.ctaSecondary"
 			cta-secondary-to="/pricing"
-			illustration="/illustrations/russia-thailand-hero.svg"
+			illustration="/illustrations/us-greece-hero.svg"
 			:badge-top-label="copy.hero.badgeTop"
 			:badge-bottom-label="copy.hero.badgeBottom"
 			@primary-click="goToApp"
 		/>
 
-		<!-- Why your Russian license isn't enough -->
-		<section class="section bg-white">
+		<!-- TL;DR comparison table -->
+		<section v-if="copy.tldr" class="section bg-white">
+			<div class="container max-w-5xl">
+				<div v-if="copy.lastReviewed" class="freshness-pill">
+					<Icon icon="ph:check-circle-bold" width="14" />
+					<span>Last reviewed: {{ copy.lastReviewed }}</span>
+				</div>
+				<h2 class="country-pair__h2">{{ copy.tldr.heading }}</h2>
+				<p class="country-pair__h2-lead">{{ copy.tldr.lead }}</p>
+
+				<div class="tldr-table-wrap">
+					<table class="tldr-table">
+						<thead>
+							<tr>
+								<th class="tldr-table__th">{{ copy.tldr.colDocument }}</th>
+								<th class="tldr-table__th">{{ copy.tldr.colWhatItDoes }}</th>
+								<th class="tldr-table__th tldr-table__th--cost">{{ copy.tldr.colCost }}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="r in copy.tldr.rows" :key="r.document" :class="`tldr-row tldr-row--${r.tone}`">
+								<td class="tldr-table__td tldr-table__td--doc">{{ r.document }}</td>
+								<td class="tldr-table__td">{{ r.whatItDoes }}</td>
+								<td class="tldr-table__td tldr-table__td--cost">{{ r.cost }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tldr-cards">
+					<div v-for="r in copy.tldr.rows" :key="r.document" :class="`tldr-card tldr-card--${r.tone}`">
+						<div class="tldr-card__head">
+							<span class="tldr-card__doc">{{ r.document }}</span>
+							<span class="tldr-card__cost">{{ r.cost }}</span>
+						</div>
+						<p class="tldr-card__text">{{ r.whatItDoes }}</p>
+					</div>
+				</div>
+
+				<p class="country-pair__pattern">{{ copy.tldr.footnote }}</p>
+			</div>
+		</section>
+
+		<!-- Why your US license creates friction -->
+		<section class="section bg-slate-50">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.whyNotEnough.heading }}</h2>
 				<p class="country-pair__h2-lead">{{ copy.whyNotEnough.lead }}</p>
@@ -39,14 +82,14 @@
 			</div>
 		</section>
 
-		<!-- Thailand driving rules -->
-		<section class="section bg-slate-50">
+		<!-- Greece driving rules -->
+		<section class="section bg-white">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.rules.heading }}</h2>
 				<p class="country-pair__h2-lead">{{ copy.rules.lead }}</p>
 
 				<div class="rules-grid">
-					<div v-for="r in copy.rules.items" :key="r.icon" class="rule-card">
+					<div v-for="r in copy.rules.items" :key="r.label" class="rule-card">
 						<div class="rule-card__top">
 							<div class="rule-card__icon">
 								<Icon :icon="r.icon" width="28" />
@@ -61,7 +104,7 @@
 		</section>
 
 		<!-- 2026 Fines -->
-		<section class="section bg-white">
+		<section class="section bg-slate-50">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.fines.heading }}</h2>
 				<p class="country-pair__h2-lead">{{ copy.fines.lead }}</p>
@@ -76,7 +119,66 @@
 			</div>
 		</section>
 
-		<!-- How IDP Companion fits — Honesty block -->
+		<!-- Greek alphabet on road signs -->
+		<section v-if="copy.alphabet" class="section alphabet-section">
+			<div class="container max-w-5xl">
+				<div class="alphabet-flag">
+					<Icon icon="ph:translate-bold" width="20" />
+					<span>{{ copy.alphabet.badge }}</span>
+				</div>
+				<h2 class="country-pair__h2">{{ copy.alphabet.heading }}</h2>
+				<p class="country-pair__h2-lead">{{ copy.alphabet.lead }}</p>
+
+				<div class="alphabet-lookalikes">
+					<div class="alphabet-lookalikes__heading">Greek letters that look like Latin letters but aren't</div>
+					<div class="alphabet-lookalikes__row">
+						<span class="alphabet-lookalikes__pair"><b>Ρ</b> = R, not P</span>
+						<span class="alphabet-lookalikes__pair"><b>Γ</b> = G, not Y</span>
+						<span class="alphabet-lookalikes__pair"><b>Η</b> = I, not H</span>
+						<span class="alphabet-lookalikes__pair"><b>Β</b> = V, not B</span>
+						<span class="alphabet-lookalikes__pair"><b>Χ</b> = Ch, not X</span>
+					</div>
+				</div>
+
+				<div class="alphabet-grid">
+					<div v-for="ex in copy.alphabet.examples" :key="ex.sign" class="alphabet-card">
+						<div class="alphabet-card__sign">{{ ex.sign }}</div>
+						<div class="alphabet-card__latin">{{ ex.latin }}</div>
+						<div class="alphabet-card__meaning">{{ ex.meaning }}</div>
+					</div>
+				</div>
+
+				<h3 class="alphabet-helps__heading">{{ copy.alphabet.helpsHeading }}</h3>
+				<ul class="alphabet-helps">
+					<li v-for="h in copy.alphabet.helps" :key="h" class="alphabet-helps__item">
+						<Icon icon="ph:check-bold" width="18" class="alphabet-helps__check" />
+						<span>{{ h }}</span>
+					</li>
+				</ul>
+
+				<p class="country-pair__pattern">{{ copy.alphabet.outro }}</p>
+			</div>
+		</section>
+
+		<!-- How to get an IDP -->
+		<section v-if="copy.howTo" class="section bg-white">
+			<div class="container max-w-3xl">
+				<h2 class="country-pair__h2">{{ copy.howTo.heading }}</h2>
+				<p class="country-pair__h2-lead">{{ copy.howTo.lead }}</p>
+
+				<ol class="howto-list">
+					<li v-for="(step, idx) in copy.howTo.steps" :key="step.title" class="howto-step">
+						<div class="howto-step__number">{{ idx + 1 }}</div>
+						<div class="howto-step__body">
+							<h3 class="howto-step__title">{{ step.title }}</h3>
+							<p class="howto-step__text">{{ step.text }}</p>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<!-- Honesty -->
 		<section class="section bg-mint/15">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.honesty.heading }}</h2>
@@ -128,7 +230,7 @@
 			</div>
 		</section>
 
-		<!-- Renting practical -->
+		<!-- Renting -->
 		<section class="section bg-white">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.renting.heading }}</h2>
@@ -151,8 +253,26 @@
 			</div>
 		</section>
 
-		<!-- What happens — stratified outcomes -->
-		<section class="section bg-slate-50">
+		<!-- Greek phrases -->
+		<section v-if="copy.phrases" class="section bg-slate-50">
+			<div class="container max-w-5xl">
+				<h2 class="country-pair__h2">{{ copy.phrases.heading }}</h2>
+				<p class="country-pair__h2-lead">{{ copy.phrases.lead }}</p>
+
+				<div class="phrases-grid">
+					<div v-for="p in copy.phrases.items" :key="p.phrase" class="phrase-card">
+						<div class="phrase-card__top">
+							<div class="phrase-card__it">{{ p.phrase }}</div>
+							<div class="phrase-card__en">{{ p.translation }}</div>
+						</div>
+						<div class="phrase-card__ctx">{{ p.context }}</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Outcomes -->
+		<section class="section bg-white">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.outcomes.heading }}</h2>
 				<p class="country-pair__h2-lead">{{ copy.outcomes.lead }}</p>
@@ -177,14 +297,14 @@
 		</section>
 
 		<!-- FAQ -->
-		<section class="section bg-white">
+		<section class="section bg-slate-50">
 			<div class="container max-w-3xl">
 				<h2 class="country-pair__h2">{{ copy.faq.heading }}</h2>
-				<FaqAccordion :items="copy.faq.items" id-prefix="ru-th-faq" />
+				<FaqAccordion :items="copy.faq.items" id-prefix="us-gr-faq" />
 			</div>
 		</section>
 
-		<!-- Related (coming soon stubs) -->
+		<!-- Related -->
 		<section class="section bg-mint/15">
 			<div class="container max-w-5xl">
 				<h2 class="country-pair__h2">{{ copy.related.heading }}</h2>
@@ -251,23 +371,21 @@ import FaqAccordion from '~/components/FaqAccordion.vue';
 import CountryPairHero from '~/components/CountryPair/Hero.vue';
 import CountryPairFines from '~/components/CountryPair/FinesTable.vue';
 import { useProductAnalytics } from '~/composables/useProductAnalytics';
-import { russiaThailandCopy, type CountryPairCopy } from '~/content/country-pairs/russia-thailand';
+import { usGreeceCopy } from '~/content/country-pairs/us-greece';
+import type { CountryPairCopy } from '~/content/country-pairs/russia-thailand';
 
-// Available in EN + RU. ES intentionally skipped — irrelevant audience for Russian-driver guide.
 defineI18nRoute({
-	locales: ['en', 'ru'],
+	locales: ['en'],
 });
 
 const { locale } = useI18n();
-const copy = computed<CountryPairCopy>(
-	() => russiaThailandCopy[locale.value as 'en' | 'ru'] ?? russiaThailandCopy.en,
-);
+const copy = computed<CountryPairCopy>(() => usGreeceCopy.en);
 const config = useRuntimeConfig();
 const localePath = useLocalePath();
 const { capture } = useProductAnalytics();
 
 const siteUrl = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
-const canonicalPath = computed(() => String(localePath('/idp-for-russian-drivers-in-thailand')));
+const canonicalPath = computed(() => String(localePath('/idp-for-us-drivers-in-greece')));
 const canonicalUrl = computed(() => siteUrl + canonicalPath.value);
 
 const appUrl = computed(() => String(config.public.appUrl || '').trim().replace(/\/+$/, ''));
@@ -276,7 +394,7 @@ const appHref = computed(() => {
 	if (!appUrl.value) return '#';
 	const qs = new URLSearchParams({
 		[LOCALE_QUERY_PARAM]: locale.value,
-		issueCountry: 'RU',
+		issueCountry: 'US',
 		planYears: '5',
 	});
 	return `${appUrl.value}/apply?${qs.toString()}`;
@@ -284,8 +402,8 @@ const appHref = computed(() => {
 
 function goToApp() {
 	capture('country_pair_cta_click', {
-		origin: 'russia',
-		destination: 'thailand',
+		origin: 'us',
+		destination: 'greece',
 		locale: locale.value,
 	});
 	if (typeof window !== 'undefined') {
@@ -293,7 +411,6 @@ function goToApp() {
 	}
 }
 
-// SEO meta — locale-aware via copy.value
 useSeoMeta({
 	title: () => copy.value.seo.title,
 	description: () => copy.value.seo.description,
@@ -302,24 +419,21 @@ useSeoMeta({
 	ogUrl: () => canonicalUrl.value,
 	ogType: 'article',
 	ogSiteName: 'IDP Companion',
-	ogLocale: () => (locale.value === 'ru' ? 'ru_RU' : 'en_US'),
+	ogLocale: 'en_US',
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => copy.value.seo.title,
 	twitterDescription: () => copy.value.seo.description,
 });
 
-// Per-page dynamic OG image. Component evaluates once per route at render time, so each
-// locale (en, ru) gets its own generated PNG with localized strings.
 defineOgImageComponent('CountryPair', {
-	origin: { code: 'ru', name: copy.value.og.originName },
-	destination: { code: 'th', name: copy.value.og.destinationName },
+	origin: { code: 'us', name: copy.value.og.originName },
+	destination: { code: 'gr', name: copy.value.og.destinationName },
 	title: copy.value.seo.ogTitleShort,
 	subtitle: copy.value.seo.ogSubtitle,
 });
 
-useHead(() => ({
-	link: [{ rel: 'canonical', href: canonicalUrl.value }],
-	script: [
+useHead(() => {
+	const baseScripts = [
 		{
 			type: 'application/ld+json',
 			children: JSON.stringify({
@@ -328,9 +442,9 @@ useHead(() => ({
 				headline: copy.value.seo.title,
 				description: copy.value.seo.description,
 				url: canonicalUrl.value,
-				inLanguage: locale.value,
-				datePublished: '2026-04-25',
-				dateModified: '2026-04-25',
+				inLanguage: 'en',
+				datePublished: '2026-04-26',
+				dateModified: '2026-04-26',
 				author: { '@type': 'Organization', name: 'IDP Companion', url: `${siteUrl}/` },
 				publisher: { '@id': `${siteUrl}/#organization` },
 				about: [
@@ -383,14 +497,43 @@ useHead(() => ({
 				},
 			}),
 		},
-	],
-}));
+	];
+
+	if (copy.value.howTo) {
+		baseScripts.push({
+			type: 'application/ld+json',
+			children: JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'HowTo',
+				name: copy.value.howTo.schemaName,
+				description: copy.value.howTo.lead,
+				totalTime: copy.value.howTo.duration,
+				estimatedCost: {
+					'@type': 'MonetaryAmount',
+					currency: 'USD',
+					value: copy.value.howTo.cost.replace(/[^0-9.]/g, ''),
+				},
+				step: copy.value.howTo.steps.map((step, idx) => ({
+					'@type': 'HowToStep',
+					position: idx + 1,
+					name: step.title,
+					text: step.text,
+				})),
+			}),
+		});
+	}
+
+	return {
+		link: [{ rel: 'canonical', href: canonicalUrl.value }],
+		script: baseScripts,
+	};
+});
 </script>
 
 <style scoped lang="scss">
 @use '@ui-kit/variables' as *;
 
-/* === Generic section heading === */
+/* === Generic === */
 
 .country-pair__h2 {
 	font-size: 24px;
@@ -412,7 +555,149 @@ useHead(() => ({
 	max-width: 760px;
 }
 
-/* === Reasons (why-not-enough) === */
+.freshness-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	margin-bottom: 16px;
+	border-radius: 999px;
+	background: rgba(var(--c-mint), 0.55);
+	color: rgb(var(--c-sea));
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+/* === TL;DR table === */
+
+.tldr-table-wrap {
+	display: none;
+	border-radius: $radius-2xl;
+	overflow: hidden;
+	border: 1px solid rgb(var(--c-slate-200));
+	background: white;
+	margin-bottom: 24px;
+
+	@include up($bp-tablet) {
+		display: block;
+	}
+}
+
+.tldr-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.tldr-table__th {
+	text-align: left;
+	padding: 14px 18px;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: rgb(var(--c-slate-500));
+	background: rgb(var(--c-slate-50));
+	border-bottom: 1px solid rgb(var(--c-slate-200));
+
+	&--cost {
+		text-align: right;
+	}
+}
+
+.tldr-table__td {
+	padding: 18px;
+	vertical-align: top;
+	line-height: 1.6;
+	color: rgb(var(--c-slate-700));
+	border-bottom: 1px solid rgb(var(--c-slate-100));
+
+	&--doc {
+		font-weight: 800;
+		color: rgb(var(--c-slate-900));
+		min-width: 200px;
+	}
+
+	&--cost {
+		text-align: right;
+		font-weight: 800;
+		color: rgb(var(--c-slate-900));
+		white-space: nowrap;
+	}
+}
+
+.tldr-row {
+	&--official {
+		background: rgba(var(--c-mint), 0.18);
+	}
+
+	&--companion {
+		background: rgba(var(--c-orange), 0.06);
+	}
+
+	&:last-child .tldr-table__td {
+		border-bottom: 0;
+	}
+}
+
+.tldr-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 24px;
+
+	@include up($bp-tablet) {
+		display: none;
+	}
+}
+
+.tldr-card {
+	padding: 16px 18px;
+	border-radius: $radius-xl;
+	background: white;
+	border: 1px solid rgb(var(--c-slate-200));
+	border-left-width: 4px;
+	border-left-color: rgb(var(--c-slate-300));
+
+	&--official {
+		border-left-color: rgb(var(--c-sea));
+	}
+
+	&--companion {
+		border-left-color: rgb(var(--c-orange));
+	}
+}
+
+.tldr-card__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+
+.tldr-card__doc {
+	font-size: 14px;
+	font-weight: 800;
+	color: rgb(var(--c-slate-900));
+}
+
+.tldr-card__cost {
+	font-size: 13px;
+	font-weight: 800;
+	color: rgb(var(--c-slate-900));
+	white-space: nowrap;
+}
+
+.tldr-card__text {
+	font-size: 13px;
+	line-height: 1.6;
+	color: rgb(var(--c-slate-700));
+}
+
+/* === Reasons === */
 
 .reasons-grid {
 	display: grid;
@@ -462,7 +747,7 @@ useHead(() => ({
 	color: rgb(var(--c-slate-700));
 }
 
-/* === Rules grid === */
+/* === Rules === */
 
 .rules-grid {
 	display: grid;
@@ -501,9 +786,10 @@ useHead(() => ({
 }
 
 .rule-card__value {
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 800;
 	color: rgb(var(--c-slate-900));
+	text-align: right;
 }
 
 .rule-card__label {
@@ -521,8 +807,182 @@ useHead(() => ({
 	color: rgb(var(--c-slate-700));
 }
 
+/* === Greek alphabet section === */
 
-/* === Honesty grid === */
+.alphabet-section {
+	background: linear-gradient(180deg, rgba(var(--c-sea), 0.05) 0%, rgba(var(--c-mint), 0.18) 100%);
+}
+
+.alphabet-flag {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 12px;
+	margin-bottom: 14px;
+	border-radius: 999px;
+	background: white;
+	border: 1px solid rgba(var(--c-sea), 0.3);
+	color: rgb(var(--c-sea));
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.alphabet-lookalikes {
+	padding: 14px 18px;
+	border-radius: $radius-xl;
+	background: white;
+	border: 1px dashed rgba(var(--c-sea), 0.4);
+	margin-bottom: 18px;
+}
+
+.alphabet-lookalikes__heading {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: rgb(var(--c-slate-500));
+	margin-bottom: 8px;
+}
+
+.alphabet-lookalikes__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 16px;
+}
+
+.alphabet-lookalikes__pair {
+	font-size: 13px;
+	color: rgb(var(--c-slate-700));
+
+	b {
+		font-size: 16px;
+		font-weight: 800;
+		color: rgb(var(--c-sea));
+		margin-right: 4px;
+	}
+}
+
+.alphabet-grid {
+	display: grid;
+	gap: 14px;
+	grid-template-columns: 1fr;
+	margin-bottom: 28px;
+
+	@include up($bp-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.alphabet-card {
+	padding: 18px 20px;
+	border-radius: $radius-xl;
+	background: white;
+	border: 1px solid rgba(var(--c-sea), 0.15);
+	box-shadow: 0 6px 18px -10px rgba(15, 23, 42, 0.08);
+}
+
+.alphabet-card__sign {
+	font-size: 28px;
+	font-weight: 800;
+	color: rgb(var(--c-sea));
+	letter-spacing: 0.02em;
+	margin-bottom: 4px;
+}
+
+.alphabet-card__latin {
+	font-size: 14px;
+	font-weight: 700;
+	color: rgb(var(--c-slate-900));
+	font-style: italic;
+	margin-bottom: 8px;
+}
+
+.alphabet-card__meaning {
+	font-size: 13px;
+	line-height: 1.55;
+	color: rgb(var(--c-slate-700));
+}
+
+.alphabet-helps__heading {
+	font-size: 16px;
+	font-weight: 800;
+	color: rgb(var(--c-slate-900));
+	margin-bottom: 12px;
+}
+
+.alphabet-helps {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.alphabet-helps__item {
+	display: flex;
+	gap: 12px;
+	font-size: 13px;
+	line-height: 1.65;
+	color: rgb(var(--c-slate-700));
+}
+
+.alphabet-helps__check {
+	flex-shrink: 0;
+	color: rgb(var(--c-sea));
+	margin-top: 4px;
+}
+
+/* === HowTo === */
+
+.howto-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.howto-step {
+	display: flex;
+	gap: 16px;
+	padding: 18px 20px;
+	border-radius: $radius-xl;
+	background: white;
+	border: 1px solid rgb(var(--c-slate-200));
+}
+
+.howto-step__number {
+	flex-shrink: 0;
+	width: 32px;
+	height: 32px;
+	border-radius: 999px;
+	background: rgb(var(--c-sea));
+	color: white;
+	font-size: 14px;
+	font-weight: 800;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.howto-step__title {
+	font-size: 15px;
+	font-weight: 800;
+	color: rgb(var(--c-slate-900));
+	margin-bottom: 4px;
+}
+
+.howto-step__text {
+	font-size: 13px;
+	line-height: 1.6;
+	color: rgb(var(--c-slate-700));
+}
+
+/* === Honesty === */
 
 .honesty-grid {
 	display: grid;
@@ -552,21 +1012,10 @@ useHead(() => ({
 	margin-bottom: 14px;
 }
 
-.honesty-card--yes .honesty-card__title {
-	color: #15803d;
-}
-
-.honesty-card--no .honesty-card__title {
-	color: #b91c1c;
-}
-
-.honesty-card--info .honesty-card__title {
-	color: rgb(var(--c-sea));
-}
-
-.honesty-card--warn .honesty-card__title {
-	color: #b45309;
-}
+.honesty-card--yes .honesty-card__title { color: #15803d; }
+.honesty-card--no .honesty-card__title { color: #b91c1c; }
+.honesty-card--info .honesty-card__title { color: rgb(var(--c-sea)); }
+.honesty-card--warn .honesty-card__title { color: #b45309; }
 
 .honesty-card__list {
 	list-style: none;
@@ -670,6 +1119,52 @@ useHead(() => ({
 	margin-top: 4px;
 }
 
+/* === Phrases === */
+
+.phrases-grid {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: 1fr;
+
+	@include up($bp-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.phrase-card {
+	padding: 16px 18px;
+	border-radius: $radius-xl;
+	background: white;
+	border: 1px solid rgb(var(--c-slate-200));
+}
+
+.phrase-card__top {
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+	margin-bottom: 6px;
+	flex-wrap: wrap;
+}
+
+.phrase-card__it {
+	font-size: 16px;
+	font-weight: 800;
+	color: rgb(var(--c-sea));
+	font-style: italic;
+}
+
+.phrase-card__en {
+	font-size: 13px;
+	font-weight: 700;
+	color: rgb(var(--c-slate-900));
+}
+
+.phrase-card__ctx {
+	font-size: 12px;
+	line-height: 1.5;
+	color: rgb(var(--c-slate-500));
+}
+
 /* === Outcomes === */
 
 .outcomes-list {
@@ -685,17 +1180,9 @@ useHead(() => ({
 	background: white;
 	border-left: 4px solid rgb(var(--c-slate-200));
 
-	&.outcome--low {
-		border-left-color: rgb(var(--c-sea));
-	}
-
-	&.outcome--med {
-		border-left-color: #f59e0b;
-	}
-
-	&.outcome--high {
-		border-left-color: #dc2626;
-	}
+	&.outcome--low { border-left-color: rgb(var(--c-sea)); }
+	&.outcome--med { border-left-color: #f59e0b; }
+	&.outcome--high { border-left-color: #dc2626; }
 }
 
 .outcome__top {

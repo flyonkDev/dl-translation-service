@@ -35,16 +35,16 @@
 					class="cp-hero__quick-answer"
 					:class="{ 'cp-hero__quick-answer--yes': quickAnswer.required, 'cp-hero__quick-answer--no': !quickAnswer.required }"
 				>
-					<div class="cp-hero__quick-answer-icon">
-						<Icon
-							:icon="quickAnswer.required ? 'ph:check-circle-fill' : 'ph:x-circle-fill'"
-							width="36"
-						/>
-					</div>
-					<div class="cp-hero__quick-answer-body">
+					<div class="cp-hero__quick-answer-head">
+						<div class="cp-hero__quick-answer-icon">
+							<Icon
+								:icon="quickAnswer.required ? 'ph:check-circle-fill' : 'ph:x-circle-fill'"
+								width="36"
+							/>
+						</div>
 						<div class="cp-hero__quick-answer-verdict">{{ quickAnswer.verdict }}</div>
-						<p class="cp-hero__quick-answer-text">{{ quickAnswer.text }}</p>
 					</div>
+					<p class="cp-hero__quick-answer-text">{{ quickAnswer.text }}</p>
 				</div>
 
 				<div class="cp-hero__cta">
@@ -312,7 +312,8 @@ function onPrimaryClick() {
 /* Quick answer card */
 .cp-hero__quick-answer {
 	display: flex;
-	gap: 14px;
+	flex-direction: column;
+	gap: 10px;
 	padding: 16px 20px;
 	border-radius: $radius-xl;
 	background: white;
@@ -331,28 +332,30 @@ function onPrimaryClick() {
 	}
 }
 
+.cp-hero__quick-answer-head {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
 .cp-hero__quick-answer-icon {
 	flex-shrink: 0;
 	display: inline-flex;
 	color: rgb(var(--c-sea));
-	margin-top: 2px;
-}
-
-.cp-hero__quick-answer-body {
-	min-width: 0;
 }
 
 .cp-hero__quick-answer-verdict {
 	font-size: 16px;
 	font-weight: 800;
 	color: rgb(var(--c-slate-900));
-	margin-bottom: 4px;
+	line-height: 1.3;
 }
 
 .cp-hero__quick-answer-text {
 	font-size: 13px;
 	line-height: 1.6;
 	color: rgb(var(--c-slate-700));
+	margin: 0;
 }
 
 /* CTA */
