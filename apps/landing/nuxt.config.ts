@@ -40,7 +40,28 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/i18n',
 		'@nuxtjs/sitemap',
+		'nuxt-og-image',
 	],
+
+	ogImage: {
+		// Pin to Satori renderer — works on Cloudflare Pages without Playwright/Chromium binaries.
+		// Browser renderer needs playwright-core, fails to install on Windows
+		// and won't run on serverless/edge anyway.
+		compatibility: {
+			runtime: { browser: false },
+			prerender: { browser: false },
+			dev: { browser: false },
+		},
+		// Static site: all OGs are prerendered at build time. Disable runtime generation
+		// entirely — no signing secret needed, no security concern, no surprise CF Worker hits.
+		// Dev mode still generates on-demand for local preview.
+		zeroRuntime: true,
+		fonts: [
+			'Inter:400',
+			'Inter:600',
+			'Inter:800',
+		],
+	},
 
 	site: {
 		url: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.idpcompanion.com',
