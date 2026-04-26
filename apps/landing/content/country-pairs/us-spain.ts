@@ -375,9 +375,9 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
 			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece' },
 			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico' },
 			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Coming soon' },
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Coming soon' },
-			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Coming soon' },
 		],
 	},
 
@@ -755,9 +755,9 @@ const es: CountryPairCopy = {
 			{ flagFrom: 'us', flagTo: 'it', label: 'EE.UU. → Italia', status: 'En vivo', href: '/idp-for-us-drivers-in-italy' },
 			{ flagFrom: 'us', flagTo: 'gr', label: 'EE.UU. → Grecia', status: 'En vivo', href: '/idp-for-us-drivers-in-greece' },
 			{ flagFrom: 'us', flagTo: 'jp', label: 'EE.UU. → Japón', status: 'En vivo', href: '/idp-for-us-drivers-in-japan' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'EE.UU. → México', status: 'En vivo', href: '/idp-for-us-drivers-in-mexico' },
 			{ flagFrom: 'us', flagTo: 'fr', label: 'EE.UU. → Francia', status: 'Próximamente' },
 			{ flagFrom: 'gb', flagTo: 'es', label: 'Reino Unido → España', status: 'Próximamente' },
-			{ flagFrom: 'us', flagTo: 'th', label: 'EE.UU. → Tailandia', status: 'Próximamente' },
 		],
 	},
 

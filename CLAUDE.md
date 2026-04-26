@@ -272,16 +272,94 @@ URL pattern is a contract — **never change** `/idp-for-{origin}-drivers-in-{de
 - Test locally: visit `/__og-image__/static/<route>/og.png` to inspect the generated image
 - Don't fight it — when adding a new country-pair page, just call `defineOgImageComponent`. Generic pages (privacy/refund/terms) use the static `/og-image.png` fallback.
 
-### Country-pair page checklist (when creating a new one)
+### Country-pair page architecture (current — post-refactor 2026-04-26)
 
-1. Create `pages/idp-for-{origin}-drivers-in-{destination}.vue`
-2. Slug must match URL pattern exactly (lowercase, hyphens, no trailing slash in filename)
-3. Add `defineOgImageComponent('CountryPair', { ... })` for OG
-4. `useSeoMeta` with full OG/Twitter set + `ogLocale: toOgLocale(locale.value)`
-5. JSON-LD blocks: `Article` + `FAQPage` + `BreadcrumbList` + `Product` (use `@id` reference to `${siteUrl}/#organization` for publisher)
-6. Use shared [components/FaqAccordion.vue](apps/landing/components/FaqAccordion.vue) for the FAQ section
-7. i18n keys go under `pages.<slug>.*` namespace in `apps/landing/i18n/locales/{en,ru,es}.json`. **Locales policy:** Tier 1/2 country-pair pages ship in **EN + the origin's native language** only (e.g., Russia-Thailand = EN+RU; not ES). Skip locales not relevant to the audience via `defineI18nRoute({ locales: [...] })`
-8. Internal links: 3 same-origin destinations + 2 same-destination origins + 1 long-form guide. If targets don't exist yet — make them text-only "Coming soon" stubs, **not 404 links**
+Country-pair pages use a **typed TS content + thin Vue wrapper + shared component** pattern. Do NOT write monolithic per-page .vue files (the original russia-thailand.vue used to be 870+ lines — that's why we refactored).
+
+**Three files per page:**
+
+1. **Content** — `apps/landing/content/country-pairs/{slug}.ts`
+   - Typed `CountryPairCopy` (defined in [russia-thailand.ts](apps/landing/content/country-pairs/russia-thailand.ts))
+   - Exports `Record<locale, CountryPairCopy>`, e.g. `usItalyCopy: Record<'en', CountryPairCopy> = { en }`
+   - **Multi-locale lives here**, not in `i18n/locales/*.json`. For an EN+ES page (e.g. us-spain), provide both keys: `{ en, es }`
+2. **Page wrapper** — `apps/landing/pages/idp-for-{origin}-drivers-in-{destination}.vue`
+   - 10–25 lines. Just `defineI18nRoute({ locales: [...] })` + `<CountryPairPage>` with props
+   - Canonical reference: [pages/idp-for-us-drivers-in-mexico.vue](apps/landing/pages/idp-for-us-drivers-in-mexico.vue)
+3. **Shared renderer** — [components/CountryPair/Page.vue](apps/landing/components/CountryPair/Page.vue)
+   - Renders all sections, handles `useSeoMeta`, `defineOgImageComponent`, JSON-LD (Article + FAQPage + BreadcrumbList + Product + optional HowTo)
+   - Picks copy by current locale, falls back to first key if missing
+   - **Don't edit per page** — this is shared. Change here only when the structural pattern needs to change.
+
+**Required props on `<CountryPairPage>`:** `copy-by-locale`, `origin-flag` (ISO-2 lowercase), `destination-flag` (ISO-2 lowercase), `issue-country` (ISO-2 uppercase, passed to `/apply`), `canonical-path`, `id-prefix` (FAQ a11y), `illustration` (`/illustrations/{slug}-hero.svg`), `analytics-origin`, `analytics-destination`.
+
+**URL pattern is a contract** — never change `/idp-for-{origin}-drivers-in-{destination}/` slug once published. Filename, canonical, internal links, and external backlinks all depend on it.
+
+**Locale policy** (validated across 5 live pages):
+- Default: **EN only** for any US-origin page (us-italy, us-greece, us-spain, us-japan, us-mexico are all EN-only — exception: us-spain ships EN+ES because it explicitly targets the 60M+ Hispanic-American audience)
+- Russia-origin: **EN + RU** (russia-thailand)
+- Rule: ship the origin's primary language only when there's a clear audience signal. Don't add ES to a US→Japan page just because we *can*; the searcher intent isn't there.
+- Filter via `defineI18nRoute({ locales: ['en'] })` in the page wrapper.
+
+### Tier 1 country-pair playbook (validated 2026-04-26)
+
+The 5 live pages ([us-italy](apps/landing/content/country-pairs/us-italy.ts), [us-greece](apps/landing/content/country-pairs/us-greece.ts), [us-spain](apps/landing/content/country-pairs/us-spain.ts), [us-japan](apps/landing/content/country-pairs/us-japan.ts), [us-mexico](apps/landing/content/country-pairs/us-mexico.ts)) are the canonical references. **Always read 2–3 of them before authoring a new one** — they encode the patterns below.
+
+**Required `CountryPairCopy` blocks** (no v-if in the template — must provide):
+`seo`, `breadcrumbs`, `hero`, `quickAnswer`, `whyNotEnough` (3 reasons), `rules` (8 cards), `fines` (7–9 rows), `honesty` (4 sub-blocks: is/isNot/helps/needOfficial), `renting` (4 chains + 6+ tips), `outcomes` (5 rows), `faq` (8–10 items), `related` (6 items), `finalCta`, `legal`, `og`.
+
+**Optional blocks for Tier 1 — include all that apply** (this is what separates Tier 1 from Tier 2):
+- `lastReviewed: 'Month YYYY'` — renders as freshness pill. Always include.
+- `tldr` — 3-row table comparing US License vs AAA/AATA IDP vs IDP Companion in destination context. `tone: 'neutral' | 'official' | 'companion'` colors the row. **Always include.**
+- `lez` — country-specific deep-dive zones (Italy ZTL, Mexico Quintana Roo checkpoints, Milan Area B/C). Renders as gradient block with badge. Use whenever the destination has documented enforcement zones / camera traps / restriction systems.
+- `rejects` — country-specific list of things the destination *rejects* (Japan's 4 IDP types it rejects, etc.). Use when the destination has notable disqualifying factors.
+- `alphabet` — non-Latin script destinations (Japan, Greece, Russia, Thailand). Examples + how-it-helps list.
+- `phrases` — 8 phrases in the destination's primary language with English translation + context. **Always include for Tier 1.** This is one of the highest-engagement sections (validated by GA scroll-depth).
+- `howTo` — 5 steps + `schemaName`/`duration`/`cost` for HowTo JSON-LD. Always include — generates additional rich-result eligibility.
+- `labels.freshnessPrefix` — locale override for "Last reviewed:" prefix. Default handles en/es/ru.
+
+**Honesty block reframing rules:**
+- Countries that **require** an official IDP (Italy, Greece, Japan, Spain, Thailand): standard framing — `is/isNot/helps/needOfficial.title = "When you need an official AAA/AATA IDP"`
+- Countries that **don't require** an IDP (Mexico): reframe `needOfficial.title = "Documents Mexican law actually cares about (we are not these)"` and list the docs the user actually needs (physical license, TPL insurance, passport, FMM). **Don't pretend an IDP is needed when it isn't** — Google's helpful-content classifier punishes this and AGENTS.md forbids it.
+
+**`quickAnswer.required` semantics:** `true` for IDP-required destinations (the verdict reads "Yes — you need an IDP in X"). `false` for Mexico-style (verdict reads "No — but...followed by the friction reality").
+
+**Content length:** Tier 1 target = **2,000–2,500 words** in the user-visible copy (excluding TS keys/labels). us-italy = ~2,400, us-mexico = ~2,500, us-japan = ~2,200. Below 1,800 is Tier 2 territory.
+
+**Hero lead structure** (70–150 words):
+1. Specific scene-setter (cities, weeks-from-now, booked rental)
+2. The killer-angle hook (specific dollar amount + specific incident if available)
+3. The legal-vs-real reframe one-liner
+
+The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.50) and Cancún Italian-tourist ($2,566) directly. Specifics outperform generalities for E-E-A-T and CTR.
+
+**SEO title patterns** (pick by destination archetype):
+- IDP-required, fines-heavy: `IDP for {Origin} Drivers in {Dest}: {Year} Guide to {Specific Pain} & Avoiding €{Amount}+ Tickets`
+- IDP-required, complexity-heavy: `IDP for {Origin} Drivers in {Dest}: {Year} Guide` (subtitle does the work)
+- IDP **not** required (Mexico-style): `Driving in {Dest} with a {Origin} License: What '{Counter-narrative}' Actually Costs You ({Year})`
+
+**`ogTitleShort` + `ogSubtitle`** must fit the OG card template — keep ogTitleShort under 50 chars, ogSubtitle under 60.
+
+**Fines table:** include 7–9 rows mixing statutory ranges with documented real-world incidents when verifiable. Every row needs `severity: 'low' | 'med' | 'high'` (drives the colored left-border on cards). Caption must cite source category ("Codice della Strada", "Italian Polizia data", "Ackerman Group reports") — not bare claims.
+
+**Sources block:** cite minimum 3 categories — government source (state department, local ministry of transport), independent third-party (academic journal, news outlet, AAA), and travel-industry data (rental policies, embassy advisories). Bare "everyone knows" facts kill E-E-A-T.
+
+**Related cards (6 items):** target ratio = **3–4 same-origin Live + 1 same-destination Coming Soon + 1 long-form guide Coming Soon stub**. With 5 live US-origin pages now, US-origin pages can show 4 same-origin Live (the 3-same-origin rule from SEO_STRATEGY.md is a soft floor, not a ceiling). Coming-soon stubs render as non-clickable `<div>` — the shared component handles this via `r.href` presence. Always update sibling pages' `related.items` when shipping a new page (add it as Live, drop a stale Coming Soon).
+
+**Hero illustration:** `/illustrations/{origin}-{destination}-hero.svg`. SVG, ~1820×1024 viewBox, brand palette (mint #CBF3F0, sea #2EC4B6, orange #FF9F1C, slate). Drop into `apps/landing/public/illustrations/`.
+
+**OG image:** auto-generated by [components/OgImage/CountryPair.vue](apps/landing/components/OgImage/CountryPair.vue) — `<CountryPairPage>` calls `defineOgImageComponent('CountryPair', { origin: { code, name }, destination: { code, name }, title, subtitle })` automatically. Per-locale variants are cached separately. Don't manually wire `og:image` on the page wrapper.
+
+### Step-by-step: shipping a new country-pair page
+
+1. **Read the brief** (`docs/seo-docs/...` or markdown drop) and identify destination archetype (IDP-required vs not, Latin script vs not, has restriction zones vs not).
+2. **Read 2–3 existing pages** matching the archetype as references (e.g. for Tier 1 IDP-required → us-italy + us-japan; for IDP-not-required → us-mexico).
+3. **Write `apps/landing/content/country-pairs/{slug}.ts`** with all required + applicable optional blocks. Import `type { CountryPairCopy } from './russia-thailand'`.
+4. **Write `apps/landing/pages/idp-for-{origin}-drivers-in-{destination}.vue`** (10–25 lines, mirror an existing wrapper).
+5. **Drop hero SVG** at `apps/landing/public/illustrations/{origin}-{destination}-hero.svg`.
+6. **Update sibling pages' `related.items`** — add the new page as `status: 'Live', href: '/idp-for-{origin}-drivers-in-{destination}'`. Drop one stale Coming Soon to keep at 6 items.
+7. **Verify locally** — `pnpm --filter landing dev`, hit the page, check freshness pill, FAQ accordion, related cards (live ones must navigate, coming-soon stay as `<div>`).
+8. **Check `/__og-image__/static/{slug}/og.png`** — confirms OG image renders.
+9. **Push to master** — Cloudflare Pages auto-deploys. After ~2 min, `curl https://idpcompanion.com/{slug}` should return 200.
 
 ### Content style (validated 2026-04-25)
 
