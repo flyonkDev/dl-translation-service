@@ -47,6 +47,9 @@
 					<h5 class="col-title text-sm font-bold mb-2">{{ companyTitle }}</h5>
 					<ul class="list">
 						<li class="list-link text-sm mb-1.5">
+							<a :href="links.about" class="link-underline">{{ linkAbout }}</a>
+						</li>
+						<li class="list-link text-sm mb-1.5">
 							<a :href="links.privacy" class="link-underline">{{ linkPrivacy }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
@@ -109,6 +112,7 @@
 	    linkPricing?: string;
 	    linkHowItWorks?: string;
 	    linkFaq?: string;
+	    linkAbout?: string;
 	    linkPrivacy?: string;
 	    linkTerms?: string;
 	    linkRefund?: string;
@@ -121,6 +125,7 @@
 	      howItWorks: string;
 	      faq: string;
 
+	      about: string;
 	      privacy: string;
 	      terms: string;
 	      refund: string;
@@ -140,6 +145,7 @@
 	    linkPricing: 'Pricing',
 	    linkHowItWorks: 'How it works',
 	    linkFaq: 'FAQ',
+	    linkAbout: 'About',
 	    linkPrivacy: 'Privacy Policy',
 	    linkTerms: 'Terms & Conditions',
 	    linkRefund: 'Refund Policy',
@@ -159,6 +165,7 @@
 	  howItWorks: props.links?.howItWorks ?? '#how-it-works',
 	  faq: props.links?.faq ?? '#faq',
 
+	  about: props.links?.about ?? '#',
 	  privacy: props.links?.privacy ?? '#',
 	  terms: props.links?.terms ?? '#',
 	  refund: props.links?.refund ?? '#',

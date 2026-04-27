@@ -3,7 +3,7 @@
 	<div class="layout">
 		<header class="layout-header">
 			<div class="layout-header__inner">
-				<NuxtLink to="/" class="logo inline-flex min-w-0 shrink-0 items-center no-underline">
+				<NuxtLinkLocale to="/" class="logo inline-flex min-w-0 shrink-0 items-center no-underline">
 					<img
 						:src="brandLogoCompactSrc"
 						:alt="t('layout.logo')"
@@ -14,12 +14,13 @@
 						:alt="t('layout.logo')"
 						class="logo-image logo-image--full hidden sm:block"
 					/>
-				</NuxtLink>
+				</NuxtLinkLocale>
 
 				<nav class="nav">
-					<a href="#how-it-works" class="nav-link">{{ t('layout.navHow') }}</a>
-					<a href="#faq" class="nav-link">{{ t('layout.navFaq') }}</a>
-					<a href="#pricing" class="nav-link">{{ t('layout.navPricing') }}</a>
+					<NuxtLinkLocale :to="{ path: '/', hash: '#how-it-works' }" class="nav-link">{{ t('layout.navHow') }}</NuxtLinkLocale>
+					<NuxtLinkLocale :to="{ path: '/', hash: '#faq' }" class="nav-link">{{ t('layout.navFaq') }}</NuxtLinkLocale>
+					<NuxtLinkLocale to="/pricing" class="nav-link">{{ t('layout.navPricing') }}</NuxtLinkLocale>
+					<NuxtLinkLocale to="/about" class="nav-link">{{ t('layout.navAbout') }}</NuxtLinkLocale>
 				</nav>
 
 				<div
@@ -53,12 +54,31 @@
 			<slot />
 		</main>
 
-		<AppFooter />
+		<AppFooter
+			:brand-name="t('layout.logo')"
+			:popular-title="t('footer.popularTitle')"
+			:product-title="t('footer.productTitle')"
+			:company-title="t('footer.companyTitle')"
+			:support-title="t('footer.supportTitle')"
+			:disclaimer-line="t('footer.digitalDelivery')"
+			:link-pricing="t('footer.linkPricing')"
+			:link-how-it-works="t('footer.linkHowItWorks')"
+			:link-faq="t('footer.linkFaq')"
+			:link-about="t('footer.linkAbout')"
+			:link-privacy="t('footer.linkPrivacy')"
+			:link-terms="t('footer.linkTerms')"
+			:link-refund="t('footer.linkRefund')"
+			:link-contact="t('footer.linkContact')"
+			:copyright-line="t('footer.copyright', { year: currentYear })"
+			:support-email="supportEmail"
+			:links="footerLinks"
+		/>
 	</div>
 </template>
 
 <script setup lang="ts">
-	import { useI18n } from '#imports';
+	import { computed } from 'vue';
+	import { useI18n, useLocalePath, useRuntimeConfig } from '#imports';
 	import AppFooter from '@ui-kit/components/layout/AppFooter.vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 	import brandLogoFullSrc from '@ui-kit/assets/branding/idp-logo-header.svg';
@@ -66,12 +86,28 @@
 
 	const { locale, t } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
+	const localePath = useLocalePath();
+	const config = useRuntimeConfig();
+
+	const supportEmail = String(config.public.supportEmail || 'support@idpcompanion.com');
+	const currentYear = new Date().getFullYear();
 
 	const landingLocales = [
 		{ code: 'en' as const, flag: 'us', label: 'English' },
 		{ code: 'ru' as const, flag: 'ru', label: 'Русский' },
 		{ code: 'es' as const, flag: 'es', label: 'Español' },
 	] as const;
+
+	const footerLinks = computed(() => ({
+		pricing: localePath('/pricing'),
+		howItWorks: `${localePath('/')}#how-it-works`,
+		faq: `${localePath('/')}#faq`,
+		about: localePath('/about'),
+		privacy: localePath('/privacy-policy'),
+		terms: localePath('/terms-of-service'),
+		refund: localePath('/refund-policy'),
+		contact: `mailto:${supportEmail}`,
+	}));
 </script>
 
 <style scoped>

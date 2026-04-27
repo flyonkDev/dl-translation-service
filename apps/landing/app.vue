@@ -6,13 +6,15 @@
 			start-as="a"
 			:start-href="appApplyUrl"
 			:home-href="localePath({ name: 'index' })"
-			how-href="#how-it-works"
-			faq-href="#faq"
+			:how-href="`${localePath({ name: 'index' })}#how-it-works`"
+			:faq-href="`${localePath({ name: 'index' })}#faq`"
 			:pricing-href="localePath({ name: 'pricing' })"
+			:about-href="localePath({ name: 'about' })"
 			:brand-name="t('layout.logo')"
 			:nav-how-label="t('layout.navHow')"
 			:nav-faq-label="t('layout.navFaq')"
 			:nav-pricing-label="t('layout.navPricing')"
+			:nav-about-label="t('layout.navAbout')"
 		>
 			<template #localeSwitcher>
 				<LandingLocaleSwitcher />
@@ -31,6 +33,7 @@
 			:link-pricing="t('footer.linkPricing')"
 			:link-how-it-works="t('footer.linkHowItWorks')"
 			:link-faq="t('footer.linkFaq')"
+			:link-about="t('footer.linkAbout')"
 			:link-privacy="t('footer.linkPrivacy')"
 			:link-terms="t('footer.linkTerms')"
 			:link-refund="t('footer.linkRefund')"
@@ -74,6 +77,7 @@
 		pricing: localePath({ name: 'pricing' }),
 		howItWorks: localePath({ name: 'index', hash: '#how-it-works' }),
 		faq: localePath({ name: 'index', hash: '#faq' }),
+		about: localePath({ name: 'about' }),
 		privacy: localePath({ name: 'privacy-policy' }),
 		terms: localePath({ name: 'terms-of-service' }),
 		refund: localePath({ name: 'refund-policy' }),

@@ -42,6 +42,14 @@
 			>
 				{{ navPricingLabel }}
 			</a>
+			<a
+				:href="aboutHref"
+				class="mobile-nav__link"
+				role="menuitem"
+				@click="close()"
+			>
+				{{ navAboutLabel }}
+			</a>
 		</div>
 	</div>
 </template>
@@ -55,9 +63,11 @@ withDefaults(
 		navHowLabel: string;
 		navFaqLabel: string;
 		navPricingLabel: string;
+		navAboutLabel: string;
 		howHref: string;
 		faqHref: string;
 		pricingHref: string;
+		aboutHref: string;
 		ariaLabel?: string;
 	}>(),
 	{

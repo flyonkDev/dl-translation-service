@@ -23,6 +23,7 @@
 				<a :href="howHref" class="nav-link text-sm whitespace-nowrap">{{ navHowLabel }}</a>
 				<a :href="faqHref" class="nav-link text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
 				<a :href="pricingHref" class="nav-link text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
+				<a :href="aboutHref" class="nav-link text-sm whitespace-nowrap">{{ navAboutLabel }}</a>
 			</nav>
 			<div v-else class="header-spacer hidden sm:block min-w-0 flex-1" aria-hidden="true" />
 
@@ -42,9 +43,11 @@
 					:nav-how-label="navHowLabel"
 					:nav-faq-label="navFaqLabel"
 					:nav-pricing-label="navPricingLabel"
+					:nav-about-label="navAboutLabel"
 					:how-href="howHref"
 					:faq-href="faqHref"
 					:pricing-href="pricingHref"
+					:about-href="aboutHref"
 				/>
 
 				<BaseButton
@@ -83,6 +86,7 @@
 	    navHowLabel?: string;
 	    navFaqLabel?: string;
 	    navPricingLabel?: string;
+	    navAboutLabel?: string;
 	    /**
 	     * When false, hide the marketing nav (How / FAQ / Pricing) and the mobile
 	     * nav burger. Use on the SPA where those links would take the user out of the flow.
@@ -97,6 +101,7 @@
 	    howHref?: string;
 	    faqHref?: string;
 	    pricingHref?: string;
+	    aboutHref?: string;
 	    showLocaleSwitcher?: boolean;
 	    /** Current locale code (e.g. en, ru, es) */
 	    locale?: string;
@@ -108,6 +113,7 @@
 	    navHowLabel: 'How it works',
 	    navFaqLabel: 'FAQ',
 	    navPricingLabel: 'Pricing',
+	    navAboutLabel: 'About',
 
 	    showPrimaryNav: true,
 	    showStartButton: true,
@@ -121,6 +127,7 @@
 	    howHref: '#how-it-works',
 	    faqHref: '#faq',
 	    pricingHref: '#pricing',
+	    aboutHref: '/about',
 
 	    showLocaleSwitcher: false,
 	    locale: 'en',
