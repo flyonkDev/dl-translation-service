@@ -15,7 +15,7 @@ import type { CountryPairCopy } from './russia-thailand';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: "Driving in Mexico with a US License: What 'Not Required' Actually Costs You (2026)",
+		title: 'Driving in Mexico with a US License: 2026 Cancún & Tulum Guide',
 		description:
 			"You don't legally need an IDP to drive in Mexico — but federal law and Quintana Roo's reality are two different things. Honest 2026 guide for US drivers: Article 241, Tulum checkpoints, rental desk friction, and where $35 changes the math.",
 		ogTitleShort: 'US License in Mexico: 2026 Guide',

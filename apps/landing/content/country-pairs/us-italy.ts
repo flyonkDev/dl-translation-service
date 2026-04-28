@@ -9,7 +9,7 @@ import type { CountryPairCopy } from './russia-thailand';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Italy: 2026 Guide to Renting, ZTL Fines & Avoiding €400+ Tickets',
+		title: 'IDP for US Drivers in Italy: 2026 Guide to ZTL & Rentals',
 		description:
 			"Driving in Italy on a US license? Italian law requires an International Driving Permit. Skip it and risk €400+ fines, voided insurance, and ZTL camera tickets. Honest 2026 guide for American travelers.",
 		ogTitleShort: 'IDP for US Drivers in Italy',

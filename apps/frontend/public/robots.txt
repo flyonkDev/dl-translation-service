@@ -1,0 +1,4 @@
+# SPA application — not for search indexing.
+# Marketing/SEO content lives on www.idpcompanion.com (the landing site).
+User-agent: *
+Disallow: /

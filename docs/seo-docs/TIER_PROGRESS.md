@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 12 | 0 | 58 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 13 | 0 | 57 |
 | Tier 2 (Programmatic country-pairs) | 439 | 0 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **512** | **12** | **0** | **500** |
+| **ИТОГО** | **512** | **13** | **0** | **499** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -35,21 +35,21 @@
 
 > Базовые страницы сайта. Без них SEO-стратегия не закрыта (нужны для trust signals, индексации, навигации, юридического покрытия).
 
-#### Уже Live (5)
+#### Уже Live (6)
 
-| # | Page | URL | Status |
-|---|---|---|---|
-| 1 | Homepage | `/` | ✅ Live |
-| 2 | Pricing | `/pricing/` | ✅ Live |
-| 3 | Privacy Policy | `/privacy-policy/` | ✅ Live |
-| 4 | Terms of Service | `/terms-of-service/` | ✅ Live |
-| 5 | Refund Policy | `/refund-policy/` | ✅ Live |
+| # | Page | URL | Status | Дата |
+|---|---|---|---|---|
+| 1 | Homepage | `/` | ✅ Live | — |
+| 2 | Pricing | `/pricing/` | ✅ Live | — |
+| 3 | Privacy Policy | `/privacy-policy/` | ✅ Live | — |
+| 4 | Terms of Service | `/terms-of-service/` | ✅ Live | — |
+| 5 | Refund Policy | `/refund-policy/` | ✅ Live | — |
+| 6 | About / Mission | `/about/` | ✅ Live | 27.04.2026 |
 
-#### Coming Soon (15)
+#### Coming Soon (14)
 
 | # | Page | URL | Status | Зачем |
 |---|---|---|---|---|
-| 6 | About / Mission | `/about/` | ⚪ Coming Soon | E-E-A-T, кто мы, почему доверять |
 | 7 | FAQ (standalone) | `/faq/` | ⚪ Coming Soon | Сейчас anchor на home — теряем индексируемый URL |
 | 8 | How It Works | `/how-it-works/` | ⚪ Coming Soon | Объяснение процесса: загрузил права → получил PDF |
 | 9 | Countries Directory | `/countries/` | ⚪ Coming Soon | Каталог всех стран где наш companion применим |
@@ -826,6 +826,7 @@ Same-country (тривиально):
 | 26.04.2026 | US → Spain / Japan / Mexico / Thailand Live | Петя |
 | 27.04.2026 | Файл создан, batches Sanya определены | Петя |
 | 27.04.2026 | Tier 1 расширен до 70 (50 country-pairs + 20 supporting); Tier 2 enumerated полностью (439 пар); локали проставлены | Петя |
+| 27.04.2026 | `/about` Live (EN+RU+ES) — practical-solution positioning, use-case структура, Hero «document that gets read at rental desks» | Петя |
 
 ---
 

@@ -2,6 +2,7 @@
   <div class="layout bg-mint/40">
     <AppHeader
       :brand-name="t('layout.logo')"
+      :home-href="marketingHomeHref"
       :show-primary-nav="false"
       :show-start-button="false"
       show-locale-switcher
@@ -25,6 +26,7 @@
       :link-pricing="t('footer.linkPricing')"
       :link-how-it-works="t('footer.linkHowItWorks')"
       :link-faq="t('footer.linkFaq')"
+      :link-about="t('footer.linkAbout')"
       :link-privacy="t('footer.linkPrivacy')"
       :link-terms="t('footer.linkTerms')"
       :link-refund="t('footer.linkRefund')"
@@ -53,14 +55,20 @@ const supportEmail = String(import.meta.env.VITE_SUPPORT_EMAIL ?? 'petr.shchepet
 const footerLinks = computed(() => {
   const loc = (isSupportedLocale(locale.value) ? locale.value : 'en') as SupportedLocale;
   return {
-    pricing: marketingHash(loc, '#pricing'),
+    pricing: marketingPath(loc, '/pricing'),
     howItWorks: marketingHash(loc, '#how-it-works'),
     faq: marketingHash(loc, '#faq'),
+    about: marketingPath(loc, '/about'),
     privacy: marketingPath(loc, '/privacy-policy'),
     terms: marketingPath(loc, '/terms-of-service'),
     refund: marketingPath(loc, '/refund-policy'),
     contact: marketingHash(loc, '#faq'),
   };
+});
+
+const marketingHomeHref = computed(() => {
+  const loc = (isSupportedLocale(locale.value) ? locale.value : 'en') as SupportedLocale;
+  return marketingPath(loc, '/');
 });
 
 const localeChoicesForHeader = computed(() =>

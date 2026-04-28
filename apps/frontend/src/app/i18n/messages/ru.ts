@@ -16,6 +16,7 @@ export default {
 		linkPricing: 'Тарифы',
 		linkHowItWorks: 'Как это работает',
 		linkFaq: 'FAQ',
+		linkAbout: 'О нас',
 		linkPrivacy: 'Политика конфиденциальности',
 		linkTerms: 'Условия использования',
 		linkRefund: 'Политика возвратов',

@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "International Driving Permit Companion — Instant PDF Generator",
-    "description": "Generate your International Driving Permit companion document in minutes. Upload your driver's license, get a multilingual PDF instantly. Accepted in 150+ countries.",
+    "title": "IDP Companion — Multilingual Driver License PDF in 2 Minutes",
+    "description": "Generate a multilingual driver license PDF in 2 minutes. Use alongside your real license at rental desks, hotels and police checks in 150+ countries. $35, no subscription.",
     "ogImage": "https://www.idpcompanion.com/og-image.png"
   },
   "layout": {
@@ -208,7 +208,7 @@
     "ctaButton": "Start application"
   },
   "about": {
-    "seoTitle": "About IDP Companion — The Document That Gets Read at Rental Desks",
+    "seoTitle": "About IDP Companion — Document That Gets Read at Rental Desks",
     "seoDesc": "Multilingual translation companion document used by travelers in 30+ countries. Issued in 2 minutes for $35. Built for the practical moment when a rental agent needs to read your license — not for bureaucratic compliance.",
     "heroKicker": "About",
     "heroH1": "The document that actually gets read at rental desks abroad.",

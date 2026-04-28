@@ -11,7 +11,7 @@ import type { CountryPairCopy } from './russia-thailand';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Greece: 2026 Guide to the Legal Gray Zone & Rental Refusals',
+		title: 'IDP for US Drivers in Greece: 2026 Rental & Police Guide',
 		description:
 			"Greece changed its law in 2021 — but rental shops haven't caught up. US drivers still face refusals on Santorini, voided insurance, and confusion. Honest 2026 guide.",
 		ogTitleShort: 'IDP for US Drivers in Greece',

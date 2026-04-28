@@ -16,6 +16,7 @@ export default {
 		linkPricing: 'Precios',
 		linkHowItWorks: 'Cómo funciona',
 		linkFaq: 'FAQ',
+		linkAbout: 'Sobre nosotros',
 		linkPrivacy: 'Política de privacidad',
 		linkTerms: 'Términos y condiciones',
 		linkRefund: 'Política de reembolsos',

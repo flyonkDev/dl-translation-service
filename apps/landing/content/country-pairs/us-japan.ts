@@ -15,7 +15,7 @@ import type { CountryPairCopy } from './russia-thailand';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Japan: 2026 Guide to Avoiding ¥500,000 Fines and Online-IDP Refusals',
+		title: 'IDP for US Drivers in Japan: 2026 Guide to Geneva 1949 Rules',
 		description:
 			'Driving in Japan on a US license? Japan has the strictest IDP enforcement in the developed world — fines up to ¥500,000, up to 3 years prison, and Toyota Rent a Car explicitly rejects online IDPs. Honest 2026 guide.',
 		ogTitleShort: 'IDP for US Drivers in Japan',

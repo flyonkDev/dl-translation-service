@@ -21,7 +21,7 @@ import type { CountryPairCopy } from './russia-thailand';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Spain: 2026 Guide to Rental Refusals, Guardia Civil, and Madrid/Barcelona ZBEs',
+		title: 'IDP for US Drivers in Spain: 2026 Guide to ZBEs & Rentals',
 		description:
 			'Driving in Spain on a US license? Spanish law requires an International Driving Permit. Skip it and risk fines from Guardia Civil, refusals at Europcar/Fox, and voided insurance. Honest 2026 guide.',
 		ogTitleShort: 'IDP for US Drivers in Spain',
@@ -409,7 +409,7 @@ const en: CountryPairCopy = {
 
 const es: CountryPairCopy = {
 	seo: {
-		title: 'Permiso Internacional para conductores estadounidenses en España: guía 2026',
+		title: 'Permiso Internacional EE.UU. en España: guía ZBE 2026',
 		description:
 			'¿Vas a conducir en España con licencia de EE.UU.? La ley exige llevar el Permiso Internacional de Conducción. Sin él: multas de la Guardia Civil, rechazos en Europcar/Fox y seguro anulado. Guía honesta 2026.',
 		ogTitleShort: 'Permiso Internacional EE.UU. → España',
