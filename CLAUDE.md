@@ -348,12 +348,29 @@ That single sentence in the legal block discharges the legal disclosure obligati
 
 **Content length:** Tier 1 target = **2,000–2,500 words** in the user-visible copy (excluding TS keys/labels). us-italy = ~2,400, us-mexico = ~2,500, us-japan = ~2,200. Below 1,800 is Tier 2 territory.
 
-**Hero lead structure** (70–150 words):
-1. Specific scene-setter (cities, weeks-from-now, booked rental)
-2. The killer-angle hook (specific dollar amount + specific incident if available)
+**Hero lead structure (binding — anti-AI-template guardrail)**
+
+Hero is the highest-engagement zone on the page and the loudest classifier signal — both for Google's quality models and for human readers deciding whether to bounce. **Treat hero as hand-crafted copy, not first-draft AI output.** When generating a new page, draft 2–3 hero variants and pick the best one; first-pass output is almost always too generic. The other blocks can be first-pass; hero gets multi-pass — spend the extra tokens here, not on padding the FAQ.
+
+**Required structure (70–150 words):**
+1. Specific scene-setter (cities, weeks-from-now, booked rental, named neighborhood — not "planning a trip")
+2. The killer-angle hook (specific dollar/euro amount with date + specific incident if available)
 3. The legal-vs-real reframe one-liner
 
-The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.50) and Cancún Italian-tourist ($2,566) directly. Specifics outperform generalities for E-E-A-T and CTR.
+**Banned AI-template phrases** — do not use any of these (classifier footprints + reads as machine-translated):
+- "Whether you're X or Y..." / "Whether you've booked..." (parallel-hypothetical openers — most common AI tell)
+- "Planning a trip to..." / "Heading to..." (generic travel-blog openers)
+- "Here's everything you need to know about..."
+- "In this guide, we'll walk you through..."
+- "Don't worry — we've got you covered" (and any other empty reassurance phrasing)
+- Lists of 3 parallel hypotheticals chained with "Whether... whether... or whether..."
+
+**Required hero specificity (every page):**
+- At least 1 dollar/euro amount with date or location anchor (not "fines can be high")
+- At least 1 named city, neighborhood, or documented incident (not "many destinations")
+- One reframe-the-narrative line that distinguishes this destination's angle from the sibling country-pair pages
+
+The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.50) and Cancún Italian-tourist ($2,566) directly. Specifics outperform generalities for both E-E-A-T and CTR.
 
 **SEO title patterns** (pick by destination archetype):
 - IDP-required, fines-heavy: `IDP for {Origin} Drivers in {Dest}: {Year} Guide to {Specific Pain} & Avoiding €{Amount}+ Tickets`
@@ -383,6 +400,38 @@ The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.
 7. **Verify locally** — `pnpm --filter landing dev`, hit the page, check freshness pill, FAQ accordion, related cards (live ones must navigate, coming-soon stay as `<div>`).
 8. **Check `/__og-image__/static/{slug}/og.png`** — confirms OG image renders.
 9. **Push to master** — Cloudflare Pages auto-deploys. After ~2 min, `curl https://idpcompanion.com/{slug}` should return 200.
+
+### Anti-AI-template guardrails (binding — content quality floor)
+
+We generate the bulk of country-pair content with AI assist. Google's classifiers don't punish AI in itself — they punish the **footprint**: identical structure across 50+ pages, identical phrasing patterns, identical block sequences, identical transition phrases. The rules below prevent the footprint from forming as we scale from 5 → 70 → 500 pages.
+
+1. **Hero is hand-edited, period.** See "Hero lead structure" above. No exceptions, no "we'll come back to it later". If hero ships first-draft, the page ships broken.
+2. **Vary the lead-phrase shape across sibling pages.** When authoring page N, scan the heroes of pages N-1 and N-2 in the same origin cluster — the *shape* must differ (scene-setter vs surprising-stat vs direct-verdict vs contrarian one-liner vs named-incident lead). Three sibling pages all opening with "If you've booked a [vehicle] in [city]..." is a footprint.
+3. **Strip transitional filler.** Don't lead each section with "Here's what you need to know about..." or "Let's break down...". Most AI-generated transitions can be deleted entirely. When a connective is genuinely useful, vary it: "In practice", "On the ground", "Skipping past the legal text", a direct interrogative.
+4. **Verifiable specifics, not vague universals.** "Fines can be steep" → bad. "€175 minimum, €700 cap under Codice della Strada Art. 122" → good. Every claim a reader could fact-check should carry a number, date, source category, or named regulation. This is the thing AAA-style competitor sites can't fake at scale, and it's our strongest E-E-A-T lever.
+5. **One distinctive data point per page (when possible).** A line nobody else's page will have: a specific incident date, a single rental policy clause, a specific zone's enforcement window, a single price-anchored example. This is the "human/journalist" signal Google's helpful-content classifier rewards.
+6. **Don't all sound like the same author.** Tier 1 pages should each feel slightly distinct in voice — direct/blunt for Mexico, careful/legalistic for Japan, scene-driven for Italy. Match tone to destination archetype rather than defaulting to one IDP-Companion house style across all 500 pages.
+
+### Structure variance (binding when shipping Tier 2)
+
+All 5 current Tier 1 pages use the identical `CountryPair/Page.vue` block sequence (Hero → Quick Answer → TL;DR → Why Not Enough → Rules → Fines → Honesty → Renting → Outcomes → FAQ → Related → CTA). At 5 pages this is fine. At 50+ pages it becomes a structural footprint Google's classifiers detect.
+
+**Target ratio when shipping Tier 2:** ~70% standard CountryPair shape, ~30% variant shapes.
+
+**Variant archetypes** (pick by destination's dominant search intent — implement as alternative components alongside `CountryPair/Page.vue`, do not fork it):
+
+- **FAQ-led** (`CountryPair/PageFaqLed.vue`) — Hero → FAQ → Rules → Fines → … For destinations where searchers mostly arrive with question-shaped queries (UK→Greece post-Brexit, Canada→US after license-rule changes, post-policy-shift destinations).
+- **City-led** (`CountryPair/PageCityLed.vue`) — Hero → City breakdown (separate sub-blocks per city) → … For destinations with strong intra-country variance (Italy: Rome ZTL vs Milan Area B/C vs Naples old-town; Spain: Madrid ZBE vs Barcelona vs Seville).
+- **Calendar-led** (`CountryPair/PageCalendarLed.vue`) — Hero → Seasonal calendar (winter tires Nov–Apr, monsoon roads, ferry seasons, alpine pass closures) → … For destinations with sharp season-driven driving differences.
+- **Timeline-led** (`CountryPair/PageTimelineLed.vue`) — Hero → "Day 1 / Day 7 / Day 30 reality" → … For long-stay destinations where the experience evolves (digital-nomad audiences, multi-week itineraries).
+
+When using a variant, declare it via a `layoutVariant?: 'standard' | 'faq-led' | 'city-led' | 'calendar-led' | 'timeline-led'` field on `CountryPairCopy`. Track per-page in [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) so the variance ratio stays auditable as the batch grows.
+
+### Publication cadence (binding)
+
+Don't dump 50+ pages in a single week. Google's content-velocity classifier looks for unnatural publication bursts and discounts the resulting domain-authority lift. Spread Tier 2 across 12–18 months — **~5–8 country-pair pages per week** is the natural-editorial cadence. Faster risks triggering the same classifier that hits AI content farms.
+
+If a batch is ready ahead of schedule, hold the queue and stagger pushes — don't merge 30 pages in a single PR.
 
 ### Content style (validated 2026-04-25)
 
