@@ -87,6 +87,10 @@ export default defineNuxtConfig({
 		baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.idpcompanion.com',
 		defaultLocale: 'en',
 		strategy: 'prefix_except_default',
+		// Cloudflare Pages serves /path/ (with trailing slash) as canonical 200 and 308-redirects /path → /path/.
+		// We must align all generated URLs (canonical, hreflang, sitemap, internal links) with that form.
+		// Without this Google sees a redirect-loop perception: canonical declares /path, server 308's it to /path/.
+		trailingSlash: true,
 		locales: [
 			{ code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
 			{ code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru.json' },
