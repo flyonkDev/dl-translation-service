@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
 import CountryPairPage from '~/components/CountryPair/Page.vue';
-import { russiaThailandCopy } from '~/content/country-pairs/russia-thailand';
+import { russiaThailandCopy } from '~/content/country-pairs/tier-1/russia/russia-thailand';
+
+// File lives in /pages/tier-1/russia/ for organisation; URL contract is the flat slug.
+definePageMeta({ path: '/idp-for-russian-drivers-in-thailand' });
 
 // Available in EN + RU. ES intentionally skipped — irrelevant audience.
 defineI18nRoute({

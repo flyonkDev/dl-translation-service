@@ -54,7 +54,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import type { FineRow } from '~/content/country-pairs/russia-thailand';
+import type { FineRow } from '~/content/country-pairs/_types';
 
 defineProps<{
 	items: FineRow[];

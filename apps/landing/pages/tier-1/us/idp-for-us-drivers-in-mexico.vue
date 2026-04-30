@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
 import CountryPairPage from '~/components/CountryPair/Page.vue';
-import { usMexicoCopy } from '~/content/country-pairs/us-mexico';
+import { usMexicoCopy } from '~/content/country-pairs/tier-1/us/us-mexico';
+
+// File lives in /pages/tier-1/us/ for organisation; URL contract is the flat slug.
+definePageMeta({ path: '/idp-for-us-drivers-in-mexico' });
 
 defineI18nRoute({
 	locales: ['en'],

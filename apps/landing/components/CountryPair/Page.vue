@@ -428,7 +428,7 @@ import FaqAccordion from '~/components/FaqAccordion.vue';
 import CountryPairHero from '~/components/CountryPair/Hero.vue';
 import CountryPairFines from '~/components/CountryPair/FinesTable.vue';
 import { useProductAnalytics } from '~/composables/useProductAnalytics';
-import type { CountryPairCopy } from '~/content/country-pairs/russia-thailand';
+import type { CountryPairCopy } from '~/content/country-pairs/_types';
 
 interface Props {
 	/** Per-locale copy map. Page picks the matching key by current locale, fallback = first available */
@@ -1000,6 +1000,7 @@ useHead(() => {
 
 .lez-zones {
 	display: grid;
+	align-items: stretch;
 	gap: 16px;
 	grid-template-columns: 1fr;
 	margin-bottom: 24px;
@@ -1010,6 +1011,9 @@ useHead(() => {
 }
 
 .lez-zone {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	height: 100%;
 	padding: 20px 22px;
 	border-radius: $radius-2xl;
 	background: white;
@@ -1056,15 +1060,19 @@ useHead(() => {
 .lez-zone__meta {
 	display: flex;
 	align-items: center;
-	gap: 14px;
+	gap: 16px;
 	flex-wrap: wrap;
 	padding-top: 12px;
+	min-height: 110px;
 	border-top: 1px dashed rgb(var(--c-slate-200));
 }
 
 .lez-zone__fine {
 	display: flex;
 	flex-direction: column;
+	gap: 2px;
+	min-width: 90px;
+	flex-shrink: 0;
 }
 
 .lez-zone__fine-label {
@@ -1617,7 +1625,8 @@ useHead(() => {
 
 .legal-block__list {
 	margin: 0;
-	padding-left: 18px;
+	padding-left: 0;
+	list-style: none;
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
@@ -1626,6 +1635,19 @@ useHead(() => {
 		font-size: 12px;
 		line-height: 1.6;
 		color: rgb(var(--c-slate-500));
+		padding-left: 16px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 8px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: rgb(var(--c-sea));
+		}
 	}
 }
 </style>

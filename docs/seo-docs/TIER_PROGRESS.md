@@ -65,7 +65,9 @@
 | 19 | Press / Media Kit | `/press/` | ⚪ Coming Soon | Готовность к outreach, журналистам |
 | 20 | Affiliate Program | `/affiliate/` | ⚪ Coming Soon | Партнёрка travel-блогеров, тур-агентов |
 
-### 1.2 Country-pairs flagship (50)
+### 1.2 Country-pairs flagship (48)
+
+> Note: us-france and us-uae moved to Tier 2 on 30.04.2026 (first 2 Tier 2 pages launched).
 
 > Сделать руками или с моей плотной помощью. Качество > скорость. Каждая страница — 1500–2500 слов с уникальной data per page.
 
@@ -81,14 +83,12 @@
 | 6 | US → Mexico | `/idp-for-us-drivers-in-mexico/` | EN | 26.04.2026 |
 | 7 | US → Thailand | `/idp-for-us-drivers-in-thailand/` | EN | 26.04.2026 |
 
-#### Запланировано (43)
+#### Запланировано (41)
 
-##### US drivers (4 осталось)
+##### US drivers (2 осталось)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
-| US → France | `/idp-for-us-drivers-in-france/` | EN | ⚪ |
-| US → UAE | `/idp-for-us-drivers-in-uae/` | EN | ⚪ |
 | US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | ⚪ |
 | US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | ⚪ |
 
@@ -169,15 +169,24 @@
 
 ---
 
-## Tier 2 — Programmatic country-pairs (439 страниц)
+## Tier 2 — Programmatic country-pairs (441 страниц)
 
 > Делает Саня по инструкции [SANYA_TIER2_GUIDE.md](SANYA_TIER2_GUIDE.md). Каждая страница — 800–1500 слов, structured markdown по фиксированной схеме.
 > **Локали:** EN всегда. RU — только если origin = Russia. ES — если origin испаноязычный (Mexico/Argentina/Spain) или Hispanic-US-релевантная пара (US → Spain/Mexico/Costa Rica/Dominican Republic/Argentina).
 
-### 2.1 США как origin (20 пар) — locales: `EN`
+### Готово (2)
+
+| # | Pair | URL | Locales | Дата |
+|---|---|---|---|---|
+| 1 | US → France | `/idp-for-us-drivers-in-france/` | EN | 30.04.2026 |
+| 2 | US → UAE | `/idp-for-us-drivers-in-uae/` | EN | 30.04.2026 |
+
+### 2.1 США как origin (22 пары) — locales: `EN`
 
 | Pair (slug) | URL |
 |---|---|
+| us-france ✅ Live 30.04 | `/idp-for-us-drivers-in-france/` |
+| us-uae ✅ Live 30.04 | `/idp-for-us-drivers-in-uae/` |
 | us-turkey | `/idp-for-us-drivers-in-turkey/` |
 | us-egypt | `/idp-for-us-drivers-in-egypt/` |
 | us-indonesia | `/idp-for-us-drivers-in-indonesia/` |

@@ -141,7 +141,7 @@ function onPrimaryClick() {
 	}
 
 	@include up($bp-desktop) {
-		padding: 96px 0 88px;
+		padding: 28px 0 88px;
 	}
 }
 
