@@ -379,6 +379,17 @@ The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.
 
 **`ogTitleShort` + `ogSubtitle`** must fit the OG card template — keep ogTitleShort under 50 chars, ogSubtitle under 60.
 
+**H1 (`hero.title`) hard length limits — binding:**
+- **EN: ≤ 70 characters.** Cyrillic/Greek/Arabic in pixels run wider — for those locales **≤ 80 characters**.
+- The hero `<h1>` lives in a 50%-width column next to the illustration on desktop. Long descriptive titles (100+ chars) wrap into 5–6 lines and dominate the entire viewport — looks like AI padding, hurts CTR, and the killer detail belongs in `hero.lead` (which has 70–150 words to play with) or in the SEO `<title>` (60-char target), not the on-page H1.
+- Pattern: `IDP for {Origin} Drivers in {Dest}: {single killer-angle}`. One hook, no list of three. Examples:
+  - ✅ `IDP for Russian Drivers in Greece: The €1,000 Double-Fine Rule` (62 chars)
+  - ✅ `IDP for Russian Drivers in Indonesia: Bali Razzia & Scooter Category A` (70)
+  - ✅ `Driving in Mexico with a US License: 2026 Cancún & Tulum Guide` (62)
+  - ❌ `IDP for Russian Drivers in Indonesia: Left-Hand Traffic, Weekly Police Roadblocks, and the Scooter Category No One Mentions` (123 — three-hook list, AI-padding tell)
+- The H1 may differ slightly from the SEO `<title>` (and often should — H1 is human-facing, title is keyword-optimised).
+- CSS-side: [Hero.vue:283](apps/landing/components/CountryPair/Hero.vue#L283) uses `font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem)` + `overflow-wrap: anywhere` as defence against outliers, but **do not rely on it** — the content rule is the primary control.
+
 **Fines table:** include 7–9 rows mixing statutory ranges with documented real-world incidents when verifiable. Every row needs `severity: 'low' | 'med' | 'high'` (drives the colored left-border on cards). Caption must cite source category ("Codice della Strada", "Italian Polizia data", "Ackerman Group reports") — not bare claims.
 
 **Sources block:** cite minimum 3 categories — government source (state department, local ministry of transport), independent third-party (academic journal, news outlet, AAA), and travel-industry data (rental policies, embassy advisories). Bare "everyone knows" facts kill E-E-A-T.

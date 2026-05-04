@@ -281,20 +281,17 @@ function onPrimaryClick() {
 }
 
 .cp-hero__title {
-	font-size: 30px;
+	/* Fluid scaling 28–40px. Short titles (Mexico, Thailand) sit comfortably
+	   in the upper range; long ones never overflow into 6-line walls.
+	   Content rule (CLAUDE.md): keep H1 ≤ 70 chars EN / ≤ 80 chars RU. */
+	font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
 	font-weight: 800;
-	line-height: 1.08;
+	line-height: 1.06;
 	color: rgb(var(--c-slate-900));
 	margin-bottom: 18px;
 	letter-spacing: -0.02em;
-
-	@include up($bp-tablet) {
-		font-size: 42px;
-	}
-
-	@include up($bp-desktop) {
-		font-size: 48px;
-	}
+	overflow-wrap: anywhere;
+	hyphens: auto;
 }
 
 .cp-hero__lead {

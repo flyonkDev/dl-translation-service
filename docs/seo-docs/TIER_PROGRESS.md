@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 27.04.2026
+> **Дата последней актуализации:** 04.05.2026
 
 ---
 
@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 13 | 0 | 57 |
-| Tier 2 (Programmatic country-pairs) | 439 | 0 | 0 | 439 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 16 | 0 | 54 |
+| Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **512** | **13** | **0** | **499** |
+| **ИТОГО** | **514** | **18** | **0** | **496** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -71,7 +71,7 @@
 
 > Сделать руками или с моей плотной помощью. Качество > скорость. Каждая страница — 1500–2500 слов с уникальной data per page.
 
-#### Готово (7)
+#### Готово (10)
 
 | # | Pair | URL | Locales | Дата |
 |---|---|---|---|---|
@@ -82,8 +82,11 @@
 | 5 | US → Japan | `/idp-for-us-drivers-in-japan/` | EN | 26.04.2026 |
 | 6 | US → Mexico | `/idp-for-us-drivers-in-mexico/` | EN | 26.04.2026 |
 | 7 | US → Thailand | `/idp-for-us-drivers-in-thailand/` | EN | 26.04.2026 |
+| 8 | Russia → Egypt | `/idp-for-russian-drivers-in-egypt/` | EN+RU | 04.05.2026 |
+| 9 | Russia → Greece | `/idp-for-russian-drivers-in-greece/` | EN+RU | 04.05.2026 |
+| 10 | Russia → Indonesia | `/idp-for-russian-drivers-in-indonesia/` | EN+RU | 04.05.2026 |
 
-#### Запланировано (41)
+#### Запланировано (38)
 
 ##### US drivers (2 осталось)
 
@@ -105,15 +108,15 @@
 | UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | ⚪ |
 | UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | ⚪ |
 
-##### Russian drivers (7 осталось)
+##### Russian drivers (4 осталось)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
+| Russia → Egypt | `/idp-for-russian-drivers-in-egypt/` | EN+RU | ✅ Live 04.05 |
+| Russia → Greece | `/idp-for-russian-drivers-in-greece/` | EN+RU | ✅ Live 04.05 |
+| Russia → Indonesia | `/idp-for-russian-drivers-in-indonesia/` | EN+RU | ✅ Live 04.05 |
 | Russia → Turkey | `/idp-for-russian-drivers-in-turkey/` | EN+RU | ⚪ |
 | Russia → UAE | `/idp-for-russian-drivers-in-uae/` | EN+RU | ⚪ |
-| Russia → Egypt | `/idp-for-russian-drivers-in-egypt/` | EN+RU | ⚪ |
-| Russia → Indonesia | `/idp-for-russian-drivers-in-indonesia/` | EN+RU | ⚪ |
-| Russia → Greece | `/idp-for-russian-drivers-in-greece/` | EN+RU | ⚪ |
 | Russia → Cyprus | `/idp-for-russian-drivers-in-cyprus/` | EN+RU | ⚪ |
 | Russia → Italy | `/idp-for-russian-drivers-in-italy/` | EN+RU | ⚪ |
 
@@ -836,6 +839,8 @@ Same-country (тривиально):
 | 27.04.2026 | Файл создан, batches Sanya определены | Петя |
 | 27.04.2026 | Tier 1 расширен до 70 (50 country-pairs + 20 supporting); Tier 2 enumerated полностью (439 пар); локали проставлены | Петя |
 | 27.04.2026 | `/about` Live (EN+RU+ES) — practical-solution positioning, use-case структура, Hero «document that gets read at rental desks» | Петя |
+| 30.04.2026 | Tier 2 first 2 pages Live: US → France (Crit'Air, Lyon-Sixt-€68 anchor) + US → UAE (Federal Decree-Law 14/2024, AED 5,000) | Петя |
+| 04.05.2026 | Tier 1 +3 Russia pages Live: Russia → Egypt (Geneva 1949 + Cyrillic + Sinai), Russia → Greece (€1,000 double-fine + Law 4850/2021), Russia → Indonesia (razzia + left-hand traffic + Category A scooter) — все EN+RU, full Tier-1 blocks (tldr, lez, alphabet for EG/GR, phrases, howTo). Sanya markdown drafts converted with anti-AI/positioning compliance | Петя |
 
 ---
 

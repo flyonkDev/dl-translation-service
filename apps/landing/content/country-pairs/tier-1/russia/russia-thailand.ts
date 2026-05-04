@@ -186,12 +186,12 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Thailand?',
-				answer: "International Driving Permits must be issued in the country where your driver's license was issued — Thai authorities do not issue them to foreign tourists. For Russian license holders this means a 1949 Geneva IDP obtained in Russia before traveling. IDP Companion can be generated online from anywhere as a multilingual translation companion (English + Thai script + 10 other languages), but it is a private translation document and not a substitute for a government-issued IDP at Thai checkpoints.",
+				answer: "International Driving Permits must be issued in the country where your driver's license was issued — Thai authorities do not issue them to foreign tourists. For Russian license holders this means a 1949 Geneva IDP obtained in Russia before traveling. IDP Companion can be generated online from anywhere as a multilingual translation companion (English plus 10 other widely-spoken languages from the 1949 Geneva Convention set — French, Spanish, Arabic, German, Italian and others), but it is a private translation document and not a substitute for a government-issued IDP at Thai checkpoints.",
 			},
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as the official Russian government IDP?',
-				answer: 'IDP Companion is a multilingual translation document — it helps rental desks and informal checks read your license details in English, Thai script, and 10 other languages. It is not issued under the Geneva or Vienna Conventions and is not a legal substitute for a government-issued IDP at Thai police checkpoints. It is generated online in 2 minutes, valid 1–5 years, and re-printable from any hotel.',
+				answer: 'IDP Companion is a multilingual translation document — it helps rental desks and informal checks read your license details in English plus 10 other widely-spoken languages from the 1949 Geneva Convention set (French, Spanish, Arabic, German, Italian and others). It is not issued under the Geneva or Vienna Conventions and is not a legal substitute for a government-issued IDP at Thai police checkpoints. It is generated online in 2 minutes, valid 1–5 years, and re-printable from any hotel.',
 			},
 			{
 				id: 4,
@@ -235,17 +235,17 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for Russian drivers and Thailand-bound travelers — coming soon.',
 		comingSoonLabel: 'Coming soon',
 		items: [
+			{ flagFrom: 'ru', flagTo: 'eg', label: 'Russia → Egypt', status: 'Live', href: '/idp-for-russian-drivers-in-egypt' },
+			{ flagFrom: 'ru', flagTo: 'gr', label: 'Russia → Greece', status: 'Live', href: '/idp-for-russian-drivers-in-greece' },
+			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia' },
 			{ flagFrom: 'ru', flagTo: 'tr', label: 'Russia → Turkey', status: 'Coming soon' },
-			{ flagFrom: 'ru', flagTo: 'ae', label: 'Russia → UAE', status: 'Coming soon' },
-			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Coming soon' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand' },
 			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Coming soon' },
-			{ flagFrom: 'de', flagTo: 'th', label: 'Germany → Thailand', status: 'Coming soon' },
 		],
 	},
 	finalCta: {
 		heading: 'Ready to get your IDP Companion?',
-		text: 'Multilingual PDF including Thai script and English, generated from your real Russian license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
+		text: 'Multilingual PDF including English, French, Spanish, Arabic and 7 other widely-spoken languages from the 1949 Geneva Convention set — generated from your real Russian license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Start application',
 	},
 	legal: {
@@ -459,13 +459,13 @@ const ru: CountryPairCopy = {
 				id: 2,
 				question: 'Можно ли получить IDP уже в Таиланде?',
 				answer:
-					'International Driving Permit выдаётся только в той стране, где выданы ваши национальные права — тайские власти не выдают IDP иностранным туристам. Россиянам нужен IDP Женевского 1949 формата, оформленный в России до отъезда. IDP Companion можно получить онлайн откуда угодно за 2 минуты как многоязычный переводной документ (английский + тайский шрифт + 10 других языков), но это частный переводной документ, а не замена государственного IDP на тайских постах.',
+					'International Driving Permit выдаётся только в той стране, где выданы ваши национальные права — тайские власти не выдают IDP иностранным туристам. Россиянам нужен IDP Женевского 1949 формата, оформленный в России до отъезда. IDP Companion можно получить онлайн откуда угодно за 2 минуты как многоязычный переводной документ (английский плюс ещё 10 распространённых языков набора Женевской конвенции 1949 — французский, испанский, арабский, немецкий, итальянский и другие), но это частный переводной документ, а не замена государственного IDP на тайских постах.',
 			},
 			{
 				id: 3,
 				question: 'IDP Companion — это то же самое, что официальный российский IDP?',
 				answer:
-					'IDP Companion — это многоязычный переводной документ: помогает прокатным стойкам и неформальным проверкам прочитать данные ваших прав на английском, тайском и 10 других языках. Он не выдаётся по Женевской или Венской конвенции и юридически не заменяет государственный IDP на тайских полицейских постах. Генерируется онлайн за 2 минуты, действует 1–5 лет, перепечатывается из любой гостиницы.',
+					'IDP Companion — это многоязычный переводной документ: помогает прокатным стойкам и неформальным проверкам прочитать данные ваших прав на английском плюс ещё 10 распространённых языках набора Женевской конвенции 1949 (французский, испанский, арабский, немецкий, итальянский и другие). Он не выдаётся по Женевской или Венской конвенции и юридически не заменяет государственный IDP на тайских полицейских постах. Генерируется онлайн за 2 минуты, действует 1–5 лет, перепечатывается из любой гостиницы.',
 			},
 			{
 				id: 4,
@@ -516,18 +516,18 @@ const ru: CountryPairCopy = {
 		lead: 'Больше гидов по парам стран для российских водителей и для путешественников в Таиланд — скоро появятся.',
 		comingSoonLabel: 'Скоро',
 		items: [
+			{ flagFrom: 'ru', flagTo: 'eg', label: 'Россия → Египет', status: 'В эфире', href: '/idp-for-russian-drivers-in-egypt' },
+			{ flagFrom: 'ru', flagTo: 'gr', label: 'Россия → Греция', status: 'В эфире', href: '/idp-for-russian-drivers-in-greece' },
+			{ flagFrom: 'ru', flagTo: 'id', label: 'Россия → Индонезия', status: 'В эфире', href: '/idp-for-russian-drivers-in-indonesia' },
 			{ flagFrom: 'ru', flagTo: 'tr', label: 'Россия → Турция', status: 'Скоро' },
-			{ flagFrom: 'ru', flagTo: 'ae', label: 'Россия → ОАЭ', status: 'Скоро' },
-			{ flagFrom: 'ru', flagTo: 'id', label: 'Россия → Индонезия', status: 'Скоро' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'США → Таиланд', status: 'В эфире', href: '/idp-for-us-drivers-in-thailand' },
 			{ flagFrom: 'gb', flagTo: 'th', label: 'Великобритания → Таиланд', status: 'Скоро' },
-			{ flagFrom: 'de', flagTo: 'th', label: 'Германия → Таиланд', status: 'Скоро' },
 		],
 	},
 	finalCta: {
 		heading: 'Готовы оформить IDP Companion?',
 		text:
-			'Многоязычный PDF с тайским шрифтом и английским, готов за 2 минуты по вашим реальным российским правам. Печатайте дома или из любой гостиницы. Действует 1–5 лет — покроет эту поездку и следующие. $35 / 1 год · $45 / 3 года · $55 / 5 лет. Разовый платёж, без подписок.',
+			'Многоязычный PDF с английским, французским, испанским, арабским и ещё 7 распространёнными языками набора Женевской конвенции 1949 года — готов за 2 минуты по вашим реальным российским правам. Печатайте дома или из любой гостиницы. Действует 1–5 лет — покроет эту поездку и следующие. $35 / 1 год · $45 / 3 года · $55 / 5 лет. Разовый платёж, без подписок.',
 		button: 'Начать оформление',
 	},
 	legal: {
