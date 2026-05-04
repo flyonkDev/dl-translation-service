@@ -61,6 +61,10 @@ export default defineNuxtConfig({
 			'Inter:600',
 			'Inter:800',
 		],
+		// Font subsets fontless downloads for Satori renderer. Default ['latin'] only,
+		// which renders RU/ES titles as tofu (boxes) on /ru/ and /es/ OG previews.
+		// Add cyrillic (RU) + latin-ext (ES accents é ñ á í ó ú).
+		fontSubsets: ['latin', 'latin-ext', 'cyrillic'],
 	},
 
 	site: {
