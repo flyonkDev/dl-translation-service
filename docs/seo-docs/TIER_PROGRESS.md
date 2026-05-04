@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 04.05.2026
+> **Дата последней актуализации:** 05.05.2026
 
 ---
 
@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 16 | 0 | 54 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 20 | 0 | 50 |
 | Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **18** | **0** | **496** |
+| **ИТОГО** | **514** | **22** | **0** | **492** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -71,7 +71,7 @@
 
 > Сделать руками или с моей плотной помощью. Качество > скорость. Каждая страница — 1500–2500 слов с уникальной data per page.
 
-#### Готово (10)
+#### Готово (14)
 
 | # | Pair | URL | Locales | Дата |
 |---|---|---|---|---|
@@ -85,15 +85,19 @@
 | 8 | Russia → Egypt | `/idp-for-russian-drivers-in-egypt/` | EN+RU | 04.05.2026 |
 | 9 | Russia → Greece | `/idp-for-russian-drivers-in-greece/` | EN+RU | 04.05.2026 |
 | 10 | Russia → Indonesia | `/idp-for-russian-drivers-in-indonesia/` | EN+RU | 04.05.2026 |
+| 11 | Russia → UAE | `/idp-for-russian-drivers-in-uae/` | EN+RU | 05.05.2026 |
+| 12 | Russia → Turkey | `/idp-for-russian-drivers-in-turkey/` | EN+RU | 05.05.2026 |
+| 13 | US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | 05.05.2026 |
+| 14 | US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | 05.05.2026 |
 
-#### Запланировано (38)
+#### Запланировано (34)
 
-##### US drivers (2 осталось)
+##### US drivers (0 осталось — все Live)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
-| US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | ⚪ |
-| US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | ⚪ |
+| US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | ✅ Live 05.05 |
+| US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | ✅ Live 05.05 |
 
 ##### UK drivers (8)
 
@@ -108,15 +112,15 @@
 | UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | ⚪ |
 | UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | ⚪ |
 
-##### Russian drivers (4 осталось)
+##### Russian drivers (2 осталось)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
 | Russia → Egypt | `/idp-for-russian-drivers-in-egypt/` | EN+RU | ✅ Live 04.05 |
 | Russia → Greece | `/idp-for-russian-drivers-in-greece/` | EN+RU | ✅ Live 04.05 |
 | Russia → Indonesia | `/idp-for-russian-drivers-in-indonesia/` | EN+RU | ✅ Live 04.05 |
-| Russia → Turkey | `/idp-for-russian-drivers-in-turkey/` | EN+RU | ⚪ |
-| Russia → UAE | `/idp-for-russian-drivers-in-uae/` | EN+RU | ⚪ |
+| Russia → UAE | `/idp-for-russian-drivers-in-uae/` | EN+RU | ✅ Live 05.05 |
+| Russia → Turkey | `/idp-for-russian-drivers-in-turkey/` | EN+RU | ✅ Live 05.05 |
 | Russia → Cyprus | `/idp-for-russian-drivers-in-cyprus/` | EN+RU | ⚪ |
 | Russia → Italy | `/idp-for-russian-drivers-in-italy/` | EN+RU | ⚪ |
 
@@ -841,6 +845,7 @@ Same-country (тривиально):
 | 27.04.2026 | `/about` Live (EN+RU+ES) — practical-solution positioning, use-case структура, Hero «document that gets read at rental desks» | Петя |
 | 30.04.2026 | Tier 2 first 2 pages Live: US → France (Crit'Air, Lyon-Sixt-€68 anchor) + US → UAE (Federal Decree-Law 14/2024, AED 5,000) | Петя |
 | 04.05.2026 | Tier 1 +3 Russia pages Live: Russia → Egypt (Geneva 1949 + Cyrillic + Sinai), Russia → Greece (€1,000 double-fine + Law 4850/2021), Russia → Indonesia (razzia + left-hand traffic + Category A scooter) — все EN+RU, full Tier-1 blocks (tldr, lez, alphabet for EG/GR, phrases, howTo). Sanya markdown drafts converted with anti-AI/positioning compliance | Петя |
+| 05.05.2026 | Tier 1 +4 pages Live: Russia → UAE (Markhoos list + Cyrillic + Federal Decree 14/2024 + Dubai/Abu-Dhabi enforcement asymmetry), Russia → Turkey (Article 88 + Cyrillic + 6-month tourist window — Turkish reframed through English on PDF), US → Costa Rica (Article 91 90-day rule + Article 151 plate-confiscation — EN+ES Hispanic-US), US → Iceland (BAC 0.05% + F-roads 4WD + off-road criminal + 2026 km-fee — EN only). Все Tier-1 blocks с PDF-language compliance, currency converted to USD primary | Петя |
 
 ---
 

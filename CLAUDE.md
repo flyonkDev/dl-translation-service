@@ -330,6 +330,42 @@ The 5 live pages ([us-italy](apps/landing/content/country-pairs/us-italy.ts), [u
 - **Tone for IDP-required destinations**: position IDP Companion as the document the reader uses for friction reduction at rental desks, hotel verifications, and police interactions. Mention destination's legal requirement factually (e.g., "Italian law requires foreign drivers to carry an IDP") without then recommending which specific issuer the reader should buy from. The reader can figure out their own due-diligence path; the page's job is to convert.
 - **Tone for IDP-not-required destinations (Mexico-style)**: position IDP Companion as the friction reducer at rental desks and informal verification stops. The "no IDP legally required" framing already drives our conversion (skip the AAA visit, save the time, get our companion for translation aid).
 
+**PDF language claims — binding (added 2026-05-04 after Greek/Bahasa/Thai false-claim incident):**
+
+The PDF template is a fixed asset at [apps/backend/assets/templates/idp-dev-template.pdf](apps/backend/assets/templates/idp-dev-template.pdf). The languages it physically contains are **finite and known** — copy must never claim a translation language the template doesn't actually carry.
+
+**Languages physically present in the template (verified 2026-05-04 via pdftotext + Geneva 1949 standard set):**
+- ✅ **Latin-extracted (high confidence):** English, French, Spanish, German, Italian, Portuguese, Vietnamese
+- ✅ **Non-Latin scripts (high confidence per Geneva 1949 standard, glyphs don't extract via pdftotext but blocks are visually present):** Russian, Arabic, Chinese, Japanese
+- **Total: ~11 languages.** Landing copy on home / about says "12 languages" — slight over-claim, tracked in [docs/BACKLOG.md](docs/BACKLOG.md) for resolution before production launch.
+
+**Languages NOT in the template — do NOT claim in any copy:**
+- ❌ **Greek** (despite Russia → Greece pages)
+- ❌ **Bahasa Indonesia** (despite Russia → Indonesia pages)
+- ❌ **Thai** (despite Russia/US → Thailand pages — Thai script extracts cleanly, none present)
+- ❌ **Korean, Hindi, Turkish, Hebrew, Persian/Farsi, Urdu, Bengali, Polish, Dutch, Swedish** — none in template
+- ❌ Any other language not in the verified list above
+
+**Approved framing when destination's native language is NOT on the PDF:**
+
+Reframe verification through **English** (which is on the PDF and is the universal second language at every major rental desk and tourist-area police stop in Greece, Indonesia, Thailand, etc.). Examples:
+
+- ✅ "English on the IDP Companion is universally readable by every Greek rental agent and Hellenic Police officer in tourist areas"
+- ✅ "English fallback at razzia checkpoints in Canggu — Indonesian officers in tourist corridors switch to basic English with foreign tourists"
+- ❌ "PDF presenting your licence in Greek and English" (Greek not on PDF)
+- ❌ "Bahasa translation makes the licence verifiable in seconds" (Bahasa not on PDF)
+- ❌ "Multilingual PDF including Thai script and English" (Thai not on PDF)
+
+**Self-check before shipping any country-pair page or copy that mentions PDF languages:**
+
+1. Identify every language name in the copy that's claimed to be on the PDF (search for: "in [Language]", "[Language]-language verification", "[Language] translation", "PDF including [Language]", "translates your licence into [Language]").
+2. Cross-check each name against the verified list above.
+3. If a claimed language is NOT in the list — **rewrite to use English** (or another verified language) as the verification mechanism. The fact that the destination's officers also speak English (Greek tourist areas, Bali tourist corridors, Bangkok rental chains, etc.) is true and works.
+4. The destination's native language can still be referenced in **informational** blocks (`alphabet` block teaching road signs, `phrases` block teaching phrases for the user to say to officers) — those describe what the user encounters in the country, not what the PDF contains.
+
+**When the template gets new languages added (P0 in [docs/BACKLOG.md](docs/BACKLOG.md)):**
+Update this list, then revert the path-A reframings in country-pair pages where the new languages were forced through English. Both edits ship together.
+
 **`honesty.isNot` template** (use this exact pattern across all pages):
 ```
 - Not a government-issued IDP under the 1949 Geneva or 1968 Vienna Convention
