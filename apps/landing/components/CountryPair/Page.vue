@@ -1090,6 +1090,7 @@ useHead(() => {
 }
 
 .lez-zone__note {
+	padding: 0 24px;
 	font-size: 12px;
 	line-height: 1.45;
 	color: rgb(var(--c-slate-700));
