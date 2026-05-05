@@ -38,10 +38,27 @@ export default defineNuxtConfig({
 	},
 
 	modules: [
+		'@nuxt/fonts',
 		'@nuxtjs/i18n',
 		'@nuxtjs/sitemap',
 		'nuxt-og-image',
 	],
+
+	// @nuxt/fonts is the canonical mechanism for OG fonts (per nuxt-og-image v6+ migration
+	// note — `ogImage.fonts` is deprecated and the bundled fallback Inter is Latin-only,
+	// which renders Cyrillic/Greek/Arabic as "NO GLYPH" boxes on /ru/ and other non-Latin OG previews).
+	// Configuring Inter here with explicit subsets (cyrillic for RU, latin-ext for ES é ñ á í ó ú)
+	// makes the fonts available to Satori at build-time prerender.
+	fonts: {
+		families: [
+			{
+				name: 'Inter',
+				weights: [400, 600, 800],
+				subsets: ['latin', 'latin-ext', 'cyrillic'],
+				global: true,
+			},
+		],
+	},
 
 	ogImage: {
 		// Pin to Satori renderer — works on Cloudflare Pages without Playwright/Chromium binaries.
@@ -56,15 +73,6 @@ export default defineNuxtConfig({
 		// entirely — no signing secret needed, no security concern, no surprise CF Worker hits.
 		// Dev mode still generates on-demand for local preview.
 		zeroRuntime: true,
-		fonts: [
-			'Inter:400',
-			'Inter:600',
-			'Inter:800',
-		],
-		// Font subsets fontless downloads for Satori renderer. Default ['latin'] only,
-		// which renders RU/ES titles as tofu (boxes) on /ru/ and /es/ OG previews.
-		// Add cyrillic (RU) + latin-ext (ES accents é ñ á í ó ú).
-		fontSubsets: ['latin', 'latin-ext', 'cyrillic'],
 	},
 
 	site: {
