@@ -1,0 +1,19 @@
+# Cloudflare Pages headers — overrides default response Cache-Control per path
+# Format: <path-pattern> with header lines indented underneath. Order matters.
+
+# OG images: nuxt-og-image emits URLs that are content-hashed by render inputs
+# (component + props), NOT by output bytes — so when we rebuild with new fonts
+# or template changes, the URL stays the same but the bytes change. The default
+# `Cache-Control: max-age=31536000, immutable` then traps stale bytes at the CF
+# edge for a year, breaking Telegram/Slack/X previews after any OG-template fix.
+#
+# Override to a short cache so future fixes propagate within ~5 min while
+# still avoiding hammering origin on every preview crawler hit.
+/_og/s/*
+  Cache-Control: public, max-age=300, s-maxage=600, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=600
+
+# Same logic for the dynamic-route variant (used in non-prerendered modes).
+/_og/d/*
+  Cache-Control: public, max-age=300, s-maxage=600, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=600
