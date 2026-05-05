@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@iconify/vue": "^5.0.0",
-		"@nuxt/fonts": "^0.11.4",
+		"@nuxt/fonts": "^0.14.0",
 		"@nuxtjs/i18n": "^10.2.3",
 		"@nuxtjs/sitemap": "^8.0.11",
 		"@resvg/resvg-js": "^2.6.2",
