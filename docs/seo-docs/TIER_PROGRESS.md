@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 05.05.2026
+> **Дата последней актуализации:** 06.05.2026
 
 ---
 
@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 20 | 0 | 50 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 24 | 0 | 46 |
 | Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **22** | **0** | **492** |
+| **ИТОГО** | **514** | **26** | **0** | **488** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -71,7 +71,7 @@
 
 > Сделать руками или с моей плотной помощью. Качество > скорость. Каждая страница — 1500–2500 слов с уникальной data per page.
 
-#### Готово (14)
+#### Готово (18)
 
 | # | Pair | URL | Locales | Дата |
 |---|---|---|---|---|
@@ -89,8 +89,12 @@
 | 12 | Russia → Turkey | `/idp-for-russian-drivers-in-turkey/` | EN+RU | 05.05.2026 |
 | 13 | US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | 05.05.2026 |
 | 14 | US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | 05.05.2026 |
+| 15 | UK → Spain | `/idp-for-uk-drivers-in-spain/` | EN | 06.05.2026 |
+| 16 | UK → Greece | `/idp-for-uk-drivers-in-greece/` | EN | 06.05.2026 |
+| 17 | UK → Thailand | `/idp-for-uk-drivers-in-thailand/` | EN | 06.05.2026 |
+| 18 | UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | 06.05.2026 |
 
-#### Запланировано (34)
+#### Запланировано (30)
 
 ##### US drivers (0 осталось — все Live)
 
@@ -99,17 +103,17 @@
 | US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | ✅ Live 05.05 |
 | US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | ✅ Live 05.05 |
 
-##### UK drivers (8)
+##### UK drivers (4 осталось)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
-| UK → Thailand | `/idp-for-uk-drivers-in-thailand/` | EN | ⚪ |
-| UK → Spain | `/idp-for-uk-drivers-in-spain/` | EN | ⚪ |
-| UK → Greece | `/idp-for-uk-drivers-in-greece/` | EN | ⚪ |
+| UK → Spain | `/idp-for-uk-drivers-in-spain/` | EN | ✅ Live 06.05 |
+| UK → Greece | `/idp-for-uk-drivers-in-greece/` | EN | ✅ Live 06.05 |
+| UK → Thailand | `/idp-for-uk-drivers-in-thailand/` | EN | ✅ Live 06.05 |
+| UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | ✅ Live 06.05 |
 | UK → Cyprus | `/idp-for-uk-drivers-in-cyprus/` | EN | ⚪ |
 | UK → UAE | `/idp-for-uk-drivers-in-uae/` | EN | ⚪ |
 | UK → Australia | `/idp-for-uk-drivers-in-australia/` | EN | ⚪ |
-| UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | ⚪ |
 | UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | ⚪ |
 
 ##### Russian drivers (2 осталось)
@@ -846,6 +850,8 @@ Same-country (тривиально):
 | 30.04.2026 | Tier 2 first 2 pages Live: US → France (Crit'Air, Lyon-Sixt-€68 anchor) + US → UAE (Federal Decree-Law 14/2024, AED 5,000) | Петя |
 | 04.05.2026 | Tier 1 +3 Russia pages Live: Russia → Egypt (Geneva 1949 + Cyrillic + Sinai), Russia → Greece (€1,000 double-fine + Law 4850/2021), Russia → Indonesia (razzia + left-hand traffic + Category A scooter) — все EN+RU, full Tier-1 blocks (tldr, lez, alphabet for EG/GR, phrases, howTo). Sanya markdown drafts converted with anti-AI/positioning compliance | Петя |
 | 05.05.2026 | Tier 1 +4 pages Live: Russia → UAE (Markhoos list + Cyrillic + Federal Decree 14/2024 + Dubai/Abu-Dhabi enforcement asymmetry), Russia → Turkey (Article 88 + Cyrillic + 6-month tourist window — Turkish reframed through English on PDF), US → Costa Rica (Article 91 90-day rule + Article 151 plate-confiscation — EN+ES Hispanic-US), US → Iceland (BAC 0.05% + F-roads 4WD + off-road criminal + 2026 km-fee — EN only). Все Tier-1 blocks с PDF-language compliance, currency converted to USD primary | Петя |
+| 05.05.2026 | OG Cyrillic fix (commits 7ddf5dd → baa6cdf → 9a2ccfa → aaabc0c): root cause was `ogImage.fonts` deprecated in nuxt-og-image v6+; resolved by installing @nuxt/fonts ^0.14.0 module + moving subsets to `defaults` level. CF edge cache invalidated via Cloudflare dashboard Purge Everything. `_headers` added to set 5-min TTL on /\_og/s/* paths so future template fixes propagate within minutes, not 1 year | Петя |
+| 06.05.2026 | Tier 1 +4 UK pages Live: UK → Spain (post-Brexit photocard vs paper licence + ZBE Madrid/Barcelona), UK → Greece (post-Brexit photocard fine for major chains + small island agencies issue + Greek reframed through English on PDF), UK → Thailand (Geneva 1949 IDP-required + insurance void clause + LHT advantage + Thai reframed through English on PDF), UK → Portugal (post-Brexit photocard fine + portable police ATMs + €2,500 radar detector ban + A22 vs N125 toll-trap). All EN-only. 3-row TLDR exception for photocard/paper informational split (not competitor-row) | Петя |
 
 ---
 

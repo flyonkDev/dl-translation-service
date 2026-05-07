@@ -240,7 +240,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia' },
 			{ flagFrom: 'ru', flagTo: 'tr', label: 'Russia → Turkey', status: 'Live', href: '/idp-for-russian-drivers-in-turkey' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand' },
-			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Coming soon' },
+			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand' },
 		],
 	},
 	finalCta: {
@@ -521,7 +521,7 @@ const ru: CountryPairCopy = {
 			{ flagFrom: 'ru', flagTo: 'id', label: 'Россия → Индонезия', status: 'В эфире', href: '/idp-for-russian-drivers-in-indonesia' },
 			{ flagFrom: 'ru', flagTo: 'tr', label: 'Россия → Турция', status: 'В эфире', href: '/idp-for-russian-drivers-in-turkey' },
 			{ flagFrom: 'us', flagTo: 'th', label: 'США → Таиланд', status: 'В эфире', href: '/idp-for-us-drivers-in-thailand' },
-			{ flagFrom: 'gb', flagTo: 'th', label: 'Великобритания → Таиланд', status: 'Скоро' },
+			{ flagFrom: 'gb', flagTo: 'th', label: 'Великобритания → Таиланд', status: 'В эфире', href: '/idp-for-uk-drivers-in-thailand' },
 		],
 	},
 	finalCta: {
