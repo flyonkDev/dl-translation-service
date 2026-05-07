@@ -77,6 +77,11 @@ export default defineNuxtConfig({
 	site: {
 		url: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.idpcompanion.com',
 		name: 'IDP Companion',
+		// CF Pages serves /path/ as canonical 200 and 308-redirects /path → /path/.
+		// nuxt-site-config propagates this to @nuxtjs/sitemap, nuxt-og-image, nuxt-robots
+		// so all generated URLs (sitemap loc, OG canonical, etc.) match the canonical/hreflang form
+		// emitted by @nuxtjs/i18n (which has its own trailingSlash: true below).
+		trailingSlash: true,
 	},
 
 	sitemap: {
