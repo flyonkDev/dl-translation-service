@@ -159,7 +159,7 @@ const en: CountryPairCopy = {
 				name: 'Headlamp beam deflectors + UK sticker',
 				description: 'Right-hand-drive UK cars require headlamp beam deflectors (adhesive stickers or manual beam adjustment) to avoid blinding oncoming traffic. Required by Spanish law. Plus: UK-registered vehicles need a UK sticker on the rear bumper (the old GB sticker has been invalid since Sept 2021). Both are checked at random roadside stops on the AP-7 toll motorway near the French border.',
 					fine: 'Variable',
-					note: 'Available at Eurotunnel/ferry terminal shops, AA/RAC outlets, Halfords. Cheap, simple, prevents a roadside problem.',
+					note: 'Available at Eurotunnel/ferry terminal shops and Halfords. Cheap, simple, prevents a roadside problem.',
 			},
 		],
 		tip: 'Practical rule for Spain: photocard-holder UK drivers get one of the cleanest legal positions in Europe post-Brexit. The friction sits in three places — paper-licence holders, ZBE stickers in Madrid/Barcelona, and the radar detector ban. None of these are about IDP. All resolve before you fly.',
@@ -186,7 +186,7 @@ const en: CountryPairCopy = {
 			},
 			{
 				title: 'Add headlamp beam deflectors + UK sticker (if RHD UK car)',
-				text: "If you're bringing your own UK car (not renting), fit headlamp beam deflectors before crossing the Channel. Adhesive stickers cost £5–15 from Halfords / AA / Eurotunnel terminal. UK sticker on rear bumper is mandatory since Sept 2021 — old GB sticker is invalid. Both required by Spanish law; checked at random roadside stops.",
+				text: "If you're bringing your own UK car (not renting), fit headlamp beam deflectors before crossing the Channel. Adhesive stickers cost £5–15 from Halfords or the Eurotunnel terminal shop. UK sticker on rear bumper is mandatory since Sept 2021 — old GB sticker is invalid. Both required by Spanish law; checked at random roadside stops.",
 			},
 			{
 				title: 'Disable radar detector apps before driving',
@@ -280,7 +280,7 @@ const en: CountryPairCopy = {
 				severity: 'high',
 				frequency: 'Common without IDP',
 				label: 'Paper licence, rental refused',
-				text: "Paper licence holders regularly turned away — no major agency releases the car. Last-minute IDP from a UK Post Office substitute (PayPoint) is a back-home action; from Spain it's not available.",
+				text: "Paper licence holders regularly turned away — no major agency releases the car. A government IDP must be obtained back home before departure; it cannot be issued from Spain.",
 			},
 			{
 				severity: 'med',

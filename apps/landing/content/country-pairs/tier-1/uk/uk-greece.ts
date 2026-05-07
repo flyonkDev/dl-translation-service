@@ -188,7 +188,7 @@ const en: CountryPairCopy = {
 			},
 			{
 				title: 'Add headlamp beam deflectors (if RHD UK car)',
-				text: "If you're bringing your own UK car (not renting), fit headlamp beam deflectors before crossing the Channel. Adhesive stickers cost £5–15 from Halfords / AA. Required by Greek law to avoid blinding oncoming traffic. UK sticker on rear bumper is mandatory since Sept 2021 — old GB sticker is invalid.",
+				text: "If you're bringing your own UK car (not renting), fit headlamp beam deflectors before crossing the Channel. Adhesive stickers cost £5–15 at Halfords or the Eurotunnel terminal shop. Required by Greek law to avoid blinding oncoming traffic. UK sticker on rear bumper is mandatory since Sept 2021 — old GB sticker is invalid.",
 			},
 			{
 				title: 'Check the GOV.UK Greece travel advice the week of departure',
