@@ -2,7 +2,7 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+RUN npm install -g pnpm@10.32.1
 
 # Copy workspace config
 COPY package.json pnpm-workspace.yaml .npmrc ./

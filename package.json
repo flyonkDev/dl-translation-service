@@ -1,6 +1,7 @@
 {
 	"name": "driver-license-monorepo",
 	"private": true,
+	"packageManager": "pnpm@10.32.1",
 	"pnpm": {
 		"overrides": {
 			"@nuxt/nitro-server": "4.4.2"
