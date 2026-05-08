@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 06.05.2026
+> **Дата последней актуализации:** 08.05.2026
 
 ---
 
@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 24 | 0 | 46 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 28 | 0 | 42 |
 | Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **26** | **0** | **488** |
+| **ИТОГО** | **514** | **30** | **0** | **484** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -93,8 +93,12 @@
 | 16 | UK → Greece | `/idp-for-uk-drivers-in-greece/` | EN | 06.05.2026 |
 | 17 | UK → Thailand | `/idp-for-uk-drivers-in-thailand/` | EN | 06.05.2026 |
 | 18 | UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | 06.05.2026 |
+| 19 | UK → Australia | `/idp-for-uk-drivers-in-australia/` | EN | 08.05.2026 |
+| 20 | UK → Cyprus | `/idp-for-uk-drivers-in-cyprus/` | EN | 08.05.2026 |
+| 21 | UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | 08.05.2026 |
+| 22 | UK → UAE | `/idp-for-uk-drivers-in-uae/` | EN | 08.05.2026 |
 
-#### Запланировано (30)
+#### Запланировано (26)
 
 ##### US drivers (0 осталось — все Live)
 
@@ -103,7 +107,7 @@
 | US → Costa Rica | `/idp-for-us-drivers-in-costa-rica/` | EN+ES (Hispanic-US) | ✅ Live 05.05 |
 | US → Iceland | `/idp-for-us-drivers-in-iceland/` | EN | ✅ Live 05.05 |
 
-##### UK drivers (4 осталось)
+##### UK drivers (0 осталось — все Live)
 
 | Pair | URL | Locales | Status |
 |---|---|---|---|
@@ -111,10 +115,10 @@
 | UK → Greece | `/idp-for-uk-drivers-in-greece/` | EN | ✅ Live 06.05 |
 | UK → Thailand | `/idp-for-uk-drivers-in-thailand/` | EN | ✅ Live 06.05 |
 | UK → Portugal | `/idp-for-uk-drivers-in-portugal/` | EN | ✅ Live 06.05 |
-| UK → Cyprus | `/idp-for-uk-drivers-in-cyprus/` | EN | ⚪ |
-| UK → UAE | `/idp-for-uk-drivers-in-uae/` | EN | ⚪ |
-| UK → Australia | `/idp-for-uk-drivers-in-australia/` | EN | ⚪ |
-| UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | ⚪ |
+| UK → Cyprus | `/idp-for-uk-drivers-in-cyprus/` | EN | ✅ Live 08.05 |
+| UK → UAE | `/idp-for-uk-drivers-in-uae/` | EN | ✅ Live 08.05 |
+| UK → Australia | `/idp-for-uk-drivers-in-australia/` | EN | ✅ Live 08.05 |
+| UK → Morocco | `/idp-for-uk-drivers-in-morocco/` | EN | ✅ Live 08.05 |
 
 ##### Russian drivers (2 осталось)
 
@@ -852,6 +856,8 @@ Same-country (тривиально):
 | 05.05.2026 | Tier 1 +4 pages Live: Russia → UAE (Markhoos list + Cyrillic + Federal Decree 14/2024 + Dubai/Abu-Dhabi enforcement asymmetry), Russia → Turkey (Article 88 + Cyrillic + 6-month tourist window — Turkish reframed through English on PDF), US → Costa Rica (Article 91 90-day rule + Article 151 plate-confiscation — EN+ES Hispanic-US), US → Iceland (BAC 0.05% + F-roads 4WD + off-road criminal + 2026 km-fee — EN only). Все Tier-1 blocks с PDF-language compliance, currency converted to USD primary | Петя |
 | 05.05.2026 | OG Cyrillic fix (commits 7ddf5dd → baa6cdf → 9a2ccfa → aaabc0c): root cause was `ogImage.fonts` deprecated in nuxt-og-image v6+; resolved by installing @nuxt/fonts ^0.14.0 module + moving subsets to `defaults` level. CF edge cache invalidated via Cloudflare dashboard Purge Everything. `_headers` added to set 5-min TTL on /\_og/s/* paths so future template fixes propagate within minutes, not 1 year | Петя |
 | 06.05.2026 | Tier 1 +4 UK pages Live: UK → Spain (post-Brexit photocard vs paper licence + ZBE Madrid/Barcelona), UK → Greece (post-Brexit photocard fine for major chains + small island agencies issue + Greek reframed through English on PDF), UK → Thailand (Geneva 1949 IDP-required + insurance void clause + LHT advantage + Thai reframed through English on PDF), UK → Portugal (post-Brexit photocard fine + portable police ATMs + €2,500 radar detector ban + A22 vs N125 toll-trap). All EN-only. 3-row TLDR exception for photocard/paper informational split (not competitor-row) | Петя |
+| 07.05.2026 | GSC indexing audit + 2 SEO-infra fixes: (a) `site.trailingSlash: true` in nuxt.config — sitemap now emits `/foo/` URLs matching CF Pages canonical form (resolves «Page with redirect» bucket); (b) Cloudflare Page Rule apex→www 301 redirect (resolves 7 «Variant page with canonical tag» reports). www.idpcompanion.com is now the single canonical host. Memory: feedback_seo_indexing.md saved to avoid re-debugging | Петя |
+| 08.05.2026 | Tier 1 +4 UK pages Live (final UK batch): UK → Australia (English-recognition no IDP + AI phone cameras Victoria/NSW + point-to-point average-speed cameras + dawn-dusk wildlife on regional roads), UK → Cyprus (post-colonial easiest-in-Europe legal position + 15-day fine rule jccsmart.com + breath-unit BAC 22µg + Northern Cyprus insurance gap at Green Line — Greek reframed through English on PDF, kept as in-country phrases reference), UK → Morocco (Latin-alphabet recognition + Priorité à droite reversed roundabouts + 5 km/h enforcement cash on the spot + no-night-driving regional roads — French/Arabic both in PDF + French phrases at checkpoints), UK → UAE (Markhoos 2025 federal recognition + Dubai 20km/h buffer vs Abu Dhabi zero-buffer since 2018 + zero BAC tolerance criminal + emirate-level enforcement asymmetry — Arabic in PDF). All EN-only. UK Tier 1 slate now 8/8 complete. Source markdown FAQ rewrites for Post Office middle-pivot leak (uk-uae FAQ #3) | Петя |
 
 ---
 
