@@ -3,6 +3,7 @@
 		<li
 			v-for="(item, i) in items"
 			:key="item.id ?? i"
+			:id="item.anchor || undefined"
 			class="faq-accordion__item"
 			:class="{ 'faq-accordion__item--open': isOpen(i) }"
 		>
@@ -45,6 +46,8 @@ import { Icon } from '@iconify/vue';
 
 export interface FaqAccordionItem {
 	id?: string | number;
+	/** Optional DOM id rendered on the <li> so URL anchors (e.g., /faq/#license-photo-retention) can link directly to the item. */
+	anchor?: string;
 	question: string;
 	answer: string | string[];
 }

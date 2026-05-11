@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 08.05.2026
+> **Дата последней актуализации:** 11.05.2026
 
 ---
 
@@ -10,10 +10,10 @@
 
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 28 | 0 | 42 |
+| Tier 1 (Country-pairs flagship + supporting) | 70 | 30 | 0 | 40 |
 | Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **30** | **0** | **484** |
+| **ИТОГО** | **514** | **32** | **0** | **482** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -35,7 +35,7 @@
 
 > Базовые страницы сайта. Без них SEO-стратегия не закрыта (нужны для trust signals, индексации, навигации, юридического покрытия).
 
-#### Уже Live (6)
+#### Уже Live (8)
 
 | # | Page | URL | Status | Дата |
 |---|---|---|---|---|
@@ -45,13 +45,13 @@
 | 4 | Terms of Service | `/terms-of-service/` | ✅ Live | — |
 | 5 | Refund Policy | `/refund-policy/` | ✅ Live | — |
 | 6 | About / Mission | `/about/` | ✅ Live | 27.04.2026 |
+| 7 | FAQ (standalone) | `/faq/` | ✅ Live | 11.05.2026 |
+| 8 | How It Works | `/how-it-works/` | ✅ Live | 11.05.2026 |
 
-#### Coming Soon (14)
+#### Coming Soon (12)
 
 | # | Page | URL | Status | Зачем |
 |---|---|---|---|---|
-| 7 | FAQ (standalone) | `/faq/` | ⚪ Coming Soon | Сейчас anchor на home — теряем индексируемый URL |
-| 8 | How It Works | `/how-it-works/` | ⚪ Coming Soon | Объяснение процесса: загрузил права → получил PDF |
 | 9 | Countries Directory | `/countries/` | ⚪ Coming Soon | Каталог всех стран где наш companion применим |
 | 10 | Contact / Support | `/contact/` | ⚪ Coming Soon | Trust signal, email, ответы на вопросы до покупки |
 | 11 | Sample PDF Preview | `/sample-pdf/` | ⚪ Coming Soon | Что именно покупатель получит — превью документа |
@@ -858,6 +858,8 @@ Same-country (тривиально):
 | 06.05.2026 | Tier 1 +4 UK pages Live: UK → Spain (post-Brexit photocard vs paper licence + ZBE Madrid/Barcelona), UK → Greece (post-Brexit photocard fine for major chains + small island agencies issue + Greek reframed through English on PDF), UK → Thailand (Geneva 1949 IDP-required + insurance void clause + LHT advantage + Thai reframed through English on PDF), UK → Portugal (post-Brexit photocard fine + portable police ATMs + €2,500 radar detector ban + A22 vs N125 toll-trap). All EN-only. 3-row TLDR exception for photocard/paper informational split (not competitor-row) | Петя |
 | 07.05.2026 | GSC indexing audit + 2 SEO-infra fixes: (a) `site.trailingSlash: true` in nuxt.config — sitemap now emits `/foo/` URLs matching CF Pages canonical form (resolves «Page with redirect» bucket); (b) Cloudflare Page Rule apex→www 301 redirect (resolves 7 «Variant page with canonical tag» reports). www.idpcompanion.com is now the single canonical host. Memory: feedback_seo_indexing.md saved to avoid re-debugging | Петя |
 | 08.05.2026 | Tier 1 +4 UK pages Live (final UK batch): UK → Australia (English-recognition no IDP + AI phone cameras Victoria/NSW + point-to-point average-speed cameras + dawn-dusk wildlife on regional roads), UK → Cyprus (post-colonial easiest-in-Europe legal position + 15-day fine rule jccsmart.com + breath-unit BAC 22µg + Northern Cyprus insurance gap at Green Line — Greek reframed through English on PDF, kept as in-country phrases reference), UK → Morocco (Latin-alphabet recognition + Priorité à droite reversed roundabouts + 5 km/h enforcement cash on the spot + no-night-driving regional roads — French/Arabic both in PDF + French phrases at checkpoints), UK → UAE (Markhoos 2025 federal recognition + Dubai 20km/h buffer vs Abu Dhabi zero-buffer since 2018 + zero BAC tolerance criminal + emirate-level enforcement asymmetry — Arabic in PDF). All EN-only. UK Tier 1 slate now 8/8 complete. Source markdown FAQ rewrites for Post Office middle-pivot leak (uk-uae FAQ #3) | Петя |
+| 11.05.2026 | `/faq/` standalone Live (EN+RU+ES) — full superset of inline home FAQ. 28 honest questions across 6 categories: What is IDP Companion / How it works / Pricing & payment / Where it works (and where it doesn't) / Privacy & security / Practical situations. Sticky desktop TOC sidebar with scroll-spy active state + mobile dropdown nav. Per-question URL anchors (`/faq/#refunds`, `/faq/#license-photo-retention` etc.) with auto-open accordion + smooth scroll. FAQPage + BreadcrumbList JSON-LD for rich-result eligibility. Middle-pivot compliance: authorized issuers (AAA, AATA, PayPoint, РОСАВТОКЛУБ, ADAC) named ONCE in the dedicated «when need official IDP» Q as factual disclosure. Header + footer FAQ links migrated from `/#faq` anchor → `/faq` standalone (home `#faq` section preserved). vue-i18n `@` escape fix applied to all email addresses in 3 locale files (`{'@'}` syntax). useHead JSON-LD field bug discovered: `children:` renders as HTML attribute, must use `innerHTML:` — applied to faq.vue. **NOTE:** pricing.vue + about.vue likely have same bug — JSON-LD rendered as broken attribute, silently ineligible for rich results. Worth a separate fix-pass | Петя |
+| 11.05.2026 | `/how-it-works/` standalone Live (EN+RU+ES) — supersedes 3-step inline home section. 5 detailed steps (Pick country+plan / Upload license photo / Take selfie / Pay via Gumroad / Download PDF) with summary + behind-the-scenes detail per step. Verification deep-dive: OCR (Tesseract, server-side, 5 retries, 1-hour deletion) + Face match (AWS Rekognition CompareFaces, 85% threshold, 1-hour deletion). «What you receive» 4-card grid + 11-language chip list. Realistic timing breakdown (7 rows with per-step seconds, ~2 min total, sea-colored total row). Trust signals block: 4 hard automated rules on data handling (license photo 1h delete, headshot 1h delete + no face DB, card data never on our servers, EU servers TLS 1.3). HowTo + BreadcrumbList JSON-LD. Header + footer «How it works» links migrated from `/#how-it-works` anchor → `/how-it-works` standalone. Middle pivot CLEAN (no AAA/PayPoint mentions — this page is pure conversion-flow explanation, FAQ handles the comparison Qs) | Петя |
 
 ---
 

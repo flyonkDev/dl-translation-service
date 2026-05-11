@@ -6,8 +6,8 @@
 			start-as="a"
 			:start-href="appApplyUrl"
 			:home-href="localePath({ name: 'index' })"
-			:how-href="`${localePath({ name: 'index' })}#how-it-works`"
-			:faq-href="`${localePath({ name: 'index' })}#faq`"
+			:how-href="localePath({ name: 'how-it-works' })"
+			:faq-href="localePath({ name: 'faq' })"
 			:pricing-href="localePath({ name: 'pricing' })"
 			:about-href="localePath({ name: 'about' })"
 			:brand-name="t('layout.logo')"
@@ -75,13 +75,13 @@
 
 	const footerLinks = computed(() => ({
 		pricing: localePath({ name: 'pricing' }),
-		howItWorks: localePath({ name: 'index', hash: '#how-it-works' }),
-		faq: localePath({ name: 'index', hash: '#faq' }),
+		howItWorks: localePath({ name: 'how-it-works' }),
+		faq: localePath({ name: 'faq' }),
 		about: localePath({ name: 'about' }),
 		privacy: localePath({ name: 'privacy-policy' }),
 		terms: localePath({ name: 'terms-of-service' }),
 		refund: localePath({ name: 'refund-policy' }),
-		contact: localePath({ name: 'index', hash: '#faq' }),
+		contact: localePath({ name: 'faq' }),
 	}));
 </script>
 

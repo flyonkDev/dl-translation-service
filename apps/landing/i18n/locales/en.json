@@ -332,5 +332,328 @@
       "a1": "Please refer to our Refund Policy for full details.",
       "a2": "Our support team is available to help resolve any issues."
     }
+  },
+  "faqPage": {
+    "seo": {
+      "title": "FAQ — IDP Companion: Honest Answers About Multilingual Driver License Translation",
+      "description": "Everything we get asked about IDP Companion — what it is, what it isn't, how it works, where it helps, and the rental-desk situations where you'll need a government IDP instead. 28 honest answers."
+    },
+    "hero": {
+      "kicker": "FAQ · IDP Companion",
+      "h1": "Frequently Asked Questions",
+      "lead": "Everything we get asked about IDP Companion — what it is, how it works, where it helps, and (just as importantly) where it doesn't. Organized so you can find what you need."
+    },
+    "toc": {
+      "heading": "Browse by topic",
+      "mobileLabel": "Jump to a topic"
+    },
+    "categories": {
+      "product": {
+        "heading": "What is IDP Companion?",
+        "lead": "The product in plain terms — what it is, what it isn't, and why we built it.",
+        "items": {
+          "whatIs": {
+            "q": "What is IDP Companion?",
+            "a": "A multilingual digital PDF that translates your driver's license details into the 12 languages most commonly required at rental desks and police stops abroad — English, French, Spanish, German, Italian, Portuguese, Vietnamese, Russian, Arabic, Chinese, Japanese, and Thai. It's generated from a photo of your real license, not a generic template, and it's designed to be carried alongside your physical license — never as a replacement for it."
+          },
+          "vsOfficialIdp": {
+            "q": "Is this the same as an official International Driving Permit?",
+            "a": "No, and we're explicit about this everywhere on the site. An official International Driving Permit (IDP) is a government-recognised booklet issued under the 1949 Geneva Convention or the 1968 Vienna Convention by an authorised national body — in the US that's AAA and AATA; in the UK it's PayPoint outlets since March 2024 (replacing the Post Office); in Russia it's RosAvtoKlub (Russian Automobile Club); in Germany it's ADAC. IDP Companion is a private multilingual translation companion document. It serves a different purpose: it makes your license details readable at rental desks and police checkpoints in countries where your home license doesn't translate cleanly — without claiming to be a government IDP."
+          },
+          "whyExists": {
+            "q": "Why does this product exist if official IDPs are available?",
+            "a": "Two reasons. First — getting an official IDP often requires a trip to a physical office, a passport-style photo, and 1–14 days of processing. None of which works for the traveller who realised at the airport that their UK photocard might not be enough at the rental desk in Bali. Second — for many destinations the official IDP isn't legally required, but a multilingual translation document is still operationally useful: at smaller rental agencies, at rural police checkpoints, and at any interaction where the agent's English is limited. IDP Companion is designed for those situations: $35 in 2 minutes online, valid wherever you find yourself needing to explain what your home license says."
+          },
+          "whoNeedsIt": {
+            "q": "Who is IDP Companion for?",
+            "a": "Travellers driving in countries where a translation document is either legally recommended (most non-EU destinations from a UK or US license) or operationally useful (smaller rental agencies, rural police checkpoints, off-the-tourist-path itineraries). Also: travellers combining multiple destinations on one trip — a single purchase covers them all. Also: holders of older paper licences, where rental agencies often require supplementary documentation regardless of the legal recognition position."
+          },
+          "legitVsScammy": {
+            "q": "How is this different from sites that look like government IDP issuers?",
+            "a": "Several scam-adjacent sites mimic government issuer branding and charge $40–80 for documents that look like official IDPs but aren't. We don't do that. We don't use government seals we don't have, we don't claim our document is an official IDP, and every destination page on this site openly states what the document is and isn't. If you need a government IDP for a destination that legally requires one (Japan, Thailand, parts of South America), we tell you where to get one from the authorised national issuer. If you need a translation companion for the broader range of situations where it actually helps, that's what we sell."
+          }
+        }
+      },
+      "howItWorks": {
+        "heading": "How does it work?",
+        "lead": "From application to printable PDF in about 2 minutes. Here's what happens behind the scenes.",
+        "items": {
+          "howToApply": {
+            "q": "How do I apply for IDP Companion?",
+            "a": "Three steps. (1) Pick your origin country and plan length (1, 3, or 5 years) on the landing or pricing page. (2) Complete the application: upload a photo of your driver's license, take a headshot photo (used for face verification only), confirm a few details. (3) Pay $35–55 by card (Visa/MasterCard/Amex), PayPal, Apple Pay, or USDT/USDC/BTC/ETH — and download your PDF immediately. Total time end to end: about 2 minutes."
+          },
+          "ocrVerification": {
+            "q": "What happens to my license photo?",
+            "a": "Your license photo runs through our OCR (optical character recognition) verification step. The OCR confirms the photo is a real driver's license, extracts the issuing country and license class, and flags low-quality or non-license images for retry. The photo is stored on our servers for 1 hour after submission and then automatically deleted — long enough to complete the application across a payment retry or browser refresh, not long enough to be a privacy concern. We do not share or sell license images."
+          },
+          "faceMatch": {
+            "q": "Why do I need a headshot photo?",
+            "a": "The headshot is used for face verification against your license photo. This is a fraud-prevention step that confirms the license belongs to the person applying. We use AWS Rekognition for the face match — your headshot is processed once at submission and discarded immediately afterwards. We do not retain face data, we do not build a face database, and we do not use the photo for anything beyond the single verification check."
+          },
+          "deliveryTime": {
+            "q": "How long until I receive my IDP Companion?",
+            "a": "About 2 minutes from start to delivery, assuming a clean license photo and successful payment. The PDF is generated on-demand at the moment payment completes — you download it directly in the same session. There's no waiting list, no manual review queue, no email back-and-forth. The document arrives in the same browser tab you applied from."
+          },
+          "fileFormat": {
+            "q": "What format is the PDF and how do I use it?",
+            "a": "A standard PDF (~150 KB) presenting your license data on a single page in 12 languages. Print it at home on A4 or US Letter, fold it like the document it's modeled on, and carry it alongside your physical license. You can also keep it on your phone as a backup reference, but the printed version is what you'll typically hand over at rental desks and police checkpoints. The PDF is re-downloadable from your purchase receipt at any time during your plan's validity."
+          }
+        }
+      },
+      "pricing": {
+        "heading": "Pricing & payment",
+        "lead": "What you pay, why these plans exist, and how the payment side works.",
+        "items": {
+          "whichPlan": {
+            "q": "Which plan should I pick — 1, 3, or 5 years?",
+            "a": "If you have a single trip planned within the next year, pick 1 year ($35). If you travel internationally regularly or have multiple trips lined up, the 3-year plan ($45, about $15 per year) is the most common choice. The 5-year plan ($55, about $11 per year) is best if your driver's license has more than 5 years left until expiry and you expect to travel internationally throughout. The plan's validity is tied to your home country license — if your license expires, the companion expires with it."
+          },
+          "whatsIncluded": {
+            "q": "What's included in each plan?",
+            "a": "The same PDF, the same 12-language translation, the same instant delivery. The only difference between plans is validity duration. Every plan includes: unlimited PDF re-downloads for the validity period, free regeneration if your license details change (e.g., licence renewal, name change), and multi-country coverage on a single document — one purchase works for any destination where the document applies."
+          },
+          "paymentMethods": {
+            "q": "How can I pay?",
+            "a": "Two options. (1) Card and wallet payments via Gumroad — credit card, debit card, PayPal, and Apple Pay. (2) Cryptocurrency via NOWPayments — USDT, USDC, BTC, and ETH. Both options are live today. Card payments are processed in USD; your card issuer handles the currency conversion at the standard interbank rate. Crypto payments are settled at the network rate at the time of confirmation."
+          },
+          "refunds": {
+            "q": "What's your refund policy?",
+            "a": "Full refund within 14 days of purchase if you haven't downloaded the PDF, no questions asked. After the PDF has been downloaded, we evaluate refund requests case-by-case — if there's a genuine technical issue or documentation problem on our end, we refund. We don't refund for outcomes we warned about in advance on the destination's dedicated page (e.g., 'the rental agency required a government IDP — but on the page for that destination we said upfront a government IDP was legally required there'). Email support{'@'}idpcompanion.com to start a refund."
+          },
+          "multipleDrivers": {
+            "q": "Can multiple drivers share one IDP Companion?",
+            "a": "No — each IDP Companion is generated from a specific person's driver's license and includes that person's name, license number, and verified photograph. If two people will both drive on the same trip, each needs their own. We don't currently offer family or multi-license discounts."
+          }
+        }
+      },
+      "whereItWorks": {
+        "heading": "Where it works (and where it doesn't)",
+        "lead": "Honest geography of where IDP Companion is useful, where it isn't enough, and when you genuinely need a government-issued IDP.",
+        "items": {
+          "genevaVsVienna": {
+            "q": "What's the difference between the 1949 Geneva and 1968 Vienna Conventions?",
+            "a": "Both are international treaties governing road traffic that recognise official government IDPs. The 1949 Geneva Convention (signed by ~100 countries including the US, UK, Australia, Japan, Thailand) is the older framework. The 1968 Vienna Convention (signed by ~85 countries including Russia, Germany, France, Brazil) is the more modern one. Some countries signed both; some only one. IDP Companion is not an official IDP under either convention — it's a translation companion that supplements your home license at rental desks and checkpoints, regardless of which convention applies to your destination."
+          },
+          "supportedCountries": {
+            "q": "In which countries is IDP Companion useful?",
+            "a": "It's useful anywhere your driver's license is in a language the local officer or rental agent might not read fluently. That's most non-EU destinations from a UK or US license, most non-Russian-speaking countries from a Russian license, and similar combinations for other origins. Our destination pages (e.g., UK → Thailand, US → Mexico, Russia → Turkey) cover the specific legal situation, fines, and rental landscape for popular routes. If your destination is listed there, the page tells you exactly when IDP Companion helps and when you need something else."
+          },
+          "whenNeedOfficial": {
+            "q": "When do I need an official government IDP instead?",
+            "a": "When the destination's law explicitly requires a 1949 Geneva or 1968 Vienna Convention IDP and the rental agency or local police won't accept a translation companion as a substitute. Specific examples: Japan legally requires a 1949 Geneva IDP issued by an authorised home-country body for non-Japanese-license holders. Thailand legally requires an IDP for foreign tourist drivers. China generally doesn't recognise any foreign license including IDPs. If your destination requires an official IDP, get one from your country's authorised national issuer — in the US that's AAA or AATA; in the UK it's PayPoint outlets (since March 2024); in Russia it's RosAvtoKlub (Russian Automobile Club); in Germany it's ADAC. Our destination pages flag this explicitly for every destination we cover."
+          },
+          "rentalVariance": {
+            "q": "Will every rental agency accept IDP Companion?",
+            "a": "Major international chains (Hertz, Avis, Sixt, Europcar, Budget) accept it at most airport branches across destinations where the document applies. Smaller local agencies vary — some require an official government IDP regardless of your home license. The rental conditions you agreed to at booking are the authoritative source: if they require an IDP and you arrived with only a translation companion, the agency's policy stands. Our destination pages document agency-by-agency policies for popular destinations."
+          },
+          "ifRejected": {
+            "q": "What happens if a rental agency refuses to accept it?",
+            "a": "Two scenarios. (1) The agency requires a government IDP that we explicitly told you about on the destination page (e.g., Japan, Thailand) — in that case the document isn't at fault, the legal requirement is, and we don't refund for outcomes we documented upfront. (2) The agency claims it doesn't recognise IDP Companion despite your destination not requiring a government IDP — email support{'@'}idpcompanion.com with the agency name and location, and we'll work with you on next steps including potential refund. We track agency-acceptance reports to keep our destination pages accurate."
+          }
+        }
+      },
+      "privacy": {
+        "heading": "Privacy & security",
+        "lead": "What data we collect, how long we keep it, and what we never do with it.",
+        "items": {
+          "dataStorage": {
+            "q": "Where is my data stored?",
+            "a": "Our servers are hosted in the European Union (Frankfurt region). All data is encrypted in transit (TLS 1.3) and at rest. We use Gumroad (cards, PayPal, Apple Pay) and NOWPayments (crypto) for payment processing — payment card and wallet data never touch our servers. Personal data is handled in compliance with GDPR principles regardless of your origin country."
+          },
+          "licensePhotoRetention": {
+            "q": "How long do you keep my license photo?",
+            "a": "License photos are deleted automatically 1 hour after submission. This is a hard automated rule, not a discretionary policy. The 1-hour window exists so that if your application is interrupted (browser crash, payment retry, etc.), you can resume without re-uploading. Beyond that window the photo is gone from our systems. We never store license photos beyond the application session."
+          },
+          "headshotUse": {
+            "q": "What about the headshot photo — do you keep that?",
+            "a": "The headshot runs through AWS Rekognition for one-time face verification against your license photo and is then discarded. We don't retain face data, we don't build a face database, and we don't use the headshot for anything beyond the single verification check at submission. The headshot is also stored on our servers for at most 1 hour to handle payment retries, then deleted."
+          },
+          "gdpr": {
+            "q": "Are you GDPR-compliant?",
+            "a": "Yes. We process minimal personal data, store it in the EU, use it only for the purpose you provided it for (generating your IDP Companion), and offer a documented right-to-deletion process. Email support{'@'}idpcompanion.com to request data export or deletion. Our privacy policy is the authoritative document — see /privacy-policy."
+          }
+        }
+      },
+      "practical": {
+        "heading": "Practical situations",
+        "lead": "Edge cases, lost documents, trip changes, and the questions that come up mid-trip.",
+        "items": {
+          "lostOrDamaged": {
+            "q": "What if I lose my IDP Companion or my physical license abroad?",
+            "a": "For IDP Companion: re-download it from your original purchase receipt email at any time during your plan's validity. The PDF is regenerated on-demand and you can print a fresh copy from any hotel printer or print shop. For your physical license: contact the licence-issuing authority of your home country (DVLA for UK, DMV/RMV for US, ГИБДД for Russia) — IDP Companion alone is not a substitute for your physical license, and rental agencies and police will require the original."
+          },
+          "tripExtension": {
+            "q": "What if my trip extends beyond my plan's validity?",
+            "a": "If your IDP Companion expires mid-trip, you can purchase a new one online from anywhere with internet access. The new PDF is delivered in the same ~2 minutes. If your destination's rental agency requires a continuously-valid document across the renewal date, time your purchase before the expiry date and carry both PDFs printed for the overlap day."
+          },
+          "multipleCountries": {
+            "q": "Can I use one purchase for multiple countries on the same trip?",
+            "a": "Yes. One IDP Companion is valid wherever the document is useful — there's no per-country fee. A 5-year plan covers as many trips and destinations as you take during that period. The validity is tied to your home country license, not to specific countries or trips."
+          },
+          "licenseExpiry": {
+            "q": "What if my home license expires during my IDP Companion's validity?",
+            "a": "Your IDP Companion is tied to the specific driver's license you uploaded. If that license expires and you renew, the IDP Companion is no longer valid for the renewed license — you'll need to regenerate it from the new license details. Free regeneration is included in every plan. Email support{'@'}idpcompanion.com with your purchase ID after renewal."
+          }
+        }
+      }
+    },
+    "cta": {
+      "heading": "Still have a question?",
+      "text": "If your question isn't covered above, we read every email. The fastest answer often comes from starting the application — most ambiguities resolve during the 2-minute process. For everything else, send us a note.",
+      "primaryButton": "Start application",
+      "secondaryButton": "Email support",
+      "contactEmail": "support{'@'}idpcompanion.com"
+    }
+  },
+  "howItWorksPage": {
+    "seo": {
+      "title": "How IDP Companion Works — 5 Steps, ~2 Minutes, Transparent Verification",
+      "description": "From license photo to ready-to-print PDF in about 2 minutes. Honest walkthrough of all 5 steps, including OCR + face verification, data retention rules, and realistic timing per step."
+    },
+    "hero": {
+      "kicker": "How it works · ~2 minutes online",
+      "h1": "How IDP Companion works",
+      "lead": "Five steps online, about two minutes end to end, transparent verification at every stage. Below — what each step does, what happens behind the scenes, and where your data goes after.",
+      "ctaPrimary": "Start application",
+      "ctaSecondary": "See pricing"
+    },
+    "badges": {
+      "steps": "5 steps",
+      "time": "≈ 2 minutes",
+      "security": "EU-hosted · GDPR-compliant"
+    },
+    "stepsSection": {
+      "heading": "From license photo to ready-to-print PDF",
+      "lead": "Five steps, all online, ~2 minutes total. Each step explained — including what we do with the data you upload."
+    },
+    "steps": {
+      "pickPlan": {
+        "title": "Pick origin country + plan",
+        "summary": "Choose your driver's license country of issue and the plan length — 1, 3, or 5 years.",
+        "detail": "Selecting your origin determines which license format we expect on the upload step. The plan length is purely commercial — same PDF, same translation across plans, validity tied to your home license. You can change either choice before paying."
+      },
+      "uploadLicense": {
+        "title": "Upload your license photo",
+        "summary": "Take a phone photo or upload a scan — JPG, PNG, or PDF. Front side with the photo and license number is enough for most countries.",
+        "detail": "We accept any clear, in-focus image where the license fills most of the frame. The file is uploaded over TLS 1.3 to our EU servers and queued for OCR verification. No watermarks, no compression artifacts, no special equipment required — a phone photo in good light works."
+      },
+      "selfie": {
+        "title": "Take a selfie",
+        "summary": "We compare the selfie to the photo on your license to confirm the license belongs to you.",
+        "detail": "This is the only fraud-prevention step in the flow. We don't ask for additional documents, signatures, or callbacks — the match is automated and runs in about five seconds. Glasses, lighting differences, and license-photo age usually still match; if rejected, you can retry."
+      },
+      "pay": {
+        "title": "Pay by card or crypto",
+        "summary": "$35 (1 year), $45 (3 years), or $55 (5 years). One-time payment, no subscription.",
+        "detail": "Two options. Card and wallet payments via Gumroad — credit card (Visa, MasterCard, Amex), debit card, PayPal, or Apple Pay. Cryptocurrency payments via NOWPayments — USDT, USDC, BTC, and ETH. Both live today. Card payments processed in USD with your card issuer handling the currency conversion at the standard interbank rate; crypto payments settle at the network rate at the time of confirmation."
+      },
+      "download": {
+        "title": "Download your PDF",
+        "summary": "Generated instantly after payment. ~150 KB, A4 or US Letter, ready to print at home.",
+        "detail": "The PDF is generated on-demand at the moment payment completes and downloads directly in the same browser session — no waiting list, no email back-and-forth. The receipt email also contains a re-download link valid for the duration of your plan."
+      }
+    },
+    "verification": {
+      "heading": "How we verify it's actually you, and a real license",
+      "lead": "Two automated checks — neither involves a human reviewing your photo. Both finish in seconds, and both delete their input data within an hour.",
+      "ocr": {
+        "title": "OCR — confirms it's a real license",
+        "body": "Optical character recognition reads the license image to confirm it's an actual driver's license, extracts the issuing country and license class, and rejects low-quality images, random photos, or non-license documents. The check runs server-side in about five seconds. If your photo is too blurry, has glare, or is at a bad angle, you can retry — up to 5 attempts per session.",
+        "chip1": "Server-side Tesseract OCR",
+        "chip2": "Up to 5 retries per session",
+        "chip3": "Photo deleted within 1 hour",
+        "chip4": "No human review"
+      },
+      "face": {
+        "title": "Face match — confirms the license is yours",
+        "body": "Your selfie is compared against the photo on your license using AWS Rekognition's CompareFaces API. The similarity threshold is 85% — high enough to prevent obvious fraud, low enough to accommodate glasses, age differences, and lighting. Match runs in about five seconds. If you're rejected (rare, but happens with old or low-quality license photos), retry with a better selfie.",
+        "chip1": "AWS Rekognition CompareFaces",
+        "chip2": "85% similarity threshold",
+        "chip3": "Selfie deleted within 1 hour",
+        "chip4": "No face database retained"
+      }
+    },
+    "whatYouGet": {
+      "heading": "What you receive",
+      "lead": "A single-page PDF designed to be carried alongside your physical license. Print it at home, fold it like a passport, or keep it on your phone as a backup reference.",
+      "format": {
+        "title": "Single-page PDF (~150 KB)",
+        "body": "Standard PDF format, A4 or US Letter, fold-style modeled on the 1949 Geneva Convention IDP layout. Opens in any PDF reader; no special software required."
+      },
+      "languages": {
+        "title": "12 languages",
+        "body": "Your license data presented on one page in the 12 languages most commonly required at rental desks and police stops abroad.",
+        "list": {
+          "en": "English",
+          "fr": "French",
+          "es": "Spanish",
+          "de": "German",
+          "it": "Italian",
+          "pt": "Portuguese",
+          "vi": "Vietnamese",
+          "ru": "Russian",
+          "ar": "Arabic",
+          "zh": "Chinese",
+          "ja": "Japanese",
+          "th": "Thai"
+        }
+      },
+      "usage": {
+        "title": "Print or phone",
+        "body": "Print at home, hotel, or print shop. Phone display works as a backup for in-car checks. The printed version is what you'll typically hand over at rental desks and police checkpoints."
+      },
+      "validity": {
+        "title": "Re-downloadable",
+        "body": "Re-download anytime during your plan's validity from the purchase receipt email. Free regeneration if your license details change (renewal, name change)."
+      }
+    },
+    "timing": {
+      "heading": "Realistic timing — step by step",
+      "lead": "Average ~2 minutes end to end if your license photo is clean and payment goes through on the first try. Per-step estimates based on actual user sessions:",
+      "colStep": "Step",
+      "colTime": "Estimated time",
+      "rows": {
+        "pickPlan": { "label": "Pick country + plan", "time": "~10 sec" },
+        "uploadLicense": { "label": "Upload license photo", "time": "~20 sec" },
+        "ocr": { "label": "OCR verification (server-side)", "time": "~5 sec" },
+        "selfie": { "label": "Take + upload selfie", "time": "~30 sec" },
+        "faceMatch": { "label": "Face match (server-side)", "time": "~5 sec" },
+        "payment": { "label": "Gumroad / USDT", "time": "~30 sec" },
+        "pdfGeneration": { "label": "PDF generation + download", "time": "instant" }
+      },
+      "totalLabel": "Total",
+      "totalValue": "~ 2 minutes",
+      "note": "Edge cases add time: failed OCR retry (~30 sec each), payment retry (~1 min), low-quality license image requiring rescan (~1–2 min). The fastest sessions complete in under 90 seconds; the longest still finish in under 5 minutes."
+    },
+    "trust": {
+      "heading": "Where your data goes (and where it doesn't)",
+      "lead": "Four hard automated rules, applied to every application.",
+      "items": {
+        "licensePhoto": {
+          "label": "License photo",
+          "detail": "Deleted automatically 1 hour after submission — hard automated rule, not a discretionary policy. The 1-hour window exists so you can resume an interrupted application (browser crash, payment retry) without re-uploading. Never shared, never sold."
+        },
+        "headshot": {
+          "label": "Headshot selfie",
+          "detail": "Used once for the face-match check, then discarded. We don't retain face data, we don't build a face database, and we don't use the photo for anything beyond the single verification at submission."
+        },
+        "payment": {
+          "label": "Card data",
+          "detail": "Never touches our servers. Gumroad handles card and wallet checkout (PCI-DSS Level 1 compliant); NOWPayments handles crypto checkout (USDT, USDC, BTC, ETH). We never see, store, or log card numbers, wallet addresses, or seed phrases."
+        },
+        "servers": {
+          "label": "Server location",
+          "detail": "EU (Frankfurt region). All data encrypted in transit (TLS 1.3) and at rest. GDPR-compliant regardless of your origin country. Email support{'@'}idpcompanion.com to request data export or deletion."
+        }
+      },
+      "learnMoreFaq": "Read FAQ — privacy & security",
+      "learnMorePrivacy": "Full privacy policy"
+    },
+    "cta": {
+      "heading": "Ready to start?",
+      "text": "~2 minutes online, transparent verification at every step, your data deleted within an hour. $35 / 1 year · $45 / 3 years · $55 / 5 years. One-time payment, no subscription.",
+      "primaryButton": "Start application",
+      "secondaryButton": "See pricing"
+    }
   }
 }

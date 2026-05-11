@@ -17,8 +17,8 @@
 				</NuxtLinkLocale>
 
 				<nav class="nav">
-					<NuxtLinkLocale :to="{ path: '/', hash: '#how-it-works' }" class="nav-link">{{ t('layout.navHow') }}</NuxtLinkLocale>
-					<NuxtLinkLocale :to="{ path: '/', hash: '#faq' }" class="nav-link">{{ t('layout.navFaq') }}</NuxtLinkLocale>
+					<NuxtLinkLocale to="/how-it-works" class="nav-link">{{ t('layout.navHow') }}</NuxtLinkLocale>
+					<NuxtLinkLocale to="/faq" class="nav-link">{{ t('layout.navFaq') }}</NuxtLinkLocale>
 					<NuxtLinkLocale to="/pricing" class="nav-link">{{ t('layout.navPricing') }}</NuxtLinkLocale>
 					<NuxtLinkLocale to="/about" class="nav-link">{{ t('layout.navAbout') }}</NuxtLinkLocale>
 				</nav>
@@ -100,8 +100,8 @@
 
 	const footerLinks = computed(() => ({
 		pricing: localePath('/pricing'),
-		howItWorks: `${localePath('/')}#how-it-works`,
-		faq: `${localePath('/')}#faq`,
+		howItWorks: localePath('/how-it-works'),
+		faq: localePath('/faq'),
 		about: localePath('/about'),
 		privacy: localePath('/privacy-policy'),
 		terms: localePath('/terms-of-service'),

@@ -332,5 +332,328 @@
       "a1": "Consulta nuestra Política de reembolsos para todos los detalles.",
       "a2": "Nuestro equipo de soporte está disponible para ayudarte a resolver cualquier incidencia."
     }
+  },
+  "faqPage": {
+    "seo": {
+      "title": "FAQ — IDP Companion: respuestas honestas sobre el documento traductor del permiso",
+      "description": "Todo lo que nos preguntan sobre IDP Companion — qué es, qué NO es, cómo funciona, dónde ayuda y en qué casos necesitas un IDP oficial en lugar de nuestro documento. 28 respuestas honestas."
+    },
+    "hero": {
+      "kicker": "FAQ · IDP Companion",
+      "h1": "Preguntas frecuentes",
+      "lead": "Todo lo que nos preguntan sobre IDP Companion — qué es, cómo funciona, dónde ayuda y (igual de importante) dónde no. Organizado para que encuentres lo que necesitas rápido."
+    },
+    "toc": {
+      "heading": "Temas",
+      "mobileLabel": "Ir a un tema"
+    },
+    "categories": {
+      "product": {
+        "heading": "¿Qué es IDP Companion?",
+        "lead": "El producto en términos simples — qué es, qué NO es y por qué lo creamos.",
+        "items": {
+          "whatIs": {
+            "q": "¿Qué es IDP Companion?",
+            "a": "Un PDF digital multilingüe que presenta los datos de tu permiso de conducir en los 12 idiomas más solicitados en mostradores de alquiler y controles policiales en el extranjero — inglés, francés, español, alemán, italiano, portugués, vietnamita, ruso, árabe, chino, japonés y tailandés. Se genera a partir de una foto de tu permiso real, no es una plantilla genérica, y está diseñado para llevarse junto con tu permiso físico — nunca como reemplazo."
+          },
+          "vsOfficialIdp": {
+            "q": "¿Es lo mismo que un Permiso Internacional de Conducción oficial?",
+            "a": "No, y lo decimos explícitamente en todo el sitio. Un Permiso Internacional de Conducción (IDP) oficial es un cuadernillo reconocido por el gobierno emitido bajo la Convención de Ginebra de 1949 o la Convención de Viena de 1968 por un organismo nacional autorizado — en EE. UU. son AAA y AATA; en Reino Unido son los puntos PayPoint desde marzo de 2024 (sustituyendo a Post Office); en Rusia es RosAvtoKlub (Club Automovilístico Ruso); en Alemania es ADAC. IDP Companion es un documento privado multilingüe complementario. Cumple un propósito diferente: hace que los datos de tu permiso sean legibles en mostradores de alquiler y controles policiales en países donde tu permiso original no se traduce con claridad — sin pretender ser un IDP gubernamental."
+          },
+          "whyExists": {
+            "q": "¿Por qué existe este producto si hay IDP oficiales disponibles?",
+            "a": "Dos razones. Primera: obtener un IDP oficial suele implicar ir a una oficina física, foto tipo pasaporte y 1 a 14 días de tramitación. Nada de esto sirve al viajero que se da cuenta en el aeropuerto que su licencia mexicana o permiso español podría no bastar en el mostrador de alquiler en Bali. Segunda: en muchos destinos el IDP oficial no es obligatorio por ley, pero un documento multilingüe sigue siendo útil operativamente — en agencias de alquiler pequeñas, en controles policiales rurales y en cualquier interacción donde el inglés del agente sea limitado. IDP Companion está diseñado para esas situaciones: $35 en 2 minutos online, válido donde necesites explicar lo que dice tu permiso."
+          },
+          "whoNeedsIt": {
+            "q": "¿Para quién está pensado IDP Companion?",
+            "a": "Para viajeros que conducen en países donde un documento traductor es legalmente recomendado (la mayoría de destinos fuera de la UE desde un permiso británico o estadounidense) u operativamente útil (agencias de alquiler pequeñas, controles policiales rurales, rutas fuera del circuito turístico). También: para viajeros que combinan varios destinos en un solo viaje — una compra cubre todos. También: para titulares de permisos antiguos en papel, donde las agencias de alquiler suelen exigir documentación complementaria al margen de la posición legal."
+          },
+          "legitVsScammy": {
+            "q": "¿En qué se diferencian de los sitios que imitan a los emisores oficiales de IDP?",
+            "a": "Hay varios sitios casi-fraudulentos que imitan la marca de emisores gubernamentales y cobran $40–80 por documentos que parecen IDP oficiales pero no lo son. Nosotros no hacemos eso. No usamos sellos gubernamentales que no tenemos, no decimos que nuestro documento es un IDP oficial, y cada página de destino en este sitio declara abiertamente qué es y qué no es el documento. Si necesitas un IDP oficial para un destino donde la ley lo exige (Japón, Tailandia, partes de Sudamérica), te decimos dónde obtenerlo del emisor nacional autorizado. Si necesitas un documento traductor para el rango más amplio de situaciones donde realmente ayuda — eso es lo que vendemos."
+          }
+        }
+      },
+      "howItWorks": {
+        "heading": "¿Cómo funciona?",
+        "lead": "De la solicitud al PDF imprimible en unos 2 minutos. Esto es lo que ocurre por detrás.",
+        "items": {
+          "howToApply": {
+            "q": "¿Cómo solicito IDP Companion?",
+            "a": "Tres pasos. (1) Elige tu país de origen y duración del plan (1, 3 o 5 años) en la landing o página de precios. (2) Completa la solicitud: sube una foto de tu permiso, hazte un selfie (se usa solo para verificación facial), confirma algunos datos. (3) Paga $35–55 con tarjeta (Visa/MasterCard/Amex), PayPal, Apple Pay o criptomoneda USDT/USDC/BTC/ETH — y descarga tu PDF al instante. Tiempo total: unos 2 minutos."
+          },
+          "ocrVerification": {
+            "q": "¿Qué hacen con la foto de mi permiso?",
+            "a": "La foto pasa por nuestra verificación OCR (reconocimiento óptico de caracteres). El OCR confirma que la foto es un permiso de conducir real, extrae el país emisor y la categoría del permiso, y rechaza imágenes de baja calidad o que no sean permisos. La foto se almacena en nuestros servidores durante 1 hora tras el envío y se elimina automáticamente — suficiente para completar la solicitud tras un reintento de pago o recarga del navegador, no lo suficiente para ser una preocupación de privacidad. No compartimos ni vendemos fotos de permisos."
+          },
+          "faceMatch": {
+            "q": "¿Por qué necesitan un selfie?",
+            "a": "El selfie se usa para verificación facial contra la foto de tu permiso. Es un paso antifraude que confirma que el permiso pertenece a la persona que lo solicita. Usamos AWS Rekognition para la comparación — tu selfie se procesa una vez al enviar y se descarta inmediatamente después. No conservamos datos faciales, no construimos una base de rostros y no usamos la foto para nada más allá de la única verificación al momento de la solicitud."
+          },
+          "deliveryTime": {
+            "q": "¿Cuánto tarda en llegar mi IDP Companion?",
+            "a": "Unos 2 minutos de principio a fin, suponiendo una foto de permiso limpia y un pago exitoso. El PDF se genera bajo demanda en el momento en que se completa el pago — lo descargas directamente en la misma sesión. No hay lista de espera, no hay cola de revisión manual, no hay intercambio de correos. El documento llega en la misma pestaña del navegador donde lo solicitaste."
+          },
+          "fileFormat": {
+            "q": "¿En qué formato viene el PDF y cómo lo uso?",
+            "a": "Un PDF estándar (~150 KB) que presenta los datos de tu permiso en una página, en 12 idiomas. Imprímelo en casa en A4 o US Letter, dóblalo como el documento en el que está modelado y llévalo junto con tu permiso físico. También puedes guardarlo en el móvil como referencia de respaldo, pero la versión impresa es lo que normalmente entregarás en mostradores de alquiler y controles policiales. El PDF se puede volver a descargar desde el recibo de compra durante toda la validez del plan."
+          }
+        }
+      },
+      "pricing": {
+        "heading": "Precios y pago",
+        "lead": "Cuánto pagas, por qué existen estos planes y cómo funciona el lado del pago.",
+        "items": {
+          "whichPlan": {
+            "q": "¿Qué plan elegir — 1, 3 o 5 años?",
+            "a": "Si tienes un solo viaje planeado en el próximo año, elige 1 año ($35). Si viajas internacionalmente de forma regular o tienes varios viajes en fila, el plan de 3 años ($45, unos $15 por año) es el más elegido. El plan de 5 años ($55, unos $11 por año) es ideal si a tu permiso le quedan más de 5 años antes de caducar y esperas viajar internacionalmente durante todo ese tiempo. La validez del plan está atada a tu permiso de origen — si tu permiso caduca, el documento caduca con él."
+          },
+          "whatsIncluded": {
+            "q": "¿Qué incluye cada plan?",
+            "a": "El mismo PDF, la misma traducción a 12 idiomas, la misma entrega instantánea. La única diferencia entre planes es la duración de la validez. Cada plan incluye: descargas ilimitadas del PDF durante la validez, regeneración gratuita si cambian los datos de tu permiso (renovación, cambio de nombre) y cobertura multi-país en un único documento — una compra sirve para cualquier destino donde el documento aplique."
+          },
+          "paymentMethods": {
+            "q": "¿Cómo puedo pagar?",
+            "a": "Dos opciones. (1) Pagos con tarjeta y billetera vía Gumroad — tarjeta de crédito, tarjeta de débito, PayPal y Apple Pay. (2) Criptomonedas vía NOWPayments — USDT, USDC, BTC y ETH. Ambas opciones están operativas hoy. Los pagos con tarjeta se procesan en USD; tu emisor de tarjeta hace la conversión al tipo de cambio interbancario estándar. Los pagos en cripto se liquidan al tipo de la red en el momento de la confirmación."
+          },
+          "refunds": {
+            "q": "¿Cuál es la política de reembolsos?",
+            "a": "Reembolso completo dentro de 14 días desde la compra si no has descargado el PDF, sin preguntas. Una vez descargado el PDF, evaluamos las solicitudes caso por caso — si hay un problema técnico real o un error de documentación de nuestro lado, reembolsamos. No reembolsamos resultados que advertimos por adelantado en la página dedicada al destino (por ejemplo: «la agencia de alquiler pidió un IDP oficial — pero en la página de ese destino decimos por adelantado que la ley local exige un IDP oficial»). Escribe a support{'@'}idpcompanion.com para iniciar un reembolso."
+          },
+          "multipleDrivers": {
+            "q": "¿Pueden varios conductores compartir un IDP Companion?",
+            "a": "No — cada IDP Companion se genera a partir del permiso de una persona concreta e incluye su nombre, número de permiso y fotografía verificada. Si dos personas van a conducir en el mismo viaje, cada una necesita el suyo. Actualmente no ofrecemos descuentos familiares o multi-permiso."
+          }
+        }
+      },
+      "whereItWorks": {
+        "heading": "Dónde funciona (y dónde no)",
+        "lead": "Geografía honesta de dónde IDP Companion es útil, dónde no basta y cuándo necesitas un IDP oficial emitido por el gobierno.",
+        "items": {
+          "genevaVsVienna": {
+            "q": "¿Cuál es la diferencia entre la Convención de Ginebra 1949 y la de Viena 1968?",
+            "a": "Ambos son tratados internacionales sobre tráfico vial que reconocen el IDP oficial emitido por gobiernos. La Convención de Ginebra de 1949 (firmada por ~100 países, incluidos EE. UU., Reino Unido, Australia, Japón, Tailandia) es el marco más antiguo. La Convención de Viena de 1968 (firmada por ~85 países, incluidos Rusia, Alemania, Francia, Brasil) es el más moderno. Algunos países firmaron ambos, otros solo uno. IDP Companion no es un IDP oficial bajo ninguna de las dos convenciones — es un documento traductor que complementa tu permiso original en mostradores de alquiler y controles, sin importar cuál convención aplique en tu destino."
+          },
+          "supportedCountries": {
+            "q": "¿En qué países es útil IDP Companion?",
+            "a": "Es útil en cualquier lugar donde tu permiso esté en un idioma que el agente local o el empleado del alquiler pueda leer con dificultad. Eso es la mayoría de destinos fuera de la UE desde un permiso británico o estadounidense, la mayoría de países no-hispanohablantes desde un permiso latinoamericano, y combinaciones similares para otros orígenes. Nuestras páginas de destino (por ejemplo, US → México, US → España, US → Italia) cubren la situación legal específica, multas y panorama de alquiler para rutas populares. Si tu destino está listado allí, la página dice exactamente cuándo IDP Companion ayuda y cuándo necesitas otra cosa."
+          },
+          "whenNeedOfficial": {
+            "q": "¿Cuándo necesito un IDP oficial del gobierno en lugar del nuestro?",
+            "a": "Cuando la ley del destino exige explícitamente un IDP bajo la Convención de Ginebra 1949 o Viena 1968 y la agencia de alquiler o policía local no acepta un documento complementario como sustituto. Ejemplos concretos: Japón exige por ley un IDP de Ginebra 1949 emitido por un organismo nacional autorizado del país de origen para conductores no japoneses. Tailandia exige por ley un IDP a los conductores turistas extranjeros. China generalmente no reconoce ningún permiso extranjero, incluidos IDP. Si tu destino exige un IDP oficial, obtenlo del emisor nacional autorizado de tu país — en EE. UU. son AAA o AATA; en Reino Unido son los puntos PayPoint (desde marzo de 2024); en Rusia es RosAvtoKlub (Club Automovilístico Ruso); en Alemania es ADAC. Nuestras páginas de destino lo señalan explícitamente para cada destino que cubrimos."
+          },
+          "rentalVariance": {
+            "q": "¿Todas las agencias de alquiler aceptarán IDP Companion?",
+            "a": "Las grandes cadenas internacionales (Hertz, Avis, Sixt, Europcar, Budget) lo aceptan en la mayoría de sucursales de aeropuerto en destinos donde el documento aplica. Las agencias locales más pequeñas varían — algunas exigen un IDP oficial del gobierno al margen de tu permiso de origen. Las condiciones de alquiler que aceptaste en la reserva son la fuente autoritativa: si exigen IDP y llegaste solo con un documento complementario, la política de la agencia prevalece. Nuestras páginas de destino documentan políticas agencia por agencia para destinos populares."
+          },
+          "ifRejected": {
+            "q": "¿Qué pasa si una agencia se niega a aceptarlo?",
+            "a": "Dos escenarios. (1) La agencia exige un IDP oficial del que avisamos explícitamente en la página de destino (p. ej., Japón, Tailandia) — en ese caso el documento no es el problema, lo es el requisito legal, y no reembolsamos por resultados que documentamos por adelantado. (2) La agencia dice que no reconoce IDP Companion aunque tu destino no exija un IDP oficial — escribe a support{'@'}idpcompanion.com con el nombre y ubicación de la agencia y veremos los próximos pasos, incluido un posible reembolso. Hacemos seguimiento de reportes de aceptación para mantener nuestras páginas de destino precisas."
+          }
+        }
+      },
+      "privacy": {
+        "heading": "Privacidad y seguridad",
+        "lead": "Qué datos recogemos, cuánto tiempo los guardamos y qué nunca hacemos con ellos.",
+        "items": {
+          "dataStorage": {
+            "q": "¿Dónde se almacenan mis datos?",
+            "a": "Nuestros servidores están alojados en la Unión Europea (región Fráncfort). Todos los datos están cifrados en tránsito (TLS 1.3) y en reposo. Usamos Gumroad (tarjetas, PayPal, Apple Pay) y NOWPayments (cripto) para procesar pagos — los datos de tarjeta y billetera nunca tocan nuestros servidores. Los datos personales se manejan conforme a los principios del GDPR independientemente de tu país de origen."
+          },
+          "licensePhotoRetention": {
+            "q": "¿Cuánto tiempo guardan la foto de mi permiso?",
+            "a": "Las fotos de permisos se eliminan automáticamente 1 hora después del envío. Es una regla automatizada y firme, no una política discrecional. La ventana de 1 hora existe para que, si la solicitud se interrumpe (caída del navegador, reintento de pago, etc.), puedas continuar sin volver a subir la foto. Pasada esa ventana, la foto desaparece de nuestros sistemas. Nunca conservamos fotos de permisos más allá de la sesión de solicitud."
+          },
+          "headshotUse": {
+            "q": "¿Y el selfie — lo guardan?",
+            "a": "El selfie pasa por AWS Rekognition para la verificación facial única contra la foto del permiso y luego se descarta. No conservamos datos faciales, no construimos una base de rostros y no usamos el selfie para nada más allá de la verificación única en el momento de la solicitud. El selfie también se almacena un máximo de 1 hora para reintentos de pago, luego se elimina."
+          },
+          "gdpr": {
+            "q": "¿Cumplen con el GDPR?",
+            "a": "Sí. Procesamos un mínimo de datos personales, los almacenamos en la UE, los usamos solo para el fin para el que los entregaste (generar tu IDP Companion) y ofrecemos un proceso documentado del derecho de supresión. Escribe a support{'@'}idpcompanion.com para solicitar exportación o eliminación de datos. El documento autoritativo es la política de privacidad — ver /privacy-policy."
+          }
+        }
+      },
+      "practical": {
+        "heading": "Situaciones prácticas",
+        "lead": "Casos límite, documentos perdidos, cambios de viaje — las preguntas que aparecen ya en ruta.",
+        "items": {
+          "lostOrDamaged": {
+            "q": "¿Qué pasa si pierdo mi IDP Companion o el permiso físico en el extranjero?",
+            "a": "Para IDP Companion: vuelve a descargarlo desde el correo del recibo de compra original en cualquier momento durante la validez del plan. El PDF se regenera bajo demanda y puedes imprimir una copia nueva desde cualquier impresora de hotel o copistería. Para tu permiso físico: contacta a la autoridad emisora de tu país de origen (DGT en España, DMV/RMV en EE. UU., ГИБДД en Rusia) — IDP Companion por sí solo no sustituye al permiso físico y las agencias de alquiler y la policía exigirán el original."
+          },
+          "tripExtension": {
+            "q": "¿Qué pasa si el viaje se extiende más allá de la validez del plan?",
+            "a": "Si tu IDP Companion caduca a mitad de viaje, puedes comprar uno nuevo online desde cualquier sitio con internet. El nuevo PDF llega en los mismos ~2 minutos. Si la agencia de alquiler en tu destino requiere un documento con validez continua a través de la fecha de renovación, programa la compra antes de la fecha de caducidad y lleva ambos PDF impresos el día de solapamiento."
+          },
+          "multipleCountries": {
+            "q": "¿Puedo usar una compra para varios países en el mismo viaje?",
+            "a": "Sí. Un IDP Companion es válido en cualquier lugar donde el documento sea útil — no hay tarifa por país. Un plan de 5 años cubre todos los viajes y destinos que hagas durante ese período. La validez está atada a tu permiso de origen, no a países o viajes concretos."
+          },
+          "licenseExpiry": {
+            "q": "¿Qué pasa si mi permiso caduca durante la validez de IDP Companion?",
+            "a": "IDP Companion está atado al permiso específico que subiste. Si ese permiso caduca y lo renuevas, IDP Companion ya no es válido para el permiso renovado — tendrás que regenerarlo a partir de los datos nuevos. La regeneración gratuita está incluida en cada plan. Escribe a support{'@'}idpcompanion.com con tu ID de compra tras la renovación."
+          }
+        }
+      }
+    },
+    "cta": {
+      "heading": "¿Aún tienes preguntas?",
+      "text": "Si tu pregunta no está cubierta arriba, leemos cada correo. A menudo la respuesta más rápida llega al empezar la solicitud: la mayoría de ambigüedades se resuelven durante el proceso de 2 minutos. Para todo lo demás, escríbenos.",
+      "primaryButton": "Empezar solicitud",
+      "secondaryButton": "Escribir al soporte",
+      "contactEmail": "support{'@'}idpcompanion.com"
+    }
+  },
+  "howItWorksPage": {
+    "seo": {
+      "title": "Cómo funciona IDP Companion — 5 pasos, ~2 minutos, verificación transparente",
+      "description": "De la foto del permiso al PDF listo para imprimir en ~2 minutos. Recorrido honesto por los 5 pasos: verificación OCR + facial, reglas de retención de datos y tiempo real por paso."
+    },
+    "hero": {
+      "kicker": "Cómo funciona · ~2 minutos online",
+      "h1": "Cómo funciona IDP Companion",
+      "lead": "Cinco pasos online, unos dos minutos de principio a fin, verificación transparente en cada etapa. Abajo — qué hace cada paso, qué ocurre por detrás y dónde acaban tus datos después.",
+      "ctaPrimary": "Empezar solicitud",
+      "ctaSecondary": "Ver precios"
+    },
+    "badges": {
+      "steps": "5 pasos",
+      "time": "≈ 2 minutos",
+      "security": "Servidores en la UE · GDPR"
+    },
+    "stepsSection": {
+      "heading": "De la foto del permiso al PDF listo para imprimir",
+      "lead": "Cinco pasos, todo online, ~2 minutos en total. Cada paso explicado — incluido qué hacemos con los datos que subes."
+    },
+    "steps": {
+      "pickPlan": {
+        "title": "Elige país de origen y plan",
+        "summary": "Selecciona el país de emisión de tu permiso y la duración del plan — 1, 3 o 5 años.",
+        "detail": "El país de origen determina qué formato de permiso esperamos en el paso de subida. La duración del plan es una elección puramente comercial: el mismo PDF, la misma traducción en todos los planes, la validez está atada a tu permiso original. Puedes cambiar cualquiera de las dos antes de pagar."
+      },
+      "uploadLicense": {
+        "title": "Sube la foto de tu permiso",
+        "summary": "Haz una foto con el móvil o sube un escaneo — JPG, PNG o PDF. Para la mayoría de países basta el anverso con la foto y el número.",
+        "detail": "Aceptamos cualquier imagen nítida y enfocada donde el permiso ocupe la mayor parte del encuadre. El archivo se sube por TLS 1.3 a nuestros servidores en la UE y entra en cola para verificación OCR. Sin marcas de agua, sin equipamiento especial, sin calidad profesional: una foto de móvil con buena luz funciona."
+      },
+      "selfie": {
+        "title": "Hazte un selfie",
+        "summary": "Comparamos el selfie con la foto de tu permiso para confirmar que el permiso es tuyo.",
+        "detail": "Es el único paso antifraude del proceso. No pedimos documentos adicionales, firmas ni llamadas de vuelta — la comparación es automática y tarda unos cinco segundos. Gafas, diferencias de iluminación y la edad de la foto del permiso suelen pasar; si se rechaza, puedes reintentar."
+      },
+      "pay": {
+        "title": "Paga con tarjeta o cripto",
+        "summary": "$35 (1 año), $45 (3 años) o $55 (5 años). Pago único, sin suscripción.",
+        "detail": "Dos opciones. Pagos con tarjeta y billetera vía Gumroad — tarjeta de crédito (Visa, MasterCard, Amex), tarjeta de débito, PayPal o Apple Pay. Pagos en criptomoneda vía NOWPayments — USDT, USDC, BTC y ETH. Ambas opciones operativas hoy. Los pagos con tarjeta se procesan en USD con la conversión a cargo de tu emisor al tipo interbancario estándar; los pagos en cripto se liquidan al tipo de la red en el momento de la confirmación."
+      },
+      "download": {
+        "title": "Descarga el PDF",
+        "summary": "Generado al instante tras el pago. ~150 KB, A4 o US Letter, listo para imprimir.",
+        "detail": "El PDF se genera bajo demanda en el momento en que se completa el pago y se descarga directamente en la misma sesión del navegador — sin lista de espera, sin correos de vuelta. El correo del recibo también contiene un enlace de re-descarga válido durante toda la vigencia del plan."
+      }
+    },
+    "verification": {
+      "heading": "Cómo verificamos que eres tú y que el permiso es real",
+      "lead": "Dos comprobaciones automáticas — ninguna involucra a un humano mirando tu foto. Ambas se completan en segundos y ambas eliminan los datos de entrada en menos de una hora.",
+      "ocr": {
+        "title": "OCR — confirma que es un permiso real",
+        "body": "El reconocimiento óptico de caracteres lee la imagen del permiso para confirmar que es un permiso de conducir real, extrae el país emisor y la categoría, y rechaza imágenes de baja calidad, fotos aleatorias o documentos que no sean permisos. La comprobación corre en el servidor en unos cinco segundos. Si tu foto está borrosa, tiene reflejos o el ángulo es malo, puedes reintentar — hasta 5 veces por sesión.",
+        "chip1": "OCR en servidor (Tesseract)",
+        "chip2": "Hasta 5 reintentos por sesión",
+        "chip3": "Foto eliminada en menos de 1 hora",
+        "chip4": "Sin revisión humana"
+      },
+      "face": {
+        "title": "Verificación facial — confirma que el permiso es tuyo",
+        "body": "Tu selfie se compara con la foto del permiso usando la API CompareFaces de AWS Rekognition. El umbral de similitud es del 85% — lo bastante alto para frenar fraudes obvios, lo bastante flexible para acomodar gafas, diferencias de edad y de iluminación. La comparación tarda unos cinco segundos. Si se rechaza (raro, pero pasa con fotos de permiso antiguas o de baja calidad), reintenta con un selfie mejor.",
+        "chip1": "AWS Rekognition CompareFaces",
+        "chip2": "Umbral de similitud 85%",
+        "chip3": "Selfie eliminado en menos de 1 hora",
+        "chip4": "Sin base de rostros"
+      }
+    },
+    "whatYouGet": {
+      "heading": "Qué recibes",
+      "lead": "Un PDF de una sola página pensado para llevar junto al permiso físico. Imprímelo en casa, dóblalo como un pasaporte o guárdalo en el móvil como referencia de respaldo.",
+      "format": {
+        "title": "PDF de una página (~150 KB)",
+        "body": "PDF estándar, A4 o US Letter, plegado al estilo del IDP de la Convención de Ginebra de 1949. Se abre en cualquier lector de PDF; sin software especial."
+      },
+      "languages": {
+        "title": "12 idiomas",
+        "body": "Los datos de tu permiso presentados en una página en los 12 idiomas más solicitados en mostradores de alquiler y controles policiales en el extranjero.",
+        "list": {
+          "en": "Inglés",
+          "fr": "Francés",
+          "es": "Español",
+          "de": "Alemán",
+          "it": "Italiano",
+          "pt": "Portugués",
+          "vi": "Vietnamita",
+          "ru": "Ruso",
+          "ar": "Árabe",
+          "zh": "Chino",
+          "ja": "Japonés",
+          "th": "Tailandés"
+        }
+      },
+      "usage": {
+        "title": "Imprimir o móvil",
+        "body": "Imprime en casa, hotel o copistería. La pantalla del móvil sirve como respaldo en controles en coche. La versión impresa es la que normalmente entregarás en mostradores de alquiler y controles policiales."
+      },
+      "validity": {
+        "title": "Re-descargable",
+        "body": "Re-descarga en cualquier momento durante la vigencia del plan desde el correo del recibo. Regeneración gratuita si cambian los datos del permiso (renovación, cambio de nombre)."
+      }
+    },
+    "timing": {
+      "heading": "Tiempo real — paso a paso",
+      "lead": "Media ~2 minutos de principio a fin si la foto del permiso es nítida y el pago pasa a la primera. Estimaciones por paso basadas en sesiones reales:",
+      "colStep": "Paso",
+      "colTime": "Tiempo estimado",
+      "rows": {
+        "pickPlan": { "label": "Elegir país + plan", "time": "~10 seg" },
+        "uploadLicense": { "label": "Subir foto del permiso", "time": "~20 seg" },
+        "ocr": { "label": "Verificación OCR (servidor)", "time": "~5 seg" },
+        "selfie": { "label": "Hacer + subir selfie", "time": "~30 seg" },
+        "faceMatch": { "label": "Verificación facial (servidor)", "time": "~5 seg" },
+        "payment": { "label": "Gumroad / USDT", "time": "~30 seg" },
+        "pdfGeneration": { "label": "Generación PDF + descarga", "time": "instantáneo" }
+      },
+      "totalLabel": "Total",
+      "totalValue": "~ 2 minutos",
+      "note": "Casos límite añaden tiempo: reintento OCR fallido (~30 seg cada uno), reintento de pago (~1 min), foto de baja calidad que requiere repetir captura (~1–2 min). Las sesiones más rápidas se completan en menos de 90 segundos; las más lentas siguen acabando en menos de 5 minutos."
+    },
+    "trust": {
+      "heading": "A dónde van tus datos (y a dónde no)",
+      "lead": "Cuatro reglas automáticas estrictas, aplicadas a cada solicitud.",
+      "items": {
+        "licensePhoto": {
+          "label": "Foto del permiso",
+          "detail": "Se elimina automáticamente 1 hora después de la subida — regla automatizada y firme, no una política discrecional. La ventana de 1 hora existe para que puedas continuar una solicitud interrumpida (caída del navegador, reintento de pago) sin volver a subir. Nunca se comparte ni se vende."
+        },
+        "headshot": {
+          "label": "Selfie",
+          "detail": "Se usa una vez para la verificación facial y luego se descarta. No conservamos datos faciales, no construimos una base de rostros y no usamos la foto para nada más allá de la verificación única en el momento de la solicitud."
+        },
+        "payment": {
+          "label": "Datos de tarjeta",
+          "detail": "Nunca tocan nuestros servidores. Gumroad gestiona el checkout con tarjeta y billetera (certificado PCI-DSS Nivel 1); NOWPayments gestiona el checkout en cripto (USDT, USDC, BTC, ETH). Nunca vemos, almacenamos ni registramos números de tarjeta, direcciones de monedero ni frases semilla."
+        },
+        "servers": {
+          "label": "Ubicación de servidores",
+          "detail": "UE (región Fráncfort). Todos los datos cifrados en tránsito (TLS 1.3) y en reposo. Cumple con GDPR independientemente de tu país de origen. Escribe a support{'@'}idpcompanion.com para solicitar exportación o eliminación de datos."
+        }
+      },
+      "learnMoreFaq": "FAQ — privacidad y seguridad",
+      "learnMorePrivacy": "Política de privacidad completa"
+    },
+    "cta": {
+      "heading": "¿Listo para empezar?",
+      "text": "~2 minutos online, verificación transparente en cada paso, tus datos eliminados en menos de una hora. $35 / 1 año · $45 / 3 años · $55 / 5 años. Pago único, sin suscripción.",
+      "primaryButton": "Empezar solicitud",
+      "secondaryButton": "Ver precios"
+    }
   }
 }
