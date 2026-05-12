@@ -58,3 +58,6 @@ prisma/dev.db-journal
 .nuxt/
 .apps/landing/.nuxt/
 .apps/landing/.output/
+
+# Sanya source briefs — raw markdown + illustration drops, not part of the build
+SEO2/

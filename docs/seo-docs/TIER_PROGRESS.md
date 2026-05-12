@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 11.05.2026
+> **Дата последней актуализации:** 12.05.2026
 
 ---
 
@@ -11,9 +11,9 @@
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
 | Tier 1 (Country-pairs flagship + supporting) | 70 | 30 | 0 | 40 |
-| Tier 2 (Programmatic country-pairs) | 441 | 2 | 0 | 439 |
+| Tier 2 (Programmatic country-pairs) | 441 | 5 | 0 | 436 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **32** | **0** | **482** |
+| **ИТОГО** | **514** | **35** | **0** | **479** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -189,12 +189,15 @@
 > Делает Саня по инструкции [SANYA_TIER2_GUIDE.md](SANYA_TIER2_GUIDE.md). Каждая страница — 800–1500 слов, structured markdown по фиксированной схеме.
 > **Локали:** EN всегда. RU — только если origin = Russia. ES — если origin испаноязычный (Mexico/Argentina/Spain) или Hispanic-US-релевантная пара (US → Spain/Mexico/Costa Rica/Dominican Republic/Argentina).
 
-### Готово (2)
+### Готово (5)
 
 | # | Pair | URL | Locales | Дата |
 |---|---|---|---|---|
 | 1 | US → France | `/idp-for-us-drivers-in-france/` | EN | 30.04.2026 |
 | 2 | US → UAE | `/idp-for-us-drivers-in-uae/` | EN | 30.04.2026 |
+| 3 | US → Australia | `/idp-for-us-drivers-in-australia/` | EN | 12.05.2026 |
+| 4 | US → Croatia | `/idp-for-us-drivers-in-croatia/` | EN | 12.05.2026 |
+| 5 | US → Cyprus | `/idp-for-us-drivers-in-cyprus/` | EN | 12.05.2026 |
 
 ### 2.1 США как origin (22 пары) — locales: `EN`
 
@@ -207,13 +210,13 @@
 | us-indonesia | `/idp-for-us-drivers-in-indonesia/` |
 | us-vietnam | `/idp-for-us-drivers-in-vietnam/` |
 | us-portugal | `/idp-for-us-drivers-in-portugal/` |
-| us-croatia | `/idp-for-us-drivers-in-croatia/` |
+| us-croatia ✅ Live 12.05 | `/idp-for-us-drivers-in-croatia/` |
 | us-morocco | `/idp-for-us-drivers-in-morocco/` |
-| us-cyprus | `/idp-for-us-drivers-in-cyprus/` |
+| us-cyprus ✅ Live 12.05 | `/idp-for-us-drivers-in-cyprus/` |
 | us-malta | `/idp-for-us-drivers-in-malta/` |
 | us-dominican-republic | `/idp-for-us-drivers-in-dominican-republic/` (locale: **EN+ES** — Hispanic-US) |
 | us-south-africa | `/idp-for-us-drivers-in-south-africa/` |
-| us-australia | `/idp-for-us-drivers-in-australia/` |
+| us-australia ✅ Live 12.05 | `/idp-for-us-drivers-in-australia/` |
 | us-new-zealand | `/idp-for-us-drivers-in-new-zealand/` |
 | us-ireland | `/idp-for-us-drivers-in-ireland/` |
 | us-uk | `/idp-for-us-drivers-in-uk/` |
@@ -860,6 +863,9 @@ Same-country (тривиально):
 | 08.05.2026 | Tier 1 +4 UK pages Live (final UK batch): UK → Australia (English-recognition no IDP + AI phone cameras Victoria/NSW + point-to-point average-speed cameras + dawn-dusk wildlife on regional roads), UK → Cyprus (post-colonial easiest-in-Europe legal position + 15-day fine rule jccsmart.com + breath-unit BAC 22µg + Northern Cyprus insurance gap at Green Line — Greek reframed through English on PDF, kept as in-country phrases reference), UK → Morocco (Latin-alphabet recognition + Priorité à droite reversed roundabouts + 5 km/h enforcement cash on the spot + no-night-driving regional roads — French/Arabic both in PDF + French phrases at checkpoints), UK → UAE (Markhoos 2025 federal recognition + Dubai 20km/h buffer vs Abu Dhabi zero-buffer since 2018 + zero BAC tolerance criminal + emirate-level enforcement asymmetry — Arabic in PDF). All EN-only. UK Tier 1 slate now 8/8 complete. Source markdown FAQ rewrites for Post Office middle-pivot leak (uk-uae FAQ #3) | Петя |
 | 11.05.2026 | `/faq/` standalone Live (EN+RU+ES) — full superset of inline home FAQ. 28 honest questions across 6 categories: What is IDP Companion / How it works / Pricing & payment / Where it works (and where it doesn't) / Privacy & security / Practical situations. Sticky desktop TOC sidebar with scroll-spy active state + mobile dropdown nav. Per-question URL anchors (`/faq/#refunds`, `/faq/#license-photo-retention` etc.) with auto-open accordion + smooth scroll. FAQPage + BreadcrumbList JSON-LD for rich-result eligibility. Middle-pivot compliance: authorized issuers (AAA, AATA, PayPoint, РОСАВТОКЛУБ, ADAC) named ONCE in the dedicated «when need official IDP» Q as factual disclosure. Header + footer FAQ links migrated from `/#faq` anchor → `/faq` standalone (home `#faq` section preserved). vue-i18n `@` escape fix applied to all email addresses in 3 locale files (`{'@'}` syntax). useHead JSON-LD field bug discovered: `children:` renders as HTML attribute, must use `innerHTML:` — applied to faq.vue. **NOTE:** pricing.vue + about.vue likely have same bug — JSON-LD rendered as broken attribute, silently ineligible for rich results. Worth a separate fix-pass | Петя |
 | 11.05.2026 | `/how-it-works/` standalone Live (EN+RU+ES) — supersedes 3-step inline home section. 5 detailed steps (Pick country+plan / Upload license photo / Take selfie / Pay via Gumroad / Download PDF) with summary + behind-the-scenes detail per step. Verification deep-dive: OCR (Tesseract, server-side, 5 retries, 1-hour deletion) + Face match (AWS Rekognition CompareFaces, 85% threshold, 1-hour deletion). «What you receive» 4-card grid + 11-language chip list. Realistic timing breakdown (7 rows with per-step seconds, ~2 min total, sea-colored total row). Trust signals block: 4 hard automated rules on data handling (license photo 1h delete, headshot 1h delete + no face DB, card data never on our servers, EU servers TLS 1.3). HowTo + BreadcrumbList JSON-LD. Header + footer «How it works» links migrated from `/#how-it-works` anchor → `/how-it-works` standalone. Middle pivot CLEAN (no AAA/PayPoint mentions — this page is pure conversion-flow explanation, FAQ handles the comparison Qs) | Петя |
+| 12.05.2026 | **PDF template language audit**: read actual `apps/backend/assets/templates/idp-dev-template.pdf` (pdftotext + manual page-by-page). Confirmed **12 languages physically present**: EN, FR, ES, DE, IT, PT, VI (Latin-extracted) + RU, AR, ZH, JA, **TH** (non-Latin, page 13 confirms Thai script: รถจักรยานยนต์ / ยานพาหนะ etc.). CLAUDE.md previously stated «11 languages» and «Thai NOT in template» — both wrong. Landing copy that says «12 languages» is correct. Action items applied: how-it-works `languages.title/body/list` updated 11→12 with Thai chip added; languageCodes array updated; FAQ `whatIs` / `fileFormat` / `whatsIncluded` answers updated to enumerate all 12 incl. Thai. Separate fix-pass needed: revert Russia/US → Thailand country-pair pages to claim Thai again (currently reframed through English per old CLAUDE.md guidance) + update CLAUDE.md authoritative language list | Петя |
+| 12.05.2026 | FAQ/how-it-works copy accuracy pass: (a) NOWPayments status flipped from «in development» to «live today» across all 3 locales (paymentMethods Q, dataStorage Q, pay.detail, trust.payment.detail). (b) Stripe removed everywhere — we never used Stripe, only Gumroad (cards/PayPal/Apple Pay) + NOWPayments (USDT/USDC/BTC/ETH). (c) `privacy@idpcompanion.com` → `support@idpcompanion.com` in gdpr Q and trust.servers.detail (privacy@ doesn't exist as a real inbox). (d) refunds Q reworded — «country-pair page» replaced with «destination's dedicated page» (a /faq/ reader who hasn't visited a country page didn't know what was meant). (e) `howToApply` step 3 now mentions card AND crypto. (f) how-it-works step title «Pay via Gumroad» → «Pay by card or crypto»; timing row label «Gumroad checkout» → «Gumroad / USDT» | Петя |
+| 12.05.2026 | Tier 2 +3 pages Live (Sanya batch from SEO2/ folder, audited+fixed): US → Australia (EN — Cairns Wet-Season rental gap, AUD $410 NSW phone fine, headlights/roundabouts/wildlife as non-paperwork prep). US → Croatia (EN — headlights mandatory 24/7 €40-90 most common stop + Slovenia trap on Adriatic itineraries, vignette ~€16 7-day, HRK→EUR currency fix as Croatia adopted euro 2023-01-01, «Slovenian border police at crossing» softened to «traffic police on roads» since both are Schengen). US → Cyprus (EN — left-hand traffic primary preparation work, alcohol limit in breath units 22 µg/100ml ≈ 0.05% BAC stricter than US, Northern Cyprus voids insurance line, red rental plates make tourists visible). All 3 EN-only (US-origin default). Fact-check fixes applied: H1 trimmed to ≤70 chars on all 3, Hero A trimmed to 70-150 words, AAA mentions stripped from FAQ + isNot in Croatia/Cyprus (kept only in legal disclaimer per middle-pivot rule), PDF language reframed through English for Croatian/Slovenian/Greek (not in PDF template). Hero PNGs copied as-is from SEO2/{slug}/{country}(1).png to /illustrations/us-{slug}-hero.png (1376×768) | Петя |
 
 ---
 
