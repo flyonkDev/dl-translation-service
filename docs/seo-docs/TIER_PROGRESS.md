@@ -2,7 +2,7 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 12.05.2026
+> **Дата последней актуализации:** 13.05.2026
 
 ---
 
@@ -11,9 +11,9 @@
 | Tier | Total | Live | In Progress | Coming Soon |
 |---|---|---|---|---|
 | Tier 1 (Country-pairs flagship + supporting) | 70 | 30 | 0 | 40 |
-| Tier 2 (Programmatic country-pairs) | 441 | 5 | 0 | 436 |
+| Tier 2 (Programmatic country-pairs) | 441 | 8 | 0 | 433 |
 | Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **35** | **0** | **479** |
+| **ИТОГО** | **514** | **38** | **0** | **476** |
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -189,7 +189,7 @@
 > Делает Саня по инструкции [SANYA_TIER2_GUIDE.md](SANYA_TIER2_GUIDE.md). Каждая страница — 800–1500 слов, structured markdown по фиксированной схеме.
 > **Локали:** EN всегда. RU — только если origin = Russia. ES — если origin испаноязычный (Mexico/Argentina/Spain) или Hispanic-US-релевантная пара (US → Spain/Mexico/Costa Rica/Dominican Republic/Argentina).
 
-### Готово (5)
+### Готово (8)
 
 | # | Pair | URL | Locales | Дата |
 |---|---|---|---|---|
@@ -198,6 +198,9 @@
 | 3 | US → Australia | `/idp-for-us-drivers-in-australia/` | EN | 12.05.2026 |
 | 4 | US → Croatia | `/idp-for-us-drivers-in-croatia/` | EN | 12.05.2026 |
 | 5 | US → Cyprus | `/idp-for-us-drivers-in-cyprus/` | EN | 12.05.2026 |
+| 6 | US → Dominican Republic | `/idp-for-us-drivers-in-dominican-republic/` | **EN+ES** (Hispanic-US) | 13.05.2026 |
+| 7 | US → Indonesia | `/idp-for-us-drivers-in-indonesia/` | EN | 13.05.2026 |
+| 8 | US → Malta | `/idp-for-us-drivers-in-malta/` | EN | 13.05.2026 |
 
 ### 2.1 США как origin (22 пары) — locales: `EN`
 
@@ -207,14 +210,14 @@
 | us-uae ✅ Live 30.04 | `/idp-for-us-drivers-in-uae/` |
 | us-turkey | `/idp-for-us-drivers-in-turkey/` |
 | us-egypt | `/idp-for-us-drivers-in-egypt/` |
-| us-indonesia | `/idp-for-us-drivers-in-indonesia/` |
+| us-indonesia ✅ Live 13.05 | `/idp-for-us-drivers-in-indonesia/` |
 | us-vietnam | `/idp-for-us-drivers-in-vietnam/` |
 | us-portugal | `/idp-for-us-drivers-in-portugal/` |
 | us-croatia ✅ Live 12.05 | `/idp-for-us-drivers-in-croatia/` |
 | us-morocco | `/idp-for-us-drivers-in-morocco/` |
 | us-cyprus ✅ Live 12.05 | `/idp-for-us-drivers-in-cyprus/` |
-| us-malta | `/idp-for-us-drivers-in-malta/` |
-| us-dominican-republic | `/idp-for-us-drivers-in-dominican-republic/` (locale: **EN+ES** — Hispanic-US) |
+| us-malta ✅ Live 13.05 | `/idp-for-us-drivers-in-malta/` |
+| us-dominican-republic ✅ Live 13.05 | `/idp-for-us-drivers-in-dominican-republic/` (locale: **EN+ES** — Hispanic-US) |
 | us-south-africa | `/idp-for-us-drivers-in-south-africa/` |
 | us-australia ✅ Live 12.05 | `/idp-for-us-drivers-in-australia/` |
 | us-new-zealand | `/idp-for-us-drivers-in-new-zealand/` |
@@ -866,6 +869,7 @@ Same-country (тривиально):
 | 12.05.2026 | **PDF template language audit**: read actual `apps/backend/assets/templates/idp-dev-template.pdf` (pdftotext + manual page-by-page). Confirmed **12 languages physically present**: EN, FR, ES, DE, IT, PT, VI (Latin-extracted) + RU, AR, ZH, JA, **TH** (non-Latin, page 13 confirms Thai script: รถจักรยานยนต์ / ยานพาหนะ etc.). CLAUDE.md previously stated «11 languages» and «Thai NOT in template» — both wrong. Landing copy that says «12 languages» is correct. Action items applied: how-it-works `languages.title/body/list` updated 11→12 with Thai chip added; languageCodes array updated; FAQ `whatIs` / `fileFormat` / `whatsIncluded` answers updated to enumerate all 12 incl. Thai. Separate fix-pass needed: revert Russia/US → Thailand country-pair pages to claim Thai again (currently reframed through English per old CLAUDE.md guidance) + update CLAUDE.md authoritative language list | Петя |
 | 12.05.2026 | FAQ/how-it-works copy accuracy pass: (a) NOWPayments status flipped from «in development» to «live today» across all 3 locales (paymentMethods Q, dataStorage Q, pay.detail, trust.payment.detail). (b) Stripe removed everywhere — we never used Stripe, only Gumroad (cards/PayPal/Apple Pay) + NOWPayments (USDT/USDC/BTC/ETH). (c) `privacy@idpcompanion.com` → `support@idpcompanion.com` in gdpr Q and trust.servers.detail (privacy@ doesn't exist as a real inbox). (d) refunds Q reworded — «country-pair page» replaced with «destination's dedicated page» (a /faq/ reader who hasn't visited a country page didn't know what was meant). (e) `howToApply` step 3 now mentions card AND crypto. (f) how-it-works step title «Pay via Gumroad» → «Pay by card or crypto»; timing row label «Gumroad checkout» → «Gumroad / USDT» | Петя |
 | 12.05.2026 | Tier 2 +3 pages Live (Sanya batch from SEO2/ folder, audited+fixed): US → Australia (EN — Cairns Wet-Season rental gap, AUD $410 NSW phone fine, headlights/roundabouts/wildlife as non-paperwork prep). US → Croatia (EN — headlights mandatory 24/7 €40-90 most common stop + Slovenia trap on Adriatic itineraries, vignette ~€16 7-day, HRK→EUR currency fix as Croatia adopted euro 2023-01-01, «Slovenian border police at crossing» softened to «traffic police on roads» since both are Schengen). US → Cyprus (EN — left-hand traffic primary preparation work, alcohol limit in breath units 22 µg/100ml ≈ 0.05% BAC stricter than US, Northern Cyprus voids insurance line, red rental plates make tourists visible). All 3 EN-only (US-origin default). Fact-check fixes applied: H1 trimmed to ≤70 chars on all 3, Hero A trimmed to 70-150 words, AAA mentions stripped from FAQ + isNot in Croatia/Cyprus (kept only in legal disclaimer per middle-pivot rule), PDF language reframed through English for Croatian/Slovenian/Greek (not in PDF template). Hero PNGs copied as-is from SEO2/{slug}/{country}(1).png to /illustrations/us-{slug}-hero.png (1376×768) | Петя |
+| 13.05.2026 | Tier 2 +3 pages Live (Sanya batch #2 from SEO2/): US → Dominican Republic (**EN+ES** Hispanic-US — full Spanish locale translation, tumulo speed-bump problem as primary rental-damage source, Spanish-only inter-city checkpoints, 0.05% BAC stricter than US, no-night-driving consistent advice). US → Indonesia (EN — Indonesian Traffic Law No. 22/2009 LEGALLY requires IDP, Bali razzia weekly checkpoints per Governor Koster Circular Letter No. 7/2025, **insurance void argument bigger than fine** — $50k–$100k medevac uncovered when riding without IDP, Category A motorcycle endorsement requirement for scooters, 30-day Denpasar tourist licence DISCONTINUED, left-hand traffic). US → Malta (EN — 316 km² smaller than Denver, left-hand traffic on medieval narrow streets is primary prep, BAC 0.08% same as US one of the few non-stricter destinations, no on-the-spot fines notice-based instead, Valletta CVA camera system with 14:00 weekday/weekend exemption, Gozo ferry rental-permission clause). Fact-check fixes applied: (a) all 3 H1s trimmed to ≤70 chars; (b) all 3 Hero A blocks trimmed 250-330 → 130-150 words; (c) **Malta TLDR was 3 rows including a recommended AAA IDP row — major middle-pivot leak, rewritten to 2-row standard**; (d) AAA mentions stripped from quickAnswer/isNot/FAQ in Malta + Indonesia (kept only in legal disclaimer); (e) Bahasa Indonesia (Indonesia) and Maltese (Malta) PDF language claims removed — reframed through English (Bali tourist corridors English-capable; Malta officially bilingual EN+MT with English universal); (f) Indonesia: «AAA IDP at $20 is the definitive option» FAQ recommendation deleted per binding rule. Dominican Republic gets the EN+ES treatment per CLAUDE.md Hispanic-US exception (DR diaspora 2M+ in US + general Hispanic-American Caribbean travel audience). Hero PNGs copied as-is from SEO2/{slug}/. | Петя |
 
 ---
 
