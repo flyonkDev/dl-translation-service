@@ -461,7 +461,7 @@ We generate the bulk of country-pair content with AI assist. Google's classifier
 
 ### Structure variance (binding when shipping Tier 2)
 
-All 5 current Tier 1 pages use the identical `CountryPair/Page.vue` block sequence (Hero → Quick Answer → TL;DR → Why Not Enough → Rules → Fines → Honesty → Renting → Outcomes → FAQ → Related → CTA). At 5 pages this is fine. At 50+ pages it becomes a structural footprint Google's classifiers detect.
+All current country-pair pages use the identical `CountryPair/Page.vue` block sequence (Hero → Quick Answer → TL;DR → Why Not Enough → Rules → Fines → Honesty → Renting → Outcomes → FAQ → Related → CTA). At a small page count this is fine. At scale it becomes a structural footprint Google's classifiers detect.
 
 **Target ratio when shipping Tier 2:** ~70% standard CountryPair shape, ~30% variant shapes.
 
@@ -473,6 +473,17 @@ All 5 current Tier 1 pages use the identical `CountryPair/Page.vue` block sequen
 - **Timeline-led** (`CountryPair/PageTimelineLed.vue`) — Hero → "Day 1 / Day 7 / Day 30 reality" → … For long-stay destinations where the experience evolves (digital-nomad audiences, multi-week itineraries).
 
 When using a variant, declare it via a `layoutVariant?: 'standard' | 'faq-led' | 'city-led' | 'calendar-led' | 'timeline-led'` field on `CountryPairCopy`. Track per-page in [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) so the variance ratio stays auditable as the batch grows.
+
+**Agent enforcement (binding) — proactive flagging at thresholds:**
+
+The structural-footprint problem is invisible at small counts and irreversible at large counts. The agent MUST check the current Tier 2 live count (from [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) sводка table) *before* authoring a new country-pair page and apply the following gates:
+
+- **Tier 2 live ≤ 20** (today's range) — proceed with `CountryPair/Page.vue` standard variant without prompting. Mention in the summary that we're still under the variance threshold so the user knows where we are.
+- **Tier 2 live 21–34** — proceed with standard variant but in the end-of-task summary, surface the running count and remind: "We're at X/35 standard pages. After ~35 pages, the next batch should introduce variant components (FAQ-led / City-led / Calendar-led / Timeline-led) per CLAUDE.md structure variance rule."
+- **Tier 2 live ≥ 35** — STOP before authoring. Surface the count to the user and ask which variant archetype the destination matches best. Do not author a new standard-variant page until the user either (a) explicitly chooses a variant, (b) confirms the destination genuinely warrants standard (rare — there should be a reason this destination doesn't match any of the four variant patterns), or (c) explicitly waives the rule for this single page.
+- **Tier 2 live ≥ 50** — even with user override, build the first non-existent variant component before authoring the next page. The 70/30 ratio rule becomes load-bearing from here on. A 50th standard-variant page that should have been FAQ-led is a structural-footprint contribution.
+
+This rule applies even when the user explicitly asks for "next country-pair page" without specifying the variant — the agent's job is to flag the gate, not to silently keep producing standard pages.
 
 ### Publication cadence (binding)
 
@@ -493,6 +504,84 @@ If a batch is ready ahead of schedule, hold the queue and stagger pushes — don
 - Header "Pricing" → `/pricing` (standalone)
 - Home has *both* a `#pricing` anchor (scrolls to widget) AND a "View detailed pricing" link to `/pricing`
 - Country-pair → 3 same-origin (e.g., Russia→Turkey, Russia→UAE) + 2 same-destination (e.g., US→Thailand, German→Thailand) + 1 guide. **Always render even if targets don't exist yet** as "Coming soon" stubs (text, no `<a>`).
+
+### Growth phase plan & pivot triggers (binding — updated 2026-05-15)
+
+Petr-validated phase plan. The agent should know which phase we're in and act accordingly. The agent should also flag when we're approaching the next pivot trigger.
+
+**Phase 1 — Content scale-up (now → ~30.06.2026, ~6 weeks remaining):**
+- Finish remaining Tier 1 supporting pages (Countries Directory, Contact, Sample PDF, Why IDP Companion, Testimonials, Security & Payments, Digital vs Printed IDP, IDP Validity, Apply From Anywhere, Sitemap-page, Press, Affiliate — 12 in queue per TIER_PROGRESS.md)
+- Continue Tier 2 country-pair growth at **5–8 pages/week** (publication-cadence rule) until ~30 live Tier 2 pages — then variance gate triggers
+- Default agent posture: "what's next from the queue?"
+
+**Phase 2 — Backlinking + product polish (01.07.2026 → ~30.09.2026, ~3 months):**
+- PAUSE new Tier 2 country-pair pages (or reduce to 1–2/week max)
+- Active backlink campaign: Reddit/forums seeding, travel-blogger outreach (5 emails/day target), HARO submissions 3x/week, Tier 3 long-form guide drafts (3 planned in [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md))
+- Product polish: social proof rollout (Trustpilot integration, customer-count widgets once we have real numbers), email funnel + lead-magnet capture, exit-intent modals, retargeting pixels (Meta + Google)
+- Default agent posture: "are we converting more? are bounce rates dropping? what's the linkable angle this week?"
+- **Trigger to enter Phase 2**: when Tier 1 supporting reaches 16/20 Live AND Tier 2 reaches 20+ Live. If both true before 30.06, advance early.
+
+**Phase 3 — Tier 3 long-form + selective Tier 2 variants (01.10.2026 onwards):**
+- Resume Tier 2 growth with mandatory variant-component usage (PageFaqLed / PageCityLed / PageCalendarLed / PageTimelineLed at 30% of new pages)
+- Author 3 Tier 3 long-form guides (each 3000–5000 words): "Complete Guide to Driving Abroad in 2026", "IDP vs IDL vs National License", "What Happens If You Drive Without IDP"
+- Affiliate program rollout (deferred from Petr's backlog)
+- B2B partnerships (travel agencies, tour operators, language schools)
+- Default agent posture: "is this destination genuinely covered by a Tier 1 variant pattern, or is this just one more standard-shape page?"
+
+**Agent's job at phase transitions:**
+
+At the start of any session involving content or marketing work, the agent should: (a) check today's date, (b) check Tier 1 supporting + Tier 2 live counts in TIER_PROGRESS sводка, (c) state in the response which phase we're in and what the next pivot trigger is. Example: *"Today is 2026-06-12, Tier 2 live count 19, Tier 1 supporting 9/20. We're 18 days out from the planned Phase 2 backlinking pivot. Two more Tier 2 weeks comfortably before then."*
+
+### Quality targets — SEO 9+ and Marketing 8+ (Phase 2 goals)
+
+Current self-assessment (validated 2026-05-15): SEO 7.5/10, Marketing 6.5/10. Phase 2 work pushes both up. Specific levers:
+
+**SEO 7.5 → 9+ (the remaining 1.5 points):**
+
+1. **Backlinks** (biggest single lever, 30–40% of remaining gap) — Reddit seeding on r/IWantOut, r/travel, r/digitalnomad with relevant landing-page anchors; travel-blogger outreach with free-IDP-Companion exchanges; HARO submissions for "international driving" / "travel safety" / "IDP" queries.
+2. **Topic clusters** — the existing country-pair grid is the pillar layer; need 1–2 "hub" pages per origin (e.g., `/idp-for-us-drivers/` overview hub linking all US destinations) to strengthen internal-linking topology and capture broader-intent keywords.
+3. **Featured Snippet capture** — restructure FAQ answers to "answer first, support second" format (currently: explanatory then answer; switch to: answer in first sentence then explanation). This is a 10-minute-per-page fix and worth 15% of SEO traffic.
+4. **Tier 3 long-form** (3 guides planned) — these are link magnets, not just keyword captures. Each Tier 3 guide that gets 5+ external backlinks lifts the whole site's authority.
+5. **Image alt text + schema depth** — currently descriptive enough for SEO but every hero PNG should have country-pair-specific alt text. Add `Article` schema with `author` + `datePublished` on country-pair pages (currently only `BreadcrumbList` + `FAQPage`).
+6. **Structure variance enforcement** — see the binding rule above. At 50+ pages, structural sameness becomes a measurable ranking drag.
+7. **Page speed audit** — quarterly Core Web Vitals check; current state is fine but at 100+ pages the asset budget matters.
+
+**Marketing 6.5 → 8+ (the remaining 1.5 points):**
+
+1. **Social proof rollout** (biggest single lever) — Trustpilot integration is the fastest win; collect reviews automatically 2 weeks post-purchase via email; display review widgets on country-pair pages and pricing. We're pre-launch so initial reviews bootstrap from beta users.
+2. **Email funnel** — destination-specific PDF lead magnet ("Driving in Italy Cheat Sheet" downloadable for email) → 3-email drip → soft sell IDP Companion. This converts "researchers" (high-intent but not ready to buy) into "buyers when they book the flight."
+3. **Soft urgency mechanics** (acceptable softening of ethics) — "Most requested this week: Bali, Italy, Mexico" widget; "X% increase in [destination] enforcement this year" callout on relevant pages (factual, not faked). NOT acceptable: fake countdown timers, fake "only X left", false scarcity.
+4. **Exit-intent modal** — single CTA when user is leaving without converting: "Going to Italy? IDP Companion ready in 2 minutes →" with one-click checkout.
+5. **Retargeting pixels** — Meta + Google pixels on all pages, dynamic ads for users who viewed a country-pair page without converting.
+6. **Referral program** — already in Petr's backlog ([memory file project_backlog.md]). Two-for-one ("give a friend $5 off, get $5 off your next purchase") mechanics increase viral coefficient meaningfully.
+7. **Repeat-purchase reminder** — automated email 30 days before plan expiry: "Your IDP Companion expires soon — renew in 1 minute." Sticky revenue.
+8. **Influencer seeding** — give 20–30 travel-microinfluencers free IDP Companion in exchange for honest review (not paid endorsement — earned mention).
+9. **YouTube content seeding** — 5-min "Driving in [Destination]" videos per top destination → ranking on YouTube SERP for "IDP Italy" / "IDP Japan" / etc; cross-link to country-pair pages.
+
+### Ethics calibration (binding — updated 2026-05-15)
+
+Petr-approved softening of previous strict ethical posture. The goal: keep brand integrity while removing self-defeating honesty patterns that hurt conversion without protecting users.
+
+**Still binding (do not relax):**
+
+- **Middle-pivot rule** — authorized issuers (AAA, AATA, РОСАВТОКЛУБ, ADAC, PayPoint, etc.) appear ONLY in legal disclaimer, never in TLDR comparison rows, honesty alternatives, FAQ recommendations, or final CTA helper text. The rule is binding because naming a competitor in our funnel hurts conversion without benefiting the reader.
+- **No fake government seals, no fake official-looking design** — distinguishes us from scammy IDA sites.
+- **PDF language honesty** — never claim a language is on the PDF when it isn't (verified list of 12 in [apps/backend/assets/templates/idp-dev-template.pdf](apps/backend/assets/templates/idp-dev-template.pdf): EN, FR, ES, DE, IT, PT, VI, RU, AR, ZH, JA, TH).
+- **Verifiable specifics with sources** — fines, laws, enforcement claims must cite the relevant regulation, agency, or news source. Anti-IDA differentiator AND E-E-A-T signal.
+- **Honest "is / is not" disclosure block** on every country-pair page — we are not a government IDP, we must be used alongside the physical home licence. This is legal-floor language and brand-differentiation language at once.
+
+**Softened (allowed, where it doesn't damage trust):**
+
+- **Self-defeating disclaimers** that hurt conversion without protecting users may be reframed. E.g., the Vietnam page's "IDP Companion does NOT resolve Ha Giang convention issue — hire an Easy Rider guide instead" should remain factually present (truth-telling) but doesn't need to be the page's loudest message. Restructure to: friction-reducing benefits first, route-specific limitations as secondary disclosure. The truth stays; the rhetorical weight rebalances.
+- **Soft urgency widgets** are acceptable: "Most requested this week", "X% increase in fines this year", "Last reviewed: Month YYYY" pills. Factual, not faked.
+- **"Trusted by X tourists" / "Used in Y countries" type widgets** once we have real numbers — acceptable, factual, not fabricated.
+- **Influencer-seeded honest reviews** — acceptable. Free product in exchange for honest mention, not paid endorsement. Disclose if Tier 1 publication requires.
+
+**Bright lines (binding even after softening):**
+
+- No fake reviews, no fake user counts, no fake "X people viewing now" counters.
+- No claims about IDP Companion being a government document or replacement for one.
+- No claims about IDP Companion solving problems it doesn't solve (e.g., we don't claim to be a 1968 Vienna Convention IDP for Vietnam — we soften the rhetorical placement, not the factual content).
 
 ---
 
