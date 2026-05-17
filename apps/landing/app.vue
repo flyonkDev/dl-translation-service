@@ -38,6 +38,7 @@
 			:link-terms="t('footer.linkTerms')"
 			:link-refund="t('footer.linkRefund')"
 			:link-contact="t('footer.linkContact')"
+			:link-security="t('footer.linkSecurity')"
 			:copyright-line="t('footer.copyright', { year: year })"
 			:links="footerLinks"
 		/>
@@ -81,7 +82,8 @@
 		privacy: localePath({ name: 'privacy-policy' }),
 		terms: localePath({ name: 'terms-of-service' }),
 		refund: localePath({ name: 'refund-policy' }),
-		contact: localePath({ name: 'faq' }),
+		security: localePath({ name: 'security' }),
+		contact: localePath({ name: 'contact' }),
 	}));
 </script>
 

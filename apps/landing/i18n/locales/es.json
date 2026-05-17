@@ -26,7 +26,8 @@
     "linkPrivacy": "Política de privacidad",
     "linkTerms": "Términos y condiciones",
     "linkRefund": "Política de reembolsos",
-    "linkContact": "Formulario de contacto",
+    "linkContact": "Contacto",
+    "linkSecurity": "Seguridad y pagos",
     "copyright": "© {year} IDP Companion. Todos los derechos reservados."
   },
   "legal": {
@@ -654,6 +655,325 @@
       "text": "~2 minutos online, verificación transparente en cada paso, tus datos eliminados en menos de una hora. $35 / 1 año · $45 / 3 años · $55 / 5 años. Pago único, sin suscripción.",
       "primaryButton": "Empezar solicitud",
       "secondaryButton": "Ver precios"
+    }
+  },
+  "securityPage": {
+    "seo": {
+      "title": "Seguridad y pagos — Cómo protegemos los datos de tu licencia y tu tarjeta",
+      "description": "Visión completa de cómo IDP Companion gestiona la foto de tu licencia, selfie, datos de pago y PDF. Servidores en la UE, TLS 1.3, eliminación en 1 hora de datos biométricos, sin datos de tarjeta en nuestros servidores."
+    },
+    "hero": {
+      "kicker": "Seguridad · Pagos · Cumplimiento",
+      "h1": "Seguridad y pagos — qué guardamos, cuánto tiempo y por qué",
+      "lead": "Construimos IDP Companion como nos gustaría que funcionara un servicio al que entregas la foto de tu propia licencia. La foto del carnet y el selfie sirven sólo para la verificación y se borran en menos de una hora. Los datos de tu tarjeta no los vemos ni los guardamos. Servidores en la Unión Europea, cifrado TLS 1.3 al enviar los datos y AES-256 al guardarlos. Aquí abajo, cada paso explicado.",
+      "ctaPrimary": "Leer FAQ",
+      "ctaSecondary": "Política de privacidad",
+      "badges": {
+        "eu": "Servidores en la UE",
+        "tls": "Cifrado al enviar datos",
+        "gdpr": "Cumple GDPR",
+        "retention": "Borrado en 1 hora"
+      }
+    },
+    "lifecycle": {
+      "heading": "Ciclo de vida de los datos — qué llega, en qué se convierte y cuándo desaparece",
+      "lead": "Cuando pides un IDP Companion, a nuestros servidores llegan cinco cosas: la foto de tu licencia, tu selfie, el PDF generado, los datos de pago y el perfil de la solicitud. Esto es lo que pasa con cada una.",
+      "stages": {
+        "licensePhoto": {
+          "title": "Foto de la licencia",
+          "ttl": "Borrada en 1 hora",
+          "body": "Se sube a un almacenamiento temporal. Un sistema de reconocimiento de texto (Tesseract OCR) lee el número de licencia, el nombre completo, la fecha de caducidad y la categoría. Hasta 5 reintentos si la primera lectura no sale bien. A los 60 minutos la imagen se borra sola — pase o no pase la verificación. No hay revisión manual, ni archivo guardado, ni copia de seguridad."
+        },
+        "headshot": {
+          "title": "Selfie / foto del rostro",
+          "ttl": "Borrada en 1 hora",
+          "body": "Se compara con la foto del carnet usando AWS Rekognition (umbral de coincidencia del 85%). No guardamos huellas biométricas, ni vectores faciales, ni una base de búsqueda por cara. El selfie se borra en 60 minutos; en tu solicitud sólo queda el resultado (coincide / no coincide) y la puntuación."
+        },
+        "pdf": {
+          "title": "PDF generado",
+          "ttl": "Se genera bajo demanda",
+          "body": "Se construye en la memoria del servidor al pulsar «descargar». Nunca se escribe en disco. Cada descarga regenera el PDF a partir de los datos guardados de tu solicitud — no hay caché, no hay copia en CDN, no hay copia de seguridad del archivo final."
+        },
+        "profile": {
+          "title": "Perfil de la solicitud",
+          "ttl": "Hasta el fin del plan + 12 meses",
+          "body": "Nombre, fecha de nacimiento, categoría y país de la licencia, duración del plan, estado del pago y número de pedido. Lo necesitamos para volver a emitir el PDF mientras el plan esté vigente y para gestionar reembolsos o contracargos. Se conserva hasta que termine el plan más doce meses (lo exigen las obligaciones fiscales y de auditoría) y luego se elimina en la siguiente limpieza trimestral."
+        }
+      }
+    },
+    "infra": {
+      "heading": "Cifrado e infraestructura",
+      "lead": "Todo lo que viaja hacia nuestro servicio va por una conexión cifrada (TLS 1.3), se guarda en servidores ubicados en la Unión Europea y los discos están cifrados. El acceso a la base de producción está limitado a un par de personas, todo movimiento queda registrado y se revisa con regularidad.",
+      "cards": {
+        "inTransit": {
+          "title": "Protección al enviar datos",
+          "body": "Toda la comunicación entre tu navegador y nuestro servidor usa TLS 1.3 — el estándar moderno de cifrado. Cualquier intento de conectarse por HTTP normal se redirige inmediatamente a HTTPS.",
+          "chip1": "Sólo TLS 1.3 — versiones antiguas desactivadas",
+          "chip2": "HSTS activado (1 año + preload) — el navegador no permitirá conexiones inseguras",
+          "chip3": "Sin contenido mixto HTTP/HTTPS en ninguna página"
+        },
+        "atRest": {
+          "title": "Protección al guardar datos",
+          "body": "Los campos con datos personales se guardan en discos con cifrado AES-256. Las imágenes subidas viven en almacenamiento cifrado exactamente la hora que esperan a ser borradas.",
+          "chip1": "Cifrado AES-256 en los discos de PostgreSQL",
+          "chip2": "Almacenamiento cifrado para los archivos subidos (una hora y se borran)",
+          "chip3": "Las claves de cifrado están en un servicio de gestión seguro, no en el código"
+        },
+        "hosting": {
+          "title": "Alojamiento en la UE + Cloudflare",
+          "body": "Los servidores de aplicación están en la Unión Europea (Frankfurt). La parte estática del sitio se sirve a través de la red Cloudflare para que cargue rápido, pero en esa caché global sólo hay imágenes y scripts públicos. Ningún dato personal acaba en la red de distribución.",
+          "chip1": "Servidores backend en la UE (Frankfurt)",
+          "chip2": "Cloudflare sólo para los activos estáticos del sitio",
+          "chip3": "Ningún dato personal se cachea fuera de nuestros servidores"
+        },
+        "access": {
+          "title": "Control de acceso",
+          "body": "Sólo dos ingenieros pueden entrar a la base de datos de producción, y lo hacen con credenciales de corta duración que se renuevan a menudo. Cada conexión se registra en el log. Ninguna herramienta externa tiene acceso de lectura directa a la base.",
+          "chip1": "Acceso — sólo para dos personas",
+          "chip2": "Credenciales cortas que se rotan con frecuencia",
+          "chip3": "Revisión trimestral de quién puede acceder a qué"
+        }
+      }
+    },
+    "payments": {
+      "heading": "Seguridad de pagos — qué nos llega y qué nunca nos llega",
+      "lead": "Los pagos con tarjeta y los pagos en criptomonedas los gestionan en su totalidad pasarelas certificadas (Gumroad cumple el estándar PCI-DSS). Los números de tarjeta, los CVV y las claves de las billeteras crypto no pasan por nuestros servidores — ni siquiera por la memoria temporal.",
+      "dataLeavesLabel": "Qué nos llega después del pago",
+      "providers": {
+        "gumroad": {
+          "title": "Gumroad",
+          "sub": "Tarjetas · PayPal · Apple Pay · Google Pay",
+          "body": "Gumroad es una pasarela de pago certificada (PCI-DSS) que se ocupa de todo el cobro. Le enviamos al usuario con la referencia del plan elegido; Gumroad cobra y, una vez completado el pago, nos manda un aviso con firma digital. Los datos de la tarjeta no nos llegan.",
+          "leaves1": "Número de pedido y plan elegido",
+          "leaves2": "Email del comprador (para el recibo y la entrega del PDF)",
+          "leaves3": "Código de país (para el IVA)"
+        },
+        "nowpayments": {
+          "title": "NOWPayments",
+          "sub": "USDT · USDC · BTC · ETH",
+          "body": "Los pagos en cripto pasan por una página de cobro alojada por NOWPayments. Ellos generan la billetera temporal, siguen la confirmación en la blockchain y hacen la conversión. Recibimos un aviso con firma digital cuando la transacción se confirma; las claves de la billetera no las tenemos nosotros.",
+          "leaves1": "Número de factura y plan elegido",
+          "leaves2": "Hash de la transacción confirmada en la blockchain",
+          "leaves3": "Importe equivalente en dólares (USD)"
+        }
+      },
+      "footnote": "Ambas pasarelas nos envían los avisos firmados digitalmente — eso nos permite comprobar que el mensaje viene realmente de ellos. Cualquier aviso con firma incorrecta se rechaza antes incluso de llegar al código de la aplicación."
+    },
+    "compliance": {
+      "heading": "Privacidad y derechos del GDPR",
+      "lead": "IDP Companion trata datos personales bajo las reglas del GDPR. Tres derechos del GDPR son los que más afectan a nuestro servicio — y los hemos hecho fáciles de ejercer: con un correo basta.",
+      "rights": {
+        "access": {
+          "title": "Derecho a saber qué guardamos",
+          "body": "Puedes pedir una copia de todos los datos personales que tenemos sobre ti. En menos de 30 días te enviaremos una exportación (en JSON o PDF) con el perfil de tu solicitud, los recibos de pago y el historial de eventos del sistema."
+        },
+        "erasure": {
+          "title": "Derecho al borrado",
+          "body": "Puedes pedir el borrado permanente de los datos de tu solicitud. Lo ejecutamos en 30 días. Excepción: los registros financieros que la ley nos obliga a guardar por motivos fiscales y de auditoría (normalmente 7 años en la UE)."
+        },
+        "portability": {
+          "title": "Derecho a llevarte tus datos",
+          "body": "Puedes recibir tus datos en un formato legible por programas (JSON) para llevarlos a otro servicio o guardarlos tú mismo. Útil si cambias de proveedor o si quieres archivar tu historial."
+        }
+      },
+      "exerciseTitle": "Cómo ejercer estos derechos",
+      "exerciseBody": "Escríbenos un correo con el asunto indicado abajo. Pon el email con el que hiciste el pago. Respondemos en 30 días — el plazo que exige el artículo 12(3) del GDPR.",
+      "exerciseSubject": "Solicitud de datos GDPR"
+    },
+    "report": {
+      "heading": "Reportar un problema de seguridad",
+      "body": "¿Has encontrado una vulnerabilidad, una posible filtración de datos o un comportamiento sospechoso? Queremos saberlo. Aún no tenemos un programa público de recompensas (bug bounty), pero leemos cada aviso y confirmamos la recepción en menos de 24 horas.",
+      "emailSubject": "Reporte de vulnerabilidad",
+      "steps": {
+        "step1": "Mándanos los detalles al buzón que aparece abajo. Describe el problema, cómo reproducirlo y qué consecuencia ves.",
+        "step2": "Confirmamos la recepción en menos de 24 horas y priorizamos el caso en 72 horas. No usamos amenazas legales contra investigadores que actúan de buena fe.",
+        "step3": "Los problemas críticos los parcheamos el mismo día cuando es posible. Si lo prefieres, te mencionamos públicamente en nuestra lista de agradecimientos."
+      }
+    },
+    "audit": {
+      "heading": "Lista de confianza — seis cosas que nunca hacemos",
+      "lead": "Si alguna de estas dejara de cumplirse mañana, todo nuestro modelo de seguridad se vendría abajo. Por eso están escritas en el código y verificadas por tests automáticos.",
+      "items": {
+        "noCardData": {
+          "label": "Nunca guardamos datos de tarjeta",
+          "detail": "Los números de tarjeta, los CVV y los datos completos de pago no llegan a nuestros servidores — Gumroad se encarga de todo."
+        },
+        "noFaceDb": {
+          "label": "Nunca construimos una base de caras",
+          "detail": "AWS Rekognition compara dos imágenes en el momento — y nada más. No guardamos huellas biométricas ni una base de búsqueda por rostro."
+        },
+        "licenseDelete": {
+          "label": "Foto de la licencia: borrada en 1 hora",
+          "detail": "La limpieza automática se ejecuta cada 10 minutos. Ninguna foto del carnet sobrevive al límite de 60 minutos."
+        },
+        "headshotDelete": {
+          "label": "Selfie: borrada en 1 hora",
+          "detail": "Mismo calendario de borrado. En tu solicitud sólo queda el resultado de la verificación (coincide / no coincide)."
+        },
+        "euServers": {
+          "label": "Servidores en la UE",
+          "detail": "La base de datos y los servidores de aplicación están en la Unión Europea (región Frankfurt)."
+        },
+        "tls13": {
+          "label": "Cifrado en todas partes, sin atajos",
+          "detail": "Cualquier petición HTTP se redirige inmediatamente a HTTPS. Las versiones antiguas del cifrado están desactivadas. Gracias a HSTS preload, el navegador no permite conectarse sin HTTPS."
+        }
+      }
+    },
+    "cta": {
+      "heading": "¿Tienes preguntas sobre cómo protegemos tus datos?",
+      "text": "Respondemos a cada consulta sobre privacidad y seguridad. Puedes leer la página «Cómo funciona» — donde está explicado el proceso paso a paso — o escribirnos directamente.",
+      "primaryButton": "Cómo funciona",
+      "secondaryButton": "Contáctanos"
+    }
+  },
+  "contactPage": {
+    "seo": {
+      "title": "Contactar IDP Companion — Soporte, reembolsos, privacidad y prensa",
+      "description": "Contacta con IDP Companion en support{'@'}idpcompanion.com. Respuesta promedio en un día laborable. Respondemos en inglés, ruso y español. Bandeja categorizada: reembolsos, técnico, facturación, privacidad, prensa."
+    },
+    "hero": {
+      "kicker": "Contacto · Soporte · Reembolsos",
+      "h1": "Contáctanos — un buzón, un día laborable, tres idiomas",
+      "lead": "Todo pasa por support{'@'}idpcompanion.com. Un solo buzón — sin centralitas telefónicas que te pasan de uno a otro y sin «formularios de contacto» a los que nadie responde. Elige abajo la categoría que encaja con tu consulta — el asunto correcto ya estará puesto en el correo.",
+      "badges": {
+        "response": "Respuesta ≤ 1 día laborable",
+        "languages": "EN · RU · ES",
+        "eu": "Equipo en la UE",
+        "gdpr": "Cumple GDPR"
+      }
+    },
+    "categories": {
+      "heading": "Elige la categoría que te corresponde",
+      "lead": "Cada enlace abre tu cliente de correo con el asunto ya rellenado. Así sabemos enseguida a quién del equipo pasarle el mensaje y responder más rápido.",
+      "items": {
+        "refund": {
+          "title": "Solicitud de reembolso",
+          "when": "Has hecho el pedido pero quieres cancelarlo. Los plazos y las condiciones están en la página «Política de reembolsos».",
+          "sla": "Revisión en 2 días laborables",
+          "subject": "Solicitud de reembolso — pedido #"
+        },
+        "technical": {
+          "title": "Problema técnico",
+          "when": "El sistema no reconoció la foto de la licencia, no pasó la verificación con el selfie, el PDF no se descarga, o algo se rompió durante el pedido.",
+          "sla": "Respuesta en 1 día laborable",
+          "subject": "Problema técnico — describe qué falló"
+        },
+        "billing": {
+          "title": "Pagos y facturación",
+          "when": "Te han cobrado pero no recibiste el PDF; cobro duplicado; pregunta sobre la duración del plan; disputa de cargo con el banco.",
+          "sla": "Respuesta en 1 día laborable",
+          "subject": "Pregunta sobre el pago — pedido #"
+        },
+        "privacy": {
+          "title": "Privacidad / GDPR",
+          "when": "Quieres saber qué guardamos, pedir el borrado de tus datos, obtener una copia de lo que tenemos, o cualquier otra pregunta sobre privacidad.",
+          "sla": "Respuesta en 30 días (GDPR)",
+          "subject": "Solicitud de datos GDPR"
+        },
+        "press": {
+          "title": "Prensa y colaboraciones",
+          "when": "Eres periodista y necesitas una declaración; quieres proponer una integración; eres un travel blog interesado en colaborar; o nos preguntas por el programa de afiliados.",
+          "sla": "Respuesta en 3 días laborables",
+          "subject": "Prensa / colaboración"
+        },
+        "general": {
+          "title": "Consulta general",
+          "when": "Cualquier cosa que no encaje en las categorías de arriba. Leemos cada mensaje y se lo pasamos a la persona adecuada nosotros mismos.",
+          "sla": "Respuesta en 1 día laborable",
+          "subject": "Consulta general"
+        }
+      }
+    },
+    "primary": {
+      "kicker": "Un solo buzón para todo",
+      "sla": {
+        "label": "Tiempo de respuesta habitual",
+        "value": "En 1 día laborable (lun–vie)"
+      },
+      "languages": {
+        "label": "Respondemos en",
+        "value": "English · Русский · Español"
+      },
+      "hours": {
+        "label": "Zona horaria del equipo",
+        "value": "CET (UTC+1 / +2 en verano)"
+      },
+      "note": "No tenemos formulario de contacto en el sitio — y es algo a propósito. El correo es más cómodo: lo puedes buscar en tu propia bandeja, reenviarlo o guardarlo como prueba de la conversación. Tampoco ofrecemos soporte por teléfono — casi cualquier consulta se resuelve con uno o dos correos."
+    },
+    "include": {
+      "heading": "Qué conviene incluir en el correo",
+      "lead": "Estos datos aceleran mucho la resolución. Si alguno no aplica a tu caso, sáltatelo sin más.",
+      "items": {
+        "orderId": {
+          "label": "Número de pedido (si lo tienes)",
+          "hint": "Lo encuentras en el correo de confirmación de Gumroad o NOWPayments — es un código de 6–8 caracteres al principio."
+        },
+        "email": {
+          "label": "Email con el que pagaste",
+          "hint": "Por ahí localizamos tu pedido. Si te resulta más cómodo escribirnos desde otra dirección, indícalo en el correo."
+        },
+        "description": {
+          "label": "Qué hiciste y qué pasó",
+          "hint": "Lo mejor es contarlo paso a paso. Si la consulta tiene que ver con un país concreto (Italia, Vietnam, etc.), menciónalo."
+        },
+        "screenshot": {
+          "label": "Captura del error",
+          "hint": "Adjúntala al correo. Si aparecen datos personales en la imagen, recórtala para que no se vean."
+        },
+        "plan": {
+          "label": "Qué plan compraste",
+          "hint": "1 año ($35) · 3 años ($45) · 5 años ($55)."
+        }
+      }
+    },
+    "cannot": {
+      "heading": "Con qué no podemos ayudarte",
+      "lead": "Somos un servicio privado que emite un documento de traducción complementario para tu licencia de conducir. Si tu pregunta es de un área cercana pero distinta, conviene que te dirijas directamente al sitio correcto.",
+      "items": {
+        "visa": {
+          "label": "Visados, entrada o inmigración",
+          "hint": "Acude a la embajada o consulado del país al que vas. No podemos asesorarte sobre visados."
+        },
+        "governmentIdp": {
+          "label": "Tramitar o renovar el IDP oficial del gobierno",
+          "hint": "Acude al emisor oficial de tu país: AAA / AATA en EE.UU., PayPoint en Reino Unido, РОСАВТОКЛУБ en Rusia, ADAC en Alemania."
+        },
+        "lostLicense": {
+          "label": "Reponer una licencia nacional perdida o caducada",
+          "hint": "Esto se gestiona en tu DGT, DMV, DVLA o el organismo equivalente de tu país. Para crear el IDP Companion necesitamos que tu licencia nacional esté vigente."
+        },
+        "localLaw": {
+          "label": "Consejos legales específicos del país de destino",
+          "hint": "Publicamos guías honestas por país, pero no damos asesoría legal. Para una consulta concreta, conviene hablar con un abogado del país de destino."
+        }
+      }
+    },
+    "before": {
+      "heading": "Antes de escribirnos — echa un vistazo aquí",
+      "lead": "Muchas preguntas ya tienen respuesta. Si alguna de estas páginas te resuelve la duda, mejor. Si no, el correo no se va a ningún sitio.",
+      "links": {
+        "faq": {
+          "title": "FAQ — 28 respuestas honestas",
+          "body": "Precios, reembolsos, idiomas, dónde funciona IDP Companion (y dónde no), preguntas sobre la cuenta y más.",
+          "cta": "Ir al FAQ"
+        },
+        "how": {
+          "title": "Cómo funciona — 5 pasos",
+          "body": "Recorrido detallado del proceso: reconocimiento de la licencia, verificación con selfie, métodos de pago y plazos de borrado.",
+          "cta": "Ver el recorrido"
+        },
+        "refund": {
+          "title": "Política de reembolso",
+          "body": "Cuándo puedes pedir reembolso, en qué condiciones y cómo es el proceso exacto. La mayoría de las dudas sobre reembolsos se resuelven aquí.",
+          "cta": "Ver la política"
+        }
+      }
+    },
+    "cta": {
+      "heading": "¿Aún necesitas ayuda?",
+      "text": "Escríbenos. Leemos cada correo y respondemos en un día laborable — en inglés, ruso o español.",
+      "button": "Escríbenos"
     }
   }
 }

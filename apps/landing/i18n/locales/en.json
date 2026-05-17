@@ -26,7 +26,8 @@
     "linkPrivacy": "Privacy Policy",
     "linkTerms": "Terms & Conditions",
     "linkRefund": "Refund Policy",
-    "linkContact": "Contact form",
+    "linkContact": "Contact",
+    "linkSecurity": "Security & Payments",
     "copyright": "© {year} IDP Companion. All rights reserved."
   },
   "legal": {
@@ -654,6 +655,325 @@
       "text": "~2 minutes online, transparent verification at every step, your data deleted within an hour. $35 / 1 year · $45 / 3 years · $55 / 5 years. One-time payment, no subscription.",
       "primaryButton": "Start application",
       "secondaryButton": "See pricing"
+    }
+  },
+  "securityPage": {
+    "seo": {
+      "title": "Security & Payments — How We Protect Your License Data and Card Details",
+      "description": "End-to-end view of how IDP Companion handles your license photo, selfie, payment data and PDF. EU servers, TLS 1.3, 1-hour deletion of biometric inputs, no card data on our servers."
+    },
+    "hero": {
+      "kicker": "Security · Payments · Compliance",
+      "h1": "Security & Payments — what we hold, for how long, and why",
+      "lead": "We built IDP Companion the way we'd want a service handling our own driver's licence to work. The licence photo and selfie are used only for verification and get deleted within an hour. We never see or store your card details. Servers are in the European Union, traffic is encrypted with TLS 1.3 on the way in, files are encrypted with AES-256 at rest. Every step is laid out below.",
+      "ctaPrimary": "Read FAQ",
+      "ctaSecondary": "Privacy policy",
+      "badges": {
+        "eu": "EU-hosted",
+        "tls": "Encrypted in transit",
+        "gdpr": "GDPR compliant",
+        "retention": "1-hour image deletion"
+      }
+    },
+    "lifecycle": {
+      "heading": "Data lifecycle — what each input becomes and when it's gone",
+      "lead": "Five things reach our servers when you order an IDP Companion: your licence photo, your selfie, the generated PDF, your payment data and your application profile. Here's what happens to each.",
+      "stages": {
+        "licensePhoto": {
+          "title": "Licence photo",
+          "ttl": "Deleted within 1 hour",
+          "body": "Uploaded to a temporary storage area. A text-recognition engine (Tesseract OCR) reads the licence number, full name, expiry date and class from the image. Up to 5 retries if the first read fails. The image is automatically deleted within 60 minutes whether verification passed or not — no review queue, no manual archive, no backup."
+        },
+        "headshot": {
+          "title": "Selfie / headshot",
+          "ttl": "Deleted within 1 hour",
+          "body": "Compared with the photo on your licence using AWS Rekognition (85% similarity threshold). We do not store face templates, biometric profiles or a searchable face database. The selfie file is deleted within 60 minutes — only the pass / fail result and similarity score stay attached to your application."
+        },
+        "pdf": {
+          "title": "Generated PDF",
+          "ttl": "Generated on demand",
+          "body": "Built in server memory the moment you click download — never written to disk. Each download regenerates the PDF from your stored application fields, so there is no cache, no CDN copy and no backup of the rendered file."
+        },
+        "profile": {
+          "title": "Application profile",
+          "ttl": "Kept until expiry + 12 months",
+          "body": "Name, date of birth, licence class and country, plan length, payment status and order ID. We need this to re-issue the PDF for the duration of your plan and to handle refunds or chargebacks. Retained until your plan expires plus twelve months (tax and audit law require it) and then removed at the next quarterly cleanup."
+        }
+      }
+    },
+    "infra": {
+      "heading": "Encryption & infrastructure",
+      "lead": "Anything that reaches our service travels over an encrypted connection (TLS 1.3), is stored on servers inside the European Union and sits on encrypted disks. Access to the live database is limited to a couple of people, every action is logged and the access list is reviewed regularly.",
+      "cards": {
+        "inTransit": {
+          "title": "Protection in transit",
+          "body": "All traffic between your browser and our server uses TLS 1.3 — the modern encryption standard. Any attempt to connect over plain HTTP is immediately redirected to HTTPS.",
+          "chip1": "TLS 1.3 only — older versions are turned off",
+          "chip2": "HSTS enabled (1 year + preload) — the browser refuses insecure connections",
+          "chip3": "No mixed HTTP/HTTPS resources on any page"
+        },
+        "atRest": {
+          "title": "Protection at rest",
+          "body": "Database fields holding personal data sit on AES-256 encrypted disks. Uploaded images stay in encrypted storage for exactly the hour they wait to be deleted.",
+          "chip1": "AES-256 disk encryption for PostgreSQL volumes",
+          "chip2": "Encrypted file storage for uploads (one hour, then gone)",
+          "chip3": "Encryption keys live in the provider's key-management service, not in the app's code"
+        },
+        "hosting": {
+          "title": "EU hosting + Cloudflare",
+          "body": "Application servers run inside the European Union (Frankfurt region). The static landing site is served through Cloudflare for speed, but only public images and scripts sit in that cache — no personal data ever ends up in the global distribution network.",
+          "chip1": "Backend servers in the EU (Frankfurt)",
+          "chip2": "Cloudflare only for the landing site's static assets",
+          "chip3": "No personal data cached outside our own servers"
+        },
+        "access": {
+          "title": "Access control",
+          "body": "Two engineers can reach the live database, and only through short-lived credentials that rotate regularly. Every connection is written to the log. No third-party tools have direct read access to the database.",
+          "chip1": "Access — limited to two people",
+          "chip2": "Short-lived credentials that rotate often",
+          "chip3": "Access list reviewed every quarter"
+        }
+      }
+    },
+    "payments": {
+      "heading": "Payment security — what reaches us and what never does",
+      "lead": "Card payments and crypto payments are handled end-to-end by certified payment providers (Gumroad is PCI-DSS compliant). Card numbers, CVVs and crypto wallet keys never reach our infrastructure — not even briefly in memory.",
+      "dataLeavesLabel": "What we receive after payment",
+      "providers": {
+        "gumroad": {
+          "title": "Gumroad",
+          "sub": "Cards · PayPal · Apple Pay · Google Pay",
+          "body": "Gumroad is a large PCI-DSS certified payment provider that runs the whole checkout. We hand the user off with a plan reference; Gumroad collects the payment and sends us back a digitally-signed confirmation once it's done. The card details never reach us.",
+          "leaves1": "Order ID and plan reference",
+          "leaves2": "Customer email (for the receipt and PDF delivery)",
+          "leaves3": "Country code (for VAT)"
+        },
+        "nowpayments": {
+          "title": "NOWPayments",
+          "sub": "USDT · USDC · BTC · ETH",
+          "body": "Crypto payments go through a hosted NOWPayments invoice page. They generate the temporary wallet, watch for the blockchain confirmation and handle the conversion. We get a digitally-signed confirmation when the transaction is verified — we never hold the wallet keys ourselves.",
+          "leaves1": "Invoice ID and plan reference",
+          "leaves2": "Confirmed transaction hash on the blockchain",
+          "leaves3": "Settled amount in USD equivalent"
+        }
+      },
+      "footnote": "Both providers send back digitally-signed confirmations — we can verify each message really came from them. Any notification that fails the signature check is rejected before it ever reaches our application code."
+    },
+    "compliance": {
+      "heading": "Privacy & GDPR rights",
+      "lead": "IDP Companion processes personal data under GDPR. Three rights from that law matter most for what we do — and we've made each of them easy to exercise: a single email is enough.",
+      "rights": {
+        "access": {
+          "title": "Right to know what we hold",
+          "body": "Ask for a copy of every personal-data record we hold about you. Within 30 days we'll send a JSON or PDF export of your application profile, payment receipts and system event history."
+        },
+        "erasure": {
+          "title": "Right to erasure",
+          "body": "Ask for permanent deletion of your application data. We action it within 30 days. The exception: financial records that tax and audit law oblige us to keep (typically 7 years in the EU)."
+        },
+        "portability": {
+          "title": "Right to take your data with you",
+          "body": "Receive your data in a machine-readable format (JSON) so you can move it elsewhere or simply archive it. Useful if you're switching to a different translation service or keeping a personal record of your applications."
+        }
+      },
+      "exerciseTitle": "How to exercise these rights",
+      "exerciseBody": "Email us with the subject line below. Include the email you used at checkout. We reply within 30 days — that's the deadline GDPR Article 12(3) sets.",
+      "exerciseSubject": "GDPR data request"
+    },
+    "report": {
+      "heading": "Report a security issue",
+      "body": "Spotted a vulnerability, a potential data exposure or something on the site that looks wrong? We want to hear about it. We don't run a public bug-bounty program yet, but we read every report and confirm receipt within 24 hours.",
+      "emailSubject": "Security vulnerability report",
+      "steps": {
+        "step1": "Email the details to the address below. Describe the issue, the steps to reproduce it and what you think the real-world impact could be.",
+        "step2": "We confirm receipt within 24 hours and look into it within 72 hours. We won't threaten legal action against good-faith research.",
+        "step3": "Critical findings get a same-day patch where it's possible. If you want public credit, we'll thank you in our changelog."
+      }
+    },
+    "audit": {
+      "heading": "Trust checklist — six things we never do",
+      "lead": "If any of these stopped being true tomorrow, our whole security model would fall apart. That's why they are written into the code itself and verified by automated tests.",
+      "items": {
+        "noCardData": {
+          "label": "We never store card details",
+          "detail": "Card numbers, CVVs and full card details don't reach our servers at all — Gumroad handles them end-to-end."
+        },
+        "noFaceDb": {
+          "label": "We never build a face database",
+          "detail": "AWS Rekognition compares two images at the moment of the request and that's it. We don't store face templates, biometric profiles or a searchable face database."
+        },
+        "licenseDelete": {
+          "label": "Licence photo deleted within 1 hour",
+          "detail": "Automated cleanup runs every 10 minutes. No licence photo survives the 60-minute deadline."
+        },
+        "headshotDelete": {
+          "label": "Selfie deleted within 1 hour",
+          "detail": "Same cleanup schedule. Only the pass / fail result stays attached to your application."
+        },
+        "euServers": {
+          "label": "Servers stay in the EU",
+          "detail": "The database and application servers are hosted inside the European Union (Frankfurt region)."
+        },
+        "tls13": {
+          "label": "Encrypted everywhere, no shortcuts",
+          "detail": "Plain HTTP redirects to HTTPS immediately. Older encryption versions are turned off. HSTS preload stops browsers from connecting insecurely in the first place."
+        }
+      }
+    },
+    "cta": {
+      "heading": "Questions about how we protect your data?",
+      "text": "We reply to every privacy and security question we get. Take a look at our How-it-works page for the step-by-step view of the process, or just write to us directly.",
+      "primaryButton": "How it works",
+      "secondaryButton": "Contact us"
+    }
+  },
+  "contactPage": {
+    "seo": {
+      "title": "Contact IDP Companion — Support, Refunds, Privacy & Press",
+      "description": "Reach IDP Companion at support{'@'}idpcompanion.com. Average response within one business day. We answer in English, Russian and Spanish. Categorised inbox: refunds, technical, billing, privacy, press."
+    },
+    "hero": {
+      "kicker": "Contact · Support · Refunds",
+      "h1": "Contact us — one inbox, one business day, three languages",
+      "lead": "Everything goes through support{'@'}idpcompanion.com. One inbox, no phone tag, no contact form lottery. Pick the category that fits your question below and the right subject line gets prefilled for you.",
+      "badges": {
+        "response": "≤ 1 business day reply",
+        "languages": "EN · RU · ES",
+        "eu": "EU-based team",
+        "gdpr": "GDPR-compliant"
+      }
+    },
+    "categories": {
+      "heading": "Pick the category that fits",
+      "lead": "Each link below opens your email app with the right subject already filled in. That helps us figure out who on the team should pick it up and reply faster.",
+      "items": {
+        "refund": {
+          "title": "Refund request",
+          "when": "You placed an order and want to cancel it. Time window and conditions are on our Refund Policy page.",
+          "sla": "Reviewed within 2 business days",
+          "subject": "Refund request — order #"
+        },
+        "technical": {
+          "title": "Technical problem",
+          "when": "Your licence didn't get recognised, the selfie verification failed, the PDF won't download, or something else broke during the order.",
+          "sla": "Reply within 1 business day",
+          "subject": "Technical issue — describe what failed"
+        },
+        "billing": {
+          "title": "Billing or payment",
+          "when": "Card was charged but no PDF arrived; duplicate charge; question about how long the plan lasts; bank dispute about a charge.",
+          "sla": "Reply within 1 business day",
+          "subject": "Billing question — order #"
+        },
+        "privacy": {
+          "title": "Privacy / GDPR",
+          "when": "You want to know what we hold on you, request deletion, get a copy of your data, or anything else about privacy.",
+          "sla": "Reply within 30 days (GDPR)",
+          "subject": "GDPR data request"
+        },
+        "press": {
+          "title": "Press or partnerships",
+          "when": "A journalist wanting a quote, a partner pitching an integration, a travel blog suggesting a collaboration, or an affiliate-program enquiry.",
+          "sla": "Reply within 3 business days",
+          "subject": "Press / partnership enquiry"
+        },
+        "general": {
+          "title": "General question",
+          "when": "Anything that doesn't fit the categories above. We read every message and pass it on to the right person ourselves.",
+          "sla": "Reply within 1 business day",
+          "subject": "General enquiry"
+        }
+      }
+    },
+    "primary": {
+      "kicker": "One inbox for everything",
+      "sla": {
+        "label": "Typical reply time",
+        "value": "Within 1 business day (Mon–Fri)"
+      },
+      "languages": {
+        "label": "We reply in",
+        "value": "English · Русский · Español"
+      },
+      "hours": {
+        "label": "Team time zone",
+        "value": "CET (UTC+1 / +2 DST)"
+      },
+      "note": "There's no contact form on this site — and that's on purpose. Email is easier: you can search it in your own inbox, forward it or keep it as a written record of the exchange. We don't offer phone support either — most issues get sorted in one or two emails."
+    },
+    "include": {
+      "heading": "What to put in your message",
+      "lead": "These details make it much quicker to sort out. Skip anything that doesn't apply to your case.",
+      "items": {
+        "orderId": {
+          "label": "Order ID (if you have one)",
+          "hint": "You'll find it in the Gumroad or NOWPayments confirmation email — it's a 6–8 character code at the start."
+        },
+        "email": {
+          "label": "Email you used at checkout",
+          "hint": "That's how we look up your order. If it's easier for you to write from a different address, just say so in the email."
+        },
+        "description": {
+          "label": "What you did and what happened",
+          "hint": "Step-by-step works best. If the question relates to a specific country (Italy, Vietnam, etc.), mention it."
+        },
+        "screenshot": {
+          "label": "Screenshot of the error",
+          "hint": "Attach it to the email. If personal details appear in the image, crop them out."
+        },
+        "plan": {
+          "label": "Which plan you bought",
+          "hint": "1 year ($35) · 3 years ($45) · 5 years ($55)."
+        }
+      }
+    },
+    "cannot": {
+      "heading": "What we cannot help with",
+      "lead": "We are a private service that issues a multilingual translation companion for your driving licence. If your question is from a nearby but different area, it's worth going straight to the right place.",
+      "items": {
+        "visa": {
+          "label": "Visa, entry or immigration questions",
+          "hint": "Contact the embassy or consulate of the country you're travelling to. We can't assess visa eligibility."
+        },
+        "governmentIdp": {
+          "label": "Getting or renewing an official government IDP",
+          "hint": "Contact the authorised issuer in your home country: AAA / AATA in the US, PayPoint in the UK, РОСАВТОКЛУБ in Russia, ADAC in Germany."
+        },
+        "lostLicense": {
+          "label": "Replacing a lost or expired domestic licence",
+          "hint": "That one goes to your DMV / DVLA / equivalent national authority. To create the IDP Companion we need your domestic licence to be valid."
+        },
+        "localLaw": {
+          "label": "Country-specific legal advice",
+          "hint": "We publish honest destination guides but can't give legal advice. For specific questions, contact a lawyer in the destination country."
+        }
+      }
+    },
+    "before": {
+      "heading": "Before you email — try these first",
+      "lead": "A lot of questions already have answers waiting. If one of these pages handles yours, great. If not, the email isn't going anywhere.",
+      "links": {
+        "faq": {
+          "title": "FAQ — 28 honest answers",
+          "body": "Pricing, refunds, languages, where IDP Companion works (and where it doesn't), account questions and more.",
+          "cta": "Read the FAQ"
+        },
+        "how": {
+          "title": "How it works — 5 steps",
+          "body": "Full step-by-step of the process: licence recognition, selfie verification, payment options and how long we keep your data.",
+          "cta": "Read the walkthrough"
+        },
+        "refund": {
+          "title": "Refund policy",
+          "body": "When you can get a refund, on what conditions and how the process works. Most refund questions are answered here.",
+          "cta": "Read the policy"
+        }
+      }
+    },
+    "cta": {
+      "heading": "Still need help?",
+      "text": "Write to us. We read every email and reply within one business day in English, Russian or Spanish.",
+      "button": "Email us"
     }
   }
 }

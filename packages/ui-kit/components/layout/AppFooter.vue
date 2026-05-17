@@ -50,6 +50,9 @@
 							<a :href="links.about" class="link-underline">{{ linkAbout }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
+							<a :href="links.security" class="link-underline">{{ linkSecurity }}</a>
+						</li>
+						<li class="list-link text-sm mb-1.5">
 							<a :href="links.privacy" class="link-underline">{{ linkPrivacy }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5">
@@ -117,6 +120,7 @@
 	    linkTerms?: string;
 	    linkRefund?: string;
 	    linkContact?: string;
+	    linkSecurity?: string;
 	    /** Full copyright line, e.g. "© 2025 Name. All rights reserved." */
 	    copyrightLine?: string;
 
@@ -129,6 +133,7 @@
 	      privacy: string;
 	      terms: string;
 	      refund: string;
+	      security: string;
 
 	      contact: string;
 	    }>;
@@ -149,7 +154,8 @@
 	    linkPrivacy: 'Privacy Policy',
 	    linkTerms: 'Terms & Conditions',
 	    linkRefund: 'Refund Policy',
-	    linkContact: 'Contact form',
+	    linkContact: 'Contact',
+	    linkSecurity: 'Security & Payments',
 	    copyrightLine: '',
 	    links: () => ({}),
 	  },
@@ -169,6 +175,7 @@
 	  privacy: props.links?.privacy ?? '#',
 	  terms: props.links?.terms ?? '#',
 	  refund: props.links?.refund ?? '#',
+	  security: props.links?.security ?? '#',
 
 	  contact: props.links?.contact ?? '#',
 	}));

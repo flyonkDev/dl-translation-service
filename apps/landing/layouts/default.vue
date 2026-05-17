@@ -69,6 +69,7 @@
 			:link-terms="t('footer.linkTerms')"
 			:link-refund="t('footer.linkRefund')"
 			:link-contact="t('footer.linkContact')"
+			:link-security="t('footer.linkSecurity')"
 			:copyright-line="t('footer.copyright', { year: currentYear })"
 			:support-email="supportEmail"
 			:links="footerLinks"
@@ -106,7 +107,8 @@
 		privacy: localePath('/privacy-policy'),
 		terms: localePath('/terms-of-service'),
 		refund: localePath('/refund-policy'),
-		contact: `mailto:${supportEmail}`,
+		security: localePath('/security'),
+		contact: localePath('/contact'),
 	}));
 </script>
 
