@@ -458,6 +458,19 @@ We generate the bulk of country-pair content with AI assist. Google's classifier
 4. **Verifiable specifics, not vague universals.** "Fines can be steep" → bad. "€175 minimum, €700 cap under Codice della Strada Art. 122" → good. Every claim a reader could fact-check should carry a number, date, source category, or named regulation. This is the thing AAA-style competitor sites can't fake at scale, and it's our strongest E-E-A-T lever.
 5. **One distinctive data point per page (when possible).** A line nobody else's page will have: a specific incident date, a single rental policy clause, a specific zone's enforcement window, a single price-anchored example. This is the "human/journalist" signal Google's helpful-content classifier rewards.
 6. **Don't all sound like the same author.** Tier 1 pages should each feel slightly distinct in voice — direct/blunt for Mexico, careful/legalistic for Japan, scene-driven for Italy. Match tone to destination archetype rather than defaulting to one IDP-Companion house style across all 500 pages.
+7. **Post-write audit gate (binding — agent MUST execute, no exceptions).** Writing with the rules in mind is not the same as verifying. Right after authoring any country-pair or supporting page (or any batch of them) — BEFORE reporting the work as done to the user — the agent MUST run a concrete two-pass audit and fix every match it finds:
+
+   **Pass A — Banned phrases (per Hero lead structure rules above).** Grep across all new/edited files for the explicitly banned AI-template phrases. The agent already knows this set; the audit is to verify absence, not to discover what they are. Treat grammatical uses (e.g. "check whether X is true") as false positives — banned pattern is the parallel-hypothetical OPENER ("Whether you're A or B…"), not the conjunction.
+
+   **Pass B — Cross-file and intra-file pattern-repeat audit.** Extract every section `lead:` line from every new/edited file (`grep -nE "^\t*lead:"` or equivalent). Scan for:
+   - **Identical opening templates** with destination-swap (e.g. "Egypt is one of the destinations where the legal floor includes…" + "Indonesia is one of the destinations where the legal floor includes…" — same template, different country name). Footprint = footprint regardless of how natural the sentence reads in isolation.
+   - **Same rhetorical pivot** reused across multiple heroes (e.g. "None of [it/that/these] is the IDP question — the IDP question lands at…" across all 4 heroes of a batch). Even when the surrounding content differs, the pivot itself is the classifier signal.
+   - **Same fixed-phrase formulae** in the same section type across siblings (e.g. "X is paperwork-dense" in two different howTo.lead blocks; "X is clean for UK photocard holders" in two honesty.lead blocks).
+   - **Intra-file repetition** of the same opener in two different sections of the same file (e.g. tldr.lead and honesty.lead opening with identical template).
+
+   Rule: each distinctive opening template, rhetorical pivot or fixed-phrase formula appears AT MOST ONCE across the entire batch. If a pattern shows up twice, rewrite all-but-one to vary genuinely (not just word-swap). Do not report the work as done until the re-audit shows single instances only.
+
+   This rule exists because the agent has historically claimed "I wrote with anti-AI principles in mind" without actually verifying — and footprints survived into shipped pages. Writing-intent is not a substitute for grep-output. The audit is non-negotiable; running it takes 30 seconds and catches what the writing-intent missed.
 
 ### Structure variance (binding when shipping Tier 2)
 

@@ -369,7 +369,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'gb', flagTo: 'fr', label: 'UK → France', status: 'Live', href: '/idp-for-uk-drivers-in-france' },
 			{ flagFrom: 'gb', flagTo: 'gr', label: 'UK → Greece', status: 'Live', href: '/idp-for-uk-drivers-in-greece' },
 			{ flagFrom: 'gb', flagTo: 'pt', label: 'UK → Portugal', status: 'Live', href: '/idp-for-uk-drivers-in-portugal' },
-			{ flagFrom: 'gb', flagTo: 'is', label: 'UK → Iceland', status: 'Live', href: '/idp-for-uk-drivers-in-iceland' },
+			{ flagFrom: 'gb', flagTo: 'mx', label: 'UK → Mexico', status: 'Live', href: '/idp-for-uk-drivers-in-mexico' },
 			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain' },
 		],
 	},
