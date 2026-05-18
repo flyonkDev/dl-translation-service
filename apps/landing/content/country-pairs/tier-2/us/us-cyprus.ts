@@ -351,7 +351,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece' },
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
 			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus' },
-			{ flagFrom: 'us', flagTo: 'mt', label: 'US → Malta', status: 'Coming soon' },
+			{ flagFrom: 'us', flagTo: 'mt', label: 'US → Malta', status: 'Live', href: '/idp-for-us-drivers-in-malta' },
 			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain' },
 			{ flagFrom: 'us', flagTo: 'pt', label: 'US → Portugal', status: 'Coming soon' },
 		],

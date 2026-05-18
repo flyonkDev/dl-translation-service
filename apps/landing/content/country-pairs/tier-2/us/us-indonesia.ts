@@ -354,7 +354,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia' },
 			{ flagFrom: 'au', flagTo: 'id', label: 'Australia → Indonesia', status: 'Coming soon' },
 			{ flagFrom: 'in', flagTo: 'id', label: 'India → Indonesia', status: 'Coming soon' },
-			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Coming soon' },
+			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Live', href: '/idp-for-us-drivers-in-vietnam' },
 		],
 	},
 

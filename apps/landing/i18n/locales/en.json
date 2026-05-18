@@ -677,7 +677,7 @@
     },
     "lifecycle": {
       "heading": "Data lifecycle — what each input becomes and when it's gone",
-      "lead": "Five things reach our servers when you order an IDP Companion: your licence photo, your selfie, the generated PDF, your payment data and your application profile. Here's what happens to each.",
+      "lead": "Five things reach our servers when you order an IDP Companion: your licence photo, your selfie, the generated PDF, your payment data and your application profile. Each follows a distinct lifecycle.",
       "stages": {
         "licensePhoto": {
           "title": "Licence photo",

@@ -677,7 +677,7 @@
     },
     "lifecycle": {
       "heading": "Ciclo de vida de los datos — qué llega, en qué se convierte y cuándo desaparece",
-      "lead": "Cuando pides un IDP Companion, a nuestros servidores llegan cinco cosas: la foto de tu licencia, tu selfie, el PDF generado, los datos de pago y el perfil de la solicitud. Esto es lo que pasa con cada una.",
+      "lead": "Cuando pides un IDP Companion, a nuestros servidores llegan cinco cosas: la foto de tu licencia, tu selfie, el PDF generado, los datos de pago y el perfil de la solicitud. Cada una sigue su propio ciclo de vida.",
       "stages": {
         "licensePhoto": {
           "title": "Foto de la licencia",

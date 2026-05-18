@@ -393,7 +393,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
 			{ flagFrom: 'us', flagTo: 'id', label: 'US → Indonesia', status: 'Live', href: '/idp-for-us-drivers-in-indonesia' },
 			{ flagFrom: 'ru', flagTo: 'vn', label: 'Russia → Vietnam', status: 'Coming soon' },
-			{ flagFrom: 'gb', flagTo: 'vn', label: 'UK → Vietnam', status: 'Coming soon' },
+			{ flagFrom: 'gb', flagTo: 'vn', label: 'UK → Vietnam', status: 'Live', href: '/idp-for-uk-drivers-in-vietnam' },
 			{ flagFrom: 'au', flagTo: 'vn', label: 'Australia → Vietnam', status: 'Coming soon' },
 		],
 	},

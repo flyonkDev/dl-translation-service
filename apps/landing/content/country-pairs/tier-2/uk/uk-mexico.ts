@@ -84,7 +84,7 @@ const en: CountryPairCopy = {
 
 	whyNotEnough: {
 		heading: "Why your UK photocard isn't the whole picture in Mexico",
-		lead: "Legally your photocard is enough — SCT confirms. Practically, Mexican auto insurance is a categorical separate purchase (UK insurance does not cover Mexico), Quintana Roo checkpoint enforcement is documented, and rental-desk variance during peak season is real.",
+		lead: "The licensing question takes a single document in Mexico — SCT rules accept your UK photocard for tourist driving without translation. The substantive friction sits elsewhere: in the categorical Mexican-insurance gap (UK motor cover does not extend), in Quintana Roo checkpoint documentation enforcement, and in peak-season rental-desk variance at Cancún and Mexico City.",
 		reasons: [
 			{
 				icon: 'ph:shield-warning-bold',
@@ -106,7 +106,7 @@ const en: CountryPairCopy = {
 
 	rules: {
 		heading: 'Mexico driving rules UK drivers should know',
-		lead: 'Right-hand traffic is the day-one adjustment from UK left-hand habit. The substantive operational rules vary by state — Quintana Roo runs stricter alcohol enforcement than the federal floor, turn-on-red is state-dependent and night driving outside cities is the single biggest safety variable.',
+		lead: 'The right-hand reversal from UK habit takes deliberate attention at CDMX traffic circles and on the Cancún-area Highway 307 — same adjustment whether you\'re driving central Mexico City or the Yucatán cuotas. Beyond the directional switch, the substantive operational rules vary by state — Quintana Roo runs stricter alcohol enforcement than the federal floor, turn-on-red is state-dependent and night driving outside cities is the single biggest safety variable.',
 		items: [
 			{ icon: 'ph:steering-wheel-bold', label: 'Driving side', value: 'RIGHT', note: 'Opposite to UK; deliberate attention required, especially at roundabouts' },
 			{ icon: 'mdi:speedometer', label: 'Urban speed', value: '40–60 km/h', note: 'Varies by state; CDMX, Cancún, Puerto Vallarta typically 40–50 km/h centre' },
@@ -209,7 +209,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes for UK drivers',
-		lead: 'Realistic outcomes ranked by frequency, based on SCT advisories, UK gov.uk Mexico travel guidance and documented 2025 tourist incident reports.',
+		lead: 'What actually happens at SCT-recognised rental desks, Quintana Roo checkpoints and Mexican police stops — six outcomes from most common to most expensive, cross-referenced against gov.uk Mexico advice and documented 2025 incident reporting.',
 		items: [
 			{
 				severity: 'low',

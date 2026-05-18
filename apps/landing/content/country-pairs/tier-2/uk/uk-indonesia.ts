@@ -235,7 +235,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes for UK drivers',
-		lead: 'Realistic outcomes ranked by frequency, based on UK gov.uk Indonesia travel guidance, Korlantas Polri advisories and UK-traveller forum reports.',
+		lead: "Six outcome scenarios UK travellers in Indonesia actually meet — from the standard clean pickup at Denpasar through to the Bali scooter accident that voids UK travel insurance. Drawn from Korlantas Polri advisories and gov.uk Indonesia reporting.",
 		items: [
 			{
 				severity: 'low',
@@ -388,7 +388,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco' },
 			{ flagFrom: 'gb', flagTo: 'ae', label: 'UK → UAE', status: 'Live', href: '/idp-for-uk-drivers-in-uae' },
 			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia' },
-			{ flagFrom: 'gb', flagTo: 'vn', label: 'UK → Vietnam', status: 'Coming soon' },
+			{ flagFrom: 'gb', flagTo: 'vn', label: 'UK → Vietnam', status: 'Live', href: '/idp-for-uk-drivers-in-vietnam' },
 		],
 	},
 

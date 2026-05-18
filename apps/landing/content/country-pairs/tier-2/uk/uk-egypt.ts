@@ -118,7 +118,7 @@ const en: CountryPairCopy = {
 
 	rules: {
 		heading: 'Egypt driving rules UK drivers should know',
-		lead: 'Right-hand traffic is the day-one adjustment from UK left-hand habit. The substantive operational rules are zero-tolerance alcohol enforcement, document-heavy checkpoint frequency on inter-city routes and unannounced rural road conditions.',
+		lead: 'Switching to right-side driving at Cairo morning-rush roundabouts is the first reality check; the BAC and checkpoint rules are the structural ones. Zero-tolerance alcohol enforcement bites at any positive reading. Police checkpoint frequency on Hurghada–Luxor desert road and Sinai entry routes is consistent. Rural road conditions (potholes, unlit lorries at night) are unannounced.',
 		items: [
 			{ icon: 'ph:steering-wheel-bold', label: 'Driving side', value: 'RIGHT', note: 'Opposite to UK; deliberate attention required, especially at roundabouts' },
 			{ icon: 'mdi:speedometer', label: 'Urban speed', value: '50 km/h', note: 'Built-up areas in Cairo, Alexandria, Hurghada, Sharm centre' },
@@ -218,7 +218,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes for UK drivers',
-		lead: 'Realistic outcomes ranked by frequency, based on UK gov.uk Egypt travel guidance, Egyptian Ministry of Interior advisories and UK-tourist forum reports.',
+		lead: 'Six outcomes UK self-drivers actually meet in Egypt — ranked by how often they show up in gov.uk Egypt advisory data, Ministry of Interior reporting and UK-tourist forum threads.',
 		items: [
 			{
 				severity: 'low',
