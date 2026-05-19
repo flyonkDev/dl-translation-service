@@ -493,7 +493,7 @@
           },
           "licenseExpiry": {
             "q": "What if my home license expires during my IDP Companion's validity?",
-            "a": "Your IDP Companion is tied to the specific driver's license you uploaded. If that license expires and you renew, the IDP Companion is no longer valid for the renewed license — you'll need to regenerate it from the new license details. Free regeneration is included in every plan. Email support{'@'}idpcompanion.com with your purchase ID after renewal."
+            "a": "Your IDP Companion is tied to the specific driver's license you uploaded. If that license expires and you renew, the IDP Companion is no longer valid for the renewed license — you'll need to regenerate it from the new license details. Free regeneration is included in every plan. Email support{'@'}idpcompanion.com from the address you used at checkout (that's how we locate your order) with a photo of the renewed license attached."
           }
         }
       }
@@ -974,6 +974,70 @@
       "heading": "Still need help?",
       "text": "Write to us. We read every email and reply within one business day in English, Russian or Spanish.",
       "button": "Email us"
+    }
+  },
+  "sitemapPage": {
+    "seo": {
+      "title": "Sitemap — every page on IDP Companion",
+      "description": "Browse every IDP Companion country-pair guide, support page, and policy. Grouped by driver origin (United States, United Kingdom, Russia) with direct links to each destination guide."
+    },
+    "hero": {
+      "kicker": "Site index",
+      "h1": "Every page on IDP Companion",
+      "lead": "All country-pair driving guides on this site, grouped by where the driver is licensed. Plus product, support, and legal pages. Updated automatically as new guides ship."
+    },
+    "counts": {
+      "pairsLabel": "Live country-pair guides",
+      "originsLabel": "Driver origins covered"
+    },
+    "sections": {
+      "main": {
+        "heading": "Main pages",
+        "lead": "Product, pricing, and editorial pages."
+      },
+      "countryPairs": {
+        "heading": "Country-pair driving guides",
+        "lead": "Each guide covers IDP rules, fines, rental policies, and on-the-ground enforcement for one driver origin in one destination. Grouped by where the driver is licensed."
+      },
+      "authors": {
+        "heading": "Authors",
+        "lead": "The people who write and fact-check the guides on this site."
+      },
+      "legal": {
+        "heading": "Policies",
+        "lead": "Terms, privacy, refunds, and how we handle payment data."
+      }
+    },
+    "originGroup": {
+      "guidesSuffix": "destination guides"
+    },
+    "localePill": {
+      "en": "EN",
+      "ru": "RU",
+      "es": "ES"
+    },
+    "tierBadge": {
+      "tier1": "Tier 1",
+      "tier2": "Tier 2"
+    },
+    "mainPages": {
+      "home": { "title": "Home", "body": "Landing page, $35 plan widget, country picker." },
+      "howItWorks": { "title": "How it works", "body": "Five-step walkthrough from upload to PDF download." },
+      "pricing": { "title": "Pricing", "body": "One-off purchase — 1-year, 3-year, and 5-year plans compared." },
+      "faq": { "title": "FAQ", "body": "Common questions about IDPs, validity, refunds, and renting abroad." },
+      "about": { "title": "About", "body": "Why we built IDP Companion and what it is (and is not)." },
+      "security": { "title": "Security & Payments", "body": "How we handle your data, payments, and identity verification." },
+      "contact": { "title": "Contact", "body": "Direct email, response times, and what to send for each request type." },
+      "idpValidity": { "title": "IDP validity", "body": "How long an International Driving Permit is valid, by treaty and by issuer." },
+      "sitemap": { "title": "Sitemap", "body": "This page — every URL on the site, grouped by topic." }
+    },
+    "authors": {
+      "petr": { "title": "Petr Shchepetin", "body": "Co-founder & lead author. Writes and fact-checks every country-pair guide." }
+    },
+    "legalPages": {
+      "privacy": { "title": "Privacy Policy", "body": "What we collect, how long we keep it, and your GDPR rights." },
+      "refund": { "title": "Refund Policy", "body": "When you get a refund and how to request one." },
+      "terms": { "title": "Terms & Conditions", "body": "The rules for using IDP Companion." }
     }
   }
 }

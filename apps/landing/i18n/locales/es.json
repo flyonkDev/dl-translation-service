@@ -493,7 +493,7 @@
           },
           "licenseExpiry": {
             "q": "¿Qué pasa si mi permiso caduca durante la validez de IDP Companion?",
-            "a": "IDP Companion está atado al permiso específico que subiste. Si ese permiso caduca y lo renuevas, IDP Companion ya no es válido para el permiso renovado — tendrás que regenerarlo a partir de los datos nuevos. La regeneración gratuita está incluida en cada plan. Escribe a support{'@'}idpcompanion.com con tu ID de compra tras la renovación."
+            "a": "IDP Companion está atado al permiso específico que subiste. Si ese permiso caduca y lo renuevas, IDP Companion ya no es válido para el permiso renovado — tendrás que regenerarlo a partir de los datos nuevos. La regeneración gratuita está incluida en cada plan. Escribe a support{'@'}idpcompanion.com desde la dirección que usaste al pagar (así localizamos tu pedido) y adjunta la foto del permiso renovado."
           }
         }
       }
@@ -974,6 +974,70 @@
       "heading": "¿Aún necesitas ayuda?",
       "text": "Escríbenos. Leemos cada correo y respondemos en un día laborable — en inglés, ruso o español.",
       "button": "Escríbenos"
+    }
+  },
+  "sitemapPage": {
+    "seo": {
+      "title": "Mapa del sitio — todas las páginas de IDP Companion",
+      "description": "Explora todas las guías por par de países, las páginas de producto y las políticas de IDP Companion. Agrupadas por país de emisión del permiso del conductor — Estados Unidos, Reino Unido, Rusia."
+    },
+    "hero": {
+      "kicker": "Índice del sitio",
+      "h1": "Todas las páginas de IDP Companion",
+      "lead": "Listado completo de guías de conducción por país, agrupadas por el país en el que se emitió el carnet del conductor. Más páginas de producto, soporte y políticas. Se actualiza automáticamente cuando se publican nuevas guías."
+    },
+    "counts": {
+      "pairsLabel": "Guías por par de países activas",
+      "originsLabel": "Países de emisión cubiertos"
+    },
+    "sections": {
+      "main": {
+        "heading": "Páginas principales",
+        "lead": "Producto, precios y páginas editoriales."
+      },
+      "countryPairs": {
+        "heading": "Guías por par de países",
+        "lead": "Cada guía cubre normas del IDP, multas, política de alquileres y cómo se aplica realmente la ley para un país de emisión en un destino concreto. Agrupadas por el país en el que se emitió el carnet."
+      },
+      "authors": {
+        "heading": "Autores",
+        "lead": "Las personas que escriben y verifican las guías de este sitio."
+      },
+      "legal": {
+        "heading": "Políticas",
+        "lead": "Términos, privacidad, reembolsos y tratamiento de datos de pago."
+      }
+    },
+    "originGroup": {
+      "guidesSuffix": "destinos"
+    },
+    "localePill": {
+      "en": "EN",
+      "ru": "RU",
+      "es": "ES"
+    },
+    "tierBadge": {
+      "tier1": "Tier 1",
+      "tier2": "Tier 2"
+    },
+    "mainPages": {
+      "home": { "title": "Inicio", "body": "Landing, widget de $35 y selector de país." },
+      "howItWorks": { "title": "Cómo funciona", "body": "Cinco pasos desde la subida del carnet hasta la descarga del PDF." },
+      "pricing": { "title": "Precios", "body": "Compra única — comparativa de planes de 1, 3 y 5 años." },
+      "faq": { "title": "Preguntas frecuentes", "body": "Preguntas comunes sobre IDP, validez, reembolsos y alquileres en el extranjero." },
+      "about": { "title": "Sobre nosotros", "body": "Por qué hicimos IDP Companion y qué es (y qué no es)." },
+      "security": { "title": "Seguridad y pagos", "body": "Cómo manejamos tus datos, los pagos y la verificación de identidad." },
+      "contact": { "title": "Contacto", "body": "Correo directo, tiempos de respuesta y qué adjuntar en cada tipo de consulta." },
+      "idpValidity": { "title": "Validez del IDP", "body": "Cuánto dura un Permiso de Conducción Internacional según el tratado y según el emisor." },
+      "sitemap": { "title": "Mapa del sitio", "body": "Esta página — todas las URL del sitio, agrupadas por tema." }
+    },
+    "authors": {
+      "petr": { "title": "Petr Shchepetin", "body": "Cofundador y autor principal. Escribe y verifica los datos de cada guía por par de países." }
+    },
+    "legalPages": {
+      "privacy": { "title": "Política de Privacidad", "body": "Qué recopilamos, cuánto lo guardamos y tus derechos según el RGPD." },
+      "refund": { "title": "Política de Reembolsos", "body": "Cuándo se devuelve el dinero y cómo solicitarlo." },
+      "terms": { "title": "Términos y Condiciones", "body": "Las reglas para usar IDP Companion." }
     }
   }
 }
