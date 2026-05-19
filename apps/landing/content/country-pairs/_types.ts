@@ -193,6 +193,16 @@ export interface CountryPairCopy {
 	/* --- optional blocks --- */
 	lastReviewed?: string;
 
+	/**
+	 * GEO + E-E-A-T metadata. Used for Article JSON-LD (`datePublished`/`dateModified`)
+	 * and the on-page author byline. Both ISO format YYYY-MM-DD.
+	 *
+	 * If omitted, schema falls back to site-wide defaults in `Page.vue` (currently
+	 * 2026-04-26 for both, the original Tier 1 ship date).
+	 */
+	datePublished?: string;
+	dateModified?: string;
+
 	tldr?: {
 		heading: string;
 		lead: string;

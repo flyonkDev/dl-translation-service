@@ -88,7 +88,7 @@ const en: CountryPairCopy = {
 	},
 	honesty: {
 		heading: 'How IDP Companion fits — honestly',
-		lead: "We're going to be straight with you because there's a lot of misleading marketing in this space.",
+		lead: "Thai IDP marketing is full of half-truths. Here is what IDP Companion is, what it is not, and the documents Thai law actually requires alongside it.",
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -146,7 +146,7 @@ const en: CountryPairCopy = {
 	},
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Russian travelers ask this most often. Here are realistic outcomes ranked by frequency.',
+		lead: 'What actually happens at Phuket and Bangkok rental desks when a Russian licence shows up alone — six outcomes from most common to rarest, plus the catastrophic motorbike-without-Cat-A scenario that dominates Russian-traveller forum threads about Thailand.',
 		items: [
 			{
 				severity: 'low',
@@ -232,7 +232,7 @@ const en: CountryPairCopy = {
 	},
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and Thailand-bound travelers — coming soon.',
+		lead: 'Southeast Asian and IDP-relevant destinations Russian travellers often pair with Thailand — coming soon.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'eg', label: 'Russia → Egypt', status: 'Live', href: '/idp-for-russian-drivers-in-egypt' },

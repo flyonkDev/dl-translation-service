@@ -408,6 +408,43 @@ Hero is the highest-engagement zone on the page and the loudest classifier signa
 
 The us-mexico hero is the canonical example — it cites May 2025 Tulum ($1,094.50) and Cancún Italian-tourist ($2,566) directly. Specifics outperform generalities for both E-E-A-T and CTR.
 
+**GEO / AI Overview / LLM citation optimization (binding — added 2026-05-18 after Tier 1 GEO sprint)**
+
+Google AI Overview, Perplexity, Bing Copilot and ChatGPT Search all cite from web content differently than traditional SERPs. Optimizing for citation in these surfaces is **GEO (Generative Engine Optimization)** and it is binding for all new and edited content pages going forward. Important: virtually every GEO best practice also improves traditional SEO — these rules are net-positive across both channels.
+
+**The four mandatory GEO patterns for every country-pair page (and most informational pages):**
+
+1. **Answer-first paragraph structure.** Every FAQ answer's first sentence must directly answer the question. Supporting context comes after. LLMs and AI Overview cite the first paragraph; if our first sentence is throat-clearing context ("Greek law is complicated..."), we lose the citation to a competitor whose first sentence directly answers ("Yes — Greek law requires foreign drivers to carry an IDP alongside their physical licence."). This is also a featured-snippet eligibility rule, so it's net-positive for traditional SEO too. Apply to: every FAQ answer, every section opener (`lead:`), every Quick Answer block.
+
+2. **Named-entity-early in hero.** Within the first 50 words of `hero.lead`, the named entity (destination country/region, named regulation, named regulator) must appear with its full proper name — not pronoun, not abbreviation. LLMs build their entity-association graph from early-in-document mentions. "If you've booked a rental..." reads weakly; "Italian law (Codice della Strada Article 122)..." reads citably.
+
+3. **Dated, attributed factual claims.** Every fact that could become stale must carry a date or regulatory reference. "Fines are €175" is weak. "Under Article 122 of the Codice della Strada (2024 amendment), the minimum fine is €175" is strong. LLMs prefer to cite dated/attributed claims because they reduce hallucination risk. The schema in [apps/landing/components/CountryPair/Page.vue](apps/landing/components/CountryPair/Page.vue) emits `datePublished` and `dateModified` from per-page `copy.datePublished` / `copy.dateModified` fields ([apps/landing/content/country-pairs/_types.ts](apps/landing/content/country-pairs/_types.ts) lines 195–204) — populate these per page when content materially changes.
+
+4. **Author byline + Person schema.** Every country-pair page renders an `AuthorByline` in the hero (component at [apps/landing/components/AuthorByline.vue](apps/landing/components/AuthorByline.vue)) linking to `/authors/petr-shchepetin`. The Article schema in Page.vue uses `Person` author (not Organization) with `@id` matching the `/authors/petr-shchepetin#person` Person entity declared on that page. LLMs cite attributed content at 2–3× the rate of anonymous content. Do not regress this to Organization.
+
+**Schema discipline (one of the highest-ROI changes a site can make in 2026):**
+
+JSON-LD is the primary input for AI Overview citation, rich-result eligibility, and Knowledge Graph entity association. Current country-pair pages render: `Article` (with Person author + dates + image + articleSection) + `BreadcrumbList` + `FAQPage` + `Product` (+ `HowTo` when howTo block present). This is the minimum floor. Mistakes to avoid:
+
+- In Vue useHead, JSON-LD must be rendered via `script: [{ type: 'application/ld+json', children: '...' }]` — the `children` field works in Page.vue today (verified). If you ever swap to a setup where `children:` renders as HTML attribute, switch to `innerHTML:` — silent failures here are common. ALWAYS verify in rendered DOM, not source code.
+- `datePublished` without `dateModified` (or both stale) is worse than no date. Update `dateModified` whenever content changes substantively.
+- Missing `author` on Article schema causes E-E-A-T downgrade post-2024.
+
+**Banned phrases — extended list for cross-batch consistency (added 2026-05-18):**
+
+In addition to the hero-banned phrases above, these accumulate as classifier footprints when used in section openers (`lead:`) across the Tier 1 and Tier 2 batches. Audit before shipping any new page; rewrite all matches:
+
+- `"X is one of the cleanest / clearest cases in this guide"` (and any "in this guide" self-reference framing as the primary angle of an opener)
+- `"We're going to be direct about what IDP Companion does and doesn't do"` / `"We'll be direct about where IDP Companion adds value"` (any "we're going to be direct/straight" honesty-section opener)
+- `"Realistic outcomes for X drivers in Y, ranked by likelihood/frequency"` (any "realistic outcomes ranked by..." formula)
+- `"More country-pair guides for X drivers and Y-bound travellers"` (related.lead default formula)
+
+These four templates accumulated in the Tier 1 batch because they were written before this rule existed. The 2026-05-18 cleanup sprint rewrote them in-place; the rule above is the durable prevention.
+
+**Mandatory post-write audit (Pass A + Pass B) — binding, see also CLAUDE.md "Anti-AI-template guardrails" rule #7:**
+
+For any new country-pair page or batch of pages: Pass A (banned-phrase grep) + Pass B (cross-file + intra-file template-repeat grep on all `lead:` lines) — both runs are mandatory BEFORE reporting work as done. Writing-intent is not a substitute for grep-output. Empirically validated through 4 sprints across Tier 2 (8 pages × 62 anti-AI edits in a single audit pass once); Tier 1 ships were grandfathered into the rule and required a separate cleanup sprint to bring back into compliance.
+
 **SEO title patterns** (pick by destination archetype):
 - IDP-required, fines-heavy: `IDP for {Origin} Drivers in {Dest}: {Year} Guide to {Specific Pain} & Avoiding €{Amount}+ Tickets`
 - IDP-required, complexity-heavy: `IDP for {Origin} Drivers in {Dest}: {Year} Guide` (subtitle does the work)

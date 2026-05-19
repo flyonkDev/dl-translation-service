@@ -30,6 +30,16 @@
 				<h1 class="cp-hero__title">{{ title }}</h1>
 				<p class="cp-hero__lead">{{ lead }}</p>
 
+				<!-- Author byline + last-reviewed pill (E-E-A-T / GEO citation signal) -->
+				<AuthorByline
+					v-if="authorName"
+					:author-name="authorName"
+					:profile-href="authorProfileHref"
+					:by-label="authorByLabel"
+					:reviewed-label="authorReviewedLabel"
+					:reviewed-date="authorReviewedDate"
+				/>
+
 				<!-- Quick answer card -->
 				<div
 					class="cp-hero__quick-answer"
@@ -82,6 +92,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+import AuthorByline from '~/components/AuthorByline.vue';
 
 interface QuickAnswer {
 	required: boolean;
@@ -109,9 +120,24 @@ withDefaults(
 		badgeTopLabel: string;
 		/** Small accent label shown in the bottom badge (e.g. "Instant PDF") */
 		badgeBottomLabel: string;
+		/** Author byline name. Omit to hide the byline entirely. */
+		authorName?: string;
+		/** Author profile URL (localised path), e.g. '/authors/petr-shchepetin'. */
+		authorProfileHref?: string;
+		/** "By" label translated per locale (e.g. "By" / "Автор:" / "Por"). */
+		authorByLabel?: string;
+		/** "Last reviewed:" label per locale. Omit to hide the reviewed pill. */
+		authorReviewedLabel?: string;
+		/** Display date next to the reviewed label (e.g. "May 2026" / "Май 2026"). */
+		authorReviewedDate?: string;
 	}>(),
 	{
 		illustrationAlt: '',
+		authorName: '',
+		authorProfileHref: '/authors/petr-shchepetin',
+		authorByLabel: 'By',
+		authorReviewedLabel: '',
+		authorReviewedDate: '',
 	},
 );
 

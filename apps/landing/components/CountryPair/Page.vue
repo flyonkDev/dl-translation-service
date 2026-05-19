@@ -18,16 +18,17 @@
 			:illustration="illustration"
 			:badge-top-label="copy.hero.badgeTop"
 			:badge-bottom-label="copy.hero.badgeBottom"
+			:author-name="AUTHOR_NAME"
+			:author-profile-href="`/authors/${AUTHOR_SLUG}`"
+			:author-by-label="authorByLabel"
+			:author-reviewed-label="copy.lastReviewed ? freshnessLabel : ''"
+			:author-reviewed-date="copy.lastReviewed || ''"
 			@primary-click="goToApp"
 		/>
 
 		<!-- TL;DR comparison -->
 		<section v-if="copy.tldr" class="section bg-white">
 			<div class="container max-w-5xl">
-				<div v-if="copy.lastReviewed" class="freshness-pill">
-					<Icon icon="ph:check-circle-bold" width="14" />
-					<span>{{ freshnessLabel }} {{ copy.lastReviewed }}</span>
-				</div>
 				<h2 class="country-pair__h2">{{ copy.tldr.heading }}</h2>
 				<p class="country-pair__h2-lead">{{ copy.tldr.lead }}</p>
 
@@ -505,6 +506,23 @@ const freshnessLabel = computed(() => {
 	}
 });
 
+/**
+ * Author byline (GEO + E-E-A-T "Experience" pillar). Single author across all
+ * country-pair pages today. If we add co-authors per cluster later, extend
+ * CountryPairCopy with an optional `author` field and prefer it here.
+ */
+const AUTHOR_NAME = 'Petr Shchepetin';
+const AUTHOR_SLUG = 'petr-shchepetin';
+
+/** "By" prefix translated per locale. */
+const authorByLabel = computed(() => {
+	switch (locale.value) {
+		case 'es': return 'Por';
+		case 'ru': return 'Автор:';
+		default: return 'By';
+	}
+});
+
 /** og:locale must be xx_XX format per OG spec */
 const ogLocaleTag = computed(() => {
 	switch (locale.value) {
@@ -546,11 +564,24 @@ useHead(() => {
 				headline: copy.value.seo.title,
 				description: copy.value.seo.description,
 				url: canonicalUrl.value,
+				mainEntityOfPage: canonicalUrl.value,
 				inLanguage: locale.value,
-				datePublished: '2026-04-26',
-				dateModified: '2026-04-26',
-				author: { '@type': 'Organization', name: 'IDP Companion', url: `${siteUrl}/` },
-				publisher: { '@id': `${siteUrl}/#organization` },
+				datePublished: copy.value.datePublished || '2026-04-26',
+				dateModified: copy.value.dateModified || copy.value.datePublished || '2026-04-26',
+				image: [siteUrl + props.illustration],
+				articleSection: 'International Driving Permit Guides',
+				author: {
+					'@type': 'Person',
+					name: AUTHOR_NAME,
+					url: `${siteUrl}/authors/${AUTHOR_SLUG}`,
+					'@id': `${siteUrl}/authors/${AUTHOR_SLUG}#person`,
+				},
+				publisher: {
+					'@type': 'Organization',
+					name: 'IDP Companion',
+					url: `${siteUrl}/`,
+					'@id': `${siteUrl}/#organization`,
+				},
 				about: [
 					{ '@type': 'Country', name: copy.value.og.originName },
 					{ '@type': 'Country', name: copy.value.og.destinationName },
