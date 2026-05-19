@@ -65,7 +65,7 @@
 | 19 | Press / Media Kit | `/press/` | ⚪ Coming Soon | Готовность к outreach, журналистам |
 | 20 | Affiliate Program | `/affiliate/` | ⚪ Coming Soon | Партнёрка travel-блогеров, тур-агентов |
 
-### 1.2 Country-pairs flagship (48)а 
+### 1.2 Country-pairs flagship (48)
 
 > Note: us-france and us-uae moved to Tier 2 on 30.04.2026 (first 2 Tier 2 pages launched).
 

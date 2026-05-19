@@ -40,6 +40,9 @@
 							<a :href="links.howItWorks" class="link-underline">{{ linkHowItWorks }}</a>
 						</li>
 						<li class="list-link text-sm mb-1.5"><a :href="links.faq" class="link-underline">{{ linkFaq }}</a></li>
+						<li v-if="links.idpValidity" class="list-link text-sm mb-1.5">
+							<a :href="links.idpValidity" class="link-underline">{{ linkIdpValidity }}</a>
+						</li>
 					</ul>
 				</div>
 
@@ -82,8 +85,13 @@
 					<div v-if="disclaimerLine" class="mb-1">
 						{{ disclaimerLine }}
 					</div>
-					<div>
-						{{ copyrightLine }}
+					<div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+						<span>{{ copyrightLine }}</span>
+						<a
+							v-if="links.sitemap"
+							:href="links.sitemap"
+							class="bottom-sitemap link-underline"
+						>{{ linkSitemap }}</a>
 					</div>
 				</div>
 
@@ -121,6 +129,8 @@
 	    linkRefund?: string;
 	    linkContact?: string;
 	    linkSecurity?: string;
+	    linkIdpValidity?: string;
+	    linkSitemap?: string;
 	    /** Full copyright line, e.g. "© 2025 Name. All rights reserved." */
 	    copyrightLine?: string;
 
@@ -136,6 +146,9 @@
 	      security: string;
 
 	      contact: string;
+
+	      idpValidity: string;
+	      sitemap: string;
 	    }>;
 	  }>(),
 	  {
@@ -156,6 +169,8 @@
 	    linkRefund: 'Refund Policy',
 	    linkContact: 'Contact',
 	    linkSecurity: 'Security & Payments',
+	    linkIdpValidity: 'IDP validity',
+	    linkSitemap: 'Sitemap',
 	    copyrightLine: '',
 	    links: () => ({}),
 	  },
@@ -178,6 +193,10 @@
 	  security: props.links?.security ?? '#',
 
 	  contact: props.links?.contact ?? '#',
+
+	  // Optional links — only rendered when consumer passes them in (no '#' fallback)
+	  idpValidity: props.links?.idpValidity ?? '',
+	  sitemap: props.links?.sitemap ?? '',
 	}));
 </script>
 
@@ -227,6 +246,15 @@
 
 	.reserved {
 	  color: rgb(var(--c-slate-500) / 1);
+	}
+
+	.bottom-sitemap {
+	  color: rgb(var(--c-slate-700) / 1);
+	  text-decoration: none;
+	}
+
+	.bottom-sitemap:hover {
+	  color: rgb(var(--c-slate-900) / 1);
 	}
 
 	.payment-icon {

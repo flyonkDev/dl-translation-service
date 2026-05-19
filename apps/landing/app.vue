@@ -39,6 +39,8 @@
 			:link-refund="t('footer.linkRefund')"
 			:link-contact="t('footer.linkContact')"
 			:link-security="t('footer.linkSecurity')"
+			:link-idp-validity="t('footer.linkIdpValidity')"
+			:link-sitemap="t('footer.linkSitemap')"
 			:copyright-line="t('footer.copyright', { year: year })"
 			:links="footerLinks"
 		/>
@@ -84,6 +86,8 @@
 		refund: localePath({ name: 'refund-policy' }),
 		security: localePath({ name: 'security' }),
 		contact: localePath({ name: 'contact' }),
+		idpValidity: localePath({ name: 'idp-validity' }),
+		sitemap: localePath({ name: 'sitemap-page' }),
 	}));
 </script>
 

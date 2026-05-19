@@ -24,11 +24,11 @@
 				</p>
 
 				<div class="flex flex-wrap gap-3">
-					<NuxtLinkLocale to="/apply" class="block">
+					<a :href="applyHref" class="block">
 						<BaseButton type="button" variant="primary">
 							<span class="font-bold">{{ copy.finalCta.primary }}</span>
 						</BaseButton>
-					</NuxtLinkLocale>
+					</a>
 					<NuxtLinkLocale to="/pricing" class="block">
 						<BaseButton type="button" variant="secondary">
 							<span class="font-bold">{{ copy.finalCta.secondary }}</span>
@@ -261,11 +261,11 @@
 					{{ copy.finalCta.lead }}
 				</p>
 				<div class="flex flex-wrap justify-center gap-3">
-					<NuxtLinkLocale to="/apply" class="block">
+					<a :href="applyHref" class="block">
 						<BaseButton type="button" variant="primary">
 							<span class="font-bold">{{ copy.finalCta.primary }}</span>
 						</BaseButton>
-					</NuxtLinkLocale>
+					</a>
 					<NuxtLinkLocale to="/pricing" class="block">
 						<BaseButton type="button" variant="secondary">
 							<span class="font-bold">{{ copy.finalCta.secondary }}</span>
@@ -326,6 +326,19 @@ const currentLocale = computed<LocaleKey>(() => {
 });
 
 const copy = computed(() => idpValidityCopy[currentLocale.value]);
+
+// External SPA URL — /apply lives on apps/frontend (SPA), not on landing.
+// Avoid `<NuxtLinkLocale to="/apply">` here — Nuxt prerender crawls internal
+// links and would 404 on `/apply` during the static build.
+const appUrl = computed(() =>
+	String(config.public.appUrl || '').trim().replace(/\/+$/, ''),
+);
+
+const applyHref = computed(() => {
+	if (!appUrl.value) return '#';
+	const qs = new URLSearchParams({ locale: locale.value });
+	return `${appUrl.value}/apply?${qs.toString()}`;
+});
 
 useSeoMeta({
 	title: () => copy.value.seo.title,

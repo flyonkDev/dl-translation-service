@@ -31,7 +31,14 @@
 							:key="idx"
 							class="faq-accordion__answer-paragraph"
 						>
-							{{ p }}
+							<template v-for="(seg, si) in parseInline(p)" :key="si">
+								<a
+									v-if="seg.kind === 'link'"
+									:href="resolveHref(seg.href)"
+									class="faq-accordion__link"
+								>{{ seg.text }}</a>
+								<template v-else>{{ seg.text }}</template>
+							</template>
 						</p>
 					</div>
 				</div>
@@ -42,6 +49,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { useLocalePath } from '#imports';
 import { Icon } from '@iconify/vue';
 
 export interface FaqAccordionItem {
@@ -50,6 +58,43 @@ export interface FaqAccordionItem {
 	anchor?: string;
 	question: string;
 	answer: string | string[];
+}
+
+/** One rendered segment inside a paragraph — plain text or an inline link parsed from `[text](url)` markdown. */
+type InlineSegment =
+	| { kind: 'text'; text: string }
+	| { kind: 'link'; text: string; href: string };
+
+const INLINE_LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+const localePath = useLocalePath();
+
+/** Parse a paragraph string into mixed text + link segments. Safe — no v-html, no XSS risk. */
+function parseInline(text: string): InlineSegment[] {
+	const out: InlineSegment[] = [];
+	let lastIndex = 0;
+	let m: RegExpExecArray | null;
+	INLINE_LINK_RE.lastIndex = 0;
+	while ((m = INLINE_LINK_RE.exec(text)) !== null) {
+		if (m.index > lastIndex) {
+			out.push({ kind: 'text', text: text.slice(lastIndex, m.index) });
+		}
+		out.push({ kind: 'link', text: m[1], href: m[2] });
+		lastIndex = INLINE_LINK_RE.lastIndex;
+	}
+	if (lastIndex < text.length) {
+		out.push({ kind: 'text', text: text.slice(lastIndex) });
+	}
+	return out;
+}
+
+/**
+ * Wrap internal paths (starting with `/`) through `useLocalePath` so the link
+ * lands on the visitor's current locale (`/ru/idp-validity/` for RU readers).
+ * External URLs (http:// / https:// / mailto:) pass through unchanged.
+ */
+function resolveHref(href: string): string {
+	if (href.startsWith('/')) return localePath(href);
+	return href;
 }
 
 const props = withDefaults(
@@ -201,5 +246,17 @@ void _;
 
 .faq-accordion__answer-paragraph + .faq-accordion__answer-paragraph {
 	margin-top: 10px;
+}
+
+.faq-accordion__link {
+	color: rgb(var(--c-sea));
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+	transition: color 0.15s ease;
+}
+
+.faq-accordion__link:hover {
+	color: rgb(var(--c-slate-900));
 }
 </style>

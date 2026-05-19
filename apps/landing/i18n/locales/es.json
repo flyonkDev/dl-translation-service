@@ -28,6 +28,8 @@
     "linkRefund": "Política de reembolsos",
     "linkContact": "Contacto",
     "linkSecurity": "Seguridad y pagos",
+    "linkIdpValidity": "Validez del IDP",
+    "linkSitemap": "Mapa del sitio",
     "copyright": "© {year} IDP Companion. Todos los derechos reservados."
   },
   "legal": {
@@ -493,7 +495,7 @@
           },
           "licenseExpiry": {
             "q": "¿Qué pasa si mi permiso caduca durante la validez de IDP Companion?",
-            "a": "IDP Companion está atado al permiso específico que subiste. Si ese permiso caduca y lo renuevas, IDP Companion ya no es válido para el permiso renovado — tendrás que regenerarlo a partir de los datos nuevos. La regeneración gratuita está incluida en cada plan. Escribe a support{'@'}idpcompanion.com desde la dirección que usaste al pagar (así localizamos tu pedido) y adjunta la foto del permiso renovado."
+            "a": "IDP Companion está atado al permiso específico que subiste. Si ese permiso caduca y lo renuevas, IDP Companion ya no es válido para el permiso renovado — tendrás que regenerarlo a partir de los datos nuevos. La regeneración gratuita está incluida en cada plan. Escribe a support{'@'}idpcompanion.com desde la dirección que usaste al pagar (así localizamos tu pedido) y adjunta la foto del permiso renovado. Para el desglose completo de la validez del IDP según las Convenciones de Ginebra de 1949 y Viena de 1968, consulta nuestra [guía dedicada a la validez del IDP](/idp-validity/)."
           }
         }
       }

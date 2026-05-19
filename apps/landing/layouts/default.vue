@@ -70,6 +70,8 @@
 			:link-refund="t('footer.linkRefund')"
 			:link-contact="t('footer.linkContact')"
 			:link-security="t('footer.linkSecurity')"
+			:link-idp-validity="t('footer.linkIdpValidity')"
+			:link-sitemap="t('footer.linkSitemap')"
 			:copyright-line="t('footer.copyright', { year: currentYear })"
 			:support-email="supportEmail"
 			:links="footerLinks"
@@ -109,6 +111,8 @@
 		refund: localePath('/refund-policy'),
 		security: localePath('/security'),
 		contact: localePath('/contact'),
+		idpValidity: localePath('/idp-validity'),
+		sitemap: localePath('/sitemap-page'),
 	}));
 </script>
 

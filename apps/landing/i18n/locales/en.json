@@ -28,6 +28,8 @@
     "linkRefund": "Refund Policy",
     "linkContact": "Contact",
     "linkSecurity": "Security & Payments",
+    "linkIdpValidity": "IDP validity",
+    "linkSitemap": "Sitemap",
     "copyright": "© {year} IDP Companion. All rights reserved."
   },
   "legal": {
@@ -493,7 +495,7 @@
           },
           "licenseExpiry": {
             "q": "What if my home license expires during my IDP Companion's validity?",
-            "a": "Your IDP Companion is tied to the specific driver's license you uploaded. If that license expires and you renew, the IDP Companion is no longer valid for the renewed license — you'll need to regenerate it from the new license details. Free regeneration is included in every plan. Email support{'@'}idpcompanion.com from the address you used at checkout (that's how we locate your order) with a photo of the renewed license attached."
+            "a": "Your IDP Companion is tied to the specific driver's license you uploaded. If that license expires and you renew, the IDP Companion is no longer valid for the renewed license — you'll need to regenerate it from the new license details. Free regeneration is included in every plan. Email support{'@'}idpcompanion.com from the address you used at checkout (that's how we locate your order) with a photo of the renewed license attached. For the full breakdown of how IDP validity works under the 1949 Geneva and 1968 Vienna Conventions, see our [dedicated IDP validity guide](/idp-validity/)."
           }
         }
       }
