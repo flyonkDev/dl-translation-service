@@ -1018,10 +1018,6 @@
       "ru": "RU",
       "es": "ES"
     },
-    "tierBadge": {
-      "tier1": "Tier 1",
-      "tier2": "Tier 2"
-    },
     "mainPages": {
       "home": { "title": "Inicio", "body": "Landing, widget de $35 y selector de país." },
       "howItWorks": { "title": "Cómo funciona", "body": "Cinco pasos desde la subida del carnet hasta la descarga del PDF." },

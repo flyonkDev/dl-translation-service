@@ -106,12 +106,6 @@
 									</span>
 									<div class="sitemap-page__destination-meta">
 										<span
-											class="sitemap-page__tier"
-											:class="`sitemap-page__tier--t${pair.tier}`"
-										>
-											{{ pair.tier === 1 ? t('sitemapPage.tierBadge.tier1') : t('sitemapPage.tierBadge.tier2') }}
-										</span>
-										<span
 											v-for="loc in pair.locales"
 											:key="loc"
 											class="sitemap-page__locale-pill"
@@ -565,25 +559,6 @@ useHead(() => ({
 	display: flex;
 	gap: 4px;
 	flex-wrap: wrap;
-}
-
-.sitemap-page__tier {
-	display: inline-block;
-	padding: 1px 6px;
-	border-radius: 4px;
-	font-size: 10px;
-	font-weight: 700;
-	letter-spacing: 0.04em;
-}
-
-.sitemap-page__tier--t1 {
-	background: rgba(var(--c-orange), 0.15);
-	color: rgb(180 83 9);
-}
-
-.sitemap-page__tier--t2 {
-	background: rgba(var(--c-sea), 0.15);
-	color: rgb(13 148 136);
 }
 
 .sitemap-page__locale-pill {

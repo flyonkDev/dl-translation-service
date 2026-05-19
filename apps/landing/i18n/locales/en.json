@@ -1018,10 +1018,6 @@
       "ru": "RU",
       "es": "ES"
     },
-    "tierBadge": {
-      "tier1": "Tier 1",
-      "tier2": "Tier 2"
-    },
     "mainPages": {
       "home": { "title": "Home", "body": "Landing page, $35 plan widget, country picker." },
       "howItWorks": { "title": "How it works", "body": "Five-step walkthrough from upload to PDF download." },
