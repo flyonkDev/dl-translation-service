@@ -183,7 +183,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath, defineI18nRoute } from '#imports';
+import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath, defineI18nRoute, defineOgImageComponent } from '#imports';
 import { Icon } from '@iconify/vue';
 
 defineI18nRoute({
@@ -198,15 +198,23 @@ const siteUrl = String(config.public.siteUrl || 'https://www.idpcompanion.com').
 const canonicalUrl = computed(() => siteUrl + String(localePath('/authors/petr-shchepetin')));
 
 useSeoMeta({
-	title: 'Petr Shchepetin — Author profile | IDP Companion',
-	description: 'Founder and lead author of IDP Companion. Writes and fact-checks every country-pair driving guide on this site against primary government sources.',
-	ogTitle: 'Petr Shchepetin — Author profile | IDP Companion',
-	ogDescription: 'Founder and lead author of IDP Companion. Writes and fact-checks every country-pair driving guide on this site against primary government sources.',
+	title: 'Petr Shchepetin — IDP Companion co-founder & lead author',
+	description: 'Co-founder and lead author of IDP Companion. Writes and fact-checks every country-pair driving guide on this site against primary government sources.',
+	ogTitle: 'Petr Shchepetin — IDP Companion co-founder & lead author',
+	ogDescription: 'Co-founder and lead author of IDP Companion. Writes and fact-checks every country-pair driving guide on this site against primary government sources.',
 	ogUrl: () => canonicalUrl.value,
 	ogType: 'profile',
 	ogSiteName: 'IDP Companion',
 	ogLocale: 'en_US',
 	twitterCard: 'summary_large_image',
+});
+
+defineOgImageComponent('Author', {
+	name: 'Petr Shchepetin',
+	role: 'Co-founder & lead author, IDP Companion',
+	tagline: 'Writes and fact-checks every country-pair driving guide',
+	avatarUrl: '/authors/petr-shchepetin.jpg',
+	byLabel: 'BY',
 });
 
 useHead(() => ({
@@ -245,7 +253,10 @@ useHead(() => ({
 				'@type': 'BreadcrumbList',
 				itemListElement: [
 					{ '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
-					{ '@type': 'ListItem', position: 2, name: 'Authors', item: `${siteUrl}/authors` },
+					// "Authors" section name has no destination page yet — omit `item` so the
+					// breadcrumb schema doesn't advertise a 404. When /authors/ index lands,
+					// add `item: \`${siteUrl}/authors\`` back.
+					{ '@type': 'ListItem', position: 2, name: 'Authors' },
 					{ '@type': 'ListItem', position: 3, name: 'Petr Shchepetin', item: canonicalUrl.value },
 				],
 			}),
