@@ -362,12 +362,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US drivers and UK-bound travellers.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
-			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france' },
-			{ flagFrom: 'us', flagTo: 'de', label: 'US → Germany', status: 'Live', href: '/idp-for-us-drivers-in-germany' },
-			{ flagFrom: 'us', flagTo: 'is', label: 'US → Iceland', status: 'Live', href: '/idp-for-us-drivers-in-iceland' },
-			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain' },
-			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },
+			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },
+			{ flagFrom: 'us', flagTo: 'de', label: 'US → Germany', status: 'Live', href: '/idp-for-us-drivers-in-germany/' },
+			{ flagFrom: 'us', flagTo: 'is', label: 'US → Iceland', status: 'Live', href: '/idp-for-us-drivers-in-iceland/' },
+			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain/' },
+			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland/' },
 		],
 	},
 

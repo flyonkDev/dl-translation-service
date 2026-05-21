@@ -375,12 +375,12 @@ const en: CountryPairCopy = {
 		lead: 'Pacific and English-speaking destinations where US drivers face the same left-side switch from right-side habits, plus the same NZ destination from the UK-driver perspective where the side-of-the-road switch is not an item.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'nz', label: 'UK → New Zealand', status: 'Live', href: '/idp-for-uk-drivers-in-new-zealand' },
-			{ flagFrom: 'us', flagTo: 'au', label: 'US → Australia', status: 'Live', href: '/idp-for-us-drivers-in-australia' },
-			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk' },
-			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland' },
-			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'us', flagTo: 'za', label: 'US → South Africa', status: 'Live', href: '/idp-for-us-drivers-in-south-africa' },
+			{ flagFrom: 'gb', flagTo: 'nz', label: 'UK → New Zealand', status: 'Live', href: '/idp-for-uk-drivers-in-new-zealand/' },
+			{ flagFrom: 'us', flagTo: 'au', label: 'US → Australia', status: 'Live', href: '/idp-for-us-drivers-in-australia/' },
+			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk/' },
+			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland/' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan/' },
+			{ flagFrom: 'us', flagTo: 'za', label: 'US → South Africa', status: 'Live', href: '/idp-for-us-drivers-in-south-africa/' },
 		],
 	},
 

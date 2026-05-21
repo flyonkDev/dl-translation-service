@@ -365,12 +365,12 @@ const en: CountryPairCopy = {
 		lead: 'Other UK foreign-driving pairs worth reviewing — Ireland sits at the lightest-friction end of the distribution; these range from similar (Cyprus, Malta) to substantially different (Australia).',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'fr', label: 'UK → France', status: 'Live', href: '/idp-for-uk-drivers-in-france' },
-			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain' },
-			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus' },
-			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia' },
-			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland' },
-			{ flagFrom: 'gb', flagTo: 'mt', label: 'UK → Malta', status: 'Live', href: '/idp-for-uk-drivers-in-malta' },
+			{ flagFrom: 'gb', flagTo: 'fr', label: 'UK → France', status: 'Live', href: '/idp-for-uk-drivers-in-france/' },
+			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain/' },
+			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus/' },
+			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia/' },
+			{ flagFrom: 'us', flagTo: 'ie', label: 'US → Ireland', status: 'Live', href: '/idp-for-us-drivers-in-ireland/' },
+			{ flagFrom: 'gb', flagTo: 'mt', label: 'UK → Malta', status: 'Live', href: '/idp-for-uk-drivers-in-malta/' },
 		],
 	},
 

@@ -380,12 +380,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US travellers heading to Europe and neighbouring destinations.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'ch', label: 'US → Switzerland', status: 'Live', href: '/idp-for-us-drivers-in-switzerland' },
-			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
-			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france' },
-			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain' },
+			{ flagFrom: 'us', flagTo: 'ch', label: 'US → Switzerland', status: 'Live', href: '/idp-for-us-drivers-in-switzerland/' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },
+			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },
+			{ flagFrom: 'us', flagTo: 'es', label: 'US → Spain', status: 'Live', href: '/idp-for-us-drivers-in-spain/' },
 			{ flagFrom: 'gb', flagTo: 'de', label: 'UK → Germany', status: 'Coming soon' },
-			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk' },
+			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk/' },
 		],
 	},
 

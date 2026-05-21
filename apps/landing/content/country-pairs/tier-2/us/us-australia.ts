@@ -325,12 +325,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US travellers heading to destinations where the IDP question varies.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
-			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico' },
-			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia' },
-			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand' },
-			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan/' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico/' },
+			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia/' },
+			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand/' },
+			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk/' },
 		],
 	},
 

@@ -368,12 +368,12 @@ const en: CountryPairCopy = {
 		lead: 'Pairs to consult before booking a Western European trip — siblings to Ireland where the documentation, insurance and enforcement archetypes vary by destination.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk' },
-			{ flagFrom: 'us', flagTo: 'au', label: 'US → Australia', status: 'Live', href: '/idp-for-us-drivers-in-australia' },
-			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
-			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france' },
-			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland' },
-			{ flagFrom: 'us', flagTo: 'no', label: 'US → Norway', status: 'Live', href: '/idp-for-us-drivers-in-norway' },
+			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk/' },
+			{ flagFrom: 'us', flagTo: 'au', label: 'US → Australia', status: 'Live', href: '/idp-for-us-drivers-in-australia/' },
+			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },
+			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },
+			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland/' },
+			{ flagFrom: 'us', flagTo: 'no', label: 'US → Norway', status: 'Live', href: '/idp-for-us-drivers-in-norway/' },
 		],
 	},
 

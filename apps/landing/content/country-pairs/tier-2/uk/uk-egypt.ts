@@ -366,12 +366,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for UK drivers and Egypt-bound travellers.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco' },
-			{ flagFrom: 'gb', flagTo: 'ae', label: 'UK → UAE', status: 'Live', href: '/idp-for-uk-drivers-in-uae' },
-			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey' },
-			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand' },
-			{ flagFrom: 'ru', flagTo: 'eg', label: 'Russia → Egypt', status: 'Live', href: '/idp-for-russian-drivers-in-egypt' },
-			{ flagFrom: 'gb', flagTo: 'id', label: 'UK → Indonesia', status: 'Live', href: '/idp-for-uk-drivers-in-indonesia' },
+			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco/' },
+			{ flagFrom: 'gb', flagTo: 'ae', label: 'UK → UAE', status: 'Live', href: '/idp-for-uk-drivers-in-uae/' },
+			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey/' },
+			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand/' },
+			{ flagFrom: 'ru', flagTo: 'eg', label: 'Russia → Egypt', status: 'Live', href: '/idp-for-russian-drivers-in-egypt/' },
+			{ flagFrom: 'gb', flagTo: 'id', label: 'UK → Indonesia', status: 'Live', href: '/idp-for-uk-drivers-in-indonesia/' },
 		],
 	},
 

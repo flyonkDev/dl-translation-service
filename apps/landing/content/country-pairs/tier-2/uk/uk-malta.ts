@@ -358,12 +358,12 @@ const en: CountryPairCopy = {
 		lead: 'Cyprus is the closest sibling for UK Malta visitors — also EU, also small-island, similar friction profile. Italy and Croatia give context on how the same EU post-Brexit recognition plays out at scale.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus' },
-			{ flagFrom: 'gb', flagTo: 'it', label: 'UK → Italy', status: 'Live', href: '/idp-for-uk-drivers-in-italy' },
-			{ flagFrom: 'gb', flagTo: 'gr', label: 'UK → Greece', status: 'Live', href: '/idp-for-uk-drivers-in-greece' },
-			{ flagFrom: 'gb', flagTo: 'hr', label: 'UK → Croatia', status: 'Live', href: '/idp-for-uk-drivers-in-croatia' },
-			{ flagFrom: 'us', flagTo: 'mt', label: 'US → Malta', status: 'Live', href: '/idp-for-us-drivers-in-malta' },
-			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland' },
+			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus/' },
+			{ flagFrom: 'gb', flagTo: 'it', label: 'UK → Italy', status: 'Live', href: '/idp-for-uk-drivers-in-italy/' },
+			{ flagFrom: 'gb', flagTo: 'gr', label: 'UK → Greece', status: 'Live', href: '/idp-for-uk-drivers-in-greece/' },
+			{ flagFrom: 'gb', flagTo: 'hr', label: 'UK → Croatia', status: 'Live', href: '/idp-for-uk-drivers-in-croatia/' },
+			{ flagFrom: 'us', flagTo: 'mt', label: 'US → Malta', status: 'Live', href: '/idp-for-us-drivers-in-malta/' },
+			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland/' },
 		],
 	},
 

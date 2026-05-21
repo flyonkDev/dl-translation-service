@@ -378,12 +378,12 @@ const en: CountryPairCopy = {
 		lead: 'Other left-side-driving and English-speaking destinations where UK drivers face the same same-side comfort plus distinct operational route-planning tradeoffs.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia' },
-			{ flagFrom: 'gb', flagTo: 'za', label: 'UK → South Africa', status: 'Live', href: '/idp-for-uk-drivers-in-south-africa' },
-			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland' },
-			{ flagFrom: 'gb', flagTo: 'mt', label: 'UK → Malta', status: 'Live', href: '/idp-for-uk-drivers-in-malta' },
-			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus' },
-			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand' },
+			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia/' },
+			{ flagFrom: 'gb', flagTo: 'za', label: 'UK → South Africa', status: 'Live', href: '/idp-for-uk-drivers-in-south-africa/' },
+			{ flagFrom: 'gb', flagTo: 'ie', label: 'UK → Ireland', status: 'Live', href: '/idp-for-uk-drivers-in-ireland/' },
+			{ flagFrom: 'gb', flagTo: 'mt', label: 'UK → Malta', status: 'Live', href: '/idp-for-uk-drivers-in-malta/' },
+			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus/' },
+			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand/' },
 		],
 	},
 

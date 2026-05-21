@@ -349,12 +349,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US travellers heading to South-East Asia and IDP-required destinations.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand' },
-			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia' },
+			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand/' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan/' },
+			{ flagFrom: 'ru', flagTo: 'id', label: 'Russia → Indonesia', status: 'Live', href: '/idp-for-russian-drivers-in-indonesia/' },
 			{ flagFrom: 'au', flagTo: 'id', label: 'Australia → Indonesia', status: 'Coming soon' },
 			{ flagFrom: 'in', flagTo: 'id', label: 'India → Indonesia', status: 'Coming soon' },
-			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Live', href: '/idp-for-us-drivers-in-vietnam' },
+			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Live', href: '/idp-for-us-drivers-in-vietnam/' },
 		],
 	},
 

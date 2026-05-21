@@ -394,12 +394,12 @@ const en: CountryPairCopy = {
 		lead: 'Adjacent Asian and English-speaking destinations where US drivers face their own combinations of IDP requirements, local endorsement steps, left-side driving and tuk-tuk-equivalent road dynamics.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand' },
-			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Live', href: '/idp-for-us-drivers-in-vietnam' },
-			{ flagFrom: 'us', flagTo: 'id', label: 'US → Indonesia', status: 'Live', href: '/idp-for-us-drivers-in-indonesia' },
-			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand' },
-			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk' },
+			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand/' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan/' },
+			{ flagFrom: 'us', flagTo: 'vn', label: 'US → Vietnam', status: 'Live', href: '/idp-for-us-drivers-in-vietnam/' },
+			{ flagFrom: 'us', flagTo: 'id', label: 'US → Indonesia', status: 'Live', href: '/idp-for-us-drivers-in-indonesia/' },
+			{ flagFrom: 'us', flagTo: 'nz', label: 'US → New Zealand', status: 'Live', href: '/idp-for-us-drivers-in-new-zealand/' },
+			{ flagFrom: 'us', flagTo: 'gb', label: 'US → United Kingdom', status: 'Live', href: '/idp-for-us-drivers-in-uk/' },
 		],
 	},
 

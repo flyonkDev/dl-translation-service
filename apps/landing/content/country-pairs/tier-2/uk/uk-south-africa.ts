@@ -382,12 +382,12 @@ const en: CountryPairCopy = {
 		lead: 'Long-haul self-drive destinations where UK photocard recognition runs through English-language frameworks similar to SA — and shorter trips for context.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia' },
-			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus' },
-			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand' },
-			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco' },
-			{ flagFrom: 'us', flagTo: 'za', label: 'US → South Africa', status: 'Live', href: '/idp-for-us-drivers-in-south-africa' },
-			{ flagFrom: 'gb', flagTo: 'nz', label: 'UK → New Zealand', status: 'Live', href: '/idp-for-uk-drivers-in-new-zealand' },
+			{ flagFrom: 'gb', flagTo: 'au', label: 'UK → Australia', status: 'Live', href: '/idp-for-uk-drivers-in-australia/' },
+			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus/' },
+			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand/' },
+			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco/' },
+			{ flagFrom: 'us', flagTo: 'za', label: 'US → South Africa', status: 'Live', href: '/idp-for-us-drivers-in-south-africa/' },
+			{ flagFrom: 'gb', flagTo: 'nz', label: 'UK → New Zealand', status: 'Live', href: '/idp-for-uk-drivers-in-new-zealand/' },
 		],
 	},
 

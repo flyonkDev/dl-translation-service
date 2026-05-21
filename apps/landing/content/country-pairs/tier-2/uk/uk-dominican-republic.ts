@@ -383,12 +383,12 @@ const en: CountryPairCopy = {
 		lead: 'Caribbean and Central American destinations UK drivers consider alongside the Dominican Republic — each with its own rental, insurance and convention archetype.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico' },
-			{ flagFrom: 'gb', flagTo: 'mx', label: 'UK → Mexico', status: 'Live', href: '/idp-for-uk-drivers-in-mexico' },
-			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey' },
-			{ flagFrom: 'gb', flagTo: 'eg', label: 'UK → Egypt', status: 'Live', href: '/idp-for-uk-drivers-in-egypt' },
-			{ flagFrom: 'gb', flagTo: 'cr', label: 'UK → Costa Rica', status: 'Live', href: '/idp-for-uk-drivers-in-costa-rica' },
-			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico/' },
+			{ flagFrom: 'gb', flagTo: 'mx', label: 'UK → Mexico', status: 'Live', href: '/idp-for-uk-drivers-in-mexico/' },
+			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey/' },
+			{ flagFrom: 'gb', flagTo: 'eg', label: 'UK → Egypt', status: 'Live', href: '/idp-for-uk-drivers-in-egypt/' },
+			{ flagFrom: 'gb', flagTo: 'cr', label: 'UK → Costa Rica', status: 'Live', href: '/idp-for-uk-drivers-in-costa-rica/' },
+			{ flagFrom: 'gb', flagTo: 'ma', label: 'UK → Morocco', status: 'Live', href: '/idp-for-uk-drivers-in-morocco/' },
 		],
 	},
 

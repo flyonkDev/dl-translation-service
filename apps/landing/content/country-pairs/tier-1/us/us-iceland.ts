@@ -363,12 +363,12 @@ const en: CountryPairCopy = {
 		lead: 'More country-pair guides for US drivers and Iceland-bound travelers.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france' },
-			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece' },
-			{ flagFrom: 'us', flagTo: 'cr', label: 'US → Costa Rica', status: 'Live', href: '/idp-for-us-drivers-in-costa-rica' },
-			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico' },
-			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'gb', flagTo: 'is', label: 'UK → Iceland', status: 'Live', href: '/idp-for-uk-drivers-in-iceland' },
+			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },
+			{ flagFrom: 'us', flagTo: 'gr', label: 'US → Greece', status: 'Live', href: '/idp-for-us-drivers-in-greece/' },
+			{ flagFrom: 'us', flagTo: 'cr', label: 'US → Costa Rica', status: 'Live', href: '/idp-for-us-drivers-in-costa-rica/' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico/' },
+			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan/' },
+			{ flagFrom: 'gb', flagTo: 'is', label: 'UK → Iceland', status: 'Live', href: '/idp-for-uk-drivers-in-iceland/' },
 		],
 	},
 

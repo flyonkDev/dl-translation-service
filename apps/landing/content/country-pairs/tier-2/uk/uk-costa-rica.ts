@@ -383,12 +383,12 @@ const en: CountryPairCopy = {
 		lead: 'Central American and Caribbean neighbours where UK drivers face their own licensing-acceptance windows, insurance regimes and road-condition realities.',
 		comingSoonLabel: 'Coming soon',
 		items: [
-			{ flagFrom: 'gb', flagTo: 'do', label: 'UK → Dominican Republic', status: 'Live', href: '/idp-for-uk-drivers-in-dominican-republic' },
-			{ flagFrom: 'gb', flagTo: 'mx', label: 'UK → Mexico', status: 'Live', href: '/idp-for-uk-drivers-in-mexico' },
-			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico' },
-			{ flagFrom: 'us', flagTo: 'cr', label: 'US → Costa Rica', status: 'Live', href: '/idp-for-us-drivers-in-costa-rica' },
-			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey' },
-			{ flagFrom: 'gb', flagTo: 'eg', label: 'UK → Egypt', status: 'Live', href: '/idp-for-uk-drivers-in-egypt' },
+			{ flagFrom: 'gb', flagTo: 'do', label: 'UK → Dominican Republic', status: 'Live', href: '/idp-for-uk-drivers-in-dominican-republic/' },
+			{ flagFrom: 'gb', flagTo: 'mx', label: 'UK → Mexico', status: 'Live', href: '/idp-for-uk-drivers-in-mexico/' },
+			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico/' },
+			{ flagFrom: 'us', flagTo: 'cr', label: 'US → Costa Rica', status: 'Live', href: '/idp-for-us-drivers-in-costa-rica/' },
+			{ flagFrom: 'gb', flagTo: 'tr', label: 'UK → Turkey', status: 'Live', href: '/idp-for-uk-drivers-in-turkey/' },
+			{ flagFrom: 'gb', flagTo: 'eg', label: 'UK → Egypt', status: 'Live', href: '/idp-for-uk-drivers-in-egypt/' },
 		],
 	},
 

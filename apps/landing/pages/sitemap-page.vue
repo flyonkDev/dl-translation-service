@@ -237,15 +237,15 @@ const totalPairs = computed(() => totalPairCount());
  * ------------------------------------------------------------------------- */
 
 const mainPageDefs = [
-	{ id: 'home',        href: '/',              icon: 'ph:house-bold' },
-	{ id: 'howItWorks',  href: '/how-it-works',  icon: 'ph:list-numbers-bold' },
-	{ id: 'pricing',     href: '/pricing',       icon: 'ph:tag-bold' },
-	{ id: 'faq',         href: '/faq',           icon: 'ph:question-bold' },
-	{ id: 'about',       href: '/about',         icon: 'ph:info-bold' },
-	{ id: 'security',    href: '/security',      icon: 'ph:shield-check-bold' },
-	{ id: 'contact',     href: '/contact',       icon: 'ph:envelope-bold' },
-	{ id: 'idpValidity', href: '/idp-validity',  icon: 'ph:calendar-bold' },
-	{ id: 'sitemap',     href: '/sitemap-page',  icon: 'ph:tree-structure-bold' },
+	{ id: 'home',        href: '/',               icon: 'ph:house-bold' },
+	{ id: 'howItWorks',  href: '/how-it-works/',  icon: 'ph:list-numbers-bold' },
+	{ id: 'pricing',     href: '/pricing/',       icon: 'ph:tag-bold' },
+	{ id: 'faq',         href: '/faq/',           icon: 'ph:question-bold' },
+	{ id: 'about',       href: '/about/',         icon: 'ph:info-bold' },
+	{ id: 'security',    href: '/security/',      icon: 'ph:shield-check-bold' },
+	{ id: 'contact',     href: '/contact/',       icon: 'ph:envelope-bold' },
+	{ id: 'idpValidity', href: '/idp-validity/',  icon: 'ph:calendar-bold' },
+	{ id: 'sitemap',     href: '/sitemap-page/',  icon: 'ph:tree-structure-bold' },
 ] as const;
 
 const mainPageCards = computed(() => {
@@ -260,7 +260,7 @@ const mainPageCards = computed(() => {
 });
 
 const authorDefs = [
-	{ id: 'petr', href: '/authors/petr-shchepetin' },
+	{ id: 'petr', href: '/authors/petr-shchepetin/' },
 ] as const;
 
 const authorCards = computed(() => {
@@ -274,9 +274,9 @@ const authorCards = computed(() => {
 });
 
 const legalDefs = [
-	{ id: 'privacy', href: '/privacy-policy',    icon: 'ph:lock-bold' },
-	{ id: 'refund',  href: '/refund-policy',     icon: 'ph:arrow-counter-clockwise-bold' },
-	{ id: 'terms',   href: '/terms-of-service',  icon: 'ph:scroll-bold' },
+	{ id: 'privacy', href: '/privacy-policy/',    icon: 'ph:lock-bold' },
+	{ id: 'refund',  href: '/refund-policy/',     icon: 'ph:arrow-counter-clockwise-bold' },
+	{ id: 'terms',   href: '/terms-of-service/',  icon: 'ph:scroll-bold' },
 ] as const;
 
 const legalCards = computed(() => {
