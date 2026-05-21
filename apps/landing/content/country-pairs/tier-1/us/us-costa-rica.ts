@@ -382,7 +382,7 @@ const en: CountryPairCopy = {
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy' },
 			{ flagFrom: 'us', flagTo: 'is', label: 'US → Iceland', status: 'Live', href: '/idp-for-us-drivers-in-iceland' },
 			{ flagFrom: 'us', flagTo: 'jp', label: 'US → Japan', status: 'Live', href: '/idp-for-us-drivers-in-japan' },
-			{ flagFrom: 'gb', flagTo: 'cr', label: 'UK → Costa Rica', status: 'Coming soon' },
+			{ flagFrom: 'gb', flagTo: 'cr', label: 'UK → Costa Rica', status: 'Live', href: '/idp-for-uk-drivers-in-costa-rica' },
 		],
 	},
 

@@ -475,6 +475,9 @@ For any new country-pair page or batch of pages: Pass A (banned-phrase grep) + P
 
 ### Step-by-step: shipping a new country-pair page
 
+> **🛑 BEFORE STEP 1: Run the structure-variance gate check first.**
+> Read the Tier 2 Live count from [TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) Сводка table. If Live = 35 (the hard cap on standard-variant pages, tightened from 35 → 25-trigger / 35-hardcap on 2026-05-19), the next work item is the variant-component sprint described in the "Structure variance" section below — NOT another standard page. The only standard pages still permitted past 25 are the 6 grandfathered briefs explicitly listed there. Do not skip this check.
+
 1. **Read the brief** (`docs/seo-docs/...` or markdown drop) and identify destination archetype (IDP-required vs not, Latin script vs not, has restriction zones vs not).
 2. **Read 2–3 existing pages** matching the archetype as references (e.g. for Tier 1 IDP-required → us-italy + us-japan; for IDP-not-required → us-mexico).
 3. **Write `apps/landing/content/country-pairs/{slug}.ts`** with all required + applicable optional blocks. Import `type { CountryPairCopy } from './russia-thailand'`.
@@ -509,9 +512,20 @@ We generate the bulk of country-pair content with AI assist. Google's classifier
 
    This rule exists because the agent has historically claimed "I wrote with anti-AI principles in mind" without actually verifying — and footprints survived into shipped pages. Writing-intent is not a substitute for grep-output. The audit is non-negotiable; running it takes 30 seconds and catches what the writing-intent missed.
 
-### Structure variance (binding when shipping Tier 2)
+### Structure variance (binding when shipping Tier 2) — TIGHTENED 2026-05-19 after March-2024 research
+
+> **🛑 STOP-BANNER FOR FUTURE AGENT SESSIONS — READ FIRST WHEN OPENING THE COUNTRY-PAIR PLAYBOOK**
+>
+> Before authoring **any** new country-pair page, run this check FIRST:
+> 1. Read the **Tier 2 Live count** from [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) Сводка table.
+> 2. Compare against the **thresholds below** (tightened from 35 → 25 on 2026-05-19).
+> 3. **At Tier 2 Live = 35 (hard cap on standard-variant pages) — STOP. Do not author a 36th standard page.** Even with the user explicitly asking for "next standard page", the answer is no. The next step is the variant-component sprint described below, not another standard `.ts` content file.
+>
+> The 6 briefs **currently in flight** (uk-costa-rica, uk-dominican-republic, uk-new-zealand, us-austria, us-new-zealand, us-sri-lanka) are **grandfathered as standard** by explicit user decision 2026-05-19 because the briefs were drafted before the tightening — restructuring mid-batch was judged not worth the cost. They take live count from 29 → 35, hitting the hard cap exactly. **Anything past those 6 is variant-only territory until variant components exist.**
 
 All current country-pair pages use the identical `CountryPair/Page.vue` block sequence (Hero → Quick Answer → TL;DR → Why Not Enough → Rules → Fines → Honesty → Renting → Outcomes → FAQ → Related → CTA). At a small page count this is fine. At scale it becomes a structural footprint Google's classifiers detect.
+
+**Why the threshold tightened from 35 → 25 on 2026-05-19:** Research into Google's March 2024 core update + new "scaled content abuse" spam policy (and the March/August 2025 follow-ups) confirmed that templated programmatic SEO at scale is penalised regardless of whether the content is human-, AI-, or hybrid-produced — the classifier (SpamBrain) targets structural-footprint patterns, not authorship method. Documented penalised cases hit at 50–200 templated-shape pages. The 70/30 ratio rule was always the strategic answer, but the previous 35-page trigger was too generous given that ratio is only meaningful at scale. New trigger: variant components MUST exist by the 25th standard page, and standard-variant production HARD STOPS at 35 until variant components are built. Source: external research summary in this commit's TIER_PROGRESS journal entry dated 2026-05-19.
 
 **Target ratio when shipping Tier 2:** ~70% standard CountryPair shape, ~30% variant shapes.
 
@@ -524,16 +538,29 @@ All current country-pair pages use the identical `CountryPair/Page.vue` block se
 
 When using a variant, declare it via a `layoutVariant?: 'standard' | 'faq-led' | 'city-led' | 'calendar-led' | 'timeline-led'` field on `CountryPairCopy`. Track per-page in [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) so the variance ratio stays auditable as the batch grows.
 
-**Agent enforcement (binding) — proactive flagging at thresholds:**
+**Agent enforcement (binding) — proactive flagging at thresholds (TIGHTENED 2026-05-19):**
 
-The structural-footprint problem is invisible at small counts and irreversible at large counts. The agent MUST check the current Tier 2 live count (from [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) sводка table) *before* authoring a new country-pair page and apply the following gates:
+The structural-footprint problem is invisible at small counts and irreversible at large counts. The agent MUST check the current Tier 2 Live count (from [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) Сводка table) *before* authoring a new country-pair page and apply the following gates:
 
-- **Tier 2 live ≤ 20** (today's range) — proceed with `CountryPair/Page.vue` standard variant without prompting. Mention in the summary that we're still under the variance threshold so the user knows where we are.
-- **Tier 2 live 21–34** — proceed with standard variant but in the end-of-task summary, surface the running count and remind: "We're at X/35 standard pages. After ~35 pages, the next batch should introduce variant components (FAQ-led / City-led / Calendar-led / Timeline-led) per CLAUDE.md structure variance rule."
-- **Tier 2 live ≥ 35** — STOP before authoring. Surface the count to the user and ask which variant archetype the destination matches best. Do not author a new standard-variant page until the user either (a) explicitly chooses a variant, (b) confirms the destination genuinely warrants standard (rare — there should be a reason this destination doesn't match any of the four variant patterns), or (c) explicitly waives the rule for this single page.
-- **Tier 2 live ≥ 50** — even with user override, build the first non-existent variant component before authoring the next page. The 70/30 ratio rule becomes load-bearing from here on. A 50th standard-variant page that should have been FAQ-led is a structural-footprint contribution.
+- **Tier 2 live ≤ 24** — proceed with `CountryPair/Page.vue` standard variant without prompting. Mention in the summary the running count so the user knows we are still under the variance threshold.
+- **Tier 2 live 25–34** — STILL OK to ship standard variant for the 6 grandfathered briefs listed above (uk-costa-rica, uk-dominican-republic, uk-new-zealand, us-austria, us-new-zealand, us-sri-lanka). For ANY OTHER destination in this range, STOP and ask: either the variant-component sprint runs first, or the user explicitly waives for this one destination. In the end-of-task summary, surface the running count plus a reminder: "We're at X/35 standard pages — hard cap at 35. The variant-component sprint (PageCalendarLed.vue + at least one other) is the next mandatory work item per CLAUDE.md structure variance rule, not another standard page."
+- **Tier 2 live = 35 (HARD CAP)** — STOP. The next work item is the variant-component sprint (build `CountryPair/PageCalendarLed.vue` + `PageCityLed.vue` at minimum, plus the `layoutVariant` field on `CountryPairCopy`, plus the per-page `.ts` content). Do NOT author a 36th standard-variant `.ts` file even when the user asks for one. Surface the count + propose the sprint scope (1-2 day estimate) + ask the user to approve before proceeding.
+- **Tier 2 live ≥ 36 with at least 1 variant component existing** — resume Tier 2 production with a strict 70/30 ratio enforced per batch. Every new batch of ~5-8 pages MUST include ≥1 variant-component page. The agent rejects standard-only batches at this point.
 
-This rule applies even when the user explicitly asks for "next country-pair page" without specifying the variant — the agent's job is to flag the gate, not to silently keep producing standard pages.
+This rule applies even when the user explicitly asks for "next country-pair page" without specifying the variant — the agent's job is to flag the gate, not to silently keep producing standard pages. Empirically validated by external research (March 2024 Google update + 2025 follow-ups): the difference between survivor sites (Zapier, NerdWallet, Wise, G2, TripAdvisor) and penalised sites is per-URL uniqueness AND structural variance — losing either is what gets a domain into the SpamBrain quality-discount bucket.
+
+**The variant-component build sprint** (mandatory after Tier 2 hits 35 Live — i.e. after the 6 grandfathered briefs ship; estimated 2026-05-26 to 2026-06-02 window per 2026-05-19 strategy entry in TIER_PROGRESS):
+
+1. Add `layoutVariant?: 'standard' | 'faq-led' | 'city-led' | 'calendar-led' | 'timeline-led'` field on `CountryPairCopy` in [apps/landing/content/country-pairs/_types.ts](apps/landing/content/country-pairs/_types.ts).
+2. Build `apps/landing/components/CountryPair/PageCalendarLed.vue` — mirrors `Page.vue` but Hero → Seasonal calendar block (months × what-changes table) → standard sections after. Reuses all existing schema/JSON-LD/SEO meta logic from Page.vue, only the section order/composition differs.
+3. Build `apps/landing/components/CountryPair/PageCityLed.vue` — mirrors `Page.vue` but Hero → City-by-city breakdown block (sub-cards per named city with distinct rental/enforcement/zone notes) → standard sections after.
+4. Update the page-wrapper template (`apps/landing/pages/tier-2/{origin}/idp-for-...vue`) router pattern: read `copy.layoutVariant` and pick the right component (`PageCalendarLed` / `PageCityLed` / fallback to `Page.vue` standard).
+5. **Pick the first variant content files from the post-35 destination queue** — NOT from the grandfathered 6. Good candidate matches the agent should propose to the user when planning the post-sprint batch:
+   - **Calendar-led canonical reference**: a destination with a single dominant seasonal rule (e.g. mandatory winter-tires window with calendar dates, monsoon/dry-season switch with documented rental closures, alpine-pass seasonal access). Strong candidates from the Sanya queue: us-austria-style (Calendar fits winter-tires-mandate), Switzerland alpine variant, Scandinavian winter destinations.
+   - **City-led canonical reference**: a destination with 3+ named subregions that have distinct rental/enforcement dynamics. Strong candidates: Caribbean multi-zone (Dominican-Republic-shape Punta Cana / Santo Domingo / Samaná), Spain ZBE city-grid, Italy ZTL city-grid.
+6. **Grandfathered exception is one-time-only.** The 6 briefs (uk-costa-rica, uk-dominican-republic, uk-new-zealand, us-austria, us-new-zealand, us-sri-lanka) ALL ship as standard `Page.vue` regardless of how naturally a destination would fit a variant archetype. Reason: re-architecting drafts mid-batch wastes the work already done. From the post-35 batch onwards, 30% per batch MUST be variants.
+
+**Implementation note for agent picking destinations in the post-sprint batch:** even though us-austria + uk-dominican-republic are obvious variant fits (Calendar / City respectively), they SHIP STANDARD because of the grandfathering. When you later author non-grandfathered destinations with similar shapes (e.g. another winter-tires-mandate country, another multi-resort Caribbean nation), USE the variant. Do not feel obligated to revisit the grandfathered 6 — they stay standard.
 
 ### Publication cadence (binding)
 
