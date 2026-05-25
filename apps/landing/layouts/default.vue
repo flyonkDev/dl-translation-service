@@ -72,6 +72,7 @@
 			:link-contact="t('footer.linkContact')"
 			:link-security="t('footer.linkSecurity')"
 			:link-idp-validity="t('footer.linkIdpValidity')"
+			:link-sample-pdf="t('footer.linkSamplePdf')"
 			:link-sitemap="t('footer.linkSitemap')"
 			:copyright-line="t('footer.copyright', { year: currentYear })"
 			:support-email="supportEmail"
@@ -113,6 +114,7 @@
 		security: localePath('/security'),
 		contact: localePath('/contact'),
 		idpValidity: localePath('/idp-validity'),
+		samplePdf: localePath('/sample-pdf'),
 		sitemap: localePath('/sitemap-page'),
 	}));
 </script>

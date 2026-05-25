@@ -8,6 +8,7 @@
     "logo": "IDP Companion",
     "navHow": "Как это работает",
     "navFaq": "Вопросы",
+    "navSamplePdf": "Образец PDF",
     "navPricing": "Тарифы",
     "navAbout": "О нас",
     "languageAria": "Язык",
@@ -29,6 +30,7 @@
     "linkContact": "Контакты",
     "linkSecurity": "Безопасность и платежи",
     "linkIdpValidity": "Срок действия IDP",
+    "linkSamplePdf": "Образец PDF",
     "linkSitemap": "Карта сайта",
     "copyright": "© {year} IDP Companion. Все права защищены."
   },

@@ -43,6 +43,9 @@
 						<li v-if="links.idpValidity" class="list-link text-sm mb-1.5">
 							<a :href="links.idpValidity" class="link-underline">{{ linkIdpValidity }}</a>
 						</li>
+						<li v-if="links.samplePdf" class="list-link text-sm mb-1.5">
+							<a :href="links.samplePdf" class="link-underline">{{ linkSamplePdf }}</a>
+						</li>
 					</ul>
 				</div>
 
@@ -130,6 +133,7 @@
 	    linkContact?: string;
 	    linkSecurity?: string;
 	    linkIdpValidity?: string;
+	    linkSamplePdf?: string;
 	    linkSitemap?: string;
 	    /** Full copyright line, e.g. "© 2025 Name. All rights reserved." */
 	    copyrightLine?: string;
@@ -148,6 +152,7 @@
 	      contact: string;
 
 	      idpValidity: string;
+	      samplePdf: string;
 	      sitemap: string;
 	    }>;
 	  }>(),
@@ -170,6 +175,7 @@
 	    linkContact: 'Contact',
 	    linkSecurity: 'Security & Payments',
 	    linkIdpValidity: 'IDP validity',
+	    linkSamplePdf: 'Sample PDF',
 	    linkSitemap: 'Sitemap',
 	    copyrightLine: '',
 	    links: () => ({}),

@@ -8,6 +8,7 @@
     "logo": "IDP Companion",
     "navHow": "Cómo funciona",
     "navFaq": "Preguntas",
+    "navSamplePdf": "Muestra PDF",
     "navPricing": "Precios",
     "navAbout": "Sobre nosotros",
     "languageAria": "Idioma",
@@ -29,6 +30,7 @@
     "linkContact": "Contacto",
     "linkSecurity": "Seguridad y pagos",
     "linkIdpValidity": "Validez del IDP",
+    "linkSamplePdf": "Muestra PDF",
     "linkSitemap": "Mapa del sitio",
     "copyright": "© {year} IDP Companion. Todos los derechos reservados."
   },
