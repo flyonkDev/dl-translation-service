@@ -21,6 +21,11 @@ const CATEGORY_STAMP_CENTER: Record<LicenseCategory, { x: number; y: number }> =
   E: { x: 60.45, y: 130.41 },
 };
 
+const BACK_FIELD_BASE_SIZE = 9.5;
+const BACK_FIELD_MIN_SIZE = 7;
+const BACK_FIELD_PAD_X = 3;
+const STAMP_OPACITY = 0.85;
+
 @Injectable()
 export class ApplicationsPdfService {
   private readonly logger = new Logger(ApplicationsPdfService.name);
@@ -74,13 +79,13 @@ export class ApplicationsPdfService {
 
   private fillCover(page: any, s: ApplicationSnapshot, font: any, opts: PdfOpts) {
     const validUntil = this.formatValidUntil(s.planYears);
-    const permitNo = s.applicationId.slice(0, 6).toUpperCase();
+    const permitNo = s.applicationId.slice(0, 8).toUpperCase();
 
-    this.coverRect(page, 110, 273, 95, 18); // around date
-    page.drawText(validUntil, { x: 113.4, y: 275.9, size: 12, font });
+    this.coverRect(page, 110, 273, 100, 18);
+    this.drawTextFit(page, validUntil, { x: 113.4, y: 273, w: 94, h: 18 }, font, 11);
 
-    this.coverRect(page, 138, 38, 40, 14); // around permit number
-    page.drawText(permitNo, { x: 141.9, y: 40.2, size: 9, font });
+    this.coverRect(page, 138, 38, 48, 14);
+    this.drawTextFit(page, permitNo, { x: 141.9, y: 38, w: 42, h: 14 }, font, 8);
 
     if (opts.debug) {
       this.debugMark(page, 113.4, 275.9, 'cover.validUntil');
@@ -90,27 +95,26 @@ export class ApplicationsPdfService {
 
   private async fillBack(pdfDoc: PDFDocument, page: any, s: ApplicationSnapshot, font: any, opts: PdfOpts) {
     const x = 45.35;
-
-    const lastNameY = 387.05;
-    const firstNameY = 374.29;
-    const countryY1 = 361.53;
-    const dobY = 348.78;
-    const countryY2 = 336.02;
+    const pageW = page.getWidth();
+    const fieldW = pageW - x + 5;
 
     const countryText = s.issueCountry;
     const dobText = this.formatDob(s.dobDay, s.dobMonth, s.dobYear);
 
-    this.coverRect(page, x - 2, lastNameY - 2, 190, 16);
-    this.coverRect(page, x - 2, firstNameY - 2, 190, 16);
-    this.coverRect(page, x - 2, countryY1 - 2, 190, 16);
-    this.coverRect(page, x - 2, dobY - 2, 190, 16);
-    this.coverRect(page, x - 2, countryY2 - 2, 190, 16);
+    const fields: Array<{ y: number; text: string }> = [
+      { y: 387.05, text: s.lastName.toUpperCase() },
+      { y: 374.29, text: s.firstName.toUpperCase() },
+      { y: 361.53, text: countryText.toUpperCase() },
+      { y: 348.78, text: dobText },
+      { y: 336.02, text: countryText.toUpperCase() },
+    ];
 
-    page.drawText(s.lastName.toUpperCase(), { x, y: lastNameY, size: 13, font });
-    page.drawText(s.firstName.toUpperCase(), { x, y: firstNameY, size: 13, font });
-    page.drawText(countryText.toUpperCase(), { x, y: countryY1, size: 13, font });
-    page.drawText(dobText, { x, y: dobY, size: 13, font });
-    page.drawText(countryText.toUpperCase(), { x, y: countryY2, size: 13, font });
+    for (const f of fields) {
+      this.coverRect(page, x - 2, f.y - 2, fieldW, 16);
+    }
+    for (const f of fields) {
+      this.drawTextFit(page, f.text, { x, y: f.y - 2, w: fieldW - 6, h: 16 }, font);
+    }
 
     // Photo
     const photoBox = { x: 133.23, y: 180.28, w: 97.8, h: 126.71 };
@@ -127,10 +131,9 @@ export class ApplicationsPdfService {
     if (opts.debug) {
       this.debugRect(page, photoBox, 'back.photo');
       this.debugRect(page, signBox, 'back.signature');
-
-      this.debugMark(page, x, lastNameY, 'back.lastName');
-      this.debugMark(page, x, firstNameY, 'back.firstName');
-      this.debugMark(page, x, dobY, 'back.dob');
+      for (const f of fields) {
+        this.debugMark(page, x, f.y, `back.${f.text.slice(0, 8)}`);
+      }
     }
   }
 
@@ -169,9 +172,30 @@ export class ApplicationsPdfService {
         width: size,
         height: size,
         rotate: degrees(angle),
-        opacity: 1,
+        opacity: STAMP_OPACITY,
       });
     }
+  }
+
+  private drawTextFit(
+    page: any,
+    text: string,
+    box: { x: number; y: number; w: number; h: number },
+    font: any,
+    baseSize = BACK_FIELD_BASE_SIZE,
+  ) {
+    const maxWidth = box.w - BACK_FIELD_PAD_X * 2;
+    let size = baseSize;
+    while (size > BACK_FIELD_MIN_SIZE && font.widthOfTextAtSize(text, size) > maxWidth) {
+      size -= 0.5;
+    }
+    const yBaseline = box.y + 3;
+    page.drawText(text, {
+      x: box.x + BACK_FIELD_PAD_X,
+      y: yBaseline,
+      size,
+      font,
+    });
   }
 
   private coverRect(page: any, x: number, y: number, w: number, h: number) {

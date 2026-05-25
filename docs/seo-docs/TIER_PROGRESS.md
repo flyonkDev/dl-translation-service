@@ -2,18 +2,72 @@
 
 > **Назначение:** трекать что готово (Live) и что ещё в работе для Tier 1 + Tier 2 + Tier 3.
 > **Обновляется:** Петей вручную при добавлении страницы. Раз в неделю — после батча от Сани.
-> **Дата последней актуализации:** 19.05.2026 (Tier 1 supporting +2 Live + Tier 2 +6 Live = ALL 6 GRANDFATHERED БРИФОВ SHIPPED — uk-DR + us-Austria + uk-NZ + uk-CR + us-NZ + us-SL — Tier 2 count 29→35 **HARD CAP HIT** → **variant-component sprint MANDATORY перед любой 36-й Tier-2 страницей**)
+> **Дата последней актуализации:** 23.05.2026 — **🚨 STRATEGIC PIVOT: Tier 2 backlog 406 → DEPRECATED, variant-component sprint CANCELLED, фокус на retrofit existing 35 pages под AI-first.**
 
 ---
 
-## Сводка
+## Сводка (PIVOT 2026-05-23)
 
-| Tier | Total | Live | In Progress | Coming Soon |
+| Tier | Pre-pivot target | New target | Live | Status |
 |---|---|---|---|---|
-| Tier 1 (Country-pairs flagship + supporting) | 70 | 34 | 0 | 36 |
-| Tier 2 (Programmatic country-pairs) | 441 | 35 | 0 | 406 |
-| Tier 3 (Long-form guides) | 3 | 0 | 0 | 3 |
-| **ИТОГО** | **514** | **69** | **0** | **445** |
+| Tier 1 supporting | 20 | **TBD — на обсуждении** | 12 | 8 Coming Soon под review |
+| Tier 1 country-pair flagship | 48 | **22 (= frozen at Live)** | 22 | 26 запланированных FROZEN |
+| Tier 2 programmatic | 441 | **~50 max (variant-only)** | 35 | 406 backlog **DEPRECATED** |
+| Tier 3 long-form guides | 3 | 3 | 0 | priority RAISED (link bait + AI citation bait) |
+| **ИТОГО (new)** | ~514 | **~75-85** | **69** | — |
+
+**Статус-легенда:**
+- ✅ **Live** — страница опубликована, закоммичена, доступна на проде
+- 🟡 **In Progress** — Саня сейчас пишет / я сейчас сажаю на сайт
+- ⚪ **Coming Soon** — пара/страница запланирована, ещё не начата
+- ⛔ **Deprecated** — отменена в pivot'е 2026-05-23 (см. блок ниже)
+- ❌ **Excluded** — пара исключена (бессмысленна, EU-EU, и т.д.)
+
+**Локали-легенда:**
+- `EN` — только английская версия
+- `EN+RU` — английская + русская
+- `EN+ES` — английская + испанская
+- `EN+ES (Hispanic-US)` — английская + испанская специально под US-Hispanic аудиторию
+
+---
+
+## 🚨 STRATEGIC PIVOT 2026-05-23 — почему всё изменилось
+
+**Триггер:** Google опубликовал 15 мая 2026 [официальный AEO/GEO гайд](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) + 19 мая раскатал AI Mode by default в 200 странах. GSC показал краш impressions: 309/day (17 мая) → 63/day (19 мая) = -80% за 48 часов.
+
+**Что Google дословно запретил в гайде (с прямыми цитатами):**
+
+> ❌ *"Creating separate content for every possible variation of how people might search… violates Google's scaled content abuse spam policy"*
+> ❌ *"A high quantity of pages doesn't make a website higher quality"*
+> ❌ *"You don't need to create new machine readable files, AI text files, markup, or Markdown"* (kills llms.txt)
+> ❌ *"There's no requirement to break your content into tiny pieces"* (kills chunking)
+> ❌ *"You don't need to write in a specific way just for generative AI search"* (kills GEO-specific style)
+> ❌ *"Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add"*
+
+**Что Google рекомендует (одна вещь):**
+
+> ✅ *"Create the content yourself based on what you know"* + *"first-hand review… unique perspective based on personal experience, whereas a summary of existing content simply restates information already available elsewhere"*
+
+**GSC данные (3 месяца до 23 мая) подтверждают:**
+- 2.36K impressions / 6 clicks / **CTR 0.3%** / avg position 10.1
+- us-france **328 impressions / 0 clicks** — Google показывает, никто не кликает = CTR demotion
+- Дубликаты в индексе (apex/www, no-slash/slash) расщепили authority — фиксы 22.05 это починят через 2-4 недели recrawl
+- Mobile конвертит **15x лучше** desktop, но получает только 6% impressions
+- Транзакционные queries (`rent a car with X license`, `can i drive in X with`) — sleeper opportunity, мы там pos 40-60
+- Информационные queries (`what is IDP`, `do I need IDP`) — полностью съедены AI Overview, мы pos 9 = 0 кликов
+
+**Что делаем (binding decisions):**
+
+1. **Tier 2 backlog 406 страниц → DEPRECATED.** 441-page программатика = ровно тот шейп что Google назвал scaled-content-abuse. Хард-стоп на 35 Live + до ~15 variant-led (calendar/city для destinations с documented enforcement zones).
+2. **Variant-component sprint CANCELLED.** Был mandatory для variance-gate compliance под 70/30 ratio. Compliance больше не нужен поскольку we're not scaling. Сэкономили 1-2 дня работы.
+3. **Tier 1 country-pair flagship — FREEZE 26 запланированных.** Не пишем новые пока existing 22 не recovery prove. Сначала retrofit existing под AI-first patterns.
+4. **Tier 1 supporting — 8 Coming Soon под review** (см. отдельный раздел ниже когда решим).
+5. **AI-first retrofit existing 35 Live (Tier 1 + Tier 2 combined)** — P0 для всех. Patterns: answer-first FAQ first sentence, hero answers implicit query in first sentence, query fan-out 6-10 H2s per page, first-hand POV insertion per page, dateModified update.
+6. **Tier 3 long-form — priority RAISED.** Это link bait + AI citation bait одновременно. 3 guides planned: «Driving Abroad Complete Guide 2026», «IDP vs IDL vs National License», «What Happens If You Drive Without IDP».
+
+**Reference:**
+- Полные binding rules — [CLAUDE.md SEO section, «AI-first patterns (2026-05-23 pivot)» block](../../CLAUDE.md)
+- Memory entry — [project_pivot_2026_05_23.md](../../C:/Users/petrs/.claude/projects/d--webprojects-driver-license-app/memory/project_pivot_2026_05_23.md)
 
 **Статус-легенда:**
 - ✅ **Live** — страница опубликована, закоммичена, доступна на проде
@@ -184,7 +238,30 @@
 
 ---
 
-## Tier 2 — Programmatic country-pairs (441 страниц)
+## Tier 2 — Programmatic country-pairs
+
+> **⛔ 2026-05-23 PIVOT — этот раздел DEPRECATED for new authoring.**
+>
+> Backlog ниже (406 запланированных пар × 24 origin-страны) **отменён по pivot'у от 23 мая 2026** — Google's official AEO guide от 15 мая explicitly классифицирует scaled programmatic SEO как `scaled content abuse spam policy violation`. 441-page программатика — это ровно тот шейп что SpamBrain quality-discount'ает.
+>
+> **Что остаётся актуальным:**
+> - 35 Live страниц (написаны, индексированы — продолжаем поддерживать через AI-first retrofit)
+> - До ~15 future variant-led страниц для destinations с уникальной enforcement-сигнатурой (Calendar для winter-tires destinations, City для multi-zone destinations). НЕ standard CountryPair shape.
+>
+> **Что отменено:**
+> - Все остальные 406 пар backlog'а (см. таблицы 2.1-2.24 ниже — оставлены как историческая ссылка)
+> - Variant-component sprint mandate (был обязателен после 35 HARD CAP — отменён, scaling больше не цель)
+> - Saнин batch process через [SANYA_TIER2_GUIDE.md](SANYA_TIER2_GUIDE.md)
+
+---
+
+### 35 Live — продолжаем maintenance (AI-first retrofit)
+
+> Каждая из 35 Live страниц должна пройти AI-first retrofit (см. CLAUDE.md SEO section). Patterns: answer-first FAQ, query fan-out H2s, first-hand POV, dateModified update. Priority — по impressions (us-france 328 imps → P0).
+
+---
+
+### Backlog ниже (406 пар) — HISTORICAL REFERENCE ONLY, не authoring
 
 > Делает Саня по инструкции [SANYA_TIER2_GUIDE.md](SANYA_TIER2_GUIDE.md). Каждая страница — 800–1500 слов, structured markdown по фиксированной схеме.
 > **Локали:** EN всегда. RU — только если origin = Russia. ES — если origin испаноязычный (Mexico/Argentina/Spain) или Hispanic-US-релевантная пара (US → Spain/Mexico/Costa Rica/Dominican Republic/Argentina).

@@ -236,6 +236,51 @@ Calling these out so an agent doesn't "rediscover" them and churn on fixes:
 
 > Comprehensive strategy: [docs/seo-docs/SEO_STRATEGY.md](docs/seo-docs/SEO_STRATEGY.md). What follows is the **how-it-actually-works** side for the agent.
 
+### 🚨 AI-first pivot — binding (2026-05-23, supersedes prior scaling rules)
+
+> Read this BEFORE anything else in the SEO section. The rules below override everything below them where they conflict.
+
+**Trigger:** Google published the official [AI Overviews / AI Mode optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) on 2026-05-15 + rolled out AI Mode by default in 200 countries on 2026-05-19. Our GSC impressions cratered 309/day → 63/day in 48 hours (-80%). The pivot synthesizes both events; full data + reasoning lives in [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) «STRATEGIC PIVOT 2026-05-23» block.
+
+**Google's official rules (direct quotes from May 15 guide) — these are binding signals:**
+
+- ❌ *"Creating separate content for every possible variation of how people might search… violates Google's scaled content abuse spam policy"* — kills the 441-page Tier 2 programmatic backlog and any "next country-pair page" reflex when not justified by genuinely unique data
+- ❌ *"A high quantity of pages doesn't make a website higher quality"* — Tier 2 35 = NEW hard cap, not 25/35-trigger from prior gate
+- ❌ *"You don't need to create new machine readable files, AI text files, markup, or Markdown"* — kills llms.txt and any "AEO file" tactic
+- ❌ *"There's no requirement to break your content into tiny pieces"* — kills content chunking strategies
+- ❌ *"You don't need to write in a specific way just for generative AI search"* — kills "AEO-style" rewrites
+- ❌ *"Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add"* — schema is still useful for snippet eligibility (keep what we have), but stop adding new schemas hoping for AI bonus
+- ✅ *"Create the content yourself based on what you know… first-hand review… unique perspective based on personal experience"* — this is THE recommendation. Translates to mandatory first-hand POV per page below.
+
+**Binding production rules (all new + existing pages):**
+
+1. **STOP all new Tier 2 country-pair pages.** Hard cap = 35 Live (already hit). Only exceptions: variant-led pages (Calendar/City/FAQ-led) for destinations with documented enforcement signatures we can verify first-hand.
+2. **STOP new Tier 1 country-pair flagship pages.** 22 currently Live; 26 planned are FROZEN until existing 22 demonstrate recovery via retrofit. Don't add more standard country-pair shapes.
+3. **VARIANT-COMPONENT SPRINT CANCELLED.** Was mandatory after Tier 2 hit 35 to enable structural variance for scaling past. Since we're not scaling past, no point building PageCalendarLed/PageCityLed components speculatively. Only build when a specific destination justifies it.
+4. **Variance gate (was 25-trigger / 35-hardcap) → REPLACED by hard-stop at 35 + AI-first retrofit mandate.** The variance-gate rule was a defensive measure under the prior model; under the new model the "stop building shape-similar pages" rule is even stronger and absolute.
+5. **First-hand POV is binding per page.** Every new or retrofitted page must include ≥1 verifiable first-hand observation. Examples: "Tested CDG rental row in April 2026 — 3 of 4 desks asked for IDP unprompted"; "Verified ZTL camera coverage by walking Piazza Navona perimeter 2026-05". Pure desk research without first-hand element = Google's "summary of existing content" category = penalty signal.
+6. **Answer-first FAQ is binding.** Every FAQ answer's first sentence directly answers the question — no throat-clearing context. This applies retroactively to all 35 Live country-pair pages (retrofit P0). Snippet eligibility is the only AI Overview citation criterion Google explicitly states.
+7. **Query fan-out mapping per page.** Every new or retrofitted country-pair page must map 6-10 sub-queries the AI orchestrator will spawn (e.g., "X license valid in Y?", "Y rental ID requirements", "Y fines for foreign drivers", "Y road sign meanings"). Each sub-query gets its own H2 + answer-first opening paragraph. This is where >50% of new citation surface lives in the AI Mode era.
+8. **dateModified update is binding on any content change.** Google's RAG layer weights freshness. Bump `copy.dateModified` whenever copy meaningfully changes. Article schema in Page.vue already wires this.
+9. **Person author schema stays.** Google declassified schema as required, but cited pages carry author schema at ~65% rate. Don't strip it. Keep [AuthorByline.vue](apps/landing/components/AuthorByline.vue) + Person `@id`.
+10. **Word-count target is REMOVED.** Prior Tier 1 target was 2000-2500 words. 53% of AI-Overview-cited pages are <1000 words (BrightEdge research). Write what the content needs, no padding. Hero is still hand-edited per existing rules; rest is "as long as needed, not longer."
+11. **GSC metrics interpretation:** Impressions are not a success signal anymore — Google testing zero-CTR pages and demoting them within 48h is the new normal. The real metric is **citation count** (Ahrefs Brand Radar / SE Ranking AI tracker). When a page hits 100+ impressions with 0% CTR over 2 weeks, it's a candidate for either deep retrofit (priority based on theme value) or noindex.
+12. **Publication cadence:** ZERO new country-pair pages until existing 35 prove recovery via retrofit (measured by GSC CTR uplift on retrofitted pages vs control 2-3 weeks post-retrofit). Tier 3 long-form guides (3 planned) are priority over any new country-pair work — they're link bait + AI citation bait simultaneously.
+
+**Sleeper opportunities (queries AI Mode can't answer well — pursue these):**
+
+- **Transactional / booking-stage queries** — "rent a car in [destination] with [origin] license", "can I drive in [destination] with [origin] license" (GSC shows we're at pos 40-60 on these; high-intent, mobile-skewed, AI Mode less aggressive on these because they need a destination to act)
+- **Highly local enforcement detail** — "ZTL Milan Area C camera locations 2026", "Quintana Roo checkpoint hours" (AI flags as low-confidence, cites authoritative sources)
+- **Recency-bound single-incident queries** — "Cancun rental fine November 2026", citation-friendly because of hallucination cost
+- **Multi-variable transactional** — "IDP for US driver renting Vespa in Bali in October" (too many variables for clean AI synthesis)
+- **Document/proof queries** — "What does an IDP Companion PDF actually look like" (AI can describe, can't show)
+- **Non-English / non-US-saturated markets** — GSC shows Egypt CTR 11.1%, Cyprus 20%, Turkey 4.55% vs US 0.08%. AI Mode less aggressive outside English; build for Russian/Spanish/Arabic users who still click
+
+**Sources of truth:**
+- [Google Search Central — Optimizing for generative AI features (May 15, 2026)](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) — primary binding source
+- [Google blog — Search's I/O 2026 updates](https://blog.google/products-and-platforms/products/search/search-io-2026/) — I/O 2026 announcements
+- [docs/seo-docs/TIER_PROGRESS.md](docs/seo-docs/TIER_PROGRESS.md) — pivot reasoning + GSC data + tier targets
+
 ### Page types and where they live
 
 | Type | Location | Example | Status |

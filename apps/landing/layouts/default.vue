@@ -19,6 +19,7 @@
 				<nav class="nav">
 					<NuxtLinkLocale to="/how-it-works" class="nav-link">{{ t('layout.navHow') }}</NuxtLinkLocale>
 					<NuxtLinkLocale to="/faq" class="nav-link">{{ t('layout.navFaq') }}</NuxtLinkLocale>
+					<NuxtLinkLocale to="/sample-pdf" class="nav-link">{{ t('layout.navSamplePdf') }}</NuxtLinkLocale>
 					<NuxtLinkLocale to="/pricing" class="nav-link">{{ t('layout.navPricing') }}</NuxtLinkLocale>
 					<NuxtLinkLocale to="/about" class="nav-link">{{ t('layout.navAbout') }}</NuxtLinkLocale>
 				</nav>
