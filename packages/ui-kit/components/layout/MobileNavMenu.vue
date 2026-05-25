@@ -35,6 +35,15 @@
 				{{ navFaqLabel }}
 			</a>
 			<a
+				v-if="samplePdfHref"
+				:href="samplePdfHref"
+				class="mobile-nav__link"
+				role="menuitem"
+				@click="close()"
+			>
+				{{ navSamplePdfLabel }}
+			</a>
+			<a
 				:href="pricingHref"
 				class="mobile-nav__link"
 				role="menuitem"
@@ -62,10 +71,12 @@ withDefaults(
 	defineProps<{
 		navHowLabel: string;
 		navFaqLabel: string;
+		navSamplePdfLabel?: string;
 		navPricingLabel: string;
 		navAboutLabel: string;
 		howHref: string;
 		faqHref: string;
+		samplePdfHref?: string;
 		pricingHref: string;
 		aboutHref: string;
 		ariaLabel?: string;

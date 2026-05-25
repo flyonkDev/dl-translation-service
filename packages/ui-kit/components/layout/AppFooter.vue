@@ -202,6 +202,7 @@
 
 	  // Optional links — only rendered when consumer passes them in (no '#' fallback)
 	  idpValidity: props.links?.idpValidity ?? '',
+	  samplePdf: props.links?.samplePdf ?? '',
 	  sitemap: props.links?.sitemap ?? '',
 	}));
 </script>

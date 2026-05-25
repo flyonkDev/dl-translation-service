@@ -22,6 +22,7 @@
 			>
 				<a :href="howHref" class="nav-link text-sm whitespace-nowrap">{{ navHowLabel }}</a>
 				<a :href="faqHref" class="nav-link text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
+				<a v-if="samplePdfHref" :href="samplePdfHref" class="nav-link text-sm whitespace-nowrap">{{ navSamplePdfLabel }}</a>
 				<a :href="pricingHref" class="nav-link text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
 				<a :href="aboutHref" class="nav-link text-sm whitespace-nowrap">{{ navAboutLabel }}</a>
 			</nav>
@@ -42,10 +43,12 @@
 					v-if="showPrimaryNav"
 					:nav-how-label="navHowLabel"
 					:nav-faq-label="navFaqLabel"
+					:nav-sample-pdf-label="navSamplePdfLabel"
 					:nav-pricing-label="navPricingLabel"
 					:nav-about-label="navAboutLabel"
 					:how-href="howHref"
 					:faq-href="faqHref"
+					:sample-pdf-href="samplePdfHref"
 					:pricing-href="pricingHref"
 					:about-href="aboutHref"
 				/>
@@ -85,6 +88,7 @@
 	    brandName?: string;
 	    navHowLabel?: string;
 	    navFaqLabel?: string;
+	    navSamplePdfLabel?: string;
 	    navPricingLabel?: string;
 	    navAboutLabel?: string;
 	    /**
@@ -100,6 +104,7 @@
 	    homeHref?: string;
 	    howHref?: string;
 	    faqHref?: string;
+	    samplePdfHref?: string;
 	    pricingHref?: string;
 	    aboutHref?: string;
 	    showLocaleSwitcher?: boolean;
@@ -112,6 +117,7 @@
 	    brandName: 'IDP Companion',
 	    navHowLabel: 'How it works',
 	    navFaqLabel: 'FAQ',
+	    navSamplePdfLabel: 'Sample PDF',
 	    navPricingLabel: 'Pricing',
 	    navAboutLabel: 'About',
 
@@ -126,6 +132,7 @@
 	    homeHref: '/',
 	    howHref: '#how-it-works',
 	    faqHref: '#faq',
+	    samplePdfHref: '',
 	    pricingHref: '#pricing',
 	    aboutHref: '/about',
 

@@ -8,11 +8,13 @@
 			:home-href="localePath({ name: 'index' })"
 			:how-href="localePath({ name: 'how-it-works' })"
 			:faq-href="localePath({ name: 'faq' })"
+			:sample-pdf-href="localePath({ name: 'sample-pdf' })"
 			:pricing-href="localePath({ name: 'pricing' })"
 			:about-href="localePath({ name: 'about' })"
 			:brand-name="t('layout.logo')"
 			:nav-how-label="t('layout.navHow')"
 			:nav-faq-label="t('layout.navFaq')"
+			:nav-sample-pdf-label="t('layout.navSamplePdf')"
 			:nav-pricing-label="t('layout.navPricing')"
 			:nav-about-label="t('layout.navAbout')"
 		>
@@ -40,6 +42,7 @@
 			:link-contact="t('footer.linkContact')"
 			:link-security="t('footer.linkSecurity')"
 			:link-idp-validity="t('footer.linkIdpValidity')"
+			:link-sample-pdf="t('footer.linkSamplePdf')"
 			:link-sitemap="t('footer.linkSitemap')"
 			:copyright-line="t('footer.copyright', { year: year })"
 			:links="footerLinks"
@@ -87,6 +90,7 @@
 		security: localePath({ name: 'security' }),
 		contact: localePath({ name: 'contact' }),
 		idpValidity: localePath({ name: 'idp-validity' }),
+		samplePdf: localePath({ name: 'sample-pdf' }),
 		sitemap: localePath({ name: 'sitemap-page' }),
 	}));
 </script>
