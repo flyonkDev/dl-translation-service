@@ -28,22 +28,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Indonesia: 2026 Guide',
+		title: 'Indonesia IDP for US Drivers — Bali Razzia, Voids Medevac',
 		description:
-			'IDP legally required in Bali for all US tourists. Left-hand traffic — opposite to every American instinct. Weekly razzia checkpoints. No IDP voids your insurance — medevac runs $50k+. IDP Companion in 2 min — $35.',
-		ogTitleShort: 'US Drivers in Bali: IDP Required 2026',
+			"Indonesian law requires US tourists to carry an IDP. Bali razzia checkpoints fine $65 for non-compliance — but the real risk is insurance: no IDP = voided medevac coverage, and Bali-to-US hospital evac runs $50–100k. Get IDP Companion in 2 min — $35.",
+		ogTitleShort: 'US Drivers in Bali: IDP Required',
 		ogSubtitle: 'Left-hand traffic. Weekly razzia. No IDP = no insurance.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Indonesia',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Indonesia · Bali · 2026 Guide',
 		title: 'IDP for US Drivers in Bali: Why the Insurance Clause Beats the $65 Fine',
-		lead: "The scooter rental in Canggu costs 80,000 rupiah a day — about five dollars. The shop photographs your California licence and waves you onto Jalan Batu Bolong without mentioning an IDP. Three days clean. On the fourth morning there's a razzia at the junction near Deus Ex Machina — a police checkpoint that materialises at 9am on a road you've been riding daily. The officer asks three things: STNK (vehicle registration), home licence, IDP. The fine for missing the IDP is IDR 1,000,000 — about $65. The financially serious number isn't the fine. It's the travel-insurance exclusion that triggers from the moment an officer confirms you were riding without valid documentation: medevac from Bali to a US hospital runs $50,000 to $100,000, and your policy will not pay if you were violating local law. The five-dollar scooter and the missing sixty-five dollar document are not the financial story here.",
+		lead: "Cut to it: Indonesia legally requires US drivers to carry an IDP. Bali razzia checkpoints fine IDR 1,000,000 (~$65) for non-compliance, but the real financial risk is insurance — travel-insurance medevac exclusion triggers from the moment an officer confirms you were riding without valid documentation, and Bali-to-US hospital evac runs $50,000–100,000. The scooter rental in Canggu costs 80,000 rupiah a day — about five dollars. The shop photographs your California licence and waves you onto Jalan Batu Bolong without mentioning an IDP. Three days clean. On the fourth morning there's a razzia at the junction near Deus Ex Machina — a police checkpoint that materialises at 9am on a road you've been riding daily. Bali razzia data from r/bali (Q1 2026 threads) clusters the highest-frequency stops at Canggu (Batu Bolong, Berawa), Seminyak (Petitenget), Ubud (Hanoman/Monkey Forest junction), and Kuta (Jl. Legian). The officer asks three things: STNK (vehicle registration), home licence, IDP. The five-dollar scooter and the missing sixty-five dollar document are not the financial story here.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

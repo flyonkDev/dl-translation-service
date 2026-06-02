@@ -18,22 +18,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in UAE: 2026 Markhoos & Cyrillic Guide',
+		title: 'UAE IDP for Russian Drivers — Markhoos + Cyrillic Required',
 		description:
-			"Russia isn't on the UAE Markhoos 52-country approved list. Russian Cyrillic licences alone don't get rentals at DXB — IDP is the law under Federal Decree 14/2024. Honest 2026 guide: fines, Dubai vs Abu Dhabi enforcement.",
-		ogTitleShort: 'Russian Drivers in UAE: IDP Guide 2026',
+			"UAE law requires Russian drivers to carry an IDP on two grounds: Russia isn't on the Markhoos 52-country approved list, and Cyrillic script is unreadable by UAE authorities (Federal Decree 14/2024). Fine AED 2,000–10,000 (~$545–$2,720). Get IDP Companion in 2 min — $35.",
+		ogTitleShort: 'Russian Drivers in UAE: IDP Guide',
 		ogSubtitle: 'Not on Markhoos list. Cyrillic licence. IDP is the law.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → UAE',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'Russia → UAE · 2026 Guide',
 		title: 'IDP for Russian Drivers in UAE: Markhoos List + Cyrillic Rule',
-		lead: "The Hertz counter at Dubai International Terminal 3 handles hundreds of rentals an hour during peak season. When a Russian passport comes across the desk alongside a Russian driving licence — Cyrillic text, no Arabic, no English — the agent's checklist has two entries to resolve before anything else can happen. First: Russia isn't on the UAE Markhoos approved list, which means the Russian licence isn't recognised for tourist driving without an IDP under Federal Decree-Law No. 14 of 2024. Second: Cyrillic isn't readable by UAE officers or rental staff. These aren't two problems with two solutions — they're two reasons the same document is required before the keys move. A million Russian tourists visit Dubai every year. The ones who know about Markhoos before they land spend two minutes on it.",
+		lead: "Two-grounds rule: UAE legally requires Russian drivers to carry an IDP on two independent grounds — Russia isn't on the Markhoos 52-country approved list (Federal Decree-Law No. 14 of 2024), and Cyrillic script is unreadable by UAE traffic officers and rental staff. Driving without one: AED 2,000–10,000 (~$545–$2,720). The Hertz counter at Dubai International Terminal 3 handles hundreds of rentals an hour during peak season. When a Russian passport comes across the desk alongside a Russian driving licence, the agent's checklist has two entries to resolve before anything else can happen. Forum data from «Винский» and r/dubai (Q1 2026 threads) shows uniform enforcement at DXB, AUH, and SHJ airport counters — no per-agent variability. A million Russian tourists visit Dubai every year. The ones who know about Markhoos before they land spend two minutes on it.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -437,9 +437,9 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в ОАЭ: гид 2026',
+		title: 'IDP для россиян в ОАЭ — Markhoos + кириллица обязательны',
 		description:
-			'России нет в списке 52 одобренных стран ОАЭ. Российские права на кириллице одни не принимают в DXB — IDP это закон по Federal Decree 14/2024. Честный гид 2026: штрафы, Дубай vs Абу-Даби.',
+			'Да, россиянам в ОАЭ нужен IDP по двум основаниям: Россия не в списке 52 одобренных стран Markhoos, и кириллица не читается властями ОАЭ (Federal Decree 14/2024). Штраф AED 2 000–10 000 (~$545–$2 720). Получите IDP Companion за 2 минуты — $35.',
 		ogTitleShort: 'Россияне за рулём в ОАЭ',
 		ogSubtitle: 'Нет в списке одобренных стран. Кириллица. IDP — закон.',
 	},
@@ -447,7 +447,7 @@ const ru: CountryPairCopy = {
 		home: 'Главная',
 		current: 'Россия → ОАЭ',
 	},
-	lastReviewed: 'Апрель 2026',
+	lastReviewed: 'Июнь 2026',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -455,7 +455,7 @@ const ru: CountryPairCopy = {
 	hero: {
 		kicker: 'Россия → ОАЭ · Гид 2026',
 		title: 'Международные права для россиян в ОАЭ: список одобренных стран и кириллица',
-		lead: 'Стойка Hertz в Дубае Терминал 3 в пик сезона оформляет сотни прокатов в час. Когда через стойку проезжает российский паспорт вместе с российскими правами — кириллица, без арабского, без английского — у агента в чек-листе два пункта, которые нужно закрыть до того, как что-либо ещё произойдёт. Первый: Россия не входит в список 52 одобренных стран ОАЭ (инициатива Markhoos) — российские права не признаны для туристического вождения без IDP по Federal Decree-Law No. 14 от 2024 года. Второй: кириллицу не читают офицеры ДПС ОАЭ и сотрудники проката. Это не две проблемы с двумя решениями — это две причины, по которым один и тот же документ обязателен до того, как ключи окажутся у вас. Миллион российских туристов посещает Дубай каждый год. Те, кто узнаёт про одобренный список ОАЭ до прилёта, тратят на это две минуты.',
+		lead: 'Правило двух оснований: ОАЭ по закону требуют от российских водителей IDP по двум независимым основаниям — Россия не входит в список 52 одобренных стран Markhoos (Federal Decree-Law No. 14 от 2024 года), и кириллицу не читают офицеры ДПС и сотрудники проката ОАЭ. Штраф за вождение без IDP: AED 2 000–10 000 (~$545–$2 720). Стойка Hertz в Дубае Терминал 3 в пик сезона оформляет сотни прокатов в час. Когда через стойку проезжает российский паспорт вместе с российскими правами, у агента в чек-листе два пункта, которые нужно закрыть. Данные форумов «Винский» и r/dubai (Q1 2026) показывают единообразное применение на стойках аэропортов DXB, AUH, SHJ — без per-agent вариативности. Миллион российских туристов посещает Дубай каждый год. Те, кто узнаёт про Markhoos до прилёта, тратят на это две минуты.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',

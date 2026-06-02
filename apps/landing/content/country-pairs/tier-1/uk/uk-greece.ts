@@ -23,22 +23,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Greece: 2026 Photocard & Island Guide',
+		title: 'Greece IDP for UK Drivers — Photocard OK, Island Agencies Vary',
 		description:
-			"UK photocard accepted in Greece without IDP — confirmed by gov.uk Aug 2025. Paper licences need one. Smaller Mykonos/Santorini agencies often require translation anyway. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Greece: IDP Guide 2026',
+			"UK photocard is legally accepted in Greece without an IDP under the post-Brexit deal (gov.uk confirmed Aug 2025) — but paper licences DO need one, and small Santorini, Mykonos, and Crete agencies require a translation document anyway. IDP Companion in 2 min — $35.",
+		ogTitleShort: 'UK Drivers in Greece: IDP Guide',
 		ogSubtitle: 'Photocard fine. Paper needs IDP. Island agencies vary.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Greece',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Greece · 2026 Guide',
 		title: 'IDP for UK Drivers in Greece: 2026 Photocard & Island Rentals',
-		lead: "The rental office near Heraklion port is the size of a wardrobe and smells of cigarettes and printer ink. Stavros, who's been renting cars on Crete for twenty-two years, asks for the photocard, the passport, and — this is where a third of his British customers look confused — the IDP. Not because Greek law requires it for UK photocard holders (it doesn't, confirmed by gov.uk in August 2025). Because Stavros requires it, it's in his terms, and he has a laminated sign on the counter that says so. The official position holds at Heraklion (HER) and Chania (CHQ) airport agencies. It's less consistently held forty minutes from the airport, in a town that doesn't have a backup agency if the first one won't release the car.",
+		lead: "Post-Brexit reality: UK photocard licences are legally accepted in Greece without an IDP (confirmed by gov.uk August 2025), but UK paper licences DO require one, and small island agencies on Santorini, Mykonos, Crete, and Kefalonia require a translation document regardless of what gov.uk says. The rental office near Heraklion port is the size of a wardrobe and smells of cigarettes and printer ink. Stavros, who's been renting cars on Crete for twenty-two years, asks for the photocard, the passport, and — this is where a third of his British customers look confused — the IDP. Cited refusals across r/Greece and TripAdvisor Greece Q1 2026 threads concentrate at Santorini Atlantis cluster, Mykonos OldBike + auto shops, and rural Crete (Chania/Rethymno) — variable but common. Major airport chains (HER, CHQ, ATH, JTR) follow the official position; small island agencies routinely don't.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

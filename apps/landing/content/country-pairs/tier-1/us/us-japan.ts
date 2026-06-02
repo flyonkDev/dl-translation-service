@@ -15,22 +15,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Japan: 2026 Guide to Geneva 1949 Rules',
+		title: 'Japan IDP for US Drivers — Toyota/Nippon Reject Online IDPs',
 		description:
-			'Driving in Japan on a US license? Japan has the strictest IDP enforcement in the developed world — fines up to ¥500,000, up to 3 years prison, and Toyota Rent a Car explicitly rejects online IDPs. Honest 2026 guide.',
+			"Honest answer: Japan requires an authorized Geneva 1949 IDP for car rental — Toyota, Nippon, ORIX reject online IDPs at the counter. IDP Companion is a supplementary multilingual aid for hotels, JR Pass desks, and ID verification (not for renting a car). Strictest enforcement in the developed world.",
 		ogTitleShort: 'IDP for US Drivers in Japan',
-		ogSubtitle: '2026 Guide — strictest in the world',
+		ogSubtitle: 'Strictest enforcement — Geneva 1949 required',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Japan',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Japan · 2026 Guide',
 		title: 'IDP for US Drivers in Japan: 2026 Guide',
-		lead: "You're flying to Tokyo, planning a self-drive route through Hokkaido, or thinking about renting a car for a Mt. Fuji weekend. Maybe you've already ordered an \"instant digital IDP\" from one of those websites that promised same-day delivery. Here's what most American travelers don't realize about Japan: the country has the strictest IDP enforcement in the developed world, and driving without a valid one carries penalties of up to ¥500,000 (~$3,400) and up to 3 years in prison under Article 117-2-2 of the Road Traffic Act.",
+		lead: "Reality check: Japan requires an authorized Geneva 1949 IDP for car rental — Toyota, Nippon, ORIX, Times, and Nissan reject online or digital-only IDPs at the counter. You need the official version from your home country before you fly. IDP Companion's role for Japan is supplementary: hotel check-ins, JR Pass desk verification, smaller-venue ID checks, and as a multilingual backup translation. Refusal data is uniform across r/JapanTravel and Tripadvisor Japan threads in Q1 2026 — every major rental chain rejects online IDPs identically, with no per-agent variability the way there is in France or Greece. Article 117-2-2 of the Japanese Road Traffic Act: penalties up to ¥500,000 (~$3,400) and up to 3 years in prison for driving without a valid IDP.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

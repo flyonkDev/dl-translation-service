@@ -26,9 +26,9 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Driving Switzerland on a US License: 2026 Vignette & Raserdelikt',
+		title: 'Switzerland IDP for US Drivers — Vignette + Raserdelikt Criminal',
 		description:
-			"US license is legal in Switzerland for 12 months — ASTRA allows it. But the CHF 40 motorway vignette is mandatory and Raserdelikt criminal-speeding kicks in 25 km/h over urban limits. Honest 2026 guide.",
+			"US license is legal in Switzerland for 12 months under ASTRA — no IDP required. But CHF 40 motorway vignette is mandatory (or CHF 25 3-day digital pass), and Raserdelikt criminal-speeding above 25 km/h over urban can hit 5-figure CHF tied to your daily income. IDP Companion as multilingual aid — $35.",
 		ogTitleShort: 'US in Switzerland: Vignette & Raserdelikt',
 		ogSubtitle: 'ASTRA gives 12 months — the vignette and radar still bill',
 	},
@@ -36,12 +36,12 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Switzerland',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Switzerland · 2026 Guide',
 		title: 'Driving Switzerland on a US License: 2026 Vignette & Raserdelikt',
-		lead: "You're picking up an Audi Q3 at Zurich Airport in mid-June for a nine-day Alps loop through Lucerne, Interlaken and the Grimsel Pass. Your Texas license is in English, the Federal Roads Office (ASTRA) allows valid foreign licenses for up to twelve months, and the legal answer for tourists is clean. What the rental confirmation didn't mention: the Swiss motorway vignette is mandatory — CHF 40 for the annual sticker or CHF 25 for the 3-day digital pass introduced in 2024 — without it you cannot legally use any Swiss autobahn. Cantonal speed cameras are among the most aggressive in Europe, and the Raserdelikt provisions treat speeding above 25 km/h over the urban limit as a criminal offence with fines tied to your daily income. Five-figure CHF penalties for high earners are not uncommon. None of that has to do with an IDP.",
+		lead: "The 12-month rule: US licence is legally fine in Switzerland for tourist driving up to 12 months — Federal Roads Office (ASTRA) accepts foreign licences without translation. But three operational realities catch US drivers: motorway vignette is mandatory (CHF 40 annual or CHF 25 3-day digital, 2024+), cantonal speed cameras are among the most aggressive in Europe, and Raserdelikt criminal-speeding above 25 km/h over urban limits triggers fines tied to your daily income — five-figure CHF penalties for high earners. r/Switzerland Q1 2026 thread data flags the two most-frequent US-tourist mistakes: missing-vignette autobahn entry (CHF 200 fixed fine + vignette purchase) and Grimsel/Furka/Susten alpine pass attempts in shoulder season (Oct–May closures). None of that has to do with an IDP.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

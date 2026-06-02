@@ -24,22 +24,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Thailand: 2026 Geneva 1949 Guide',
+		title: 'Thailand IDP for UK Drivers — Voids Insurance Without It',
 		description:
-			"Thailand legally requires an IDP for UK tourists driving — Geneva 1949 Convention. Fine is small but rental insurance is void without it. Honest 2026 guide: scooter category, BAC 0.05%, what works.",
-		ogTitleShort: 'UK Drivers in Thailand: IDP Guide 2026',
-		ogSubtitle: 'Small fine, voided insurance — that\'s the real problem.',
+			"Thai law requires UK drivers to carry an IDP under the 1949 Geneva Convention. The THB 500–1,000 fine is small — but rental insurance is unenforceable without it, and one Chiang Mai scooter crash without docs spirals into £1,000s. Get IDP Companion in 2 min — $35.",
+		ogTitleShort: 'UK Drivers in Thailand: IDP Guide',
+		ogSubtitle: "Small fine, voided insurance — that's the real problem.",
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Thailand',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Thailand · 2026 Guide',
 		title: 'IDP for UK Drivers in Thailand: Small Fine, Voided Insurance',
-		lead: "The scooter rental shop near Nimman Road in Chiang Mai charges 200 baht a day and asks for your passport as deposit. They'll take a photo of your UK photocard, hand you a helmet that fits, and wave you off into morning traffic without once mentioning an IDP. The shop doesn't ask. What the rental agreement covers in small print: without a valid IDP, the basic insurance bundled into 200 baht is unenforceable at the moment it matters. A minor collision in Chiang Mai without proper documentation goes two ways — the other party accepts a cash settlement, or they don't. Thai police at the checkpoint on the road to Doi Inthanon do ask for the IDP. The shop didn't. Two separate conversations.",
+		lead: "Plain answer: Thailand legally requires UK drivers to carry an IDP under the 1949 Geneva Convention. The fine is small (THB 500–1,000, ~£11–23) but rental insurance is unenforceable without it, and that's where the real cost lives. The scooter rental shop near Nimman Road in Chiang Mai charges 200 baht a day and asks for your passport as deposit. They'll take a photo of your UK photocard, hand you a helmet that fits, and wave you off into morning traffic without once mentioning an IDP. The shop doesn't ask. Across r/Thailand and Lonely Planet Thai Driving threads in Q1 2026, a minor collision in Chiang Mai without proper documentation routinely escalates from \"the other party wants 5,000 baht\" to \"voided insurance, hospital bill in your name\" within 48 hours. Thai police at the checkpoint on the road to Doi Inthanon do ask for the IDP. The shop didn't. Two separate conversations.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

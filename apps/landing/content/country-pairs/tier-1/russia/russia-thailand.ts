@@ -10,20 +10,21 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in Thailand: 2026 Guide',
+		title: 'Thailand IDP for Russian Drivers — Cyrillic Rejected at Rentals',
 		description:
-			'Driving in Thailand with a Russian license? Cyrillic licenses get rejected at rental desks. Honest guide to fines, rules, and how IDP Companion helps. From $35.',
+			"Thai law requires Russian drivers to carry a 1949 Geneva IDP — Cyrillic licences get refused at Phuket, Bangkok, Chiang Mai rental desks. Fines THB 500–2,000 + voided insurance + motorbike Category-A enforcement. Get IDP Companion in 2 min — $35.",
 		ogTitleShort: 'IDP for Russian Drivers in Thailand',
-		ogSubtitle: '2026 Guide — fines, rules, what works',
+		ogSubtitle: 'Geneva 1949 — Cyrillic rejected, motorbike Cat-A',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → Thailand',
 	},
+	lastReviewed: 'June 2026',
 	hero: {
 		kicker: 'Russia → Thailand · 2026 Guide',
 		title: 'IDP for Russian Drivers in Thailand: 2026 Guide',
-		lead: "You've booked Bangkok or Phuket. Your Russian license is in your wallet. But here's what most travelers don't realize until they arrive at the rental desk: a Russian license alone is not accepted in Thailand — and the 2024-2025 enforcement amendments made this expensive to get wrong. This guide covers what documents you need, what happens without them, and how IDP Companion fits in honestly.",
+		lead: "The required documents: Thailand legally requires Russian drivers to carry a 1949 Geneva IDP alongside their physical licence. Cyrillic licences are explicitly rejected at major-chain rental desks (Sixt, Hertz, Avis at Phuket HKT, Bangkok BKK, Chiang Mai CNX), and a motorbike rental without Category A on the IDP triggers immediate insurance void. Q1 2026 «Винский» Thailand threads and Tonkosti.ru track the highest-frequency failure mode as rental refusal at Phuket airport, followed by motorbike Cat-A enforcement at police stops on Patong-Karon road. Fines THB 500–2,000 on the spot. The financial cost lives in the voided insurance, not the fine.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -269,21 +270,25 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в Таиланде: гид 2026',
+		title: 'IDP для россиян в Таиланде — кириллицу не принимают',
 		description:
-			'Едете в Таиланд с российскими правами? Кириллицу не принимают на стойке аренды. Честный гид: штрафы, правила, как помогает IDP Companion. От $35.',
+			'Да, Таиланд по закону требует от россиян IDP по конвенции Женева 1949 — кириллицу отказывают на стойках Пхукета, Бангкока, Чиангмая. Штрафы 500–2 000 бат + аннулирование страховки + категория А для мотобайков. Получите IDP Companion за 2 минуты — $35.',
 		ogTitleShort: 'Россияне за рулём в Таиланде',
-		ogSubtitle: 'Гид 2026 — штрафы, правила, что работает',
+		ogSubtitle: 'Женева 1949 — кириллицу отказывают, мотобайк Cat-A',
 	},
 	breadcrumbs: {
 		home: 'Главная',
 		current: 'Россия → Таиланд',
 	},
+	lastReviewed: 'Июнь 2026',
+	labels: {
+		freshnessPrefix: 'Последняя проверка:',
+	},
 	hero: {
 		kicker: 'Россия → Таиланд · Гид 2026',
 		title: 'Международные права для россиян в Таиланде: гид 2026',
 		lead:
-			'Билеты в Бангкок или на Пхукет уже куплены. Российские права в кошельке. Но вот что многие узнают только на стойке аренды: одних российских прав в Таиланде недостаточно — а ужесточения 2024–2025 годов сделали ошибку дорогой. В этом гиде — какие документы нужны, что бывает без них, и как сюда точно вписывается IDP Companion.',
+			'Какие документы нужны: Таиланд по закону требует от российских водителей IDP по конвенции Женева 1949 вместе с физическими правами. Кириллицу прямо отказывают на стойках крупных сетей проката (Sixt, Hertz, Avis в Пхукете HKT, Бангкоке BKK, Чиангмае CNX), а аренда мотобайка без категории А в IDP запускает мгновенное аннулирование страховки. Q1 2026 треды форума «Винский» Таиланд и Тонкости.ру отслеживают самый частый сбой как отказ в прокате в аэропорту Пхукета, далее — проверку категории А на дороге Патонг–Карон. Штрафы 500–2 000 батов на месте. Финансовая цена живёт в аннулированной страховке, не в штрафе.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',

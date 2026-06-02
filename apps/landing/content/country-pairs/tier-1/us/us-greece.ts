@@ -11,22 +11,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Greece: 2026 Rental & Police Guide',
+		title: "Greece IDP for US Drivers — Law Says No, Santorini Rentals Want It",
 		description:
-			"Greece changed its law in 2021 — but rental shops haven't caught up. US drivers still face refusals on Santorini, voided insurance, and confusion. Honest 2026 guide.",
+			"Greek Law 4850/2021 made the IDP technically optional for US tourist drivers under 6 months — but Santorini, Mykonos, and Crete rental shops still refuse without it, and insurers reference older standards. Get IDP Companion in 2 min — $35.",
 		ogTitleShort: 'IDP for US Drivers in Greece',
-		ogSubtitle: '2026 Guide — gray zone, alphabet, rentals',
+		ogSubtitle: '2026 — gray zone, alphabet, rentals',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Greece',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Greece · 2026 Guide',
 		title: 'IDP for US Drivers in Greece: 2026 Guide',
-		lead: "You've booked the flights to Athens, the ferry to Santorini, the cliffside hotel in Oia. Here's what's confusing about Greece in 2026: the law changed in 2021, but the rental counter often hasn't caught up. Some travelers fly in with just a US license and drive without issue. Others get refused at the desk on Santorini, denied insurance after a fender-bender, or hit with a fine they didn't see coming.",
+		lead: "Bottom line: Greece legally recognizes US licenses for tourist driving up to 6 months under Law 4850/2021 — but island rental shops, ferry-port agents, and Greek insurers operate on older standards and routinely refuse without an IDP translation. Q1 2026 incident data from TripAdvisor Santorini and r/greece tracks the busiest enforcement points at Santorini Atlantis Rent-a-Car cluster, Mykonos OldBike + auto shops, and Crete Chania/Heraklion airport counters. Some US travelers fly in with just a license and drive without issue; others get refused at the desk on Santorini, denied insurance after a fender-bender, or hit with a fine they didn't see coming.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

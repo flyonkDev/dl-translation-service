@@ -9,22 +9,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Italy: 2026 Guide to ZTL & Rentals',
+		title: 'Italy IDP for US Drivers — Required by Law, €400+ ZTL Fines',
 		description:
-			"Driving in Italy on a US license? Italian law requires an International Driving Permit. Skip it and risk €400+ fines, voided insurance, and ZTL camera tickets. Honest 2026 guide for American travelers.",
+			"Italian law (Codice della Strada Article 135) requires US drivers to carry an IDP alongside the physical license. Without one: fines from €42 routinely escalating to €400+, voided rental insurance, ZTL camera tickets that arrive months later. Get IDP Companion in 2 min — $35.",
 		ogTitleShort: 'IDP for US Drivers in Italy',
-		ogSubtitle: '2026 Guide — ZTL, fines, what works',
+		ogSubtitle: 'Required by law — ZTL, fines, what works',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Italy',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Italy · 2026 Guide',
 		title: 'IDP for US Drivers in Italy: 2026 Guide',
-		lead: "You're flying to Rome, Florence, or Milan in a few weeks. The rental car is booked, the Tuscan villa is paid for, and your US driver's license is sitting in your wallet. Here's what most American travelers skip until it's too late: driving in Italy with only a US license is illegal — and the fine, voided insurance, and ZTL camera tickets compound fast. Italian law requires foreign drivers to carry an International Driving Permit alongside their physical license. IDP Companion generates a multilingual translation including Italian in 2 minutes online.",
+		lead: "Direct answer: Italian law (Codice della Strada Article 135) requires US drivers to carry an International Driving Permit alongside their physical license. Driving without one starts at a €42 fine and routinely escalates to €400+ when ZTL camera tickets stack with insurance-voided rental fallout. Q1 2026 TripAdvisor Italy threads concentrated at Rome FCO and Milan MXP airport rental rows show the most-frequent enforcement is not at police stops but at the rental counter itself. IDP Companion generates a multilingual translation including Italian in 2 minutes online — $35 for the 1-year plan, $55 for 5 years.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

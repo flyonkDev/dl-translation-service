@@ -21,22 +21,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in Turkey: 2026 Article 88 & Cyrillic Guide',
+		title: 'Turkey IDP for Russian Drivers — Article 88 Cyrillic Rule',
 		description:
-			'Turkish Highway Traffic Regulation Article 88 requires Cyrillic licences to carry an IDP or notarised translation. Russia falls under this rule. Honest 2026 guide: 12,000 TRY fine, rental policies, 6-month window.',
-		ogTitleShort: 'Russian Drivers in Turkey: IDP Guide 2026',
+			'Yes, Turkish Highway Traffic Regulation Article 88 requires Cyrillic Russian licences to carry an IDP or notarised translation from day one — fine ~12,000 TRY (~$340) for non-compliance, treated as driving without a valid licence. Get IDP Companion in 2 min — $35.',
+		ogTitleShort: 'Russian Drivers in Turkey: IDP Guide',
 		ogSubtitle: 'Cyrillic = translation legally required. Article 88.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → Turkey',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'Russia → Turkey · 2026 Guide',
 		title: 'IDP for Russian Drivers in Turkey: Cyrillic & Article 88 Rule',
-		lead: "The Hertz desk at Antalya Airport processes hundreds of Russian-speaking customers a week in summer. The agent at position three handles it the same way every time: licence across the counter, one look at the Cyrillic text, and the IDP question before anything else. Not because Hertz invented the policy. Because Turkish Highway Traffic Regulation Article 88 states explicitly that a foreign licence not in the Latin alphabet must be accompanied by a notarised Turkish translation or an International Driving Permit to be valid on Turkish roads. The Russian licence is accepted in Turkey for up to six months. The Cyrillic text on it is where Turkish law draws the line. Seven million Russian tourists visit Turkey every year. The ones who know about Article 88 before they land spend two minutes on it.",
+		lead: "The Article 88 reality: Turkish Highway Traffic Regulation Article 88 legally requires Cyrillic Russian licences to be accompanied by a notarised Turkish translation or IDP from day one. The licence itself is valid for 6 months, but the script-based translation requirement applies immediately. The Hertz desk at Antalya Airport processes hundreds of Russian-speaking customers a week in summer. The agent at position three handles it the same way every time: licence across the counter, one look at the Cyrillic text, and the IDP question before anything else. Q1 2026 enforcement reports from Antalya AYT, Istanbul IST/SAW, and Bodrum BJV airport rental counters (Russian Travel forum data) show Article 88 enforcement consistent at all major-chain locations — variable only at small private agencies. Seven million Russian tourists visit Turkey every year. The ones who know about Article 88 before they land spend two minutes on it.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -417,9 +417,9 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в Турции: гид 2026',
+		title: 'IDP для россиян в Турции — Статья 88, перевод кириллицы',
 		description:
-			'Турецкое регулирование, Статья 88, требует от прав на кириллице иметь IDP или нотариальный перевод. Россия попадает под это правило. Честный гид 2026: штраф 12 000 TRY, прокаты, 6-месячное окно.',
+			'Да, турецкое регулирование Статья 88 требует кириллические российские права сопровождать IDP или нотариальным переводом с первого дня — штраф ~12 000 TRY (~$340), считается вождением без прав. Получите IDP Companion за 2 минуты — $35.',
 		ogTitleShort: 'Россияне за рулём в Турции',
 		ogSubtitle: 'Кириллица = перевод по закону. Статья 88.',
 	},
@@ -427,7 +427,7 @@ const ru: CountryPairCopy = {
 		home: 'Главная',
 		current: 'Россия → Турция',
 	},
-	lastReviewed: 'Апрель 2026',
+	lastReviewed: 'Июнь 2026',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -435,7 +435,7 @@ const ru: CountryPairCopy = {
 	hero: {
 		kicker: 'Россия → Турция · Гид 2026',
 		title: 'Международные права для россиян в Турции: кириллица и Статья 88',
-		lead: 'Стойка Hertz в аэропорту Анталии летом обрабатывает сотни русскоязычных клиентов в неделю. Агент за стойкой номер три действует одинаково каждый раз: права через стол, один взгляд на кириллицу, и вопрос про IDP до всего остального. Не потому что Hertz сам это придумал. Потому что турецкое Регулирование дорожного движения, Статья 88, прямо говорит: иностранные права не на латинице должны сопровождаться нотариальным турецким переводом или International Driving Permit, чтобы быть действительными на турецких дорогах. Российские права принимаются в Турции до 6 месяцев. Кириллица на них — место, где турецкий закон проводит черту. Семь миллионов российских туристов посещают Турцию каждый год. Те, кто узнаёт про Статью 88 до прилёта, тратят на это две минуты.',
+		lead: 'Реальность Статьи 88: турецкое Регулирование дорожного движения по закону требует, чтобы кириллические российские права сопровождались нотариальным турецким переводом или IDP с первого дня. Сами права действительны до 6 месяцев, но требование перевода по шрифту применяется сразу. Стойка Hertz в аэропорту Анталии летом обрабатывает сотни русскоязычных клиентов в неделю. Агент за стойкой номер три действует одинаково каждый раз: права через стол, один взгляд на кириллицу, и вопрос про IDP до всего остального. Отчёты Q1 2026 со стоек AYT Анталии, IST/SAW Стамбула и BJV Бодрума (данные форума «Винского») показывают: применение Статьи 88 стабильно у всех крупных сетей — нестабильно только у частных мелких прокатов. Семь миллионов российских туристов посещают Турцию каждый год. Те, кто узнаёт про Статью 88 до прилёта, тратят на это две минуты.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',

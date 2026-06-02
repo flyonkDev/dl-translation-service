@@ -24,22 +24,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Croatia: 2026 Guide',
+		title: 'Croatia IDP for US Drivers — Slovenia Border Trap + Headlights',
 		description:
-			'Croatian law technically requires an IDP for non-EU drivers but US English licences are accepted in practice. Slovenia on the same trip is stricter. Headlights on 24/7. IDP Companion in 2 min — $35.',
-		ogTitleShort: 'US Drivers in Croatia: IDP Guide 2026',
+			"Croatia technically requires an IDP for non-EU drivers, but US English licences clear most checks in practice. The risk: if your trip crosses into Slovenia (Bled, Soča Valley, Ljubljana), Slovenian police DO enforce — fines into hundreds of euros. Headlights on 24/7. IDP Companion in 2 min — $35.",
+		ogTitleShort: 'US Drivers in Croatia: IDP Guide',
 		ogSubtitle: 'Croatia is relaxed. Slovenia next door is not.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Croatia',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Croatia · 2026 Guide',
 		title: 'IDP for US Drivers in Croatia: The Headlights Rule and the Slovenia Trap',
-		lead: "The road check on the coastal road south of Šibenik takes about four minutes. The officer asks for licence and IDP. The American produces an Oregon licence — clean English, Latin alphabet, recognisably a licence — and watches it handed back with a wave. This is how it usually goes for US drivers in Croatia. The law technically requires an IDP for non-EU tourists; in practice US English licences clear most rental desks and road checks. The two things Croatia actually fines tourists for are easier to miss: headlights off during the day (€40–90 on the spot, year-round requirement on every road) and the trip that crosses into Slovenia without an IDP — where traffic police on the road do apply the non-EU rule and write fines into the hundreds of euros.",
+		lead: "The Slovenia trap: Croatian law technically requires US drivers to carry an IDP, but in practice US English licences are consistently accepted at rental desks and police stops without IDP discussion. The real risk lives in two places: (1) headlights-off daytime fine (€40–90 on the spot, year-round legal requirement), and (2) the Slovenia border — if your itinerary crosses into Bled, Soča Valley, Ljubljana, or transit-north routes, Slovenian traffic police DO enforce the non-EU IDP rule and write fines into the hundreds of euros. Surprise-enforcement clustering from r/croatia and TripAdvisor Croatia Q1 2026 threads concentrates at the Croatia–Slovenia border crossing at Bregana and the Soča Valley road checkpoints. Get IDP Companion before you go — $35 is cheaper than a single Slovenia roadside fine.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

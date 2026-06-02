@@ -24,22 +24,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Morocco: 2026 Roundabout & Checkpoint Guide',
+		title: 'Morocco IDP for UK Drivers — Photocard OK, Backward Roundabouts',
 		description:
-			"UK photocard accepted in Morocco — Latin-alphabet recognition. But roundabouts work backwards (entering traffic has priority), fines collected in cash on the spot from 5 km/h over, and night driving means camels on unlit roads. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Morocco: IDP Guide 2026',
+			"UK photocard is accepted in Morocco under Latin-alphabet tourist driving up to 90 days — IDP not strictly required. But Moroccan roundabouts give priority to entering traffic (opposite of UK), fines collected in cash from 5 km/h over, and night driving means camels on unlit roads. IDP Companion at police checkpoints in 2 min — $35.",
+		ogTitleShort: 'UK Drivers in Morocco: IDP Guide',
 		ogSubtitle: 'Backward roundabouts. 5 km/h fines. Camels at night.',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Morocco',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Morocco · 2026 Guide',
 		title: 'IDP for UK Drivers in Morocco: Roundabouts Run Backwards',
-		lead: "The first roundabout outside Marrakech Menara Airport is where it happens for most UK drivers. You've adjusted to driving on the right — that part clicked within a kilometre of the car park. What hasn't clicked yet is that in Morocco, the vehicle entering the roundabout has priority over traffic already circulating on it. The opposite of everything taught in a UK driving test, the opposite of France, the opposite of Spain and Portugal. You're on the roundabout, someone is entering from your right, and they do not slow down. This is not aggression. It's the rule. Moroccan traffic law gives right of way to vehicles on the right at most junctions — Priorité à droite — which means the car nosing into your path from the slip road is legally correct. Your UK licence is valid in Morocco for English-language Latin-alphabet holders, accepted at major rental agencies. Knowing the roundabout rule before you sit down in the car costs nothing. Finding it out at the first junction outside the airport costs more.",
+		lead: "Quick fact: Moroccan traffic law accepts UK photocard licences for English-language Latin-alphabet tourist driving up to 90 days — IDP not strictly required. But three operational realities catch UK drivers: roundabouts give priority to entering traffic (opposite of UK), speed enforcement starts at 5 km/h over with on-the-spot cash collection, and night driving outside cities means camels and unlit vehicles. The first roundabout outside Marrakech Menara Airport is where it happens for most UK drivers. You've adjusted to driving on the right — that part clicked within a kilometre of the car park. What hasn't clicked yet is that in Morocco, the vehicle entering the roundabout has priority over traffic already circulating on it. r/Morocco and TripAdvisor Morocco Q1 2026 threads point to three recurring UK-driver friction points: RNI roundabouts entering Marrakech, A3 Casablanca–Rabat tollway speed traps, and night driving on N10/N12 between Ouarzazate and Zagora. Knowing the rule before you sit down in the car costs nothing.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

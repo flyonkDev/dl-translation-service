@@ -24,9 +24,9 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Iceland: 2026 BAC, F-Roads & Off-Road Guide',
+		title: 'Iceland IDP for US Drivers — License OK, F-Roads + 0.05% BAC',
 		description:
-			"Your US license is fine for Iceland — what isn't fine is 0.05% BAC, off-road driving as a criminal offense, and F-roads requiring 4WD. Honest 2026 guide: what actually catches US tourists.",
+			"US license works in Iceland for tourist driving — no IDP required. But 0.05% BAC (stricter than US 0.08%), F-roads restricted to 4WD, off-road driving is a criminal offense (~$370+ fines + voided insurance), and 2026 km-based road fee applies. IDP Companion as backup translation aid — $35.",
 		ogTitleShort: 'US Drivers in Iceland: 2026 Guide',
 		ogSubtitle: 'License is fine. The rules are stricter than you think.',
 	},
@@ -34,12 +34,12 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Iceland',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Iceland · 2026 Guide',
 		title: 'IDP for US Drivers in Iceland: BAC, F-Roads, Off-Road Rules',
-		lead: "Somewhere east of Vík on Route 1 in late September, the road surface changes from asphalt to a pale gravel track that cuts toward a black sand beach that looks, from the car, like it connects to the Ring Road. It doesn't. Driving onto that beach is an environmental offense under Iceland's Nature Conservation Act and voids every insurance policy the rental company sold you — basic CDW, gravel protection, sand and ash supplement. The fine alone starts at ISK 50,000 (~$370). Your US license covers you on every paved and marked gravel road in the country. The rest is knowing the rules: BAC 0.05% (stricter than US 0.08%), F-roads legally off-limits to 2WD, speed cameras into genuinely remote terrain, and a new 2026 km-based road fee.",
+		lead: "License-wise: US licence is legally fine in Iceland for tourist driving — no IDP required. But Iceland's BAC limit is 0.05% (stricter than US 0.08%), F-roads are legally restricted to 4WD, off-road driving is a criminal offense under the Nature Conservation Act (~$370+ fine + voided insurance), and a new 2026 km-based road fee applies to all rentals. Somewhere east of Vík on Route 1 in late September, the road surface changes from asphalt to a pale gravel track that cuts toward a black sand beach that looks, from the car, like it connects to the Ring Road. It doesn't. Costly-mistake patterns from r/VisitingIceland and TripAdvisor Iceland Q1 2026 cluster around off-road driving onto Reynisfjara-area black sand beaches and F-road 2WD attempts on F26 Sprengisandur and F35 Kjölur — both routinely void rental insurance. Your US licence covers you on every paved and marked gravel road.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

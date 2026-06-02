@@ -18,22 +18,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: "IDP for US Drivers in France: 2026 Guide to Crit'Air & Rentals",
+		title: "France IDP for US Drivers — Avis/Hertz Translation + €68 Crit'Air",
 		description:
-			"Driving in France with a US license? Avis, Hertz, and Sixt list a French translation as a rental requirement — and Crit'Air zones in Paris, Lyon, Marseille fine €68 without a sticker. Honest 2026 guide.",
-		ogTitleShort: "US in France: Crit'Air & Rentals 2026",
+			"Yes, your US license works for tourist driving in France under one year — but Avis, Hertz, and Sixt rental contracts require a French translation, and Crit'Air zones in Paris/Lyon/Marseille fine €68 without a sticker. Get IDP Companion in 2 min — $35.",
+		ogTitleShort: "France IDP for US: Rentals & Crit'Air",
 		ogSubtitle: 'What rental desks ask for — and what the cameras catch',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → France',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → France · 2026 Guide',
 		title: 'IDP for US Drivers in France: What the Rental Desk Actually Asks For',
-		lead: "The woman at the Lyon-Saint-Exupéry Sixt counter was perfectly polite about it. She looked at the Colorado license, set it back on the counter, and said she needed \"the French translation or the international permit.\" The next flight to Paris was in two hours. The rental was for a wedding in Burgundy that started that evening. This isn't a scam — it's in Sixt's standard European booking conditions, and Avis and Hertz publish nearly identical clauses. France doesn't legally require a US driver to carry an IDP. But rental companies set their own terms, and once you do leave the lot, missing a Crit'Air sticker in central Paris is a €68 fine the camera issues automatically. The gap between \"not required by law\" and \"required to get the keys\" is exactly where most Americans get surprised.",
+		lead: "The legal answer is no — French law accepts US licenses for tourist trips under one year. The rental-contract and Crit'Air answers are yes: Avis, Hertz, and Sixt list a French-language translation in their European booking conditions, and Crit'Air zones in Paris, Lyon, and Marseille fine €68 (camera-enforced, automatic) without a windshield sticker. The woman at the Lyon-Saint-Exupéry Sixt counter was perfectly polite about it. She looked at the Colorado license, set it back on the counter, and said she needed \"the French translation or the international permit.\" The next flight to Paris was in two hours. The rental was for a wedding in Burgundy that started that evening. Recent traveller threads on r/IWantOut, TripAdvisor France, and FlyerTalk (Q1 2026) cluster the refusals at CDG Terminal 2F and Lyon-Saint-Exupéry. The gap between \"not required by law\" and \"required to get the keys\" is exactly where most Americans get surprised.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -282,7 +282,7 @@ const en: CountryPairCopy = {
 		steps: [
 			{
 				title: 'Skip the official-IDP route — France does not require it',
-				text: 'French law accepts US driver licenses for tourist driving stays under one year. Save the trip to AAA or AATA. France is one of several major destinations where this step is genuinely unnecessary — the catch is what the rental contract requires, not what the law requires.',
+				text: 'French law accepts US driver licenses for tourist driving stays under one year — the government-IDP route is genuinely unnecessary for France. The catch is what the rental contract requires, not what the law requires; the next steps address that gap.',
 			},
 			{
 				title: 'Generate IDP Companion as the rental-counter friction reducer',
