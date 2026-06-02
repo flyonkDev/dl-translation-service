@@ -51,7 +51,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Russian Licence alone vs IDP Companion in Turkey',
-		lead: 'Turkey is one of the clearest cases in this guide for Russian drivers. Article 88 specifically calls out non-Latin scripts — Russian Cyrillic falls under it directly.',
+		lead: 'Turkish Law 2918 Article 88 explicitly calls out non-Latin scripts on foreign driving licences — Russian Cyrillic falls under it directly. The law writes the answer, not the page.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Turkey',
 		colCost: 'Cost',
@@ -206,7 +206,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Turkey — honestly',
-		lead: 'Article 88 is the cleanest legal hook for translation requirements in this guide. We\'re going to be direct about what IDP Companion does and doesn\'t do.',
+		lead: 'Article 88 of Turkish Law 2918 makes the translation document a legal mandate, not a rental-counter preference. The rest of this section is honest about what IDP Companion solves at the desk and where Turkish-law obligations sit beyond it.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -271,7 +271,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes for Russian drivers in Turkey, ranked by likelihood.',
+		lead: 'What Russian drivers face in Turkey — Article 88 enforcement at İstanbul SAW and Antalya AYT checkpoints, rental refusals when Cyrillic licences cannot be transcribed, insurance-void cascades after crashes — ordered by frequency from Forum.Vinskogo Turkey threads.',
 		items: [
 			{
 				severity: 'low',
@@ -377,7 +377,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and Turkey-bound travellers.',
+		lead: 'Adjacent destinations where Cyrillic-script verification or Article-88-style translation mandates apply to Russian licences.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -776,7 +776,7 @@ const ru: CountryPairCopy = {
 
 	related: {
 		heading: 'Похожие гиды',
-		lead: 'Больше гидов по парам стран для российских водителей и туристов, едущих в Турцию.',
+		lead: 'Соседние направления, где кириллическим правам нужна транслитерация по тем же причинам, что и в Турции — ОАЭ, Египет, Таиланд.',
 		comingSoonLabel: 'Скоро',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Россия → Таиланд', status: 'В эфире', href: '/idp-for-russian-drivers-in-thailand/' },

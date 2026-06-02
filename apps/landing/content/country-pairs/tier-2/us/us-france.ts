@@ -222,7 +222,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What actually happens to US drivers without proper paperwork in France',
-		lead: 'Realistic outcomes ranked by frequency, based on tourist forum reports, US Embassy data, and rental-industry policy disclosures.',
+		lead: "From r/IWantOut, FlyerTalk France and US Embassy ACS reports: what US drivers actually face in France — CDG and Lyon rental refusals, Crit'Air zone fines, gendarmerie stops in Provence — by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -351,7 +351,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers heading to Europe.',
+		lead: "Adjacent European destinations where US drivers run into Crit'Air-style zone enforcement or French-style rental documentation rules.",
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'fr', label: 'UK → France', status: 'Live', href: '/idp-for-uk-drivers-in-france/' },

@@ -16,22 +16,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in Indonesia: 2026 Bali Razzia Guide',
+		title: 'Indonesia IDP for Russian Drivers — Bali Razzia + Scooter Cat A',
 		description:
-			"IDP is required by Indonesian law and Bali police run weekly razzia checkpoints in Canggu and Kuta targeting foreigners without it. Cyrillic is unreadable. Indonesia drives on the LEFT. Honest 2026 guide for Russians.",
-		ogTitleShort: 'Russian Drivers in Indonesia: Bali Guide 2026',
-		ogSubtitle: 'Left-hand traffic. Weekly razzia. Scooter needs Category A.',
+			"Indonesian Traffic Law No. 22/2009 requires foreign tourists to carry an IDP — Bali police run weekly razzia checkpoints in Canggu, Kuta and Seminyak. Cyrillic on a Russian licence is unreadable to Indonesian officers, a car-only licence does not cover scooters, and Indonesia drives on the left. 2026 guide.",
+		ogTitleShort: 'Indonesia IDP for Russian Drivers',
+		ogSubtitle: 'Bali razzia · scooter Cat A · LHT · Cyrillic',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → Indonesia',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'Russia → Indonesia · Bali · 2026 Guide',
-		title: 'IDP for Russian Drivers in Indonesia: Bali Razzia & Scooter Category A',
-		lead: 'The razzia checkpoint in Canggu appears on a Tuesday morning without announcement — a barrier across Jalan Batu Bolong, three officers in fluorescent vests, a queue of scooters building behind it. The fine for a foreign tourist without an IDP is IDR 1,000,000 (~$60) — small enough that some travellers budget for it as a risk. The second consequence is the rental insurance: it stops covering the moment the officer confirms the document is missing. Every accident from that point lands directly on the driver. Indonesian Traffic Law No. 22 of 2009 requires IDP for all foreign tourists who drive. Russian licences are Cyrillic — Indonesian officers and rental staff cannot read them. And Indonesia drives on the left, the complete reversal of Russia. Three things to know before the scooter key is handed over in Seminyak.',
+		title: 'Indonesia IDP for Russian Drivers — Bali Razzia + Cyrillic Gap',
+		lead: 'The razzia checkpoint in Canggu appears on a Tuesday morning without announcement — a barrier across Jalan Batu Bolong, three officers in fluorescent vests, a queue of scooters building behind it. The fine for a foreign tourist without an IDP is IDR 1,000,000 (~$60) — small enough that some travellers budget for it as a risk. The second consequence is the rental insurance: it stops covering the moment the officer confirms the document is missing. Every accident from that point lands directly on the driver. Indonesian Traffic Law No. 22 of 2009 requires IDP for all foreign tourists who drive. Russian licences are Cyrillic — Indonesian officers and rental staff cannot read them. And Indonesia drives on the left, the complete reversal of Russia. Q1 2026 Forum.Vinskogo Bali and r/bali threads continue logging the razzia pattern at the Canggu Batu Bolong corridor, the Kuta Beach Road, and Ubud central market — most consistently between 09:00 and 12:00 on weekdays. Three things to know before the scooter key is handed over in Seminyak.',
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -46,7 +46,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Russian Licence alone vs IDP Companion in Indonesia',
-		lead: 'Indonesia is one of the highest-friction destinations for Russian drivers — IDP is required by law, the razzia enforces it weekly in Bali tourist corridors, and the rental insurance void on confirmation of the missing document is the real cost.',
+		lead: 'For Russian drivers Indonesia carries an unusual concentration of friction layers — Traffic Law 22/2009 mandates an IDP, weekly razzia checkpoints in Bali tourist corridors enforce it, and the rental-insurance void at confirmation of the missing document is the real cost beneath the small razzia fine.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Indonesia',
 		colCost: 'Cost',
@@ -208,7 +208,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Indonesia — honestly',
-		lead: 'Bali\'s razzia checkpoints are real and documented. We\'re going to be direct about what IDP Companion does and doesn\'t do.',
+		lead: 'Bali\'s razzia checkpoints in Canggu, Seminyak and Kuta are documented and unpredictable — they target foreign scooter riders specifically. The rest of this section is honest about what IDP Companion does at the razzia stop and the documents it does NOT replace (motorcycle category A, valid travel insurance with motorbike rider).',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -271,7 +271,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes for Russian tourists driving in Bali, ranked by likelihood.',
+		lead: "What Russian drivers actually face in Bali — Canggu/Kuta razzia checkpoint stops, scooter-rental shop documentation gaps, insurance-void cascades after crashes on Jalan Sunset Road — drawn from Forum.Vinskogo Bali and r/bali threads, sorted by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -377,7 +377,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and Indonesia-bound travellers.',
+		lead: 'Other South-East Asia and tropical scooter-economy destinations where Russian Cyrillic licences face the same enforcement layers — Thailand, Vietnam, Cambodia.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -417,25 +417,25 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в Индонезии: гид 2026',
+		title: 'IDP для россиян в Индонезии — облавы Бали + категория A',
 		description:
-			'IDP обязателен по индонезийскому закону, а полиция Бали еженедельно устраивает облавы (razzia) в Чангу и Куте на иностранцев без IDP. Кириллицу не читают. В Индонезии левостороннее движение. Честный гид 2026.',
-		ogTitleShort: 'Россияне за рулём в Индонезии',
-		ogSubtitle: 'Левостороннее. Еженедельные облавы. Скутеру нужна категория A.',
+			'Закон Индонезии № 22/2009 требует IDP от иностранных туристов — полиция Бали еженедельно устраивает razzia в Чангу, Куте и Семиньяке. Кириллицу не читают, скутер не покрывается только категорией B, левостороннее движение. Гид 2026 для россиян.',
+		ogTitleShort: 'IDP для россиян в Индонезии',
+		ogSubtitle: 'Бали razzia · категория A · левостороннее · кириллица',
 	},
 	breadcrumbs: {
 		home: 'Главная',
 		current: 'Россия → Индонезия',
 	},
-	lastReviewed: 'Апрель 2026',
+	lastReviewed: 'Июнь 2026',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
 
 	hero: {
 		kicker: 'Россия → Индонезия · Бали · Гид 2026',
-		title: 'Международные права для россиян в Индонезии: облавы Бали и категория A',
-		lead: 'Контрольный пост razzia в Чангу появляется во вторник утром без объявления — шлагбаум поперёк Jalan Batu Bolong, трое офицеров в светоотражающих жилетах, очередь скутеров за барьером. Штраф иностранному туристу без IDP — IDR 1 000 000 (~$60), достаточно мало, чтобы кто-то закладывал его как риск. Второе последствие — страховка аренды: она перестаёт покрывать в момент, когда офицер фиксирует отсутствие документа. Любое ДТП с этой минуты ложится напрямую на водителя. Закон Индонезии о дорожном движении № 22 от 2009 года требует IDP от каждого иностранца за рулём. Российские права — на кириллице, индонезийские офицеры и сотрудники проката их не читают. И в Индонезии левостороннее движение — полная зеркаловка относительно России. Три вещи, которые надо знать ещё до того, как ключ от скутера окажется у вас в Семиньяке.',
+		title: 'IDP для россиян в Индонезии — облавы Бали + кириллица',
+		lead: 'Контрольный пост razzia в Чангу появляется во вторник утром без объявления — шлагбаум поперёк Jalan Batu Bolong, трое офицеров в светоотражающих жилетах, очередь скутеров за барьером. Штраф иностранному туристу без IDP — IDR 1 000 000 (~$60), достаточно мало, чтобы кто-то закладывал его как риск. Второе последствие — страховка аренды: она перестаёт покрывать в момент, когда офицер фиксирует отсутствие документа. Любое ДТП с этой минуты ложится напрямую на водителя. Закон Индонезии о дорожном движении № 22 от 2009 года требует IDP от каждого иностранца за рулём. Российские права — на кириллице, индонезийские офицеры и сотрудники проката их не читают. И в Индонезии левостороннее движение — полная зеркаловка относительно России. Треды Forum.Vinskogo Бали и r/bali за Q1 2026 продолжают фиксировать тот же сценарий razzia — на Jalan Batu Bolong в Чангу, на Kuta Beach Road и в центре Убуда, чаще всего с 09:00 до 12:00 по будням. Три вещи, которые надо знать ещё до того, как ключ от скутера окажется у вас в Семиньяке.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',
@@ -450,7 +450,7 @@ const ru: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Российские права vs IDP Companion в Индонезии',
-		lead: 'Индонезия — одно из самых популярных туристических направлений для российских водителей: IDP обязателен по закону, облавы в Бали еженедельно проверяют это в туристических коридорах, и аннулирование страховки в момент фиксации отсутствия документа — реальная цена.',
+		lead: 'У россиян в Индонезии необычно плотный набор слоёв трения — Закон 22/2009 делает IDP обязательным, еженедельная razzia в туристических коридорах Бали это применяет, а реальная цена сидит не в маленьком штрафе на блокпосте, а в аннулировании страховки в момент фиксации отсутствия документа.',
 		colDocument: 'Документ',
 		colWhatItDoes: 'Что даёт в Индонезии',
 		colCost: 'Цена',
@@ -781,7 +781,7 @@ const ru: CountryPairCopy = {
 
 	related: {
 		heading: 'Похожие гиды',
-		lead: 'Больше гидов по парам стран для российских водителей и туристов, едущих в Индонезию.',
+		lead: 'Другие тропические направления Юго-Восточной Азии, где российская кириллица упирается в те же слои контроля — Таиланд, Вьетнам, Камбоджа.',
 		comingSoonLabel: 'Скоро',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Россия → Таиланд', status: 'В эфире', href: '/idp-for-russian-drivers-in-thailand/' },

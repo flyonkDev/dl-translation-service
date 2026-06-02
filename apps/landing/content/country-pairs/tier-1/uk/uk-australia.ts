@@ -23,22 +23,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Australia: 2026 Phone & Speed Camera Guide',
+		title: 'Australia IDP for UK Drivers — Photocard OK, AUD 555 Phone Fines',
 		description:
-			"UK photocard valid in Australia — no IDP legally required. But Victoria fines AUD 555 for touching your phone at a red light, NSW point-to-point cameras measure average speed, and double demerit periods double every fine. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Australia: IDP Guide 2026',
-		ogSubtitle: 'Left-hand traffic same as home. Phone laws are not.',
+			"UK photocard is accepted in Australia under English-language recognition — no IDP legally required for tourist visits. UK paper licences and 90-day Working Holiday timelines change the picture. 2026 guide for SYD/MEL/BNE drivers covering phone-camera enforcement, NSW point-to-point cameras and double-demerit periods.",
+		ogTitleShort: 'Australia IDP for UK Drivers',
+		ogSubtitle: 'Photocard OK · AUD 555 phone fines · 90-day rule',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Australia',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Australia · 2026 Guide',
-		title: 'IDP for UK Drivers in Australia: Phone Cameras at Red Lights',
-		lead: "The drive from Melbourne down the Great Ocean Road takes about ninety minutes before it becomes something else entirely — cliff faces dropping straight into the Southern Ocean, a road surface that demands actual concentration, and a sign at Apollo Bay warning the next fuel is 100 kilometres away. Most UK visitors handle Australian roads with less adjustment than they expect: left-hand traffic, right-hand drive, roundabouts identical to the ones at home. The recalibration that catches people isn't the road — it's the phone. In Victoria, in New South Wales, and in Queensland, touching your phone at a red light with the engine running is a fine. Not holding it to your ear while moving. Touching it. Sitting stationary. Victoria Police issued 47,000 phone-while-driving infringements in the first year of camera-based enforcement. The UK photocard licence covers the documentation side of driving in Australia for tourist visits without needing an IDP — English language, recognised everywhere. What it doesn't cover is three months of muscle memory telling you it's fine to check a notification at the lights.",
+		title: 'Australia IDP for UK Drivers — Photocard OK + Phone Cameras',
+		lead: "The drive from Melbourne down the Great Ocean Road takes about ninety minutes before it becomes something else entirely — cliff faces dropping straight into the Southern Ocean, a road surface that demands actual concentration, and a sign at Apollo Bay warning the next fuel is 100 kilometres away. Most UK visitors handle Australian roads with less adjustment than they expect: left-hand traffic, right-hand drive, roundabouts identical to the ones at home. The recalibration that catches people isn't the road — it's the phone. In Victoria, in New South Wales, and in Queensland, touching your phone at a red light with the engine running is a fine. Not holding it to your ear while moving. Touching it. Sitting stationary. Victoria Police issued 47,000 phone-while-driving infringements in the first year of camera-based enforcement. Q1 2026 r/australia and Pomsinoz expat threads continue flagging the same shock on UK arrivals — tickets that landed on the rental in week one for behaviour considered routine back home. The UK photocard licence covers the documentation side of driving in Australia for tourist visits without needing an IDP — English language, recognised everywhere. What it doesn't cover is three months of muscle memory telling you it's fine to check a notification at the lights.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -265,7 +265,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Australia, ranked by likelihood.',
+		lead: 'What UK drivers actually run into in Australia — Victoria phone-camera infringements, NSW M1/Newell point-to-point average-speed tickets, dawn-dusk wildlife strikes on regional roads — sorted by how often each plays out, drawn from r/australia and Pomsinoz threads.',
 		items: [
 			{
 				severity: 'low',
@@ -371,7 +371,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Australia-bound travellers.',
+		lead: 'Other English-language self-drive destinations UK travellers cluster with Australia — New Zealand, US road-trip states, South Africa.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'th', label: 'UK → Thailand', status: 'Live', href: '/idp-for-uk-drivers-in-thailand/' },

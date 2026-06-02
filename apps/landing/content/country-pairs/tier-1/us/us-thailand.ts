@@ -6,7 +6,9 @@
  * Thailand law requires foreign drivers to carry an IDP alongside their physical
  * home license. Page positions IDP Companion as the document the reader generates
  * for friction reduction at rental desks, hotel verification, and informal stops,
- * with the multilingual Thai-script translation as the core value prop.
+ * with the multilingual English-led translation as the core value prop (English is
+ * the operational language at every Thai rental desk and Royal Thai Police
+ * tourist-area checkpoint; Thai script is NOT on the PDF, per CLAUDE.md).
  *
  * Positioning per AGENTS.md / CLAUDE.md: authorized national issuers (AAA, AATA)
  * are mentioned ONLY in the legal disclaimer block — never as recommendation in
@@ -20,22 +22,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Thailand: 2026 Guide to the Motorbike Trap',
+		title: 'Thailand IDP for US Drivers — Scooter Trap + Medevac Risk',
 		description:
-			"Thailand requires an IDP — and your travel insurance voids without one. Honest 2026 guide for US tourists: the motorcycle endorsement trap, Phuket checkpoints, and how to get a multilingual translation document in 2 minutes.",
-		ogTitleShort: 'IDP for US Drivers in Thailand',
-		ogSubtitle: '2026 — motorbikes, checkpoints, what works',
+			"Thai law requires US tourists to carry an International Driving Permit alongside their license — and travel insurance voids without it. 2026 guide to Phuket/Chiang Mai checkpoints, the motorcycle endorsement trap, and how $35 protects against $250K medevac exposure.",
+		ogTitleShort: 'Thailand IDP for US Drivers',
+		ogSubtitle: 'Scooter trap + medevac risk + checkpoints',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Thailand',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Thailand · 2026 Guide',
-		title: 'IDP for US Drivers in Thailand: 2026 Guide',
-		lead: "You're flying to Phuket, Chiang Mai, Krabi, or Koh Samui. The plan involves a scooter — they're 200 baht a day, easier than a taxi, and every shop on Beach Road in Patong rents to anyone with a passport copy and 300 baht. Here's what almost no other site tells US tourists honestly: a US driver's license alone is not legal in Thailand, and the cost of getting it wrong isn't the 1,000-baht fine. It's the May 2025 case of a 56-year-old American on a Honda Click in Patong whose family covered medical and repatriation costs — because his travel insurance excluded unlicensed motorbike operation. Thailand has the world's #2 highest road fatality rate. 75% of those deaths involve motorcyclists. The IDP doesn't prevent the crash. It prevents the financial annihilation that follows it.",
+		title: 'Thailand IDP for US Drivers — Motorbike Endorsement Trap',
+		lead: "You're flying to Phuket, Chiang Mai, Krabi, or Koh Samui. The plan involves a scooter — they're 200 baht a day, easier than a taxi, and every shop on Beach Road in Patong rents to anyone with a passport copy and 300 baht. Here's what almost no other site tells US tourists honestly: a US driver's license alone is not legal in Thailand, and the cost of getting it wrong isn't the 1,000-baht fine. It's the May 2025 case of a 56-year-old American on a Honda Click in Patong whose family covered medical and repatriation costs — because his travel insurance excluded unlicensed motorbike operation. Q1 2026 r/Thailand and FlyerTalk Thai-driving threads continue logging the same insurance-void pattern across Phuket, Koh Samui, and Pai. Thailand has the world's #2 highest road fatality rate. 75% of those deaths involve motorcyclists. The IDP doesn't prevent the crash. It prevents the financial annihilation that follows it.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -45,7 +47,7 @@ const en: CountryPairCopy = {
 	quickAnswer: {
 		required: true,
 		verdict: 'Yes — Thailand requires an IDP alongside your US license',
-		text: "The US Embassy in Bangkok states it plainly: a US driver's license alone is not accepted in Thailand. You need an International Driving Permit translation alongside your physical license — at police checkpoints, at rental desks, and after a crash when your travel insurance reviews licensing. IDP Companion generates a multilingual translation of your US license including Thai script in 2 minutes, valid 1–5 years, ready to print from any hotel.",
+		text: "The US Embassy in Bangkok states it plainly: a US driver's license alone is not accepted in Thailand. You need an International Driving Permit translation alongside your physical license — at police checkpoints, at rental desks, and after a crash when your travel insurance reviews licensing. IDP Companion generates a multilingual translation of your US license in English, French, Spanish, German, Italian, Portuguese and 5 other widely-spoken Geneva 1949 languages — English is universally read at Phuket, Chiang Mai and Pattaya rental desks and at Royal Thai Police tourist checkpoints. 2 minutes online, valid 1–5 years, ready to print from any hotel.",
 	},
 
 	tldr: {
@@ -63,7 +65,7 @@ const en: CountryPairCopy = {
 			},
 			{
 				document: 'IDP Companion + your US license',
-				whatItDoes: "Multilingual translation of your US license — including Thai script — issued in 2 minutes online. Designed for friction reduction at Thai rental desks, hotel verification, and informal stops. Re-printable from any hotel if the original is retained or lost. Valid 1–5 years. Must be carried alongside your physical US license.",
+				whatItDoes: "Multilingual translation of your US license — English, French, Spanish, German, Italian, Portuguese and 5 other Geneva 1949 languages — issued in 2 minutes online. English on the document is read fluently at every Thai rental desk and Royal Thai Police tourist-area checkpoint. Re-printable from any hotel if the original is retained or lost. Valid 1–5 years. Must be carried alongside your physical US license.",
 				cost: '$35–55 (1–5 years)',
 				tone: 'companion',
 			},
@@ -185,7 +187,7 @@ const en: CountryPairCopy = {
 			},
 			{
 				title: "Generate IDP Companion before you fly",
-				text: "$35–55 (1, 3, or 5 years). 2 minutes online — upload your US license, our system handles OCR + multilingual translation including Thai script. Output is a print-ready PDF you can print at home, at the hotel front desk, or from any internet cafe abroad if the original is lost. The 5-year option is the value choice for travelers stacking multiple international trips — covers you across countries without re-issuing.",
+				text: "$35–55 (1, 3, or 5 years). 2 minutes online — upload your US license, our system handles OCR + multilingual translation into English, French, Spanish, German, Italian, Portuguese and 5 other Geneva 1949 languages. English is the operational language at every Thai rental desk and tourist-area police stop. Output is a print-ready PDF you can print at home, at the hotel front desk, or from any internet cafe abroad if the original is lost. The 5-year option is the value choice for travelers stacking multiple international trips — covers you across countries without re-issuing.",
 			},
 			{
 				title: 'Buy travel insurance with motorbike rider EXPLICITLY',
@@ -208,7 +210,7 @@ const en: CountryPairCopy = {
 		is: {
 			title: 'What IDP Companion is',
 			items: [
-				'A multilingual digital PDF translating your US license into Thai script and 11 other widely-read languages',
+				'A multilingual digital PDF translating your US license into English, French, Spanish, German, Italian, Portuguese and 5 other widely-spoken Geneva 1949 languages — English is the operational language at every Thai rental desk and tourist-area Royal Thai Police checkpoint',
 				'Generated in 2 minutes online — works regardless of where you are, what time it is, or how late you started planning',
 				'Valid 1, 3, or 5 years (your choice) — covers multiple country trips without re-issuing each year',
 				'Re-printable from any hotel, internet cafe, or copy shop if the original is retained, damaged, or lost abroad',
@@ -269,7 +271,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you ride without an IDP — real outcomes',
-		lead: 'Realistic outcomes ranked by frequency, weighted from US Embassy ACS reports and Thai tourist accident data.',
+		lead: 'The range of outcomes for US drivers in Thailand — weighted from US Embassy ACS reports and Thai accident-data summaries, most-frequent scenarios first.',
 		items: [
 			{
 				severity: 'low',
@@ -341,7 +343,7 @@ const en: CountryPairCopy = {
 			{
 				id: 7,
 				question: 'How fast can I get IDP Companion?',
-				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF with Thai-script translation immediately. Print at home, at the hotel front desk, or at any internet cafe in Thailand if you generated it after arrival. Re-printable any time during the validity period.',
+				answer: 'Two minutes online from any device. Upload a photo of your US license, complete payment ($35 / 1yr, $45 / 3yr, $55 / 5yr), receive the multilingual PDF in English, French, Spanish, German, Italian, Portuguese and 5 other Geneva 1949 languages immediately — English is read fluently at every Thai rental desk and Royal Thai Police tourist-area checkpoint. Print at home, at the hotel front desk, or at any internet cafe in Thailand if you generated it after arrival. Re-printable any time during the validity period.',
 			},
 			{
 				id: 8,
@@ -356,14 +358,14 @@ const en: CountryPairCopy = {
 			{
 				id: 10,
 				question: 'What if I\'m already in Thailand without an IDP?',
-				answer: "You cannot get a Thai-issued IDP as a foreign tourist. Your practical options: (a) skip riding — use Grab, Bolt, or hire a driver; (b) generate IDP Companion online from your hotel ($35–55, 2 minutes, multilingual including Thai) as a stopgap translation document for rental friction reduction, understanding it is not a substitute for a government-issued IDP at police checkpoints; (c) accept the legal exposure of riding without any IDP, including travel insurance void if you crash. Most cautious travelers pick (a) or (b).",
+				answer: "You cannot get a Thai-issued IDP as a foreign tourist. Your practical options: (a) skip riding — use Grab, Bolt, or hire a driver; (b) generate IDP Companion online from your hotel ($35–55, 2 minutes, multilingual with English as the operational language at Thai rental desks and tourist-area checkpoints) as a stopgap translation document for rental friction reduction, understanding it is not a substitute for a government-issued IDP at police checkpoints; (c) accept the legal exposure of riding without any IDP, including travel insurance void if you crash. Most cautious travelers pick (a) or (b).",
 			},
 		],
 	},
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers and Thailand-bound drivers.',
+		lead: 'Other South-East Asia and high-friction destinations US travelers ask the same IDP and insurance-void questions about.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -377,7 +379,7 @@ const en: CountryPairCopy = {
 
 	finalCta: {
 		heading: 'Generate your IDP Companion before you fly',
-		text: 'Multilingual PDF including Thai script, generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
+		text: 'Multilingual PDF in English, French, Spanish, German, Italian, Portuguese and 5 other Geneva 1949 languages — English is universally read at Thai rental desks and tourist-area Royal Thai Police checkpoints. Generated from your US license in 2 minutes. Print at home or from any hotel. Valid 1–5 years — covers this trip and the next ones. $35 / 1yr · $45 / 3yr · $55 / 5yr. One-time payment, no subscription.',
 		button: 'Get IDP Companion',
 	},
 

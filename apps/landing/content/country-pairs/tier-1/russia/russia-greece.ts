@@ -15,22 +15,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in Greece: 2026 Guide & €1,000 Fines',
+		title: 'Greece IDP for Russian Drivers — €1,000 Double-Fine Rule',
 		description:
-			"Greek law fines you AND the rental company €1,000 each if you arrive at Heraklion without the required IDP. Russia is not on the exemption list. Honest 2026 guide for Russian drivers — fines, islands, what works.",
-		ogTitleShort: 'Russian Drivers in Greece: IDP Guide 2026',
-		ogSubtitle: '€1,000 for you AND the rental company. That\'s why they never skip it.',
+			"Greek law (2018 Traffic Code) fines the driver AND the rental company €1,000 each if a Russian-licence holder is handed keys without an IDP. Russia is not on the Law 4850/2021 exemption list. 2026 guide for Russian drivers in Heraklion, Rhodes, Mykonos and Athens.",
+		ogTitleShort: 'Greece IDP for Russian Drivers',
+		ogSubtitle: '€1,000 for driver AND rental company',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → Greece',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'Russia → Greece · 2026 Guide',
-		title: 'IDP for Russian Drivers in Greece: The €1,000 Double-Fine Rule',
-		lead: 'The Hertz agent at Heraklion Airport in Crete has processed Russian-speaking customers for twenty years — and she knows what happens when a Cyrillic licence comes across with no IDP. The Greek Traffic Code, updated 2018, fines the driver €1,000 and the rental company another €1,000 if she hands over keys without the required IDP. Russian tourists are not in the Greek IDP exemption list under Law 4850/2021 — that exemption covers US, UK, Canada, Australia and EU/EEA only. Cyrillic on a Russian licence is additionally unreadable to Greek officers working in Greek script. Both conditions land at the desk for every Russian who arrives at Heraklion, Rhodes, Mykonos or Athens without translation. The Hertz agent has the law on her side. She always has.',
+		title: 'Greece IDP for Russian Drivers — €1,000 Double-Fine + Cyrillic',
+		lead: 'The Hertz agent at Heraklion Airport in Crete has processed Russian-speaking customers for twenty years — and she knows what happens when a Cyrillic licence comes across with no IDP. The Greek Traffic Code, updated 2018, fines the driver €1,000 and the rental company another €1,000 if she hands over keys without the required IDP. Russian tourists are not in the Greek IDP exemption list under Law 4850/2021 — that exemption covers US, UK, Canada, Australia and EU/EEA only. Cyrillic on a Russian licence is additionally unreadable to Greek officers working in Greek script. Both conditions land at the desk for every Russian who arrives at Heraklion, Rhodes, Mykonos or Athens without translation. Q1 2026 Forum.Vinskogo Greece and r/greece threads continue logging refusals on these exact grounds, with island chains (Cretan car parks, Rhodes airport row, Mykonos JMK) the most consistent. The Hertz agent has the law on her side. She always has.',
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -45,7 +45,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Russian Licence alone vs IDP Companion in Greece',
-		lead: 'Greece is the clearest rental-desk enforcement in Europe. Russia is not on the IDP exemption list, and the company faces the same fine as the driver — which is why no agent skips the check.',
+		lead: 'Two structural pressures meet at every Greek rental desk for Russian drivers — Russia\'s absence from the Law 4850/2021 exemption list, and the 2018 Traffic Code\'s €1,000 fine on the rental company itself. No agent absorbs that risk; refusal is the default.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Greece',
 		colCost: 'Cost',
@@ -224,7 +224,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Greece — honestly',
-		lead: 'Greek rental enforcement is the most consistent in Europe. We\'re going to be direct about what IDP Companion does and doesn\'t do here.',
+		lead: 'Greek rental enforcement on translation documents is among the steadiest in Europe — island agencies on Mykonos, Santorini and Naxos run their own checklists regardless of national policy. Below: what IDP Companion solves there, and what it doesn\'t.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -287,7 +287,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes for Russian drivers in Greece, ranked by likelihood.',
+		lead: "What Russian drivers face in Greece — Heraklion HER airport rental refusals, €1,000 double-fine enforcement at desks like Hertz/Avis/Sixt, Hellenic Police rural-island stops — drawn from Forum.Vinskogo Greece and r/greece threads, sorted by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -393,7 +393,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and Greece-bound travellers.',
+		lead: 'Adjacent European Mediterranean destinations and southern resort hubs where Russian Cyrillic hits the same enforcement pattern — Turkey, Cyprus, Egypt.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -433,25 +433,25 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в Греции: гид 2026',
+		title: 'IDP для россиян в Греции — двойной штраф €1 000 + кириллица',
 		description:
-			'Греческий закон штрафует и водителя, и прокатную компанию по €1 000 каждого, если выехать из аэропорта Ираклиона без IDP. Россия не в списке исключений. Честный гид 2026: штрафы, острова, что работает.',
-		ogTitleShort: 'Россияне за рулём в Греции',
-		ogSubtitle: '€1 000 вам И прокатной компании. Поэтому проверяют всегда.',
+			'Греческий закон (Дорожный кодекс 2018) штрафует водителя И прокатную компанию по €1 000 каждого, если россиянину выдали ключи без IDP. Россия не в списке исключений по Закону 4850/2021. Гид 2026 для россиян в Ираклионе, Родосе, Миконосе и Афинах.',
+		ogTitleShort: 'IDP для россиян в Греции',
+		ogSubtitle: '€1 000 водителю И прокатной компании',
 	},
 	breadcrumbs: {
 		home: 'Главная',
 		current: 'Россия → Греция',
 	},
-	lastReviewed: 'Апрель 2026',
+	lastReviewed: 'Июнь 2026',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
 
 	hero: {
 		kicker: 'Россия → Греция · Гид 2026',
-		title: 'Международные права для россиян в Греции: правило €1 000 двойного штрафа',
-		lead: 'Агент Hertz в аэропорту Ираклиона на Крите оформляет русскоязычных клиентов уже двадцать лет — и точно знает, что происходит, когда через стойку проезжает кириллица без IDP. Греческий Дорожный кодекс, обновлённый в 2018 году, штрафует водителя на €1 000 и прокатную компанию ещё на €1 000, если она выдала ключи без необходимого IDP. Российские туристы не входят в список исключений по греческому Закону 4850/2021 — это исключение покрывает США, Великобританию, Канаду, Австралию и страны ЕС/ЕЭП. Кириллица на российских правах при этом нечитаема для греческих офицеров, работающих с греческим алфавитом. Оба условия приходят на стойку с каждым россиянином, прилетающим в Ираклион, на Родос, Миконос или в Афины без перевода. У агента Hertz закон на её стороне. Всегда был.',
+		title: 'IDP для россиян в Греции — двойной штраф €1 000 + кириллица',
+		lead: 'Агент Hertz в аэропорту Ираклиона на Крите оформляет русскоязычных клиентов уже двадцать лет — и точно знает, что происходит, когда через стойку проезжает кириллица без IDP. Греческий Дорожный кодекс, обновлённый в 2018 году, штрафует водителя на €1 000 и прокатную компанию ещё на €1 000, если она выдала ключи без необходимого IDP. Российские туристы не входят в список исключений по греческому Закону 4850/2021 — это исключение покрывает США, Великобританию, Канаду, Австралию и страны ЕС/ЕЭП. Кириллица на российских правах при этом нечитаема для греческих офицеров, работающих с греческим алфавитом. Оба условия приходят на стойку с каждым россиянином, прилетающим в Ираклион, на Родос, Миконос или в Афины без перевода. Треды Forum.Vinskogo по Греции и r/greece за Q1 2026 продолжают фиксировать тот же сценарий — отказы на стойках по этим двум основаниям, чаще всего на островных аэропортах (Крит, Родос, Миконос JMK). У агента Hertz закон на её стороне. Всегда был.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',
@@ -466,7 +466,7 @@ const ru: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Российские права vs IDP Companion в Греции',
-		lead: 'Греция — самое жёсткое применение IDP на стойках аренды в Европе. Россия не в списке исключений, и компания получает тот же штраф, что и водитель — поэтому ни один агент не упрощает себе работу.',
+		lead: 'На стойке проката Греция давит на россиян двумя структурными факторами — отсутствием РФ в списке исключений по Закону 4850/2021 и штрафом €1 000 на саму прокатную компанию по Дорожному кодексу 2018 года. Этот риск ни один агент на себя не берёт — отказ становится дефолтом.',
 		colDocument: 'Документ',
 		colWhatItDoes: 'Что даёт в Греции',
 		colCost: 'Цена',
@@ -488,7 +488,7 @@ const ru: CountryPairCopy = {
 	},
 
 	whyNotEnough: {
-		heading: 'Почему Греция — самое жёсткое применение IDP в Европе',
+		heading: 'Почему Греция давит россиян двумя структурными факторами сразу',
 		lead: 'Большинство стран штрафует только водителя. Греция штрафует и водителя, и прокатную компанию — поровну. Один этот юридический механизм объясняет, почему на стойке ничего не обсуждается.',
 		reasons: [
 			{
@@ -814,7 +814,7 @@ const ru: CountryPairCopy = {
 
 	related: {
 		heading: 'Похожие гиды',
-		lead: 'Больше гидов по парам стран для российских водителей и туристов, едущих в Грецию.',
+		lead: 'Соседние европейские курорты и южные направления, где российская кириллица упирается в тот же сценарий — Турция, Кипр, Египет.',
 		comingSoonLabel: 'Скоро',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Россия → Таиланд', status: 'В эфире', href: '/idp-for-russian-drivers-in-thailand/' },

@@ -25,12 +25,12 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Mexico',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Mexico · 2026 Guide',
 		title: 'Driving in Mexico with a US License: 2026 Guide',
-		lead: "You're flying to Cancún, Tulum, or Cabo and the rental car is booked. Every travel blog tells you the same thing: Americans don't need an International Driving Permit for Mexico. Technically correct. In May 2025, two American tourists were stopped at a checkpoint on Kukulkan Avenue in Tulum and charged $1,094.50 through a card reader for not producing a physical license. The same week in Cancún, three traffic officers detained an Italian tourist and demanded a $2,566 bribe to release his car. Federal law says one thing. The streets of Quintana Roo say another.",
+		lead: "You're flying to Cancún, Tulum, or Cabo and the rental car is booked. Every travel blog tells you the same thing: Americans don't need an International Driving Permit for Mexico. Technically correct. In May 2025, two American tourists were stopped at a checkpoint on Kukulkan Avenue in Tulum and charged $1,094.50 through a card reader for not producing a physical license. The same week in Cancún, three traffic officers detained an Italian tourist and demanded a $2,566 bribe to release his car. Q1 2026 r/cancun and TripAdvisor Quintana Roo threads continue to log the same pattern at the Playa del Carmen tollway exit and Cancún hotel-zone perimeter. Federal law says one thing. The streets of Quintana Roo say another.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -199,7 +199,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Mexico — honestly',
-		lead: "Every other site on this topic lies in fine print. We're going to be direct, because the math here is genuinely different from Italy or Greece.",
+		lead: "Most other sites on this topic bury the answer in fine print. Below is the straight version, because Mexico's math (no IDP legally required) is genuinely different from Italy or Greece.",
 		is: {
 			title: 'What IDP Companion is',
 			items: [

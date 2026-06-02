@@ -4,8 +4,7 @@
  *
  * Killer angles for Portugal:
  *  - Portugal explicitly recognises US licences for tourist stays up to
- *    185 days — one of the cleanest legal positions in this guide for
- *    US drivers. IDP is NOT legally required.
+ *    185 days under Decree-Law 138/2012. IDP is NOT legally required.
  *  - BUT rental companies (Hertz, Sixt, Europcar) list IDP in their
  *    booking conditions for non-EU licences regardless of English-language
  *    status. The gap between "law says no" and "rental desk says maybe".
@@ -46,7 +45,7 @@ const en: CountryPairCopy = {
 	hero: {
 		kicker: 'US → Portugal · 2026 Guide',
 		title: 'IDP for US Drivers in Portugal: Legally Optional, Rental Desks Ask',
-		lead: "The drive from Faro Airport into the Algarve feels familiar — right-hand traffic, same as home, the Atlantic on the right. Portugal is one of the cleanest legal positions in this guide for US drivers: Portuguese law explicitly recognises US licences for tourist stays up to 185 days, and an IDP is NOT legally required. The friction is on a different document. Hertz Portugal, Sixt Portugal, and most international chains list a translation document or IDP as a booking condition for non-EU licences — applied as policy regardless of English-language status. PSP officers carry portable card readers for on-the-spot fines from foreign plates (€120 for 20 km/h over the limit, collected before the car pulls back onto the road). A22 Algarve tolls are fully electronic — no cash booth alternative. Two minutes for the document closes the rental-desk gap before it becomes a question at Faro Airport in August.",
+		lead: "The drive from Faro Airport into the Algarve feels familiar — right-hand traffic, same as home, the Atlantic on the right. Portuguese law under Decree-Law 138/2012 explicitly recognises US licences for tourist stays up to 185 days: an IDP is NOT legally required. The friction is on a different document. Hertz Portugal, Sixt Portugal, and most international chains list a translation document or IDP as a booking condition for non-EU licences — applied as policy regardless of English-language status. PSP officers carry portable card readers for on-the-spot fines from foreign plates (€120 for 20 km/h over the limit, collected before the car pulls back onto the road). A22 Algarve tolls are fully electronic — no cash booth alternative. Two minutes for the document closes the rental-desk gap before it becomes a question at Faro Airport in August.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',

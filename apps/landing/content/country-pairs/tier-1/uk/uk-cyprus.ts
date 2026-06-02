@@ -26,22 +26,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Cyprus: 2026 Fine Rule & Red Plates Guide',
+		title: 'Cyprus IDP for UK Drivers — Photocard OK, 15-Day Fine Rule',
 		description:
-			"UK photocard valid in Cyprus — no IDP legally required. Left-hand traffic same as home. But red rental plates flag you to police, fines escalate 50% after 15 days unpaid, and crossing into Northern Cyprus voids your insurance. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Cyprus: IDP Guide 2026',
-		ogSubtitle: 'Easy licence. The 15-day fine rule isn\'t.',
+			"UK photocard is accepted in the Republic of Cyprus under post-Brexit recognition — no IDP legally required. Red rental plates flag tourists to police, fines escalate 50% after 15 days unpaid, and crossing the Green Line voids most rental insurance. 2026 guide for Paphos, Larnaca and Ayia Napa drivers.",
+		ogTitleShort: 'Cyprus IDP for UK Drivers',
+		ogSubtitle: 'Photocard OK · 15-day fine escalation · Green Line',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Cyprus',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Cyprus · 2026 Guide',
-		title: 'IDP for UK Drivers in Cyprus: The 15-Day Fine Rule & Red Plates',
-		lead: "The first thing you notice driving out of Paphos Airport in a rental is that nothing feels wrong. Left-hand traffic, right-hand steering wheel, roundabouts that work exactly as they do on the A303. Cyprus drove on the left because the British built its roads, and forty years of colonial administration left a driving culture that feels more familiar to a UK visitor than driving in France or Spain ever does. The second thing you notice — if you're paying attention — is that your car has bright red number plates. Not white. Not yellow. Red, which in Cyprus means rental vehicle, which means every police officer on the Limassol coastal road can identify you from two hundred metres as a tourist who may not know the rules. The fines here are modest by European standards. But if you don't pay within fifteen days, they increase by fifty percent. And if you cross the Green Line checkpoint into Northern Cyprus in that rental car, you've just voided the insurance — most Cypriot rental agreements don't cover the north. The documentation for driving in Cyprus is the simplest UK travellers encounter anywhere. The rules around what you do with the car after you've picked it up are less simple.",
+		title: 'Cyprus IDP for UK Drivers — Red Plates + 15-Day Fine Rule',
+		lead: "The first thing you notice driving out of Paphos Airport in a rental is that nothing feels wrong. Left-hand traffic, right-hand steering wheel, roundabouts that work exactly as they do on the A303. Cyprus drove on the left because the British built its roads, and forty years of colonial administration left a driving culture that feels more familiar to a UK visitor than driving in France or Spain ever does. The second thing you notice — if you're paying attention — is that your car has bright red number plates. Not white. Not yellow. Red, which in Cyprus means rental vehicle, which means every police officer on the Limassol coastal road can identify you from two hundred metres as a tourist who may not know the rules. The fines here are modest by European standards. But if you don't pay within fifteen days, they increase by fifty percent. And if you cross the Green Line checkpoint into Northern Cyprus in that rental car, you've just voided the insurance — most Cypriot rental agreements don't cover the north. Q1 2026 r/cyprus and TripAdvisor Paphos/Ayia Napa threads continue logging the 15-day escalation catching UK drivers who assumed the rental company would pass the notice through immediately. The documentation for driving in Cyprus is among the simplest UK travellers encounter anywhere. The rules around what you do with the car after you've picked it up are less simple.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -56,7 +56,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'UK Licence alone vs IDP Companion in Cyprus',
-		lead: "Cyprus is the cleanest legal documentation case for UK photocard holders in Europe. The friction sits elsewhere — in fines, insurance boundaries, and what your rental car's red plates announce to police.",
+		lead: "For UK photocard holders the documentation question in Cyprus settles fast under post-Brexit recognition. The friction lives elsewhere — in 15-day fine escalation, Green Line insurance boundaries, and what your rental car's red plates announce to every patrol on the Limassol coastal road.",
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Cyprus',
 		colCost: 'Cost',
@@ -269,7 +269,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Cyprus, ranked by likelihood.',
+		lead: "What UK drivers face in Cyprus — 15-day fine escalation traps on jccsmart.com, breath-unit BAC checks at Limassol/Larnaca tourist corridors, Green Line insurance refusals — drawn from r/cyprus and TripAdvisor Cyprus threads, ordered by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -375,7 +375,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Cyprus-bound travellers.',
+		lead: 'Adjacent Eastern Mediterranean and former-British-rule destinations where UK photocard recognition holds but operational rules diverge.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'gr', label: 'UK → Greece', status: 'Live', href: '/idp-for-uk-drivers-in-greece/' },

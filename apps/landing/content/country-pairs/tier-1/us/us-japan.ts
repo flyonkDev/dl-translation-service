@@ -287,7 +287,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes ranked by frequency, based on US traveler reports from Japan.',
+		lead: 'What US drivers actually face in Japan — Toyota and Nippon rejections of online IDPs at the rental counter, Hakone and Kyoto checkpoint stops, Article 117 enforcement patterns — by frequency from r/JapanTravel and r/JapanRentalCar threads.',
 		items: [
 			{
 				severity: 'low',
@@ -381,7 +381,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers and Japan-bound drivers — coming soon.',
+		lead: 'Other strict-enforcement destinations where US drivers run into IDP requirements at the rental counter.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },

@@ -346,7 +346,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travellers heading to South-East Asia and IDP-required destinations.',
+		lead: 'Other tropical scooter-economy destinations where US drivers face razzia-style enforcement or insurance-void traps.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'th', label: 'US → Thailand', status: 'Live', href: '/idp-for-us-drivers-in-thailand/' },

@@ -23,22 +23,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Portugal: 2026 Police ATM & Toll Guide',
+		title: 'Portugal IDP for UK Drivers — Photocard OK, On-Spot Card Fines',
 		description:
-			"UK photocard valid in Portugal — no IDP legally required. But Portuguese police carry portable ATMs to collect fines on-the-spot, radar detectors cost €2,500, and the N125 in August is a trap. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Portugal: IDP Guide 2026',
-		ogSubtitle: 'No IDP needed. Portable police ATMs. Skip the N125.',
+			"UK photocard is accepted in Portugal under post-Brexit recognition — no IDP legally required. PSP carry portable card terminals to collect speeding fines from foreign-registered vehicles immediately, radar-detector devices cost up to €2,500, and the A22 Algarve is electronic-toll-only. 2026 guide for Faro, Lisbon and Porto drivers.",
+		ogTitleShort: 'Portugal IDP for UK Drivers',
+		ogSubtitle: 'Photocard OK · on-spot police card fines · A22 toll',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Portugal',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Portugal · 2026 Guide',
-		title: 'IDP for UK Drivers in Portugal: Police ATMs & A22 Toll Trap',
-		lead: "The PSP officer on the N125 outside Albufeira in July was professional and entirely unsurprised by UK plates. He asked for the licence, the insurance, the rental agreement — and when the fine was issued for a minor speeding infraction on a stretch where the limit drops from 90 to 50 without much warning, he walked back to his car and returned with a card reader. Portuguese traffic police have been equipped with portable payment terminals for foreign-registered vehicles since 2016. The fine is collected immediately, on the road, by card or cash. There is no option to pay later, no postal notice to a UK address, no grace period. The receipt is issued on the spot. UK photocard holders don't need an IDP in Portugal. What they don't need to discover at the layby is the speed limit on the approach to Albufeira town centre, which changes four times in three kilometres.",
+		title: 'Portugal IDP for UK Drivers — On-Spot Card Fines + A22 Toll',
+		lead: "The PSP officer on the N125 outside Albufeira in July was professional and entirely unsurprised by UK plates. He asked for the licence, the insurance, the rental agreement — and when the fine was issued for a minor speeding infraction on a stretch where the limit drops from 90 to 50 without much warning, he walked back to his car and returned with a card reader. Portuguese traffic police have been equipped with portable payment terminals for foreign-registered vehicles since 2016. The fine is collected immediately, on the road, by card or cash. There is no option to pay later, no postal notice to a UK address, no grace period. The receipt is issued on the spot. Q1 2026 r/portugal and TripAdvisor Algarve threads continue logging the same on-spot collections at the N125 Faro–Lagos corridor and the A22 toll-entry confusion for UK drivers without a Via Verde transponder. UK photocard holders don't need an IDP in Portugal. What they don't need to discover at the layby is the speed limit on the approach to Albufeira town centre, which changes four times in three kilometres.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -215,7 +215,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Portugal — honestly',
-		lead: 'Portugal post-Brexit is one of the cleanest legal cases in this guide for UK photocard holders. We\'ll be direct about where IDP Companion adds value.',
+		lead: 'Under the post-Brexit UK–EU agreement UK photocard holders can drive in Portugal without an IDP for short tourist stays. Below: where IDP Companion lifts rental-desk friction at smaller agencies in the Algarve and Madeira, and where it stays quiet.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -280,7 +280,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Portugal, ranked by likelihood.',
+		lead: "What UK drivers actually face in Portugal — PSP on-spot card fines along the N125 and A22, A22 Algarve electronic-toll confusion at the Spanish border, radar-detector device fines at Lisbon-area checkpoints — drawn from r/portugal and TripAdvisor Algarve threads, sorted by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -386,7 +386,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Portugal-bound travellers.',
+		lead: 'Adjacent Iberian and Atlantic destinations where UK photocard recognition holds but the operational rules (tolls, on-spot fines, ZBE-style zones) shift.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain/' },

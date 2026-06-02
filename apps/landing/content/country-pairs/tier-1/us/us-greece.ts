@@ -252,7 +252,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: "Realistic outcomes for US drivers in Greece since the 2021 law change. The gray zone hits hardest in rental refusals, not police stops.",
+		lead: "What US drivers face in Greece since Law 4850/2021 reframed the IDP requirement — the friction concentrates at island rental shops (Santorini, Naxos, Folegandros), not police stops. Sorted by frequency from r/greece and TripAdvisor Greek Islands threads.",
 		items: [
 			{
 				severity: 'low',
@@ -346,7 +346,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers and Greece-bound drivers — coming soon.',
+		lead: 'Other Mediterranean and island-rental destinations where the law-vs-rental-policy gap shows up for US drivers.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },

@@ -15,22 +15,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for Russian Drivers in Egypt: 2026 Sinai & Cyrillic Guide',
+		title: 'Egypt IDP for Russian Drivers — Cyrillic Unreadable, Sinai Risk',
 		description:
-			"Egypt requires an IDP under the 1949 Geneva Convention — and Russian Cyrillic is unreadable at military checkpoints between Hurghada, Luxor and the Sinai. Honest 2026 guide: fines, scooter razzia in Naama Bay, what works.",
-		ogTitleShort: 'Russian Drivers in Egypt: IDP Guide 2026',
-		ogSubtitle: 'Geneva Convention. Military checkpoints. Cyrillic unreadable.',
+			"Egypt requires an IDP under the 1949 Geneva Convention — and Russian Cyrillic is physically unreadable at the military checkpoints between Hurghada, Luxor and the Sinai. 2026 guide: fines, Naama Bay scooter razzia, the Arabic-reframing that resolves both.",
+		ogTitleShort: 'Egypt IDP for Russian Drivers',
+		ogSubtitle: 'Geneva 1949 · Cyrillic unreadable · Sinai checkpoints',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'Russia → Egypt',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'Russia → Egypt · 2026 Guide',
-		title: 'IDP for Russian Drivers in Egypt: The Cyrillic & Checkpoint Problem',
-		lead: "The checkpoint between Hurghada and Luxor is a sandbagged military position with armed soldiers, a barrier across the road, and a process that runs in Arabic. The Russian licence handed across is unreadable Cyrillic — the officer turns it over and asks again in Arabic. Egypt signed the 1949 Geneva Convention, which makes an IDP a legal requirement for every foreign tourist who drives, with no nationality exception. Two-thirds of the Russians who never leave Sharm or Hurghada don't encounter this. The ones who rent a car for Luxor, Aswan or the Sinai meet a checkpoint in the first hour. Two minutes with the right document. Significantly longer without it.",
+		title: 'Egypt IDP for Russian Drivers — Cyrillic & Sinai Checkpoints',
+		lead: "The checkpoint between Hurghada and Luxor is a sandbagged military position with armed soldiers, a barrier across the road, and a process that runs in Arabic. The Russian licence handed across is unreadable Cyrillic — the officer turns it over and asks again in Arabic. Egypt signed the 1949 Geneva Convention, which makes an IDP a legal requirement for every foreign tourist who drives, with no nationality exception. Two-thirds of the Russians who never leave Sharm or Hurghada don't encounter this. Q1 2026 r/Egypt and Russian-language Forum.Vinskogo Egypt threads continue logging the Luxor-road and Dahab-road checkpoint pattern for those who do rent a car. Two minutes with the right document. Significantly longer without it.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -45,7 +45,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Russian Licence alone vs IDP Companion in Egypt',
-		lead: "Egypt is the clearest IDP case in this guide — international convention plus a script gap that makes a Russian licence physically unreadable to Arabic-speaking officers.",
+		lead: "Two forces converge here — Geneva 1949 makes the IDP a legal mandate, and the Cyrillic-to-Arabic script gap makes a Russian licence physically unreadable to the officer holding it. Most Egypt destinations Russians actually rent in (Hurghada, Sharm, Luxor, Aswan) hit both at once.",
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Egypt',
 		colCost: 'Cost',
@@ -67,7 +67,7 @@ const en: CountryPairCopy = {
 	},
 
 	whyNotEnough: {
-		heading: 'Why Egypt is the clearest IDP case in this guide',
+		heading: 'Why Russian licences hit two walls at once in Egypt',
 		lead: "Most countries on this list enforce IDP through rental policy. Egypt enforces it through international treaty plus an alphabet barrier — neither has a workaround.",
 		reasons: [
 			{
@@ -223,7 +223,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Egypt — honestly',
-		lead: "Egypt is the cleanest case for an IDP in this guide. We're going to be direct about what IDP Companion does and doesn't do.",
+		lead: "Two layers stack against a Russian licence in Egypt — the Geneva 1949 legal mandate and the Cyrillic-to-Arabic script gap. What follows lays out what IDP Companion closes and what it doesn't.",
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -287,7 +287,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: "Realistic outcomes for Russian drivers in Egypt, ranked by likelihood.",
+		lead: "What Russian drivers actually run into in Egypt — Sinai military checkpoints, Hurghada scooter razzia, Luxor-road tourist police stops — ordered by how often each plays out.",
 		items: [
 			{
 				severity: 'low',
@@ -387,7 +387,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and Egypt-bound travellers.',
+		lead: 'Where IDP Companion helps Russian travellers next — destinations with similar Cyrillic-script friction or sharper enforcement.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -427,25 +427,25 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'Международные права для россиян в Египте: гид 2026',
+		title: 'IDP для россиян в Египте — кириллица на блокпостах + Синай',
 		description:
-			'Египту нужен IDP по Женевской конвенции 1949 — а кириллицу не читают на военных блокпостах между Хургадой, Луксором и Синаем. Честный гид 2026: штрафы, скутерные облавы в Наама-Бэй, что работает.',
-		ogTitleShort: 'Россияне за рулём в Египте',
-		ogSubtitle: 'Женевская конвенция. Военные блокпосты. Кириллицу не читают.',
+			'Египту нужен IDP по Женевской конвенции 1949 — а кириллицу физически не читают на военных блокпостах между Хургадой, Луксором и Синаем. Гид 2026: штрафы, скутерные облавы в Наама-Бэй, арабский перевод который закрывает обе проблемы.',
+		ogTitleShort: 'IDP для россиян в Египте',
+		ogSubtitle: 'Женева 1949 · кириллицу не читают · Синай',
 	},
 	breadcrumbs: {
 		home: 'Главная',
 		current: 'Россия → Египет',
 	},
-	lastReviewed: 'Апрель 2026',
+	lastReviewed: 'Июнь 2026',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
 
 	hero: {
 		kicker: 'Россия → Египет · Гид 2026',
-		title: 'Международные права для россиян в Египте: проблема кириллицы и блокпостов',
-		lead: 'Блокпост между Хургадой и Луксором — это укреплённая военная позиция: вооружённые солдаты, шлагбаум поперёк дороги и весь процесс по-арабски. Российские права, протянутые в окно, — нечитаемая кириллица. Офицер переворачивает их и снова просит документы по-арабски. Египет подписал Женевскую конвенцию 1949 года, и она требует IDP от каждого иностранца, который садится за руль, без исключений по гражданству. Две трети россиян, которые не выезжают за пределы Шарм-эш-Шейха или Хургады, с этим не сталкиваются. Те, кто берёт машину до Луксора, Асуана или на Синай, упираются в блокпост уже в первый час. Две минуты с правильным документом. И значительно дольше — без него.',
+		title: 'IDP для россиян в Египте — кириллица и блокпосты Синая',
+		lead: 'Блокпост между Хургадой и Луксором — это укреплённая военная позиция: вооружённые солдаты, шлагбаум поперёк дороги и весь процесс по-арабски. Российские права, протянутые в окно, — нечитаемая кириллица. Офицер переворачивает их и снова просит документы по-арабски. Египет подписал Женевскую конвенцию 1949 года, и она требует IDP от каждого иностранца, который садится за руль, без исключений по гражданству. Две трети россиян, которые не выезжают за пределы Шарм-эш-Шейха или Хургады, с этим не сталкиваются. Треды на Forum.Vinskogo Египет и r/Egypt за Q1 2026 продолжают фиксировать тот же сценарий блокпостов на дороге в Луксор и на трассе Дахаб для тех, кто всё-таки берёт машину. Две минуты с правильным документом. И значительно дольше — без него.',
 		ctaPrimary: 'Получить IDP Companion за 2 минуты — $35',
 		ctaSecondary: 'Все тарифы',
 		badgeTop: 'Гид 2026',
@@ -460,7 +460,7 @@ const ru: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Российские права vs IDP Companion в Египте',
-		lead: 'Египет — самый чистый случай IDP в этом гиде: международная конвенция плюс алфавитный разрыв, делающий российские права физически нечитаемыми для арабоговорящих офицеров.',
+		lead: 'Здесь сходятся две силы — Женева 1949 делает IDP юридическим требованием, а алфавитный разрыв с арабским делает российские права физически нечитаемыми у офицера в руках. Самые популярные у россиян направления (Хургада, Шарм, Луксор, Асуан) ловят оба фактора сразу.',
 		colDocument: 'Документ',
 		colWhatItDoes: 'Что даёт в Египте',
 		colCost: 'Цена',
@@ -638,7 +638,7 @@ const ru: CountryPairCopy = {
 
 	honesty: {
 		heading: 'Где IDP Companion помогает в Египте — без преувеличений',
-		lead: 'Египет — самый чистый случай для IDP в этом гиде. Скажем прямо, что IDP Companion делает и чего не делает.',
+		lead: 'На российские права в Египте давят сразу два фактора — Женевская конвенция 1949 как юридический мандат и алфавитный разрыв с арабским. Ниже разбираем что IDP Companion закрывает, а что нет.',
 		is: {
 			title: 'Что такое IDP Companion',
 			items: [
@@ -802,7 +802,7 @@ const ru: CountryPairCopy = {
 
 	related: {
 		heading: 'Похожие гиды',
-		lead: 'Больше гидов по парам стран для российских водителей и туристов, едущих в Египет.',
+		lead: 'Соседние арабоязычные и не-латинские направления, где у россиян возникает тот же сценарий с переводом — ОАЭ, Турция, Таиланд.',
 		comingSoonLabel: 'Скоро',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Россия → Таиланд', status: 'В эфире', href: '/idp-for-russian-drivers-in-thailand/' },

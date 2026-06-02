@@ -48,7 +48,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'Russian Licence alone vs IDP Companion in UAE',
-		lead: 'Two independent legal grounds — Markhoos exclusion + Cyrillic — converge on the same document. The UAE has the clearest IDP requirement for Russian tourists in this guide.',
+		lead: 'Two independent legal grounds converge on the same document — Markhoos exclusion (Russia is not on the UAE\'s 52-country approved list) plus the Cyrillic-to-Arabic script gap. Each is sufficient alone to require an IDP; together they remove ambiguity.',
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in UAE',
 		colCost: 'Cost',
@@ -197,7 +197,7 @@ const en: CountryPairCopy = {
 
 	howTo: {
 		heading: 'How to prepare for driving in UAE as a Russian citizen',
-		lead: 'The UAE has the clearest IDP requirement in this guide for Russian tourists. Two minutes online before flying removes both the Markhoos-list issue and the Cyrillic verification gap.',
+		lead: 'For Russian tourists the UAE\'s IDP requirement is a fixed input — Markhoos non-inclusion plus Cyrillic script make it non-negotiable. Two minutes online before flying removes both the list issue and the verification gap.',
 		schemaName: 'How to prepare for driving in UAE as a Russian citizen',
 		duration: 'PT15M',
 		cost: '35 USD',
@@ -227,7 +227,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in UAE — honestly',
-		lead: 'The UAE is the cleanest case in this guide for Russian drivers. We\'re going to be direct about what IDP Companion does and doesn\'t do.',
+		lead: 'For Russian drivers the UAE picture is unusually unambiguous — both the Markhoos rule and the Cyrillic script gap point at the same answer. The rest of this section lays out exactly what IDP Companion is, what it isn\'t, and which documents UAE law cares about beyond it.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -291,7 +291,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: "Realistic outcomes for Russian drivers in UAE, ranked by likelihood.",
+		lead: "What Russian drivers actually run into in UAE — Markhoos verification at AUH/DXB rental desks, Dubai-vs-Abu-Dhabi enforcement asymmetry, zero-BAC consequences after even a single drink — sorted by how often each plays out, drawn from Forum.Vinskogo UAE and r/dubai threads.",
 		items: [
 			{
 				severity: 'low',
@@ -397,7 +397,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for Russian drivers and UAE-bound travellers.',
+		lead: 'Other Middle East and Asia destinations where Russian drivers face strict-enforcement and Cyrillic-translation rules.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Russia → Thailand', status: 'Live', href: '/idp-for-russian-drivers-in-thailand/' },
@@ -649,7 +649,7 @@ const ru: CountryPairCopy = {
 
 	honesty: {
 		heading: 'Где IDP Companion помогает в ОАЭ — без преувеличений',
-		lead: 'ОАЭ — самый чистый случай в этом гиде для российских водителей. Скажем прямо, что IDP Companion делает и чего не делает.',
+		lead: 'Для россиян ситуация в ОАЭ необычно однозначная — и правило Markhoos, и алфавитный разрыв с арабским ведут к одному ответу. Дальше — без приукрашиваний: что именно делает IDP Companion, чем не является и какие документы требует местный закон сверх него.',
 		is: {
 			title: 'Что такое IDP Companion',
 			items: [
@@ -819,7 +819,7 @@ const ru: CountryPairCopy = {
 
 	related: {
 		heading: 'Похожие гиды',
-		lead: 'Больше гидов по парам стран для российских водителей и туристов, едущих в ОАЭ.',
+		lead: 'Соседние направления Ближнего Востока и Азии, где российские права упираются в строгие правила и потребность в арабской/латинской транслитерации.',
 		comingSoonLabel: 'Скоро',
 		items: [
 			{ flagFrom: 'ru', flagTo: 'th', label: 'Россия → Таиланд', status: 'В эфире', href: '/idp-for-russian-drivers-in-thailand/' },

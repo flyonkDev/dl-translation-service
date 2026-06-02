@@ -199,7 +199,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Greece — honestly',
-		lead: 'Greece post-Brexit is one of the cleanest legal cases in this guide for UK photocard holders. We\'ll be direct about where IDP Companion adds value.',
+		lead: 'Under Law 4850/2021 the UK photocard is legally sufficient in Greece, photocard counterpart not required. The friction lives at smaller island rental shops (Naxos, Folegandros, Santorini) that still operate on the pre-2021 IDP convention. Below: where IDP Companion lifts that friction and where it doesn\'t.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -264,7 +264,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Greece, ranked by likelihood.',
+		lead: 'What UK drivers actually run into in Greece post-Brexit — island rental shop discretion (Santorini, Folegandros, Naxos), ferry-point ID checks, Hellenic Police rural enforcement — sorted by how often each plays out.',
 		items: [
 			{
 				severity: 'low',
@@ -364,7 +364,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Greece-bound travellers.',
+		lead: 'Adjacent post-Brexit Mediterranean destinations where UK photocard recognition runs into smaller-agency discretion.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain/' },

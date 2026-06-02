@@ -233,7 +233,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes for US drivers',
-		lead: 'Realistic outcomes ranked by frequency, based on US Embassy advisories, Touring Club Suisse data and rental-industry policy disclosures.',
+		lead: "Drawing from Touring Club Suisse data, r/Switzerland threads and US Embassy advisories — vignette enforcement at the border, Raserdelikt 'criminal speeding' thresholds, ASTRA verification at high-altitude passes for US drivers — ordered by frequency.",
 		items: [
 			{
 				severity: 'low',
@@ -372,7 +372,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travellers heading to Europe and neighbouring Alpine destinations.',
+		lead: 'Adjacent Alpine and high-altitude destinations where US drivers face vignette, winter-tyre or criminal-speeding rules at the border.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'de', label: 'US → Germany', status: 'Live', href: '/idp-for-us-drivers-in-germany/' },

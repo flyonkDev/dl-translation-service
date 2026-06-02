@@ -338,7 +338,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travellers heading to European destinations where the IDP question varies.',
+		lead: 'Other Balkan and adjacent EU destinations where cross-border rules trip US drivers crossing rental boundaries (Slovenia, Italy, Bosnia).',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'it', label: 'US → Italy', status: 'Live', href: '/idp-for-us-drivers-in-italy/' },

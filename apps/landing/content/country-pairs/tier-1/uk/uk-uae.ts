@@ -35,22 +35,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in UAE: 2026 Dubai vs Abu Dhabi Guide',
+		title: 'UAE IDP for UK Drivers — Dubai OK, Abu Dhabi Wants One',
 		description:
-			"UK photocard accepted in Dubai under Markhoos 2025 — no IDP needed there. Abu Dhabi operates differently: many agencies and Police require IDP regardless. Zero BAC tolerance. AED 20,000 + jail for DUI. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in UAE: IDP Guide 2026',
-		ogSubtitle: 'Dubai says fine. Abu Dhabi says bring one anyway.',
+			"UAE Markhoos 2025 covers UK photocards — Dubai accepts them without IDP. Abu Dhabi Police and several rental agencies require one regardless. Zero BAC tolerance, AED 20,000 + jail for DUI. 2026 guide for UK drivers crossing emirate boundaries via DXB and Sheikh Zayed Road.",
+		ogTitleShort: 'UAE IDP for UK Drivers',
+		ogSubtitle: 'Dubai OK · Abu Dhabi wants one anyway',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → UAE',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → UAE · 2026 Guide',
-		title: 'IDP for UK Drivers in UAE: The Dubai vs Abu Dhabi Split',
-		lead: "The Budget counter at Abu Dhabi International has a card on the desk listing countries whose licence holders must present an IDP. The UK is not on that list — and then, in the same conversation, the agent asks for it anyway. This is the Abu Dhabi rental situation in miniature: the UAE's Markhoos initiative, updated in 2025 to cover 52 countries including the UK, means that tourists with valid English-language licences don't technically need an IDP to drive legally in the UAE. Dubai operates largely on that basis. Abu Dhabi Police have historically required one regardless of what the federal framework says, and a meaningful number of rental agencies in the emirate include it as a hard booking condition. The distinction between Dubai and Abu Dhabi matters because most UK visitors drive between both — picking up at DXB, heading to the Grand Mosque or Yas Island, returning via Sheikh Zayed Road. That route crosses an internal emirate boundary that carries different enforcement weight than the journey itself.",
+		title: 'UAE IDP for UK Drivers — Dubai vs Abu Dhabi Split',
+		lead: "The Budget counter at Abu Dhabi International has a card on the desk listing countries whose licence holders must present an IDP. The UK is not on that list — and then, in the same conversation, the agent asks for it anyway. This is the Abu Dhabi rental situation in miniature: the UAE's Markhoos initiative, updated in 2025 to cover 52 countries including the UK, means that tourists with valid English-language licences don't technically need an IDP to drive legally in the UAE. Dubai operates largely on that basis. Abu Dhabi Police have historically required one regardless of what the federal framework says, and a meaningful number of rental agencies in the emirate include it as a hard booking condition. Q1 2026 r/dubai and FlyerTalk Middle East threads continue to log this Dubai-vs-Abu-Dhabi asymmetry at AUH airport rental desks and at internal-boundary checkpoints between the emirates. The distinction between Dubai and Abu Dhabi matters because most UK visitors drive between both — picking up at DXB, heading to the Grand Mosque or Yas Island, returning via Sheikh Zayed Road. That route crosses an internal emirate boundary that carries different enforcement weight than the journey itself.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -278,7 +278,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers across Dubai and Abu Dhabi.',
+		lead: 'What UK drivers actually face crossing Dubai and Abu Dhabi — emirate-boundary asymmetry, zero-BAC enforcement, rental-desk friction, ordered by how often each lands.',
 		items: [
 			{
 				severity: 'low',
@@ -384,7 +384,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and UAE-bound travellers.',
+		lead: 'Other Middle East and high-friction destinations UK travellers raise IDP and rental-desk questions about.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'cy', label: 'UK → Cyprus', status: 'Live', href: '/idp-for-uk-drivers-in-cyprus/' },

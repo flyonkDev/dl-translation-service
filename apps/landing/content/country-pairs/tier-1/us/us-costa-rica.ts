@@ -18,22 +18,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Costa Rica: 2026 Article 91 & Plate Risk',
+		title: 'Costa Rica IDP for US Drivers — 90-Day Rule, Plate Confiscation',
 		description:
-			"US license is legally valid in Costa Rica for 90 days under Article 91 — but rental contracts and Tránsito Article 151 plate-confiscation make Spanish-language documentation quietly valuable. Honest 2026 guide.",
-		ogTitleShort: 'US Drivers in Costa Rica: IDP Guide 2026',
-		ogSubtitle: 'Article 91, plate confiscation, $120 fine — what actually happens.',
+			"US license is legally valid in Costa Rica for 90 days under Article 91 — but Tránsito Article 151 plate-confiscation authority and Spanish-only rental contracts make a Spanish translation companion quietly valuable. 2026 guide for SJO, LIR, Manuel Antonio drivers.",
+		ogTitleShort: 'Costa Rica IDP for US Drivers',
+		ogSubtitle: 'Article 91 OK · Article 151 plate risk',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Costa Rica',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Costa Rica · 2026 Guide',
-		title: 'IDP for US Drivers in Costa Rica: 90-Day Rule & Plate Risk',
-		lead: "The road to Manuel Antonio in January is one of those drives where you understand immediately why rental agencies charge what they do. Narrow two-lane asphalt that drops off into green nothing on both sides, trucks taking blind corners at full confidence, speed bumps (muertos) that materialize without warning on a 90 km/h stretch. A Tránsito checkpoint near Quepos asks, in workable English, for the license and the translation document. Article 91 of Ley 9078 gives US tourists 90 days of legal driving on their home license — that part is true. What's also true: without a Spanish-language presentation of what's on that license, the paperwork stop runs longer, and Article 151 gives the officer authority to confiscate the vehicle's plates entirely. The fine alone is ₡61,470 (~$120). The plate confiscation is the consequence that grounds the car.",
+		title: 'Costa Rica IDP for US Drivers — 90-Day Rule + Article 151',
+		lead: "The road to Manuel Antonio in January is one of those drives where you understand immediately why rental agencies charge what they do. Narrow two-lane asphalt that drops off into green nothing on both sides, trucks taking blind corners at full confidence, speed bumps (muertos) that materialize without warning on a 90 km/h stretch. A Tránsito checkpoint near Quepos asks, in workable English, for the license and the translation document. Article 91 of Ley 9078 gives US tourists 90 days of legal driving on their home license — that part is true. What's also true: without a Spanish-language presentation of what's on that license, the paperwork stop runs longer, and Article 151 gives the officer authority to confiscate the vehicle's plates entirely. Q1 2026 r/CostaRica and TripAdvisor Manuel Antonio threads continue logging this exact pattern on the Pan-American Highway south of Jacó and at the LIR Liberia airport rental row. The fine alone is ₡61,470 (~$120). The plate confiscation is the consequence that grounds the car.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -203,7 +203,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Costa Rica — honestly',
-		lead: 'Costa Rica is a "no IDP legally required, but Spanish documentation quietly valuable" destination. We\'re going to be direct about the math.',
+		lead: 'Costa Rica sits in the "no IDP legally required, but Spanish documentation quietly valuable" camp. Below: the straight math on what Article 91 covers, what Article 151 doesn\'t, and where IDP Companion changes the rental-stop arithmetic.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -268,7 +268,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for US drivers in Costa Rica, ranked by likelihood.',
+		lead: 'What US drivers in Costa Rica actually encounter — drawn from r/CostaRica threads and Tránsito enforcement summaries, sorted by frequency.',
 		items: [
 			{
 				severity: 'low',
@@ -374,7 +374,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US drivers and Costa Rica-bound travelers.',
+		lead: 'Other Latin America destinations where US drivers face Spanish-only paperwork or local-enforcement friction at the rental desk.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'mx', label: 'US → Mexico', status: 'Live', href: '/idp-for-us-drivers-in-mexico/' },
@@ -414,25 +414,25 @@ const en: CountryPairCopy = {
 
 const es: CountryPairCopy = {
 	seo: {
-		title: 'IDP para conductores de EE.UU. en Costa Rica: guía 2026',
+		title: 'Costa Rica: IDP para EE.UU. — Regla 90 días, placas Art. 151',
 		description:
-			'La licencia de EE.UU. es legalmente válida en Costa Rica por 90 días bajo el Artículo 91 — pero los contratos de alquiler y la confiscación de placas del Tránsito (Art. 151) hacen valiosa la documentación en español. Guía honesta 2026.',
-		ogTitleShort: 'Conductores de EE.UU. en Costa Rica 2026',
-		ogSubtitle: 'Artículo 91, confiscación de placas, multa $120 — qué pasa de verdad.',
+			'La licencia de EE.UU. es legalmente válida en Costa Rica por 90 días bajo el Artículo 91 — pero la autoridad del Tránsito para confiscar placas (Art. 151) y los contratos de alquiler en español hacen valiosa una traducción al español. Guía 2026 para SJO, LIR y Manuel Antonio.',
+		ogTitleShort: 'IDP EE.UU. → Costa Rica',
+		ogSubtitle: 'Art. 91 OK · Art. 151 placas en riesgo',
 	},
 	breadcrumbs: {
 		home: 'Inicio',
 		current: 'EE.UU. → Costa Rica',
 	},
-	lastReviewed: 'Abril 2026',
+	lastReviewed: 'Junio 2026',
 	labels: {
 		freshnessPrefix: 'Última revisión:',
 	},
 
 	hero: {
 		kicker: 'EE.UU. → Costa Rica · Guía 2026',
-		title: 'IDP para conductores de EE.UU. en Costa Rica: regla de 90 días',
-		lead: 'La carretera a Manuel Antonio en enero es uno de esos manejos donde uno entiende inmediatamente por qué las agencias de alquiler cobran lo que cobran. Asfalto angosto de dos vías que cae en verde por ambos lados, camiones tomando curvas ciegas con plena confianza, muertos que aparecen sin aviso en un tramo de 90 km/h. Un punto de control del Tránsito cerca de Quepos pide, en inglés funcional, la licencia y el documento de traducción. El Artículo 91 de la Ley 9078 da a los turistas estadounidenses 90 días de manejo legal con su licencia de casa — esa parte es cierta. Lo que también es cierto: sin una presentación en español de lo que está en esa licencia, la parada de papeleo se alarga, y el Artículo 151 da al oficial autoridad para confiscar las placas del vehículo por completo. La multa sola es de ₡61.470 (~$120). La confiscación de placas es la consecuencia que deja al carro varado.',
+		title: 'Costa Rica: IDP para EE.UU. — regla 90 días + Art. 151',
+		lead: 'La carretera a Manuel Antonio en enero es uno de esos manejos donde uno entiende inmediatamente por qué las agencias de alquiler cobran lo que cobran. Asfalto angosto de dos vías que cae en verde por ambos lados, camiones tomando curvas ciegas con plena confianza, muertos que aparecen sin aviso en un tramo de 90 km/h. Un punto de control del Tránsito cerca de Quepos pide, en inglés funcional, la licencia y el documento de traducción. El Artículo 91 de la Ley 9078 da a los turistas estadounidenses 90 días de manejo legal con su licencia de casa — esa parte es cierta. Lo que también es cierto: sin una presentación en español de lo que está en esa licencia, la parada de papeleo se alarga, y el Artículo 151 da al oficial autoridad para confiscar las placas del vehículo por completo. Los hilos de r/CostaRica y TripAdvisor Manuel Antonio del Q1 2026 siguen documentando este patrón en la Carretera Interamericana al sur de Jacó y en el aeropuerto LIR de Liberia. La multa sola es de ₡61.470 (~$120). La confiscación de placas es la consecuencia que deja al carro varado.',
 		ctaPrimary: 'Obtener IDP Companion en 2 min — $35',
 		ctaSecondary: 'Ver todos los planes',
 		badgeTop: 'Guía 2026',

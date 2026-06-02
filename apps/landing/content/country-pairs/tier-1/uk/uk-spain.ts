@@ -20,22 +20,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Spain: 2026 Photocard vs Paper Guide',
+		title: 'Spain IDP for UK Drivers — Photocard OK, Paper Needs IDP',
 		description:
-			"UK photocard licence accepted in Spain — no IDP legally required. But paper licences need one, ZBE stickers catch unprepared rental cars, and radar detector apps cost €500. Honest 2026 guide.",
-		ogTitleShort: 'UK Drivers in Spain: IDP Guide 2026',
-		ogSubtitle: 'Paper licence? You need one. Photocard? Mostly fine.',
+			"UK photocard licence is accepted in Spain post-Brexit — no IDP required for short stays. UK paper licences, Crown Dependencies and Gibraltar licences DO need one. 2026 guide for Málaga, Alicante and Madrid ZBE drivers covering DGT cameras and rental-desk refusals.",
+		ogTitleShort: 'Spain IDP for UK Drivers',
+		ogSubtitle: 'Photocard OK · Paper licence needs IDP',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'UK → Spain',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'UK → Spain · 2026 Guide',
-		title: 'IDP for UK Drivers in Spain: Photocard vs Paper Licence Rule',
-		lead: "The DGT camera on the A-7 between Málaga and Marbella doesn't distinguish between a UK photocard and a paper licence. It records your plate, calculates your speed, and posts the fine to the rental company within 72 hours. Speeding above the 120 km/h motorway limit costs €100–600 with 50% off if paid in 20 days — a discount that requires actually receiving the notice (which goes to the agency, which charges your card). The licence question in Spain sits slightly differently: UK photocard holders don't legally need an IDP for tourist stays, confirmed by the post-Brexit agreement. What that agreement doesn't cover is the paper-licence holder who arrives at an Alicante desk having read the wrong forum post from 2023, or the Madrid ZBE camera that fines the rental for missing a sticker.",
+		title: 'Spain IDP for UK Drivers — Photocard OK, Paper Needs One',
+		lead: "The DGT camera on the A-7 between Málaga and Marbella doesn't distinguish between a UK photocard and a paper licence. It records your plate, calculates your speed, and posts the fine to the rental company within 72 hours. Speeding above the 120 km/h motorway limit costs €100–600 with 50% off if paid in 20 days — a discount that requires actually receiving the notice (which goes to the agency, which charges your card). The licence question in Spain sits slightly differently: UK photocard holders don't legally need an IDP for tourist stays, confirmed by the post-Brexit agreement. What that agreement doesn't cover is the paper-licence holder who arrives at an Alicante desk having read the wrong forum post from 2023, or the Madrid ZBE camera that fines the rental for missing a sticker. Q1 2026 r/uktravel and TripAdvisor Costa del Sol threads continue logging the paper-licence refusal pattern at Alicante ALC, Malaga AGP and the smaller Canary Islands desks.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -197,7 +197,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Spain — honestly',
-		lead: 'Spain post-Brexit is one of the cleanest legal cases in this guide for UK photocard holders. We\'ll be direct about where IDP Companion adds value and where it doesn\'t.',
+		lead: 'The post-Brexit picture for Spain splits sharply by UK licence type — photocard holders are clean, paper-licence holders need an IDP. Below: what IDP Companion adds at the rental desk and where it stays quiet.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -262,7 +262,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Spain, ranked by likelihood.',
+		lead: 'What UK drivers run into in Spain — DGT ticket data plus rental-desk friction from r/uktravel and TripAdvisor Costa del Sol reports, ordered by frequency.',
 		items: [
 			{
 				severity: 'low',
@@ -362,7 +362,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Spain-bound travellers.',
+		lead: 'Other post-Brexit destinations where UK photocard rules shifted — and where they didn\'t.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'it', label: 'UK → Italy', status: 'Live', href: '/idp-for-uk-drivers-in-italy/' },

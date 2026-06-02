@@ -195,7 +195,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Iceland — honestly',
-		lead: 'Iceland is the cleanest "your license is fine" case in this guide for US drivers. We\'re going to be direct about where IDP Companion adds value and where it doesn\'t.',
+		lead: 'For US drivers Iceland sits firmly in the "your license is fine" camp under Icelandic Transport Authority rules. Below covers where IDP Companion still earns its $35 — insurance backup, lost-license recovery, cross-border combo trips — and where it stays quiet.',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -260,7 +260,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without preparation — real outcomes',
-		lead: 'Realistic outcomes for US drivers in Iceland — what actually happens, how often.',
+		lead: 'Drawing from r/VisitingIceland threads and Icelandic Transport Authority advisories — F-road insurance voids, BAC enforcement at 0.05%, summer-vs-winter Ring Road conditions for US drivers — sorted by frequency.',
 		items: [
 			{
 				severity: 'low',
@@ -360,7 +360,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US drivers and Iceland-bound travelers.',
+		lead: 'Other long-haul self-drive destinations US travelers cluster with Iceland — Norway, the Faroes, the UK.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },

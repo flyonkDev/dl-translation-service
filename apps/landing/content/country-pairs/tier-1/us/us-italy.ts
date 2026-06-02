@@ -244,7 +244,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes ranked by frequency, based on actual reports from American travelers.',
+		lead: 'What US travelers actually run into in Italy — ZTL camera fines, Rome FCO and Milan MXP rental refusals, Carabinieri stops in Tuscany — sorted by how often each plays out.',
 		items: [
 			{
 				severity: 'low',
@@ -354,7 +354,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers and Italy-bound drivers — coming soon.',
+		lead: 'Adjacent European destinations where US drivers face similar IDP mandates or ZTL-style camera enforcement.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'it', label: 'UK → Italy', status: 'Live', href: '/idp-for-uk-drivers-in-italy/' },

@@ -21,22 +21,22 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for US Drivers in Spain: 2026 Guide to ZBEs & Rentals',
+		title: 'Spain IDP for US Drivers — Required, 20,000 DGT Fines Yearly',
 		description:
-			'Driving in Spain on a US license? Spanish law requires an International Driving Permit. Skip it and risk fines from Guardia Civil, refusals at Europcar/Fox, and voided insurance. Honest 2026 guide.',
-		ogTitleShort: 'IDP for US Drivers in Spain',
-		ogSubtitle: '2026 Guide — Guardia Civil, ZBEs, rentals',
+			'Spanish law (Geneva 1949) requires US drivers to carry an International Driving Permit alongside their license. Without it: €200–€500 Guardia Civil fines, Europcar/Fox refusals, voided insurance. 2026 guide for Madrid ZBE + Barcelona + Costa del Sol drivers.',
+		ogTitleShort: 'Spain IDP for US Drivers',
+		ogSubtitle: '20,000 DGT fines/yr + Madrid ZBE camera net',
 	},
 	breadcrumbs: {
 		home: 'Home',
 		current: 'US → Spain',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
 
 	hero: {
 		kicker: 'US → Spain · 2026 Guide',
-		title: 'IDP for US Drivers in Spain: 2026 Guide',
-		lead: "You're flying to Madrid, Barcelona, Costa del Sol, or one of the Canary Islands. Your US license is in your wallet, the rental booking confirmation says the car will be ready at the airport. Here's a number most American travelers don't see until it's too late: Spanish DGT issues 20,000+ fines per year for driving with a license that isn't valid in Spain — and the vast majority go to tourists who simply forgot to bring an International Driving Permit.",
+		title: 'Spain IDP for US Drivers — Required by Law, ZBE Cameras',
+		lead: "You're flying to Madrid, Barcelona, Costa del Sol, or one of the Canary Islands. Your US license is in your wallet, the rental booking confirmation says the car will be ready at the airport. Here's a number most American travelers don't see until it's too late: Spanish DGT issues 20,000+ fines per year for driving with a license that isn't valid in Spain — and the vast majority go to tourists who simply forgot to bring an International Driving Permit. Q1 2026 r/spain and TripAdvisor Costa del Sol threads concentrate the refusals at Málaga AGP and Alicante ALC airport rental rows, plus Madrid Centro and Barcelona ZBE entry-camera fines that arrive at the rental company weeks after return.",
 		ctaPrimary: 'Get IDP Companion in 2 min — $35',
 		ctaSecondary: 'See all plans',
 		badgeTop: '2026 Guide',
@@ -273,7 +273,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes ranked by frequency, based on US traveler reports from Spain in 2024-2026.',
+		lead: 'What US travelers actually run into in Spain since 2024 — DGT enforcement data plus r/spain and TripAdvisor Costa del Sol incident threads, ordered by how often each plays out.',
 		items: [
 			{
 				severity: 'low',
@@ -367,7 +367,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for US travelers and Spain-bound drivers — coming soon.',
+		lead: 'Adjacent European destinations where US drivers run into similar IDP mandates or rental-desk friction.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'us', flagTo: 'fr', label: 'US → France', status: 'Live', href: '/idp-for-us-drivers-in-france/' },
@@ -409,22 +409,22 @@ const en: CountryPairCopy = {
 
 const es: CountryPairCopy = {
 	seo: {
-		title: 'Permiso Internacional EE.UU. en España: guía ZBE 2026',
+		title: 'España: IDP para conductores de EE.UU. — Obligatorio, multas DGT',
 		description:
-			'¿Vas a conducir en España con licencia de EE.UU.? La ley exige llevar el Permiso Internacional de Conducción. Sin él: multas de la Guardia Civil, rechazos en Europcar/Fox y seguro anulado. Guía honesta 2026.',
-		ogTitleShort: 'Permiso Internacional EE.UU. → España',
-		ogSubtitle: 'Guía 2026 — Guardia Civil, ZBE, alquileres',
+			'La ley española (Ginebra 1949) exige a los conductores estadounidenses llevar el Permiso Internacional junto con su licencia. Sin él: 200–500 € de multa de la Guardia Civil, rechazos en Europcar/Fox y seguro anulado. Guía 2026 para Madrid ZBE, Barcelona y Costa del Sol.',
+		ogTitleShort: 'IDP EE.UU. → España',
+		ogSubtitle: '20.000 multas DGT/año + cámaras ZBE Madrid',
 	},
 	breadcrumbs: {
 		home: 'Inicio',
 		current: 'EE.UU. → España',
 	},
-	lastReviewed: 'Abril 2026',
+	lastReviewed: 'Junio 2026',
 
 	hero: {
 		kicker: 'EE.UU. → España · Guía 2026',
-		title: 'Permiso Internacional para conductores estadounidenses en España: guía 2026',
-		lead: 'Ya tienes los vuelos a Madrid, Barcelona, la Costa del Sol o las Canarias. Tu licencia de Estados Unidos está en la cartera y la reserva del coche te espera en el aeropuerto. Esta es la cifra que la mayoría de viajeros no ve hasta que es tarde: la DGT emite más de 20.000 multas al año a conductores con permiso no válido en España, y la mayoría va a turistas que simplemente olvidaron traer su Permiso Internacional de Conducción.',
+		title: 'España: IDP para conductores de EE.UU. — obligatorio + ZBE',
+		lead: 'Ya tienes los vuelos a Madrid, Barcelona, la Costa del Sol o las Canarias. Tu licencia de Estados Unidos está en la cartera y la reserva del coche te espera en el aeropuerto. Esta es la cifra que la mayoría de viajeros no ve hasta que es tarde: la DGT emite más de 20.000 multas al año a conductores con permiso no válido en España, y la mayoría va a turistas que simplemente olvidaron traer su Permiso Internacional de Conducción. Los hilos de r/spain y TripAdvisor Costa del Sol del Q1 2026 concentran los rechazos en los aeropuertos de Málaga (AGP) y Alicante (ALC), además de las multas por cámara ZBE en Madrid Centro y Barcelona que llegan a la empresa de alquiler semanas después de devolver el coche.',
 		ctaPrimary: 'Obtén IDP Companion en 2 min — $35',
 		ctaSecondary: 'Ver todos los planes',
 		badgeTop: 'Guía 2026',

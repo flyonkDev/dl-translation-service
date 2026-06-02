@@ -54,7 +54,7 @@ const en: CountryPairCopy = {
 
 	tldr: {
 		heading: 'UK Licence alone vs IDP Companion in Thailand',
-		lead: "Thailand is one of the clearest IDP-required cases in this guide. The fine is the small problem. The insurance void is the expensive one.",
+		lead: "Thai law mandates an IDP under the 1949 Geneva Convention — that part is settled. The fine is the small problem. The insurance void after any crash is the expensive one.",
 		colDocument: 'Document',
 		colWhatItDoes: 'What it does in Thailand',
 		colCost: 'Cost',
@@ -209,7 +209,7 @@ const en: CountryPairCopy = {
 
 	honesty: {
 		heading: 'How IDP Companion fits in Thailand — honestly',
-		lead: 'Thailand requires an IDP by law. We\'re going to be direct about what IDP Companion does and doesn\'t do.',
+		lead: 'Thai law mandates an IDP under Geneva 1949 — that part is a fixed input. The rest of this section lays out what IDP Companion does on the rental forecourt and after a crash, and the documents it does NOT replace (motorcycle endorsement, motorbike-rider insurance).',
 		is: {
 			title: 'What IDP Companion is',
 			items: [
@@ -273,7 +273,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens if you drive without an IDP — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Thailand, ranked by likelihood.',
+		lead: 'What UK drivers actually meet in Thailand — Royal Thai Police tourist-area checkpoints, scooter shop documentation gaps, insurance-void cascades after crashes — sorted by frequency from r/Thailand and FlyerTalk Thai-driving threads.',
 		items: [
 			{
 				severity: 'low',
@@ -373,7 +373,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Thailand-bound travellers.',
+		lead: 'Other South-East Asia destinations UK travellers cluster with Thailand — Bali razzia, Cambodia rentals, Vietnam scooter rules.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain/' },

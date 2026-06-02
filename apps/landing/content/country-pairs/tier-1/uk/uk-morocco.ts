@@ -266,7 +266,7 @@ const en: CountryPairCopy = {
 
 	outcomes: {
 		heading: 'What happens at various points — real outcomes',
-		lead: 'Realistic outcomes for UK drivers in Morocco, ranked by likelihood.',
+		lead: 'What UK drivers face in Morocco — RNI roundabout priority confusion, A3 Casablanca tollway speed traps, N10 Ouarzazate night-driving incidents — drawn from r/Morocco and TripAdvisor Morocco threads, ordered by frequency.',
 		items: [
 			{
 				severity: 'low',
@@ -372,7 +372,7 @@ const en: CountryPairCopy = {
 
 	related: {
 		heading: 'Related guides',
-		lead: 'More country-pair guides for UK drivers and Morocco-bound travellers.',
+		lead: 'Other North African and right-hand-traffic destinations where UK drivers face roundabout, signage or language friction.',
 		comingSoonLabel: 'Coming soon',
 		items: [
 			{ flagFrom: 'gb', flagTo: 'es', label: 'UK → Spain', status: 'Live', href: '/idp-for-uk-drivers-in-spain/' },
