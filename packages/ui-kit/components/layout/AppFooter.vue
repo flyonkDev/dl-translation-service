@@ -46,6 +46,9 @@
 						<li v-if="links.samplePdf" class="list-link text-sm mb-1.5">
 							<a :href="links.samplePdf" class="link-underline">{{ linkSamplePdf }}</a>
 						</li>
+						<li v-if="links.completeGuide" class="list-link text-sm mb-1.5">
+							<a :href="links.completeGuide" class="link-underline">{{ linkCompleteGuide }}</a>
+						</li>
 					</ul>
 				</div>
 
@@ -134,6 +137,7 @@
 	    linkSecurity?: string;
 	    linkIdpValidity?: string;
 	    linkSamplePdf?: string;
+	    linkCompleteGuide?: string;
 	    linkSitemap?: string;
 	    /** Full copyright line, e.g. "© 2025 Name. All rights reserved." */
 	    copyrightLine?: string;
@@ -153,6 +157,7 @@
 
 	      idpValidity: string;
 	      samplePdf: string;
+	      completeGuide: string;
 	      sitemap: string;
 	    }>;
 	  }>(),
@@ -176,6 +181,7 @@
 	    linkSecurity: 'Security & Payments',
 	    linkIdpValidity: 'IDP validity',
 	    linkSamplePdf: 'Sample PDF',
+	    linkCompleteGuide: 'Driving Abroad 2026: Complete Guide',
 	    linkSitemap: 'Sitemap',
 	    copyrightLine: '',
 	    links: () => ({}),
@@ -203,6 +209,7 @@
 	  // Optional links — only rendered when consumer passes them in (no '#' fallback)
 	  idpValidity: props.links?.idpValidity ?? '',
 	  samplePdf: props.links?.samplePdf ?? '',
+	  completeGuide: props.links?.completeGuide ?? '',
 	  sitemap: props.links?.sitemap ?? '',
 	}));
 </script>

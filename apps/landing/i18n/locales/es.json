@@ -31,6 +31,7 @@
     "linkSecurity": "Seguridad y pagos",
     "linkIdpValidity": "Validez del IDP",
     "linkSamplePdf": "Muestra PDF",
+    "linkCompleteGuide": "Guía conducir en el extranjero 2026",
     "linkSitemap": "Mapa del sitio",
     "copyright": "© {year} IDP Companion. Todos los derechos reservados."
   },
@@ -1003,6 +1004,10 @@
         "heading": "Guías por par de países",
         "lead": "Cada guía cubre normas del IDP, multas, política de alquileres y cómo se aplica realmente la ley para un país de emisión en un destino concreto. Agrupadas por el país en el que se emitió el carnet."
       },
+      "guides": {
+        "heading": "Guías largas",
+        "lead": "Contenido de referencia transversal que conecta las guías por país — convenciones internacionales, elección de documento y el coste real de equivocarse."
+      },
       "authors": {
         "heading": "Autores",
         "lead": "Las personas que escriben y verifican las guías de este sitio."
@@ -1029,7 +1034,14 @@
       "security": { "title": "Seguridad y pagos", "body": "Cómo manejamos tus datos, los pagos y la verificación de identidad." },
       "contact": { "title": "Contacto", "body": "Correo directo, tiempos de respuesta y qué adjuntar en cada tipo de consulta." },
       "idpValidity": { "title": "Validez del IDP", "body": "Cuánto dura un Permiso de Conducción Internacional según el tratado y según el emisor." },
+      "samplePdf": { "title": "Muestra PDF", "body": "Vista previa del documento real IDP Companion — portada, datos personales, traducciones a 12 idiomas y categorías de licencia. Con marca de agua." },
       "sitemap": { "title": "Mapa del sitio", "body": "Esta página — todas las URL del sitio, agrupadas por tema." }
+    },
+    "guides": {
+      "driving-abroad-complete-guide-2026": {
+        "title": "Conducir en el extranjero en 2026 — guía completa del IDP",
+        "body": "Ginebra 1949 vs Viena 1968, qué países exigen un IDP, qué hace el seguro cuando lo saltas y las tres formas de obtener un documento tipo IDP antes de volar."
+      }
     },
     "authors": {
       "petr": { "title": "Petr Shchepetin", "body": "Cofundador y autor principal. Escribe y verifica los datos de cada guía por par de países." }

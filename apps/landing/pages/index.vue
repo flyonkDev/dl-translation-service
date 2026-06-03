@@ -448,7 +448,7 @@ useHead(() => ({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Organization',
         '@id': `${siteUrl}/#organization`,
@@ -461,7 +461,7 @@ useHead(() => ({
     },
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         '@id': `${siteUrl}/#website`,
@@ -473,7 +473,7 @@ useHead(() => ({
     },
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
         name: 'IDP Companion',
@@ -493,7 +493,7 @@ useHead(() => ({
     },
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqs.value.map((faq) => ({

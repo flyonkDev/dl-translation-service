@@ -43,6 +43,7 @@
 			:link-security="t('footer.linkSecurity')"
 			:link-idp-validity="t('footer.linkIdpValidity')"
 			:link-sample-pdf="t('footer.linkSamplePdf')"
+			:link-complete-guide="t('footer.linkCompleteGuide')"
 			:link-sitemap="t('footer.linkSitemap')"
 			:copyright-line="t('footer.copyright', { year: year })"
 			:links="footerLinks"
@@ -91,6 +92,7 @@
 		contact: localePath({ name: 'contact' }),
 		idpValidity: localePath({ name: 'idp-validity' }),
 		samplePdf: localePath({ name: 'sample-pdf' }),
+		completeGuide: localePath('/guides/driving-abroad-complete-guide-2026/'),
 		sitemap: localePath({ name: 'sitemap-page' }),
 	}));
 </script>

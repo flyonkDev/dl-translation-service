@@ -31,6 +31,7 @@
     "linkSecurity": "Security & Payments",
     "linkIdpValidity": "IDP validity",
     "linkSamplePdf": "Sample PDF",
+    "linkCompleteGuide": "Driving Abroad 2026 Guide",
     "linkSitemap": "Sitemap",
     "copyright": "© {year} IDP Companion. All rights reserved."
   },
@@ -1003,6 +1004,10 @@
         "heading": "Country-pair driving guides",
         "lead": "Each guide covers IDP rules, fines, rental policies, and on-the-ground enforcement for one driver origin in one destination. Grouped by where the driver is licensed."
       },
+      "guides": {
+        "heading": "Long-form guides",
+        "lead": "Cross-cutting reference content that ties the country-pair guides together — international conventions, document choices, the real cost of getting it wrong."
+      },
       "authors": {
         "heading": "Authors",
         "lead": "The people who write and fact-check the guides on this site."
@@ -1029,7 +1034,14 @@
       "security": { "title": "Security & Payments", "body": "How we handle your data, payments, and identity verification." },
       "contact": { "title": "Contact", "body": "Direct email, response times, and what to send for each request type." },
       "idpValidity": { "title": "IDP validity", "body": "How long an International Driving Permit is valid, by treaty and by issuer." },
+      "samplePdf": { "title": "Sample PDF", "body": "Preview the actual IDP Companion document — cover, personal details, 12 language translations, license categories. Watermarked." },
       "sitemap": { "title": "Sitemap", "body": "This page — every URL on the site, grouped by topic." }
+    },
+    "guides": {
+      "driving-abroad-complete-guide-2026": {
+        "title": "Driving Abroad in 2026 — The Complete IDP Guide",
+        "body": "Geneva 1949 vs Vienna 1968, which countries require an IDP, what insurance does when you skip it, and the three ways to get an IDP-class document before you fly."
+      }
     },
     "authors": {
       "petr": { "title": "Petr Shchepetin", "body": "Co-founder & lead author. Writes and fact-checks every country-pair guide." }

@@ -121,6 +121,44 @@
 			</div>
 		</section>
 
+		<!-- Long-form guides -->
+		<section v-if="guideCards.length" id="guides" class="section bg-white">
+			<div class="container">
+				<div class="mb-10 max-w-3xl">
+					<h2 class="mb-3 text-2xl font-extrabold text-slate-900 md:text-3xl">
+						{{ t('sitemapPage.sections.guides.heading') }}
+					</h2>
+					<p class="text-sm leading-relaxed text-slate-700 md:text-base">
+						{{ t('sitemapPage.sections.guides.lead') }}
+					</p>
+				</div>
+
+				<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+					<NuxtLinkLocale
+						v-for="guide in guideCards"
+						:key="guide.id"
+						:to="guide.href"
+						class="sitemap-page__card"
+					>
+						<div class="sitemap-page__card-icon">
+							<Icon :icon="guide.icon" width="22" />
+						</div>
+						<h3 class="sitemap-page__card-title">{{ guide.title }}</h3>
+						<p class="sitemap-page__card-body">{{ guide.body }}</p>
+						<div v-if="guide.locales.length > 1" class="mt-3 flex flex-wrap gap-1.5">
+							<span
+								v-for="loc in guide.locales"
+								:key="loc"
+								class="sitemap-page__locale-pill"
+							>
+								{{ t(`sitemapPage.localePill.${loc}`) || loc.toUpperCase() }}
+							</span>
+						</div>
+					</NuxtLinkLocale>
+				</div>
+			</div>
+		</section>
+
 		<!-- Authors -->
 		<section id="authors" class="section bg-white">
 			<div class="container">
@@ -204,6 +242,10 @@ import {
 	pairsByOrigin,
 	totalPairCount,
 } from '~/utils/country-pair-discovery';
+import {
+	allGuides,
+	totalGuideCount,
+} from '~/utils/guide-discovery';
 
 definePageMeta({ path: '/sitemap-page' });
 
@@ -236,6 +278,18 @@ const totalPairs = computed(() => totalPairCount());
  * Static page lists — main pages, authors, legal
  * ------------------------------------------------------------------------- */
 
+/**
+ * Manually-maintained list of «main» pages (top-level marketing + product pages).
+ *
+ * WHEN ADDING A NEW MAIN PAGE — checklist:
+ *   1. Add an entry below with { id, href, icon }
+ *   2. Add i18n keys: `sitemapPage.mainPages.<id>.title` and `.body` in
+ *      en/ru/es locale files
+ *
+ * Country-pair pages auto-discover via `country-pair-discovery.ts` (no edit needed).
+ * Long-form guides auto-discover via `guide-discovery.ts` (i18n keys still needed
+ * — see `sitemapPage.guides.<slug>.{title,body}`).
+ */
 const mainPageDefs = [
 	{ id: 'home',        href: '/',               icon: 'ph:house-bold' },
 	{ id: 'howItWorks',  href: '/how-it-works/',  icon: 'ph:list-numbers-bold' },
@@ -245,6 +299,7 @@ const mainPageDefs = [
 	{ id: 'security',    href: '/security/',      icon: 'ph:shield-check-bold' },
 	{ id: 'contact',     href: '/contact/',       icon: 'ph:envelope-bold' },
 	{ id: 'idpValidity', href: '/idp-validity/',  icon: 'ph:calendar-bold' },
+	{ id: 'samplePdf',   href: '/sample-pdf/',    icon: 'ph:file-pdf-bold' },
 	{ id: 'sitemap',     href: '/sitemap-page/',  icon: 'ph:tree-structure-bold' },
 ] as const;
 
@@ -289,6 +344,37 @@ const legalCards = computed(() => {
 		body: t(`sitemapPage.legalPages.${l.id}.body`),
 	}));
 });
+
+/* ---------------------------------------------------------------------------
+ * Auto-discovered Tier 3 long-form guides — manifest is built at compile time
+ * via Vite glob; new guides appear automatically on next build.
+ *
+ * Each guide still needs i18n keys `sitemapPage.guides.<slug>.{title,body}` in
+ * en/ru/es locale files (auto-discovery covers URL + locales, not human-readable
+ * card text).
+ * ------------------------------------------------------------------------- */
+
+const guideCards = computed(() => {
+	void locale.value;
+	return allGuides().map((g) => {
+		const titleKey = `sitemapPage.guides.${g.slug}.title`;
+		const bodyKey = `sitemapPage.guides.${g.slug}.body`;
+		const title = t(titleKey);
+		const body = t(bodyKey);
+		return {
+			id: g.slug,
+			href: g.url,
+			icon: 'ph:book-open-text-bold',
+			locales: g.locales,
+			// Fall back to slug-derived title if translation key is missing — guard
+			// against the "we shipped a guide but forgot the i18n key" gap.
+			title: title === titleKey ? g.slug.replace(/-/g, ' ') : title,
+			body: body === bodyKey ? '' : body,
+		};
+	});
+});
+
+const totalGuides = computed(() => totalGuideCount());
 
 /* ---------------------------------------------------------------------------
  * SEO + JSON-LD

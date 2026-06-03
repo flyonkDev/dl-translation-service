@@ -382,6 +382,23 @@
 			</div>
 		</section>
 
+		<!-- Pillar guide hub link -->
+		<section class="section bg-mint/10 border-t border-sea/10">
+			<div class="container max-w-4xl">
+				<NuxtLink :to="localePath('/guides/driving-abroad-complete-guide-2026/')" class="country-pair__pillar-link">
+					<div class="country-pair__pillar-icon">
+						<Icon icon="ph:book-open-text-bold" width="28" />
+					</div>
+					<div class="country-pair__pillar-text">
+						<div class="country-pair__pillar-kicker">Cross-cutting guide</div>
+						<div class="country-pair__pillar-heading">Driving Abroad in 2026: The Complete IDP Guide</div>
+						<div class="country-pair__pillar-sub">Geneva 1949 vs Vienna 1968, the destinations where it matters, what insurance does when you skip it, and the three ways to get an IDP-class document before you fly.</div>
+					</div>
+					<Icon icon="ph:arrow-right-bold" width="22" class="country-pair__pillar-arrow" />
+				</NuxtLink>
+			</div>
+		</section>
+
 		<!-- Final CTA -->
 		<section class="section bg-white border-t border-sea/10">
 			<div class="container flex max-w-5xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -558,7 +575,7 @@ useHead(() => {
 	const baseScripts = [
 		{
 			type: 'application/ld+json',
-			children: JSON.stringify({
+			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
 				'@type': 'Article',
 				headline: copy.value.seo.title,
@@ -591,7 +608,7 @@ useHead(() => {
 		},
 		{
 			type: 'application/ld+json',
-			children: JSON.stringify({
+			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
 				'@type': 'BreadcrumbList',
 				itemListElement: [
@@ -602,7 +619,7 @@ useHead(() => {
 		},
 		{
 			type: 'application/ld+json',
-			children: JSON.stringify({
+			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
 				'@type': 'FAQPage',
 				mainEntity: copy.value.faq.items.map((item) => ({
@@ -614,7 +631,7 @@ useHead(() => {
 		},
 		{
 			type: 'application/ld+json',
-			children: JSON.stringify({
+			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
 				'@type': 'Product',
 				name: 'IDP Companion',
@@ -637,7 +654,7 @@ useHead(() => {
 	if (copy.value.howTo) {
 		baseScripts.push({
 			type: 'application/ld+json',
-			children: JSON.stringify({
+			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
 				'@type': 'HowTo',
 				name: copy.value.howTo.schemaName,
@@ -1341,6 +1358,86 @@ useHead(() => {
 	background: rgba(var(--c-mint), 0.4);
 	border-left: 3px solid rgb(var(--c-sea));
 	border-radius: 8px;
+}
+
+.country-pair__pillar-link {
+	display: grid;
+	grid-template-columns: 56px 1fr 28px;
+	align-items: center;
+	gap: 20px;
+	padding: 22px 26px;
+	background: white;
+	border: 1px solid rgb(var(--c-slate-200));
+	border-radius: 20px;
+	text-decoration: none;
+	transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+
+	&:hover {
+		border-color: rgb(var(--c-sea));
+		transform: translateY(-2px);
+		box-shadow: 0 10px 28px -10px rgba(var(--c-sea), 0.35);
+
+		.country-pair__pillar-arrow {
+			transform: translateX(4px);
+		}
+	}
+}
+
+.country-pair__pillar-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 14px;
+	background: rgba(var(--c-mint), 0.55);
+	color: rgb(var(--c-sea));
+}
+
+.country-pair__pillar-kicker {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgb(var(--c-sea));
+	margin-bottom: 4px;
+}
+
+.country-pair__pillar-heading {
+	font-size: 17px;
+	font-weight: 800;
+	color: rgb(var(--c-slate-900));
+	line-height: 1.25;
+	margin-bottom: 6px;
+}
+
+.country-pair__pillar-sub {
+	font-size: 13px;
+	line-height: 1.55;
+	color: rgb(var(--c-slate-600));
+}
+
+.country-pair__pillar-arrow {
+	color: rgb(var(--c-sea));
+	transition: transform 0.18s ease;
+	flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+	.country-pair__pillar-link {
+		grid-template-columns: 48px 1fr;
+		grid-template-rows: auto auto;
+		gap: 14px;
+	}
+
+	.country-pair__pillar-icon {
+		width: 48px;
+		height: 48px;
+	}
+
+	.country-pair__pillar-arrow {
+		display: none;
+	}
 }
 
 /* === Renting === */
