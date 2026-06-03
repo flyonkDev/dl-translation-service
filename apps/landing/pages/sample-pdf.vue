@@ -53,6 +53,16 @@ useHead({
 					name: 'IDP Companion PDF',
 					description: 'Multilingual companion translation document for your driver\'s license, covering 12 languages per the 1949 Geneva Convention format.',
 					image: `${siteUrl}/sample/sample-cover.png`,
+					brand: { '@type': 'Brand', name: 'IDP Companion' },
+					offers: {
+						'@type': 'AggregateOffer',
+						priceCurrency: 'USD',
+						lowPrice: '35',
+						highPrice: '55',
+						offerCount: '3',
+						availability: 'https://schema.org/InStock',
+						url: `${siteUrl}/pricing/`,
+					},
 				},
 				breadcrumb: {
 					'@type': 'BreadcrumbList',
