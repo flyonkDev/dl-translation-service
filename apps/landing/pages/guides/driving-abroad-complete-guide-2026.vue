@@ -788,7 +788,7 @@ useHead(() => ({
 
 .guide-figure__img {
 	width: 100%;
-	max-width: 720px;
+	max-width: 1020px;
 	height: auto;
 	display: block;
 	border-radius: 18px;

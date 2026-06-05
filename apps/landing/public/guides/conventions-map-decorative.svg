@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1820 1024" width="1820" height="1024" role="img" aria-label="Geographic coverage of the three international driving conventions">
+	<defs>
+		<linearGradient id="bg-map" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#CBF3F0" stop-opacity="0.35"/>
+			<stop offset="1" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<filter id="pill-shadow" x="-10%" y="-30%" width="120%" height="160%">
+			<feGaussianBlur stdDeviation="4" in="SourceAlpha"/>
+			<feOffset dy="3"/>
+			<feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+			<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+		</filter>
+	</defs>
+
+	<!-- Background -->
+	<rect width="1820" height="1024" fill="url(#bg-map)"/>
+
+	<!-- Title -->
+	<g font-family="Inter, system-ui, -apple-system, sans-serif" text-anchor="middle">
+		<text x="910" y="90" font-size="20" font-weight="800" letter-spacing="6" fill="#2EC4B6">CONVENTION COVERAGE · 2026</text>
+		<text x="910" y="135" font-size="32" font-weight="800" fill="#0F172A">Three treaties, three geographies</text>
+	</g>
+
+	<!-- Stylized continents (simplified Bezier shapes — decorative, not cartographic) -->
+	<g fill="#CBF3F0" stroke="#A7E5DD" stroke-width="2">
+		<!-- North America -->
+		<path d="M 210 250 Q 180 220 220 200 Q 280 180 380 200 Q 460 215 500 280 Q 520 360 480 420 Q 440 470 380 480 Q 320 490 270 450 Q 220 410 210 350 Q 200 290 210 250 Z"/>
+		<!-- Central America strip -->
+		<path d="M 380 480 Q 420 510 450 540 Q 470 580 460 610 Q 440 620 420 600 Q 395 560 380 530 Z"/>
+		<!-- South America -->
+		<path d="M 460 620 Q 510 640 540 700 Q 560 780 540 850 Q 510 900 470 880 Q 430 850 420 790 Q 415 720 440 660 Q 445 635 460 620 Z"/>
+		<!-- Europe -->
+		<path d="M 820 280 Q 800 250 840 230 Q 900 220 960 240 Q 980 260 970 290 Q 950 320 900 320 Q 850 320 820 300 Q 815 290 820 280 Z"/>
+		<!-- Africa -->
+		<path d="M 870 360 Q 850 340 890 330 Q 950 325 1010 345 Q 1040 380 1030 450 Q 1020 530 990 600 Q 950 660 910 660 Q 870 650 850 590 Q 830 520 845 440 Q 855 390 870 360 Z"/>
+		<!-- Asia (large block) -->
+		<path d="M 1000 250 Q 980 220 1040 200 Q 1180 180 1340 200 Q 1450 220 1500 270 Q 1530 320 1510 380 Q 1480 430 1420 440 Q 1300 450 1180 440 Q 1080 430 1020 390 Q 990 340 1000 250 Z"/>
+		<!-- India peninsula -->
+		<path d="M 1220 440 Q 1240 470 1250 530 Q 1240 570 1220 580 Q 1200 570 1190 530 Q 1185 480 1200 450 Z"/>
+		<!-- Southeast Asia -->
+		<path d="M 1330 460 Q 1380 490 1400 540 Q 1390 580 1350 580 Q 1320 570 1310 530 Q 1305 490 1330 460 Z"/>
+		<!-- Australia -->
+		<path d="M 1450 700 Q 1410 680 1450 660 Q 1530 650 1600 670 Q 1640 700 1620 740 Q 1580 770 1510 760 Q 1450 750 1450 700 Z"/>
+	</g>
+
+	<!-- ZONE 1: Geneva 1949 — wide mint coverage (NA + Europe + Africa + Asia + Australia) -->
+	<g fill="#2EC4B6" opacity="0.18">
+		<circle cx="345" cy="335" r="180"/>
+		<circle cx="900" cy="290" r="140"/>
+		<circle cx="940" cy="480" r="190"/>
+		<circle cx="1280" cy="320" r="200"/>
+		<circle cx="1280" cy="510" r="120"/>
+		<circle cx="1525" cy="710" r="140"/>
+	</g>
+
+	<!-- ZONE 2: Vienna 1968 — focused on EU + Russia + CIS + Central Asia -->
+	<g fill="#FF9F1C" opacity="0.22">
+		<circle cx="900" cy="285" r="100"/>
+		<circle cx="1100" cy="280" r="130"/>
+		<circle cx="1300" cy="290" r="120"/>
+		<circle cx="1450" cy="320" r="90"/>
+	</g>
+
+	<!-- ZONE 3: Inter-American 1943 — limited Western Hemisphere -->
+	<g fill="#94A3B8" opacity="0.25">
+		<circle cx="430" cy="500" r="80"/>
+		<circle cx="490" cy="760" r="110"/>
+	</g>
+
+	<!-- Pill labels (legend) -->
+	<g filter="url(#pill-shadow)" font-family="Inter, system-ui, sans-serif">
+		<!-- Geneva 1949 pill -->
+		<g transform="translate(180 880)">
+			<rect width="320" height="68" rx="34" fill="#FFFFFF" stroke="#2EC4B6" stroke-width="3"/>
+			<circle cx="42" cy="34" r="18" fill="#2EC4B6"/>
+			<text x="42" y="41" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+			<text x="78" y="30" font-size="13" font-weight="800" letter-spacing="2" fill="#2EC4B6">GENEVA 1949</text>
+			<text x="78" y="54" font-size="15" font-weight="700" fill="#0F172A">150+ countries · global default</text>
+		</g>
+
+		<!-- Vienna 1968 pill -->
+		<g transform="translate(750 880)">
+			<rect width="320" height="68" rx="34" fill="#FFFFFF" stroke="#FF9F1C" stroke-width="3"/>
+			<circle cx="42" cy="34" r="18" fill="#FF9F1C"/>
+			<text x="42" y="41" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+			<text x="78" y="30" font-size="13" font-weight="800" letter-spacing="2" fill="#A66200">VIENNA 1968</text>
+			<text x="78" y="54" font-size="15" font-weight="700" fill="#0F172A">~84 countries · EU + Russia</text>
+		</g>
+
+		<!-- Inter-American 1943 pill -->
+		<g transform="translate(1320 880)">
+			<rect width="320" height="68" rx="34" fill="#FFFFFF" stroke="#94A3B8" stroke-width="3"/>
+			<circle cx="42" cy="34" r="18" fill="#94A3B8"/>
+			<text x="42" y="41" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+			<text x="78" y="30" font-size="13" font-weight="800" letter-spacing="2" fill="#475569">INTER-AMERICAN 1943</text>
+			<text x="78" y="54" font-size="15" font-weight="700" fill="#0F172A">8 countries · superseded</text>
+		</g>
+	</g>
+
+	<!-- Caption -->
+	<g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+		<text x="910" y="985" font-size="12" font-weight="500" fill="#94A3B8">Decorative — coverage zones approximate. See decision matrix for exact destination-by-destination guidance.</text>
+	</g>
+</svg>
