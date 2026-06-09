@@ -187,7 +187,7 @@ import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath, defineI1
 import { Icon } from '@iconify/vue';
 
 defineI18nRoute({
-	locales: ['en'],
+	locales: ['en', 'ru', 'es'],
 });
 
 const { locale } = useI18n();

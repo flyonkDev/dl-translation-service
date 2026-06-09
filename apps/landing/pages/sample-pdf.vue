@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 
 definePageMeta({ path: '/sample-pdf' });
-defineI18nRoute({ locales: ['en'] });
+defineI18nRoute({ locales: ['en', 'ru', 'es'] });
 
 const { locale } = useI18n();
 const localePath = useLocalePath();
