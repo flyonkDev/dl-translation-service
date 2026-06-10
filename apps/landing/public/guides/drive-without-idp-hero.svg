@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Stack of documented fine receipts from foreign-driver IDP incidents 2024-2026">
+	<defs>
+		<linearGradient id="bg-drive" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#CBF3F0" stop-opacity="0.45"/>
+			<stop offset="1" stop-color="#FFFFFF"/>
+		</linearGradient>
+		<filter id="drive-shadow" x="-12%" y="-12%" width="124%" height="124%">
+			<feGaussianBlur stdDeviation="14" in="SourceAlpha"/>
+			<feOffset dy="10"/>
+			<feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+			<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+		</filter>
+		<filter id="stamp-shadow" x="-10%" y="-10%" width="120%" height="120%">
+			<feGaussianBlur stdDeviation="5" in="SourceAlpha"/>
+			<feOffset dy="3"/>
+			<feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+			<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+		</filter>
+	</defs>
+
+	<rect width="1200" height="800" fill="url(#bg-drive)"/>
+
+	<!-- Decorative dots -->
+	<g fill="#2EC4B6" opacity="0.16">
+		<circle cx="80" cy="100" r="6"/>
+		<circle cx="1120" cy="120" r="8"/>
+		<circle cx="60" cy="720" r="6"/>
+		<circle cx="1140" cy="680" r="7"/>
+	</g>
+	<g fill="#FF9F1C" opacity="0.14">
+		<circle cx="200" cy="160" r="5"/>
+		<circle cx="1020" cy="660" r="5"/>
+	</g>
+
+	<!-- Top kicker -->
+	<g font-family="Inter, system-ui, -apple-system, sans-serif" text-anchor="middle">
+		<text x="600" y="90" font-size="22" font-weight="800" letter-spacing="6" fill="#2EC4B6">8 DOCUMENTED CASES · 2024–2026</text>
+	</g>
+
+	<!-- Receipt 3 (back, $5,000 Egypt) -->
+	<g transform="translate(600 460) rotate(-9) translate(-160 -10)" filter="url(#drive-shadow)">
+		<rect x="-140" y="-180" width="280" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+		<rect x="-140" y="-180" width="280" height="44" fill="#94A3B8"/>
+		<text y="-150" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle" font-family="Inter, system-ui, sans-serif">FINE NOTICE</text>
+		<text y="-90" font-size="13" font-weight="700" fill="#64748B" text-anchor="middle" font-family="Inter, system-ui, sans-serif">SHARM · 2024–25</text>
+		<text y="-30" font-size="48" font-weight="900" fill="#0F172A" text-anchor="middle" font-family="Inter, system-ui, sans-serif">EGP 5,000</text>
+		<text y="-2" font-size="11" font-weight="600" fill="#64748B" text-anchor="middle" font-family="Inter, system-ui, sans-serif">+ scooter impound</text>
+		<line x1="-110" y1="30" x2="110" y2="30" stroke="#E2E8F0" stroke-width="1"/>
+		<text y="58" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="middle" font-family="Inter, system-ui, sans-serif">CASE 08 · TIER 3</text>
+	</g>
+
+	<!-- Receipt 2 (middle, $1,094.50 Tulum) -->
+	<g transform="translate(600 440) rotate(4) translate(40 -50)" filter="url(#drive-shadow)">
+		<rect x="-150" y="-200" width="300" height="400" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+		<rect x="-150" y="-200" width="300" height="48" fill="#FF9F1C"/>
+		<text y="-170" font-size="13" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle" font-family="Inter, system-ui, sans-serif">FINE NOTICE</text>
+		<text y="-105" font-size="14" font-weight="700" fill="#64748B" text-anchor="middle" font-family="Inter, system-ui, sans-serif">TULUM · MAY 2025</text>
+		<text y="-40" font-size="56" font-weight="900" fill="#0F172A" text-anchor="middle" font-family="Inter, system-ui, sans-serif">$1,094.50</text>
+		<text y="-10" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle" font-family="Inter, system-ui, sans-serif">paid roadside · trip continued</text>
+		<line x1="-120" y1="25" x2="120" y2="25" stroke="#E2E8F0" stroke-width="1"/>
+		<text y="55" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle" font-family="Inter, system-ui, sans-serif">CASE 01 · TIER 2</text>
+	</g>
+
+	<!-- Receipt 1 (front, $2,566 Cancún — hero card) -->
+	<g transform="translate(600 420) rotate(-3) translate(-30 -110)" filter="url(#drive-shadow)">
+		<rect x="-170" y="-220" width="340" height="440" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+		<rect x="-170" y="-220" width="340" height="56" fill="#DC2626"/>
+		<text y="-185" font-size="15" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle" font-family="Inter, system-ui, sans-serif">FINE NOTICE · CRITICAL</text>
+		<text y="-115" font-size="16" font-weight="700" fill="#475569" text-anchor="middle" font-family="Inter, system-ui, sans-serif">CANCÚN CORRIDOR · MAY 2025</text>
+		<text y="-30" font-size="68" font-weight="900" fill="#0F172A" text-anchor="middle" font-family="Inter, system-ui, sans-serif">$2,566</text>
+		<text y="2" font-size="13" font-weight="600" fill="#64748B" text-anchor="middle" font-family="Inter, system-ui, sans-serif">paid for rental recovery · half-day lost</text>
+		<line x1="-140" y1="35" x2="140" y2="35" stroke="#E2E8F0" stroke-width="1"/>
+		<text y="70" font-size="13" font-weight="700" fill="#94A3B8" text-anchor="middle" font-family="Inter, system-ui, sans-serif">CASE 02 · TIER 3</text>
+
+		<!-- Red diagonal stamp -->
+		<g transform="translate(0 130) rotate(-12)" filter="url(#stamp-shadow)">
+			<rect x="-105" y="-20" width="210" height="40" rx="3" fill="none" stroke="#DC2626" stroke-width="3"/>
+			<text y="8" font-size="20" font-weight="900" fill="#DC2626" text-anchor="middle" letter-spacing="3" font-family="Inter, system-ui, sans-serif">NO IDP</text>
+		</g>
+	</g>
+
+	<!-- Bottom badge -->
+	<g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
+		<text x="600" y="730" font-size="14" font-weight="700" fill="#475569">15 COUNTRIES · 4 ESCALATION TIERS · $35 PREVENTION</text>
+	</g>
+</svg>

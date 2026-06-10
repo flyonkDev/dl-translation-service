@@ -11,11 +11,12 @@
 			<!-- Text column -->
 			<div class="cp-hero__content">
 				<!-- Breadcrumbs -->
-				<nav class="cp-hero__breadcrumbs" aria-label="Breadcrumb">
-					<NuxtLinkLocale to="/" class="cp-hero__breadcrumbs-link">{{ breadcrumbsHome }}</NuxtLinkLocale>
-					<span aria-hidden="true" class="cp-hero__breadcrumbs-sep">›</span>
-					<span class="cp-hero__breadcrumbs-current">{{ breadcrumbsCurrent }}</span>
-				</nav>
+				<Breadcrumbs
+					:items="[
+						{ label: breadcrumbsHome, to: '/' },
+						{ label: breadcrumbsCurrent },
+					]"
+				/>
 
 				<!-- Flag pair pill -->
 				<div class="cp-hero__flag-pill" aria-hidden="true">
@@ -93,6 +94,7 @@
 import { Icon } from '@iconify/vue';
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 import AuthorByline from '~/components/AuthorByline.vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 
 interface QuickAnswer {
 	required: boolean;
@@ -242,33 +244,6 @@ function onPrimaryClick() {
 
 /* === Content === */
 
-.cp-hero__breadcrumbs {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	font-size: 12px;
-	color: rgb(var(--c-slate-500));
-	margin-bottom: 18px;
-}
-
-.cp-hero__breadcrumbs-link {
-	color: rgb(var(--c-slate-500));
-	text-decoration: none;
-	transition: color 0.15s ease;
-
-	&:hover {
-		color: rgb(var(--c-sea));
-	}
-}
-
-.cp-hero__breadcrumbs-sep {
-	color: rgb(var(--c-slate-400));
-}
-
-.cp-hero__breadcrumbs-current {
-	color: rgb(var(--c-slate-700));
-	font-weight: 600;
-}
 
 .cp-hero__flag-pill {
 	display: inline-flex;

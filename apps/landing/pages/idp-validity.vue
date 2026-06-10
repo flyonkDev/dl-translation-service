@@ -4,6 +4,7 @@
 		<!-- Hero -->
 		<section class="section idp-validity__hero">
 			<div class="container max-w-4xl">
+				<Breadcrumbs :items="[{ label: t('breadcrumbs.home'), to: '/' }, { label: t('footer.linkIdpValidity') }]" />
 				<p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
 					{{ copy.hero.kicker }}
 				</p>
@@ -306,13 +307,14 @@ import { Icon } from '@iconify/vue';
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 import { toOgLocale } from '~/utils/ogLocale';
 import AuthorByline from '~/components/AuthorByline.vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 import FaqAccordion from '~/components/FaqAccordion.vue';
 import { idpValidityCopy, type LocaleKey } from '~/content/idp-validity-copy';
 
 const AUTHOR_NAME = 'Petr Shchepetin';
 const AUTHOR_SLUG = 'petr-shchepetin';
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const config = useRuntimeConfig();
 const localePath = useLocalePath();
 

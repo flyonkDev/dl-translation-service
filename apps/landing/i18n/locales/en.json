@@ -4,6 +4,9 @@
     "description": "Multilingual PDF that translates your driver license into 12 languages. Read at rental desks, hotels, and police stops in 150+ countries. $35, 2 minutes, instant download.",
     "ogImage": "https://www.idpcompanion.com/og-image.png"
   },
+  "breadcrumbs": {
+    "home": "Home"
+  },
   "layout": {
     "logo": "IDP Companion",
     "navHow": "How it works",
@@ -11,6 +14,7 @@
     "navSamplePdf": "Sample PDF",
     "navPricing": "Pricing",
     "navAbout": "About",
+    "navGuides": "Guides",
     "languageAria": "Language",
     "ctaStart": "Start application"
   },
@@ -1101,6 +1105,10 @@
       "idp-vs-idl-vs-ida-2026": {
         "title": "IDP vs IDL vs IDA vs IAA — What's Real, What's Scam (2026)",
         "body": "Three international driving documents are real (Geneva 1949, Vienna 1968, Inter-American 1943). Every IDL and IDA permit is marketing rebrand or scam. 30-second verification checklist + FTC-cited red flags."
+      },
+      "drive-without-idp-2026": {
+        "title": "Driving Without an IDP — Real Cases, Real Fines (2026)",
+        "body": "Eight documented incidents (2024-2026) of foreign drivers caught without an IDP. $50–$2,566 documented penalty range, 4 escalation tiers, 15-country fine table, recovery guide."
       }
     },
     "authors": {

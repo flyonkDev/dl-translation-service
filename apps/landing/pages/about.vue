@@ -4,6 +4,7 @@
     <!-- Hero -->
     <section class="section bg-mint/40">
       <div class="container max-w-4xl">
+        <Breadcrumbs :items="[{ label: t('breadcrumbs.home'), to: '/' }, { label: t('layout.navAbout') }]" />
         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
           {{ t('about.heroKicker') }}
         </p>
@@ -221,6 +222,7 @@ import { Icon } from '@iconify/vue';
 import { LOCALE_QUERY_PARAM } from '@i18n';
 import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
 import FaqAccordion from '~/components/FaqAccordion.vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 import { useProductAnalytics } from '~/composables/useProductAnalytics';
 
 const { t, locale } = useI18n();

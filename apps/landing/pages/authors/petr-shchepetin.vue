@@ -4,13 +4,13 @@
 		<!-- Hero -->
 		<section class="section bg-mint/40">
 			<div class="container max-w-4xl">
-				<nav class="author-page__breadcrumbs" aria-label="Breadcrumb">
-					<NuxtLinkLocale to="/" class="author-page__crumb-link">Home</NuxtLinkLocale>
-					<span aria-hidden="true" class="author-page__crumb-sep">›</span>
-					<span class="author-page__crumb-current">Authors</span>
-					<span aria-hidden="true" class="author-page__crumb-sep">›</span>
-					<span class="author-page__crumb-current">Petr Shchepetin</span>
-				</nav>
+				<Breadcrumbs
+					:items="[
+						{ label: 'Home', to: '/' },
+						{ label: 'Authors' },
+						{ label: 'Petr Shchepetin' },
+					]"
+				/>
 
 				<div class="author-page__hero">
 					<div class="author-page__avatar">
@@ -185,6 +185,7 @@
 import { computed } from 'vue';
 import { useHead, useSeoMeta, useI18n, useRuntimeConfig, useLocalePath, defineI18nRoute, defineOgImageComponent } from '#imports';
 import { Icon } from '@iconify/vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 
 defineI18nRoute({
 	locales: ['en', 'ru', 'es'],
@@ -267,33 +268,6 @@ useHead(() => ({
 
 <style scoped lang="scss">
 @use '@ui-kit/variables' as *;
-
-.author-page__breadcrumbs {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	font-size: 12px;
-	color: rgb(var(--c-slate-500));
-	margin-bottom: 24px;
-}
-
-.author-page__crumb-link {
-	color: rgb(var(--c-slate-500));
-	text-decoration: none;
-
-	&:hover {
-		color: rgb(var(--c-sea));
-	}
-}
-
-.author-page__crumb-sep {
-	color: rgb(var(--c-slate-400));
-}
-
-.author-page__crumb-current {
-	color: rgb(var(--c-slate-700));
-	font-weight: 600;
-}
 
 .author-page__hero {
 	display: flex;

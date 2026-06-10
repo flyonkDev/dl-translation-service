@@ -21,6 +21,7 @@
 				class="nav hidden sm:flex min-w-0 flex-1 items-center justify-center gap-2 overflow-x-auto sm:gap-3 md:gap-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
 				<a :href="howHref" class="nav-link text-sm whitespace-nowrap">{{ navHowLabel }}</a>
+				<a v-if="guidesHref" :href="guidesHref" class="nav-link text-sm whitespace-nowrap">{{ navGuidesLabel }}</a>
 				<a :href="faqHref" class="nav-link text-sm whitespace-nowrap">{{ navFaqLabel }}</a>
 				<a v-if="samplePdfHref" :href="samplePdfHref" class="nav-link text-sm whitespace-nowrap">{{ navSamplePdfLabel }}</a>
 				<a :href="pricingHref" class="nav-link text-sm whitespace-nowrap">{{ navPricingLabel }}</a>
@@ -42,11 +43,13 @@
 				<MobileNavMenu
 					v-if="showPrimaryNav"
 					:nav-how-label="navHowLabel"
+					:nav-guides-label="navGuidesLabel"
 					:nav-faq-label="navFaqLabel"
 					:nav-sample-pdf-label="navSamplePdfLabel"
 					:nav-pricing-label="navPricingLabel"
 					:nav-about-label="navAboutLabel"
 					:how-href="howHref"
+					:guides-href="guidesHref"
 					:faq-href="faqHref"
 					:sample-pdf-href="samplePdfHref"
 					:pricing-href="pricingHref"
@@ -87,6 +90,7 @@
 	  defineProps<{
 	    brandName?: string;
 	    navHowLabel?: string;
+	    navGuidesLabel?: string;
 	    navFaqLabel?: string;
 	    navSamplePdfLabel?: string;
 	    navPricingLabel?: string;
@@ -103,6 +107,7 @@
 	    startType?: 'button' | 'submit' | 'reset';
 	    homeHref?: string;
 	    howHref?: string;
+	    guidesHref?: string;
 	    faqHref?: string;
 	    samplePdfHref?: string;
 	    pricingHref?: string;
@@ -116,6 +121,7 @@
 	  {
 	    brandName: 'IDP Companion',
 	    navHowLabel: 'How it works',
+	    navGuidesLabel: 'Guides',
 	    navFaqLabel: 'FAQ',
 	    navSamplePdfLabel: 'Sample PDF',
 	    navPricingLabel: 'Pricing',
@@ -131,6 +137,7 @@
 
 	    homeHref: '/',
 	    howHref: '#how-it-works',
+	    guidesHref: '',
 	    faqHref: '#faq',
 	    samplePdfHref: '',
 	    pricingHref: '#pricing',

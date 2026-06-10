@@ -27,6 +27,15 @@
 				{{ navHowLabel }}
 			</a>
 			<a
+				v-if="guidesHref"
+				:href="guidesHref"
+				class="mobile-nav__link"
+				role="menuitem"
+				@click="close()"
+			>
+				{{ navGuidesLabel }}
+			</a>
+			<a
 				:href="faqHref"
 				class="mobile-nav__link"
 				role="menuitem"
@@ -70,11 +79,13 @@ import { Icon } from '@iconify/vue';
 withDefaults(
 	defineProps<{
 		navHowLabel: string;
+		navGuidesLabel?: string;
 		navFaqLabel: string;
 		navSamplePdfLabel?: string;
 		navPricingLabel: string;
 		navAboutLabel: string;
 		howHref: string;
+		guidesHref?: string;
 		faqHref: string;
 		samplePdfHref?: string;
 		pricingHref: string;

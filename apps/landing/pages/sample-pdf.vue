@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 
 definePageMeta({ path: '/sample-pdf' });
 defineI18nRoute({ locales: ['en', 'ru', 'es'] });
@@ -97,11 +98,7 @@ const fields = [
 		<!-- Hero -->
 		<section class="section sample-pdf__hero">
 			<div class="container max-w-4xl">
-				<nav class="breadcrumbs mb-6 text-sm text-slate-500">
-					<NuxtLink :to="localePath('/')" class="hover:text-sea transition-colors">Home</NuxtLink>
-					<span class="mx-2">/</span>
-					<span class="text-slate-700">Sample PDF</span>
-				</nav>
+				<Breadcrumbs :items="[{ label: 'Home', to: '/' }, { label: 'Sample PDF' }]" />
 
 				<h1 class="sample-pdf__title">
 					What Your IDP Companion PDF Actually Looks Like
@@ -474,7 +471,4 @@ const fields = [
 	}
 }
 
-.breadcrumbs a {
-	text-decoration: none;
-}
 </style>

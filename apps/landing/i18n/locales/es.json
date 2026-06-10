@@ -4,6 +4,9 @@
     "description": "PDF multilingüe que traduce tu permiso de conducir a 12 idiomas. Leído en mostradores de alquiler, hoteles y controles policiales en 150+ países. $35, 2 minutos.",
     "ogImage": "https://www.idpcompanion.com/og-image.png"
   },
+  "breadcrumbs": {
+    "home": "Inicio"
+  },
   "layout": {
     "logo": "IDP Companion",
     "navHow": "Cómo funciona",
@@ -11,6 +14,7 @@
     "navSamplePdf": "Muestra PDF",
     "navPricing": "Precios",
     "navAbout": "Sobre nosotros",
+    "navGuides": "Guías",
     "languageAria": "Idioma",
     "ctaStart": "Iniciar solicitud"
   },
@@ -1101,6 +1105,10 @@
       "idp-vs-idl-vs-ida-2026": {
         "title": "PIC vs IDL vs IDA vs IAA — qué es real y qué es fraude (2026)",
         "body": "Tres documentos internacionales de conducir son reales (Ginebra 1949, Viena 1968, Interamericana 1943). Cada «IDL» e «IDA» es marketing o fraude. Lista de verificación de 30 segundos + señales de alerta de la FTC."
+      },
+      "drive-without-idp-2026": {
+        "title": "Conducir sin PIC — Casos Reales, Multas Reales (2026)",
+        "body": "Ocho incidentes documentados (2024-2026) de conductores extranjeros sin PIC. Rango $50–$2.566, 4 niveles de escalada, tabla de multas en 15 países, guía de recuperación tras la parada."
       }
     },
     "authors": {

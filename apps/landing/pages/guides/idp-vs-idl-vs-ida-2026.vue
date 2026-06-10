@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import AuthorByline from '~/components/AuthorByline.vue';
+import Breadcrumbs from '~/components/Breadcrumbs.vue';
 import FaqAccordion from '~/components/FaqAccordion.vue';
 import {
 	guideCopyByLocale,
@@ -140,13 +141,13 @@ useHead(() => ({
 		<!-- Hero -->
 		<section class="section disambig-hero">
 			<div class="container max-w-5xl">
-				<nav class="disambig-breadcrumbs" aria-label="Breadcrumb">
-					<NuxtLink :to="localePath('/')" class="disambig-breadcrumbs__link">{{ copy.breadcrumbs.home }}</NuxtLink>
-					<span class="disambig-breadcrumbs__sep" aria-hidden="true">›</span>
-					<span class="disambig-breadcrumbs__current">{{ copy.breadcrumbs.guides }}</span>
-					<span class="disambig-breadcrumbs__sep" aria-hidden="true">›</span>
-					<span class="disambig-breadcrumbs__current">{{ copy.breadcrumbs.current }}</span>
-				</nav>
+				<Breadcrumbs
+					:items="[
+						{ label: copy.breadcrumbs.home, to: '/' },
+						{ label: copy.breadcrumbs.guides, to: '/guides/' },
+						{ label: copy.breadcrumbs.current },
+					]"
+				/>
 
 				<div class="disambig-hero__grid">
 					<div class="disambig-hero__text">
@@ -448,25 +449,6 @@ useHead(() => ({
 	padding-top: 48px;
 	padding-bottom: 56px;
 }
-
-.disambig-breadcrumbs {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	margin-bottom: 24px;
-	font-size: 13px;
-	color: rgb(var(--c-slate-500));
-	flex-wrap: wrap;
-}
-
-.disambig-breadcrumbs__link {
-	color: rgb(var(--c-slate-700));
-	text-decoration: none;
-	&:hover { color: rgb(var(--c-sea)); }
-}
-
-.disambig-breadcrumbs__sep { color: rgb(var(--c-slate-400)); }
-.disambig-breadcrumbs__current { color: rgb(var(--c-slate-700)); font-weight: 600; }
 
 .disambig-hero__kicker {
 	font-size: 12px;

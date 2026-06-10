@@ -4,6 +4,7 @@
 		<!-- Hero -->
 		<section class="section contact-page__hero">
 			<div class="container max-w-4xl">
+				<Breadcrumbs :items="[{ label: t('breadcrumbs.home'), to: '/' }, { label: t('footer.linkContact') }]" />
 				<p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-sea">
 					{{ t('contactPage.hero.kicker') }}
 				</p>
@@ -227,6 +228,7 @@
 	} from '#imports';
 	import { Icon } from '@iconify/vue';
 	import BaseButton from '@ui-kit/components/buttons/BaseButton.vue';
+	import Breadcrumbs from '~/components/Breadcrumbs.vue';
 	import { toOgLocale } from '~/utils/ogLocale';
 
 	const { t, locale } = useI18n();
