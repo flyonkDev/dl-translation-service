@@ -35,7 +35,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Cyprus',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-12',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Cyprus · 2026 Guide',
@@ -318,7 +320,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US licence as the translation aid Cypriot rental agencies and police accept for non-EU documentation requirements.',
+				answer: 'No. The Cypriot Ministry of Transport accepts US licenses for tourist driving up to 6 months — Cyprus itself imposes no IDP requirement. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set), particularly useful for trip extenders combining Cyprus with Turkey (Article 88 translation requirement), Egypt, UAE, or Morocco where Geneva 1949 documentation is legally needed.',
 			},
 			{
 				id: 5,

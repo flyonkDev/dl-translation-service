@@ -54,7 +54,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Malta',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-18',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Malta · 2026 Guide',
@@ -313,7 +315,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It works alongside your UK photocard, not in place of a government IDP where one is legally required (Malta does not require one).',
+				answer: "No. Malta's recognition arrangement covers UK photocards for tourist visits up to 12 months — no government IDP is required on the legal side. IDP Companion is the multilingual translation companion (your photocard in twelve widely-read languages from the Geneva 1949 set), most useful for UK travellers extending to non-recognising destinations or where smaller Mellieha and Gozo rental agencies impose translation-document booking conditions. The official UK government IDP comes separately from the authorised UK issuer.",
 			},
 			{
 				id: 4,

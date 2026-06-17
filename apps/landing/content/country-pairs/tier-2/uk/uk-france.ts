@@ -29,7 +29,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → France',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-16',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → France · 2026 Guide',
@@ -339,7 +341,7 @@ const en: CountryPairCopy = {
 			{
 				id: 6,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva or 1968 Vienna Convention by an authorised UK issuer. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages — used alongside your physical UK licence, not as a substitute for a government IDP where one is legally required.',
+				answer: 'No. French enforcement is unusual: Préfecture de Police roadside checks request the physical Geneva 1949 or Vienna 1968 booklet, while rental counter clauses (Avis, Hertz, Sixt) accept a translation document. IDP Companion is the translation document — your photocard presented in twelve widely-read languages from the Geneva 1949 set, used to satisfy the rental clause without obtaining the government booklet first. The government booklet comes from the authorised UK issuer for cases where a roadside police check is the primary concern.',
 			},
 			{
 				id: 7,

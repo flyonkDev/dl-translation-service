@@ -60,7 +60,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Norway',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-18',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Norway · 2026 Guide',
@@ -321,7 +323,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your license details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US license.',
+				answer: 'No. Statens vegvesen (the Norwegian Public Roads Administration) accepts US licenses for the first 3 months of tourist driving without requiring an IDP. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set), useful for Norwegian fjord-route rental contracts where translation documents speed pickup, and for Sweden/Finland onward travel where translation eases checkpoint dynamics. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 4,

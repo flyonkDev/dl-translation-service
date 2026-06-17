@@ -40,7 +40,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Malta',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-13',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Malta · 2026 Guide',
@@ -317,7 +319,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government-issued IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your physical US licence as the translation aid that satisfies the booking-condition checks Maltese rental agencies apply to non-EU licence holders.',
+				answer: 'No. Transport Malta accepts US licenses for tourist driving up to 12 months — Malta imposes no IDP requirement on the legal side. IDP Companion serves the rental-counter friction case: smaller Maltese agencies (specifically those in Mellieha and Gozo) sometimes impose translation conditions on non-EU license holders that the multilingual companion clears (twelve widely-read languages from the Geneva 1949 set). The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 4,

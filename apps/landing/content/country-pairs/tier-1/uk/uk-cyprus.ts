@@ -37,6 +37,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Cyprus',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-08',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Cyprus · 2026 Guide',
@@ -358,7 +360,7 @@ const en: CountryPairCopy = {
 			{
 				id: 8,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation document presenting your UK licence details in English, French, Spanish, German, Italian, Portuguese, Arabic and 4 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your licence, not as a government-format permit booklet. For Cyprus itself, the legal requirement is straightforward — UK photocard holders don\'t need a government IDP. IDP Companion is most useful for trip-extenders combining Cyprus with UAE, Egypt, Turkey, or Morocco where translation documentation is legally required.',
+				answer: "No. The Republic of Cyprus accepts UK photocards directly for tourist driving — no government IDP is legally required on the Cypriot side. IDP Companion is the multilingual translation companion (English, French, Spanish, German, Italian, Portuguese, Arabic and 4 other widely-spoken languages from the Geneva 1949 set) — most useful for trip-extenders combining Cyprus with UAE, Egypt, Turkey, or Morocco where Geneva 1949 documentation is legally needed. The official government IDP route is the printed booklet from the authorised UK issuer.",
 			},
 			{
 				id: 9,

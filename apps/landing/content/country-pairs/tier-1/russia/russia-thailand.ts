@@ -21,6 +21,8 @@ const en: CountryPairCopy = {
 		current: 'Russia → Thailand',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 	hero: {
 		kicker: 'Russia → Thailand · 2026 Guide',
 		title: 'IDP for Russian Drivers in Thailand: 2026 Guide',
@@ -187,12 +189,12 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Thailand?',
-				answer: "International Driving Permits must be issued in the country where your driver's license was issued — Thai authorities do not issue them to foreign tourists. For Russian license holders this means a 1949 Geneva IDP obtained in Russia before traveling. IDP Companion can be generated online from anywhere as a multilingual translation companion (English plus 10 other widely-spoken languages from the 1949 Geneva Convention set — French, Spanish, Arabic, German, Italian and others), but it is a private translation document and not a substitute for a government-issued IDP at Thai checkpoints.",
+				answer: "No. Only the licensing authority that issued your driver's license can issue an IDP — for Russian licence holders this means arranging the Geneva 1949 booklet in Russia before departure. Thai authorities do not issue IDPs to tourists. IDP Companion can be generated online from anywhere as a multilingual translation companion (English plus 10 other widely-spoken languages from the 1949 Geneva Convention set — French, Spanish, Arabic, German, Italian and others), but it is a private translation document and not a substitute for a government-issued IDP at Thai checkpoints.",
 			},
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as the official Russian government IDP?',
-				answer: 'IDP Companion is a multilingual translation document — it helps rental desks and informal checks read your license details in English plus 10 other widely-spoken languages from the 1949 Geneva Convention set (French, Spanish, Arabic, German, Italian and others). It is not issued under the Geneva or Vienna Conventions and is not a legal substitute for a government-issued IDP at Thai police checkpoints. It is generated online in 2 minutes, valid 1–5 years, and re-printable from any hotel.',
+				answer: "No — they're fundamentally different documents. IDP Companion is a digital multilingual translation aid generated online in 2 minutes; the official Russian IDP is a physical booklet issued in Russia by the authorised national body, under the Geneva Convention 1949. Royal Thai Police at checkpoints expect the government booklet specifically — IDP Companion does not substitute. What IDP Companion does well: presenting your licence details in English plus 10 other widely-spoken languages from the 1949 Geneva Convention set (French, Spanish, Arabic, German, Italian and others) for rental desks, hotel check-ins, and informal verifications. Valid 1–5 years, re-printable from any hotel.",
 			},
 			{
 				id: 4,
@@ -212,7 +214,7 @@ const en: CountryPairCopy = {
 			{
 				id: 7,
 				question: 'Does Thailand accept the digital IDP Companion at police checkpoints?',
-				answer: 'The 1949 Geneva Convention specifies a printed document, and the Royal Thai Police generally expect a physical IDP booklet from an authorized national-level issuer. IDP Companion is a digital multilingual translation document — print it on standard paper from any hotel. It is most useful at rental desks, hotel check-ins, and informal verification situations rather than primary IDP verification at police checkpoints.',
+				answer: 'Not as a primary IDP. The 1949 Geneva Convention specifies a printed document, and the Royal Thai Police generally expect a physical IDP booklet from an authorized national-level issuer. IDP Companion is a digital multilingual translation document — print it on standard paper from any hotel. Most useful at rental desks, hotel check-ins, and informal verification situations rather than primary IDP verification at police checkpoints.',
 			},
 			{
 				id: 8,
@@ -222,7 +224,7 @@ const en: CountryPairCopy = {
 			{
 				id: 9,
 				question: 'I have an old Russian "pink" paper license. Does that work?',
-				answer: 'Old paper-style Russian licenses without a plastic card are increasingly rejected at rental desks worldwide. If you still have one, renew it to the current laminated card before traveling. IDP Companion will translate either format, but rental shops are stricter about old paper formats.',
+				answer: 'Not reliably. Old paper-style Russian licenses without a plastic card are increasingly rejected at rental desks worldwide. If you still have one, renew it to the current laminated card before traveling. IDP Companion will translate either format, but rental shops are stricter about old paper formats.',
 			},
 			{
 				id: 10,
@@ -281,6 +283,8 @@ const ru: CountryPairCopy = {
 		current: 'Россия → Таиланд',
 	},
 	lastReviewed: 'Июнь 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -464,13 +468,13 @@ const ru: CountryPairCopy = {
 				id: 2,
 				question: 'Можно ли получить IDP уже в Таиланде?',
 				answer:
-					'International Driving Permit выдаётся только в той стране, где выданы ваши национальные права — тайские власти не выдают IDP иностранным туристам. Россиянам нужен IDP Женевского 1949 формата, оформленный в России до отъезда. IDP Companion можно получить онлайн откуда угодно за 2 минуты как многоязычный переводной документ (английский плюс ещё 10 распространённых языков набора Женевской конвенции 1949 — французский, испанский, арабский, немецкий, итальянский и другие), но это частный переводной документ, а не замена государственного IDP на тайских постах.',
+					'Нет. IDP может выдать только лицензирующий орган той страны, где выданы ваши права — для россиян это оформляется в России до отъезда. Тайские власти не выдают IDP иностранным туристам. IDP Companion можно получить онлайн откуда угодно за 2 минуты как многоязычный переводной документ (английский плюс ещё 10 распространённых языков набора Женевской конвенции 1949 — французский, испанский, арабский, немецкий, итальянский и другие), но это частный переводной документ, а не замена государственного IDP на тайских постах.',
 			},
 			{
 				id: 3,
 				question: 'IDP Companion — это то же самое, что официальный российский IDP?',
 				answer:
-					'IDP Companion — это многоязычный переводной документ: помогает прокатным стойкам и неформальным проверкам прочитать данные ваших прав на английском плюс ещё 10 распространённых языках набора Женевской конвенции 1949 (французский, испанский, арабский, немецкий, итальянский и другие). Он не выдаётся по Женевской или Венской конвенции и юридически не заменяет государственный IDP на тайских полицейских постах. Генерируется онлайн за 2 минуты, действует 1–5 лет, перепечатывается из любой гостиницы.',
+					'Нет — это принципиально разные документы. IDP Companion — цифровой многоязычный переводной помощник, генерируется онлайн за 2 минуты; официальный российский IDP — физическая книжка, выдаваемая в России уполномоченным национальным органом по Женевской конвенции 1949 года. На постах Королевской полиции Таиланда ожидают именно государственную книжку — IDP Companion её не заменяет. Что IDP Companion делает хорошо: показывает данные ваших прав на английском плюс ещё 10 распространённых языках набора Женевской конвенции 1949 (французский, испанский, арабский, немецкий, итальянский и другие) для стойек аренды, гостиниц и неформальных проверок. Действует 1–5 лет, перепечатывается из любой гостиницы.',
 			},
 			{
 				id: 4,
@@ -494,7 +498,7 @@ const ru: CountryPairCopy = {
 				id: 7,
 				question: 'Принимает ли Таиланд цифровой IDP Companion на полицейских постах?',
 				answer:
-					'Женевская конвенция 1949 года требует именно бумажный документ, и Королевская полиция Таиланда обычно ожидает физическую книжку IDP от уполномоченного национального органа. IDP Companion — это цифровой многоязычный переводной документ, его можно распечатать на обычной бумаге из любой гостиницы. Полезнее всего на прокатных стойках, в гостиницах и при неформальных проверках, а не для первичной проверки IDP на постах ДПС.',
+					'Не как первичный IDP. Женевская конвенция 1949 года требует именно бумажный документ, и Королевская полиция Таиланда обычно ожидает физическую книжку IDP от уполномоченного национального органа. IDP Companion — это цифровой многоязычный переводной документ, его можно распечатать на обычной бумаге из любой гостиницы. Полезнее всего на прокатных стойках, в гостиницах и при неформальных проверках, а не для первичной проверки IDP на постах ДПС.',
 			},
 			{
 				id: 8,
@@ -506,7 +510,7 @@ const ru: CountryPairCopy = {
 				id: 9,
 				question: 'У меня старые «розовые» бумажные российские права. Они подойдут?',
 				answer:
-					'Старые бумажные российские права без пластиковой карточки всё чаще отказываются принимать на стойках аренды по всему миру. Если такие ещё на руках — обновите до текущего ламинированного образца перед поездкой. IDP Companion переведёт оба формата, но прокатные конторы строже относятся к старым бумажным.',
+					'Ненадёжно. Старые бумажные российские права без пластиковой карточки всё чаще отказываются принимать на стойках аренды по всему миру. Если такие ещё на руках — обновите до текущего ламинированного образца перед поездкой. IDP Companion переведёт оба формата, но прокатные конторы строже относятся к старым бумажным.',
 			},
 			{
 				id: 10,

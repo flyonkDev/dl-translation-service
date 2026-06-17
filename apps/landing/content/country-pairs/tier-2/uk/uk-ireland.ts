@@ -63,7 +63,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Ireland',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-18',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Ireland · 2026 Guide',
@@ -320,7 +322,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It works alongside your UK photocard, not in place of a government IDP where one is legally required (Ireland does not require one — CTA recognises UK photocards fully).',
+				answer: 'No. The Common Travel Area arrangement provides full UK photocard recognition for tourist driving in Ireland — no government IDP is legally required. IDP Companion is the multilingual translation companion (your photocard in twelve widely-read languages from the Geneva 1949 set), most useful for UK drivers extending the trip onward to non-CTA destinations where translation is legally needed. The official UK government IDP route is the printed Geneva 1949 booklet from the authorised UK issuer.',
 			},
 			{
 				id: 4,

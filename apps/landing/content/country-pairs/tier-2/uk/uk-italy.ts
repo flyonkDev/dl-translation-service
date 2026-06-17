@@ -31,7 +31,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Italy',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-16',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Italy · 2026 Guide',
@@ -334,7 +336,7 @@ const en: CountryPairCopy = {
 			{
 				id: 5,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva or 1968 Vienna Convention by an authorised UK issuer. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages — used alongside your physical UK licence, not as a substitute for a government IDP where one is legally required.',
+				answer: 'No. Italian law (Codice della Strada Article 135) requires the official Geneva 1949 or Vienna 1968 IDP booklet alongside the physical photocard — the booklet itself comes from the authorised UK issuer. IDP Companion is a private multilingual translation document presenting your photocard details in twelve widely-read languages, designed to reduce friction at ZTL checks and Italian rental counters. Used alongside the government booklet and your physical photocard, not as a substitute for either.',
 			},
 			{
 				id: 6,

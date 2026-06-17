@@ -65,7 +65,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → New Zealand',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-21',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → New Zealand · 2026 Guide',
@@ -325,7 +327,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document presenting your licence details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your US licence, not in place of it.',
+				answer: "No. NZTA's 12-month rule covers US tourist driving without requiring an IDP. IDP Companion is the multilingual translation aid (your licence in twelve widely-read languages from the Geneva 1949 set) most useful for US travellers extending into Asia-Pacific destinations like Indonesia or Thailand where the Geneva 1949 IDP is legally needed. The official government IDP route is the printed booklet from the authorised national organisation.",
 			},
 			{
 				id: 4,

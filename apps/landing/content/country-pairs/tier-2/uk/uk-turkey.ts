@@ -47,7 +47,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Turkey',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-17',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Turkey · 2026 Guide',
@@ -348,7 +350,7 @@ const en: CountryPairCopy = {
 			{
 				id: 9,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva Convention or 1968 Vienna Convention by an authorised UK issuer. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set — used alongside your physical UK photocard, not as a substitute for a government IDP where one is legally required.',
+				answer: "No. The UK government IDP — a Geneva 1949 booklet from the authorised UK issuer — satisfies Turkish law's translation requirement under Article 88 of the Highway Traffic Regulation. IDP Companion presents the same UK photocard details in twelve widely-read languages from the Geneva 1949 set in digital form, available in 2 minutes online. Major Turkish rental agencies (Sixt, Europcar, local chains) accept IDP Companion as the Article 88 translation document.",
 			},
 			{
 				id: 10,

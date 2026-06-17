@@ -39,6 +39,8 @@ const en: CountryPairCopy = {
 		current: 'US → Indonesia',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-13',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Indonesia · Bali · 2026 Guide',
@@ -319,7 +321,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Can I get an IDP after arriving in Bali?',
-				answer: 'The 30-day temporary tourist driving licence previously issued at Denpasar police station has been discontinued — it no longer exists. Government-format IDPs can only be obtained in your home country before departure. IDP Companion is a digital download available from anywhere with internet access — you can purchase and print it from your hotel in Seminyak before picking up the scooter the next morning, but the legal IDP itself must be obtained before you fly.',
+				answer: 'No — and the previous 30-day workaround is gone. The temporary tourist driving licence at Denpasar police station has been discontinued and no longer exists. Government-format IDPs can only be obtained in your home country before departure. IDP Companion is a digital download available from anywhere with internet access — you can purchase and print it from your hotel in Seminyak before picking up the scooter the next morning, but the legal IDP itself must be obtained before you fly.',
 			},
 			{
 				id: 5,
@@ -329,7 +331,7 @@ const en: CountryPairCopy = {
 			{
 				id: 6,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government-issued IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your physical US licence as the translation aid Indonesian rental shops and razzia officers can read — reducing friction at the documentation check.',
+				answer: 'No. Indonesian law requires the Geneva 1949 IDP for foreign drivers — a separate US-side step (the printed booklet from the authorised national organisation). IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set) — used alongside the government booklet at Bali rental shops and razzia checkpoints in Canggu, Kuta, and central Ubud. It does not, on its own, satisfy the Indonesian legal requirement.',
 			},
 			{
 				id: 7,

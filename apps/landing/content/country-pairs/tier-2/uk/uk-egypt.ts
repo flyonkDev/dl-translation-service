@@ -53,7 +53,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Egypt',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-17',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Egypt · 2026 Guide',
@@ -316,7 +318,7 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Is IDP Companion the same as a Geneva 1949 IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not a government-issued IDP under the 1949 Geneva Convention and does not, on its own, satisfy the Egyptian legal requirement for self-drive. Where Egyptian law requires the Geneva 1949 IDP, that document is a separate UK-side step.',
+				answer: 'No. Egyptian law requires the Geneva 1949 IDP for self-drive — a separate UK-side step (the printed booklet from the authorised UK issuer). IDP Companion is the multilingual translation aid presenting your photocard in twelve widely-read languages from the Geneva 1949 set — used alongside the government booklet at Sharm el-Sheikh and Hurghada rental desks where Arabic-language verification speeds the process, and as a backup if the booklet is misplaced mid-trip.',
 			},
 			{
 				id: 3,

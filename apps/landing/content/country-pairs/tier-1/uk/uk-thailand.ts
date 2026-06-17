@@ -35,6 +35,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Thailand',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-07',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Thailand · 2026 Guide',
@@ -341,7 +343,7 @@ const en: CountryPairCopy = {
 			{
 				id: 5,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: "No. A government-issued IDP is a formal booklet issued under the 1949 Geneva Convention by an authorised UK issuer. IDP Companion is a private multilingual translation document presenting your UK licence details in English plus 10 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your licence and government IDP where required.",
+				answer: "No. Thailand legally requires the authorised Geneva 1949 government booklet — issued in the UK before departure — for tourist driving. IDP Companion is the multilingual translation companion (English plus 10 other widely-spoken languages from the Geneva 1949 set) you carry alongside, used primarily at hotel check-ins, scooter shops, and tourist-area verifications where rapid translation matters more than presentation of the formal booklet.",
 			},
 			{
 				id: 6,

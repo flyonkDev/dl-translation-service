@@ -31,7 +31,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Dominican Republic',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-13',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Dominican Republic · 2026 Guide',
@@ -317,7 +319,7 @@ const en: CountryPairCopy = {
 			{
 				id: 5,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government-issued IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US licence as the Spanish-language reference that addresses rental-desk requests and checkpoint document checks.',
+				answer: 'No. INTRANT (the Dominican transport authority) recognises US licenses for tourist driving up to 3 months — no IDP is required from the DR side. IDP Companion is the multilingual translation aid (twelve widely-read languages including Spanish from the Geneva 1949 set) — useful at Punta Cana airport rental desks where Spanish-language verification speeds the process, and AMET roadside checks where translation reduces friction. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 6,

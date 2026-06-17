@@ -22,6 +22,8 @@ const en: CountryPairCopy = {
 		current: 'US → Greece',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Greece · 2026 Guide',
@@ -299,7 +301,7 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Greece?',
-				answer: 'International Driving Permits must be issued in your country of residence before you travel — Greek authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Greek rental desks, ferry counters, and informal verifications.',
+				answer: "No. Even with the 2021 law change (Law 4850) that made the US license alone sufficient for tourist driving, Greek authorities don't issue IDPs to foreign visitors — IDPs are always issued in the country where the original license was issued. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Greek rental desks, ferry counters, and informal verifications.",
 			},
 			{
 				id: 3,

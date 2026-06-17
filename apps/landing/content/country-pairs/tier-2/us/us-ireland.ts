@@ -65,7 +65,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Ireland',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-18',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Ireland · 2026 Guide',
@@ -323,7 +325,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your license details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US license.',
+				answer: 'No — and Irish practice gives US licenses 12 months of acceptance for tourist driving without a formal IDP. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set), most useful for US travellers continuing into Schengen destinations like France or Italy where rental clauses or local enforcement impose translation requirements. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 4,

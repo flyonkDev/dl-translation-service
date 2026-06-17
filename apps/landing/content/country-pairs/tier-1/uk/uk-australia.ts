@@ -34,6 +34,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Australia',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-08',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Australia · 2026 Guide',
@@ -354,7 +356,7 @@ const en: CountryPairCopy = {
 			{
 				id: 8,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation document presenting your UK licence details in English, French, Spanish, German, Italian, Portuguese, Arabic, Russian and 3 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your licence, not as a government-format permit booklet. For Australia, where English-language UK photocard licences are accepted without an IDP, IDP Companion covers paper-licence holders and trip-extenders to UAE, Thailand, or Egypt where translation documentation is legally required.',
+				answer: "No — Australian states don't require an IDP from UK photocard holders. The photocard itself is sufficient for both rental and any police interaction. IDP Companion is the multilingual translation companion (English, French, Spanish, German, Italian, Portuguese, Arabic, Russian and 3 other widely-spoken languages from the Geneva 1949 set) — most useful for paper-licence holders and trip-extenders to UAE, Thailand, or Egypt where the Geneva 1949 IDP is legally needed. The official government IDP is the printed booklet from the authorised UK issuer.",
 			},
 			{
 				id: 9,

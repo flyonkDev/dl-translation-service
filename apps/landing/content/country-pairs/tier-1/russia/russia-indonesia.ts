@@ -27,6 +27,8 @@ const en: CountryPairCopy = {
 		current: 'Russia → Indonesia',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'Russia → Indonesia · Bali · 2026 Guide',
@@ -350,7 +352,7 @@ const en: CountryPairCopy = {
 			{
 				id: 6,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: "No. A government IDP is a formal booklet issued under the 1949 Geneva Convention by an authorised national body (in Russia, the All-Russian Automobile Society — РОСАВТОКЛУБ). IDP Companion is a private multilingual translation document presenting your Russian licence details in English, French, Arabic, Spanish and 7 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your original licence. Most Bali agencies accept translation companions; some request the government-format booklet. Verify with your specific rental agency before arriving.",
+				answer: "No — purposes are different. The Russia-issued Geneva 1949 government IDP is the physical booklet that Bali razzia officers expect at the Canggu and Kuta checkpoints. IDP Companion is a private digital translation companion — your Russian licence presented in English, French, Arabic, Spanish and 7 other widely-spoken languages — used alongside the original licence. Most Bali rental agencies accept the translation companion; some scooter shops specifically request the government booklet. Verify with your specific shop on arrival.",
 			},
 			{
 				id: 7,
@@ -428,6 +430,8 @@ const ru: CountryPairCopy = {
 		current: 'Россия → Индонезия',
 	},
 	lastReviewed: 'Июнь 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -754,7 +758,7 @@ const ru: CountryPairCopy = {
 			{
 				id: 6,
 				question: 'IDP Companion — это то же, что государственный IDP?',
-				answer: 'Нет. Государственный IDP — официальная книжка по Женевской конвенции 1949 года, выданная уполномоченным национальным органом (в России — РОСАВТОКЛУБ). IDP Companion — частный многоязычный переводной документ с данными ваших российских прав на английском, французском, арабском, испанском и ещё 7 распространённых языках набора Женевской конвенции 1949 года — используется вместе с оригиналом прав. Большинство балийских контор принимают переводные компаньоны; часть требует государственную книжку. Уточняйте у конкретной до прилёта.',
+				answer: 'Нет — задачи у документов разные. Российский государственный IDP по Женевской 1949 — физическая книжка, которую балийские офицеры razzia ожидают на постах в Чангу и Куте. IDP Companion — частный цифровой переводной компаньон: ваши российские права на английском, французском, арабском, испанском и ещё 7 распространённых языках — используется вместе с оригиналом прав. Большинство балийских контор принимают переводные компаньоны; часть скутер-шопов требует именно государственную книжку. Уточняйте у конкретного шопа на месте.',
 			},
 			{
 				id: 7,

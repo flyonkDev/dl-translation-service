@@ -35,6 +35,8 @@ const en: CountryPairCopy = {
 		current: 'US → Croatia',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-12',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Croatia · 2026 Guide',
@@ -306,7 +308,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US licence as the translation aid most Croatian and Slovenian rental agencies and police accept for non-EU licence verification.',
+				answer: 'No — Croatia and Slovenia both accept US licenses for tourist driving up to 6 months without a formal IDP. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set) most useful at smaller Croatian rental desks, Slovenian Alpine routes, and Balkan checkpoint interactions where translation speed matters. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 4,

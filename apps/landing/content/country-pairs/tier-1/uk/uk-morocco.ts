@@ -35,6 +35,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Morocco',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-08',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Morocco · 2026 Guide',
@@ -335,7 +337,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation document presenting your licence details in Arabic, French, English, Spanish and 7 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your original licence. For Morocco, where English Latin-alphabet licences are accepted without a formal government IDP, IDP Companion covers the insurance documentation gap, smaller-agency requirements, and rural checkpoint interaction speed.',
+				answer: "No. Morocco's rental insurance contracts and rural checkpoint dynamics are where this matters in practice — Moroccan law doesn't require a formal IDP for English Latin-alphabet UK photocards, but the documentation friction sits with smaller agencies and southern police interactions. IDP Companion is the multilingual translation companion (Arabic, French, English, Spanish and 7 other widely-spoken languages from the Geneva 1949 set), used alongside your photocard. The official government IDP route is the printed Geneva 1949 booklet from the authorised UK issuer.",
 			},
 			{
 				id: 5,

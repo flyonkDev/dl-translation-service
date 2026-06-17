@@ -39,7 +39,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Morocco',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-15',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Morocco · 2026 Guide',
@@ -347,7 +349,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your physical US licence as the Arabic and French translation aid that Moroccan rental insurance contracts and southern checkpoints actually need.',
+				answer: 'No. Morocco accepts US licenses with Latin alphabet for tourist driving without a formal IDP requirement. IDP Companion is the multilingual translation companion (twelve widely-read languages including Arabic and French from the Geneva 1949 set) — most useful for Moroccan rental insurance contracts, smaller-agency requirements, and southern checkpoint dynamics where Arabic and French translation speeds verification. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 5,

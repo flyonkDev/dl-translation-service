@@ -44,7 +44,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Iceland',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-16',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Iceland · 2026 Guide',
@@ -321,7 +323,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva Convention by an authorised UK issuer. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set — used alongside your physical UK licence, not as a substitute for a government IDP where one is legally required.',
+				answer: 'No. The physical Geneva 1949 booklet from the authorised UK issuer is what Icelandic law specifically references for foreign drivers — IDP Companion is the digital translation companion you carry alongside, presenting your photocard in twelve widely-read languages from the Geneva 1949 set. Particularly useful at F-road rental desks where Icelandic-only signage and Highlands route restrictions create friction for foreign drivers.',
 			},
 			{
 				id: 5,

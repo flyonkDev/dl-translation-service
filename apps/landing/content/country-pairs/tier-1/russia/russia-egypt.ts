@@ -26,6 +26,8 @@ const en: CountryPairCopy = {
 		current: 'Russia → Egypt',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'Russia → Egypt · 2026 Guide',
@@ -345,7 +347,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: "No. A government IDP is a formal booklet issued under the 1949 Geneva Convention by an authorised national organisation (in Russia, the All-Russian Automobile Society — РОСАВТОКЛУБ). IDP Companion is a private multilingual translation document presenting your Russian licence details in Arabic, English, French, Spanish and 8 other languages. For Egypt, verify with your specific rental agency whether they accept a translation document or require the government-format booklet — major international chains generally accept IDP Companion as the required translation document.",
+				answer: 'No — IDP Companion is the translation companion, not the permit itself. The official Russian government IDP is a Geneva Convention 1949 booklet from an authorised national body, obtained in Russia before departure. IDP Companion presents your Russian licence in Arabic, English, French, Spanish and 8 other widely-spoken languages from the 1949 Geneva Convention set. For Egypt, verify with your specific rental agency whether they accept a translation document or require the government-format booklet — major international chains (Avis, Sixt, Hertz) generally accept IDP Companion as the required translation document.',
 			},
 			{
 				id: 4,
@@ -438,6 +440,8 @@ const ru: CountryPairCopy = {
 		current: 'Россия → Египет',
 	},
 	lastReviewed: 'Июнь 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -760,7 +764,7 @@ const ru: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'IDP Companion — это то же, что государственный IDP?',
-				answer: 'Нет. Государственный IDP — официальная книжка, выдаваемая по Женевской конвенции 1949 года уполномоченной национальной организацией (в России — РОСАВТОКЛУБ). IDP Companion — частный многоязычный переводной документ с данными ваших российских прав на арабском, английском, французском, испанском и ещё 8 языках. Для Египта уточняйте у конкретного прокатного оператора, принимает ли он переводной документ или требует государственную книжку — крупные международные сети, как правило, принимают IDP Companion как требуемый перевод.',
+				answer: 'Нет — IDP Companion это переводной компаньон, а не сам пермит. Официальный российский IDP — книжка по Женевской конвенции 1949 года от уполномоченного национального органа, оформляется в России до отъезда. IDP Companion представляет ваши российские права на арабском, английском, французском, испанском и ещё 8 распространённых языках набора Женевской конвенции 1949 года. Для Египта уточняйте у конкретного прокатного оператора, принимает ли он переводной документ или требует государственную книжку — крупные международные сети (Avis, Sixt, Hertz), как правило, принимают IDP Companion как требуемый перевод.',
 			},
 			{
 				id: 4,

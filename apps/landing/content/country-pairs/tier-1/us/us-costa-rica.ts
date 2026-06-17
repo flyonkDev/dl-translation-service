@@ -29,6 +29,8 @@ const en: CountryPairCopy = {
 		current: 'US → Costa Rica',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Costa Rica · 2026 Guide',
@@ -337,7 +339,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government-issued IDP is a formal document under the 1949 Geneva Convention. IDP Companion is a private multilingual translation document presenting your US license details in Spanish and 10 other widely-spoken languages from the 1949 Geneva Convention set — designed to be used alongside your original license.',
+				answer: "No. Costa Rica's MOPT (transport ministry) accepts US licenses directly for stays up to 3 months — no government IDP is legally required on the Costa Rican side. IDP Companion is the multilingual translation aid presenting your US license details in Spanish and 10 other widely-spoken languages from the Geneva 1949 set — designed to clear rental-desk friction in Costa Rica's tourist corridors and any Tránsito roadside check. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.",
 			},
 			{
 				id: 5,

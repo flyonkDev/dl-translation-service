@@ -32,6 +32,8 @@ const en: CountryPairCopy = {
 		current: 'Russia → Turkey',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'Russia → Turkey · 2026 Guide',
@@ -335,7 +337,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal booklet issued under the 1949 Geneva Convention by an authorised national organisation (in Russia, the All-Russian Automobile Society — РОСАВТОКЛУБ). IDP Companion is a private multilingual translation document presenting your Russian licence details in English, Arabic and 9 other languages. It functions as the translation document Article 88 requires alongside your national licence, and is accepted at major rental agencies.',
+				answer: 'No. Two distinct artefacts. The official Russian government IDP is a Geneva Convention 1949 booklet from an authorised national body. IDP Companion is a private digital translation document presenting your Russian licence details in English, Arabic and 9 other languages. For Turkish law specifically, Article 88 of the Highway Traffic Regulation requires a translation document for non-Latin licences — IDP Companion functions as that translation document and is accepted at major rental agencies. The Russian government booklet covers the same requirement if you obtained one in Russia.',
 			},
 			{
 				id: 4,
@@ -428,6 +430,8 @@ const ru: CountryPairCopy = {
 		current: 'Россия → Турция',
 	},
 	lastReviewed: 'Июнь 2026',
+	datePublished: '2026-05-04',
+	dateModified: '2026-06-16',
 	labels: {
 		freshnessPrefix: 'Последняя проверка:',
 	},
@@ -734,7 +738,7 @@ const ru: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'IDP Companion — это то же, что государственный IDP?',
-				answer: 'Нет. Государственный IDP — официальная книжка по Женевской конвенции 1949 года, выданная уполномоченным национальным органом (в России — Всероссийский Автомобильный Клуб, РОСАВТОКЛУБ). IDP Companion — частный многоязычный переводной документ с данными ваших российских прав на английском, арабском и ещё 9 языках. Функционирует как переводной документ, требуемый Статьёй 88, рядом с национальными правами, и принимается на крупных прокатных агентствах.',
+				answer: 'Нет. Два разных артефакта. Официальный российский IDP — книжка по Женевской конвенции 1949 года от уполномоченного национального органа. IDP Companion — частный цифровой переводной документ с данными ваших российских прав на английском, арабском и ещё 9 языках. Для турецкого законодательства Статья 88 Регулирования дорожного движения требует переводной документ для нелатинских прав — IDP Companion функционирует как этот переводной документ и принимается на крупных прокатных агентствах. Российская государственная книжка покрывает то же требование, если вы её оформили.',
 			},
 			{
 				id: 4,

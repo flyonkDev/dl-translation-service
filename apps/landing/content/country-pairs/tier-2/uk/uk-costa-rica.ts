@@ -65,7 +65,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Costa Rica',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-21',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Costa Rica · 2026 Guide',
@@ -338,7 +340,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your UK photocard, not in place of it.',
+				answer: 'No. MOPT (the Costa Rican transport ministry) accepts UK photocards for tourist driving up to 3 months without requiring an IDP. IDP Companion is the multilingual translation companion (your photocard in twelve widely-read languages from the Geneva 1949 set) — useful at smaller Costa Rican agencies that impose translation-document booking conditions on non-Spanish speakers, and at Tránsito roadside stops in the Pacific corridor. The official UK government IDP route is the printed Geneva 1949 booklet from the authorised UK issuer.',
 			},
 			{
 				id: 4,

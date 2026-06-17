@@ -64,7 +64,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Indonesia',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-17',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Indonesia · 2026 Guide',
@@ -343,7 +345,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a Geneva 1949 IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not a government-issued IDP under the 1949 Geneva Convention and does not, on its own, satisfy the Indonesian legal requirement. It does not address the UK Cat A motorcycle endorsement question — that is a separate UK licensing matter.',
+				answer: 'No. The Geneva 1949 IDP is the legally-required document for self-drive in Indonesia — a separate UK-side step (the printed booklet from the authorised UK issuer). IDP Companion is the multilingual translation companion presenting your photocard in twelve widely-read languages from the Geneva 1949 set; it does not, on its own, satisfy the Indonesian legal requirement and does not address the UK Cat A motorcycle endorsement question for scooter rentals (that is a separate UK licensing matter).',
 			},
 			{
 				id: 5,
@@ -368,7 +370,7 @@ const en: CountryPairCopy = {
 			{
 				id: 9,
 				question: 'Can I drive between Bali and Java?',
-				answer: 'Bali and Java are separate islands; the Ketapang–Gilimanuk ferry crosses the strait but car-rental contracts typically restrict inter-island use. Verify before booking if multi-island driving is part of the plan.',
+				answer: 'Usually no — without explicit rental-company permission. Bali and Java are separate islands; the Ketapang–Gilimanuk ferry crosses the strait, but car-rental contracts typically restrict inter-island use without written approval and a surcharge. Verify before booking if multi-island driving is part of the plan.',
 			},
 			{
 				id: 10,

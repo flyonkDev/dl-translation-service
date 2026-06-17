@@ -31,6 +31,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Spain',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-07',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Spain · 2026 Guide',
@@ -325,7 +327,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government-issued IDP is a formal document issued under the 1949 Geneva Convention by an authorised UK issuer. IDP Companion is a private multilingual translation document presenting your licence details in Spanish, English, French and 8 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your licence, not as a substitute for a formal IDP where one is legally required.',
+				answer: 'No — and the post-Brexit recognition arrangement means most UK photocard holders never need to choose between them in Spain. The official UK government IDP is the printed Geneva 1949 booklet from the authorised UK issuer (still needed for paper licences). IDP Companion is a private multilingual translation document presenting your licence details in Spanish, English, French and 8 other widely-spoken languages from the Geneva 1949 set — used alongside your photocard, primarily for trip-extenders into Morocco, Portugal, or destinations where Spanish-only rental contracts create friction.',
 			},
 			{
 				id: 5,

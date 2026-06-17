@@ -46,6 +46,8 @@ const en: CountryPairCopy = {
 		current: 'UK → UAE',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-08',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → UAE · 2026 Guide',
@@ -342,7 +344,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal printed booklet issued under the 1949 Geneva Convention. IDP Companion is a private multilingual translation document presenting your UK licence details in Arabic, English, French, Spanish, Russian and 7 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your original licence as a translation aid. For Abu Dhabi specifically, verify with your rental agency at booking whether they accept a translation document or insist on the government-format IDP booklet.',
+				answer: "No — fundamentally different document classes. A UK government IDP is a printed Geneva 1949 booklet from the authorised UK issuer. IDP Companion is a digital multilingual translation document presenting your photocard details in Arabic, English, French, Spanish, Russian and 7 other widely-spoken languages from the Geneva 1949 set. For Abu Dhabi specifically, the local police preference is for the government-format booklet; for Dubai rental desks, IDP Companion as translation aid is accepted at major chains. Verify the specific agency at booking.",
 			},
 			{
 				id: 4,

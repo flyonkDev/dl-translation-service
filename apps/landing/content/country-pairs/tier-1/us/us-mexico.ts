@@ -26,6 +26,8 @@ const en: CountryPairCopy = {
 		current: 'US → Mexico',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Mexico · 2026 Guide',
@@ -315,7 +317,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion an actual International Driving Permit?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document — your license details rendered in Spanish and 11 other languages, designed for rental desks and informal verifications. It is not a government-issued IDP under the 1949 Geneva Convention. For Mexico, this distinction does not matter for legal compliance because Mexican federal law does not require any IDP for US tourists in the first place.',
+				answer: 'No. For Mexico, this distinction does not affect legal compliance — Mexican federal law does not require any IDP for US tourists in the first place. IDP Companion is the multilingual translation aid (your license details rendered in Spanish and 11 other languages from the Geneva 1949 set), designed for rental desks and informal verifications. The official US government IDP is the printed Geneva 1949 booklet from the authorised national organisation — unnecessary for Mexico itself.',
 			},
 			{
 				id: 4,

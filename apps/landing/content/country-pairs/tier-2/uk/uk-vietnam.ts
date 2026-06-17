@@ -63,7 +63,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Vietnam',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-18',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Vietnam · 2026 Guide',
@@ -368,7 +370,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a Vienna 1968 IDP?',
-				answer: 'No. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not a government-issued IDP under the 1949 Geneva or 1968 Vienna Conventions. Where Vietnamese law requires the Vienna 1968 IDP, that document is a separate UK-side step we do not issue.',
+				answer: 'No. Vietnamese law requires the Vienna 1968 IDP specifically — and the UK does NOT issue Vienna 1968 IDPs, only Geneva 1949 versions. This is a hard rule: a Geneva 1949 booklet is treated the same as no IDP in Vietnam. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set), useful as supplemental translation alongside a Vienna 1968 IDP if one can be obtained through Vietnamese channels, but it does not itself satisfy the Vienna 1968 requirement.',
 			},
 			{
 				id: 5,

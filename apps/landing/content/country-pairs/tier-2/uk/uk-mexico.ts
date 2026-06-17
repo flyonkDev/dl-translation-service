@@ -41,7 +41,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Mexico',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-17',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Mexico · 2026 Guide',
@@ -332,7 +334,7 @@ const en: CountryPairCopy = {
 			{
 				id: 7,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva Convention or 1968 Vienna Convention by an authorised UK issuer. IDP Companion is a private multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set — used alongside your physical UK photocard, not as a substitute for a government IDP where one is legally required.',
+				answer: 'No. IDP Companion fills a different role: your photocard presented in twelve widely-read languages from the Geneva 1949 set, designed to reduce friction at Mexican rental desks and tourist-area checks. The UK government IDP is the printed Geneva 1949 booklet from the authorised UK issuer. Mexico does not legally require an IDP for tourist driving on a UK photocard, which is why most UK visitors find IDP Companion the practical document for actual rental-desk and FMM-stamp verification scenarios.',
 			},
 			{
 				id: 8,

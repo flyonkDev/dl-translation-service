@@ -59,7 +59,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → Dominican Republic',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-21',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Dominican Republic · 2026 Guide',
@@ -333,7 +335,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your UK photocard, not in place of it.',
+				answer: 'No. INTRANT (the Dominican transport authority) recognises UK photocards at Punta Cana, Santo Domingo, and Samaná rental desks — no government IDP is legally required from UK drivers. IDP Companion is the multilingual translation companion (your photocard in twelve widely-read languages from the Geneva 1949 set) — useful for situations where smaller local rental shops or AMET roadside police interactions benefit from a fast translation reference. The official UK government IDP route is the printed Geneva 1949 booklet from the authorised UK issuer.',
 			},
 			{
 				id: 4,

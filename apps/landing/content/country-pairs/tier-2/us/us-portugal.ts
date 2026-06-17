@@ -40,7 +40,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Portugal',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-15',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Portugal · 2026 Guide',
@@ -320,7 +322,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your physical US licence as the Portuguese-language translation aid that closes the rental-desk booking-condition gap and speeds up any PSP stop.',
+				answer: 'No. Portuguese law (Código da Estrada) accepts US licenses for tourist driving up to 6 months — no IDP is legally required from the Portuguese side. IDP Companion is the multilingual translation aid (twelve widely-read languages including Portuguese from the Geneva 1949 set) — useful at Portuguese rental desks where translation-document booking conditions apply to non-EU license holders, and at PSP roadside stops where Portuguese-language verification speeds the documentation check. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 4,

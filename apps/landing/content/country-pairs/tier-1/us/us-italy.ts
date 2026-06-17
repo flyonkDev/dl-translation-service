@@ -20,6 +20,8 @@ const en: CountryPairCopy = {
 		current: 'US → Italy',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Italy · 2026 Guide',
@@ -307,7 +309,7 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Italy?',
-				answer: 'International Driving Permits must be issued in your country of residence before you travel — Italian authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Italian rental desks, hotel check-ins, and informal verifications.',
+				answer: 'No — IDPs must be issued in your country of residence before you travel, and Italian authorities do not issue them to foreign tourists. IDP Companion can be generated online from anywhere in 2 minutes as a multilingual translation companion. It is a private translation document (not a government-issued IDP under the 1949 Geneva Convention), designed for friction reduction at Italian rental desks, hotel check-ins, and informal verifications.',
 			},
 			{
 				id: 3,
@@ -332,7 +334,7 @@ const en: CountryPairCopy = {
 			{
 				id: 7,
 				question: 'Does Italy accept US insurance for rental cars?',
-				answer: 'Italian rentals come with their own basic insurance. US-based credit card rental insurance (Visa, Amex, etc.) often does NOT cover Italy or has restrictions. Always select the in-rental Collision Damage Waiver and Theft Protection unless you have specific travel insurance that explicitly covers Italian rentals. Verify in writing before relying on US-based coverage.',
+				answer: 'Generally no — US-based credit card rental insurance (Visa, Amex, etc.) often does NOT cover Italy or carries restrictions, and standard US auto policies (Geico, Progressive, State Farm) exclude international rentals entirely. Italian rentals come with their own basic insurance. Always select the in-rental Collision Damage Waiver and Theft Protection unless you have specific travel insurance that explicitly covers Italian rentals. Verify in writing before relying on US-based coverage.',
 			},
 			{
 				id: 8,

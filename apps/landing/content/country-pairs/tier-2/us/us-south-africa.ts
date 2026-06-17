@@ -38,7 +38,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → South Africa',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-15',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → South Africa · 2026 Guide',
@@ -332,7 +334,7 @@ const en: CountryPairCopy = {
 			{
 				id: 6,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not a government IDP under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your physical US licence as the English-language translation aid that satisfies most South African rental-desk booking conditions and provides a standardised reference at any SAPS roadblock.',
+				answer: 'No. The South African Road Traffic Act accepts US licenses with English text directly for tourist driving — no government IDP is legally required. IDP Companion is the multilingual translation aid (twelve widely-read languages from the Geneva 1949 set), useful at SAPS roadblocks and game-reserve rental desks where a standardised English-and-multilingual reference speeds verification. The official government IDP route is the printed Geneva 1949 booklet from the authorised national organisation.',
 			},
 			{
 				id: 7,

@@ -68,7 +68,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'UK → New Zealand',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-21',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → New Zealand · 2026 Guide',
@@ -328,7 +330,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document presenting your photocard details in twelve widely-read languages from the 1949 Geneva Convention set. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your UK photocard, not in place of it.',
+				answer: 'No. NZTA recognises UK photocards for the first 12 months of tourist driving — no government IDP is legally required from UK visitors. IDP Companion is the multilingual translation companion (your photocard in twelve widely-read languages from the Geneva 1949 set), most useful for UK drivers extending to Asia-Pacific destinations like Indonesia or Thailand where the Geneva 1949 IDP is legally needed. The official government IDP route is the printed booklet from the authorised UK issuer.',
 			},
 			{
 				id: 4,

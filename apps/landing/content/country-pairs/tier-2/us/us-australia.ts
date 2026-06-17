@@ -32,7 +32,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → Australia',
 	},
-	lastReviewed: 'May 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-05-12',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Australia · 2026 Guide',
@@ -315,7 +317,7 @@ const en: CountryPairCopy = {
 			{
 				id: 8,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. IDP Companion is a privately-issued multilingual translation companion document. It is not issued under the 1949 Geneva Convention or 1968 Vienna Convention. It works alongside your original US license to make rental-desk and remote-area checkpoint friction easier — not as a replacement for the legal authority your US license already carries.',
+				answer: "No. Australian states don't require an IDP from US tourists — the US license is sufficient by itself for rental and any police interaction. IDP Companion is the multilingual translation companion (twelve widely-read languages from the Geneva 1949 set), most useful for US travellers extending to Indonesia, UAE, Thailand, or Egypt where the Geneva 1949 IDP is legally required. The official government IDP route is the printed booklet from the authorised national organisation.",
 			},
 		],
 	},

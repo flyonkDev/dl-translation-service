@@ -34,6 +34,8 @@ const en: CountryPairCopy = {
 		current: 'UK → Greece',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-07',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'UK → Greece · 2026 Guide',
@@ -327,7 +329,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal booklet issued under the 1949 Geneva Convention by an authorised UK issuer. IDP Companion is a private multilingual translation document presenting your licence details in English, French, Spanish, German, Italian, Portuguese and 5 other widely-spoken languages from the 1949 Geneva Convention set — used alongside your licence, not as a government-format permit.',
+				answer: 'No. Post-Brexit Greece is a special case — modern UK photocards are recognised for tourist driving without requiring either document. The UK government IDP is the printed Geneva 1949 booklet from the authorised UK issuer, still legally needed for paper licences. IDP Companion is a private multilingual translation document presenting your photocard in English, French, Spanish, German, Italian, Portuguese and 5 other widely-spoken languages from the Geneva 1949 set — used alongside your photocard at island rental desks that have not internalised the post-Brexit change.',
 			},
 			{
 				id: 5,

@@ -31,7 +31,9 @@ const en: CountryPairCopy = {
 		home: 'Home',
 		current: 'US → UAE',
 	},
-	lastReviewed: 'April 2026',
+	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → UAE · 2026 Guide',
@@ -322,7 +324,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva Convention by an authorized national organization in the country where your domestic license was issued. IDP Companion is a private multilingual translation document presenting your license details in Arabic and 11 other languages — used alongside your original US license and your government IDP, not as a replacement for either.',
+				answer: 'No. The US government IDP is a Geneva 1949 booklet from the authorised national organisation in the country where your domestic license was issued. IDP Companion is a private multilingual translation document presenting your license details in Arabic and 11 other languages — used alongside your original US license and your government IDP, not as a replacement for either. For UAE specifically, both documents address the same translation requirement; rental practice varies between emirates (Dubai accepts either, Abu Dhabi sometimes requires the government booklet, Sharjah is translation-required with flexible format).',
 			},
 			{
 				id: 4,

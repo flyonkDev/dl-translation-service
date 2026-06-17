@@ -29,6 +29,8 @@ const en: CountryPairCopy = {
 		current: 'US → France',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → France · 2026 Guide',
@@ -324,7 +326,7 @@ const en: CountryPairCopy = {
 			{
 				id: 4,
 				question: 'Is IDP Companion the same as an international driving permit?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva Convention by an authorized national organization. IDP Companion is a private multilingual translation document designed to present your license details in 12 widely-read languages — used alongside your original license, primarily to satisfy rental-counter translation clauses and reduce friction at police checkpoints.',
+				answer: 'No. The US government IDP is the printed Geneva 1949 booklet from the authorised national organisation. IDP Companion is a private multilingual translation document presenting your US licence in twelve widely-read languages from the Geneva 1949 set, designed to satisfy French rental contract translation clauses (Avis, Hertz, Sixt list translation as a booking requirement for non-EU holders). Carried alongside your physical US licence, used primarily to clear the rental-counter friction that lacking translation creates.',
 			},
 			{
 				id: 5,

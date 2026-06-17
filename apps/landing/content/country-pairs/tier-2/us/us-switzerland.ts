@@ -37,6 +37,8 @@ const en: CountryPairCopy = {
 		current: 'US → Switzerland',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-05-16',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Switzerland · 2026 Guide',
@@ -330,7 +332,7 @@ const en: CountryPairCopy = {
 			{
 				id: 3,
 				question: 'Is IDP Companion the same as a government IDP?',
-				answer: 'No. A government IDP is a formal document issued under the 1949 Geneva or 1968 Vienna Convention by an authorised national organisation. IDP Companion is a private multilingual translation companion document presenting your US licence details in twelve widely-read languages — used alongside your US licence, particularly useful in Switzerland\'s four-official-language reality.',
+				answer: "No. Two different production paths. The US government IDP is a Geneva 1949 or Vienna 1968 printed booklet from the authorised national organisation — takes 1-2 weeks to obtain in the US. IDP Companion is generated online in 2 minutes as a private multilingual translation companion presenting your US licence details in twelve widely-read languages from the Geneva 1949 set. Particularly useful in Switzerland's four-official-language reality (German, French, Italian, Romansh) — the same document covers all four language regions plus alpine pass rental contexts.",
 			},
 			{
 				id: 4,

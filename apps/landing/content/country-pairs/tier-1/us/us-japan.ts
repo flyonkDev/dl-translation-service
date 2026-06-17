@@ -26,6 +26,8 @@ const en: CountryPairCopy = {
 		current: 'US → Japan',
 	},
 	lastReviewed: 'June 2026',
+	datePublished: '2026-04-30',
+	dateModified: '2026-06-16',
 
 	hero: {
 		kicker: 'US → Japan · 2026 Guide',
@@ -334,7 +336,7 @@ const en: CountryPairCopy = {
 			{
 				id: 2,
 				question: 'Can I get an IDP after I arrive in Japan?',
-				answer: 'Japanese authorities do not issue IDPs to foreign tourists. International Driving Permits must be issued in your country of residence before you travel. IDP Companion can be generated online from anywhere as a multilingual translation companion (Japanese script included), useful at hotels, JR Pass desks, and as a backup — but it is not accepted by Japanese rental chains as a substitute for an authorized Geneva 1949 IDP issued in your home country.',
+				answer: 'No — Japanese authorities do not issue IDPs to foreign tourists. International Driving Permits must be issued in your country of residence before you travel. IDP Companion can be generated online from anywhere as a multilingual translation companion (Japanese script included), useful at hotels, JR Pass desks, and as a backup — but it is not accepted by Japanese rental chains as a substitute for an authorized Geneva 1949 IDP issued in your home country.',
 			},
 			{
 				id: 3,
