@@ -54,11 +54,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Indonesia: 2026 Bali Scooter Guide',
+		title: 'Bali Scooter & UK Licence: Cat A Endorsement Trap 2026',
 		description:
-			"Riding a scooter in Bali on a UK photocard? Indonesia requires a Geneva 1949 IDP and most UK travel insurance excludes scooter accidents without a Cat A endorsement. Honest 2026 guide for British drivers in Bali, Jakarta and beyond.",
-		ogTitleShort: 'UK Drivers in Indonesia: Bali Scooter',
-		ogSubtitle: 'Geneva 1949 IDP required. Cat A is a separate insurance gate.',
+			'Indonesia needs Geneva 1949 IDP for UK drivers. Bali scooters need Cat A too — most UK insurance voids without it. IDP Companion 2 min ($35).',
+		ogTitleShort: 'UK in Bali: Cat A Insurance Trap',
+		ogSubtitle: 'Geneva 1949 IDP + Cat A endorsement — two gates',
 	},
 	breadcrumbs: {
 		home: 'Home',

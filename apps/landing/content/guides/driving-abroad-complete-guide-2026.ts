@@ -158,10 +158,10 @@ export interface GuideCopy {
 
 const en: GuideCopy = {
 	seo: {
-		title: 'Driving Abroad in 2026: The Complete IDP Guide',
-		description: "Whether you need an International Driving Permit comes down to three things: where you're going, which convention your destination signed, and what the rental desk actually checks. 2026 guide covering Geneva 1949, Vienna 1968, 50+ destinations, the real cost of skipping it, and how to get one in 2 minutes.",
-		ogTitleShort: 'Driving Abroad 2026: Complete IDP Guide',
-		ogSubtitle: 'Geneva 1949 + Vienna 1968 · 50+ destinations · what it costs to skip',
+		title: 'Driving Abroad in 2026: Which IDP You Need (50+ Countries)',
+		description: 'Geneva 1949 or Vienna 1968? The convention your destination signed decides which IDP works. 2026 guide to 50+ countries + what happens when you skip it.',
+		ogTitleShort: 'Driving Abroad 2026: Which IDP You Need',
+		ogSubtitle: 'Geneva 1949 vs Vienna 1968 · 50+ countries · real skip cost',
 	},
 	breadcrumbs: {
 		home: 'Home',
@@ -451,10 +451,10 @@ const en: GuideCopy = {
 
 const ru: GuideCopy = {
 	seo: {
-		title: 'Вождение за рубежом 2026 — полный гид по IDP',
-		description: 'Нужен ли IDP для вашей поездки зависит от трёх вещей: куда едете, какую конвенцию подписала страна и что реально проверяют на стойке аренды. Гид 2026: Женева 1949 и Вена 1968, 50+ направлений, реальная цена отказа и три способа получить нужный документ за 2 минуты.',
-		ogTitleShort: 'IDP за рубежом 2026 — полный гид',
-		ogSubtitle: 'Женева 1949 + Вена 1968 · 50+ стран · цена ошибки',
+		title: 'Вождение за рубежом 2026: какой IDP нужен вам (50+ стран)',
+		description: 'Женева 1949 или Вена 1968? Конвенция страны решает, какой IDP работает. Гид 2026 по 50+ странам + что будет, если пропустить документ.',
+		ogTitleShort: 'IDP за рубежом 2026: какой нужен',
+		ogSubtitle: 'Женева 1949 vs Вена 1968 · 50+ стран · цена отказа',
 	},
 	breadcrumbs: {
 		home: 'Главная',
@@ -744,10 +744,10 @@ const ru: GuideCopy = {
 
 const es: GuideCopy = {
 	seo: {
-		title: 'Conducir en el extranjero 2026 — guía completa de IDP',
-		description: 'Si necesitas un Permiso Internacional de Conducción depende de tres cosas: a dónde vas, qué convención firmó tu destino y qué exige realmente el mostrador de alquiler. Guía 2026 con Ginebra 1949, Viena 1968, más de 50 destinos, el coste real de saltárselo y cómo obtenerlo en 2 minutos.',
-		ogTitleShort: 'Conducir en el extranjero 2026',
-		ogSubtitle: 'Ginebra 1949 + Viena 1968 · 50+ destinos · el coste de saltárselo',
+		title: 'Conducir en 2026: qué IDP necesitas (50+ países)',
+		description: '¿Ginebra 1949 o Viena 1968? La convención del país decide qué IDP funciona. Guía 2026 de 50+ países + qué pasa si lo omites en el mostrador.',
+		ogTitleShort: 'Conducir 2026: qué IDP necesitas',
+		ogSubtitle: 'Ginebra 1949 vs Viena 1968 · 50+ países · coste real',
 	},
 	breadcrumbs: {
 		home: 'Inicio',

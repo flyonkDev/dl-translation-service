@@ -9,11 +9,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Italy IDP for US Drivers — Required by Law, €400+ ZTL Fines',
+		title: 'ZTL Cameras & US Drivers in Italy: The €400 Late-Bill Trap',
 		description:
-			"Italian law (Codice della Strada Article 135) requires US drivers to carry an IDP alongside the physical license. Without one: fines from €42 routinely escalating to €400+, voided rental insurance, ZTL camera tickets that arrive months later. Get IDP Companion in 2 min — $35.",
-		ogTitleShort: 'IDP for US Drivers in Italy',
-		ogSubtitle: 'Required by law — ZTL, fines, what works',
+			'Codice Strada Art. 135 requires IDP for US drivers. Miss it: ZTL cameras bill €400+ months later, rental insurance voids. IDP Companion 2 min setup ($35).',
+		ogTitleShort: 'US License in Italy: €400 ZTL Trap',
+		ogSubtitle: 'Codice Strada Art. 135 — IDP Companion 2 min',
 	},
 	breadcrumbs: {
 		home: 'Home',

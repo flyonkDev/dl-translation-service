@@ -23,11 +23,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Greece IDP for UK Drivers — Photocard OK, Island Agencies Vary',
+		title: 'Post-Brexit Rules for UK Drivers in Greece — 2026 IDP Update',
 		description:
-			"UK photocard is legally accepted in Greece without an IDP under the post-Brexit deal (gov.uk confirmed Aug 2025) — but paper licences DO need one, and small Santorini, Mykonos, and Crete agencies require a translation document anyway. IDP Companion in 2 min — $35.",
-		ogTitleShort: 'UK Drivers in Greece: IDP Guide',
-		ogSubtitle: 'Photocard fine. Paper needs IDP. Island agencies vary.',
+			'UK photocard is legal in Greece without IDP (gov.uk Aug 2025). Paper licences still need one, island agencies vary. IDP Companion 2 min ($35).',
+		ogTitleShort: 'UK in Greece: Photocard OK, Paper Not',
+		ogSubtitle: 'Post-Brexit gov.uk 2025 — island agencies vary',
 	},
 	breadcrumbs: {
 		home: 'Home',

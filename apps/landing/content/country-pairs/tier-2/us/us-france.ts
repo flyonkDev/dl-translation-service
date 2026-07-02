@@ -18,11 +18,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: "France IDP for US Drivers — Avis/Hertz Translation + €68 Crit'Air",
+		title: "Rent a Car in France with US License: €68 Crit'Air Trap 2026",
 		description:
-			"Yes, your US license works for tourist driving in France under one year — but Avis, Hertz, and Sixt rental contracts require a French translation, and Crit'Air zones in Paris/Lyon/Marseille fine €68 without a sticker. Get IDP Companion in 2 min — $35.",
-		ogTitleShort: "France IDP for US: Rentals & Crit'Air",
-		ogSubtitle: 'What rental desks ask for — and what the cameras catch',
+			"Avis, Hertz, Sixt require French translation for US licences. Paris/Lyon Crit'Air zones fine €68 without sticker. IDP Companion in 2 min ($35).",
+		ogTitleShort: "US in France: €68 Crit'Air Trap",
+		ogSubtitle: 'Rental translation + Paris zone stickers',
 	},
 	breadcrumbs: {
 		home: 'Home',

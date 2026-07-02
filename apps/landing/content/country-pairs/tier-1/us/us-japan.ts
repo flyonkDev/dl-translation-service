@@ -15,11 +15,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Japan IDP for US Drivers — Toyota/Nippon Reject Online IDPs',
+		title: 'Toyota Rejects Online IDPs: US Rental Reality in Japan 2026',
 		description:
-			"Honest answer: Japan requires an authorized Geneva 1949 IDP for car rental — Toyota, Nippon, ORIX reject online IDPs at the counter. IDP Companion is a supplementary multilingual aid for hotels, JR Pass desks, and ID verification (not for renting a car). Strictest enforcement in the developed world.",
-		ogTitleShort: 'IDP for US Drivers in Japan',
-		ogSubtitle: 'Strictest enforcement — Geneva 1949 required',
+			'Japan requires authorized Geneva 1949 IDP for car rental — Toyota, Nippon, ORIX reject online IDPs. IDP Companion helps at hotels & JR desks, not rentals.',
+		ogTitleShort: 'US in Japan: Strictest IDP Rules',
+		ogSubtitle: 'Geneva 1949 needed — supplementary aid for hotels',
 	},
 	breadcrumbs: {
 		home: 'Home',

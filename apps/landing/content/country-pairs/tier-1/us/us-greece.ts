@@ -11,11 +11,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: "Greece IDP for US Drivers — Law Says No, Santorini Rentals Want It",
+		title: 'Santorini Rental Reality: US Licence vs 4850/2021 Trap 2026',
 		description:
-			"Greek Law 4850/2021 made the IDP technically optional for US tourist drivers under 6 months — but Santorini, Mykonos, and Crete rental shops still refuse without it, and insurers reference older standards. Get IDP Companion in 2 min — $35.",
-		ogTitleShort: 'IDP for US Drivers in Greece',
-		ogSubtitle: '2026 — gray zone, alphabet, rentals',
+			'Greek Law 4850/2021 lets US tourist drivers skip IDP legally — but Santorini, Mykonos, Crete agencies still refuse without it. IDP Companion 2 min ($35).',
+		ogTitleShort: 'US in Greece: 4850/2021 Trap',
+		ogSubtitle: 'Law says no. Island rentals say yes.',
 	},
 	breadcrumbs: {
 		home: 'Home',

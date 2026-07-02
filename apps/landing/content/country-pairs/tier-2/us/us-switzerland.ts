@@ -26,11 +26,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Switzerland IDP for US Drivers — Vignette + Raserdelikt Criminal',
+		title: 'Swiss Vignette (ASTRA) vs US Licence: 12-Month Rules 2026',
 		description:
-			"US license is legal in Switzerland for 12 months under ASTRA — no IDP required. But CHF 40 motorway vignette is mandatory (or CHF 25 3-day digital pass), and Raserdelikt criminal-speeding above 25 km/h over urban can hit 5-figure CHF tied to your daily income. IDP Companion as multilingual aid — $35.",
-		ogTitleShort: 'US in Switzerland: Vignette & Raserdelikt',
-		ogSubtitle: 'ASTRA gives 12 months — the vignette and radar still bill',
+			'US license is legal 12 months in Switzerland — no IDP needed. But CHF 40 vignette is mandatory, and criminal-speeding fines hit 5-figures. Full 2026 guide.',
+		ogTitleShort: 'US in Switzerland: CHF Vignette Rule',
+		ogSubtitle: 'ASTRA 12 months — vignette + Raserdelikt bite',
 	},
 	breadcrumbs: {
 		home: 'Home',

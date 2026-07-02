@@ -21,11 +21,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Turkey IDP for Russian Drivers — Article 88 Cyrillic Rule',
+		title: 'Russian License in Turkey: $340 IDP Fine (Cyrillic Rule 2026)',
 		description:
-			'Yes, Turkish Highway Traffic Regulation Article 88 requires Cyrillic Russian licences to carry an IDP or notarised translation from day one — fine ~12,000 TRY (~$340) for non-compliance, treated as driving without a valid licence. Get IDP Companion in 2 min — $35.',
-		ogTitleShort: 'Russian Drivers in Turkey: IDP Guide',
-		ogSubtitle: 'Cyrillic = translation legally required. Article 88.',
+			'Cyrillic-script Russian licences alone = ~$340 Article 88 fine + rental desk refusal in Turkey. IDP Companion translates yours in 2 min ($35). What actually happens at the desk.',
+		ogTitleShort: 'Russian License in Turkey: $340 Fine',
+		ogSubtitle: 'Article 88 Cyrillic rule — 2 min IDP Companion',
 	},
 	breadcrumbs: {
 		home: 'Home',
@@ -419,11 +419,11 @@ const en: CountryPairCopy = {
 
 const ru: CountryPairCopy = {
 	seo: {
-		title: 'IDP для россиян в Турции — Статья 88, перевод кириллицы',
+		title: 'Российские права в Турции: штраф $340 по Статье 88 (2026)',
 		description:
-			'Да, турецкое регулирование Статья 88 требует кириллические российские права сопровождать IDP или нотариальным переводом с первого дня — штраф ~12 000 TRY (~$340), считается вождением без прав. Получите IDP Companion за 2 минуты — $35.',
-		ogTitleShort: 'Россияне за рулём в Турции',
-		ogSubtitle: 'Кириллица = перевод по закону. Статья 88.',
+			'Кириллические российские права в Турции без перевода = штраф ~12 000 TRY (~$340) по Статье 88 + отказ в аренде авто. IDP Companion переводит за 2 минуты ($35).',
+		ogTitleShort: 'Российские права в Турции: $340 штраф',
+		ogSubtitle: 'Статья 88, кириллица — IDP Companion за 2 мин',
 	},
 	breadcrumbs: {
 		home: 'Главная',

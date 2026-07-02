@@ -28,11 +28,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Indonesia IDP for US Drivers — Bali Razzia, Voids Medevac',
+		title: 'Bali Medevac for US Drivers: $100k Risk Without IDP (2026)',
 		description:
-			"Indonesian law requires US tourists to carry an IDP. Bali razzia checkpoints fine $65 for non-compliance — but the real risk is insurance: no IDP = voided medevac coverage, and Bali-to-US hospital evac runs $50–100k. Get IDP Companion in 2 min — $35.",
-		ogTitleShort: 'US Drivers in Bali: IDP Required',
-		ogSubtitle: 'Left-hand traffic. Weekly razzia. No IDP = no insurance.',
+			'Bali razzia checkpoints fine US drivers $65 without IDP — but the real bill is $50-100k medevac void on crash. IDP Companion in 2 min ($35).',
+		ogTitleShort: 'US in Bali: $100k Medevac Trap',
+		ogSubtitle: 'Razzia + insurance void — two-tier risk',
 	},
 	breadcrumbs: {
 		home: 'Home',

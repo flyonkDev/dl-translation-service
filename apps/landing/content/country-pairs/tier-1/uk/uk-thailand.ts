@@ -24,11 +24,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Thailand IDP for UK Drivers — Voids Insurance Without It',
+		title: 'UK Insurance Voids on Thai Scooter Crashes — 2026 IDP Rule',
 		description:
-			"Thai law requires UK drivers to carry an IDP under the 1949 Geneva Convention. The THB 500–1,000 fine is small — but rental insurance is unenforceable without it, and one Chiang Mai scooter crash without docs spirals into £1,000s. Get IDP Companion in 2 min — $35.",
-		ogTitleShort: 'UK Drivers in Thailand: IDP Guide',
-		ogSubtitle: "Small fine, voided insurance — that's the real problem.",
+			'Thai law demands IDP for UK licences. Fine is small — but insurance voids on crash, and Chiang Mai scooter bills run £1,000s. IDP Companion 2 min ($35).',
+		ogTitleShort: 'UK in Thailand: Insurance Trap',
+		ogSubtitle: 'THB 500 fine, £1,000s if you crash without IDP',
 	},
 	breadcrumbs: {
 		home: 'Home',

@@ -53,11 +53,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'IDP for UK Drivers in Vietnam: 2026 Vienna 1968 Guide',
+		title: 'Wrong Convention, Wrong IDP: UK Drivers in Vietnam 2026',
 		description:
-			"Driving Hai Van Pass or riding Ha Giang? Vietnam recognises ONLY the Vienna 1968 IDP — not the Geneva 1949 IDP most UK tourists default to. Honest 2026 guide to the Convention mismatch, Ha Giang scooter realities, and 2019 zero-tolerance alcohol enforcement.",
-		ogTitleShort: 'UK Drivers in Vietnam: Vienna 1968',
-		ogSubtitle: 'Vienna 1968, not Geneva 1949 — the IDP detail most UK tourists miss',
+			'Vietnam recognises ONLY Vienna 1968 IDPs — not Geneva 1949 most UK tourists carry. Plus zero-tolerance alcohol law and Ha Giang scooter reality.',
+		ogTitleShort: 'UK in Vietnam: Wrong Convention Trap',
+		ogSubtitle: 'Vienna 1968 vs Geneva 1949 — UK tourist gap',
 	},
 	breadcrumbs: {
 		home: 'Home',

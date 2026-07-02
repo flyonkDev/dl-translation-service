@@ -24,11 +24,11 @@ import type { CountryPairCopy } from '../../_types';
 
 const en: CountryPairCopy = {
 	seo: {
-		title: 'Morocco IDP for UK Drivers — Photocard OK, Backward Roundabouts',
+		title: "Morocco's Reverse Roundabouts: UK Photocard Rules for 2026",
 		description:
-			"UK photocard is accepted in Morocco under Latin-alphabet tourist driving up to 90 days — IDP not strictly required. But Moroccan roundabouts give priority to entering traffic (opposite of UK), fines collected in cash from 5 km/h over, and night driving means camels on unlit roads. IDP Companion at police checkpoints in 2 min — $35.",
-		ogTitleShort: 'UK Drivers in Morocco: IDP Guide',
-		ogSubtitle: 'Backward roundabouts. 5 km/h fines. Camels at night.',
+			'UK photocard is legal in Morocco 90 days — no IDP required. But roundabout priority reverses UK rules, fines start 5 km/h over. IDP Companion for police stops ($35).',
+		ogTitleShort: 'UK in Morocco: Reverse Roundabouts',
+		ogSubtitle: 'Photocard OK 90 days — the roads flip UK rules',
 	},
 	breadcrumbs: {
 		home: 'Home',

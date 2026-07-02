@@ -133,8 +133,8 @@ const en: ValidityCopy = {
 	datePublished: '2026-05-19',
 	dateModified: '2026-05-19',
 	seo: {
-		title: 'IDP Validity 2026: 1-Year (Geneva) vs 3-Year (Vienna) Rules Explained',
-		description: 'How long is an International Driving Permit valid? 1 year under the 1949 Geneva Convention (Article 24), 3 years under the 1968 Vienna Convention (Article 41). The issuer cannot extend either. Treaty rules, destination acceptance, IDP Companion plan durations explained.',
+		title: 'How Long is an IDP Valid? 1-Year Geneva, 3-Year Vienna (2026)',
+		description: 'IDP validity depends on the convention: 1 year under Geneva 1949 (Article 24), 3 years under Vienna 1968 (Article 41). Issuers cannot extend either.',
 	},
 	hero: {
 		kicker: 'IDP validity rules',
@@ -353,8 +353,8 @@ const ru: ValidityCopy = {
 	datePublished: '2026-05-19',
 	dateModified: '2026-05-19',
 	seo: {
-		title: 'Срок действия IDP 2026: 1 год (Женева) или 3 года (Вена) — правила',
-		description: 'Сколько действует международное водительское удостоверение? 1 год по Женевской конвенции 1949 года (статья 24), 3 года по Венской конвенции 1968 года (статья 41). Эмитент не может продлить ни тот, ни другой. Правила конвенций, признание в странах назначения и сроки тарифов IDP Companion.',
+		title: 'Сколько действует IDP? 1 год по Женеве, 3 года по Вене (2026)',
+		description: 'Срок IDP зависит от конвенции: 1 год по Женеве 1949 (ст. 24), 3 года по Вене 1968 (ст. 41). Эмитент не может продлить ни тот, ни другой.',
 	},
 	hero: {
 		kicker: 'Срок действия IDP',
@@ -573,8 +573,8 @@ const es: ValidityCopy = {
 	datePublished: '2026-05-19',
 	dateModified: '2026-05-19',
 	seo: {
-		title: 'Validez del IDP en 2026: 1 año (Ginebra) o 3 años (Viena) explicado',
-		description: '¿Cuánto dura un Permiso de Conducción Internacional? 1 año según la Convención de Ginebra de 1949 (artículo 24), 3 años según la Convención de Viena de 1968 (artículo 41). El emisor no puede ampliar ninguno. Reglas de los tratados, aceptación por país de destino y duración de los planes de IDP Companion.',
+		title: '¿Cuánto Dura un IDP? 1 Año Ginebra, 3 Años Viena (2026)',
+		description: 'La validez del IDP depende de la convención: 1 año según Ginebra 1949 (art. 24), 3 años según Viena 1968 (art. 41). El emisor no puede prorrogar.',
 	},
 	hero: {
 		kicker: 'Validez del IDP',
