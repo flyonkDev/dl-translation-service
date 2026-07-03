@@ -487,7 +487,10 @@ const localePath = useLocalePath();
 const { capture } = useProductAnalytics();
 
 const siteUrl = String(config.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
-const localizedPath = computed(() => String(localePath(props.canonicalPath)));
+const localizedPath = computed(() => {
+	const p = String(localePath(props.canonicalPath));
+	return p.endsWith('/') ? p : p + '/';
+});
 const canonicalUrl = computed(() => siteUrl + localizedPath.value);
 const appUrl = computed(() => String(config.public.appUrl || '').trim().replace(/\/+$/, ''));
 
