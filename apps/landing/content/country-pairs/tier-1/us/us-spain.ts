@@ -405,6 +405,44 @@ const en: CountryPairCopy = {
 		originName: 'United States',
 		destinationName: 'Spain',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Madrid ZBE, Barcelona Rondes, Málaga coast — the three Spanish rental scenes for US visitors",
+		lead: "Americans arriving in Spain typically split between Madrid-Barcelona city breaks and Costa del Sol beach circuits (Málaga base). The ZBE registration problem hits differently in each — Madrid Central is small and camera-tight, Barcelona ZBE Rondes is huge and camera-tight, Málaga is looser but has coastal DGT patrols US visitors underestimate. Below is the per-destination reality.",
+		badge: 'Madrid ZBE · Barcelona Rondes · Costa del Sol patrols',
+		items: [
+			{
+				name: 'Madrid',
+				region: 'Comunidad de Madrid — Spanish inland capital',
+				scene: "Madrid Central covers the Sol → Retiro → Chueca perimeter — a compact tourist-heavy zone with 300+ licence-plate readers. The M-30 ring highway circles the city; A-6 westbound leads to El Escorial and Segovia (the classic weekend trip). Traffic inside the M-30 is dense until 22:00 nightly.",
+				rentalNote: 'MAD airport lineup: Hertz, Avis, Sixt, Enterprise + Spanish local (Goldcar, OK Mobility, Record Go). US visitors get ~€40–€60/day compact automatic. Deposit €600–€1,000. Rental-plate ZBE registration handled by major chains automatically; low-cost operators (some) leave it to the customer.',
+				enforcement: "Madrid Central is the tightest ZBE in Spain — €90 per unauthorized entry (€180 if unpaid 15 days). Fines bill rental company plate within 30-60 days, charge lands on US card. DGT (national traffic authority) enforcement of Guardia Civil roadside stops on the M-30 is aggressive; missing IDP is a €200 fine on top of any other violation.",
+				fineBand: '€90 (Madrid Central) → €200 (M-30 speed cam) → €200 (Guardia Civil no-IDP stop) → €500+ (compound)',
+				watchOut: "US visitors on multi-city road trips (Madrid → Seville → Málaga) get compound fines because they enter multiple ZBEs unregistered. Each city needs separate registration — assuming Madrid's covers Barcelona's is one of the most-fined American errors 2024-2025.",
+			},
+			{
+				name: 'Barcelona',
+				region: 'Cataluña — Mediterranean coast',
+				scene: "ZBE Rondes is Barcelona's citywide low-emission zone — massive geographical footprint (everything inside Ronda del Litoral and Ronda de Dalt), weekdays 07:00–20:00. Sagrada Familia area, Passeig de Gràcia, Barri Gòtic are all inside. B-20 outer bypass moves through-traffic. The airport-to-city Aerobus makes NOT renting the sensible default for city-only stays.",
+				rentalNote: "BCN airport is Spain's biggest rental hub — every major plus Goldcar, Record Go, Enterprise, Firefly. Automatic ~€35–€55/day. US visitors often over-rent for Barcelona; the metro handles the city and coastal Costa Brava day-trips are the only rental-justifying reason. Deposit €500–€1,000.",
+				enforcement: "ZBE Rondes cameras auto-fine €200 per unauthorized entry (reduced €100 if paid within 20 days). Ronda del Litoral speed cameras aggressive. Guardia Urbana Barcelona checks foreign licences less frequently than Madrid's Guardia Civil — but any incident escalates the paperwork requirement immediately.",
+				fineBand: '€100–200 (ZBE Rondes) → €200 (Ronda speeding) → €500 (illegal parking + tow) → €1,000+ (post-nightlife DUI stop)',
+				watchOut: "Registration for ZBE Rondes requires online submission at ajuntament.barcelona.cat BEFORE the rental period. Some rental chains complete it, some don't — verify at pickup counter. Missing registration = automatic fine on rental plate for every entry, per day.",
+			},
+			{
+				name: 'Málaga (Costa del Sol)',
+				region: 'Andalucía — Mediterranean south coast',
+				scene: "The A-7 highway runs the entire Costa del Sol coast — Málaga → Marbella → Estepona → Sotogrande. This is where US visitors actually do longer road trips: sun, beach, wine tastings in Ronda, day trips to Gibraltar. Málaga historic centre has partial pedestrianisation but no formal ZBE yet (2026 rollout planned). Marbella old town's Casco Antiguo is walking-only.",
+				rentalNote: 'AGP airport is British-tourist-heavy — prices reflect it. US visitors pay 15% premium vs MAD. Automatic sedan €40–€65/day. Local operators (Auto Reisen, Malaga Car) often out-price majors by €10-15/day. Weekly rentals dominant; deposit €400–€700.',
+				enforcement: "Costa del Sol enforcement is patrol-heavy, not camera-heavy. Guardia Civil patrols the A-7 with radar and DUI checkpoints — especially Friday/Saturday nights near Puerto Banús. US visitors often underestimate the Spanish 0.05% BAC limit vs the US 0.08% and get caught after 2 glasses of Rioja at dinner. Speed cameras on the AP-7 auto-bill.",
+				fineBand: '€200 (A-7 radar) → €400 (double-lane change) → €700–1,200 (DUI at Puerto Banús checkpoint) → €200 (missing V-16 emergency beacon from Jan 2026)',
+				watchOut: "The V-16 emergency LED beacon becomes mandatory in Spain January 2026 — rental cars must include one. Verify at pickup that it's IN the glove box; missing V-16 during any roadside incident is a €200 fine per Real Decreto 159/2021.",
+			},
+		],
+		bottomNote: "Cross-Spain moral for US visitors: your driving problems are (1) ZBE registration per city and (2) DGT/Guardia Civil roadside stops that flag missing IDPs. Multi-city road trips compound both. Ask the rental agent to walk through the specific ZBEs on your route BEFORE driving off — €400 in avoided fines beats €35 for the IDP Companion.",
+	},
 };
 
 const es: CountryPairCopy = {
@@ -777,6 +815,44 @@ const es: CountryPairCopy = {
 	og: {
 		originName: 'Estados Unidos',
 		destinationName: 'España',
+	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Madrid ZBE, Barcelona Rondes, Costa del Sol — las tres escenas españolas de alquiler para visitantes de EE.UU.",
+		lead: "Los estadounidenses que llegan a España suelen dividirse entre escapadas Madrid-Barcelona y circuitos playeros por la Costa del Sol (con base en Málaga). El registro ZBE golpea de forma distinta en cada ciudad — Madrid Central es pequeño y cámara-céntrico, Barcelona ZBE Rondes es enorme y también cámara-céntrico, Málaga es más laxa pero tiene patrullas costeras de la DGT que los visitantes de EE.UU. subestiman. A continuación, la realidad por destino.",
+		badge: 'Madrid ZBE · Barcelona Rondes · patrullas Costa del Sol',
+		items: [
+			{
+				name: 'Madrid',
+				region: 'Comunidad de Madrid — capital interior española',
+				scene: "Madrid Central cubre el perímetro Sol → Retiro → Chueca — una zona compacta con gran afluencia turística y más de 300 lectores de matrícula. La M-30 rodea la ciudad; la A-6 hacia el oeste lleva a El Escorial y Segovia (el clásico plan de fin de semana). El tráfico dentro de la M-30 es denso hasta las 22:00 cada noche.",
+				rentalNote: 'Aeropuerto MAD: Hertz, Avis, Sixt, Enterprise + operadores locales españoles (Goldcar, OK Mobility, Record Go). Los visitantes estadounidenses pagan ~40–60 €/día por un automático compacto. Depósito 600–1.000 €. Las grandes cadenas gestionan el registro ZBE automáticamente; algunas low-cost lo dejan a cargo del cliente.',
+				enforcement: "Madrid Central es la ZBE más estricta de España — 90 € por entrada no autorizada (180 € si no se paga en 15 días). Las multas llegan a la matrícula del alquiler en 30-60 días y se cargan a la tarjeta estadounidense. La DGT (autoridad nacional) y los controles de la Guardia Civil en la M-30 son agresivos; la falta de IDP es una multa de 200 € añadida a cualquier otra infracción.",
+				fineBand: '90 € (Madrid Central) → 200 € (radar M-30) → 200 € (Guardia Civil sin IDP) → 500 €+ (multa compuesta)',
+				watchOut: 'Los visitantes de EE.UU. en rutas multi-ciudad (Madrid → Sevilla → Málaga) acumulan multas al entrar en varias ZBE sin registrar. Cada ciudad requiere registro por separado — asumir que el de Madrid cubre el de Barcelona es uno de los errores más multados de estadounidenses en 2024-2025.',
+			},
+			{
+				name: 'Barcelona',
+				region: 'Cataluña — costa mediterránea',
+				scene: "ZBE Rondes es la zona de bajas emisiones ciudadwide de Barcelona — huella geográfica enorme (todo dentro de Ronda del Litoral y Ronda de Dalt), laborables 07:00–20:00. La Sagrada Familia, el Passeig de Gràcia y el Barri Gòtic están dentro. La B-20 mueve el tráfico de paso. El Aerobus del aeropuerto hace que NO alquilar sea la opción sensata para estancias solo en la ciudad.",
+				rentalNote: 'BCN es el mayor hub de alquiler de España — todas las majors más Goldcar, Record Go, Enterprise, Firefly. Automático ~35–55 €/día. Los visitantes de EE.UU. sobre-alquilan Barcelona; el metro cubre la ciudad y las excursiones a la Costa Brava son la única razón que justifica el coche. Depósito 500–1.000 €.',
+				enforcement: "Las cámaras de ZBE Rondes auto-multan 200 € por entrada no autorizada (reducido a 100 € si se paga en 20 días). Los radares de la Ronda del Litoral son agresivos. La Guardia Urbana de Barcelona revisa licencias extranjeras con menos frecuencia que la Guardia Civil de Madrid — pero cualquier incidente eleva inmediatamente el requisito documental.",
+				fineBand: '100–200 € (ZBE Rondes) → 200 € (radar Ronda) → 500 € (aparcamiento ilegal + grúa) → 1.000 €+ (control DUI tras noche de fiesta)',
+				watchOut: 'El registro para la ZBE Rondes requiere formulario online en ajuntament.barcelona.cat ANTES del período del alquiler. Algunas cadenas lo completan, otras no — verifica en el mostrador. Sin registro = multa automática a la matrícula del alquiler por cada entrada, cada día.',
+			},
+			{
+				name: 'Málaga (Costa del Sol)',
+				region: 'Andalucía — costa sur mediterránea',
+				scene: "La autopista A-7 recorre toda la Costa del Sol — Málaga → Marbella → Estepona → Sotogrande. Aquí es donde los visitantes de EE.UU. realmente hacen viajes por carretera más largos: sol, playa, catas de vino en Ronda, excursiones a Gibraltar. El casco histórico de Málaga tiene peatonalización parcial pero aún sin ZBE formal (despliegue previsto para 2026). El Casco Antiguo de Marbella es solo peatonal.",
+				rentalNote: 'El aeropuerto AGP es intensivo en turismo británico — los precios lo reflejan. Los visitantes de EE.UU. pagan un 15% de sobreprecio frente a MAD. Sedán automático 40–65 €/día. Operadores locales (Auto Reisen, Malaga Car) a menudo baten a las majors en 10-15 €/día. Alquileres semanales dominantes; depósito 400–700 €.',
+				enforcement: "La aplicación de la ley en la Costa del Sol es intensiva en patrullas, no en cámaras. La Guardia Civil patrulla la A-7 con radar y controles DUI — especialmente los viernes/sábados por la noche cerca de Puerto Banús. Los visitantes de EE.UU. subestiman a menudo el límite español del 0,05% frente al 0,08% estadounidense y son detenidos tras 2 copas de Rioja en la cena. Los radares de la AP-7 auto-multan.",
+				fineBand: '200 € (radar A-7) → 400 € (cambio de carril doble) → 700–1.200 € (control DUI en Puerto Banús) → 200 € (baliza V-16 faltante desde enero 2026)',
+				watchOut: 'La baliza de emergencia LED V-16 se vuelve obligatoria en España en enero de 2026 — los coches de alquiler deben incluir una. Verifica en la recogida que ESTÁ en la guantera; la falta de V-16 en cualquier incidente en carretera es una multa de 200 € por Real Decreto 159/2021.',
+			},
+		],
+		bottomNote: "Moraleja cross-España para visitantes de EE.UU.: tus problemas de conducción son (1) el registro ZBE por ciudad y (2) los controles en carretera de la DGT/Guardia Civil que detectan la falta del IDP. Los viajes multi-ciudad componen ambos. Pide al agente de alquiler que recorra contigo las ZBE específicas de tu ruta ANTES de arrancar — 400 € en multas evitadas superan a los 35 dólares del IDP Companion.",
 	},
 };
 

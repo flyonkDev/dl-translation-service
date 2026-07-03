@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
-import CountryPairPage from '~/components/CountryPair/Page.vue';
+import CountryPairPage from '~/components/CountryPair/PageCityLed.vue';
 import { usItalyCopy } from '~/content/country-pairs/tier-1/us/us-italy';
 
 // File lives in /pages/tier-1/us/ for organisation; URL contract is the flat slug.

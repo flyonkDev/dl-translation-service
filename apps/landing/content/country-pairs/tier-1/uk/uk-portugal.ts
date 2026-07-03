@@ -422,6 +422,44 @@ const en: CountryPairCopy = {
 		originName: 'United Kingdom',
 		destinationName: 'Portugal',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Lisbon, Porto, Algarve — Portugal's three driving worlds",
+		lead: "British visitors typically pick one of three Portugal shapes: Lisbon as a base with day trips to Sintra and Cascais, a Porto → Douro wine circuit, or a beach-focused Faro-Albufeira loop through the Algarve. The rental scene, the tolls, and the enforcement style differ enough between them that a single briefing misses what actually matters per destination.",
+		badge: "Three routes, three toll systems",
+		items: [
+			{
+				name: 'Lisbon',
+				region: 'Lisboa — Portuguese Atlantic capital',
+				scene: "Lisbon's terrain is genuinely hilly — the 28 tram climbs Alfama for a reason. Central street driving means cobbles, one-ways, and blind corners at São Jorge Castle level. The A5 westbound to Cascais and the A2 southbound over the 25 de Abril bridge move the day-trip traffic. Sintra's palace loop is where most rental car scratches happen.",
+				rentalNote: "LIS airport carries Europcar, Sixt, Hertz, Avis + solid Portuguese local (Guerin, Drive on Holidays). Compact automatic €35–€60/day, deposit €300–€800. Every counter enrolls the plate in Via Verde electronic toll — charged separately, be sure to inspect the return summary.",
+				enforcement: "Central Lisbon has bus-lane cameras (Avenida da Liberdade, Marquês de Pombal) — €120 fine, plate-billed to rental within 30 days. The 25 de Abril and Vasco da Gama bridges use Via Verde tolls; missing the transponder means the rental company auto-charges €70+ admin fee. Tourist police at Belém and Baixa are relaxed with UK licences.",
+				fineBand: '€60 (bus lane) → €120 (Via Verde admin) → €400 (double-lane change violation A5)',
+				watchOut: "Sintra's palace ring road is banned to non-resident cars during summer weekends — plan around the town's park-and-ride shuttle. Trying to drive through Sintra centre on a Saturday in August ends in a €150 fine and 45 minutes lost.",
+			},
+			{
+				name: 'Porto',
+				region: 'Norte — Portuguese wine country gateway',
+				scene: 'Porto is smaller than Lisbon and easier to drive, but the Douro river valley (Peso da Régua, Pinhão) is where UK visitors actually pick up cars. Twisty river roads with sudden overlooks, N-numbered secondary routes with 90 km/h limits and single-lane bridges. Weather changes fast — sea fog in the morning, sun by afternoon.',
+				rentalNote: "OPO airport lineup similar to LIS but 15% cheaper. Douro Valley wineries expect car arrivals — verify designated-driver logic BEFORE the tasting tour. Manual transmission still 40% of the fleet. Guerin Portuguese-local counter often best-priced for weekly rentals.",
+				enforcement: "Porto's A28, A29, and A44 use Via Verde exclusively — no toll booths, only camera billing. UK visitors renting for the wine region often only realise this at the end when the €80 accumulated toll charge appears on the card. The A24 (Peso da Régua north) is a scenic-toll road with a €4-per-30km rate.",
+				fineBand: '€60 (Ribeira parking) → €80–150 (Via Verde admin overrun) → €400+ (Douro DUI checkpoint)',
+				watchOut: "Portuguese DUI enforcement runs a 0.05% legal limit and roadside stops after Douro wine tastings are documented in 2024-2026 traveller reports. If you're doing the Douro wine circuit, book a driver — not an issue where UK drivers routinely misjudge.",
+			},
+			{
+				name: 'Algarve (Faro base)',
+				region: 'South Portugal — Atlantic beach coast',
+				scene: "The A22 (Via do Infante) runs east-west across the entire Algarve — this is your artery. North of the A22 the terrain rises to the Serra de Monchique with proper mountain roads. Between Albufeira and Tavira it's beach resorts, discos, and rental scooters. Golf circuits (Vilamoura, Vale do Lobo) add their own traffic pattern.",
+				rentalNote: "FAO airport is British-tourist-heavy — pricing reflects it. Weekly rental typically 20% above LIS/OPO. Automatic sedan €280–€450/week. Local operators (Auto Jardim, Turiscar) often out-price majors. Scooter rental scene in Albufeira and Lagos is present but insurance for UK Cat A absence still applies.",
+				enforcement: "A22 speed cameras billed via Via Verde. The Algarve's N125 (parallel to A22) is where UK drivers actually get stopped — narrow, high-tourist, single-lane, and the GNR runs radar there weekly. Late-night Albufeira Old Town patrols for DUI post-nightlife are documented in Times of Portugal reports 2024-2026.",
+				fineBand: '€60 (N125 speed) → €200 (A22 double-fine) → €700–1,200 (Albufeira DUI stop)',
+				watchOut: "Off-road driving in the Serra de Monchique — the mountain roads look like scenic drives but include unsigned single-lane sections where oncoming traffic requires reversing 200m to a passing point. Rental damage cover often excludes off-tarmac excursions. Check the contract fine print.",
+			},
+		],
+		bottomNote: "Portugal's Via Verde electronic toll system is where UK visitors most often get surprised — no booths, no cash lanes, no warning. Every rental car has a transponder and every trip on the A2, A5, A22, A24, A28 auto-charges. Ask the counter to explain BEFORE you drive off, not after the €120 admin charge lands on your card three weeks later.",
+	},
 };
 
 export const ukPortugalCopy: Record<'en', CountryPairCopy> = { en };

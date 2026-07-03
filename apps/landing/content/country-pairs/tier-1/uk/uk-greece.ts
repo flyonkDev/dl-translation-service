@@ -402,6 +402,44 @@ const en: CountryPairCopy = {
 		originName: 'United Kingdom',
 		destinationName: 'Greece',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Athens vs the islands — where UK drivers actually meet Greek roads",
+		lead: "Post-Brexit, the UK photocard alone is legally accepted for tourist driving in Greece. That's the gov.uk letter. What it does not say: Athens rental corridors treat the paper counterpart as mandatory, Santorini's single ring road brakes for a donkey every fifty metres, and Crete's south coast has genuine mountain-pass driving that most travel copy skips. Below is the per-destination reality — the answers rental agents at Heraklion airport already assume you have.",
+		badge: 'Airport rentals vs island shop refusals',
+		items: [
+			{
+				name: 'Athens',
+				region: 'Attica — Greek mainland capital',
+				scene: "The Attiki Odos ring highway (A6) circles the city and is where 70% of arriving rentals immediately end up. Traffic inside the ring is dense until the Kifissias axis. Old-town Plaka streets under the Acropolis are narrow, one-way, and hostile to anything larger than a compact. Most UK visitors rent at ATH and drive out toward the Peloponnese or Sounion within 24 hours.",
+				rentalNote: 'ATH airport counters carry Hertz, Avis, Sixt, Enterprise + heavy local (Kosmos, Autounion, Rental Center Greece). Compact automatic ~€45–€75/day, deposit €600–€1,000. Every counter asks for BOTH the UK photocard AND the paper counterpart if paper still applies — one-half licences fail here more than anywhere else in Greece.',
+				enforcement: "Attiki Odos radar detection is aggressive and rental-plate-billed within 15 days. Central Athens (Panepistimiou, Vas. Sofias) has camera-enforced bus lanes — €200 fine, automatic. Tourist police in Plaka do check documents but rarely fine for missing IDP on UK licences post-Brexit.",
+				fineBand: '€40 (photocard-only stop) → €200 (bus lane camera) → €700 (Attiki Odos double-fine)',
+				watchOut: 'Central Athens parking is a genuine failure state — plan to leave the rental at your hotel or a paid garage before Syntagma and take the Metro. The €80 tow-away fee for illegal Plaka parking is documented in 2025 traveller threads.',
+			},
+			{
+				name: 'Santorini',
+				region: 'Cyclades — Southern Aegean',
+				scene: "The Fira → Oia road IS the island road. It is a single-lane switchback for stretches, cliffs on one side, donkey mule traffic on the other, and it becomes a parking-lot at sunset from 18:00 daily May–October. Renting a full car on Santorini is often a mistake — ATVs (four-wheel quad bikes) and small SUVs dominate.",
+				rentalNote: "JTR airport rentals limited (Hertz, Autounion, local Damigos, Volcano Rent A Car). Fira car scene is chaotic — many shops rent ATVs without proper documentation checks. Small SUV ~€65–€100/day in peak season, ATV €35–€55/day. Insurance excludes ATVs in most UK travel-insurance policies (verify).",
+				enforcement: "Santorini enforcement is minimal for UK licences — small-town scale, tourist-heavy economy. What isn't minimal: shop-refusal rates. Small Fira agencies report refusing UK photocard-only about 25% of the time per 2025 TripAdvisor thread aggregate. Having a translated companion document unlocks the paperwork disagreement.",
+				fineBand: '€40 (rare stop) → €150 (illegal ATV parking in Oia) → £3,500+ (ATV crash without UK Cat A endorsement + voided insurance)',
+				watchOut: 'ATV rental on Santorini is one of the most common UK travel-insurance denials of 2024-2026. Category A endorsement is typically required for anything above 50cc — and 500cc ATVs are rented in Fira as \"quad bikes\" as if the endorsement didn\'t apply. Verify with your insurer BEFORE booking.',
+			},
+			{
+				name: 'Crete (Heraklion base)',
+				region: 'South Aegean — Greek largest island',
+				scene: "The E75 highway runs the whole north coast Heraklion → Chania — flat, fast, straightforward. The south (Matala, Preveli, Loutro) is different — proper mountain passes over the Psiloritis massif, hairpins with sheep, single-lane bridges. Crete is where UK visitors do multi-week rentals; the island rewards it. Real driving country, not tourism-corridor country.",
+				rentalNote: "HER airport has full major-chain lineup + strong local (Sunny Cars, Auto Union Crete). Long-term rates favourable — €25–€40/day for 7+ days. Manual dominant; automatic 40% premium and often unavailable. Paper counterpart requested at ~30% of counters in 2025.",
+				enforcement: "Cretan traffic police are locally focused; foreigners largely waved through if photocard is presented and IDP absence is post-Brexit-accepted. Heraklion urban camera enforcement present but tourist-corridor bias toward warning first. E75 speed cameras auto-fine via rental plate.",
+				fineBand: '€40 (routine stop) → €150 (E75 speeding) → €500+ (south-coast off-road incident + local repair)',
+				watchOut: 'The south-coast drive Chora Sfakion → Loutro road involves 6% grade descents and hairpins where UK visitors regularly over-brake and burn the rental clutch. Rentals include unlimited breakdown assistance in Heraklion urban areas but often not for south-coast mountain roads — verify the recovery zone before you commit.',
+			},
+		],
+		bottomNote: "Cross-destination pattern: post-Brexit rules removed the IDP legal requirement, but the paper-counterpart and translation questions still trip UK visitors at airport counters (Athens especially). Companion translation document handles that friction without buying into the outdated \"you must have an IDP\" narrative.",
+	},
 };
 
 export const ukGreeceCopy: Record<'en', CountryPairCopy> = { en };

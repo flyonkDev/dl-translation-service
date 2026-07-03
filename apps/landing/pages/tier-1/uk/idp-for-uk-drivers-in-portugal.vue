@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
-import CountryPairPage from '~/components/CountryPair/Page.vue';
+import CountryPairPage from '~/components/CountryPair/PageCityLed.vue';
 import { ukPortugalCopy } from '~/content/country-pairs/tier-1/uk/uk-portugal';
 
 definePageMeta({ path: '/idp-for-uk-drivers-in-portugal' });

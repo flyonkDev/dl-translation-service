@@ -400,6 +400,44 @@ const en: CountryPairCopy = {
 		originName: 'United Kingdom',
 		destinationName: 'Spain',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Madrid, Barcelona, Seville — the ZBE trio and what UK visitors trip over",
+		lead: "Spain's Zona de Bajas Emisiones network expanded aggressively since 2023 — Madrid Central, Barcelona ZBE Rondes, Seville's soon-arriving city-centre restriction. Each has its own registration path, its own fine schedule, and its own tourist-forgiveness threshold. Below is the per-city snapshot British drivers most need to remember before the rental key change hands.",
+		badge: 'Madrid Central · Barcelona ZBE Rondes · Seville phased ZBE',
+		items: [
+			{
+				name: 'Madrid',
+				region: 'Comunidad de Madrid — Spanish capital',
+				scene: "Madrid Central (formally ZBE de Especial Protección) covers Gran Vía to the Retiro perimeter. The M-30 ring encircles the city; day-to-day arriving traffic goes through it. The A-6 westbound to Segovia/Ávila is a straight fast highway; the Sierra de Guadarrama drive for weekend day-trips is where UK visitors actually enjoy the wheel.",
+				rentalNote: 'MAD airport has Hertz, Avis, Sixt, Europcar + Spanish local (Goldcar, OK Mobility). Compact automatic €35–€55/day, deposit €400–€900. All majors register the rental in Madrid Central via ETIQUETA A/B/C/ECO scheme automatically — but some Iberian budget rentals do NOT, and you enter the zone illegally.',
+				enforcement: "Madrid Central is fully camera-enforced — 300 licence-plate readers across the perimeter. Fine €90 (€180 if not paid in 15 days). Rental-plate billing lands 30-60 days later. Tourist-forgiveness window: DGT has published clemency for foreign plates first-time, but repeat entries stack fines.",
+				fineBand: '€90 (Madrid Central entry without registration) → €200 (M-30 speed cam) → €500+ (compound violation)',
+				watchOut: "Hotels inside Madrid Central will provide a temporary registration for the rental plate — but the guest must request it. Assuming the hotel does it automatically is one of the most-fined UK-tourist errors reported by hire-car companies in 2024-2025.",
+			},
+			{
+				name: 'Barcelona',
+				region: 'Cataluña — Mediterranean coast',
+				scene: "Barcelona's ZBE Rondes covers the entire zone inside the Ronda del Litoral and Ronda de Dalt — much bigger than Madrid Central. It's active weekdays 07:00–20:00 excluding public holidays. The B-20 outer bypass moves through-traffic; the Passeig de Gràcia and El Born narrow-street tourism cluster is where cars stop making sense.",
+				rentalNote: "BCN airport is the biggest rental hub in Spain — all majors plus Goldcar, Enterprise, Firefly, and heavy local (Record Go). Automatic ~€30–€50/day. Airport-to-city rail (R2 Nord) makes NOT renting the sensible default for city-only stays. UK visitors often over-rent for Barcelona.",
+				enforcement: "ZBE Rondes camera enforcement is now aggressive — €200 fine per unauthorised entry (reduced to €100 if paid within 20 days). Sagrada Familia perimeter parking is priced to discourage tourists; illegal parking gets ticketed within 30 minutes. Late-night Ronda checkpoints for DUI post-nightlife are documented in La Vanguardia reports.",
+				fineBand: '€100–200 (ZBE Rondes) → €200 (Ronda speeding) → €500 (illegal parking + tow) → €1,000+ (DUI stop)',
+				watchOut: "Barcelona ZBE Rondes registration for foreign plates requires online form at ajuntament.barcelona.cat BEFORE the rental period. Rental companies sometimes forget; British visitors sometimes assume it's automatic. Verify BEFORE driving into the city.",
+			},
+			{
+				name: 'Seville',
+				region: 'Andalucía — Southern Spain',
+				scene: "Seville is smaller, hotter, and older — the historic centre (Barrio Santa Cruz, Alameda) is functionally car-free even without formal ZBE designation. The SE-30 ring circles the city; the A-4 south to Cádiz is a fast Andalusian highway. Weekend day-trips north to Carmona or Osuna are the actual driving fun.",
+				rentalNote: 'SVQ airport has Hertz, Avis, Sixt + heavy Spanish local. Rates 20% below MAD/BCN — Seville is the cheapest of the three ZBE cities. Manual dominant; automatic in 40% of the fleet. Deposit €300–€600.',
+				enforcement: 'Seville ZBE is under phased rollout 2024–2026 — not yet fully camera-enforced but the perimeter is being marked. Historic-centre police patrols on scooter are active (Museo de Bellas Artes area, Cathedral). Andalusian speed cameras on the A-4 auto-bill; the SE-30 has 3 major camera clusters.',
+				fineBand: '€90 (SE-30 speed) → €200 (historic-centre illegal drive) → €500 (Cathedral perimeter parking + tow)',
+				watchOut: "Seville's summer temperatures (July-August) reach 45°C — cars parked in sun without shade suffer real damage (dashboard cracks, interior melting). Rental damage waivers sometimes exclude \"heat-related interior degradation.\" Verify shade parking BEFORE the tour.",
+			},
+		],
+		bottomNote: "ZBE enforcement across Spain is now the dominant fine-source for UK visitors — not speeding, not DUI, not parking. Every one of these three cities requires the rental plate registered before you enter the restricted zone. Ask the counter agent to walk you through the specific city's registration process at pickup — not after the €200 fine lands on your card 45 days later.",
+	},
 };
 
 export const ukSpainCopy: Record<'en', CountryPairCopy> = { en };

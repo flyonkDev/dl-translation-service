@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
-import CountryPairPage from '~/components/CountryPair/Page.vue';
+import CountryPairPage from '~/components/CountryPair/PageCityLed.vue';
 import { usVietnamCopy } from '~/content/country-pairs/tier-2/us/us-vietnam';
 
 definePageMeta({ path: '/idp-for-us-drivers-in-vietnam' });

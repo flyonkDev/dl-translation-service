@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineI18nRoute } from '#imports';
-import CountryPairPage from '~/components/CountryPair/Page.vue';
+import CountryPairPage from '~/components/CountryPair/PageCityLed.vue';
 import { usFranceCopy } from '~/content/country-pairs/tier-2/us/us-france';
 
 // Override file-based routing — file lives in /pages/tier-2/us/ for organisation,

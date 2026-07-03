@@ -98,6 +98,30 @@ export interface RejectItem {
 	text: string;
 }
 
+/**
+ * City breakdown card for `PageCityLed` variant. Each card is a self-contained
+ * per-city snapshot: rental scene, enforcement specifics, fine band, watch-out line.
+ * Reader gets a mini-guide per city instead of one homogenised destination story —
+ * this is the structural signal that makes city-led variant distinguishable from
+ * the standard Page.vue layout.
+ */
+export interface CityCard {
+	/** City name, e.g. "Rome", "Paris", "Bangkok" */
+	name: string;
+	/** Region / short geo context, e.g. "Central Italy — Lazio" */
+	region: string;
+	/** 2–3 sentences describing driving context / traffic character / famous roads */
+	scene: string;
+	/** Rental scene: which chains, price band, quirks specific to this city */
+	rentalNote: string;
+	/** Enforcement specifics: cameras, zone bounds, tourist-corridor patrols */
+	enforcement: string;
+	/** Fine range specific to this city, e.g. "€75–€300 (ZTL cameras)" */
+	fineBand: string;
+	/** 1-line watch-out / gotcha specific to this city */
+	watchOut: string;
+}
+
 export interface CountryPairCopy {
 	seo: {
 		title: string;
@@ -261,4 +285,29 @@ export interface CountryPairCopy {
 		helps: string[];
 		outro: string;
 	};
+
+	/**
+	 * City breakdown block. Required by `PageCityLed.vue` variant, ignored by
+	 * standard `Page.vue`. Populate for destinations with 3+ named cities that
+	 * have materially different rental/enforcement/zone dynamics (Italy Rome vs
+	 * Milan vs Naples; France Paris/Lyon/Marseille; Thailand Bangkok/Chiang Mai/
+	 * Phuket; Greece Athens/Santorini/Crete; Spain Madrid/Barcelona/Seville).
+	 */
+	cities?: {
+		heading: string;
+		lead: string;
+		badge?: string;
+		items: CityCard[];
+		/** Cross-city summary tip / connector line rendered below the cards */
+		bottomNote: string;
+	};
+
+	/**
+	 * Which page component renders this content. Defaults to standard `Page.vue`
+	 * when omitted. Set to `'city-led'` to opt into `PageCityLed.vue` (requires
+	 * `cities` block populated). Structural variance across the 45-page grid
+	 * reduces SpamBrain scaled-content-classifier flag proportional to variance
+	 * ratio — see project pivot memory + CLAUDE.md structure variance rule.
+	 */
+	layoutVariant?: 'standard' | 'city-led' | 'faq-led' | 'calendar-led' | 'timeline-led';
 }

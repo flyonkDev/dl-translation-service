@@ -390,6 +390,44 @@ const en: CountryPairCopy = {
 		originName: 'United States',
 		destinationName: 'France',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: 'The three cities where French driving actually diverges',
+		lead: "Paris, Lyon and Marseille each enforce Crit'Air differently and each rental corridor has its own rules of thumb. A US driver's problem in Paris (the Boulevard Périphérique cameras) is not the same as in Marseille (the L2 ring's inconsistent LEZ mapping) or Lyon (the compact Presqu'île pedestrian creep). Below is the per-city snapshot rental agents assume you already know.",
+		badge: "Paris, Lyon, Marseille — Crit'Air rules per city",
+		items: [
+			{
+				name: 'Paris',
+				region: 'Île-de-France — ZFE-m greater Paris',
+				scene: "Boulevard Périphérique wraps the historic city; A86 outer ring is where the ZFE-m enforcement grid actually bites. Traffic is dense, buses have physical priority, and Sunday morning is the only time you'll see the Champs-Élysées move. Most US visitors return their rental within 5 days.",
+				rentalNote: "Every major chain (Avis, Hertz, Sixt, Europcar) at CDG, ORY, and Gare du Nord requires a French translation of the US license. Insurance riders often exclude Périphérique breakdowns overnight. Compact automatic ~€75–€120/day off-peak.",
+				enforcement: "Crit'Air 3, 4, 5 restricted inside the A86 during ZFE-m hours. Radar plate-cams on the Périphérique bill your rental company within 30 days; charge lands on your card. Priority-to-the-right still catches Americans coming out of Place de la Concorde.",
+				fineBand: '€68 (missing Crit\'Air) → €135 (Périphérique speed) → €375+ (combined violations)',
+				watchOut: "Renting without the Crit'Air sticker pre-ordered means you cannot enter the ZFE-m — some rentals ship stickered, most don't. Ask the counter and inspect the windshield before you drive off.",
+			},
+			{
+				name: 'Lyon',
+				region: 'Auvergne-Rhône-Alpes — ZFE Grand Lyon',
+				scene: "Presqu'île is a peninsula between the Rhône and Saône rivers and much of it has been progressively pedestrianised since 2022. The Boulevard Laurent Bonnevay ring separates the ZFE from the outer suburbs. Traffic outside the ZFE is calm; inside during weekday rush is denser than Marseille.",
+				rentalNote: 'Lyon-Saint Exupéry (LYS) has the same major chains + solid local (Ada, Rent A Car France). Prices roughly 15% below Paris. Automatic still sparse — book 2 weeks ahead if you want one.',
+				enforcement: "ZFE Grand Lyon expanded 2025 — Crit'Air 4 and 5 permanently barred, Crit'Air 3 restricted daytime. Cameras clustered around Cours Vitton and Boulevard des Belges. Enforcement is stricter than Paris in the sense that hearings are faster and the mairie replies to appeals within 6 weeks.",
+				fineBand: '€68 (ZFE entry without sticker) → €90 (Presqu\'île violation) → €135+ (speeding on outer ring)',
+				watchOut: 'The tunnel Fourvière/Croix-Rousse under the city IS inside the ZFE — cameras at both mouths. Missing the sticker on that stretch is one of the most-fined US-tourist errors reported by rental chains 2025-2026.',
+			},
+			{
+				name: 'Marseille',
+				region: 'Provence-Alpes-Côte d\'Azur — ZFE-m mid-rollout',
+				scene: "The L2 ring finally connects Marseille north to south — 2023 completion — but the historic centre (Vieux-Port, Le Panier) is a warren of one-way streets built for scooters, not rentals. Most US drivers pick up in Marseille Provence (MRS) and immediately head Aix-en-Provence or the Calanques. Sea-facing Corniche Kennedy is the postcard road.",
+				rentalNote: 'MRS has fewer premium counters than CDG/LYS; Sixt and Europcar dominate, Avis/Hertz secondary. Verify automatic availability twice. Provincial mileage caps apply — 200 km/day at the low-cost tier.',
+				enforcement: "ZFE-m Marseille is the newest and least-signposted of the three — enforcement is inconsistent through 2026 but tightening. Historic centre has genuine narrow-street chaos; the reliable danger is L2 speed cameras (2× per direction). Speeding fine on the A55 exceeds Paris equivalents.",
+				fineBand: '€68 (missing Crit\'Air) → €135 (L2 speed) → €680+ (Corniche night-time DUI stop)',
+				watchOut: "The Vieux-Port district's parking situation is genuinely dysfunctional — plan to abandon the car at Bougainville metro parking and take Metro Line 2 into the old town rather than fight the streets.",
+			},
+		],
+		bottomNote: "The moral for US drivers: pick one base city per week and use trains between them. Paris → Lyon TGV is 2h; Lyon → Marseille TGV is 1h40. Renting once and driving 800 km round-trip pays no bonus except gas and Crit'Air anxiety.",
+	},
 };
 
 export const usFranceCopy: Record<'en', CountryPairCopy> = { en };

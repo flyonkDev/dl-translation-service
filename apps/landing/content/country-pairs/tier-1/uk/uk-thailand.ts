@@ -411,6 +411,44 @@ const en: CountryPairCopy = {
 		originName: 'United Kingdom',
 		destinationName: 'Thailand',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: 'Where UK visitors actually drive in Thailand — three very different scenes',
+		lead: "Bangkok, Chiang Mai and Phuket are three tourism-heavy destinations, and the enforcement, rental scene, and crash-cost math differ enough per place that a single blanket briefing misses what actually catches British travellers. Below is the per-city snapshot — the numbers rental chains and BUPA International policy adjusters both work from.",
+		badge: 'Bangkok chaos · Chiang Mai checkpoints · Phuket scooters',
+		items: [
+			{
+				name: 'Bangkok',
+				region: 'Central Thailand — Bangkok Metropolitan Region',
+				scene: 'Sukhumvit, Silom and Sathorn arteries move slowly outside 22:00–06:00. British drivers renting in Bangkok almost never take the wheel themselves — Grab and the MRT/BTS do the work. Left-hand traffic same as UK, but multi-lane discipline is looser and turning lanes appear without warning.',
+				rentalNote: 'Suvarnabhumi (BKK) and Don Mueang (DMK) have Hertz, Avis, Budget, Sixt + strong local Chic and Thai Rent A Car. Automatic sedan ~1,200–1,800 THB/day. Deposit typically 10,000 THB card hold. Almost every counter asks for a Geneva 1949 IDP for UK licences on delivery — the policy is company-wide, not per-agent discretion.',
+				enforcement: "Bangkok Metropolitan Police run roadside checkpoints weekly on the outer ring road (Kanchanaphisek). Tourist-corridor stops are more relaxed than Chiang Mai's but foreigners are ID-checked more than locals. Speed cameras are being deployed on Rama IX and along the Din Daeng expressway 2025-2026.",
+				fineBand: '500–2,000 THB (missing IDP) → 4,000 THB (undocumented rental) → 20,000+ THB (crash without IDP + insurance void)',
+				watchOut: "Bangkok's flooding season (September–October) makes rental-return conditions unpredictable — Sukhumvit sinks knee-deep in a 30-minute storm. Time your pickup so the return day is dry.",
+			},
+			{
+				name: 'Chiang Mai',
+				region: 'Northern Thailand — Chiang Mai Province',
+				scene: 'This is where British tourists actually rent scooters. The Old City is walkable, but the Mae Rim loop, the Doi Suthep temple road, and the Samoeng loop pull tourists onto 125cc bikes daily. The road surfaces are worse than Phuket. Rain arrives most afternoons June–October.',
+				rentalNote: 'Scooter rental (125–150cc) 200–350 THB/day at 30+ Old City shops. Car rental at Chiang Mai International (CNX) is standard chains + heavy local (Budget, Thai Rent A Car). Scooter shops rarely ask for IDP — but police at Chiang Mai checkpoints will.',
+				enforcement: "Chiang Mai's tourist-police checkpoints are the most consistently reported enforcement location for British riders in 2024-2026 threads. Old City perimeter stops, Nimmanhaemin corner sweeps, and the road up to Doi Suthep are the three most-fined zones. Officers write on-the-spot receipts; hotel-collect variant common.",
+				fineBand: '500–1,000 THB (no IDP scooter stop) → 2,000–4,000 THB (no IDP + no helmet) → £1,500+ (accident without IDP voids UK travel insurance)',
+				watchOut: 'Riding without a UK Category A endorsement on your driver licence means the scooter is uninsured, IDP or no IDP — most UK travel insurance excludes powered two-wheelers unless the home-country entitlement exists. The IDP alone does NOT bridge that insurance gap.',
+			},
+			{
+				name: 'Phuket',
+				region: 'Southern Thailand — Andaman coast',
+				scene: 'Patong, Kata and Karon beaches are connected by the Route 402 highway; the loop over to Rawai and Nai Harn beaches involves hills, twisty coastal roads, and 125cc scooters ridden by everyone. UK visitor injury rates on Phuket are the highest per capita of any Thai destination — most involve scooters, most involve tourists without endorsement.',
+				rentalNote: 'Phuket (HKT) rental scene is heavier than Chiang Mai and cheaper than Bangkok. Cars 900–1,500 THB/day at HKT airport counters. Scooter rentals cluster along Patong beach road and Bangla Road — many will hand keys without checking IDP, which does not mean it is legal to skip.',
+				enforcement: "Phuket's traffic enforcement is inconsistent — Kata/Karon corridors get sporadic checkpoint stops, Patong at night sees very little enforcement, but the Route 402 airport road has fixed checkpoints. Bribes-in-lieu-of-tickets are documented in traveller reports; official fines are 500–2,000 THB.",
+				fineBand: '500–2,000 THB (no IDP) → £2,500+ (Patong scooter accident without IDP + insurance void) → £15,000–£40,000 (medevac to UK if hospitalised)',
+				watchOut: "The Kata Hill switchback (Kata Beach → Karon Beach direction) is where most tourist scooter injuries in Phuket happen. UK riders often underestimate the downhill braking demand of an underpowered 125cc scooter carrying two people.",
+			},
+		],
+		bottomNote: "Cross-city moral for UK drivers: the IDP is inexpensive and covers the paperwork angle in all three cities, but it does NOT bridge the Category A insurance gap for scooters. If your UK licence is car-only, treat scooter rental as fully uninsured — that is the £15,000+ medevac math no travel-guide describes clearly.",
+	},
 };
 
 export const ukThailandCopy: Record<'en', CountryPairCopy> = { en };

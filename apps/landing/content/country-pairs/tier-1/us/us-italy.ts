@@ -393,6 +393,44 @@ const en: CountryPairCopy = {
 		originName: 'United States',
 		destinationName: 'Italy',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: "Italy's ZTL camera network — how Rome, Florence, Milan bill US rentals differently",
+		lead: "Italy's Zona a Traffico Limitato problem doesn't scale linearly by city size — Rome ZTL is one small perimeter with brutal camera density, Florence ZTL is a tourist trap the size of a small town, and Milan's Area B and Area C compound with LEZ rules that most American visitors have never encountered. Below is what each city actually demands of a US rental.",
+		badge: 'Rome ZTL · Florence ZTL · Milan Area B & C',
+		items: [
+			{
+				name: 'Rome',
+				region: 'Lazio — Roman historic centre',
+				scene: "The Aurelian Wall marks the outer edge of the ZTL. Inside: Vatican, Colosseum, Trevi, Pantheon, Trastevere. Traffic is dense from 07:00 to 22:00, scooters weave, and pedestrian creep is constant. The GRA (Grande Raccordo Anulare) ring encircles the metropolitan area; A1 and A24 handle north/east arrivals. Most American visitors return their rental within 5 days before venturing to Tuscany.",
+				rentalNote: "FCO and CIA airports carry Hertz, Avis, Sixt, Europcar + Italian local (Autoservizi Sostegno, Locauto). Compact automatic ~€45–€70/day, deposit €500–€900. Rental delivered with plates NOT pre-registered for Rome ZTL — the customer must arrange an entry permit through Comune di Roma OR avoid the zone entirely. Almost every American who tries \"just quickly through\" gets the €100+ fine.",
+				enforcement: "Rome ZTL is fully camera-enforced — every entry point (Porta del Popolo, Via del Corso, Via Nazionale, ~40+ others) reads plates. €100 fine per entry (€60 if paid within 5 days). Foreign plates are billed via the rental company 60-90 days later; late-billing surcharges add €25-40 per rental incident. Fines stack: 3 entries = €300 in a single afternoon.",
+				fineBand: '€100 (single ZTL entry) → €300+ (multiple entries same day) → €150 (Piazza Venezia illegal parking + tow) → €400 (GRA speed camera)',
+				watchOut: "Rome's ZTL Serale (7am-6pm weekdays inside the historic centre, night ZTL 11pm-3am for Trastevere entertainment district) catches Americans who assume the zone ends at sunset. Trastevere at midnight is not open access — check the specific ZTL you're near before driving.",
+			},
+			{
+				name: 'Florence',
+				region: 'Toscana — Renaissance city',
+				scene: "Florence's ZTL is genuinely the size of the entire historic centre — Uffizi, Duomo, Ponte Vecchio, Santa Croce, all inside. The Arno divides the city; the north bank has the tourism density, the south (Oltrarno) is quieter. Firenze-Peretola (FLR) airport is tiny; most Americans arrive by train from Rome (1h30) or fly into Pisa (PSA) 1h drive west.",
+				rentalNote: 'FLR airport has Hertz + Sixt + Avis + Europcar + a handful of local operators. PSA is bigger and typically 20% cheaper. Compact automatic €40–€65/day. Manual dominates (60%); automatic requires 2-week advance booking during summer. Deposit €500–€800. Rental agents specifically warn US visitors about the ZTL boundaries verbally at pickup — a good practice but the fine still lands.',
+				enforcement: "Florence ZTL cameras run 07:30–19:30 weekdays, 07:30–16:00 Saturdays (extended Saturday hours from 2024). €90 per entry. Fine escalation faster than Rome — €200 if not paid within 60 days. Foreign plates bill through Sistema Assicurazione Firenze; charge lands on card ~90 days after entry. Delayed billing is the specific horror American visitors report.",
+				fineBand: '€90 (Florence ZTL entry) → €200 (unpaid escalation) → €150 (Piazzale Michelangelo overnight parking) → €300 (compound)',
+				watchOut: 'The most-fined US-tourist scenario in Florence: arriving hotel drop-off inside the ZTL. Even if the hotel has \"guest access,\" the customer must give the hotel the plate BEFORE entry so the hotel adds it to the day-pass registry. Assuming the hotel does it automatically = €90 for each entry, per pass.',
+			},
+			{
+				name: 'Milan',
+				region: 'Lombardia — Northern industrial capital',
+				scene: "Milan's Area B (LEZ, low-emission) covers 72% of the city — everywhere inside the Filoviaria ring. Area C (congestion charge zone) is smaller, covering the Cerchia dei Bastioni (historic centre — Duomo, Brera, Quadrilatero della Moda). Weekday 07:30–19:30 both zones active. Malpensa (MXP) is the main airport 50km northwest, connected by A8 highway. Linate (LIN) is small but city-close.",
+				rentalNote: 'MXP rental scene: Hertz, Avis, Sixt, Enterprise, Europcar + Italian local. Compact automatic €40–€65/day. Manual still 50% of fleet. Deposit €500–€900. Area B/C registration is complex — rental cars are typically Euro 5+ so Area B compliant, but Area C (congestion) requires €5/day permit that most rentals do NOT auto-purchase. Customer must handle at Comune di Milano.',
+				enforcement: "Area B fines €100 per entry (Crit'Air-style low-emission zone rules). Area C €80 per unauthorised entry (€5/day permit avoids this). Cameras dense — both zones have hundreds of readers. Milan's traffic police (Polizia Locale) also runs manual stops at Piazza Duomo and Via Torino perimeter for parking violations. A8 speed cameras on the airport route auto-bill.",
+				fineBand: '€80 (Area C entry) → €100 (Area B entry) → €150 (illegal Duomo perimeter parking + tow) → €300+ (compound zone entries)',
+				watchOut: "Milan's Area B expansion 2024–2025 pulled in more Euro-standard vehicles as excluded — Euro 5 diesel excluded from January 2025, Euro 6 diesel restricted certain days. If the rental is diesel (common in Italy) verify Area B compliance BEFORE driving into the Cerchia. Some low-cost rentals give Euro 4 diesels that CANNOT enter Area B at all.",
+			},
+		],
+		bottomNote: "Cross-Italy moral: ZTL/Area B/Area C fines are the biggest single financial risk for US rentals in Italian cities — not speeding, not DUI, not parking. Multiply the €90-100 per entry across a 5-day itinerary (Rome day 1, Florence day 3, Milan day 5) and the compound sum easily reaches €400-600 in silent camera charges. Ask the rental agent to walk through each city's specific zone rules AT PICKUP — the €35 for the IDP Companion is trivial next to the ZTL exposure.",
+	},
 };
 
 export const usItalyCopy: Record<'en', CountryPairCopy> = { en };

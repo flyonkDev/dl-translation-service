@@ -423,6 +423,53 @@ const en: CountryPairCopy = {
 		originName: 'United States',
 		destinationName: 'Vietnam',
 	},
+
+	layoutVariant: 'city-led',
+
+	cities: {
+		heading: 'Hanoi, HCMC, Da Nang, Hoi An — the four Vietnamese places American motorbike bills come from',
+		lead: "Vietnam's driving environment shifts more between cities than most countries do — Hanoi Old Quarter is not the same problem as District 1 in HCMC, and the coastal Da Nang → Hoi An corridor is a third category entirely. American visitors also skew toward Hoi An motorbike-tours and Ha Giang loops (the Vienna 1968 IDP the US doesn't issue makes both technically ineligible). Below is the per-city snapshot rental agents assume you know before you touch a helmet.",
+		badge: 'Hanoi enforcement · HCMC DUI · Da Nang mountains · Hoi An medevac',
+		items: [
+			{
+				name: 'Hanoi',
+				region: 'Northern Vietnam — Red River Delta',
+				scene: "The Old Quarter's 36 streets is where 90% of visitor motorbike accidents happen. Traffic runs 24 lanes wide during rush hour on Kim Ma. Old Quarter blocks are pedestrian-priority in name, motorbike-priority in practice. Weather: cold January, humid May onward, monsoon August. Americans doing 3-day city stays rarely rent; those doing 2-week trips north to Sapa often do.",
+				rentalNote: "HAN airport counters carry Avis, Sixt + strong local (Chi's Café, Flamingo, Style Motorbikes). Car rental less common than motorbike; scooters ($8-15/day) dominate the tourism market. IDP verification varies widely — chains ask, corner shops don't.",
+				enforcement: "Hanoi traffic police enforcement of foreign licences intensified in 2024–2025. Route 5 (Hanoi → Halong) and the Nội Bài expressway to HAN airport are the most-cited stops. Chain hotels ban motorbike parking; guesthouses expect it. Cheap fines (500,000–2,000,000 VND) but multi-hour immigration-office paperwork is the real cost.",
+				fineBand: '500K–2M VND ($20–$85) — routine no-IDP stop  ·  8M+ VND ($340) — police-report incident',
+				watchOut: 'The Nội Bài Expressway checkpoints screen motorbike traffic actively — small-cc scooters get waved through, anything above 175cc gets checked for license class + IDP. Americans arriving on tourist Ha Giang packages often start here.',
+			},
+			{
+				name: 'Ho Chi Minh City',
+				region: 'Southern Vietnam — Saigon',
+				scene: 'HCMC (Saigon) is denser than Hanoi in every dimension — more scooters, more construction traffic, less tolerance for stopping to check maps. District 1 is grid-planned but tourist-clogged around Bến Thành Market. The route out to Củ Chi tunnels via Highway 22 is a fast-moving four-lane road with predictable traffic patterns.',
+				rentalNote: "SGN airport is the primary rental entry — Sixt, Avis, Europcar + local (Style Motorbikes, VN Rent A Car). Cars available but taxi-app coverage (Grab, Xanh SM) makes car rental optional for stays under 5 days. Motorbike rental shops cluster on Pham Ngu Lao — same as Hanoi Old Quarter dynamic.",
+				enforcement: "HCMC traffic police enforcement is less document-focused than Hanoi's — they're more attentive to helmet violations and DUI. However any incident involving a foreigner immediately elevates paperwork requirements. April 2024 provincial DUI enforcement tightening applies in HCMC too.",
+				fineBand: '400K–2M VND ($15–$85) — no IDP  ·  35M VND ($1,400) — DUI (2019 zero-tolerance)  ·  200M+ VND — accident with injury',
+				watchOut: 'District 5 (Chinatown) → Củ Chi drive: the AH1 highway west of the city has documented predatory traffic-check patterns for foreign drivers 2024-2026. Bribe negotiation is common; official fine is the same in either case.',
+			},
+			{
+				name: 'Da Nang',
+				region: 'Central Vietnam — coastal city',
+				scene: 'Da Nang is where American beach tourism starts — a modern city with wide boulevards, a coastal QL1A highway running the beach length, and easy access to the Hải Vân Pass (the mountain drive between Da Nang and Huế). The pass IS the drive most tourists remember — 21km of switchbacks with sea views. Traffic slower than either Hanoi or HCMC.',
+				rentalNote: "DAD airport has Avis, Sixt + local (Vietnam Motorbike Tours, Motorvina). Motorbike rental is common because the Hải Vân Pass demands it — the pass loops through weather changes and tourists do the ~35km ride My Khe Beach → Lang Co Bay in half a day. Automatic scooters ~$10-12/day.",
+				enforcement: "Central Vietnam traffic police enforcement is genuinely more relaxed than the north/south. Hải Vân Pass tourist traffic is expected; police checkpoints at the summit rest area are usually document-quick. The QL1A highway from Da Nang → Hoi An has the most-cited speed-camera issues for foreigners.",
+				fineBand: '500K VND ($20) — routine  ·  15M VND ($600) — Hải Vân pass motorbike incident  ·  Full US medevac from Da Nang: $60,000+',
+				watchOut: 'The Hải Vân Pass is fog-prone morning and evening — visibility below 10m happens without warning May–September. Multiple documented American motorbike accidents in the last 24 months involve pass conditions rather than driver error.',
+			},
+			{
+				name: 'Hoi An',
+				region: 'Central Vietnam — Old Town UNESCO site',
+				scene: 'Hoi An is fundamentally a walking city — the Old Town lantern district is car-banned during most tourism hours. Beach access via An Bang Beach is 3km east — most tourists rent bicycles or scooters there. Countryside rice paddies south to My Son ruins are the scenic drive.',
+				rentalNote: 'No airport — arrivals via Da Nang and 30km taxi. Local scooter rental abundant: $5-8/day, shop verification minimal. American motorbike touring companies (Rustic Vietnam, Hoi An Motorbike Adventures) treat US visitors as tour clients, not renters — different insurance/documentation liability logic.',
+				enforcement: 'Hoi An traffic police enforcement is unusually minimal — the tourist economy runs on the Old Town revenue and police keep interactions light. Genuine risk in Hoi An is accidental injury (scooters + tourists + rice-paddy dirt roads) not police-fine encounters. Documented American motorbike injuries in Hoi An routinely produce $15,000-$40,000 emergency-evac bills.',
+				fineBand: '200K–1M VND ($8–$40) — rare enforcement stop  ·  US medevac cost from Hoi An hospital: $40,000+',
+				watchOut: 'My Son sanctuary ride (30km southwest) — the road narrows to single-track after Duy Xuyên and includes unbridged stream crossings. Insurance for scooter incidents in this zone is universally rejected by US travel insurers. Consider the tour-guide option.',
+			},
+		],
+		bottomNote: "Cross-Vietnam moral: the Vienna 1968 vs Geneva 1949 gap is the paperwork problem, but medevac cost is the actual financial risk. US health-insurance evacuation from Central Vietnam to Bangkok or Singapore runs $40,000-$80,000. Motorbike incidents without proper documentation give US insurers grounds to deny. IDP Companion doesn't fix the Convention mismatch — but it does close the paperwork angle at rental desks and reduce insurance-denial grounds.",
+	},
 };
 
 export const usVietnamCopy: Record<'en', CountryPairCopy> = { en };
