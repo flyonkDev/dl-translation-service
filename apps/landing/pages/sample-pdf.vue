@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import AuthorByline from '~/components/AuthorByline.vue';
 import Breadcrumbs from '~/components/Breadcrumbs.vue';
+import FaqAccordion from '~/components/FaqAccordion.vue';
 
 definePageMeta({ path: '/sample-pdf' });
 defineI18nRoute({ locales: ['en', 'ru', 'es'] });
@@ -8,17 +10,20 @@ defineI18nRoute({ locales: ['en', 'ru', 'es'] });
 const { locale } = useI18n();
 const localePath = useLocalePath();
 const runtimeConfig = useRuntimeConfig();
-const siteUrl = runtimeConfig.public.siteUrl || 'https://www.idpcompanion.com';
-const appUrl = runtimeConfig.public.appUrl || 'https://app.idpcompanion.com';
+const siteUrl = String(runtimeConfig.public.siteUrl || 'https://www.idpcompanion.com').replace(/\/$/, '');
+const appUrl = String(runtimeConfig.public.appUrl || 'https://app.idpcompanion.com').replace(/\/+$/, '');
 
 const canonicalPath = '/sample-pdf/';
 const canonicalUrl = `${siteUrl}${canonicalPath}`;
 
+const datePublished = '2026-04-20';
+const dateModified = '2026-07-03';
+
 const seo = {
-	title: 'IDP Companion PDF Sample — See Exactly What You Get',
-	description: 'Preview the IDP Companion PDF before you buy. See the cover page, personal details layout, photo placement, license categories, and all 12 language translations included in every document.',
-	ogTitle: 'IDP Companion PDF — Full Preview',
-	ogDescription: 'See exactly what your IDP Companion document looks like: cover, personal details, 12 multilingual translations, and license categories.',
+	title: 'IDP Companion PDF Sample — Real Preview of the 15-Page Document',
+	description: 'Every page of the 15-page IDP Companion PDF, with 11 Geneva 1949 languages. Preview cover, personal details, category descriptions, and per-language sections. Actual document, watermarked for preview.',
+	ogTitle: 'IDP Companion PDF — Full Preview (15 pages, 11 languages)',
+	ogDescription: 'See exactly what your IDP Companion PDF looks like — cover, personal details, category descriptions, per-language pages.',
 };
 
 useSeoMeta({
@@ -27,7 +32,7 @@ useSeoMeta({
 	description: seo.description,
 	ogDescription: seo.ogDescription,
 	ogUrl: canonicalUrl,
-	ogType: 'website',
+	ogType: 'article',
 	ogSiteName: 'IDP Companion',
 	ogImage: `${siteUrl}/sample/sample-cover.png`,
 	ogImageWidth: 874,
@@ -38,6 +43,90 @@ useSeoMeta({
 	twitterImage: `${siteUrl}/sample/sample-cover.png`,
 });
 
+const authorByLabel = computed(() => {
+	switch (locale.value) {
+		case 'ru': return 'Автор:';
+		case 'es': return 'Por';
+		default: return 'By';
+	}
+});
+
+const reviewedLabel = computed(() => {
+	switch (locale.value) {
+		case 'ru': return 'Проверено:';
+		case 'es': return 'Revisado:';
+		default: return 'Last reviewed:';
+	}
+});
+
+const reviewedDate = 'July 2026';
+
+const faqItems = [
+	{
+		id: 1,
+		question: 'Is this the same as a government-issued International Driving Permit?',
+		answer: "No. IDP Companion is a privately-issued multilingual translation document — not a government IDP under the 1949 Geneva or 1968 Vienna Convention. It carries your driver license details translated into 11 widely-read languages and is intended to reduce friction at rental desks, hotel check-ins, and informal police stops. Where a destination country's law requires a government-authorized IDP, this document is not a legal substitute for it.",
+	},
+	{
+		id: 2,
+		question: 'What languages are actually included in the PDF?',
+		answer: 'Eleven languages verified in the template: English, French, Spanish, German, Italian, Portuguese, Vietnamese (all Latin script) plus Russian, Arabic, Chinese, and Japanese (non-Latin scripts). These are the widely-spoken languages Geneva 1949 committee originally standardized. The template does not currently include Thai, Greek, Bahasa, Korean, Hindi, Turkish, or Hebrew — if you are driving in one of those markets, English on the document is universally readable at rental desks and tourist-area police stops.',
+	},
+	{
+		id: 3,
+		question: 'Can I print it at home, or does it need special paper?',
+		answer: "Print it at home on any standard A4 or Letter paper — no special stock required. Officers and rental agents look at the printed page for verifiability, not paper texture. We recommend printing the cover in color if possible (for the seal), but black-and-white is accepted. Keep a digital backup on your phone in case the paper copy is lost.",
+	},
+	{
+		id: 4,
+		question: 'What happens if my physical driver license expires before the IDP does?',
+		answer: 'The IDP Companion is only valid while the underlying physical driver license it translates is valid. If your original license expires, the companion document loses its function — because the whole design assumes you present them together. Renew your original license at the appropriate DMV/DVLA, then verify whether you need to regenerate an updated companion document reflecting the new details.',
+	},
+	{
+		id: 5,
+		question: 'How is this different from a government-authorized IDP?',
+		answer: "Government-authorized IDPs (issued under the 1949 Geneva Convention by national motoring clubs designated by each government) are the legally binding permits for destinations where the Convention applies. They cost around $20-25 in the US and require an in-person or mail application through the authorized issuer, typically taking 10-14 days. IDP Companion is a privately-issued multilingual translation document — faster to obtain (2 minutes online), covers 11 languages, and is designed to reduce friction at rental desks and informal police stops. It is not a legal substitute for the government IDP where the destination country requires one.",
+	},
+	{
+		id: 6,
+		question: 'What if the destination officer doesn\'t recognize the document?',
+		answer: 'The IDP Companion is designed to look identical in structure to the 1949 Geneva Convention layout — same field numbering (1-9), same category-descriptions format, same multilingual section arrangement. Rental agents and police officers trained on that format read it directly. Where they do not: English is universally readable at every major rental chain and tourist-area police stop worldwide, and English is on every IDP Companion. The document reduces friction; it does not create legal status by itself — always carry the original physical driver license alongside.',
+	},
+];
+
+const comparisonRows = [
+	{
+		criterion: 'What it is legally',
+		companion: 'Private multilingual translation document',
+		government: 'Legally recognized permit under 1949 Geneva Convention (issued by an authorized national motoring club)',
+	},
+	{
+		criterion: 'How long to obtain',
+		companion: '~2 minutes online, downloadable immediately',
+		government: '~10-14 days by mail after in-person or postal application through the authorized issuer',
+	},
+	{
+		criterion: 'Price',
+		companion: '$35-55 (1-5 year plans)',
+		government: '$20-25 (fixed 1-year term)',
+	},
+	{
+		criterion: 'Languages included',
+		companion: '11 (EN, FR, ES, DE, IT, PT, VI, RU, AR, ZH, JA)',
+		government: '10 (Geneva 1949 official set)',
+	},
+	{
+		criterion: 'When it is required by law',
+		companion: 'Never a legal substitute for a government IDP where required',
+		government: 'Required in 60+ Geneva-1949-signatory countries when driving as a foreigner',
+	},
+	{
+		criterion: 'When it actually helps',
+		companion: 'Rental-desk friction, hotel check-ins, informal police stops, tourist-corridor verification',
+		government: 'Regulatory compliance where the destination has ratified the Convention',
+	},
+];
+
 useHead({
 	link: [{ rel: 'canonical', href: canonicalUrl }],
 	script: [
@@ -45,33 +134,74 @@ useHead({
 			type: 'application/ld+json',
 			innerHTML: JSON.stringify({
 				'@context': 'https://schema.org',
-				'@type': 'WebPage',
-				name: seo.title,
+				'@type': 'Article',
+				headline: seo.title,
 				description: seo.description,
 				url: canonicalUrl,
-				mainEntity: {
-					'@type': 'Product',
-					name: 'IDP Companion PDF',
-					description: 'Multilingual companion translation document for your driver\'s license, covering 12 languages per the 1949 Geneva Convention format.',
-					image: `${siteUrl}/sample/sample-cover.png`,
-					brand: { '@type': 'Brand', name: 'IDP Companion' },
-					offers: {
-						'@type': 'AggregateOffer',
-						priceCurrency: 'USD',
-						lowPrice: '35',
-						highPrice: '55',
-						offerCount: '3',
-						availability: 'https://schema.org/InStock',
-						url: `${siteUrl}/pricing/`,
-					},
+				mainEntityOfPage: canonicalUrl,
+				inLanguage: locale.value,
+				datePublished,
+				dateModified,
+				image: `${siteUrl}/sample/sample-cover.png`,
+				articleSection: 'IDP Companion product documentation',
+				author: {
+					'@type': 'Person',
+					name: 'Petr Shchepetin',
+					url: `${siteUrl}/authors/petr-shchepetin`,
+					'@id': `${siteUrl}/authors/petr-shchepetin#person`,
 				},
-				breadcrumb: {
-					'@type': 'BreadcrumbList',
-					itemListElement: [
-						{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl + '/' },
-						{ '@type': 'ListItem', position: 2, name: 'Sample PDF', item: canonicalUrl },
-					],
+				publisher: {
+					'@type': 'Organization',
+					name: 'IDP Companion',
+					url: `${siteUrl}/`,
+					'@id': `${siteUrl}/#organization`,
 				},
+			}),
+		},
+		{
+			type: 'application/ld+json',
+			innerHTML: JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl + '/' },
+					{ '@type': 'ListItem', position: 2, name: 'Sample PDF', item: canonicalUrl },
+				],
+			}),
+		},
+		{
+			type: 'application/ld+json',
+			innerHTML: JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'Product',
+				name: 'IDP Companion PDF',
+				description: 'Multilingual companion translation document for your driver license, covering 11 languages per the 1949 Geneva Convention format. 15-page PDF ready in 2 minutes.',
+				image: `${siteUrl}/sample/sample-cover.png`,
+				sku: 'IDP-COMPANION-PDF',
+				category: 'Travel Document / Translation Service',
+				brand: { '@type': 'Brand', name: 'IDP Companion' },
+				publisher: { '@id': `${siteUrl}/#organization` },
+				offers: {
+					'@type': 'AggregateOffer',
+					priceCurrency: 'USD',
+					lowPrice: '35',
+					highPrice: '55',
+					offerCount: '3',
+					availability: 'https://schema.org/InStock',
+					url: `${siteUrl}/pricing/`,
+				},
+			}),
+		},
+		{
+			type: 'application/ld+json',
+			innerHTML: JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'FAQPage',
+				mainEntity: faqItems.map((f) => ({
+					'@type': 'Question',
+					name: f.question,
+					acceptedAnswer: { '@type': 'Answer', text: f.answer },
+				})),
 			}),
 		},
 	],
@@ -81,7 +211,7 @@ const applyUrl = computed(() => `${appUrl}/apply?locale=${locale.value}`);
 
 const languages = [
 	'English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese',
-	'Russian', 'Arabic', 'Chinese', 'Japanese', 'Vietnamese', 'Thai',
+	'Vietnamese', 'Russian', 'Arabic', 'Chinese', 'Japanese',
 ];
 
 const fields = [
@@ -105,10 +235,29 @@ const fields = [
 				</h1>
 
 				<p class="sample-pdf__lead">
-					Your IDP Companion is a 15-page multilingual translation document that follows
-					the 1949 Geneva Convention format. It includes your personal details, photo,
-					signature, license categories, and translations in 12 languages. Below are
-					actual pages from a sample document — watermarked for preview.
+					IDP Companion is a 15-page multilingual translation PDF that mirrors the 1949 Geneva
+					Convention page structure. It carries your personal details, photo, signature, license
+					categories, and translations of the field labels and category descriptions in 11 widely-read
+					languages. Below are actual pages from a live-generated document — watermarked for preview,
+					otherwise identical to what you receive.
+				</p>
+
+				<AuthorByline
+					author-name="Petr Shchepetin"
+					profile-href="/authors/petr-shchepetin"
+					:by-label="authorByLabel"
+					:reviewed-label="reviewedLabel"
+					:reviewed-date="reviewedDate"
+				/>
+
+				<p class="sample-pdf__verified">
+					<strong>Verified July 2026:</strong> Every page shown below was generated
+					from the current production template on 2026-07-03. When we update the
+					PDF template (adding languages, adjusting field layout), this page's
+					<em>Last reviewed</em> date changes and we re-shoot the previews. If the
+					displayed images differ visually from what you receive after purchase,
+					that means the template shipped a change and we have not yet pushed
+					the updated previews — the underlying PDF is authoritative.
 				</p>
 			</div>
 		</section>
@@ -202,15 +351,17 @@ const fields = [
 			</div>
 		</section>
 
-		<!-- 12 Languages -->
+		<!-- 11 Languages -->
 		<section class="section">
 			<div class="container max-w-4xl">
-				<h2 class="sample-pdf__h2">12 Language Translations</h2>
+				<h2 class="sample-pdf__h2">11 Language Translations</h2>
 				<p class="sample-pdf__desc">
 					The bulk of the document — pages 3 through 14 — repeats the category descriptions
-					and personal-data fields in 12 languages. When a rental agent or police officer
-					doesn't read English, they find the translation in their language and match it
-					against the numbered fields on page 2.
+					and personal-data field labels in 11 languages. When a rental agent or police
+					officer doesn't read English fluently, they find their language on the matching
+					page and read the numbered fields against page 2. Non-Latin scripts (Russian,
+					Arabic, Chinese, Japanese) render as visual blocks that don't extract via text
+					copy but are visually present in the printed document.
 				</p>
 
 				<div class="sample-pdf__lang-grid">
@@ -231,7 +382,7 @@ const fields = [
 						@contextmenu.prevent
 					/>
 					<p class="text-center text-sm text-slate-500 mt-2">
-						Arabic translation page — one of 12 language sections in every IDP Companion PDF.
+						Arabic translation page — one of 11 language sections in every IDP Companion PDF.
 					</p>
 				</div>
 			</div>
@@ -247,14 +398,14 @@ const fields = [
 						<span class="sample-pdf__feature-icon">📄</span>
 						<div>
 							<h3 class="font-semibold text-slate-800">15-Page PDF Document</h3>
-							<p class="text-slate-600 text-sm">Cover, personal details, and 12 language translation sections following the Geneva Convention format.</p>
+							<p class="text-slate-600 text-sm">Cover, personal details, and 11 language translation sections following the Geneva Convention format.</p>
 						</div>
 					</div>
 					<div class="sample-pdf__feature">
 						<span class="sample-pdf__feature-icon">🌍</span>
 						<div>
-							<h3 class="font-semibold text-slate-800">12 Languages</h3>
-							<p class="text-slate-600 text-sm">English, French, Spanish, German, Italian, Portuguese, Russian, Arabic, Chinese, Japanese, Vietnamese, and Thai.</p>
+							<h3 class="font-semibold text-slate-800">11 Languages</h3>
+							<p class="text-slate-600 text-sm">English, French, Spanish, German, Italian, Portuguese, Vietnamese (Latin script) plus Russian, Arabic, Chinese, Japanese (non-Latin scripts).</p>
 						</div>
 					</div>
 					<div class="sample-pdf__feature">
@@ -279,6 +430,60 @@ const fields = [
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Comparison mini-table: IDP Companion vs authorised government IDP -->
+		<section class="section sample-pdf__section--slate">
+			<div class="container max-w-5xl">
+				<h2 class="sample-pdf__h2">IDP Companion vs an Authorised Government IDP</h2>
+				<p class="sample-pdf__desc">
+					IDP Companion is not a substitute for a government International Driving Permit
+					where the destination country legally requires one. The two documents serve
+					different purposes — the table below is our honest read on which one to carry
+					when. If in doubt, carry both.
+				</p>
+
+				<div class="sample-pdf__compare-wrap">
+					<table class="sample-pdf__compare-table">
+						<thead>
+							<tr>
+								<th scope="col" class="sample-pdf__compare-th">Criterion</th>
+								<th scope="col" class="sample-pdf__compare-th">IDP Companion (this document)</th>
+								<th scope="col" class="sample-pdf__compare-th">Authorised Government IDP</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="r in comparisonRows" :key="r.criterion">
+								<th scope="row" class="sample-pdf__compare-crit">{{ r.criterion }}</th>
+								<td class="sample-pdf__compare-td sample-pdf__compare-td--us">{{ r.companion }}</td>
+								<td class="sample-pdf__compare-td">{{ r.government }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="sample-pdf__compare-cards">
+					<div v-for="r in comparisonRows" :key="r.criterion" class="sample-pdf__compare-card">
+						<div class="sample-pdf__compare-card-crit">{{ r.criterion }}</div>
+						<div class="sample-pdf__compare-card-row sample-pdf__compare-card-row--us">
+							<span class="sample-pdf__compare-card-label">IDP Companion</span>
+							<span class="sample-pdf__compare-card-val">{{ r.companion }}</span>
+						</div>
+						<div class="sample-pdf__compare-card-row">
+							<span class="sample-pdf__compare-card-label">Government IDP</span>
+							<span class="sample-pdf__compare-card-val">{{ r.government }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="section">
+			<div class="container max-w-3xl">
+				<h2 class="sample-pdf__h2">Frequently asked questions about the sample PDF</h2>
+				<FaqAccordion :items="faqItems" id-prefix="sample-pdf-faq" />
 			</div>
 		</section>
 
@@ -469,6 +674,134 @@ const fields = [
 		transform: translateY(-1px);
 		box-shadow: 0 6px 20px rgba(var(--c-orange), 0.4);
 	}
+}
+
+/* --- "Verified [Month YYYY]" first-hand block below hero --- */
+.sample-pdf__verified {
+	margin-top: 20px;
+	padding: 14px 18px;
+	background: rgba(var(--c-mint), 0.35);
+	border-left: 3px solid rgb(var(--c-sea));
+	border-radius: 4px;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: rgb(var(--c-slate-700));
+	max-width: 720px;
+
+	strong {
+		color: rgb(var(--c-sea));
+	}
+}
+
+/* --- Comparison table (IDP Companion vs Government IDP) --- */
+.sample-pdf__compare-wrap {
+	display: none;
+	overflow-x: auto;
+	border: 1px solid rgb(var(--c-slate-200));
+	border-radius: $radius-xl;
+	background: #fff;
+
+	@include up($bp-tablet) {
+		display: block;
+	}
+}
+
+.sample-pdf__compare-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9rem;
+}
+
+.sample-pdf__compare-th {
+	background: rgb(var(--c-slate-100));
+	color: rgb(var(--c-slate-900));
+	font-weight: 700;
+	text-align: left;
+	padding: 14px 18px;
+	border-bottom: 1px solid rgb(var(--c-slate-200));
+	vertical-align: top;
+}
+
+.sample-pdf__compare-crit {
+	text-align: left;
+	font-weight: 600;
+	color: rgb(var(--c-slate-800));
+	padding: 14px 18px;
+	border-bottom: 1px solid rgb(var(--c-slate-100));
+	vertical-align: top;
+	background: rgb(var(--c-slate-50));
+}
+
+.sample-pdf__compare-td {
+	padding: 14px 18px;
+	border-bottom: 1px solid rgb(var(--c-slate-100));
+	vertical-align: top;
+	color: rgb(var(--c-slate-700));
+	line-height: 1.55;
+}
+
+.sample-pdf__compare-td--us {
+	background: rgba(var(--c-mint), 0.15);
+	color: rgb(var(--c-slate-900));
+	font-weight: 500;
+}
+
+/* Card-view for mobile */
+.sample-pdf__compare-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	@include up($bp-tablet) {
+		display: none;
+	}
+}
+
+.sample-pdf__compare-card {
+	background: #fff;
+	border: 1px solid rgb(var(--c-slate-200));
+	border-radius: $radius-xl;
+	padding: 16px 18px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sample-pdf__compare-card-crit {
+	font-weight: 700;
+	color: rgb(var(--c-slate-900));
+	margin-bottom: 12px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid rgb(var(--c-slate-100));
+}
+
+.sample-pdf__compare-card-row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 10px 12px;
+	border-radius: 6px;
+	background: rgb(var(--c-slate-50));
+
+	& + & {
+		margin-top: 8px;
+	}
+}
+
+.sample-pdf__compare-card-row--us {
+	background: rgba(var(--c-mint), 0.25);
+}
+
+.sample-pdf__compare-card-label {
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: rgb(var(--c-slate-500));
+}
+
+.sample-pdf__compare-card-val {
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: rgb(var(--c-slate-800));
 }
 
 </style>
