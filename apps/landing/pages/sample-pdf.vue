@@ -17,7 +17,7 @@ const canonicalPath = '/sample-pdf/';
 const canonicalUrl = `${siteUrl}${canonicalPath}`;
 
 const datePublished = '2026-04-20';
-const dateModified = '2026-07-03';
+const dateModified = '2026-07-24';
 
 const seo = {
 	title: 'IDP Companion PDF Sample — Real Preview of the 15-Page Document',
@@ -252,7 +252,7 @@ const fields = [
 
 				<p class="sample-pdf__verified">
 					<strong>Verified July 2026:</strong> Every page shown below was generated
-					from the current production template on 2026-07-03. When we update the
+					from the current production template on 2026-07-24. When we update the
 					PDF template (adding languages, adjusting field layout), this page's
 					<em>Last reviewed</em> date changes and we re-shoot the previews. If the
 					displayed images differ visually from what you receive after purchase,
@@ -269,13 +269,13 @@ const fields = [
 				<p class="sample-pdf__desc">
 					The front page identifies the document as an International Driving Permit
 					under the 1949 Geneva Convention. It displays the validity period (1, 3,
-					or 5 years from purchase), your unique permit number, and the issuing authority seal.
+					or 5 years from purchase), your unique permit number, and the IDP Companion document seal.
 				</p>
 
 				<div class="sample-pdf__preview">
 					<img
 						src="/sample/sample-cover.png"
-						alt="IDP Companion cover page showing International Driving Permit title, validity date, Geneva Convention reference, and official seal"
+						alt="IDP Companion cover page showing International Driving Permit title, validity date, Geneva Convention reference, and the IDP Companion document seal"
 						class="sample-pdf__img"
 						loading="eager"
 						width="874"
@@ -294,13 +294,13 @@ const fields = [
 				<p class="sample-pdf__desc">
 					Page 2 carries your information — exactly as it appears on your driver's license.
 					A passport-style photo and your signature are placed in designated areas.
-					License categories (A through E) are stamped with an official seal.
+					License categories (A through E) are stamped with the IDP Companion seal.
 				</p>
 
 				<div class="sample-pdf__preview">
 					<img
 						src="/sample/sample-back.png"
-						alt="IDP Companion personal details page showing name fields, photo area, signature, and license category stamps A through E"
+						alt="IDP Companion personal details page showing name fields, photo area, signature, and IDP Companion category stamps A through E"
 						class="sample-pdf__img"
 						loading="lazy"
 						width="874"
@@ -419,7 +419,7 @@ const fields = [
 						<span class="sample-pdf__feature-icon">🏍️</span>
 						<div>
 							<h3 class="font-semibold text-slate-800">License Categories A–E</h3>
-							<p class="text-slate-600 text-sm">Select your categories during application. Each selected category is stamped with an official seal.</p>
+							<p class="text-slate-600 text-sm">Select your categories during application. Each selected category is stamped with the IDP Companion seal.</p>
 						</div>
 					</div>
 					<div class="sample-pdf__feature">
