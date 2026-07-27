@@ -13,13 +13,20 @@ type PdfOpts = {
 const LICENSE_CATEGORIES = ['A', 'B', 'C', 'D', 'E'] as const;
 type LicenseCategory = typeof LICENSE_CATEGORIES[number];
 
+// Exact centers of the printed "Seal or stamp of authority" rings, ray-measured
+// from the rendered template (the visible rings live in the raster background,
+// not in the vector layer). Ring inner radius 19.56pt, outer ≈20.3pt.
 const CATEGORY_STAMP_CENTER: Record<LicenseCategory, { x: number; y: number }> = {
-  A: { x: 60.45, y: 296.31 },
-  B: { x: 60.45, y: 254.61 },
-  C: { x: 60.45, y: 212.91 },
-  D: { x: 60.15, y: 171.81 },
-  E: { x: 60.45, y: 130.41 },
+  A: { x: 60.47, y: 296.01 },
+  B: { x: 60.53, y: 254.61 },
+  C: { x: 60.54, y: 213.09 },
+  D: { x: 60.5, y: 171.79 },
+  E: { x: 60.45, y: 130.24 },
 };
+
+// White disc under the stamp erases the caption and the printed ring body while
+// staying clear of the cell border (20.7pt from ring center at the closest point).
+const STAMP_UNDERLAY_RADIUS = 20;
 
 const BACK_FIELD_BASE_SIZE = 9.5;
 const BACK_FIELD_MIN_SIZE = 7;
@@ -116,10 +123,24 @@ export class ApplicationsPdfService {
       this.drawTextFit(page, f.text, { x, y: f.y - 2, w: fieldW - 6, h: 16 }, font);
     }
 
-    // Photo
+    // Photo — cover-crop to fill the printed frame exactly (no side gaps),
+    // then a crisp 1pt border over the photo edge.
     const photoBox = { x: 133.23, y: 180.28, w: 97.8, h: 126.71 };
-    const headshotImg = await this.embedImageFromFile(pdfDoc, s.headshotMeta.path, s.headshotMeta.mimetype);
-    this.drawImageContain(page, headshotImg, photoBox);
+    const headshotImg = await this.embedPhotoCover(pdfDoc, s.headshotMeta.path, photoBox);
+    page.drawImage(headshotImg, {
+      x: photoBox.x,
+      y: photoBox.y,
+      width: photoBox.w,
+      height: photoBox.h,
+    });
+    page.drawRectangle({
+      x: photoBox.x,
+      y: photoBox.y,
+      width: photoBox.w,
+      height: photoBox.h,
+      borderColor: rgb(0, 0, 0),
+      borderWidth: 1,
+    });
 
     // Signature
     const signBox = { x: 127.56, y: 147.4, w: 119.06, h: 34.02 };
@@ -146,12 +167,9 @@ export class ApplicationsPdfService {
 
     const stampImg = await this.loadStampImage(pdfDoc);
 
-    const r = 19.5;
-
-    const size = r * 2 * 1.03;
-
-    const dx = 0.1;
-    const dy = 0.2;
+    // 42pt box puts the stamp's inked ring outer edge at ~20.3pt — exactly over
+    // the printed placeholder ring, so no gray halo remains around the stamp.
+    const size = 42;
 
     for (const cat of LICENSE_CATEGORIES) {
       const c = CATEGORY_STAMP_CENTER[cat];
@@ -162,16 +180,20 @@ export class ApplicationsPdfService {
 
       if (!selected.has(cat)) continue;
 
-      const angle = 0;
-      const x = c.x - size / 2 + dx;
-      const y = c.y - size / 2 + dy;
+      // blank out the placeholder ring + "Seal or stamp of authority" caption
+      page.drawCircle({
+        x: c.x,
+        y: c.y,
+        size: STAMP_UNDERLAY_RADIUS,
+        color: rgb(1, 1, 1),
+      });
 
       page.drawImage(stampImg, {
-        x,
-        y,
+        x: c.x - size / 2,
+        y: c.y - size / 2,
         width: size,
         height: size,
-        rotate: degrees(angle),
+        rotate: degrees(0),
         opacity: STAMP_OPACITY,
       });
     }
@@ -233,10 +255,30 @@ export class ApplicationsPdfService {
     page.drawImage(img, { x, y, width: w, height: h });
   }
 
-  private async embedImageFromFile(pdfDoc: PDFDocument, filePath: string, mime: string) {
+  /**
+   * Headshot embedding: EXIF-rotate (phone photos), center-crop to the frame's
+   * aspect ratio (cover), downsample to ~576 DPI of the frame. Any input format
+   * sharp understands (jpeg/png/webp/heif) comes out as jpeg.
+   */
+  private async embedPhotoCover(
+    pdfDoc: PDFDocument,
+    filePath: string,
+    box: { w: number; h: number },
+  ) {
     const abs = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
     const bytes = await readFile(abs);
-    return this.embedImageBytes(pdfDoc, bytes, mime);
+
+    const PX_PER_PT = 8;
+    const jpg = await sharp(bytes)
+      .rotate()
+      .resize(Math.round(box.w * PX_PER_PT), Math.round(box.h * PX_PER_PT), {
+        fit: 'cover',
+        position: 'centre',
+      })
+      .jpeg({ quality: 90 })
+      .toBuffer();
+
+    return pdfDoc.embedJpg(jpg);
   }
 
   private async embedImageFromDataUrl(pdfDoc: PDFDocument, dataUrl: string) {

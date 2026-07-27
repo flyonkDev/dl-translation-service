@@ -168,9 +168,11 @@ export class ApplicationsService {
     });
     if (!row) throw new NotFoundException('application not found');
 
+    // Fail-safe: when the flag is not set at all (e.g. forgotten in prod env),
+    // payment IS required. Local dev opts out explicitly via .env (=false).
+    const flag = process.env.REQUIRE_PAYMENT_FOR_PDF?.trim().toLowerCase();
     const requirePayment =
-      process.env.REQUIRE_PAYMENT_FOR_PDF === '1' ||
-      process.env.REQUIRE_PAYMENT_FOR_PDF === 'true';
+      flag === undefined || flag === '' ? true : flag === '1' || flag === 'true';
     if (requirePayment && row.status !== 'paid' && row.status !== 'pdf_ready') {
       throw new ForbiddenException('payment required');
     }
