@@ -104,8 +104,9 @@
     </div>
 
     <div class="mt-2">
-      <div class="mb-1 text-[13px] font-bold text-slate-900">
-        {{ t('form.driver.sex') }}
+      <div class="mb-1 flex items-center gap-1 text-[13px] font-bold text-slate-900">
+        <span>{{ t('form.driver.sex') }}</span>
+        <span class="text-red-600" aria-hidden="true">*</span>
       </div>
 
       <SexToggle
